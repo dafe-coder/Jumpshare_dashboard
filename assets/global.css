@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html {
+		-webkit-font-smoothing: antialiased; /* Smoothing improvement */
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-overflow-scrolling: touch;
+		font-size: 16px;
+		@apply text-blue-900 tracking-normal !font-sans;
+	}
+	p {
+		@apply text-base/5.5;
+	}
+	body {
+		background-color: #ffffff; /* Цвет фона для body */
+		-webkit-overflow-scrolling: touch;
+		@apply flex flex-col min-h-screen;
+	}
+	.main-body {
+		@apply flex-grow;
+	}
+	@media screen and (max-width: 480px) {
+		p {
+			@apply text-sm/5;
+		}
+	}
+	@font-face {
+		font-family: 'GeneralSans-semibold';
+		font-style: normal;
+		font-weight: 600;
+		font-display: swap;
+		src:
+			url('/res/css/fonts/GeneralSans-Semibold.woff2') format('woff2'),
+			url('/res/css/fonts/GeneralSans-Semibold.woff') format('woff'),
+			url('/res/css/fonts/GeneralSans-Semibold.otf') format('opentype');
+	}
+	@font-face {
+		font-family: 'GeneralSans-Variable';
+		src:
+			url('/res/css/fonts/GeneralSans-Variable.woff2') format('woff2'),
+			url('/res/css/fonts/GeneralSans-Variable.woff') format('woff');
+		font-weight: 200 700;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: 'GeneralSans-medium';
+		font-style: normal;
+		font-weight: 500;
+		font-display: swap;
+		src:
+			url('/res/css/fonts/GeneralSans-Medium.woff2') format('woff2'),
+			url('/res/css/fonts/GeneralSans-medium.woff') format('woff'),
+			url('/res/css/fonts/GeneralSans-Medium.otf') format('opentype');
+	}
+	@font-face {
+		font-family: 'Inter';
+		font-style: normal;
+		font-weight: 100 900;
+		font-display: swap;
+		src: url('/res/css/fonts/Inter/UcCo3FwrK3iLTcviYwYZ90A2N58.woff2')
+			format('woff2');
+	}
+}
+
+@layer utilities {
+	@media screen and (max-height: 800px) {
+		.screen-h-800-py-28 {
+			padding-top: 7rem;
+			padding-bottom: 2.75rem;
+		}
+	}
+	@media screen and (max-height: 600px) {
+		.popup-signup-left {
+			@apply overflow-y-auto self-start h-full;
+		}
+		.popup-signup-left > div {
+			@apply h-max;
+		}
+	}
+	.custom-marker li::marker {
+		color: rgba(18, 35, 69, 0.5);
+	}
+	.show-elem-slideUp {
+		opacity: 0;
+		transform: translateY(30px);
+		transition: all ease-in-out 0.8s;
+	}
+	.show-elem-slideUp.active {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	.show-elem-slideUp.disabled {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+img:not([src])::before,
+img[src='']::before,
+img:invalid::before,
+img::after {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: none;
+}
+
+.active-header {
+	@apply bg-white top-0;
+	box-shadow:
+		0px -1.85px 19.48px 0px rgba(0, 0, 0, 0.05),
+		0px 6px 11.8px -4px rgba(13, 34, 71, 0.02),
+		0px 0px 0px 1px rgba(18, 35, 69, 0.1),
+		0px 11px 10.7px -6px rgba(18, 35, 69, 0.04);
+}
+.active-header.dark-header {
+	@apply !bg-violet-900 top-0;
+}
+
+.animate__fadeInAndSlideInUp {
+	animation:
+		fadeIn 0.4s,
+		slideInUp 0.5s;
+	animation-fill-mode: forwards;
+}
+
+.tham-w-6 .tham-inner,
+.tham-w-6 .tham-inner::after,
+.tham-w-6 .tham-inner::before {
+	@apply h-0.5 w-[1.125rem] bg-black rounded-lg;
+}
+
+.tham-w-6 .tham-box {
+	@apply w-[1.125rem];
+}
+
+.tham:hover {
+	opacity: 1 !important;
+}
+
+.hamburger-dark.tham-w-6 .tham-inner,
+.hamburger-dark.tham-w-6 .tham-inner::after,
+.hamburger-dark.tham-w-6 .tham-inner::before {
+	@apply !bg-white;
+}
+
+.tham-w-6 .tham-inner::before {
+	top: -5px;
+}
+
+.tham-w-6 .tham-inner::after {
+	bottom: -5px;
+}
+
+.checkmark-label::before {
+	content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE0LjYyNSAwLjg3NUgzLjM3NUMyLjcxMjE4IDAuODc1NzI0IDIuMDc2NzIgMS4xMzkzNSAxLjYwODAzIDEuNjA4MDNDMS4xMzkzNSAyLjA3NjcyIDAuODc1NzI0IDIuNzEyMTggMC44NzUgMy4zNzVWMTQuNjI1QzAuODc1NzI0IDE1LjI4NzggMS4xMzkzNSAxNS45MjMzIDEuNjA4MDMgMTYuMzkyQzIuMDc2NzIgMTYuODYwNyAyLjcxMjE4IDE3LjEyNDMgMy4zNzUgMTcuMTI1SDE0LjYyNUMxNS4yODc4IDE3LjEyNDMgMTUuOTIzMyAxNi44NjA3IDE2LjM5MiAxNi4zOTJDMTYuODYwNyAxNS45MjMzIDE3LjEyNDMgMTUuMjg3OCAxNy4xMjUgMTQuNjI1VjMuMzc1QzE3LjEyNDMgMi43MTIxOCAxNi44NjA3IDIuMDc2NzIgMTYuMzkyIDEuNjA4MDNDMTUuOTIzMyAxLjEzOTM1IDE1LjI4NzggMC44NzU3MjQgMTQuNjI1IDAuODc1Wk0xMy4yMjg1IDYuMjc2OTVMNy45Nzg1MiAxMi41MjdDNy45MjA5MyAxMi41OTU1IDcuODQ5MjcgMTIuNjUxIDcuNzY4MzkgMTIuNjg5NEM3LjY4NzUyIDEyLjcyNzkgNy41OTkzMiAxMi43NDg2IDcuNTA5NzcgMTIuNzVINy40OTkyMkM3LjQxMTYyIDEyLjc1IDcuMzI1IDEyLjczMTUgNy4yNDQ5OSAxMi42OTU5QzcuMTY0OTcgMTIuNjYwMiA3LjA5MzM1IDEyLjYwODEgNy4wMzQ3NyAxMi41NDNMNC43ODQ3NyAxMC4wNDNDNC43Mjc2MiA5Ljk4MjM2IDQuNjgzMTcgOS45MTA5NCA0LjY1NDAzIDkuODMyOTFDNC42MjQ4OCA5Ljc1NDg4IDQuNjExNjIgOS42NzE4MSA0LjYxNTA0IDkuNTg4NThDNC42MTg0NiA5LjUwNTM2IDQuNjM4NDggOS40MjM2NSA0LjY3MzkyIDkuMzQ4MjdDNC43MDkzNiA5LjI3Mjg5IDQuNzU5NTIgOS4yMDUzNiA0LjgyMTQzIDkuMTQ5NjRDNC44ODMzNSA5LjA5MzkyIDQuOTU1NzggOS4wNTExNCA1LjAzNDQ3IDkuMDIzODFDNS4xMTMxNSA4Ljk5NjQ4IDUuMTk2NTEgOC45ODUxNiA1LjI3OTYzIDguOTkwNTFDNS4zNjI3NiA4Ljk5NTg1IDUuNDQzOTggOS4wMTc3NiA1LjUxODUxIDkuMDU0OTVDNS41OTMwNSA5LjA5MjEzIDUuNjU5NCA5LjE0Mzg0IDUuNzEzNjcgOS4yMDcwM0w3LjQ4MjgxIDExLjE3MjdMMTIuMjcxNSA1LjQ3MzA1QzEyLjM3ODkgNS4zNDg4NiAxMi41MzA5IDUuMjcxOTMgMTIuNjk0NSA1LjI1ODg5QzEyLjg1ODIgNS4yNDU4NCAxMy4wMjA1IDUuMjk3NzQgMTMuMTQ2MiA1LjQwMzM1QzEzLjI3MTkgNS41MDg5NiAxMy4zNTEgNS42NTk4IDEzLjM2NjQgNS44MjMyN0MxMy4zODE4IDUuOTg2NzUgMTMuMzMyMyA2LjE0OTcxIDEzLjIyODUgNi4yNzY5NVoiIGZpbGw9IiMyRjc2RkYiLz4KPC9zdmc+Cg==') !important;
+}
+.checkmark-label {
+	@apply pl-7 relative cursor-pointer before:left-[-1px] before:top-0 before:absolute before:size-4.5 before:hidden after:absolute after:left-0 after:top-[1px] after:block after:size-4 after:content-[''] after:border after:border-gray-600 after:rounded-sm;
+}
+.dark-header .expand > a {
+	@apply lg:text-white;
+}
+
+input:-internal-autofill-selected {
+	@apply !bg-white;
+}
+
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0 50px white inset !important;
+	-webkit-text-fill-color: rgb(18 35 69 / var(--tw-text-opacity)) !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+	transition: background-color 50000s ease-in-out 0s !important;
+}
+.dark-input::-webkit-contacts-auto-fill-button {
+	@apply bg-violet-300;
+}
