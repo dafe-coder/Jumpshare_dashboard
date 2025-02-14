@@ -204,6 +204,12 @@
   }
 }
 
+svg {
+	backface-visibility: hidden;
+	transform: translateZ(0);
+	will-change: transform;
+}
+
 img:not([src])::before,
 img[src='']::before,
 img:invalid::before,

@@ -26,7 +26,6 @@ $(document).ready(function() {
 		}, 150);
 	});
 
-	const content = $('[data-content-type]');
 
 	$("[data-dropdown-id='dropdown-grid'] a").on("click", function(e) {
 		e.preventDefault();
@@ -42,16 +41,22 @@ $(document).ready(function() {
 		dropdownIdTimer = setTimeout(() => {
 			dropdownContent.css('display', 'none');
 		}, 150);
-		
-		content.addClass('hidden');
-		const contentType = $(this).attr('data-link-type');
-		const contentTypeElements = $(`[data-content-type="${contentType}"]`);
-		contentTypeElements.removeClass('hidden');
 
-		if(contentType === 'list') {
-			contentTypeElements.addClass('flex');
-		} else {
-			contentTypeElements.addClass('grid');
+		const contentType = $(this).attr('data-link-type');
+		const contentTypeElements = $(`[data-content-type]`);
+		switch(contentType) {
+			case 'list':
+				contentTypeElements.addClass('list-type');
+				contentTypeElements.removeClass('grid-type');
+				break;
+			case 'grid':
+				contentTypeElements.addClass('grid-type');
+				contentTypeElements.removeClass('list-type');
+				break;
+			default:
+				contentTypeElements.removeClass('list-type');
+				contentTypeElements.removeClass('grid-type');
+				break;
 		}
 	
 	});
