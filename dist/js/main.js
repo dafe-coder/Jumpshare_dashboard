@@ -7,7 +7,8 @@ $(document).ready(function() {
 		const dropdownId = $(this).attr('id');
 		const dropdownWrapper = $(this).closest('.dropdown-wrapper');
 		const dropdownContent = dropdownWrapper.find(`.dropdown-content[data-dropdown-id="${dropdownId}"]`);
-		
+
+		$(this).toggleClass('active');
 		dropdownWrapper.toggleClass('active');
 		dropdownContent.css('display', 'block');
 		clearTimeout(dropdownIdTimer);
@@ -18,7 +19,9 @@ $(document).ready(function() {
 
 	$('.dropdown-wrapper').on('mouseleave', function(e) {
 		const dropdownContent = $(this).find('.dropdown-content');
+		const dropdownButton = $(this).find('.dropdown-button');
 		dropdownContent.removeClass('active');
+		dropdownButton.removeClass('active');
 		$(this).removeClass('active');
 		clearTimeout(dropdownIdTimer);
 		dropdownIdTimer = setTimeout(() => {
@@ -61,4 +64,35 @@ $(document).ready(function() {
 	
 	});
 
+
+	const selectWrapper = $('.selected-wrapper');	
+
+	$('.close-selected-wrapper').on('click', function(e) {
+		e.preventDefault();
+		selectWrapper.removeClass('active');
+		clearTimeout(dropdownIdTimer);
+		dropdownIdTimer = setTimeout(() => {
+			selectWrapper.css('display', 'none');
+		}, 300);
+	});
+
+	// Select files
+	const selectItem = $('[data-select-item]');
+
+	selectItem.on('change', function(e) {
+		const selectedItems = selectItem.filter(':checked');
+		if (selectedItems.length > 0) {
+			selectWrapper.css('display', 'flex');
+			clearTimeout(dropdownIdTimer);
+			dropdownIdTimer = setTimeout(() => {
+				selectWrapper.addClass('active');
+			}, 10);
+		} else {
+			selectWrapper.removeClass('active');
+			dropdownIdTimer = setTimeout(() => {
+				selectWrapper.css('display', 'none');
+			}, 300);
+		}
+		selectWrapper.find('.selected-count').text(selectedItems.length);
+	});
 });

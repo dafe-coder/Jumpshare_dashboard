@@ -229,7 +229,59 @@
 					</button>
 				</div>
 			</aside>
-			<main class='overflow-y-auto overflow-x-hidden h-screen'>
+			<main class='overflow-y-auto overflow-x-hidden h-screen relative'>
+				<div style='display: none;' class='selected-wrapper flex max-w-[calc(100%_-_40px)] w-[800px] h-[46px] items-center justify-between mx-auto bg-blue-500 rounded-lg px-4.5 absolute bottom-5 left-1/2 -translate-x-1/2 z-100 text-white [&.active]:opacity-100 [&.active]:scale-100 scale-0 origin-[bottom_center] opacity-0 transition-all duration-300'>
+					<div class='flex items-center gap-2.5'>
+						<a href="#" class='close-selected-wrapper'>
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M5.33464 15.8346L4.16797 14.668L8.83464 10.0013L4.16797 5.33464L5.33464 4.16797L10.0013 8.83464L14.668 4.16797L15.8346 5.33464L11.168 10.0013L15.8346 14.668L14.668 15.8346L10.0013 11.168L5.33464 15.8346Z" fill="white"/>
+							</svg>
+						</a>
+						<p class='text-sm font-medium'><span class='selected-count'>0</span> Items Selected</p>
+					</div>
+					<ul class='flex items-center gap-2.5 space-x-6'>
+						<li>
+							<a href="#" class='flex items-center gap-1.5'>
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M9.34778 13.1749L14.66 16.2704M14.6522 7.73043L9.34778 10.826M19 6.55599C19 7.84465 17.9553 8.88932 16.6667 8.88932C15.378 8.88932 14.3333 7.84465 14.3333 6.55599C14.3333 5.26733 15.378 4.22266 16.6667 4.22266C17.9553 4.22266 19 5.26733 19 6.55599ZM9.66667 12.0004C9.66667 13.2891 8.622 14.3338 7.33333 14.3338C6.04467 14.3338 5 13.2891 5 12.0004C5 10.7118 6.04467 9.6671 7.33333 9.6671C8.622 9.6671 9.66667 10.7118 9.66667 12.0004ZM19 17.4449C19 18.7335 17.9553 19.7782 16.6667 19.7782C15.378 19.7782 14.3333 18.7335 14.3333 17.4449C14.3333 16.1562 15.378 15.1115 16.6667 15.1115C17.9553 15.1115 19 16.1562 19 17.4449Z" stroke="white" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								<span class='text-sm font-medium'>Share</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class='flex items-center gap-1.5'>
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.0013 3.66797V20.3346M12.0013 3.66797L9.5013 6.16797M12.0013 3.66797L14.5013 6.16797M12.0013 20.3346L14.5013 17.8346M12.0013 20.3346L9.5013 17.8346M17.8346 9.5013L20.3346 12.0013M20.3346 12.0013L17.8346 14.5013M20.3346 12.0013H3.66797M3.66797 12.0013L6.16797 9.5013M3.66797 12.0013L6.16797 14.5013" stroke="white" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								<span class='text-sm font-medium'>Move</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class='flex items-center gap-1.5'>
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M3.66797 11.5833V6.16667C3.66797 5.72464 3.84356 5.30072 4.15612 4.98816C4.46868 4.67559 4.89261 4.5 5.33464 4.5H8.58464C9.16797 4.5 9.66797 4.75 10.0013 5.25L10.668 6.25C11.0013 6.75 11.5013 7 12.0846 7H18.668C19.11 7 19.5339 7.17559 19.8465 7.48816C20.159 7.80072 20.3346 8.22464 20.3346 8.66667V17C20.3346 17.442 20.159 17.866 19.8465 18.1785C19.5339 18.4911 19.11 18.6667 18.668 18.6667H10.7513M11.483 13.355C11.6473 13.1906 11.7777 12.9955 11.8667 12.7807C11.9556 12.566 12.0014 12.3358 12.0014 12.1033C12.0014 11.8709 11.9556 11.6407 11.8667 11.4259C11.7777 11.2112 11.6473 11.016 11.483 10.8517C11.3186 10.6873 11.1235 10.5569 10.9087 10.468C10.6939 10.379 10.4638 10.3332 10.2313 10.3332C9.99885 10.3332 9.76867 10.379 9.55391 10.468C9.33914 10.5569 9.14401 10.6873 8.97963 10.8517L4.80464 15.0283C4.60651 15.2264 4.46149 15.4711 4.38297 15.74L3.68547 18.1317C3.66455 18.2034 3.6633 18.2794 3.68184 18.3517C3.70038 18.4241 3.73802 18.4901 3.79084 18.543C3.84366 18.5958 3.9097 18.6334 3.98206 18.652C4.05442 18.6705 4.13043 18.6692 4.20214 18.6483L6.5938 17.9508C6.86269 17.8723 7.10745 17.7273 7.30547 17.5292L11.483 13.355Z" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								<span class='text-sm font-medium'>Rename</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class='flex items-center gap-1.5'>
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M19.5 14.5V17.8333C19.5 18.2754 19.3244 18.6993 19.0118 19.0118C18.6993 19.3244 18.2754 19.5 17.8333 19.5H6.16667C5.72464 19.5 5.30072 19.3244 4.98816 19.0118C4.67559 18.6993 4.5 18.2754 4.5 17.8333V14.5M7.83333 10.3333L12 14.5M12 14.5L16.1667 10.3333M12 14.5V4.5" stroke="white" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								<span class='text-sm font-medium'>Download</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class='flex items-center gap-1.5'>
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M4.5 7.0013H19.5M17.8333 7.0013V18.668C17.8333 19.5013 17 20.3346 16.1667 20.3346H7.83333C7 20.3346 6.16667 19.5013 6.16667 18.668V7.0013M8.66667 7.0013V5.33464C8.66667 4.5013 9.5 3.66797 10.3333 3.66797H13.6667C14.5 3.66797 15.3333 4.5013 15.3333 5.33464V7.0013M10.3333 11.168V16.168M13.6667 11.168V16.168" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								<span class='text-sm font-medium'>Delete</span>
+							</a>
+						</li>
+					</ul>
+				</div>
 				<div class='max-w-[64.69rem] mx-auto min-h-full pb-5'>
 					<div class='sticky top-0 bg-white z-10 pt-4 pb-6 mb-1 after:content-[""] after:h-full after:w-[calc(100%_+_5rem)] after:absolute after:-z-1 after:left-1/2 after:-translate-x-1/2 after:top-0 after:bg-white after:pointer-events-none'>
 						<header class='mb-11 flex items-center justify-between'>
@@ -242,12 +294,100 @@
 								<input required type="text" class='size-full rounded-lg pl-10 pr-4' placeholder='Search for people, Files, folder & spaces'>
 							</form>
 							<div class='flex items-center gap-5.5'>
-								<a href="#" class='size-9.5 flex justify-center items-center cursor-pointer transition-colors hover:bg-gray-200 rounded-full relative'>
-									<svg width="20" height="23" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M8.3 20.5C8.46738 20.8044 8.71345 21.0583 9.01249 21.2352C9.31153 21.412 9.65258 21.5053 10 21.5053C10.3474 21.5053 10.6885 21.412 10.9875 21.2352C11.2866 21.0583 11.5326 20.8044 11.7 20.5M4 7.5C4 5.9087 4.63214 4.38258 5.75736 3.25736C6.88258 2.13214 8.4087 1.5 10 1.5C11.5913 1.5 13.1174 2.13214 14.2426 3.25736C15.3679 4.38258 16 5.9087 16 7.5C16 14.5 19 16.5 19 16.5H1C1 16.5 4 14.5 4 7.5Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-									</svg>
-									<span class='absolute top-1 right-[5px] z-1 bg-red-500 rounded-full border-2 border-white flex justify-center items-center size-4.5 text-xs text-white font-semibold'>2</span>
-								</a>
+								<div class='dropdown-wrapper relative after:content-[""] after:h-[300%] after:w-[400%] after:absolute after:z-0 after:-right-5 after:-top-2.5 after:bg-red after:pointer-events-none [&.active]:after:pointer-events-auto'>
+									<a id='dropdown-notifications' href="#" class='dropdown-button size-9.5 flex justify-center items-center transition-colors hover:bg-gray-200 rounded-full relative [&.active]:bg-gray-200 cursor-pointer'>
+										<svg width="20" height="23" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M8.3 20.5C8.46738 20.8044 8.71345 21.0583 9.01249 21.2352C9.31153 21.412 9.65258 21.5053 10 21.5053C10.3474 21.5053 10.6885 21.412 10.9875 21.2352C11.2866 21.0583 11.5326 20.8044 11.7 20.5M4 7.5C4 5.9087 4.63214 4.38258 5.75736 3.25736C6.88258 2.13214 8.4087 1.5 10 1.5C11.5913 1.5 13.1174 2.13214 14.2426 3.25736C15.3679 4.38258 16 5.9087 16 7.5C16 14.5 19 16.5 19 16.5H1C1 16.5 4 14.5 4 7.5Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+										<span class='absolute top-1 right-[5px] z-1 bg-red-500 rounded-full border-2 border-white flex justify-center items-center size-4.5 text-xs text-white font-semibold'>2</span>
+									</a>
+									<div data-dropdown-id="dropdown-notifications"  class='dropdown-content absolute top-[calc(100%_+_8px)] -right-2 bg-white shadow-card rounded-lg  pt-4 w-[28.125rem] z-10 overflow-hidden hidden transition-all duration-150 scale-0 [&.active]:scale-100 [&.active]:opacity-100 origin-top-right'>
+										<div class='flex justify-between items-center px-6 pb-2'>
+											<p class='text-base font-medium text-blue-950'>Notifications</p>
+											<a href='#' class='text-xs text-blue-500'>View All →</a>
+										</div>
+										<ul>
+											<li>
+												<a href="#" class='flex gap-3 items-start px-6 py-4 hover:bg-gray-200 transition-colors'>
+													<div class='mt-1 size-10 flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3 after:top-3.5 after:hidden'>
+														<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+													</div>
+													<div>
+														<p>
+															Someone viewed Speaker Notes Hover Effect.mp4 for the first time
+														</p>
+														<div class='flex text-xs gap-4 text-blue-900/70 mt-1.5'>
+															<span>Feb 6, 2025</span>
+															<span 		class='relative after:content-[""] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5 '>11:41 pm</span>
+														</div>
+													</div>
+												</a>
+											</li>
+											<li class='unread'>
+												<a href="#" class='flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-200 transition-colors'>
+													<div class='mt-1 size-10 flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
+														<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+													</div>
+													<div>
+														<p>
+															Team Member moved Feb 3 - Technical Development Updates and Feature Planning.mp4 and 1 more items from folder Team Meetings to folder 2025
+														</p>
+														<div class='flex text-xs gap-4 text-blue-900/70 mt-1.5'>
+															<span>Feb 6, 2025</span>
+															<span class='relative after:content-[""] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5 '>11:41 pm</span>
+														</div>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a href="#" class='flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-200 transition-colors'>
+													<div class='mt-1 size-10 flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
+														<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+													</div>
+													<div>
+														<p>
+															You received _+8= +3 -5 +10 (1) HW.pdf in your Team Inbox test-zapeir-update from qweqw eqw (eqwe@asd.we)
+														</p>
+														<div class='flex text-xs gap-4 text-blue-900/70 mt-1.5'>
+															<span>Feb 6, 2025</span>
+														</div>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a href="#" class='flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-200 transition-colors'>
+													<div class='mt-1 size-10 flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
+														<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+													</div>
+													<div>
+														<p>
+															John Dalton added JumpshareInstaller 3.4.5 - 3.exe  to folder 3.4.5
+														</p>
+														<div class='flex text-xs gap-4 text-blue-900/70 mt-1.5'>
+															<span>Jue 6, 2024</span>
+														</div>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a href="#" class='flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-200 transition-colors'>
+													<div class='mt-1 size-10 flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
+														<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+													</div>
+													<div>
+														<p>
+															Someone viewed Screen Recording 2025-01-23 at 10.0... PM.mp4 for the first time
+														</p>
+														<div class='flex text-xs gap-4 text-blue-900/70 mt-1.5'>
+															<span class='relative after:content-[""] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-right-2.5 '>Feb 6</span>
+															<span>11:41 pm</span>
+														</div>
+													</div>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
 								<div class='flex gap-1.5 items-center cursor-pointer'>
 									<div class='size-8.8 rounded-full overflow-hidden bg-gray-200 inset-ring-2 inset-ring-gray-100'>
 										<img src="./assets/images/avatar.png" alt="Avatar">
@@ -332,16 +472,14 @@
 								<div class="hidden [.list-type_&]:flex absolute right-[calc(100%+10px)] top-1/2 -translate-y-1/2">
 									<input class="peer" hidden="" type="checkbox" id="select-file-2">
 									<label for="select-file-2" class="size-4 border border-gray-700 rounded-sm peer-checked:border-blue-500 peer-checked:[&>svg]:scale-100 peer-checked:[&>svg]:opacity-100 cursor-pointer flex items-center justify-center">
-										<svg class="transition-all opacity-0 scale-0" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<svg class="transition-all opacity-0 scale-0 ml-[1.5px] mt-px" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path fill-rule="evenodd" clip-rule="evenodd" d="M8.49392 1.43274C8.57351 1.35587 8.637 1.26391 8.68067 1.16224C8.72434 1.06057 8.74733 0.951224 8.74829 0.840574C8.74926 0.729925 8.72817 0.620192 8.68627 0.517779C8.64437 0.415365 8.58249 0.322321 8.50425 0.244077C8.426 0.165833 8.33296 0.103956 8.23055 0.0620551C8.12813 0.0201544 8.0184 -0.000930049 7.90775 3.14644e-05C7.7971 0.000992978 7.68775 0.0239814 7.58608 0.0676556C7.48441 0.11133 7.39246 0.174815 7.31559 0.254406L3.19059 4.37941L1.42309 2.61191C1.34572 2.53448 1.25385 2.47305 1.15274 2.43113C1.05163 2.38921 0.943254 2.36761 0.833797 2.36757C0.612738 2.36749 0.400703 2.45523 0.244335 2.61149C0.0879682 2.76775 7.81923e-05 2.97972 5.21481e-08 3.20078C-7.8088e-05 3.42184 0.0876622 3.63387 0.243919 3.79024L2.54225 6.08857C2.62738 6.17374 2.72845 6.2413 2.83969 6.28739C2.95094 6.33349 3.07017 6.35721 3.19059 6.35721C3.311 6.35721 3.43023 6.33349 3.54148 6.28739C3.65272 6.2413 3.75379 6.17374 3.83892 6.08857L8.49392 1.43274Z" fill="#2F76FF"></path>
 										</svg>
 									</label>
 								</div>
 								<div class='[.list-type_&]:flex items-center gap-5 [.list-type_&]:pl-2.5'>
-									<svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M16.75 17.25C17.9926 17.25 19 16.2426 19 15V5H0.274896L0.329845 14.0223C0.342079 15.8085 1.79353 17.25 3.57977 17.25H16.75Z" fill="#9DBEFE"/>
-										<path d="M11.3453 3.54792H0.258101L0.274896 5H19C19 4.19804 18.3499 3.54792 17.5479 3.54792H11.3453Z" fill="#2F76FF"/>
-										<path d="M2.59375 0C1.97215 0 1.37601 0.249198 0.936468 0.692775C0.49693 1.13635 0.25 1.73797 0.25 2.36528L0.258101 3.54792H11.3453L9.11875 0.851501C8.89889 0.585115 8.62369 0.370762 8.31264 0.223616C8.00158 0.0764704 7.66228 0.000129996 7.31875 0H2.59375Z" fill="#2F76FF"/>
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M13.5 7H19C20.1046 7 21 7.89543 21 9V17C21 18.1046 20.1046 19 19 19H5C3.89543 19 3 18.1046 3 17L3 7M13.5 7L12.0937 4.8906C11.7228 4.3342 11.0983 4 10.4296 4H5C3.89543 4 3 4.89543 3 6V7M13.5 7H3" stroke="black"/>
 									</svg>
 									<h4 class='text-sm text-blue-950 font-medium mt-2.5 [.list-type_&]:mt-0'>Team Meetings</h4>
 								</div>
@@ -362,18 +500,16 @@
 							</a>
 							<a href="#" class='border border-gray-400 rounded-xl px-5 py-3.5 pt-4 [.list-type_&]:grid grid-cols-[1fr_6.25rem_7.5rem_4.6875rem] [.list-type_&]:rounded-[0px] [.list-type_&]:border-x-0 [.list-type_&]:px-0 [.list-type_&]:border-t-0 relative gap-2 [.list-type_&]:hover:bg-gray-200 transition-colors'>
 								<div class="hidden [.list-type_&]:flex absolute right-[calc(100%+10px)] top-1/2 -translate-y-1/2">
-									<input class="peer" hidden="" type="checkbox" id="select-file-2">
-									<label for="select-file-2" class="size-4 border border-gray-700 rounded-sm peer-checked:border-blue-500 peer-checked:[&>svg]:scale-100 peer-checked:[&>svg]:opacity-100 cursor-pointer flex items-center justify-center">
-										<svg class="transition-all opacity-0 scale-0" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<input class="peer" hidden="" type="checkbox" id="select-file-124">
+									<label for="select-file-124" class="size-4 border border-gray-700 rounded-sm peer-checked:border-blue-500 peer-checked:[&>svg]:scale-100 peer-checked:[&>svg]:opacity-100 cursor-pointer flex items-center justify-center">
+										<svg class="transition-all opacity-0 scale-0 ml-[1.5px] mt-px" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path fill-rule="evenodd" clip-rule="evenodd" d="M8.49392 1.43274C8.57351 1.35587 8.637 1.26391 8.68067 1.16224C8.72434 1.06057 8.74733 0.951224 8.74829 0.840574C8.74926 0.729925 8.72817 0.620192 8.68627 0.517779C8.64437 0.415365 8.58249 0.322321 8.50425 0.244077C8.426 0.165833 8.33296 0.103956 8.23055 0.0620551C8.12813 0.0201544 8.0184 -0.000930049 7.90775 3.14644e-05C7.7971 0.000992978 7.68775 0.0239814 7.58608 0.0676556C7.48441 0.11133 7.39246 0.174815 7.31559 0.254406L3.19059 4.37941L1.42309 2.61191C1.34572 2.53448 1.25385 2.47305 1.15274 2.43113C1.05163 2.38921 0.943254 2.36761 0.833797 2.36757C0.612738 2.36749 0.400703 2.45523 0.244335 2.61149C0.0879682 2.76775 7.81923e-05 2.97972 5.21481e-08 3.20078C-7.8088e-05 3.42184 0.0876622 3.63387 0.243919 3.79024L2.54225 6.08857C2.62738 6.17374 2.72845 6.2413 2.83969 6.28739C2.95094 6.33349 3.07017 6.35721 3.19059 6.35721C3.311 6.35721 3.43023 6.33349 3.54148 6.28739C3.65272 6.2413 3.75379 6.17374 3.83892 6.08857L8.49392 1.43274Z" fill="#2F76FF"></path>
 										</svg>
 									</label>
 								</div>
 								<div class='[.list-type_&]:flex items-center gap-5 [.list-type_&]:pl-2.5'>
-									<svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M16.75 17.25C17.9926 17.25 19 16.2426 19 15V5H0.274896L0.329845 14.0223C0.342079 15.8085 1.79353 17.25 3.57977 17.25H16.75Z" fill="#9DBEFE"/>
-										<path d="M11.3453 3.54792H0.258101L0.274896 5H19C19 4.19804 18.3499 3.54792 17.5479 3.54792H11.3453Z" fill="#2F76FF"/>
-										<path d="M2.59375 0C1.97215 0 1.37601 0.249198 0.936468 0.692775C0.49693 1.13635 0.25 1.73797 0.25 2.36528L0.258101 3.54792H11.3453L9.11875 0.851501C8.89889 0.585115 8.62369 0.370762 8.31264 0.223616C8.00158 0.0764704 7.66228 0.000129996 7.31875 0H2.59375Z" fill="#2F76FF"/>
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M13.5 7H19C20.1046 7 21 7.89543 21 9V17C21 18.1046 20.1046 19 19 19H5C3.89543 19 3 18.1046 3 17L3 7M13.5 7L12.0937 4.8906C11.7228 4.3342 11.0983 4 10.4296 4H5C3.89543 4 3 4.89543 3 6V7M13.5 7H3" stroke="black"/>
 									</svg>
 									<h4 class='text-sm text-blue-950 font-medium mt-2.5 [.list-type_&]:mt-0'>Jumpshare 2024 Archives</h4>
 								</div>
@@ -394,18 +530,16 @@
 							</a>
 							<a href="#" class='border border-gray-400 rounded-xl px-5 py-3.5 pt-4 [.list-type_&]:grid grid-cols-[1fr_6.25rem_7.5rem_4.6875rem] [.list-type_&]:rounded-[0px] [.list-type_&]:border-x-0 [.list-type_&]:px-0 [.list-type_&]:border-t-0 relative gap-2 [.list-type_&]:hover:bg-gray-200 transition-colors'>
 								<div class="hidden [.list-type_&]:flex absolute right-[calc(100%+10px)] top-1/2 -translate-y-1/2">
-									<input class="peer" hidden="" type="checkbox" id="select-file-2">
-									<label for="select-file-2" class="size-4 border border-gray-700 rounded-sm peer-checked:border-blue-500 peer-checked:[&>svg]:scale-100 peer-checked:[&>svg]:opacity-100 cursor-pointer flex items-center justify-center">
-										<svg class="transition-all opacity-0 scale-0" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<input class="peer" hidden="" type="checkbox" id="select-file-654">
+									<label for="select-file-654" class="size-4 border border-gray-700 rounded-sm peer-checked:border-blue-500 peer-checked:[&>svg]:scale-100 peer-checked:[&>svg]:opacity-100 cursor-pointer flex items-center justify-center">
+										<svg class="transition-all opacity-0 scale-0 ml-[1.5px] mt-px" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path fill-rule="evenodd" clip-rule="evenodd" d="M8.49392 1.43274C8.57351 1.35587 8.637 1.26391 8.68067 1.16224C8.72434 1.06057 8.74733 0.951224 8.74829 0.840574C8.74926 0.729925 8.72817 0.620192 8.68627 0.517779C8.64437 0.415365 8.58249 0.322321 8.50425 0.244077C8.426 0.165833 8.33296 0.103956 8.23055 0.0620551C8.12813 0.0201544 8.0184 -0.000930049 7.90775 3.14644e-05C7.7971 0.000992978 7.68775 0.0239814 7.58608 0.0676556C7.48441 0.11133 7.39246 0.174815 7.31559 0.254406L3.19059 4.37941L1.42309 2.61191C1.34572 2.53448 1.25385 2.47305 1.15274 2.43113C1.05163 2.38921 0.943254 2.36761 0.833797 2.36757C0.612738 2.36749 0.400703 2.45523 0.244335 2.61149C0.0879682 2.76775 7.81923e-05 2.97972 5.21481e-08 3.20078C-7.8088e-05 3.42184 0.0876622 3.63387 0.243919 3.79024L2.54225 6.08857C2.62738 6.17374 2.72845 6.2413 2.83969 6.28739C2.95094 6.33349 3.07017 6.35721 3.19059 6.35721C3.311 6.35721 3.43023 6.33349 3.54148 6.28739C3.65272 6.2413 3.75379 6.17374 3.83892 6.08857L8.49392 1.43274Z" fill="#2F76FF"></path>
 										</svg>
 									</label>
 								</div>
 								<div class='[.list-type_&]:flex items-center gap-5 [.list-type_&]:pl-2.5'>
-									<svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M16.75 17.25C17.9926 17.25 19 16.2426 19 15V5H0.274896L0.329845 14.0223C0.342079 15.8085 1.79353 17.25 3.57977 17.25H16.75Z" fill="#9DBEFE"/>
-										<path d="M11.3453 3.54792H0.258101L0.274896 5H19C19 4.19804 18.3499 3.54792 17.5479 3.54792H11.3453Z" fill="#2F76FF"/>
-										<path d="M2.59375 0C1.97215 0 1.37601 0.249198 0.936468 0.692775C0.49693 1.13635 0.25 1.73797 0.25 2.36528L0.258101 3.54792H11.3453L9.11875 0.851501C8.89889 0.585115 8.62369 0.370762 8.31264 0.223616C8.00158 0.0764704 7.66228 0.000129996 7.31875 0H2.59375Z" fill="#2F76FF"/>
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M13.5 7H19C20.1046 7 21 7.89543 21 9V17C21 18.1046 20.1046 19 19 19H5C3.89543 19 3 18.1046 3 17L3 7M13.5 7L12.0937 4.8906C11.7228 4.3342 11.0983 4 10.4296 4H5C3.89543 4 3 4.89543 3 6V7M13.5 7H3" stroke="black"/>
 									</svg>
 									<h4 class='text-sm text-blue-950 font-medium mt-2.5 [.list-type_&]:mt-0'>Untitled Folder</h4>
 								</div>
@@ -426,18 +560,16 @@
 							</a>
 							<a href="#" class='border border-gray-400 rounded-xl px-5 py-3.5 pt-4 [.list-type_&]:grid grid-cols-[1fr_6.25rem_7.5rem_4.6875rem] [.list-type_&]:rounded-[0px] [.list-type_&]:border-x-0 [.list-type_&]:px-0 [.list-type_&]:border-t-0 relative gap-2 [.list-type_&]:hover:bg-gray-200 transition-colors'>
 								<div class="hidden [.list-type_&]:flex absolute right-[calc(100%+10px)] top-1/2 -translate-y-1/2">
-									<input class="peer" hidden="" type="checkbox" id="select-file-2">
-									<label for="select-file-2" class="size-4 border border-gray-700 rounded-sm peer-checked:border-blue-500 peer-checked:[&>svg]:scale-100 peer-checked:[&>svg]:opacity-100 cursor-pointer flex items-center justify-center">
-										<svg class="transition-all opacity-0 scale-0" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<input class="peer" hidden="" type="checkbox" id="select-file-87">
+									<label for="select-file-87" class="size-4 border border-gray-700 rounded-sm peer-checked:border-blue-500 peer-checked:[&>svg]:scale-100 peer-checked:[&>svg]:opacity-100 cursor-pointer flex items-center justify-center">
+										<svg class="transition-all opacity-0 scale-0 ml-[1.5px] mt-px" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path fill-rule="evenodd" clip-rule="evenodd" d="M8.49392 1.43274C8.57351 1.35587 8.637 1.26391 8.68067 1.16224C8.72434 1.06057 8.74733 0.951224 8.74829 0.840574C8.74926 0.729925 8.72817 0.620192 8.68627 0.517779C8.64437 0.415365 8.58249 0.322321 8.50425 0.244077C8.426 0.165833 8.33296 0.103956 8.23055 0.0620551C8.12813 0.0201544 8.0184 -0.000930049 7.90775 3.14644e-05C7.7971 0.000992978 7.68775 0.0239814 7.58608 0.0676556C7.48441 0.11133 7.39246 0.174815 7.31559 0.254406L3.19059 4.37941L1.42309 2.61191C1.34572 2.53448 1.25385 2.47305 1.15274 2.43113C1.05163 2.38921 0.943254 2.36761 0.833797 2.36757C0.612738 2.36749 0.400703 2.45523 0.244335 2.61149C0.0879682 2.76775 7.81923e-05 2.97972 5.21481e-08 3.20078C-7.8088e-05 3.42184 0.0876622 3.63387 0.243919 3.79024L2.54225 6.08857C2.62738 6.17374 2.72845 6.2413 2.83969 6.28739C2.95094 6.33349 3.07017 6.35721 3.19059 6.35721C3.311 6.35721 3.43023 6.33349 3.54148 6.28739C3.65272 6.2413 3.75379 6.17374 3.83892 6.08857L8.49392 1.43274Z" fill="#2F76FF"></path>
 										</svg>
 									</label>
 								</div>
 								<div class='[.list-type_&]:flex items-center gap-5 [.list-type_&]:pl-2.5'>
-									<svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M16.75 17.25C17.9926 17.25 19 16.2426 19 15V5H0.274896L0.329845 14.0223C0.342079 15.8085 1.79353 17.25 3.57977 17.25H16.75Z" fill="#9DBEFE"/>
-										<path d="M11.3453 3.54792H0.258101L0.274896 5H19C19 4.19804 18.3499 3.54792 17.5479 3.54792H11.3453Z" fill="#2F76FF"/>
-										<path d="M2.59375 0C1.97215 0 1.37601 0.249198 0.936468 0.692775C0.49693 1.13635 0.25 1.73797 0.25 2.36528L0.258101 3.54792H11.3453L9.11875 0.851501C8.89889 0.585115 8.62369 0.370762 8.31264 0.223616C8.00158 0.0764704 7.66228 0.000129996 7.31875 0H2.59375Z" fill="#2F76FF"/>
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M13.5 7H19C20.1046 7 21 7.89543 21 9V17C21 18.1046 20.1046 19 19 19H5C3.89543 19 3 18.1046 3 17L3 7M13.5 7L12.0937 4.8906C11.7228 4.3342 11.0983 4 10.4296 4H5C3.89543 4 3 4.89543 3 6V7M13.5 7H3" stroke="black"/>
 									</svg>
 									<h4 class='text-sm text-blue-950 font-medium mt-2.5 [.list-type_&]:mt-0'>Customer Plans</h4>
 								</div>
@@ -477,9 +609,9 @@
 							</div>
 							<a href='#' class='dropdown-wrapper group border border-gray-400 rounded-xl relative [.list-type_&]:grid grid-cols-[1fr_6.25rem_7.5rem_4.6875rem] [.list-type_&]:border-x-0 [.list-type_&]:border-t-0 [.list-type_&]:rounded-none [.list-type_&]:py-2.5 [.list-type_&]:gap-2 [.list-type_&]:hover:bg-gray-200 transition-colors duration-150'>
 								<div class="hidden [.list-type_&]:flex absolute right-[calc(100%+10px)] top-1/2 -translate-y-1/2">
-									<input class="peer" hidden type="checkbox" id="select-file-212">
+									<input class="peer" hidden type="checkbox" data-select-item id="select-file-212">
 									<label for="select-file-212" class="size-4 border border-gray-700 rounded-sm peer-checked:border-blue-500 peer-checked:[&>svg]:scale-100 peer-checked:[&>svg]:opacity-100 cursor-pointer flex items-center justify-center">
-										<svg class="transition-all opacity-0 scale-0" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<svg class="transition-all opacity-0 scale-0 ml-[1.5px] mt-px" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path fill-rule="evenodd" clip-rule="evenodd" d="M8.49392 1.43274C8.57351 1.35587 8.637 1.26391 8.68067 1.16224C8.72434 1.06057 8.74733 0.951224 8.74829 0.840574C8.74926 0.729925 8.72817 0.620192 8.68627 0.517779C8.64437 0.415365 8.58249 0.322321 8.50425 0.244077C8.426 0.165833 8.33296 0.103956 8.23055 0.0620551C8.12813 0.0201544 8.0184 -0.000930049 7.90775 3.14644e-05C7.7971 0.000992978 7.68775 0.0239814 7.58608 0.0676556C7.48441 0.11133 7.39246 0.174815 7.31559 0.254406L3.19059 4.37941L1.42309 2.61191C1.34572 2.53448 1.25385 2.47305 1.15274 2.43113C1.05163 2.38921 0.943254 2.36761 0.833797 2.36757C0.612738 2.36749 0.400703 2.45523 0.244335 2.61149C0.0879682 2.76775 7.81923e-05 2.97972 5.21481e-08 3.20078C-7.8088e-05 3.42184 0.0876622 3.63387 0.243919 3.79024L2.54225 6.08857C2.62738 6.17374 2.72845 6.2413 2.83969 6.28739C2.95094 6.33349 3.07017 6.35721 3.19059 6.35721C3.311 6.35721 3.43023 6.33349 3.54148 6.28739C3.65272 6.2413 3.75379 6.17374 3.83892 6.08857L8.49392 1.43274Z" fill="#2F76FF"></path>
 										</svg>
 									</label>
@@ -604,9 +736,9 @@
 							</a>
 							<a href='#' class='dropdown-wrapper group border border-gray-400 rounded-xl relative [.list-type_&]:grid grid-cols-[1fr_6.25rem_7.5rem_4.6875rem] [.list-type_&]:border-x-0 [.list-type_&]:border-t-0 [.list-type_&]:rounded-none [.list-type_&]:py-2.5 [.list-type_&]:gap-2 [.list-type_&]:hover:bg-gray-200 transition-colors duration-150'>
 								<div class="hidden [.list-type_&]:flex absolute right-[calc(100%+10px)] top-1/2 -translate-y-1/2">
-									<input class="peer" hidden type="checkbox" id="select-file-244">
+									<input class="peer" hidden type="checkbox" data-select-item id="select-file-244">
 									<label for="select-file-244" class="size-4 border border-gray-700 rounded-sm peer-checked:border-blue-500 peer-checked:[&>svg]:scale-100 peer-checked:[&>svg]:opacity-100 cursor-pointer flex items-center justify-center">
-										<svg class="transition-all opacity-0 scale-0" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<svg class="transition-all opacity-0 scale-0 ml-[1.5px] mt-px" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path fill-rule="evenodd" clip-rule="evenodd" d="M8.49392 1.43274C8.57351 1.35587 8.637 1.26391 8.68067 1.16224C8.72434 1.06057 8.74733 0.951224 8.74829 0.840574C8.74926 0.729925 8.72817 0.620192 8.68627 0.517779C8.64437 0.415365 8.58249 0.322321 8.50425 0.244077C8.426 0.165833 8.33296 0.103956 8.23055 0.0620551C8.12813 0.0201544 8.0184 -0.000930049 7.90775 3.14644e-05C7.7971 0.000992978 7.68775 0.0239814 7.58608 0.0676556C7.48441 0.11133 7.39246 0.174815 7.31559 0.254406L3.19059 4.37941L1.42309 2.61191C1.34572 2.53448 1.25385 2.47305 1.15274 2.43113C1.05163 2.38921 0.943254 2.36761 0.833797 2.36757C0.612738 2.36749 0.400703 2.45523 0.244335 2.61149C0.0879682 2.76775 7.81923e-05 2.97972 5.21481e-08 3.20078C-7.8088e-05 3.42184 0.0876622 3.63387 0.243919 3.79024L2.54225 6.08857C2.62738 6.17374 2.72845 6.2413 2.83969 6.28739C2.95094 6.33349 3.07017 6.35721 3.19059 6.35721C3.311 6.35721 3.43023 6.33349 3.54148 6.28739C3.65272 6.2413 3.75379 6.17374 3.83892 6.08857L8.49392 1.43274Z" fill="#2F76FF"></path>
 										</svg>
 									</label>
@@ -731,9 +863,9 @@
 							</a>
 							<a href='#' class='dropdown-wrapper group border border-gray-400 rounded-xl relative [.list-type_&]:grid grid-cols-[1fr_6.25rem_7.5rem_4.6875rem] [.list-type_&]:border-x-0 [.list-type_&]:border-t-0 [.list-type_&]:rounded-none [.list-type_&]:py-2.5 [.list-type_&]:gap-2 [.list-type_&]:hover:bg-gray-200 transition-colors duration-150'>
 								<div class="hidden [.list-type_&]:flex absolute right-[calc(100%+10px)] top-1/2 -translate-y-1/2">
-									<input class="peer" hidden type="checkbox" id="select-file-241">
+									<input class="peer" hidden type="checkbox" data-select-item id="select-file-241">
 									<label for="select-file-241" class="size-4 border border-gray-700 rounded-sm peer-checked:border-blue-500 peer-checked:[&>svg]:scale-100 peer-checked:[&>svg]:opacity-100 cursor-pointer flex items-center justify-center">
-										<svg class="transition-all opacity-0 scale-0" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<svg class="transition-all opacity-0 scale-0 ml-[1.5px] mt-px" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path fill-rule="evenodd" clip-rule="evenodd" d="M8.49392 1.43274C8.57351 1.35587 8.637 1.26391 8.68067 1.16224C8.72434 1.06057 8.74733 0.951224 8.74829 0.840574C8.74926 0.729925 8.72817 0.620192 8.68627 0.517779C8.64437 0.415365 8.58249 0.322321 8.50425 0.244077C8.426 0.165833 8.33296 0.103956 8.23055 0.0620551C8.12813 0.0201544 8.0184 -0.000930049 7.90775 3.14644e-05C7.7971 0.000992978 7.68775 0.0239814 7.58608 0.0676556C7.48441 0.11133 7.39246 0.174815 7.31559 0.254406L3.19059 4.37941L1.42309 2.61191C1.34572 2.53448 1.25385 2.47305 1.15274 2.43113C1.05163 2.38921 0.943254 2.36761 0.833797 2.36757C0.612738 2.36749 0.400703 2.45523 0.244335 2.61149C0.0879682 2.76775 7.81923e-05 2.97972 5.21481e-08 3.20078C-7.8088e-05 3.42184 0.0876622 3.63387 0.243919 3.79024L2.54225 6.08857C2.62738 6.17374 2.72845 6.2413 2.83969 6.28739C2.95094 6.33349 3.07017 6.35721 3.19059 6.35721C3.311 6.35721 3.43023 6.33349 3.54148 6.28739C3.65272 6.2413 3.75379 6.17374 3.83892 6.08857L8.49392 1.43274Z" fill="#2F76FF"></path>
 										</svg>
 									</label>
@@ -848,9 +980,9 @@
 							</a>
 							<a href='#' class='dropdown-wrapper group border border-gray-400 rounded-xl relative [.list-type_&]:grid grid-cols-[1fr_6.25rem_7.5rem_4.6875rem] [.list-type_&]:border-x-0 [.list-type_&]:border-t-0 [.list-type_&]:rounded-none [.list-type_&]:py-2.5 [.list-type_&]:gap-2 [.list-type_&]:hover:bg-gray-200 transition-colors duration-150'>
 								<div class="hidden [.list-type_&]:flex absolute right-[calc(100%+10px)] top-1/2 -translate-y-1/2">
-									<input class="peer" hidden type="checkbox" id="select-file-532">
+									<input class="peer" hidden type="checkbox" data-select-item id="select-file-532">
 									<label for="select-file-532" class="size-4 border border-gray-700 rounded-sm peer-checked:border-blue-500 peer-checked:[&>svg]:scale-100 peer-checked:[&>svg]:opacity-100 cursor-pointer flex items-center justify-center">
-										<svg class="transition-all opacity-0 scale-0" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<svg class="transition-all opacity-0 scale-0 ml-[1.5px] mt-px" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path fill-rule="evenodd" clip-rule="evenodd" d="M8.49392 1.43274C8.57351 1.35587 8.637 1.26391 8.68067 1.16224C8.72434 1.06057 8.74733 0.951224 8.74829 0.840574C8.74926 0.729925 8.72817 0.620192 8.68627 0.517779C8.64437 0.415365 8.58249 0.322321 8.50425 0.244077C8.426 0.165833 8.33296 0.103956 8.23055 0.0620551C8.12813 0.0201544 8.0184 -0.000930049 7.90775 3.14644e-05C7.7971 0.000992978 7.68775 0.0239814 7.58608 0.0676556C7.48441 0.11133 7.39246 0.174815 7.31559 0.254406L3.19059 4.37941L1.42309 2.61191C1.34572 2.53448 1.25385 2.47305 1.15274 2.43113C1.05163 2.38921 0.943254 2.36761 0.833797 2.36757C0.612738 2.36749 0.400703 2.45523 0.244335 2.61149C0.0879682 2.76775 7.81923e-05 2.97972 5.21481e-08 3.20078C-7.8088e-05 3.42184 0.0876622 3.63387 0.243919 3.79024L2.54225 6.08857C2.62738 6.17374 2.72845 6.2413 2.83969 6.28739C2.95094 6.33349 3.07017 6.35721 3.19059 6.35721C3.311 6.35721 3.43023 6.33349 3.54148 6.28739C3.65272 6.2413 3.75379 6.17374 3.83892 6.08857L8.49392 1.43274Z" fill="#2F76FF"></path>
 										</svg>
 									</label>
