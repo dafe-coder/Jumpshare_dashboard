@@ -1,0 +1,30 @@
+.hamburger {
+	color: var(--color-blue-500);
+	height: 48px;
+	width: 48px;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+	background-color: var(--color-blue-900);
+	width: 18px;
+	height: 2px;
+	border-radius: 50px;
+}
+
+.hamburger-box {
+	width: 18px;
+}
+
+.hamburger-inner::before {
+	top: -5.5px;
+}
+
+.hamburger-inner::after {
+	bottom: -5.5px;
+}

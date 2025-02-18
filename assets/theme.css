@@ -95,6 +95,7 @@
 	--color-white: #ffffff;
 	--color-black: #101010;
 	--color-gray-100: #FBFBFD;
+	--color-gray-150: #F9F9F9;
 	--color-gray-200: #F8F9FC;
 	--color-gray-300: #f1f2f5;
 	--color-gray-400: #E8E9ED;
@@ -112,6 +113,7 @@
 	--color-blue-50: #E9F1F6;
 	--color-blue-75: #F5F9FA;
 	--color-blue-100: #f2f6ff;
+	--color-blue-200: #DAE6FC;
 	--color-blue-400: #09B4DC;
 	--color-blue-500: #2F76FF;
 	--color-blue-600: #4C78EA;

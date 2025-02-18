@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "../node_modules/hamburgers/dist/hamburgers.css";
+
 @font-face {
 	font-family: 'GeneralSans-semibold';
 	font-style: normal;
@@ -38,6 +40,7 @@
 }
 @import "./theme.css";
 @import "./components.css";
+@import "./hamburger.css";
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
