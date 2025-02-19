@@ -70,6 +70,8 @@ $(document).ready(function() {
 
 	selectItem.on('change', function(e) {
 		const selectedItems = selectItem.filter(':checked');
+		$(this).closest('a').toggleClass('active-select');
+
 		if (selectedItems.length > 0) {
 			selectWrapper.css('display', 'flex');
 			clearTimeout(dropdownIdTimer);
@@ -87,6 +89,7 @@ $(document).ready(function() {
 
 	$('.close-selected-wrapper').on('click', function(e) {
 		e.preventDefault();
+		$('.dropdown-wrapper').removeClass('active-select');
 		selectWrapper.removeClass('active');
 		clearTimeout(dropdownIdTimer);
 		dropdownIdTimer = setTimeout(() => {
@@ -111,5 +114,15 @@ $(document).ready(function() {
 	// Mobile menu
 	$(".hamburger").on('click', function() {
 		$(this).toggleClass('is-active');
+		$('aside').toggleClass('active');
 	});
+
+	$('.mobile-menu-overlay').on('click', function() {
+		if($('aside').hasClass('active') && window.innerWidth < 1024) {
+			$('aside').removeClass('active');
+			$(".hamburger").removeClass('is-active');
+		}
+	});
+
+
 });
