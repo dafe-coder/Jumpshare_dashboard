@@ -1,4 +1,9 @@
-[data-aria-hidden="true"] {
-	display: none !important;
+[aria-hidden="true"] {
 	opacity: 0 !important;
+	pointer-events: none !important;
+}
+
+[aria-hidden="false"] {
+	opacity: 1 !important;
+	pointer-events: auto !important;
 }

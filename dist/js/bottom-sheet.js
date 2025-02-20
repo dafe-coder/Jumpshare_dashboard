@@ -3,22 +3,21 @@ $(document).ready(function() {
 	const sheetContents = sheet.find(".content")
 	const draggableArea = $("#menuTrigger")
 
-	let sheetHeight // in vh
+	let sheetHeight
 	const setSheetHeight = (value) => {
 		sheetHeight = Math.max(0, Math.min(100, value))
 		sheetContents.css("height", `${sheetHeight}vh`)
-		if (sheetHeight === 100) {
-			sheetContents.addClass("fullscreen")
-		} else {
-			sheetContents.removeClass("fullscreen")
-		}
 	}
 	const setIsSheetShown = (value) => {
-		sheet.attr("data-aria-hidden", String(!value))
+		sheet.attr("aria-hidden", String(!value))
+		if (value) {
+			$("html").css("overflow", "hidden")
+		} else {
+			setSheetHeight(0)
+			$("html").css("overflow", "auto")
+		}
 	}
 	// Open the sheet when clicking the 'open sheet' button
-	setSheetHeight(Math.min(50, 720 / window.innerHeight * 100))
-	setIsSheetShown(true)
 
 	// Hide the sheet when clicking the 'close' button
 	// sheet.querySelector(".close-sheet").addEventListener("click", () => {
@@ -61,4 +60,9 @@ $(document).ready(function() {
 	draggableArea.on("mousedown touchstart", onDragStart)
 	$(window).on("mousemove touchmove", onDragMove)
 	$(window).on("mouseup touchend", onDragEnd)
+
+	$("#openSheet").click(function() {
+		setSheetHeight(Math.min(50, 720 / window.innerHeight * 100))
+		setIsSheetShown(true)
+	})
 });
