@@ -1,0 +1,4 @@
+[data-aria-hidden="true"] {
+	display: none !important;
+	opacity: 0 !important;
+}

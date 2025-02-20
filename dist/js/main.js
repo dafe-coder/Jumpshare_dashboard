@@ -123,6 +123,4 @@ $(document).ready(function() {
 			$(".hamburger").removeClass('is-active');
 		}
 	});
-
-
 });
