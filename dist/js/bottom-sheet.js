@@ -1,68 +1,105 @@
-$(document).ready(function() {
-	const sheet = $("#sheet")
-	const sheetContents = sheet.find(".content")
-	const draggableArea = $("#menuTrigger")
-
-	let sheetHeight
-	const setSheetHeight = (value) => {
-		sheetHeight = Math.max(0, Math.min(100, value))
-		sheetContents.css("height", `${sheetHeight}vh`)
-	}
-	const setIsSheetShown = (value) => {
-		sheet.attr("aria-hidden", String(!value))
+const BottomSheet = {
+	sheetHeight: 0,
+	sheetHeightDefault: 0,
+	sheet: null,
+	sheetContents: null,
+	draggableArea: null,
+	isDragging: false,
+	dragStartY: 0,
+	
+	bootstrap: function() {
+		this.sheet = $("#sheet")
+		this.sheetContents = this.sheet.find(".content")
+		this.draggableArea = $("#menuTrigger")
+		this.init()
+	},
+	
+	setSheetHeight: function(value) {
+		this.sheetHeight = Math.max(0, Math.min(100, value))
+		this.sheetContents.css("height", `${this.sheetHeight}vh`)
+	},
+	
+	setIsSheetShown: function(value) {
+		const html = $("html")
 		if (value) {
-			$("html").css("overflow", "hidden")
+			html.css("overflow", "hidden")
+			this.sheet.removeClass("hidden")
+			this.setSheetHeight(0)
+			setTimeout(() => {
+				this.sheet.addClass("show-sheet")
+				this.setSheetHeight(this.calculateContentHeight())
+				this.sheetHeightDefault = this.calculateContentHeight()
+			}, 10)
 		} else {
-			setSheetHeight(0)
-			$("html").css("overflow", "auto")
+			this.setSheetHeight(0)
+			html.css("overflow", "auto")
+			this.sheet.removeClass("show-sheet")
+			setTimeout(() => this.sheet.addClass("hidden"), 500)
 		}
-	}
-	// Open the sheet when clicking the 'open sheet' button
-
-	// Hide the sheet when clicking the 'close' button
-	// sheet.querySelector(".close-sheet").addEventListener("click", () => {
-	// 	setIsSheetShown(false)
-	// })
-
-	// Hide the sheet when clicking the background
-	sheet.find(".overlay").click(function() {
-		setIsSheetShown(false)
-	})
-
-	const touchPosition = (event) =>
-	event.touches ? event.touches[0] : event
-	let dragPosition
-	const onDragStart = (event) => {
-		dragPosition = touchPosition(event).pageY
-		sheetContents.addClass("not-selectable")
-		draggableArea.css("cursor", "grabbing")
+	},
+	
+	handleDragStart: function(event) {
+		this.isDragging = true
+		this.dragStartY = event.touches ? event.touches[0].pageY : event.pageY
+		this.sheetContents.addClass("not-selectable")
+		this.draggableArea.css("cursor", "grabbing")
 		$("body").css("cursor", "grabbing")
-	}
-	const onDragMove = (event) => {
-		if (dragPosition === undefined) return
-		const y = touchPosition(event).pageY
-		const deltaY = dragPosition - y
-		const deltaHeight = deltaY / window.innerHeight * 100
-		setSheetHeight(sheetHeight + deltaHeight)
-		dragPosition = y
-	}
-	const onDragEnd = () => {
-		dragPosition = undefined
-		sheetContents.removeClass("not-selectable")
-		draggableArea.css("cursor", "")
+	},
+	
+	handleDragMove: function(event) {
+		if (!this.isDragging) return
+		
+		const currentY = event.touches ? event.touches[0].pageY : event.pageY
+		const deltaY = this.dragStartY - currentY
+		const deltaHeight = (deltaY / window.innerHeight) * 100
+		
+		this.setSheetHeight(this.sheetHeight + deltaHeight)
+		this.dragStartY = currentY
+	},
+	
+	handleDragEnd: function() {
+		if (!this.isDragging) return
+		
+		this.isDragging = false
+		this.sheetContents.removeClass("not-selectable")
+		this.draggableArea.css("cursor", "")
 		$("body").css("cursor", "")
-		if (sheetHeight < 25) {
-			setIsSheetShown(false)
-		} else {
-			setSheetHeight(50)
-		}
-	}
-	draggableArea.on("mousedown touchstart", onDragStart)
-	$(window).on("mousemove touchmove", onDragMove)
-	$(window).on("mouseup touchend", onDragEnd)
 
-	$("#openSheet").click(function() {
-		setSheetHeight(Math.min(50, 720 / window.innerHeight * 100))
-		setIsSheetShown(true)
-	})
-});
+		if (this.sheetHeight < 25) {
+			this.setIsSheetShown(false)
+		} else {
+			this.setSheetHeight(this.sheetHeightDefault)
+		}
+	},
+	
+	calculateContentHeight: function() {
+		const items = this.sheetContents.find("ul li")
+		const itemHeight = 40 
+		const height = (((items.length + 1) * itemHeight) / window.innerHeight) * 100 
+		this.sheetHeight = height
+		return height
+	},
+	
+	init: function() {
+		const boundDragStart = this.handleDragStart.bind(this)
+		const boundDragMove = this.handleDragMove.bind(this)
+		const boundDragEnd = this.handleDragEnd.bind(this)
+
+		this.draggableArea.on("mousedown touchstart", boundDragStart)
+		$(window).on("mousemove touchmove", boundDragMove)
+		$(window).on("mouseup touchend", boundDragEnd)
+
+		this.sheet.find(".overlay").on("click", () => {
+			this.setIsSheetShown(false)
+			this.setSheetHeight(0)
+		})
+
+		$("[data-open-sheet]").on("click", () => {
+			if(window.innerWidth < 1024) {
+				this.setIsSheetShown(true)
+			}
+		})
+	}
+}
+
+$(document).ready(() => BottomSheet.bootstrap())
