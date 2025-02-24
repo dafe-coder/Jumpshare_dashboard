@@ -1,0 +1,11 @@
+@layer components{
+	.dropdown-item {
+		@apply border border-gray-500 rounded-xl relative transition-colors duration-150;
+		&.list-type {
+			@apply grid grid-cols-[1fr_7rem_9rem_7.9375rem] border-x-0 border-t-0 rounded-none py-2.5 gap-2 hover:bg-gray-200;
+			@media (max-width: 768px) {
+				@apply grid-cols-[1fr_50px];
+			}
+		}
+	}
+}

@@ -98,8 +98,10 @@ const BottomSheet = {
 			this.setSheetHeight(0)
 		})
 
-		$("[data-open-sheet]").on("click", () => {
+		$("[data-open-sheet]").on("click", (e) => {
 			if(window.innerWidth < 1024) {
+				e.preventDefault();
+				e.stopImmediatePropagation();
 				this.setIsSheetShown(true)
 			}
 		})
