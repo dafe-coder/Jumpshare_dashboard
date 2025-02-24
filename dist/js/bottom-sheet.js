@@ -16,7 +16,9 @@ const BottomSheet = {
 	
 	setSheetHeight: function(value) {
 		this.sheetHeight = Math.max(0, Math.min(100, value))
-		this.sheetContents.css("height", `${this.sheetHeight}vh`)
+		const windowHeight = window.innerHeight
+		const heightInPixels = (this.sheetHeight * windowHeight) / 100
+		this.sheetContents.css("height", `${heightInPixels}px`)
 	},
 	
 	setIsSheetShown: function(value) {
@@ -74,10 +76,12 @@ const BottomSheet = {
 	
 	calculateContentHeight: function() {
 		const items = this.sheetContents.find("ul li")
-		const itemHeight = 40 
-		const height = (((items.length + 1) * itemHeight) / window.innerHeight) * 100 
-		this.sheetHeight = height
-		return height
+		const itemHeight = 40
+		const totalHeightPixels = (items.length + 1) * itemHeight
+		const windowHeight = window.innerHeight
+		const heightPercent = (totalHeightPixels / windowHeight) * 100
+		this.sheetHeight = heightPercent
+		return heightPercent
 	},
 	
 	init: function() {
@@ -97,6 +101,12 @@ const BottomSheet = {
 		$("[data-open-sheet]").on("click", () => {
 			if(window.innerWidth < 1024) {
 				this.setIsSheetShown(true)
+			}
+		})
+
+		$(window).on('resize', () => {
+			if (this.sheet.hasClass('show-sheet')) {
+				this.setSheetHeight(this.sheetHeight)
 			}
 		})
 	}
