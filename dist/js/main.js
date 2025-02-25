@@ -3,32 +3,77 @@ $(document).ready(function() {
 	const dropdownWrappers = $('.dropdown-wrapper');
 
 	$('.dropdown-button').on('click', function(e) {
-		e.preventDefault();
-		const dropdownId = $(this).attr('id');
-		const dropdownWrapper = $(this).closest('.dropdown-wrapper');
-		const dropdownContent = dropdownWrapper.find(`.dropdown-content[data-dropdown-id="${dropdownId}"]`);
+		if(window.innerWidth > 1024) {
+			e.preventDefault();
+			const dropdownId = $(this).attr('data-id');
+			
+			const dropdownWrapper = $(this).closest('.dropdown-wrapper');
+			const dropdownContent = dropdownWrapper.find(`.dropdown-content[data-dropdown-id="${dropdownId}"]`);
+			$('.dropdown-content').removeClass('active');
+			$('.dropdown-content').css('display', 'none');
+			$('.dropdown-wrapper').removeClass('active');
+			$('.dropdown-button').removeClass('active');
 
-		$(this).toggleClass('active');
-		dropdownWrapper.toggleClass('active');
-		dropdownContent.css('display', 'block');
-		clearTimeout(dropdownIdTimer);
-		dropdownIdTimer = setTimeout(() => {
-			dropdownContent.toggleClass('active');
-		}, 150);
+			$(this).toggleClass('active');
+			dropdownWrapper.toggleClass('active');
+			if($(this).hasClass('active')) {
+				dropdownContent.css('display', 'block');
+				clearTimeout(dropdownIdTimer);
+				dropdownIdTimer = setTimeout(() => {
+					dropdownContent.addClass('active');
+				}, 10);
+			} else {
+				$('.dropdown-content').removeClass('active');
+				$('.dropdown-content').css('display', 'none');
+			}
+		}
 	});
 
-	$('.dropdown-wrapper').on('mouseleave', function(e) {
-		const dropdownContent = $(this).find('.dropdown-content');
-		const dropdownButton = $(this).find('.dropdown-button');
-		dropdownContent.removeClass('active');
-		dropdownButton.removeClass('active');
-		$(this).removeClass('active');
-		clearTimeout(dropdownIdTimer);
-		dropdownIdTimer = setTimeout(() => {
-			dropdownContent.css('display', 'none');
-		}, 150);
+	$(document).on('click', function(e) {
+		const dropdown = $(e.target).closest('.dropdown-wrapper');
+		
+		if (!dropdown.length) {
+			const dropdownContent = $('.dropdown-wrapper .dropdown-content');
+			const dropdownButton = $('.dropdown-wrapper .dropdown-button');
+			dropdownContent.removeClass('active');
+			dropdownButton.removeClass('active');
+			$('.dropdown-wrapper').removeClass('active');
+			clearTimeout(dropdownIdTimer);
+			dropdownIdTimer = setTimeout(() => {
+				dropdownContent.css('display', 'none');
+			}, 150);
+		}
 	});
 
+	// Mobile select list type
+	$('[data-id="dropdown-grid"]').on('click', function(e) {
+		if(window.innerWidth < 1024) {
+			e.preventDefault();
+			e.stopImmediatePropagation();
+			const dropdownButton = $(this).closest('.dropdown-wrapper').find('.dropdown-button');
+			const svgTypeList = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M7 6H18M7 12H18M7 18H18" stroke="#122345" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+			</svg>`
+			const svgTypeGrid = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<rect x="5.5" y="5.5" width="5" height="5" fill="white" stroke="#122345"></rect>
+				<rect x="13.5" y="5.5" width="5" height="5" fill="white" stroke="#122345"></rect>
+				<rect x="5.5" y="13.5" width="5" height="5" fill="white" stroke="#122345"></rect>
+				<rect x="13.5" y="13.5" width="5" height="5" fill="white" stroke="#122345"></rect>
+			</svg>`
+
+			$(this).toggleClass('active-mobile');
+			if(!$(this).hasClass('active-mobile')) {
+				dropdownButton.find('svg').replaceWith(svgTypeGrid);
+				updateContentType();
+			} else {
+				dropdownButton.find('svg').replaceWith(svgTypeList);
+				updateContentType('list');
+			}
+		}
+	});
+
+
+	// Select Type
 
 	$("[data-dropdown-id='dropdown-grid'] a").on("click", function(e) {
 		e.preventDefault();
@@ -46,6 +91,10 @@ $(document).ready(function() {
 		}, 150);
 
 		const contentType = $(this).attr('data-link-type');
+		updateContentType(contentType);
+	});
+
+	function updateContentType(contentType) {
 		const contentTypeElements = $(`[data-content-type]`);
 		switch(contentType) {
 			case 'list':
@@ -61,8 +110,7 @@ $(document).ready(function() {
 				contentTypeElements.removeClass('grid-type');
 				break;
 		}
-	
-	});
+	}
 
 	// Select files
 	const selectWrapper = $('.selected-wrapper');	
