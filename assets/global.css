@@ -7,15 +7,16 @@
 	font-weight: 600;
 	font-display: swap;
 	src:
-		url('../dist/fonts/GeneralSans-Semibold.woff2') format('woff2'),
-		url('../dist/fonts/GeneralSans-Semibold.woff') format('woff'),
-		url('../dist/fonts/GeneralSans-Semibold.otf') format('opentype');
+		url('./fonts/GeneralSans-Semibold.woff2') format('woff2'),
+		url('./fonts/GeneralSans-Semibold.woff') format('woff'),
+		url('./fonts/GeneralSans-Semibold.otf') format('opentype');
 }
 @font-face {
 	font-family: 'GeneralSans-Variable';
 	src:
-		url('../dist/fonts/GeneralSans-Variable.woff2') format('woff2'),
-		url('../dist/fonts/GeneralSans-Variable.woff') format('woff');
+		url('./fonts/GeneralSans-Variable.woff2') format('woff2'),
+		url('./fonts/GeneralSans-Variable.woff') format('woff'),
+		url('./fonts/GeneralSans-Variable.otf') format('opentype');
 	font-weight: 200 700;
 	font-display: swap;
 	font-style: normal;
@@ -26,32 +27,20 @@
 	font-weight: 500;
 	font-display: swap;
 	src:
-		url('../dist/fonts/GeneralSans-Medium.woff2') format('woff2'),
-		url('../dist/fonts/GeneralSans-medium.woff') format('woff'),
-		url('../dist/fonts/GeneralSans-Medium.otf') format('opentype');
+		url('./fonts/GeneralSans-Medium.woff2') format('woff2'),
+		url('./fonts/GeneralSans-medium.woff') format('woff'),
+		url('./fonts/GeneralSans-Medium.otf') format('opentype');
 }
-@font-face {
+/* @font-face {
 	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 100 900;
 	font-display: swap;
 	src: url('../dist/fonts/Inter/UcCo3FwrK3iLTcviYwYZ90A2N58.woff2')
 		format('woff2');
-}
+} */
+
 @import "./theme.css";
-@import "./components.css";
-@import "./hamburger.css";
-@import "./components-dashboard.css";
-
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
-
 @layer base {
 	*,
 	::after,
@@ -65,7 +54,7 @@
 		-moz-osx-font-smoothing: grayscale;
 		-webkit-overflow-scrolling: touch;
 		font-size: 16px;
-		@apply text-blue-900 tracking-normal font-sans!;
+		@apply text-blue-900 tracking-normal font-sans;
 	}
 	h1 {
 		font-family: var(--fontFamily-sans-variable);
@@ -152,6 +141,18 @@
 		}
 	}
 }
+@import "./components.css";
+@import "./hamburger.css";
+@import "./components-dashboard.css";
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
 
 @utility container {
 	margin-inline: auto;

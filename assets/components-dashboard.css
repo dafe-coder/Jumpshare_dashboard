@@ -49,7 +49,7 @@
 			p {
 				@apply text-xs text-blue-900/70 mt-1 flex items-center gap-5;
 				span {
-					@apply relative after:content-[""] after:absolute after:-right-3 after:top-1/2 after:-translate-y-1/2 after:size-[3px] after:bg-blue-900/70 after:rounded-full;
+					@apply relative after:content-[""] after:absolute after:-right-3 after:top-1/2 after:-translate-y-1/2 after:size-[3px] after:bg-blue-900/70 after:rounded-full [&:last-child]:after:hidden;
 				}
 			}
 		}
