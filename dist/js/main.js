@@ -9,23 +9,41 @@ $(document).ready(function() {
 			
 			const dropdownWrapper = $(this).closest('.dropdown-wrapper');
 			const dropdownContent = dropdownWrapper.find(`.dropdown-content[data-dropdown-id="${dropdownId}"]`);
-			$('.dropdown-content').removeClass('active');
-			$('.dropdown-content').css('display', 'none');
-			$('.dropdown-wrapper').removeClass('active');
-			$('.dropdown-button').removeClass('active');
+			
 
-			$(this).toggleClass('active');
-			dropdownWrapper.toggleClass('active');
-			if($(this).hasClass('active')) {
+			if(!$(this).hasClass('active')) {
+				$('.sub-menu-item').removeClass('active');
+				$('.dropdown-content').removeClass('active');
+				$('.dropdown-content').css('display', 'none');
+				$('.dropdown-wrapper').removeClass('active');
+				$('.dropdown-button').removeClass('active');
+				$(this).addClass('active');
+				dropdownWrapper.addClass('active');
 				dropdownContent.css('display', 'block');
 				clearTimeout(dropdownIdTimer);
 				dropdownIdTimer = setTimeout(() => {
 					dropdownContent.addClass('active');
+					adjustElementPosition(dropdownContent);
 				}, 10);
 			} else {
+				$(this).removeClass('active');
+				dropdownWrapper.removeClass('active');
 				$('.dropdown-content').removeClass('active');
 				$('.dropdown-content').css('display', 'none');
 			}
+		}
+	});
+
+	$('.sub-menu-item').on('click', function(e) {
+		e.preventDefault();
+		const dropdownContent = $(this).find('.dropdown-content');
+		if(!$(this).hasClass('active')) {
+			$(this).addClass('active');
+			dropdownContent.css('display', 'block');
+			adjustElementPosition(dropdownContent);
+		} else {
+			$(this).removeClass('active');
+			dropdownContent.css('display', 'none');
 		}
 	});
 
@@ -180,5 +198,44 @@ $(document).ready(function() {
 			$('aside').removeClass('active');
 			$(".hamburger").removeClass('is-active');
 		}
+	});
+
+
+	// Adjust element position
+	function adjustElementPosition($element) {
+		$element.css({
+			'top': '10px',
+			'left': '100%',
+			'right': 'auto'
+		});
+		const rect = $element[0].getBoundingClientRect();
+		const viewportHeight = $(window).height();
+		const viewportWidth = $(window).width();
+		if (rect.bottom > viewportHeight) {
+			const overflowBottom = rect.bottom - viewportHeight;
+			
+			const newTop = parseInt($element.css('top')) - overflowBottom - 20;
+			$element.css('top', newTop + 'px');
+		}
+		
+		if (rect.right > viewportWidth) {
+			$element.addClass('adjust-position-right');
+			$element.css({
+				'left': 'auto',
+				'right': '100%'
+			});
+		}
+	}
+
+	// Adjust element position on window resize
+	let resizeTimer;
+	$(window).on('resize', function() {
+		clearTimeout(resizeTimer);
+		resizeTimer = setTimeout(function() {
+			const $activeDropdown = $('.dropdown-content.active');
+			if ($activeDropdown.length) {
+				adjustElementPosition($activeDropdown);
+			}
+		}, 50);
 	});
 });
