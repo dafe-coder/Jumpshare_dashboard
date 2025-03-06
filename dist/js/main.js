@@ -203,11 +203,14 @@ $(document).ready(function() {
 
 	// Adjust element position
 	function adjustElementPosition($element) {
-		$element.css({
-			'top': '10px',
-			'left': '100%',
-			'right': 'auto'
-		});
+		if($element.attr('data-dropdown-id') === 'dropdown-settings') {
+			$element.css({
+				'top': '10px',
+				'left': '100%',
+				'right': 'auto'
+			});
+		}
+		
 		const rect = $element[0].getBoundingClientRect();
 		const viewportHeight = $(window).height();
 		const viewportWidth = $(window).width();
@@ -218,7 +221,7 @@ $(document).ready(function() {
 			$element.css('top', newTop + 'px');
 		}
 		
-		if (rect.right > viewportWidth) {
+		if (rect.right > viewportWidth && $element.attr('data-id') === 'dropdown-settings') {
 			$element.addClass('adjust-position-right');
 			$element.css({
 				'left': 'auto',
@@ -238,4 +241,30 @@ $(document).ready(function() {
 			}
 		}, 50);
 	});
+
+	// Upload files
+	const uploadFilesModal = $('#upload-files-modal');
+	$('#upload-files-btn').on('click', function(e) {
+		e.preventDefault();
+		uploadFilesModal.addClass('active');
+	});
+
+	uploadFilesModal.on('click', function(e) {
+		e.preventDefault();
+		if(!e.target.closest('.upload-files-drop-zone')) {
+			uploadFilesModal.removeClass('active');
+		}
+	});
+
+	// Fake loading
+	const fakeLoading = $('.fake-loading');
+	const fakeLoadingContent = $('.fake-loading-content');
+	fakeLoadingContent.addClass('hidden');
+
+	setTimeout(() => {
+		fakeLoading.addClass('hidden');
+		fakeLoadingContent.removeClass('hidden');
+	}, 2000);
+	
+	
 });

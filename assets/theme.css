@@ -35,6 +35,8 @@
 	--shadow-menu-item: 0px 2px 7px -1px rgba(15, 28, 53, 0.04),inset 0px 3px 0px -1px rgba(255, 255, 255, 0.46),inset 0px 0px 0px 1px rgba(18, 35, 69, 0.1),0px 11.47px 23.78px -5.02px rgba(18, 35, 69, 0.07);
 	--shadow-video: 0px 11.4701px 23.7768px -5.01619px rgba(18, 35, 69, 0.07), inset 0px -0.866597px 0.866597px 0.866597px rgba(17, 34, 69, 0.12);
 	--shadow-avatar: 0 7.3px 12.2px -3.8px rgba(18, 35, 69, 0.2), 0 16.4px 35.9px -4.9px rgba(18, 35, 69, 0.09);
+	--shadow-dropdown: 0px 18px 56px rgba(131, 131, 131, 0.08);
+
 
 	/* Opacity */
 	--opacity-8: 0.08;
