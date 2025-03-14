@@ -11,6 +11,7 @@ const BottomSheet = {
 		this.sheet = $("#sheet")
 		this.sheetContents = this.sheet.find(".content")
 		this.draggableArea = $("#menuTrigger")
+		this.subSheetMenu = this.sheet.find(".sub-sheet-menu")
 		this.init()
 	},
 	
@@ -74,10 +75,14 @@ const BottomSheet = {
 		}
 	},
 	
-	calculateContentHeight: function() {
-		const items = this.sheetContents.find("ul li")
+	calculateContentHeight: function(itemsProp = null) {
+		const items = itemsProp ? itemsProp : this.sheetContents.find(".primary-sheet-menu li")
 		const itemHeight = 40
-		const totalHeightPixels = (items.length + 1) * itemHeight
+		const windowHeightPadding = 24
+		const contentPadding = 8
+		
+		const totalHeightPixels = (items.length + 1) * itemHeight + windowHeightPadding + contentPadding
+		
 		const windowHeight = window.innerHeight
 		const heightPercent = (totalHeightPixels / windowHeight) * 100
 		this.sheetHeight = heightPercent
@@ -100,6 +105,7 @@ const BottomSheet = {
 
 		$("[data-open-sheet]").on("click", (e) => {
 			if(window.innerWidth < 1024) {
+				$('.primary-sheet-menu').removeClass("hidden")
 				e.preventDefault();
 				e.stopImmediatePropagation();
 				this.setIsSheetShown(true)
@@ -110,6 +116,28 @@ const BottomSheet = {
 			if (this.sheet.hasClass('show-sheet')) {
 				this.setSheetHeight(this.sheetHeight)
 			}
+		})
+
+		$("[data-sheet-item-id]").on("click", (e) => {
+			e.preventDefault()
+			const id = $(e.target).data("sheet-item-id")
+			const subSheetMenu = this.sheet.find(`[data-sheet-menu-id="${id}"]`)
+			subSheetMenu.removeClass("hidden")
+			$('.primary-sheet-menu').addClass("hidden")
+			setTimeout(() => {
+				this.setSheetHeight(this.calculateContentHeight(subSheetMenu.find("li")))
+				this.sheetHeightDefault = this.calculateContentHeight(subSheetMenu.find("li"))
+			}, 10)
+		})
+
+		$(".sub-sheet-menu .go-back").on("click", (e) => {
+			e.preventDefault()
+			$('.primary-sheet-menu').removeClass("hidden")
+			$('.sub-sheet-menu').addClass("hidden")
+			setTimeout(() => {
+				this.setSheetHeight(this.calculateContentHeight())
+				this.sheetHeightDefault = this.calculateContentHeight()
+			}, 10)
 		})
 	}
 }

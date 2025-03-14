@@ -264,7 +264,46 @@ $(document).ready(function() {
 	setTimeout(() => {
 		fakeLoading.addClass('hidden');
 		fakeLoadingContent.removeClass('hidden');
-	}, 2100);
+	}, 20);
+
+
+	// Drag and drop
+	const dragAndDrop = $('.drag-and-drop');
+	let dragCounter = 0;
+	
+	dragAndDrop.on('dragenter', function(e) {
+		e.preventDefault();
+		dragCounter++;
+
+		if(dragCounter === 1) {
+			uploadFilesModal.addClass('active');
+			dragAndDrop.addClass('active');
+		}
+	});
+
+	dragAndDrop.on('dragleave', function(e) {
+		e.preventDefault();
+		dragCounter--;
+
+		if(dragCounter === 0) {
+			uploadFilesModal.removeClass('active');
+			dragAndDrop.removeClass('active');
+		}
+	});
+
+	dragAndDrop.on('drop', function(e) {
+		e.preventDefault();
+		dragCounter = 0;
+		uploadFilesModal.removeClass('active');
+		dragAndDrop.removeClass('active');
+	});
+
+	dragAndDrop.on('dragend', function(e) {
+		e.preventDefault();
+		dragCounter = 0;
+		uploadFilesModal.removeClass('active');
+		dragAndDrop.removeClass('active');
+	});
 	
 	
 });
