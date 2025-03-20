@@ -305,5 +305,35 @@ $(document).ready(function() {
 		dragAndDrop.removeClass('active');
 	});
 	
+
+	// Header scroll hide
+	let lastScrollTop = 0;
+    let header = $('header'); 
+    let headerHeight = header.outerHeight();
+    let isScrolling = false;
+
+    $(window).scroll(function() {
+        if (!isScrolling) {
+            window.requestAnimationFrame(function() {
+                let currentScroll = $(window).scrollTop();
+                
+                if (currentScroll > lastScrollTop && currentScroll > headerHeight) {
+                    header.css({
+                        'transform': 'translateY(-100%)',
+                    });
+					$('.subheader-nav').addClass('top-0!');
+                } else {
+                    header.css({
+                        'transform': 'translateY(0)',
+                    });
+					$('.subheader-nav').removeClass('top-0!');
+                }
+
+                lastScrollTop = currentScroll;
+                isScrolling = false;
+            });
+        }
+        isScrolling = true;
+    });
 	
 });
