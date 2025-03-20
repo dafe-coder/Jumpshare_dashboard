@@ -524,9 +524,9 @@
 				</div>
 			</aside>
 			<main class='overflow-y-auto overflow-x-hidden h-screen relative'>
-				<div class='max-w-[67.18rem] px-5 mx-auto min-h-full pb-5 max-sm:px-4 lg:px-12'>
-					<div class='sticky z-50 top-0 bg-white pt-4 pb-6 mb-1 after:content-[""] after:h-full after:w-[calc(100%_+_5rem)] after:absolute after:-z-49 after:left-1/2 after:-translate-x-1/2 after:top-0 after:bg-white after:pointer-events-none'>
-						<header class='mb-9 flex items-center justify-between max-sm:mb-5 max-md:bg-gray-150 max-md:rounded-lg max-md:p-1'>
+				<header class='pt-2.5 sticky top-0 z-50 bg-white max-sm:relative'>
+					<div class="dashboard-container ">
+						<div class='w-full flex items-center justify-between max-md:bg-gray-150 max-md:rounded-lg'>
 							<form action='#' class='max-w-[44.75rem] h-[2.5625rem] w-full bg-gray-150 rounded-lg relative max-md:h-12'>
 								<button class="hamburger hamburger--squeeze flex lg:hidden! absolute left-0 top-1/2 -translate-y-1/2" type="button">
 									<span class="hamburger-box">
@@ -645,7 +645,7 @@
 											<path d="M3.5 5.75L7 9.25L10.5 5.75" stroke="black" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
 										</svg>
 									</a>
-									<ul data-dropdown-id="dropdown-avatar"  class='dropdown-content absolute top-[calc(100%_+_8px)] -right-2 bg-white shadow-dropdown rounded-lg p-1.5 w-[15.75rem] z-3 overflow-hidden hidden transition-all duration-150 scale-0 [&.active]:scale-100 [&.active]:opacity-100 origin-top-right space-y-1'>
+									<ul data-dropdown-id="dropdown-avatar"  class='dropdown-content absolute top-[calc(100%_+_8px)] -right-2 bg-white shadow-dropdown rounded-lg p-1.5 w-[15.75rem] z-3 overflow-hidden hidden transition-all duration-150 scale-0 [&.active]:scale-100 [&.active]:opacity-100 origin-top-right'>
 										<li class='flex items-center gap-3 p-3.5'>
 											<div class="size-[42px] rounded-full overflow-hidden">
 												<img class='size-full object-cover' src="./assets/images/avatar.png" alt="Avatar">
@@ -698,105 +698,109 @@
 									</ul>
 								</div>
 							</div>
-						</header>
-						<div class='flex justify-between items-center'>
-							<h2 id='title-library' class='text-2xl font-semibold text-dark-800 tracking-normal flex-shrink-0 font-sans-semi'>My Library</h2>
-							<div class='@container/selected-wrapper w-full selected-wrapper gap-3 hidden pl-5 justify-end'>
-								<button class='btn btn-border-default btn-sm text-sm h-9 @max-[37.5rem]/selected-wrapper:px-2'>
+						</div>
+					</div>
+				</header>
+				<div class='pt-9 pb-6 sticky top-[63px] z-50 bg-white max-sm:-mx-4 max-sm:px-4 max-sm:top-0 max-sm:pt-5'>
+					<div class="dashboard-container  flex justify-between items-center">
+						<h2 id='title-library' class='text-2xl font-semibold text-dark-800 tracking-normal flex-shrink-0 font-sans-semi'>My Library</h2>
+						<div class='@container/selected-wrapper w-full selected-wrapper gap-3 hidden pl-5 justify-end'>
+							<button class='btn btn-border-default btn-sm text-sm h-9 @max-[37.5rem]/selected-wrapper:px-2'>
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M6.66667 14.6667H6.13333C4.95111 14.6667 4 13.7156 4 12.5333V6.13333C4 4.95111 4.95111 4 6.13333 4H12.5333C13.7156 4 14.6667 4.95111 14.6667 6.13333V6.66667M11.4667 9.33333H17.8667C18.4325 9.33333 18.9751 9.55809 19.3752 9.95817C19.7752 10.3582 20 10.9009 20 11.4667V17.8667C20 18.4325 19.7752 18.9751 19.3752 19.3752C18.9751 19.7752 18.4325 20 17.8667 20H11.4667C10.9009 20 10.3582 19.7752 9.95817 19.3752C9.55809 18.9751 9.33333 18.4325 9.33333 17.8667V11.4667C9.33333 11.1865 9.38851 10.9091 9.49572 10.6503C9.60293 10.3914 9.76007 10.1563 9.95817 9.95817C10.1563 9.76007 10.3914 9.60293 10.6503 9.49572C10.9091 9.38851 11.1865 9.33333 11.4667 9.33333Z" stroke="black" stroke-width="1.15556" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								<span class="hidden @[37.5rem]/selected-wrapper:block">Copy / Move</span>
+							</button>
+							<button class='btn btn-border-default btn-sm text-sm h-9 @max-[37.5rem]/selected-wrapper:px-2 max-sm:hidden'>
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path opacity="0.7" d="M7.175 15.8258L5.75 14.4258L7.175 13.0008H2V11.0008H7.175L5.75 9.57578L7.175 8.17578L11 12.0008L7.175 15.8258ZM16.825 15.8258L13 12.0008L16.825 8.17578L18.25 9.57578L16.825 11.0008H22V13.0008H16.825L18.25 14.4258L16.825 15.8258Z" fill="black"/>
+								</svg>
+								<span class="hidden @[37.5rem]/selected-wrapper:block">Merge</span>
+							</button>
+							<button class='btn btn-border-default btn-sm text-sm h-9 @max-[37.5rem]/selected-wrapper:px-2'>
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M19.5 14.5V17.8333C19.5 18.2754 19.3244 18.6993 19.0118 19.0118C18.6993 19.3244 18.2754 19.5 17.8333 19.5H6.16667C5.72464 19.5 5.30072 19.3244 4.98816 19.0118C4.67559 18.6993 4.5 18.2754 4.5 17.8333V14.5M7.83333 10.3333L12 14.5M12 14.5L16.1667 10.3333M12 14.5V4.5" stroke="#091329" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								<span class="hidden @[37.5rem]/selected-wrapper:block">Download</span>
+							</button>
+							<button class='btn btn-border-default btn-sm text-sm h-9 @max-[37.5rem]/selected-wrapper:px-2'>
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M4.5 7.0013H19.5M17.8333 7.0013V18.668C17.8333 19.5013 17 20.3346 16.1667 20.3346H7.83333C7 20.3346 6.16667 19.5013 6.16667 18.668V7.0013M8.66667 7.0013V5.33464C8.66667 4.5013 9.5 3.66797 10.3333 3.66797H13.6667C14.5 3.66797 15.3333 4.5013 15.3333 5.33464V7.0013M10.3333 11.168V16.168M13.6667 11.168V16.168" stroke="#122345" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								<span class="hidden @[37.5rem]/selected-wrapper:block">Delete</span>
+							</button>
+							<button class='close-selected-wrapper btn btn-border-default btn-sm text-sm h-9 max-lg:hidden'>
+								<span>Cancel</span>
+							</button>
+							<button class='btn btn-border-default btn-sm text-sm h-9 px-2 hidden max-lg:flex'>
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<g clip-path="url(#clip0_9368_6860)">
+									<path d="M8 12C8 10.9 7.1 10 6 10C4.9 10 4 10.9 4 12C4 13.1 4.9 14 6 14C7.1 14 8 13.1 8 12ZM10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12C14 10.9 13.1 10 12 10C10.9 10 10 10.9 10 12ZM16 12C16 13.1 16.9 14 18 14C19.1 14 20 13.1 20 12C20 10.9 19.1 10 18 10C16.9 10 16 10.9 16 12Z" fill="#122345"/>
+									</g>
+									<defs>
+									<clipPath id="clip0_9368_6860">
+									<rect y="24" width="24" height="24" rx="12" transform="rotate(-90 0 24)" fill="white"/>
+									</clipPath>
+									</defs>
+								</svg>
+							</button>
+						</div>
+						<div class='flex gap-3.5'>
+							<button class='hidden is-select-btn btn btn-border-default btn-sm text-sm max-lg:flex h-9'>
+								<span>Select</span>
+							</button>
+							<button class='btn btn-border-default btn-sm max-lg:hidden h-9'>
+								<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M8.88 3.52786L8.88008 3.52795L9.79813 4.63973C10.4868 5.47369 11.5118 5.9566 12.5933 5.9566H15.5469C15.9308 5.9566 16.2999 6.11047 16.5728 6.38585C16.8458 6.66138 17 7.03605 17 7.42767V8.4132V15C17 15.7594 16.3844 16.375 15.625 16.375H4.64981C3.43608 16.375 2.44984 15.3955 2.44153 14.1818L2.375 4.47107C2.375 4.47054 2.375 4.47001 2.375 4.46948C2.37542 4.07844 2.52957 3.70441 2.80222 3.42925C3.0751 3.15387 3.44422 3 3.82812 3L7.76544 3C7.76546 3 7.76548 3 7.76551 3C7.76555 3 7.76559 3 7.76562 3C7.97783 3.00011 8.18757 3.04727 8.38005 3.13833C8.57261 3.22942 8.74336 3.36229 8.88 3.52786Z" stroke="black"/>
+								</svg>
+								Create Folder
+							</button>
+							<button id='upload-files-btn' class='btn btn-primary px-5 max-lg:fixed max-lg:bottom-4 max-lg:right-4 max-lg:size-14 max-lg:rounded-full max-lg:p-0 max-lg:shadow-[0px_6px_17.7px_rgba(51,_53,_57,_0.3)] h-9 shadow-none'>
+								<svg class='hidden max-lg:block size-6 flex-shrink-0' width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M22 13.4286H13.4286V22H10.5714V13.4286H2V10.5714H10.5714V2H13.4286V10.5714H22V13.4286Z" fill="white"/>
+								</svg>
+								<svg class='max-lg:hidden' width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M14.5 10V12.6667C14.5 13.0203 14.3595 13.3594 14.1095 13.6095C13.8594 13.8595 13.5203 14 13.1667 14H3.83333C3.47971 14 3.14057 13.8595 2.89052 13.6095C2.64048 13.3594 2.5 13.0203 2.5 12.6667V10M11.8333 5.33333L8.5 2M8.5 2L5.16667 5.33333M8.5 2V10" stroke="white" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								<span class="max-lg:hidden">Upload Files</span>
+							</button>
+							<div class='dropdown-wrapper relative'>
+								<button data-id='dropdown-grid' class='dropdown-button relative z-1 btn p-0 border border-gray-600 size-9'>
 									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M6.66667 14.6667H6.13333C4.95111 14.6667 4 13.7156 4 12.5333V6.13333C4 4.95111 4.95111 4 6.13333 4H12.5333C13.7156 4 14.6667 4.95111 14.6667 6.13333V6.66667M11.4667 9.33333H17.8667C18.4325 9.33333 18.9751 9.55809 19.3752 9.95817C19.7752 10.3582 20 10.9009 20 11.4667V17.8667C20 18.4325 19.7752 18.9751 19.3752 19.3752C18.9751 19.7752 18.4325 20 17.8667 20H11.4667C10.9009 20 10.3582 19.7752 9.95817 19.3752C9.55809 18.9751 9.33333 18.4325 9.33333 17.8667V11.4667C9.33333 11.1865 9.38851 10.9091 9.49572 10.6503C9.60293 10.3914 9.76007 10.1563 9.95817 9.95817C10.1563 9.76007 10.3914 9.60293 10.6503 9.49572C10.9091 9.38851 11.1865 9.33333 11.4667 9.33333Z" stroke="black" stroke-width="1.15556" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-									</svg>
-									<span class="hidden @[37.5rem]/selected-wrapper:block">Copy / Move</span>
-								</button>
-								<button class='btn btn-border-default btn-sm text-sm h-9 @max-[37.5rem]/selected-wrapper:px-2 max-sm:hidden'>
-									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path opacity="0.7" d="M7.175 15.8258L5.75 14.4258L7.175 13.0008H2V11.0008H7.175L5.75 9.57578L7.175 8.17578L11 12.0008L7.175 15.8258ZM16.825 15.8258L13 12.0008L16.825 8.17578L18.25 9.57578L16.825 11.0008H22V13.0008H16.825L18.25 14.4258L16.825 15.8258Z" fill="black"/>
-									</svg>
-									<span class="hidden @[37.5rem]/selected-wrapper:block">Merge</span>
-								</button>
-								<button class='btn btn-border-default btn-sm text-sm h-9 @max-[37.5rem]/selected-wrapper:px-2'>
-									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M19.5 14.5V17.8333C19.5 18.2754 19.3244 18.6993 19.0118 19.0118C18.6993 19.3244 18.2754 19.5 17.8333 19.5H6.16667C5.72464 19.5 5.30072 19.3244 4.98816 19.0118C4.67559 18.6993 4.5 18.2754 4.5 17.8333V14.5M7.83333 10.3333L12 14.5M12 14.5L16.1667 10.3333M12 14.5V4.5" stroke="#091329" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-									</svg>
-									<span class="hidden @[37.5rem]/selected-wrapper:block">Download</span>
-								</button>
-								<button class='btn btn-border-default btn-sm text-sm h-9 @max-[37.5rem]/selected-wrapper:px-2'>
-									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M4.5 7.0013H19.5M17.8333 7.0013V18.668C17.8333 19.5013 17 20.3346 16.1667 20.3346H7.83333C7 20.3346 6.16667 19.5013 6.16667 18.668V7.0013M8.66667 7.0013V5.33464C8.66667 4.5013 9.5 3.66797 10.3333 3.66797H13.6667C14.5 3.66797 15.3333 4.5013 15.3333 5.33464V7.0013M10.3333 11.168V16.168M13.6667 11.168V16.168" stroke="#122345" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-									</svg>
-									<span class="hidden @[37.5rem]/selected-wrapper:block">Delete</span>
-								</button>
-								<button class='close-selected-wrapper btn btn-border-default btn-sm text-sm h-9 max-lg:hidden'>
-									<span>Cancel</span>
-								</button>
-								<button class='btn btn-border-default btn-sm text-sm h-9 px-2 hidden max-lg:flex'>
-									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<g clip-path="url(#clip0_9368_6860)">
-										<path d="M8 12C8 10.9 7.1 10 6 10C4.9 10 4 10.9 4 12C4 13.1 4.9 14 6 14C7.1 14 8 13.1 8 12ZM10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12C14 10.9 13.1 10 12 10C10.9 10 10 10.9 10 12ZM16 12C16 13.1 16.9 14 18 14C19.1 14 20 13.1 20 12C20 10.9 19.1 10 18 10C16.9 10 16 10.9 16 12Z" fill="#122345"/>
-										</g>
-										<defs>
-										<clipPath id="clip0_9368_6860">
-										<rect y="24" width="24" height="24" rx="12" transform="rotate(-90 0 24)" fill="white"/>
-										</clipPath>
-										</defs>
+										<rect x="5.5" y="5.5" width="5" height="5" fill="white" stroke="#122345"/>
+										<rect x="13.5" y="5.5" width="5" height="5" fill="white" stroke="#122345"/>
+										<rect x="5.5" y="13.5" width="5" height="5" fill="white" stroke="#122345"/>
+										<rect x="13.5" y="13.5" width="5" height="5" fill="white" stroke="#122345"/>
 									</svg>
 								</button>
-							</div>
-							<div class='flex gap-3.5'>
-								<button class='hidden is-select-btn btn btn-border-default btn-sm text-sm max-lg:flex h-9'>
-									<span>Select</span>
-								</button>
-								<button class='btn btn-border-default btn-sm max-lg:hidden h-9'>
-									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M8.88 3.52786L8.88008 3.52795L9.79813 4.63973C10.4868 5.47369 11.5118 5.9566 12.5933 5.9566H15.5469C15.9308 5.9566 16.2999 6.11047 16.5728 6.38585C16.8458 6.66138 17 7.03605 17 7.42767V8.4132V15C17 15.7594 16.3844 16.375 15.625 16.375H4.64981C3.43608 16.375 2.44984 15.3955 2.44153 14.1818L2.375 4.47107C2.375 4.47054 2.375 4.47001 2.375 4.46948C2.37542 4.07844 2.52957 3.70441 2.80222 3.42925C3.0751 3.15387 3.44422 3 3.82812 3L7.76544 3C7.76546 3 7.76548 3 7.76551 3C7.76555 3 7.76559 3 7.76562 3C7.97783 3.00011 8.18757 3.04727 8.38005 3.13833C8.57261 3.22942 8.74336 3.36229 8.88 3.52786Z" stroke="black"/>
-									</svg>
-									Create Folder
-								</button>
-								<button id='upload-files-btn' class='btn btn-primary px-5 max-lg:fixed max-lg:bottom-4 max-lg:right-4 max-lg:size-14 max-lg:rounded-full max-lg:p-0 max-lg:shadow-[0px_6px_17.7px_rgba(51,_53,_57,_0.3)] h-9 shadow-none'>
-									<svg class='hidden max-lg:block size-6 flex-shrink-0' width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M22 13.4286H13.4286V22H10.5714V13.4286H2V10.5714H10.5714V2H13.4286V10.5714H22V13.4286Z" fill="white"/>
-									</svg>
-									<svg class='max-lg:hidden' width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M14.5 10V12.6667C14.5 13.0203 14.3595 13.3594 14.1095 13.6095C13.8594 13.8595 13.5203 14 13.1667 14H3.83333C3.47971 14 3.14057 13.8595 2.89052 13.6095C2.64048 13.3594 2.5 13.0203 2.5 12.6667V10M11.8333 5.33333L8.5 2M8.5 2L5.16667 5.33333M8.5 2V10" stroke="white" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
-									</svg>
-									<span class="max-lg:hidden">Upload Files</span>
-								</button>
-								<div class='dropdown-wrapper relative'>
-									<button data-id='dropdown-grid' class='dropdown-button relative z-1 btn p-0 border border-gray-600 size-9'>
+								<div data-dropdown-id="dropdown-grid" class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[10.625rem] absolute -right-2 top-[calc(100%_+_8px)] z-1 scale-0 opacity-0 transition-all duration-150 [&.active]:scale-100 [&.active]:opacity-100 origin-top-right'>
+									<a href='#' data-link-type='large-grid' class='flex gap-2 items-center px-2 py-1.5 text-sm rounded-md hover:bg-gray-200 transition-colors'>
 										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<rect x="5.5" y="5.5" width="5" height="5" fill="white" stroke="#122345"/>
-											<rect x="13.5" y="5.5" width="5" height="5" fill="white" stroke="#122345"/>
-											<rect x="5.5" y="13.5" width="5" height="5" fill="white" stroke="#122345"/>
-											<rect x="13.5" y="13.5" width="5" height="5" fill="white" stroke="#122345"/>
+											<rect x="5.5" y="5.5" width="5" height="5" fill="white" stroke="#0A0A0B"/>
+											<rect x="13.5" y="5.5" width="5" height="5" fill="white" stroke="#0A0A0B"/>
+											<rect x="5.5" y="13.5" width="5" height="5" fill="white" stroke="#0A0A0B"/>
+											<rect x="13.5" y="13.5" width="5" height="5" fill="white" stroke="#0A0A0B"/>
 										</svg>
-									</button>
-									<div data-dropdown-id="dropdown-grid" class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[10.625rem] absolute -right-2 top-[calc(100%_+_8px)] z-1 scale-0 opacity-0 transition-all duration-150 [&.active]:scale-100 [&.active]:opacity-100 origin-top-right'>
-										<a href='#' data-link-type='large-grid' class='flex gap-2 items-center px-2 py-1.5 text-sm rounded-md hover:bg-gray-200 transition-colors'>
-											<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<rect x="5.5" y="5.5" width="5" height="5" fill="white" stroke="#0A0A0B"/>
-												<rect x="13.5" y="5.5" width="5" height="5" fill="white" stroke="#0A0A0B"/>
-												<rect x="5.5" y="13.5" width="5" height="5" fill="white" stroke="#0A0A0B"/>
-												<rect x="13.5" y="13.5" width="5" height="5" fill="white" stroke="#0A0A0B"/>
-											</svg>
-											Large Grid
-										</a>
-										<a href='#' data-link-type='grid' class='flex gap-2 items-center px-2 py-1.5 text-sm rounded-md hover:bg-gray-200 transition-colors'>
-											<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M8 8H4V4H8V8ZM14 4H10V8H14V4ZM20 4H16V8H20V4ZM8 10H4V14H8V10ZM14 10H10V14H14V10ZM20 10H16V14H20V10ZM8 16H4V20H8V16ZM14 16H10V20H14V16ZM20 16H16V20H20V16Z" fill="#0A0A0B"/>
-											</svg>
-											Grid
-										</a>
-										<a href='#' data-link-type='list' class='flex gap-2 items-center px-2 py-1.5 text-sm rounded-md hover:bg-gray-200 transition-colors'>
-											<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M9 7H20M9 11.9958H20M9 16.9917H20M5 7V7.00833M5 11.9958V12.0042M5 16.9917V17" stroke="#0A0A0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-											</svg>
-											List
-										</a>
-									</div>
+										Large Grid
+									</a>
+									<a href='#' data-link-type='grid' class='flex gap-2 items-center px-2 py-1.5 text-sm rounded-md hover:bg-gray-200 transition-colors'>
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M8 8H4V4H8V8ZM14 4H10V8H14V4ZM20 4H16V8H20V4ZM8 10H4V14H8V10ZM14 10H10V14H14V10ZM20 10H16V14H20V10ZM8 16H4V20H8V16ZM14 16H10V20H14V16ZM20 16H16V20H20V16Z" fill="#0A0A0B"/>
+										</svg>
+										Grid
+									</a>
+									<a href='#' data-link-type='list' class='flex gap-2 items-center px-2 py-1.5 text-sm rounded-md hover:bg-gray-200 transition-colors'>
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M9 7H20M9 11.9958H20M9 16.9917H20M5 7V7.00833M5 11.9958V12.0042M5 16.9917V17" stroke="#0A0A0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+										List
+									</a>
 								</div>
 							</div>
 						</div>
 					</div>
+				</div>
+				<div class='dashboard-container min-h-full pb-5 pt-5'>
 					<div>
 						<div class='flex justify-between items-center'>
 							<h3 class='text-lg text-dark-800 font-semibold fake-loading-content'>Folders</h3>
@@ -804,7 +808,7 @@
 								<span class='h-[20px] w-15 rounded bg-gray-300'></span>
 							</div>
 						</div>
-						<div class='grid grid-cols-4 gap-5 mt-5 [&.list-type]:flex flex-col [&.list-type]:gap-0 [&.grid-type]:grid-cols-5 max-sm:gap-2.5 max-sm:grid-cols-2 fake-loading-content' data-content-type>
+						<div class='grid grid-cols-4 gap-4 mt-5 [&.list-type]:flex flex-col [&.list-type]:gap-0 [&.grid-type]:grid-cols-5 max-sm:gap-2.5 max-sm:grid-cols-2 fake-loading-content' data-content-type>
 							<div class='hidden [.list-type_&]:grid grid-cols-[1fr_7rem_9rem_7.9375rem] items-center gap-2 w-full pb-3 border-b border-gray-400 text-sm max-md:[.list-type_&]:hidden'>
 								<div>
 									Name
@@ -859,7 +863,7 @@
 											</svg>
 										</button>
 										<div 			data-dropdown-id='dropdown-settings' class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-2.5 z-1 [&.active]:flex [.list-type_&]:right-full! [.list-type_&]:left-auto!'>
-											<ul class='space-y-1 text-sm'>
+											<ul class='text-sm'>
 												<li class='text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
 													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 														<path d="M5.33464 15.3346C4.41797 15.3346 3.66797 14.5846 3.66797 13.668V5.33464C3.66797 4.41797 4.41797 3.66797 5.33464 3.66797H13.668C14.5846 3.66797 15.3346 4.41797 15.3346 5.33464M10.3346 8.66797H18.668C19.5884 8.66797 20.3346 9.41416 20.3346 10.3346V18.668C20.3346 19.5884 19.5884 20.3346 18.668 20.3346H10.3346C9.41416 20.3346 8.66797 19.5884 8.66797 18.668V10.3346C8.66797 9.41416 9.41416 8.66797 10.3346 8.66797Z" stroke="#091329" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -928,7 +932,7 @@
 													<svg class='ml-auto' width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 														<path fill-rule="evenodd" clip-rule="evenodd" d="M5.77093 4.45975C5.91761 4.6006 6 4.79161 6 4.99077C6 5.18993 5.91761 5.38094 5.77093 5.52179L1.34511 9.7707C1.27294 9.84244 1.18661 9.89966 1.09116 9.93902C0.995705 9.97839 0.893043 9.99911 0.789161 9.99997C0.68528 10.0008 0.582259 9.98183 0.486109 9.94407C0.38996 9.9063 0.302607 9.85053 0.229149 9.78001C0.15569 9.70949 0.0975976 9.62563 0.0582597 9.53332C0.0189218 9.44102 -0.000873164 9.34211 2.95397e-05 9.24238C0.000932243 9.14266 0.0225147 9.0441 0.0635176 8.95246C0.10452 8.86083 0.164122 8.77795 0.238846 8.70866L4.11154 4.99077L0.238846 1.27288C0.0963322 1.13122 0.0174745 0.941495 0.019257 0.744562C0.0210396 0.547629 0.10332 0.359247 0.248376 0.219989C0.393433 0.0807308 0.589659 0.00173969 0.794792 2.83931e-05C0.999925 -0.0016829 1.19755 0.0740226 1.34511 0.21084L5.77093 4.45975Z" fill="#091329"/>
 													</svg>
-													<ul class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto space-y-1 text-sm ml-[7px] [&.adjust-position-right]:mr-[7px] [&.adjust-position-right]:ml-auto'>
+													<ul class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto text-sm ml-[7px] [&.adjust-position-right]:mr-[7px] [&.adjust-position-right]:ml-auto'>
 														<li class='sub-menu-item text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
 															<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 																<path d="M19 14.3333V17.4444C19 17.857 18.8361 18.2527 18.5444 18.5444C18.2527 18.8361 17.857 19 17.4444 19H6.55556C6.143 19 5.74733 18.8361 5.45561 18.5444C5.16389 18.2527 5 17.857 5 17.4444V14.3333M15.8889 8.88889L12 5M12 5L8.11111 8.88889M12 5V14.3333" stroke="#091329" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -995,7 +999,7 @@
 											</svg>
 										</button>
 										<div 			data-dropdown-id='dropdown-settings' class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-2.5 z-1 [&.active]:flex [.list-type_&]:right-full! [.list-type_&]:left-auto!'>
-											<ul class='space-y-1 text-sm'>
+											<ul class='text-sm'>
 												<li class='text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
 													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 														<path d="M5.33464 15.3346C4.41797 15.3346 3.66797 14.5846 3.66797 13.668V5.33464C3.66797 4.41797 4.41797 3.66797 5.33464 3.66797H13.668C14.5846 3.66797 15.3346 4.41797 15.3346 5.33464M10.3346 8.66797H18.668C19.5884 8.66797 20.3346 9.41416 20.3346 10.3346V18.668C20.3346 19.5884 19.5884 20.3346 18.668 20.3346H10.3346C9.41416 20.3346 8.66797 19.5884 8.66797 18.668V10.3346C8.66797 9.41416 9.41416 8.66797 10.3346 8.66797Z" stroke="#091329" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1064,7 +1068,7 @@
 													<svg class='ml-auto' width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 														<path fill-rule="evenodd" clip-rule="evenodd" d="M5.77093 4.45975C5.91761 4.6006 6 4.79161 6 4.99077C6 5.18993 5.91761 5.38094 5.77093 5.52179L1.34511 9.7707C1.27294 9.84244 1.18661 9.89966 1.09116 9.93902C0.995705 9.97839 0.893043 9.99911 0.789161 9.99997C0.68528 10.0008 0.582259 9.98183 0.486109 9.94407C0.38996 9.9063 0.302607 9.85053 0.229149 9.78001C0.15569 9.70949 0.0975976 9.62563 0.0582597 9.53332C0.0189218 9.44102 -0.000873164 9.34211 2.95397e-05 9.24238C0.000932243 9.14266 0.0225147 9.0441 0.0635176 8.95246C0.10452 8.86083 0.164122 8.77795 0.238846 8.70866L4.11154 4.99077L0.238846 1.27288C0.0963322 1.13122 0.0174745 0.941495 0.019257 0.744562C0.0210396 0.547629 0.10332 0.359247 0.248376 0.219989C0.393433 0.0807308 0.589659 0.00173969 0.794792 2.83931e-05C0.999925 -0.0016829 1.19755 0.0740226 1.34511 0.21084L5.77093 4.45975Z" fill="#091329"/>
 													</svg>
-													<ul class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto space-y-1 text-sm ml-[7px] [&.adjust-position-right]:mr-[7px] [&.adjust-position-right]:ml-auto'>
+													<ul class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto text-sm ml-[7px] [&.adjust-position-right]:mr-[7px] [&.adjust-position-right]:ml-auto'>
 														<li class='sub-menu-item text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
 															<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 																<path d="M19 14.3333V17.4444C19 17.857 18.8361 18.2527 18.5444 18.5444C18.2527 18.8361 17.857 19 17.4444 19H6.55556C6.143 19 5.74733 18.8361 5.45561 18.5444C5.16389 18.2527 5 17.857 5 17.4444V14.3333M15.8889 8.88889L12 5M12 5L8.11111 8.88889M12 5V14.3333" stroke="#091329" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1131,7 +1135,7 @@
 											</svg>
 										</button>
 										<div 			data-dropdown-id='dropdown-settings' class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-2.5 z-1 [&.active]:flex [.list-type_&]:right-full! [.list-type_&]:left-auto!'>
-											<ul class='space-y-1 text-sm'>
+											<ul class='text-sm'>
 												<li class='text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
 													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 														<path d="M5.33464 15.3346C4.41797 15.3346 3.66797 14.5846 3.66797 13.668V5.33464C3.66797 4.41797 4.41797 3.66797 5.33464 3.66797H13.668C14.5846 3.66797 15.3346 4.41797 15.3346 5.33464M10.3346 8.66797H18.668C19.5884 8.66797 20.3346 9.41416 20.3346 10.3346V18.668C20.3346 19.5884 19.5884 20.3346 18.668 20.3346H10.3346C9.41416 20.3346 8.66797 19.5884 8.66797 18.668V10.3346C8.66797 9.41416 9.41416 8.66797 10.3346 8.66797Z" stroke="#091329" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1200,7 +1204,7 @@
 													<svg class='ml-auto' width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 														<path fill-rule="evenodd" clip-rule="evenodd" d="M5.77093 4.45975C5.91761 4.6006 6 4.79161 6 4.99077C6 5.18993 5.91761 5.38094 5.77093 5.52179L1.34511 9.7707C1.27294 9.84244 1.18661 9.89966 1.09116 9.93902C0.995705 9.97839 0.893043 9.99911 0.789161 9.99997C0.68528 10.0008 0.582259 9.98183 0.486109 9.94407C0.38996 9.9063 0.302607 9.85053 0.229149 9.78001C0.15569 9.70949 0.0975976 9.62563 0.0582597 9.53332C0.0189218 9.44102 -0.000873164 9.34211 2.95397e-05 9.24238C0.000932243 9.14266 0.0225147 9.0441 0.0635176 8.95246C0.10452 8.86083 0.164122 8.77795 0.238846 8.70866L4.11154 4.99077L0.238846 1.27288C0.0963322 1.13122 0.0174745 0.941495 0.019257 0.744562C0.0210396 0.547629 0.10332 0.359247 0.248376 0.219989C0.393433 0.0807308 0.589659 0.00173969 0.794792 2.83931e-05C0.999925 -0.0016829 1.19755 0.0740226 1.34511 0.21084L5.77093 4.45975Z" fill="#091329"/>
 													</svg>
-													<ul class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto space-y-1 text-sm ml-[7px] [&.adjust-position-right]:mr-[7px] [&.adjust-position-right]:ml-auto'>
+													<ul class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto text-sm ml-[7px] [&.adjust-position-right]:mr-[7px] [&.adjust-position-right]:ml-auto'>
 														<li class='sub-menu-item text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
 															<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 																<path d="M19 14.3333V17.4444C19 17.857 18.8361 18.2527 18.5444 18.5444C18.2527 18.8361 17.857 19 17.4444 19H6.55556C6.143 19 5.74733 18.8361 5.45561 18.5444C5.16389 18.2527 5 17.857 5 17.4444V14.3333M15.8889 8.88889L12 5M12 5L8.11111 8.88889M12 5V14.3333" stroke="#091329" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1267,7 +1271,7 @@
 											</svg>
 										</button>
 										<div 			data-dropdown-id='dropdown-settings' class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-2.5 z-1 [&.active]:flex [.list-type_&]:right-full! [.list-type_&]:left-auto!'>
-											<ul class='space-y-1 text-sm'>
+											<ul class='text-sm'>
 												<li class='text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
 													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 														<path d="M5.33464 15.3346C4.41797 15.3346 3.66797 14.5846 3.66797 13.668V5.33464C3.66797 4.41797 4.41797 3.66797 5.33464 3.66797H13.668C14.5846 3.66797 15.3346 4.41797 15.3346 5.33464M10.3346 8.66797H18.668C19.5884 8.66797 20.3346 9.41416 20.3346 10.3346V18.668C20.3346 19.5884 19.5884 20.3346 18.668 20.3346H10.3346C9.41416 20.3346 8.66797 19.5884 8.66797 18.668V10.3346C8.66797 9.41416 9.41416 8.66797 10.3346 8.66797Z" stroke="#091329" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1336,7 +1340,7 @@
 													<svg class='ml-auto' width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 														<path fill-rule="evenodd" clip-rule="evenodd" d="M5.77093 4.45975C5.91761 4.6006 6 4.79161 6 4.99077C6 5.18993 5.91761 5.38094 5.77093 5.52179L1.34511 9.7707C1.27294 9.84244 1.18661 9.89966 1.09116 9.93902C0.995705 9.97839 0.893043 9.99911 0.789161 9.99997C0.68528 10.0008 0.582259 9.98183 0.486109 9.94407C0.38996 9.9063 0.302607 9.85053 0.229149 9.78001C0.15569 9.70949 0.0975976 9.62563 0.0582597 9.53332C0.0189218 9.44102 -0.000873164 9.34211 2.95397e-05 9.24238C0.000932243 9.14266 0.0225147 9.0441 0.0635176 8.95246C0.10452 8.86083 0.164122 8.77795 0.238846 8.70866L4.11154 4.99077L0.238846 1.27288C0.0963322 1.13122 0.0174745 0.941495 0.019257 0.744562C0.0210396 0.547629 0.10332 0.359247 0.248376 0.219989C0.393433 0.0807308 0.589659 0.00173969 0.794792 2.83931e-05C0.999925 -0.0016829 1.19755 0.0740226 1.34511 0.21084L5.77093 4.45975Z" fill="#091329"/>
 													</svg>
-													<ul class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto space-y-1 text-sm ml-[7px] [&.adjust-position-right]:mr-[7px] [&.adjust-position-right]:ml-auto'>
+													<ul class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto text-sm ml-[7px] [&.adjust-position-right]:mr-[7px] [&.adjust-position-right]:ml-auto'>
 														<li class='sub-menu-item text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
 															<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 																<path d="M19 14.3333V17.4444C19 17.857 18.8361 18.2527 18.5444 18.5444C18.2527 18.8361 17.857 19 17.4444 19H6.55556C6.143 19 5.74733 18.8361 5.45561 18.5444C5.16389 18.2527 5 17.857 5 17.4444V14.3333M15.8889 8.88889L12 5M12 5L8.11111 8.88889M12 5V14.3333" stroke="#091329" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1521,7 +1525,7 @@
 									</label>
 									<div class='file-item-nav'>
 										<button 
-										data-id='dropdown-settings' class='dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400' data-open-sheet>
+										data-id='dropdown-settings' class='dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 transition-all hover:bg-gray-300' data-open-sheet>
 											<svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<rect width="15" height="4" transform="translate(5 6.5)" fill="white"/>
 												<circle cx="7.5" cy="8.5" r="1.5" fill="black"/>
@@ -1529,15 +1533,8 @@
 												<circle cx="17.5" cy="8.5" r="1.5" fill="black"/>
 											</svg>
 										</button>
-										<button class='cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:hidden max-lg:hidden'>
-											<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<g clip-path="url(#clip0_8581_17240)">
-												<path d="M5.171 6.666C5.38572 6.95306 5.65968 7.19059 5.97427 7.36247C6.28887 7.53435 6.63675 7.63656 6.99432 7.66217C7.35189 7.68777 7.71079 7.63618 8.04667 7.51089C8.38255 7.3856 8.68756 7.18953 8.941 6.936L10.441 5.436C10.8964 4.96449 11.1484 4.33299 11.1427 3.6775C11.137 3.022 10.8741 2.39497 10.4105 1.93145C9.94703 1.46793 9.31999 1.20501 8.6645 1.19931C8.00901 1.19362 7.3775 1.4456 6.906 1.901L6.046 2.756M7.171 5.666C6.95627 5.37893 6.68232 5.14141 6.36772 4.96953C6.05313 4.79765 5.70524 4.69544 5.34767 4.66983C4.9901 4.64422 4.6312 4.69582 4.29533 4.82111C3.95945 4.9464 3.65444 5.14246 3.401 5.396L1.901 6.896C1.4456 7.3675 1.19362 7.99901 1.19931 8.6545C1.20501 9.30999 1.46793 9.93702 1.93145 10.4005C2.39497 10.8641 3.022 11.127 3.6775 11.1327C4.33299 11.1384 4.96449 10.8864 5.436 10.431L6.291 9.576" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
-												</g>
-											</svg>
-										</button>
 										<div 			data-dropdown-id='dropdown-settings' class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-2.5 z-1 [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto'>
-											<ul class='space-y-1 text-sm'>
+											<ul class='text-sm'>
 												<li class='text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
 													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 														<path d="M5.33464 15.3346C4.41797 15.3346 3.66797 14.5846 3.66797 13.668V5.33464C3.66797 4.41797 4.41797 3.66797 5.33464 3.66797H13.668C14.5846 3.66797 15.3346 4.41797 15.3346 5.33464M10.3346 8.66797H18.668C19.5884 8.66797 20.3346 9.41416 20.3346 10.3346V18.668C20.3346 19.5884 19.5884 20.3346 18.668 20.3346H10.3346C9.41416 20.3346 8.66797 19.5884 8.66797 18.668V10.3346C8.66797 9.41416 9.41416 8.66797 10.3346 8.66797Z" stroke="#091329" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1606,7 +1603,7 @@
 													<svg class='ml-auto' width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 														<path fill-rule="evenodd" clip-rule="evenodd" d="M5.77093 4.45975C5.91761 4.6006 6 4.79161 6 4.99077C6 5.18993 5.91761 5.38094 5.77093 5.52179L1.34511 9.7707C1.27294 9.84244 1.18661 9.89966 1.09116 9.93902C0.995705 9.97839 0.893043 9.99911 0.789161 9.99997C0.68528 10.0008 0.582259 9.98183 0.486109 9.94407C0.38996 9.9063 0.302607 9.85053 0.229149 9.78001C0.15569 9.70949 0.0975976 9.62563 0.0582597 9.53332C0.0189218 9.44102 -0.000873164 9.34211 2.95397e-05 9.24238C0.000932243 9.14266 0.0225147 9.0441 0.0635176 8.95246C0.10452 8.86083 0.164122 8.77795 0.238846 8.70866L4.11154 4.99077L0.238846 1.27288C0.0963322 1.13122 0.0174745 0.941495 0.019257 0.744562C0.0210396 0.547629 0.10332 0.359247 0.248376 0.219989C0.393433 0.0807308 0.589659 0.00173969 0.794792 2.83931e-05C0.999925 -0.0016829 1.19755 0.0740226 1.34511 0.21084L5.77093 4.45975Z" fill="#091329"/>
 													</svg>
-													<ul class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto space-y-1 text-sm ml-[7px] [&.adjust-position-right]:mr-[7px] [&.adjust-position-right]:ml-auto'>
+													<ul class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto text-sm ml-[7px] [&.adjust-position-right]:mr-[7px] [&.adjust-position-right]:ml-auto'>
 														<li class='sub-menu-item text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
 															<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 																<path d="M19 14.3333V17.4444C19 17.857 18.8361 18.2527 18.5444 18.5444C18.2527 18.8361 17.857 19 17.4444 19H6.55556C6.143 19 5.74733 18.8361 5.45561 18.5444C5.16389 18.2527 5 17.857 5 17.4444V14.3333M15.8889 8.88889L12 5M12 5L8.11111 8.88889M12 5V14.3333" stroke="#091329" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1685,7 +1682,7 @@
 									</label>
 									<div class='file-item-nav'>
 										<button 
-										data-id='dropdown-settings' class='dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400' data-open-sheet>
+										data-id='dropdown-settings' class='dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 transition-all hover:bg-gray-300' data-open-sheet>
 											<svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<rect width="15" height="4" transform="translate(5 6.5)" fill="white"/>
 												<circle cx="7.5" cy="8.5" r="1.5" fill="black"/>
@@ -1693,15 +1690,8 @@
 												<circle cx="17.5" cy="8.5" r="1.5" fill="black"/>
 											</svg>
 										</button>
-										<button class='cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:hidden max-lg:hidden'>
-											<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<g clip-path="url(#clip0_8581_17240)">
-												<path d="M5.171 6.666C5.38572 6.95306 5.65968 7.19059 5.97427 7.36247C6.28887 7.53435 6.63675 7.63656 6.99432 7.66217C7.35189 7.68777 7.71079 7.63618 8.04667 7.51089C8.38255 7.3856 8.68756 7.18953 8.941 6.936L10.441 5.436C10.8964 4.96449 11.1484 4.33299 11.1427 3.6775C11.137 3.022 10.8741 2.39497 10.4105 1.93145C9.94703 1.46793 9.31999 1.20501 8.6645 1.19931C8.00901 1.19362 7.3775 1.4456 6.906 1.901L6.046 2.756M7.171 5.666C6.95627 5.37893 6.68232 5.14141 6.36772 4.96953C6.05313 4.79765 5.70524 4.69544 5.34767 4.66983C4.9901 4.64422 4.6312 4.69582 4.29533 4.82111C3.95945 4.9464 3.65444 5.14246 3.401 5.396L1.901 6.896C1.4456 7.3675 1.19362 7.99901 1.19931 8.6545C1.20501 9.30999 1.46793 9.93702 1.93145 10.4005C2.39497 10.8641 3.022 11.127 3.6775 11.1327C4.33299 11.1384 4.96449 10.8864 5.436 10.431L6.291 9.576" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
-												</g>
-											</svg>
-										</button>
 										<div 			data-dropdown-id='dropdown-settings' class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-2.5 z-1 [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto'>
-											<ul class='space-y-1 text-sm'>
+											<ul class='text-sm'>
 												<li class='text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
 													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 														<path d="M5.33464 15.3346C4.41797 15.3346 3.66797 14.5846 3.66797 13.668V5.33464C3.66797 4.41797 4.41797 3.66797 5.33464 3.66797H13.668C14.5846 3.66797 15.3346 4.41797 15.3346 5.33464M10.3346 8.66797H18.668C19.5884 8.66797 20.3346 9.41416 20.3346 10.3346V18.668C20.3346 19.5884 19.5884 20.3346 18.668 20.3346H10.3346C9.41416 20.3346 8.66797 19.5884 8.66797 18.668V10.3346C8.66797 9.41416 9.41416 8.66797 10.3346 8.66797Z" stroke="#091329" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1770,7 +1760,7 @@
 													<svg class='ml-auto' width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 														<path fill-rule="evenodd" clip-rule="evenodd" d="M5.77093 4.45975C5.91761 4.6006 6 4.79161 6 4.99077C6 5.18993 5.91761 5.38094 5.77093 5.52179L1.34511 9.7707C1.27294 9.84244 1.18661 9.89966 1.09116 9.93902C0.995705 9.97839 0.893043 9.99911 0.789161 9.99997C0.68528 10.0008 0.582259 9.98183 0.486109 9.94407C0.38996 9.9063 0.302607 9.85053 0.229149 9.78001C0.15569 9.70949 0.0975976 9.62563 0.0582597 9.53332C0.0189218 9.44102 -0.000873164 9.34211 2.95397e-05 9.24238C0.000932243 9.14266 0.0225147 9.0441 0.0635176 8.95246C0.10452 8.86083 0.164122 8.77795 0.238846 8.70866L4.11154 4.99077L0.238846 1.27288C0.0963322 1.13122 0.0174745 0.941495 0.019257 0.744562C0.0210396 0.547629 0.10332 0.359247 0.248376 0.219989C0.393433 0.0807308 0.589659 0.00173969 0.794792 2.83931e-05C0.999925 -0.0016829 1.19755 0.0740226 1.34511 0.21084L5.77093 4.45975Z" fill="#091329"/>
 													</svg>
-													<ul class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto space-y-1 text-sm ml-[7px] [&.adjust-position-right]:mr-[7px] [&.adjust-position-right]:ml-auto'>
+													<ul class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto text-sm ml-[7px] [&.adjust-position-right]:mr-[7px] [&.adjust-position-right]:ml-auto'>
 														<li class='sub-menu-item text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
 															<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 																<path d="M19 14.3333V17.4444C19 17.857 18.8361 18.2527 18.5444 18.5444C18.2527 18.8361 17.857 19 17.4444 19H6.55556C6.143 19 5.74733 18.8361 5.45561 18.5444C5.16389 18.2527 5 17.857 5 17.4444V14.3333M15.8889 8.88889L12 5M12 5L8.11111 8.88889M12 5V14.3333" stroke="#091329" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1840,7 +1830,7 @@
 									</label>
 									<div class='file-item-nav'>
 										<button 
-										data-id='dropdown-settings' class='dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400' data-open-sheet>
+										data-id='dropdown-settings' class='dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 transition-all hover:bg-gray-300' data-open-sheet>
 											<svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<rect width="15" height="4" transform="translate(5 6.5)" fill="white"/>
 												<circle cx="7.5" cy="8.5" r="1.5" fill="black"/>
@@ -1848,15 +1838,8 @@
 												<circle cx="17.5" cy="8.5" r="1.5" fill="black"/>
 											</svg>
 										</button>
-										<button class='cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:hidden max-lg:hidden'>
-											<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<g clip-path="url(#clip0_8581_17240)">
-												<path d="M5.171 6.666C5.38572 6.95306 5.65968 7.19059 5.97427 7.36247C6.28887 7.53435 6.63675 7.63656 6.99432 7.66217C7.35189 7.68777 7.71079 7.63618 8.04667 7.51089C8.38255 7.3856 8.68756 7.18953 8.941 6.936L10.441 5.436C10.8964 4.96449 11.1484 4.33299 11.1427 3.6775C11.137 3.022 10.8741 2.39497 10.4105 1.93145C9.94703 1.46793 9.31999 1.20501 8.6645 1.19931C8.00901 1.19362 7.3775 1.4456 6.906 1.901L6.046 2.756M7.171 5.666C6.95627 5.37893 6.68232 5.14141 6.36772 4.96953C6.05313 4.79765 5.70524 4.69544 5.34767 4.66983C4.9901 4.64422 4.6312 4.69582 4.29533 4.82111C3.95945 4.9464 3.65444 5.14246 3.401 5.396L1.901 6.896C1.4456 7.3675 1.19362 7.99901 1.19931 8.6545C1.20501 9.30999 1.46793 9.93702 1.93145 10.4005C2.39497 10.8641 3.022 11.127 3.6775 11.1327C4.33299 11.1384 4.96449 10.8864 5.436 10.431L6.291 9.576" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
-												</g>
-											</svg>
-										</button>
 										<div 			data-dropdown-id='dropdown-settings' class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-2.5 z-1 [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto'>
-											<ul class='space-y-1 text-sm'>
+											<ul class='text-sm'>
 												<li class='text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
 													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 														<path d="M5.33464 15.3346C4.41797 15.3346 3.66797 14.5846 3.66797 13.668V5.33464C3.66797 4.41797 4.41797 3.66797 5.33464 3.66797H13.668C14.5846 3.66797 15.3346 4.41797 15.3346 5.33464M10.3346 8.66797H18.668C19.5884 8.66797 20.3346 9.41416 20.3346 10.3346V18.668C20.3346 19.5884 19.5884 20.3346 18.668 20.3346H10.3346C9.41416 20.3346 8.66797 19.5884 8.66797 18.668V10.3346C8.66797 9.41416 9.41416 8.66797 10.3346 8.66797Z" stroke="#091329" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1925,7 +1908,7 @@
 													<svg class='ml-auto' width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 														<path fill-rule="evenodd" clip-rule="evenodd" d="M5.77093 4.45975C5.91761 4.6006 6 4.79161 6 4.99077C6 5.18993 5.91761 5.38094 5.77093 5.52179L1.34511 9.7707C1.27294 9.84244 1.18661 9.89966 1.09116 9.93902C0.995705 9.97839 0.893043 9.99911 0.789161 9.99997C0.68528 10.0008 0.582259 9.98183 0.486109 9.94407C0.38996 9.9063 0.302607 9.85053 0.229149 9.78001C0.15569 9.70949 0.0975976 9.62563 0.0582597 9.53332C0.0189218 9.44102 -0.000873164 9.34211 2.95397e-05 9.24238C0.000932243 9.14266 0.0225147 9.0441 0.0635176 8.95246C0.10452 8.86083 0.164122 8.77795 0.238846 8.70866L4.11154 4.99077L0.238846 1.27288C0.0963322 1.13122 0.0174745 0.941495 0.019257 0.744562C0.0210396 0.547629 0.10332 0.359247 0.248376 0.219989C0.393433 0.0807308 0.589659 0.00173969 0.794792 2.83931e-05C0.999925 -0.0016829 1.19755 0.0740226 1.34511 0.21084L5.77093 4.45975Z" fill="#091329"/>
 													</svg>
-													<ul class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto space-y-1 text-sm ml-[7px] [&.adjust-position-right]:mr-[7px] [&.adjust-position-right]:ml-auto'>
+													<ul class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto text-sm ml-[7px] [&.adjust-position-right]:mr-[7px] [&.adjust-position-right]:ml-auto'>
 														<li class='sub-menu-item text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
 															<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 																<path d="M19 14.3333V17.4444C19 17.857 18.8361 18.2527 18.5444 18.5444C18.2527 18.8361 17.857 19 17.4444 19H6.55556C6.143 19 5.74733 18.8361 5.45561 18.5444C5.16389 18.2527 5 17.857 5 17.4444V14.3333M15.8889 8.88889L12 5M12 5L8.11111 8.88889M12 5V14.3333" stroke="#091329" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1994,7 +1977,7 @@
 									</label>
 									<div class='file-item-nav'>
 										<button 
-										data-id='dropdown-settings' class='dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400' data-open-sheet>
+										data-id='dropdown-settings' class='dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 transition-all hover:bg-gray-300' data-open-sheet>
 											<svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<rect width="15" height="4" transform="translate(5 6.5)" fill="white"/>
 												<circle cx="7.5" cy="8.5" r="1.5" fill="black"/>
@@ -2002,15 +1985,8 @@
 												<circle cx="17.5" cy="8.5" r="1.5" fill="black"/>
 											</svg>
 										</button>
-										<button class='cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:hidden max-lg:hidden'>
-											<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<g clip-path="url(#clip0_8581_17240)">
-												<path d="M5.171 6.666C5.38572 6.95306 5.65968 7.19059 5.97427 7.36247C6.28887 7.53435 6.63675 7.63656 6.99432 7.66217C7.35189 7.68777 7.71079 7.63618 8.04667 7.51089C8.38255 7.3856 8.68756 7.18953 8.941 6.936L10.441 5.436C10.8964 4.96449 11.1484 4.33299 11.1427 3.6775C11.137 3.022 10.8741 2.39497 10.4105 1.93145C9.94703 1.46793 9.31999 1.20501 8.6645 1.19931C8.00901 1.19362 7.3775 1.4456 6.906 1.901L6.046 2.756M7.171 5.666C6.95627 5.37893 6.68232 5.14141 6.36772 4.96953C6.05313 4.79765 5.70524 4.69544 5.34767 4.66983C4.9901 4.64422 4.6312 4.69582 4.29533 4.82111C3.95945 4.9464 3.65444 5.14246 3.401 5.396L1.901 6.896C1.4456 7.3675 1.19362 7.99901 1.19931 8.6545C1.20501 9.30999 1.46793 9.93702 1.93145 10.4005C2.39497 10.8641 3.022 11.127 3.6775 11.1327C4.33299 11.1384 4.96449 10.8864 5.436 10.431L6.291 9.576" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
-												</g>
-											</svg>
-										</button>
 										<div 			data-dropdown-id='dropdown-settings' class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-2.5 z-1 [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto'>
-											<ul class='space-y-1 text-sm'>
+											<ul class='text-sm'>
 												<li class='text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
 													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 														<path d="M5.33464 15.3346C4.41797 15.3346 3.66797 14.5846 3.66797 13.668V5.33464C3.66797 4.41797 4.41797 3.66797 5.33464 3.66797H13.668C14.5846 3.66797 15.3346 4.41797 15.3346 5.33464M10.3346 8.66797H18.668C19.5884 8.66797 20.3346 9.41416 20.3346 10.3346V18.668C20.3346 19.5884 19.5884 20.3346 18.668 20.3346H10.3346C9.41416 20.3346 8.66797 19.5884 8.66797 18.668V10.3346C8.66797 9.41416 9.41416 8.66797 10.3346 8.66797Z" stroke="#091329" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -2079,7 +2055,7 @@
 													<svg class='ml-auto' width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 														<path fill-rule="evenodd" clip-rule="evenodd" d="M5.77093 4.45975C5.91761 4.6006 6 4.79161 6 4.99077C6 5.18993 5.91761 5.38094 5.77093 5.52179L1.34511 9.7707C1.27294 9.84244 1.18661 9.89966 1.09116 9.93902C0.995705 9.97839 0.893043 9.99911 0.789161 9.99997C0.68528 10.0008 0.582259 9.98183 0.486109 9.94407C0.38996 9.9063 0.302607 9.85053 0.229149 9.78001C0.15569 9.70949 0.0975976 9.62563 0.0582597 9.53332C0.0189218 9.44102 -0.000873164 9.34211 2.95397e-05 9.24238C0.000932243 9.14266 0.0225147 9.0441 0.0635176 8.95246C0.10452 8.86083 0.164122 8.77795 0.238846 8.70866L4.11154 4.99077L0.238846 1.27288C0.0963322 1.13122 0.0174745 0.941495 0.019257 0.744562C0.0210396 0.547629 0.10332 0.359247 0.248376 0.219989C0.393433 0.0807308 0.589659 0.00173969 0.794792 2.83931e-05C0.999925 -0.0016829 1.19755 0.0740226 1.34511 0.21084L5.77093 4.45975Z" fill="#091329"/>
 													</svg>
-													<ul class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto space-y-1 text-sm ml-[7px] [&.adjust-position-right]:mr-[7px] [&.adjust-position-right]:ml-auto'>
+													<ul class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto text-sm ml-[7px] [&.adjust-position-right]:mr-[7px] [&.adjust-position-right]:ml-auto'>
 														<li class='sub-menu-item text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
 															<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 																<path d="M19 14.3333V17.4444C19 17.857 18.8361 18.2527 18.5444 18.5444C18.2527 18.8361 17.857 19 17.4444 19H6.55556C6.143 19 5.74733 18.8361 5.45561 18.5444C5.16389 18.2527 5 17.857 5 17.4444V14.3333M15.8889 8.88889L12 5M12 5L8.11111 8.88889M12 5V14.3333" stroke="#091329" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>

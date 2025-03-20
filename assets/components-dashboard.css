@@ -1,4 +1,7 @@
 @layer components{
+	.dashboard-container {
+		@apply max-w-[71rem] px-5 mx-auto max-sm:px-4 lg:px-12;
+	}
 	.dropdown-content {
 		z-index: 1000 !important;
 	}
@@ -29,7 +32,7 @@
 			}
 		}
 		.file-item-top {
-			@apply relative not-[.list-type_&]:pb-[75%] max-sm:h-[8.125rem] bg-gray-150 w-full rounded-t-[11px] overflow-hidden flex items-center justify-center after:content-[""] after:absolute after:bg-blue-900/35 after:size-full after:top-0 after:left-0 after:z-0 after:rounded-t-[11px] after:opacity-0 after:transition-opacity after:duration-300 after:ease-in-out group-hover:after:opacity-100 [.list-type_&]:after:hidden [.list-type_&]:bg-transparent [.list-type_&]:h-7.5 [.list-type_&]:justify-start [.list-type_&]:pl-2.5 max-lg:after:hidden;
+			@apply relative not-[.list-type_&]:pb-[75%] max-sm:h-[8.125rem] bg-gray-150 w-full rounded-t-[11px] overflow-hidden flex items-center justify-center after:content-[""] after:absolute after:bg-blue-900/25 after:size-full after:top-0 after:left-0 after:z-0 after:rounded-t-[11px] after:opacity-0 after:transition-opacity after:duration-300 after:ease-in-out group-hover:after:opacity-100 [.list-type_&]:after:hidden [.list-type_&]:bg-transparent [.list-type_&]:h-7.5 [.list-type_&]:justify-start [.list-type_&]:pl-2.5 max-lg:after:hidden;
 			h4 {
 				@apply hidden ml-3 [.list-type_&]:block text-sm text-dark-800 font-medium truncate;
 			}
@@ -99,7 +102,7 @@
 		}
 	}
 	.folder-item {
-		@apply border border-gray-500 rounded-xl px-5 pr-10 max-xl:px-4 py-3.5 pt-4 [.list-type_&]:grid grid-cols-[1fr_7rem_9rem_7.9375rem] [.list-type_&]:rounded-[0px] [.list-type_&]:border-x-0 [.list-type_&]:px-0 [.list-type_&]:border-t-0 relative gap-2 [.list-type_&]:hover:bg-gray-200 transition-colors after:content-[""] after:left-0 after:absolute after:-top-px after:w-px after:h-[calc(100%_+_2px)] after:bg-blue-500 after:transition-transform after:duration-300 after:origin-center after:scale-0 [.list-type_&]:[&.active-select]:after:scale-100 [.list-type_&]:[&.active-select]:bg-gray-200 max-md:grid-cols-[1fr_50px] not-[.list-type_&]:[.active-select]:border-blue-500;
+		@apply border border-gray-500 rounded-xl px-5 pr-10 max-xl:px-4 py-3.5 pt-4 [.list-type_&]:grid grid-cols-[1fr_7rem_9rem_7.9375rem] [.list-type_&]:rounded-[0px] [.list-type_&]:border-x-0 [.list-type_&]:px-0 [.list-type_&]:border-t-0 relative gap-2 hover:bg-gray-150 transition-colors after:content-[""] after:left-0 after:absolute after:-top-px after:w-px after:h-[calc(100%_+_2px)] after:bg-blue-500 after:transition-transform after:duration-300 after:origin-center after:scale-0 [.list-type_&]:[&.active-select]:after:scale-100 [.list-type_&]:[&.active-select]:bg-gray-150 max-md:grid-cols-[1fr_50px] not-[.list-type_&]:[.active-select]:border-blue-500;
 		.card-select-box {
 			@apply before:top-1/2 before:-translate-y-1/2 before:left-5 mt-[0.5px] ml-px [.list-type_&]:before:left-auto [.list-type_&]:before:right-[calc(100%_+_10px)] max-xl:not-[.list-type_&]:before:top-[15px] max-xl:not-[.list-type_&]:before:left-[15px] max-lg:[.list-select-active.list-type_&]:before:left-3 max-xl:not-[.list-type_&]:before:translate-y-0;
 			svg {
