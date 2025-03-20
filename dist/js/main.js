@@ -308,32 +308,46 @@ $(document).ready(function() {
 
 	// Header scroll hide
 	let lastScrollTop = 0;
-    let header = $('header'); 
-    let headerHeight = header.outerHeight();
-    let isScrolling = false;
+	let header = $('header');
+	let headerHeight = header.outerHeight();
+	let isScrolling = false;
+	let documentHeight = $(document).height() - $(window).height();
 
-    $(window).scroll(function() {
-        if (!isScrolling) {
-            window.requestAnimationFrame(function() {
-                let currentScroll = $(window).scrollTop();
-                
-                if (currentScroll > lastScrollTop && currentScroll > headerHeight) {
-                    header.css({
-                        'transform': 'translateY(-100%)',
-                    });
+	$(window).scroll(function() {
+		if (!isScrolling) {
+			window.requestAnimationFrame(function() {
+				let currentScroll = $(window).scrollTop();
+				
+				if (currentScroll < 0 || currentScroll > documentHeight) {
+					isScrolling = false;
+					return;
+				}
+
+				if (Math.abs(currentScroll - lastScrollTop) < 5) {
+					isScrolling = false;
+					return;
+				}
+
+				if (currentScroll > lastScrollTop && currentScroll > headerHeight) {
+					header.css({
+						'transform': 'translateY(-100%)',
+					});
 					$('.subheader-nav').addClass('top-0!');
-                } else {
-                    header.css({
-                        'transform': 'translateY(0)',
-                    });
+				} else {
+					header.css({
+						'transform': 'translateY(0)',
+					});
 					$('.subheader-nav').removeClass('top-0!');
-                }
+				}
 
-                lastScrollTop = currentScroll;
-                isScrolling = false;
-            });
-        }
-        isScrolling = true;
-    });
-	
+				lastScrollTop = currentScroll;
+				isScrolling = false;
+			});
+		}
+		isScrolling = true;
+	});
+
+	$(window).resize(function() {
+		documentHeight = $(document).height() - $(window).height();
+	});
 });
