@@ -264,7 +264,7 @@ $(document).ready(function() {
 	setTimeout(() => {
 		fakeLoading.addClass('hidden');
 		fakeLoadingContent.removeClass('hidden');
-	}, 20);
+	}, 2000);
 
 
 	// Drag and drop
