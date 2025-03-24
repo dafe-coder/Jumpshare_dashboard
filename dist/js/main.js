@@ -314,7 +314,7 @@ $(document).ready(function() {
 	let documentHeight = $(document).height() - $(window).height();
 
 	$(window).scroll(function() {
-		if (!isScrolling) {
+		if (!isScrolling && window.innerWidth < 1024) {
 			window.requestAnimationFrame(function() {
 				let currentScroll = $(window).scrollTop();
 				

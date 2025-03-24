@@ -88,10 +88,10 @@
 	.card-select-box {
 		@apply absolute z-1 top-0 left-0 size-0 h-full peer-checked:before:border-blue-500 peer-checked:before:bg-blue-500 peer-checked:[&>svg]:scale-100 peer-checked:[&>svg]:opacity-100 cursor-pointer flex items-center justify-center transition-colors opacity-0 lg:[.list-type_&]:opacity-100 [.list-type_&]:flex lg:group-hover:opacity-100 max-lg:[.list-select-active_&]:opacity-100 [.list-type_&]:transition-all [.list-type_&]:duration-300 max-lg:not-[.list-select-active_&]:pointer-events-none not-[.list-type_&]:before:left-4 not-[.list-type_&]:before:top-4 [.list-type_&]:before:top-1/2 [.list-type_&]:before:-translate-y-1/2 max-lg:[.list-type_&]:before:right-auto [.list-type_&]:before:right-[calc(100%+10px)] max-lg:before:left-0 max-lg:[.list-select-active.list-type_&]:before:left-3;
 		&::before {
-			@apply content-[""] absolute size-4 border border-gray-700 rounded-sm bg-white transition-all duration-300 ease-in-out;
+			@apply content-[""] absolute size-[18px] border border-gray-700 rounded-sm bg-white transition-all duration-300 ease-in-out;
 		}
 		svg {
-			@apply absolute not-[.list-type_&]:top-[20px] not-[.list-type_&]:left-[18.5px] transition-all opacity-0 scale-0 ml-[1.2px] mt-px [.list-type_&]:right-[calc(100%+13.5px)] [.list-type_&]:left-auto max-lg:[.list-type_&]:right-auto max-lg:left-0 max-lg:[.list-select-active.list-type_&]:left-[14.5px];
+			@apply absolute not-[.list-type_&]:top-[22px] not-[.list-type_&]:left-[20px] transition-all opacity-0 scale-0 [.list-type_&]:right-[calc(100%+15px)] [.list-type_&]:left-auto max-lg:[.list-type_&]:right-auto max-lg:left-0 max-lg:[.list-select-active.list-type_&]:left-[16px];
 		}
 	}
 	.list-type {
@@ -104,9 +104,9 @@
 	.folder-item {
 		@apply border border-gray-500 rounded-xl px-5 pr-10 max-xl:px-4 py-3.5 pt-4 [.list-type_&]:grid grid-cols-[1fr_7rem_9rem_7.9375rem] [.list-type_&]:rounded-[0px] [.list-type_&]:border-x-0 [.list-type_&]:px-0 [.list-type_&]:border-t-0 relative gap-2 hover:bg-gray-150 transition-colors after:content-[""] after:left-0 after:absolute after:-top-px after:w-px after:h-[calc(100%_+_2px)] after:bg-blue-500 after:transition-transform after:duration-300 after:origin-center after:scale-0 [.list-type_&]:[&.active-select]:after:scale-100 [.list-type_&]:[&.active-select]:bg-gray-150 max-md:grid-cols-[1fr_50px] not-[.list-type_&]:[.active-select]:border-blue-500;
 		.card-select-box {
-			@apply before:top-1/2 before:-translate-y-1/2 before:left-5 mt-[0.5px] ml-px [.list-type_&]:before:left-auto [.list-type_&]:before:right-[calc(100%_+_10px)] max-xl:not-[.list-type_&]:before:top-[15px] max-xl:not-[.list-type_&]:before:left-[15px] max-lg:[.list-select-active.list-type_&]:before:left-3 max-xl:not-[.list-type_&]:before:translate-y-0;
+			@apply before:top-1/2 before:-translate-y-1/2 before:left-5 [.list-type_&]:before:left-auto [.list-type_&]:before:right-[calc(100%_+_10px)] max-xl:not-[.list-type_&]:before:top-4 max-xl:not-[.list-type_&]:before:left-4 max-lg:[.list-select-active.list-type_&]:before:left-3 max-xl:not-[.list-type_&]:before:translate-y-0;
 			svg {
-				@apply top-1/2 -translate-y-1/2 left-[22.4px] max-xl:not-[.list-type_&]:left-[17.3px] max-xl:not-[.list-type_&]:top-[22.3px] [.list-type_&]:right-[calc(100%+13.5px)] [.list-type_&]:left-auto max-lg:[.list-type_&]:right-auto max-lg:[.list-select-active.list-type_&]:left-[14.5px];
+				@apply top-1/2 -translate-y-1/2 not-[.list-type_&]:left-[24px] max-xl:not-[.list-type_&]:left-[20px] max-xl:not-[.list-type_&]:top-[25.4px];
 			}
 		}
 	}
