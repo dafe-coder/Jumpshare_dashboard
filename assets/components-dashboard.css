@@ -106,7 +106,7 @@
 		.card-select-box {
 			@apply before:top-1/2 before:-translate-y-1/2 before:left-5 [.list-type_&]:before:left-auto [.list-type_&]:before:right-[calc(100%_+_10px)] max-xl:not-[.list-type_&]:before:top-4 max-xl:not-[.list-type_&]:before:left-4 max-lg:[.list-select-active.list-type_&]:before:left-3 max-xl:not-[.list-type_&]:before:translate-y-0;
 			svg {
-				@apply top-1/2 -translate-y-1/2 not-[.list-type_&]:left-[24px] max-xl:not-[.list-type_&]:left-[20px] max-xl:not-[.list-type_&]:top-[25.4px];
+				@apply top-1/2 -translate-y-1/2 not-[.list-type_&]:left-[24px] max-xl:not-[.list-type_&]:left-[20px] max-xl:not-[.list-type_&]:top-[25.4px] xl:not-[.list-type_&]:mt-[0.5px];
 			}
 		}
 	}
