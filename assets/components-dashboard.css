@@ -144,4 +144,22 @@
 			@apply flex items-center gap-3 mt-4 justify-end;
 		}
 	}
+	.input-field {
+		@apply border border-gray-600 rounded-md p-3 w-full h-12 outline-none;
+	}
+	.folder-menu-header {
+		@apply flex items-center px-3 py-2 hover:bg-gray-150 transition-colors duration-150 rounded-lg cursor-pointer;
+	}
+	.toggle-menu-icon {
+		@apply size-[18px] flex items-center justify-center mr-2.5 transition-transform duration-300 ease-in-out;
+	}
+	.folder-menu-content {
+		@apply pl-7.5
+	}
+	.folder-menu-tree {
+		@apply border border-gray-500 rounded-xl p-3;
+	}
+	.folder-menu-name {
+		@apply ml-2
+	}
 }

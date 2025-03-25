@@ -2215,7 +2215,7 @@
 		<!-- Dialog boxes -->
 		<div class="dialog hidden" data-dialog-type="delete-inbox">
 			<div class="dialog-card">
-				<button class="dialog-close">
+				<button class="dialog-close" data-dialog-close>
 					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
 					</svg>
@@ -2227,7 +2227,7 @@
 					<p>Are you sure you want to delete the inbox <strong>‘Untitled Entry’</strong>? Once deleted, it cannot be restored.</p>
 				</div>
 				<div class="dialog-footer">
-					<button class="btn btn-border-default">Cancel</button>
+					<button class="btn btn-border-default" data-dialog-close>Cancel</button>
 					<button class="btn btn-danger font-bold">Delete</button>
 				</div>
 			</div>
@@ -2235,7 +2235,7 @@
 
 		<div class="dialog hidden" data-dialog-type="permanently-delete">
 			<div class="dialog-card">
-				<button class="dialog-close">
+				<button class="dialog-close" data-dialog-close>
 					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
 					</svg>
@@ -2247,7 +2247,7 @@
 					<p>Are you sure you want to permanently delete 1 item? This action will wipe 1 item from our server and make it unrecoverable.</p>
 				</div>
 				<div class="dialog-footer">
-					<button class="btn btn-border-default">Cancel</button>
+					<button class="btn btn-border-default" data-dialog-close>Cancel</button>
 					<button class="btn btn-danger font-bold">Delete</button>
 				</div>
 			</div>
@@ -2255,7 +2255,7 @@
 
 		<div class="dialog hidden" data-dialog-type="restore-confirmation">
 			<div class="dialog-card">
-				<button class="dialog-close">
+				<button class="dialog-close" data-dialog-close>
 					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
 					</svg>
@@ -2267,15 +2267,15 @@
 					<p>Are you sure you want to restore 1 item?</p>
 				</div>
 				<div class="dialog-footer">
-					<button class="btn btn-border-default">Cancel</button>
+					<button class="btn btn-border-default" data-dialog-close>Cancel</button>
 					<button class="btn btn-danger font-bold">Restore</button>
 				</div>
 			</div>
 		</div>
 
-		<div class="dialog" data-dialog-type="self-destruct">
+		<div class="dialog hidden" data-dialog-type="self-destruct">
 			<div class="dialog-card">
-				<button class="dialog-close">
+				<button class="dialog-close" data-dialog-close>
 					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
 					</svg>
@@ -2307,9 +2307,166 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="dialog hidden" data-dialog-type="self-destruct">
+			<div class="dialog-card">
+				<button class="dialog-close" data-dialog-close>
+					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
+					</svg>
+				</button>
+				<div class="dialog-header">
+					<h4>Delete 1 file?</h4>
+				</div>
+				<div class="dialog-body">
+					<p>Are you sure you want to delete the file <strong>Items Hover Effect.mp4</strong>?</p>
+				</div>
+				<div class="dialog-footer">
+					<button class="btn btn-border-default" data-dialog-close>Cancel</button>
+					<button class="btn btn-danger font-bold">Delete</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="dialog hidden" data-dialog-type="new-workspace">
+			<div class="dialog-card">
+				<button class="dialog-close" data-dialog-close>
+					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
+					</svg>
+				</button>
+				<div class="dialog-header">
+					<h4>New Workspace</h4>
+				</div>
+				<div class="dialog-body">
+					<p>Create a new workspace. This is the name of your company, team or organization.</p>
+					<input type="text" placeholder='Name of the Workspace' class='input-field mt-4'>
+				</div>
+				<div class="dialog-footer">
+					<button class="btn btn-border-default" data-dialog-close>Cancel</button>
+					<button class="btn btn-primary shadow-none font-bold">Create</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="dialog" data-dialog-type="new-workspace">
+			<div class="dialog-card">
+				<button class="dialog-close" data-dialog-close>
+					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
+					</svg>
+				</button>
+				<div class="dialog-header">
+					<h4>Copy/Move 1 Item</h4>
+					<div class='flex items-center gap-4 mt-4'>
+						Currently in:
+						<button class="btn btn-border-default px-3">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M2.38934 6.8679C2.2975 7.06583 2.24995 7.28141 2.25 7.49961V14.2496C2.25 14.6474 2.40804 15.029 2.68934 15.3103C2.97064 15.5916 3.35218 15.7496 3.75 15.7496H6.75V9.74961C6.75 9.5507 6.82902 9.35993 6.96967 9.21928C7.11032 9.07863 7.30109 8.99961 7.5 8.99961H10.5C10.6989 8.99961 10.8897 9.07863 11.0303 9.21928C11.171 9.35993 11.25 9.5507 11.25 9.74961V15.7496H14.25C14.6478 15.7496 15.0294 15.5916 15.3107 15.3103C15.592 15.029 15.75 14.6474 15.75 14.2496V7.49961C15.7501 7.28141 15.7025 7.06583 15.6107 6.8679C15.5188 6.66997 15.3849 6.49446 15.2183 6.35361L9.96825 1.85436C9.69751 1.62554 9.35448 1.5 9 1.5C8.64552 1.5 8.30249 1.62554 8.03175 1.85436L2.78175 6.35361C2.6151 6.49446 2.48118 6.66997 2.38934 6.8679Z" stroke="#0A0A0B" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>	
+							<span>Personal Library</span>
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M9.52831 11.7783C9.38766 11.9189 9.19693 11.9979 8.99806 11.9979C8.79919 11.9979 8.60846 11.9189 8.46781 11.7783L4.22506 7.53556C4.15343 7.46637 4.09629 7.38362 4.05698 7.29211C4.01768 7.20061 3.99699 7.1022 3.99612 7.00261C3.99526 6.90303 4.01423 6.80427 4.05194 6.71209C4.08965 6.61992 4.14534 6.53618 4.21576 6.46576C4.28618 6.39534 4.36992 6.33965 4.46209 6.30194C4.55427 6.26423 4.65303 6.24526 4.75261 6.24612C4.8522 6.24699 4.95061 6.26768 5.04211 6.30698C5.13362 6.34629 5.21637 6.40343 5.28556 6.47506L8.99806 10.1876L12.7106 6.47506C12.852 6.33844 13.0415 6.26285 13.2381 6.26455C13.4348 6.26626 13.6229 6.34514 13.7619 6.4842C13.901 6.62325 13.9799 6.81136 13.9816 7.00801C13.9833 7.20466 13.9077 7.39411 13.7711 7.53556L9.52831 11.7783Z" fill="#0A0A0B"/>
+							</svg>
+						</button>
+					</div>
+				</div>
+				<div class="dialog-body">
+					<div class="folder-menu-tree">
+						<div class="folder-menu-item" data-level="0">
+							<div class="folder-menu-header">
+								<span class="toggle-menu-icon -rotate-90">
+									<img src="./assets/images/check-down.svg" alt="check">
+								</span>
+								
+									<img class='w-[19px] flex items-center justify-center' src="./assets/images/folder.svg" alt="folder">
+								</span>
+								<span class="folder-menu-name">New Folder 2.0</span>
+							</div>
+							<div class="folder-menu-content hidden">
+								<div class="folder-menu-item" data-level="1">
+									<div class="folder-menu-header">
+										<span class="toggle-menu-icon -rotate-90"><img src="./assets/images/check-down.svg" alt="check"></span>
+										<img class='w-[19px] flex items-center justify-center' src="./assets/images/folder.svg" alt="folder">
+										<span class="folder-menu-name">Jump Camp Meeting</span>
+									</div>
+									<div class="folder-menu-content hidden">
+										<div class="folder-menu-item" data-level="2">
+											<div class="folder-menu-header">
+												<span class="toggle-menu-icon -rotate-90"><img src="./assets/images/check-down.svg" alt="check"></span>
+												<img class='size-6 flex w-[19px]enter justify-center' src="./assets/images/folder.svg" alt="folder">
+												<span class="folder-menu-name">Subfolders Level 3</span>
+											</div>
+											<div class="folder-menu-content hidden">
+												<div class="folder-menu-item" data-level="3">
+													<div class="folder-menu-header">
+														<span class="toggle-menu-icon -rotate-90"></span>
+														<img class='size-6 flex items-center w-[19px]enter' src="./assets/images/folder.svg" alt="folder">
+														<span class="folder-menu-name">Deep File 1</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="folder-menu-item" data-level="1">
+									<div class="folder-menu-header">
+										<span class="toggle-menu-icon -rotate-90"><img src="./assets/images/check-down.svg" alt="check"></span>
+										<img class='w-[19px] flex items-center justify-center' src="./assets/images/folder.svg" alt="folder">
+										<span class="folder-menu-name">New Folder</span>
+									</div>
+									<div class="folder-menu-content hidden">
+										<div class="folder-menu-item" data-level="2">
+											<div class="folder-menu-header">
+												<span class="toggle-menu-icon -rotate-90"></span>
+												<img class='size-6 flex w-[19px]enter justify-center' src="./assets/images/folder.svg" alt="folder">
+												<span class="folder-menu-name">Subfolder</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="folder-menu-item" data-level="0">
+							<div class="folder-menu-header">
+								<span class="toggle-menu-icon -rotate-90"><img src="./assets/images/check-down.svg" alt="check"></span>
+								<img class='w-[19px] flex items-center justify-center' src="./assets/images/folder.svg" alt="folder">
+								<span class="folder-menu-name">Testing Formats</span>
+							</div>
+							<div class="folder-menu-content hidden">
+								<div class="folder-menu-item" data-level="1">
+									<div class="folder-menu-header">
+										<span class="toggle-menu-icon -rotate-90"><img src="./assets/images/check-down.svg" alt="check"></span>
+										<img class='w-[19px] flex items-center justify-center' src="./assets/images/folder.svg" alt="folder">
+										<span class="folder-menu-name">New Folder</span>
+									</div>
+									<div class="folder-menu-content hidden">
+										<div class="folder-menu-item" data-level="2">
+											<div class="folder-menu-header">
+												<span class="toggle-menu-icon -rotate-90"></span>
+												<img class='size-6 flex w-[19px]enter justify-center' src="./assets/images/folder.svg" alt="folder">
+												<span class="folder-menu-name">Deep File 2</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="dialog-footer justify-between">
+					<button class="btn btn-border-default px-4"><span class="mb-0.5">+</span> Create New</button>
+					<div class="flex items-center gap-2">
+						<button class="btn btn-primary shadow-none font-bold">Copy</button>
+						<button class="btn btn-primary shadow-none font-bold">Move</button>
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 	<script src='./dist/js/bottom-sheet.js'></script>
 	<script src='./dist/js/dialog.js'></script>
+	<script src='./dist/js/menu-tree.js'></script>
 	<script src="./dist/js/main.js"></script>
 </html>

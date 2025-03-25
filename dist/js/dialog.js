@@ -1,29 +1,32 @@
 const Dialog = {
 	init: function() {
-		this.dialogs = document.querySelectorAll(".dialog")
-		this.dialogs.forEach(dialog => {
-			this.initDialog(dialog)
-		})
+		this.dialogs = $('.dialog');
+		this.dialogs.each((_, dialog) => {
+			this.initDialog($(dialog));
+		});
 	},
 
-	initDialog: function(dialog) {
-		const closeBtn = dialog.querySelector(".dialog-close")
+	initDialog: function($dialog) {
+		const $closeBtn = $('[data-dialog-close]');
 		
-		dialog.addEventListener("click", (e) => {
-			if(e.target === dialog) {
-				dialog.classList.add("hidden")
+		$dialog.on('click', (e) => {
+			if (e.target === $dialog[0]) {
+				$dialog.addClass('hidden');
 			}
-		})
+		});
 
-		closeBtn.addEventListener("click", () => {
-			dialog.classList.add("hidden")
-		})
+		$closeBtn.on('click', () => {
+			$dialog.addClass('hidden');
+		});
 	},
 
-	openDialog: function(dialog) {
-		dialog.classList.remove("hidden")
+	openDialog: function($dialog) {
+		$dialog.removeClass('hidden');
 	}
-	
-}
+};
+
+$(document).ready(() => {
+	Dialog.init();
+});
 
 Dialog.init()
