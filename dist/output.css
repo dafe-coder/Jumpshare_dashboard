@@ -405,9 +405,6 @@
   .mt-auto {
     margin-top: auto;
   }
-  .mt-px {
-    margin-top: 1px;
-  }
   .mr-1\.5 {
     margin-right: calc(var(--spacing) * 1.5);
   }
@@ -584,9 +581,6 @@
   }
   .w-\[97px\] {
     width: 97px;
-  }
-  .w-\[136px\] {
-    width: 136px;
   }
   .w-\[191px\] {
     width: 191px;
