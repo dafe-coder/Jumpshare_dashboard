@@ -116,4 +116,32 @@
 	.dashed-box {
 		background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='14' ry='14' stroke='%231C5DDFFF' stroke-width='3' stroke-dasharray='10%2c 22' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
 	}
+
+	.dialog {
+		@apply fixed top-0 left-0 size-full z-99999 flex justify-center items-center bg-blue-1000/50;
+		.dialog-card {
+			@apply bg-white rounded-lg p-6 max-w-[540px] w-full relative;
+		}
+		.dialog-close {
+			@apply absolute top-2 right-2 size-8 flex items-center justify-center cursor-pointer;
+		}
+		.dialog-header {
+			@apply mb-4;
+			h4 {
+				@apply text-xl font-semibold;
+			}
+		}
+		.dialog-body {
+			@apply mb-4;
+			p {
+				@apply text-sm;
+				strong {
+					@apply font-semibold;
+				}
+			}
+		}
+		.dialog-footer {
+			@apply flex items-center gap-3 mt-4 justify-end;
+		}
+	}
 }

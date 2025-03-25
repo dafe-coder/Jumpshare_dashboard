@@ -357,8 +357,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="w-full min-h-screen grid grid-cols-[240px_1fr] max-lg:grid-cols-[1fr]">
-			<aside class="flex flex-col h-screen z-101 max-lg:-left-full max-lg:top-0 max-lg:fixed max-lg:w-full transition-all duration-500 ease-in-out [&.active]:left-0">
+		<div class="w-full min-h-screen">
+			<aside class="w-[240px] fixed left-0 top-0 bottom-0 flex flex-col h-screen z-101 max-lg:-left-full max-lg:top-0 max-lg:w-full transition-all duration-500 ease-in-out [&.active]:left-0">
 				<div class="mobile-menu-overlay absolute bg-[#090B13]/50 z-0 opacity-0 w-0 h-screen lg:hidden [.active_&]:opacity-100 [.active_&]:w-screen transition-all duration-500 ease-in-out delay-75"></div>
 				<div class='flex flex-col max-lg:w-[318px] max-lg:max-w-[318px] max-xs:w-[85%]! w-full bg-gray-150 max-lg:rounded-r-2xl z-3 h-full'>
 					<div class='dropdown-wrapper relative z-4'>
@@ -523,7 +523,7 @@
 					</div>
 				</div>
 			</aside>
-			<main class='relative max-lg:w-screen'>
+			<main class='relative max-lg:w-screen lg:ml-[240px]'>
 				<header class='pt-2.5 sticky top-0 z-51 bg-white transition-all duration-300'>
 					<div class="dashboard-container ">
 						<div class='w-full flex items-center justify-between max-md:bg-gray-150 max-md:rounded-lg'>
@@ -2211,8 +2211,105 @@
 				</div>
 			</main>
 		</div>
+
+		<!-- Dialog boxes -->
+		<div class="dialog hidden" data-dialog-type="delete-inbox">
+			<div class="dialog-card">
+				<button class="dialog-close">
+					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
+					</svg>
+				</button>
+				<div class="dialog-header">
+					<h4>Delete Inbox?</h4>
+				</div>
+				<div class="dialog-body">
+					<p>Are you sure you want to delete the inbox <strong>‘Untitled Entry’</strong>? Once deleted, it cannot be restored.</p>
+				</div>
+				<div class="dialog-footer">
+					<button class="btn btn-border-default">Cancel</button>
+					<button class="btn btn-danger font-bold">Delete</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="dialog hidden" data-dialog-type="permanently-delete">
+			<div class="dialog-card">
+				<button class="dialog-close">
+					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
+					</svg>
+				</button>
+				<div class="dialog-header">
+					<h4>Permanently delete?</h4>
+				</div>
+				<div class="dialog-body">
+					<p>Are you sure you want to permanently delete 1 item? This action will wipe 1 item from our server and make it unrecoverable.</p>
+				</div>
+				<div class="dialog-footer">
+					<button class="btn btn-border-default">Cancel</button>
+					<button class="btn btn-danger font-bold">Delete</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="dialog hidden" data-dialog-type="restore-confirmation">
+			<div class="dialog-card">
+				<button class="dialog-close">
+					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
+					</svg>
+				</button>
+				<div class="dialog-header">
+					<h4>Restore confirmation?</h4>
+				</div>
+				<div class="dialog-body">
+					<p>Are you sure you want to restore 1 item?</p>
+				</div>
+				<div class="dialog-footer">
+					<button class="btn btn-border-default">Cancel</button>
+					<button class="btn btn-danger font-bold">Restore</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="dialog" data-dialog-type="self-destruct">
+			<div class="dialog-card">
+				<button class="dialog-close">
+					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
+					</svg>
+				</button>
+				<div class="dialog-header">
+					<h4>Self-Destruct</h4>
+				</div>
+				<div class="dialog-body">
+					<p>Select a time below for when this folder (and all items inside it) should automatically be deleted.</p>
+				</div>
+				<div class="dialog-footer justify-between">
+					<div class="relative dropdown-wrapper">
+						<button data-id='self-destruct' class="dropdown-button btn btn-border-default w-[8.5rem] px-4 justify-between">
+							24 Hours
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M9.52831 11.7783C9.38766 11.9189 9.19693 11.9979 8.99806 11.9979C8.79919 11.9979 8.60846 11.9189 8.46781 11.7783L4.22506 7.53556C4.15343 7.46637 4.09629 7.38362 4.05698 7.29211C4.01768 7.20061 3.99699 7.1022 3.99612 7.00261C3.99526 6.90303 4.01423 6.80427 4.05194 6.71209C4.08965 6.61992 4.14534 6.53618 4.21576 6.46576C4.28618 6.39534 4.36992 6.33965 4.46209 6.30194C4.55427 6.26423 4.65303 6.24526 4.75261 6.24612C4.8522 6.24699 4.95061 6.26768 5.04211 6.30698C5.13362 6.34629 5.21637 6.40343 5.28556 6.47506L8.99806 10.1876L12.7106 6.47506C12.852 6.33844 13.0415 6.26285 13.2381 6.26455C13.4348 6.26626 13.6229 6.34514 13.7619 6.4842C13.901 6.62325 13.9799 6.81136 13.9816 7.00801C13.9833 7.20466 13.9077 7.39411 13.7711 7.53556L9.52831 11.7783Z" fill="#0A0A0B"/>
+							</svg>
+						</button>
+						<ul class="dropdown-content bg-white shadow-card p-1 rounded-lg w-[8.5rem] hidden absolute flex-col left-0 top-full mt-0.5 z-1 [&.active]:flex" data-dropdown-id='self-destruct'>
+							<li class='h-9 flex items-center text-sm px-4 rounded-md hover:bg-gray-150 cursor-pointer'>24 Hours</li>
+							<li class='h-9 flex items-center text-sm px-4 rounded-md hover:bg-gray-150 cursor-pointer'>48 Hours</li>
+							<li class='h-9 flex items-center text-sm px-4 rounded-md hover:bg-gray-150 cursor-pointer'>7 Days</li>
+							<li class='h-9 flex items-center text-sm px-4 rounded-md hover:bg-gray-150 cursor-pointer'>14 Days</li>
+							<li class='h-9 flex items-center text-sm px-4 rounded-md hover:bg-gray-150 cursor-pointer'>30 Days</li>
+							<li class='h-9 flex items-center text-sm px-4 rounded-md hover:bg-gray-150 cursor-pointer'>Custom</li>
+						</ul>
+					</div>
+					<button class="btn btn-primary shadow-none font-bold">Delete</button>
+				</div>
+			</div>
+		</div>
 	</body>
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 	<script src='./dist/js/bottom-sheet.js'></script>
+	<script src='./dist/js/dialog.js'></script>
 	<script src="./dist/js/main.js"></script>
 </html>
