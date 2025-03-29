@@ -118,7 +118,8 @@
 	}
 
 	.dialog {
-		@apply fixed top-0 left-0 size-full z-99999 flex justify-center items-center bg-blue-1000/50;
+		@apply fixed top-0 left-0 size-full
+		 z-99999 flex justify-center items-center bg-blue-1000/50 px-4;
 		.dialog-card {
 			@apply bg-white rounded-lg p-6 max-w-[540px] w-full relative;
 		}
@@ -138,6 +139,9 @@
 				strong {
 					@apply font-semibold;
 				}
+			}
+			ul {
+				@apply list-disc list-inside mt-4 text-sm text-dark-800 space-y-1;
 			}
 		}
 		.dialog-footer {
