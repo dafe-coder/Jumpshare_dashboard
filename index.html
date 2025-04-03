@@ -824,7 +824,7 @@
 								</div>
 							</div>
 							<a href="#" class='group folder-item dropdown-wrapper'>
-								<div class='flex items-center gap-3 [.list-type_&]:ml-2.5 max-lg:gap-5 max-lg:[.list-select-active.list-type_&]:pl-9! max-lg:[.list-type_&]:duration-300 max-lg:[.list-type_&]:transition-[padding-left] max-xl:not-[.list-type_&]:flex-col max-xl:items-start max-lg:items-center'>
+								<div class='flex items-center gap-3 [.list-type_&]:ml-2.5 max-lg:gap-5 max-lg:[.list-select-active.list-type_&]:pl-9! max-lg:[.list-type_&]:duration-300 max-lg:[.list-type_&]:transition-[padding-left] max-xl:not-[.list-type_&]:flex-col max-xl:items-start max-lg:[.list-type_&]:items-center'>
 									<input data-select-item class="peer" hidden="" type="checkbox" id="select-file-2">
 									<label class="card-select-box" for="select-file-2">
 										<svg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -853,8 +853,8 @@
 								</div>
 								<div class='[.list-type_&]:flex items-center gap-2 justify-between max-md:justify-end pr-3 max-lg:not-[.list-type_&]:flex'>
 									<span class='hidden text-sm text-dark-800 md:[.list-type_&]:flex w-10 justify-center items-center'>12</span>
-									<div class='[.list-type_&]:relative'>
-										<button data-id="dropdown-settings" data-open-sheet class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer h-5 flex justify-center items-center transition-transform hover:scale-110 size-7 absolute right-2.5 top-1/2 -translate-y-1/2 max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:translate-y-0 [.list-type_&]:top-auto [.list-type_&]:translate-y-0 [.list-type_&]:static">
+									<div class='absolute right-2.5 top-1/2 -translate-y-1/2 max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:translate-y-0 [.list-type_&]:top-auto [.list-type_&]:translate-y-0 [.list-type_&]:static z-1'>
+										<button data-id="dropdown-settings" data-open-sheet class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer h-5 flex justify-center items-center transition-transform hover:scale-110 size-7 [&.active]">
 											<svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<rect width="15" height="4" transform="translate(5 6.5)" fill="white"/>
 												<circle cx="7.5" cy="8.5" r="1.5" fill="black"/>
@@ -932,7 +932,7 @@
 													<svg class='ml-auto' width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 														<path fill-rule="evenodd" clip-rule="evenodd" d="M5.77093 4.45975C5.91761 4.6006 6 4.79161 6 4.99077C6 5.18993 5.91761 5.38094 5.77093 5.52179L1.34511 9.7707C1.27294 9.84244 1.18661 9.89966 1.09116 9.93902C0.995705 9.97839 0.893043 9.99911 0.789161 9.99997C0.68528 10.0008 0.582259 9.98183 0.486109 9.94407C0.38996 9.9063 0.302607 9.85053 0.229149 9.78001C0.15569 9.70949 0.0975976 9.62563 0.0582597 9.53332C0.0189218 9.44102 -0.000873164 9.34211 2.95397e-05 9.24238C0.000932243 9.14266 0.0225147 9.0441 0.0635176 8.95246C0.10452 8.86083 0.164122 8.77795 0.238846 8.70866L4.11154 4.99077L0.238846 1.27288C0.0963322 1.13122 0.0174745 0.941495 0.019257 0.744562C0.0210396 0.547629 0.10332 0.359247 0.248376 0.219989C0.393433 0.0807308 0.589659 0.00173969 0.794792 2.83931e-05C0.999925 -0.0016829 1.19755 0.0740226 1.34511 0.21084L5.77093 4.45975Z" fill="#091329"/>
 													</svg>
-													<ul class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto text-sm ml-[7px] [&.adjust-position-right]:mr-[7px] [&.adjust-position-right]:ml-auto'>
+													<ul class='dropdown-content dropdown-sub-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto text-sm ml-[7px] [.adjust-position-right_&]:mr-[7px] [.adjust-position-right_&]:ml-auto'>
 														<li class='sub-menu-item text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
 															<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 																<path d="M19 14.3333V17.4444C19 17.857 18.8361 18.2527 18.5444 18.5444C18.2527 18.8361 17.857 19 17.4444 19H6.55556C6.143 19 5.74733 18.8361 5.45561 18.5444C5.16389 18.2527 5 17.857 5 17.4444V14.3333M15.8889 8.88889L12 5M12 5L8.11111 8.88889M12 5V14.3333" stroke="#091329" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -960,7 +960,7 @@
 								</div>
 							</a>
 							<a href="#" class='group folder-item dropdown-wrapper'>
-								<div class='flex items-center gap-3 [.list-type_&]:ml-2.5 max-lg:gap-5 max-lg:[.list-select-active.list-type_&]:pl-9! max-lg:[.list-type_&]:duration-300 max-lg:[.list-type_&]:transition-[padding-left] max-xl:not-[.list-type_&]:flex-col max-xl:items-start max-lg:items-center'>
+								<div class='flex items-center gap-3 [.list-type_&]:ml-2.5 max-lg:gap-5 max-lg:[.list-select-active.list-type_&]:pl-9! max-lg:[.list-type_&]:duration-300 max-lg:[.list-type_&]:transition-[padding-left] max-xl:not-[.list-type_&]:flex-col max-xl:items-start max-lg:[.list-type_&]:items-center'>
 									<input data-select-item class="peer" hidden="" type="checkbox" id="select-file-1">
 									<label class="card-select-box" for="select-file-1">
 										<svg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -989,8 +989,8 @@
 								</div>
 								<div class='[.list-type_&]:flex items-center gap-2 justify-between max-md:justify-end pr-3 max-lg:not-[.list-type_&]:flex'>
 									<span class='hidden text-sm text-dark-800 md:[.list-type_&]:flex w-10 justify-center items-center'>12</span>
-									<div class='[.list-type_&]:relative'>
-										<button data-id="dropdown-settings" data-open-sheet class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer h-5 flex justify-center items-center transition-transform hover:scale-110 size-7 absolute right-2.5 top-1/2 -translate-y-1/2 max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:translate-y-0 [.list-type_&]:top-auto [.list-type_&]:translate-y-0 [.list-type_&]:static">
+									<div class='absolute right-2.5 top-1/2 -translate-y-1/2 max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:translate-y-0 [.list-type_&]:top-auto [.list-type_&]:translate-y-0 [.list-type_&]:static z-1'>
+										<button data-id="dropdown-settings" data-open-sheet class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer h-5 flex justify-center items-center transition-transform hover:scale-110 size-7 [&.active]">
 											<svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<rect width="15" height="4" transform="translate(5 6.5)" fill="white"/>
 												<circle cx="7.5" cy="8.5" r="1.5" fill="black"/>
@@ -1068,7 +1068,7 @@
 													<svg class='ml-auto' width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 														<path fill-rule="evenodd" clip-rule="evenodd" d="M5.77093 4.45975C5.91761 4.6006 6 4.79161 6 4.99077C6 5.18993 5.91761 5.38094 5.77093 5.52179L1.34511 9.7707C1.27294 9.84244 1.18661 9.89966 1.09116 9.93902C0.995705 9.97839 0.893043 9.99911 0.789161 9.99997C0.68528 10.0008 0.582259 9.98183 0.486109 9.94407C0.38996 9.9063 0.302607 9.85053 0.229149 9.78001C0.15569 9.70949 0.0975976 9.62563 0.0582597 9.53332C0.0189218 9.44102 -0.000873164 9.34211 2.95397e-05 9.24238C0.000932243 9.14266 0.0225147 9.0441 0.0635176 8.95246C0.10452 8.86083 0.164122 8.77795 0.238846 8.70866L4.11154 4.99077L0.238846 1.27288C0.0963322 1.13122 0.0174745 0.941495 0.019257 0.744562C0.0210396 0.547629 0.10332 0.359247 0.248376 0.219989C0.393433 0.0807308 0.589659 0.00173969 0.794792 2.83931e-05C0.999925 -0.0016829 1.19755 0.0740226 1.34511 0.21084L5.77093 4.45975Z" fill="#091329"/>
 													</svg>
-													<ul class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto text-sm ml-[7px] [&.adjust-position-right]:mr-[7px] [&.adjust-position-right]:ml-auto'>
+													<ul class='dropdown-content dropdown-sub-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto text-sm ml-[7px] [.adjust-position-right_&]:mr-[7px] [.adjust-position-right_&]:ml-auto'>
 														<li class='sub-menu-item text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
 															<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 																<path d="M19 14.3333V17.4444C19 17.857 18.8361 18.2527 18.5444 18.5444C18.2527 18.8361 17.857 19 17.4444 19H6.55556C6.143 19 5.74733 18.8361 5.45561 18.5444C5.16389 18.2527 5 17.857 5 17.4444V14.3333M15.8889 8.88889L12 5M12 5L8.11111 8.88889M12 5V14.3333" stroke="#091329" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1096,7 +1096,7 @@
 								</div>
 							</a>
 							<a href="#" class='group folder-item dropdown-wrapper'>
-								<div class='flex items-center gap-3 [.list-type_&]:ml-2.5 max-lg:gap-5 max-lg:[.list-select-active.list-type_&]:pl-9! max-lg:[.list-type_&]:duration-300 max-lg:[.list-type_&]:transition-[padding-left] max-xl:not-[.list-type_&]:flex-col max-xl:items-start max-lg:items-center'>
+								<div class='flex items-center gap-3 [.list-type_&]:ml-2.5 max-lg:gap-5 max-lg:[.list-select-active.list-type_&]:pl-9! max-lg:[.list-type_&]:duration-300 max-lg:[.list-type_&]:transition-[padding-left] max-xl:not-[.list-type_&]:flex-col max-xl:items-start max-lg:[.list-type_&]:items-center'>
 									<input data-select-item class="peer" hidden="" type="checkbox" id="select-file-3">
 									<label class="card-select-box" for="select-file-3">
 										<svg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1125,8 +1125,8 @@
 								</div>
 								<div class='[.list-type_&]:flex items-center gap-2 justify-between max-md:justify-end pr-3 max-lg:not-[.list-type_&]:flex'>
 									<span class='hidden text-sm text-dark-800 md:[.list-type_&]:flex w-10 justify-center items-center'>12</span>
-									<div class='[.list-type_&]:relative'>
-										<button data-id="dropdown-settings" data-open-sheet class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer h-5 flex justify-center items-center transition-transform hover:scale-110 size-7 absolute right-2.5 top-1/2 -translate-y-1/2 max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:translate-y-0 [.list-type_&]:top-auto [.list-type_&]:translate-y-0 [.list-type_&]:static">
+									<div class='absolute right-2.5 top-1/2 -translate-y-1/2 max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:translate-y-0 [.list-type_&]:top-auto [.list-type_&]:translate-y-0 [.list-type_&]:static z-1'>
+										<button data-id="dropdown-settings" data-open-sheet class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer h-5 flex justify-center items-center transition-transform hover:scale-110 size-7 [&.active]">
 											<svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<rect width="15" height="4" transform="translate(5 6.5)" fill="white"/>
 												<circle cx="7.5" cy="8.5" r="1.5" fill="black"/>
@@ -1204,7 +1204,7 @@
 													<svg class='ml-auto' width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 														<path fill-rule="evenodd" clip-rule="evenodd" d="M5.77093 4.45975C5.91761 4.6006 6 4.79161 6 4.99077C6 5.18993 5.91761 5.38094 5.77093 5.52179L1.34511 9.7707C1.27294 9.84244 1.18661 9.89966 1.09116 9.93902C0.995705 9.97839 0.893043 9.99911 0.789161 9.99997C0.68528 10.0008 0.582259 9.98183 0.486109 9.94407C0.38996 9.9063 0.302607 9.85053 0.229149 9.78001C0.15569 9.70949 0.0975976 9.62563 0.0582597 9.53332C0.0189218 9.44102 -0.000873164 9.34211 2.95397e-05 9.24238C0.000932243 9.14266 0.0225147 9.0441 0.0635176 8.95246C0.10452 8.86083 0.164122 8.77795 0.238846 8.70866L4.11154 4.99077L0.238846 1.27288C0.0963322 1.13122 0.0174745 0.941495 0.019257 0.744562C0.0210396 0.547629 0.10332 0.359247 0.248376 0.219989C0.393433 0.0807308 0.589659 0.00173969 0.794792 2.83931e-05C0.999925 -0.0016829 1.19755 0.0740226 1.34511 0.21084L5.77093 4.45975Z" fill="#091329"/>
 													</svg>
-													<ul class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto text-sm ml-[7px] [&.adjust-position-right]:mr-[7px] [&.adjust-position-right]:ml-auto'>
+													<ul class='dropdown-content dropdown-sub-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto text-sm ml-[7px] [.adjust-position-right_&]:mr-[7px] [.adjust-position-right_&]:ml-auto'>
 														<li class='sub-menu-item text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
 															<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 																<path d="M19 14.3333V17.4444C19 17.857 18.8361 18.2527 18.5444 18.5444C18.2527 18.8361 17.857 19 17.4444 19H6.55556C6.143 19 5.74733 18.8361 5.45561 18.5444C5.16389 18.2527 5 17.857 5 17.4444V14.3333M15.8889 8.88889L12 5M12 5L8.11111 8.88889M12 5V14.3333" stroke="#091329" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1232,7 +1232,7 @@
 								</div>
 							</a>
 							<a href="#" class='group folder-item dropdown-wrapper'>
-								<div class='flex items-center gap-3 [.list-type_&]:ml-2.5 max-lg:gap-5 max-lg:[.list-select-active.list-type_&]:pl-9! max-lg:[.list-type_&]:duration-300 max-lg:[.list-type_&]:transition-[padding-left] max-xl:not-[.list-type_&]:flex-col max-xl:items-start max-lg:items-center'>
+								<div class='flex items-center gap-3 [.list-type_&]:ml-2.5 max-lg:gap-5 max-lg:[.list-select-active.list-type_&]:pl-9! max-lg:[.list-type_&]:duration-300 max-lg:[.list-type_&]:transition-[padding-left] max-xl:not-[.list-type_&]:flex-col max-xl:items-start max-lg:[.list-type_&]:items-center'>
 									<input data-select-item class="peer" hidden="" type="checkbox" id="select-file-4">
 									<label class="card-select-box" for="select-file-4">
 										<svg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1261,8 +1261,8 @@
 								</div>
 								<div class='[.list-type_&]:flex items-center gap-2 justify-between max-md:justify-end pr-3 max-lg:not-[.list-type_&]:flex'>
 									<span class='hidden text-sm text-dark-800 md:[.list-type_&]:flex w-10 justify-center items-center'>12</span>
-									<div class='[.list-type_&]:relative'>
-										<button data-id="dropdown-settings" data-open-sheet class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer h-5 flex justify-center items-center transition-transform hover:scale-110 size-7 absolute right-2.5 top-1/2 -translate-y-1/2 max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:translate-y-0 [.list-type_&]:top-auto [.list-type_&]:translate-y-0 [.list-type_&]:static">
+									<div class='absolute right-2.5 top-1/2 -translate-y-1/2 max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:translate-y-0 [.list-type_&]:top-auto [.list-type_&]:translate-y-0 [.list-type_&]:static z-1'>
+										<button data-id="dropdown-settings" data-open-sheet class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer h-5 flex justify-center items-center transition-transform hover:scale-110 size-7 [&.active]:opacity-100">
 											<svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<rect width="15" height="4" transform="translate(5 6.5)" fill="white"/>
 												<circle cx="7.5" cy="8.5" r="1.5" fill="black"/>
@@ -1340,7 +1340,7 @@
 													<svg class='ml-auto' width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 														<path fill-rule="evenodd" clip-rule="evenodd" d="M5.77093 4.45975C5.91761 4.6006 6 4.79161 6 4.99077C6 5.18993 5.91761 5.38094 5.77093 5.52179L1.34511 9.7707C1.27294 9.84244 1.18661 9.89966 1.09116 9.93902C0.995705 9.97839 0.893043 9.99911 0.789161 9.99997C0.68528 10.0008 0.582259 9.98183 0.486109 9.94407C0.38996 9.9063 0.302607 9.85053 0.229149 9.78001C0.15569 9.70949 0.0975976 9.62563 0.0582597 9.53332C0.0189218 9.44102 -0.000873164 9.34211 2.95397e-05 9.24238C0.000932243 9.14266 0.0225147 9.0441 0.0635176 8.95246C0.10452 8.86083 0.164122 8.77795 0.238846 8.70866L4.11154 4.99077L0.238846 1.27288C0.0963322 1.13122 0.0174745 0.941495 0.019257 0.744562C0.0210396 0.547629 0.10332 0.359247 0.248376 0.219989C0.393433 0.0807308 0.589659 0.00173969 0.794792 2.83931e-05C0.999925 -0.0016829 1.19755 0.0740226 1.34511 0.21084L5.77093 4.45975Z" fill="#091329"/>
 													</svg>
-													<ul class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto text-sm ml-[7px] [&.adjust-position-right]:mr-[7px] [&.adjust-position-right]:ml-auto'>
+													<ul class='dropdown-content dropdown-sub-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto text-sm ml-[7px] [.adjust-position-right_&]:mr-[7px] [.adjust-position-right_&]:ml-auto'>
 														<li class='sub-menu-item text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
 															<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 																<path d="M19 14.3333V17.4444C19 17.857 18.8361 18.2527 18.5444 18.5444C18.2527 18.8361 17.857 19 17.4444 19H6.55556C6.143 19 5.74733 18.8361 5.45561 18.5444C5.16389 18.2527 5 17.857 5 17.4444V14.3333M15.8889 8.88889L12 5M12 5L8.11111 8.88889M12 5V14.3333" stroke="#091329" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1603,7 +1603,7 @@
 													<svg class='ml-auto' width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 														<path fill-rule="evenodd" clip-rule="evenodd" d="M5.77093 4.45975C5.91761 4.6006 6 4.79161 6 4.99077C6 5.18993 5.91761 5.38094 5.77093 5.52179L1.34511 9.7707C1.27294 9.84244 1.18661 9.89966 1.09116 9.93902C0.995705 9.97839 0.893043 9.99911 0.789161 9.99997C0.68528 10.0008 0.582259 9.98183 0.486109 9.94407C0.38996 9.9063 0.302607 9.85053 0.229149 9.78001C0.15569 9.70949 0.0975976 9.62563 0.0582597 9.53332C0.0189218 9.44102 -0.000873164 9.34211 2.95397e-05 9.24238C0.000932243 9.14266 0.0225147 9.0441 0.0635176 8.95246C0.10452 8.86083 0.164122 8.77795 0.238846 8.70866L4.11154 4.99077L0.238846 1.27288C0.0963322 1.13122 0.0174745 0.941495 0.019257 0.744562C0.0210396 0.547629 0.10332 0.359247 0.248376 0.219989C0.393433 0.0807308 0.589659 0.00173969 0.794792 2.83931e-05C0.999925 -0.0016829 1.19755 0.0740226 1.34511 0.21084L5.77093 4.45975Z" fill="#091329"/>
 													</svg>
-													<ul class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto text-sm ml-[7px] [&.adjust-position-right]:mr-[7px] [&.adjust-position-right]:ml-auto'>
+													<ul class='dropdown-content dropdown-sub-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto text-sm ml-[7px] [.adjust-position-right_&]:mr-[7px] [.adjust-position-right_&]:ml-auto'>
 														<li class='sub-menu-item text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
 															<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 																<path d="M19 14.3333V17.4444C19 17.857 18.8361 18.2527 18.5444 18.5444C18.2527 18.8361 17.857 19 17.4444 19H6.55556C6.143 19 5.74733 18.8361 5.45561 18.5444C5.16389 18.2527 5 17.857 5 17.4444V14.3333M15.8889 8.88889L12 5M12 5L8.11111 8.88889M12 5V14.3333" stroke="#091329" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1760,7 +1760,7 @@
 													<svg class='ml-auto' width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 														<path fill-rule="evenodd" clip-rule="evenodd" d="M5.77093 4.45975C5.91761 4.6006 6 4.79161 6 4.99077C6 5.18993 5.91761 5.38094 5.77093 5.52179L1.34511 9.7707C1.27294 9.84244 1.18661 9.89966 1.09116 9.93902C0.995705 9.97839 0.893043 9.99911 0.789161 9.99997C0.68528 10.0008 0.582259 9.98183 0.486109 9.94407C0.38996 9.9063 0.302607 9.85053 0.229149 9.78001C0.15569 9.70949 0.0975976 9.62563 0.0582597 9.53332C0.0189218 9.44102 -0.000873164 9.34211 2.95397e-05 9.24238C0.000932243 9.14266 0.0225147 9.0441 0.0635176 8.95246C0.10452 8.86083 0.164122 8.77795 0.238846 8.70866L4.11154 4.99077L0.238846 1.27288C0.0963322 1.13122 0.0174745 0.941495 0.019257 0.744562C0.0210396 0.547629 0.10332 0.359247 0.248376 0.219989C0.393433 0.0807308 0.589659 0.00173969 0.794792 2.83931e-05C0.999925 -0.0016829 1.19755 0.0740226 1.34511 0.21084L5.77093 4.45975Z" fill="#091329"/>
 													</svg>
-													<ul class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto text-sm ml-[7px] [&.adjust-position-right]:mr-[7px] [&.adjust-position-right]:ml-auto'>
+													<ul class='dropdown-content dropdown-sub-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto text-sm ml-[7px] [.adjust-position-right_&]:mr-[7px] [.adjust-position-right_&]:ml-auto'>
 														<li class='sub-menu-item text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
 															<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 																<path d="M19 14.3333V17.4444C19 17.857 18.8361 18.2527 18.5444 18.5444C18.2527 18.8361 17.857 19 17.4444 19H6.55556C6.143 19 5.74733 18.8361 5.45561 18.5444C5.16389 18.2527 5 17.857 5 17.4444V14.3333M15.8889 8.88889L12 5M12 5L8.11111 8.88889M12 5V14.3333" stroke="#091329" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1908,7 +1908,7 @@
 													<svg class='ml-auto' width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 														<path fill-rule="evenodd" clip-rule="evenodd" d="M5.77093 4.45975C5.91761 4.6006 6 4.79161 6 4.99077C6 5.18993 5.91761 5.38094 5.77093 5.52179L1.34511 9.7707C1.27294 9.84244 1.18661 9.89966 1.09116 9.93902C0.995705 9.97839 0.893043 9.99911 0.789161 9.99997C0.68528 10.0008 0.582259 9.98183 0.486109 9.94407C0.38996 9.9063 0.302607 9.85053 0.229149 9.78001C0.15569 9.70949 0.0975976 9.62563 0.0582597 9.53332C0.0189218 9.44102 -0.000873164 9.34211 2.95397e-05 9.24238C0.000932243 9.14266 0.0225147 9.0441 0.0635176 8.95246C0.10452 8.86083 0.164122 8.77795 0.238846 8.70866L4.11154 4.99077L0.238846 1.27288C0.0963322 1.13122 0.0174745 0.941495 0.019257 0.744562C0.0210396 0.547629 0.10332 0.359247 0.248376 0.219989C0.393433 0.0807308 0.589659 0.00173969 0.794792 2.83931e-05C0.999925 -0.0016829 1.19755 0.0740226 1.34511 0.21084L5.77093 4.45975Z" fill="#091329"/>
 													</svg>
-													<ul class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto text-sm ml-[7px] [&.adjust-position-right]:mr-[7px] [&.adjust-position-right]:ml-auto'>
+													<ul class='dropdown-content dropdown-sub-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto text-sm ml-[7px] [.adjust-position-right_&]:mr-[7px] [.adjust-position-right_&]:ml-auto'>
 														<li class='sub-menu-item text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
 															<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 																<path d="M19 14.3333V17.4444C19 17.857 18.8361 18.2527 18.5444 18.5444C18.2527 18.8361 17.857 19 17.4444 19H6.55556C6.143 19 5.74733 18.8361 5.45561 18.5444C5.16389 18.2527 5 17.857 5 17.4444V14.3333M15.8889 8.88889L12 5M12 5L8.11111 8.88889M12 5V14.3333" stroke="#091329" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -2055,7 +2055,7 @@
 													<svg class='ml-auto' width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 														<path fill-rule="evenodd" clip-rule="evenodd" d="M5.77093 4.45975C5.91761 4.6006 6 4.79161 6 4.99077C6 5.18993 5.91761 5.38094 5.77093 5.52179L1.34511 9.7707C1.27294 9.84244 1.18661 9.89966 1.09116 9.93902C0.995705 9.97839 0.893043 9.99911 0.789161 9.99997C0.68528 10.0008 0.582259 9.98183 0.486109 9.94407C0.38996 9.9063 0.302607 9.85053 0.229149 9.78001C0.15569 9.70949 0.0975976 9.62563 0.0582597 9.53332C0.0189218 9.44102 -0.000873164 9.34211 2.95397e-05 9.24238C0.000932243 9.14266 0.0225147 9.0441 0.0635176 8.95246C0.10452 8.86083 0.164122 8.77795 0.238846 8.70866L4.11154 4.99077L0.238846 1.27288C0.0963322 1.13122 0.0174745 0.941495 0.019257 0.744562C0.0210396 0.547629 0.10332 0.359247 0.248376 0.219989C0.393433 0.0807308 0.589659 0.00173969 0.794792 2.83931e-05C0.999925 -0.0016829 1.19755 0.0740226 1.34511 0.21084L5.77093 4.45975Z" fill="#091329"/>
 													</svg>
-													<ul class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto text-sm ml-[7px] [&.adjust-position-right]:mr-[7px] [&.adjust-position-right]:ml-auto'>
+													<ul class='dropdown-content dropdown-sub-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-0! z-1 flex-col [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto text-sm ml-[7px] [.adjust-position-right_&]:mr-[7px] [.adjust-position-right_&]:ml-auto'>
 														<li class='sub-menu-item text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
 															<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 																<path d="M19 14.3333V17.4444C19 17.857 18.8361 18.2527 18.5444 18.5444C18.2527 18.8361 17.857 19 17.4444 19H6.55556C6.143 19 5.74733 18.8361 5.45561 18.5444C5.16389 18.2527 5 17.857 5 17.4444V14.3333M15.8889 8.88889L12 5M12 5L8.11111 8.88889M12 5V14.3333" stroke="#091329" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -2456,7 +2456,7 @@
 			</div>
 		</div>
 
-		<div class="dialog hidden" data-dialog-type="self-destruct">
+		<div class="dialog hidden" data-dialog-type="delete-one-file">
 			<div class="dialog-card">
 				<button class="dialog-close" data-dialog-close>
 					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2616,5 +2616,6 @@
 	<script src='./dist/js/bottom-sheet.js'></script>
 	<script src='./dist/js/dialog.js'></script>
 	<script src='./dist/js/menu-tree.js'></script>
+	<script src='./dist/js/dropdown.js'></script>
 	<script src="./dist/js/main.js"></script>
 </html>

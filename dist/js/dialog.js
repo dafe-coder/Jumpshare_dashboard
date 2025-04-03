@@ -28,5 +28,3 @@ const Dialog = {
 $(document).ready(() => {
 	Dialog.init();
 });
-
-Dialog.init()
