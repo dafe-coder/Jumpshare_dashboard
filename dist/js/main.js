@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+	
 	
 	// Select files
 	const selectWrapper = $('.selected-wrapper');	

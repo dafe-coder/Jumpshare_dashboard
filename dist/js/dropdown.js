@@ -30,31 +30,31 @@ const Dropdown = {
 	},
 
 	handleDropdownClick(e) {
-		if(window.innerWidth > 1024) {
-			e.preventDefault();
-			const $button = $(e.currentTarget);
-			const dropdownId = $button.attr('data-id');
-			
-			const $wrapper = $button.closest('.dropdown-wrapper');
-			const $content = $wrapper.find(`.dropdown-content[data-dropdown-id="${dropdownId}"]`);
-			
-			// Закрываем все предыдущие дропдауны
+		e.preventDefault();
+		const $button = $(e.currentTarget);
+		const dropdownId = $button.attr('data-id');
+		
+		const $wrapper = $button.closest('.dropdown-wrapper');
+		const $content = $wrapper.find(`.dropdown-content[data-dropdown-id="${dropdownId}"]`);
+		
+		if(!$button.hasClass('active')) {
 			this.subMenuItems.removeClass('active');
 			this.dropdownContents.removeClass('active').css('display', 'none');
 			this.dropdownWrappers.removeClass('active');
 			this.dropdownButtons.removeClass('active');
+			$button.addClass('active');
+			$wrapper.addClass('active');
+			$content.css('display', 'block');
 			
-			if(!$button.hasClass('active')) {
-				$button.addClass('active');
-				$wrapper.addClass('active');
-				$content.css('display', 'block');
-				
-				clearTimeout(this.dropdownIdTimer);
-				this.dropdownIdTimer = setTimeout(() => {
-					$content.addClass('active');
-					this.adjustElementPosition($content);
-				}, 10);
-			}
+			clearTimeout(this.dropdownIdTimer);
+			this.dropdownIdTimer = setTimeout(() => {
+				$content.addClass('active');
+				this.adjustElementPosition($content);
+			}, 10);
+		} else {
+			$button.removeClass('active');
+			$wrapper.removeClass('active');
+			$content.removeClass('active').css('display', 'none');
 		}
 	},
 
@@ -63,7 +63,6 @@ const Dropdown = {
 		const $item = $(e.currentTarget);
 		const $content = $item.find('.dropdown-content');
 		
-		// Закрываем все предыдущие подменю
 		this.subMenuItems.not($item).removeClass('active');
 		this.subMenuItems.not($item).find('.dropdown-content').css('display', 'none');
 		
@@ -174,9 +173,11 @@ const Dropdown = {
 
 	initMobileGridDropdown() {
 		$('[data-id="dropdown-grid"]').on('click', (e) => {
+			e.preventDefault();
+			e.stopPropagation();
+			e.stopImmediatePropagation();
+			
 			if(window.innerWidth < 1024) {
-				e.preventDefault();
-				e.stopImmediatePropagation();
 				const $button = $(e.currentTarget).closest('.dropdown-wrapper').find('.dropdown-button');
 				const svgTypeList = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M7 6H18M7 12H18M7 18H18" stroke="#122345" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
