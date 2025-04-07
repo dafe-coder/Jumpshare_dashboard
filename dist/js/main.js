@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
+
 	
-	
-	// Select files
+	// Select files \ folders
 	const selectWrapper = $('.selected-wrapper');	
 	const selectItem = $('[data-select-item]');
 	const titleLibrary = $('#title-library');

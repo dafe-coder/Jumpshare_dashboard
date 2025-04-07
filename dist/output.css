@@ -72,6 +72,7 @@
     --color-gray-700: #999cb2;
     --color-orange-500: #FE6E2B;
     --color-red-500: #E61320;
+    --color-blue-100: #f2f6ff;
     --color-blue-200: #DAE6FC;
     --color-blue-400: #09B4DC;
     --color-blue-500: #2F76FF;
@@ -468,6 +469,9 @@
   .mt-5 {
     margin-top: calc(var(--spacing) * 5);
   }
+  .mt-7\.5 {
+    margin-top: var(--spacing-7_5);
+  }
   .mt-8 {
     margin-top: calc(var(--spacing) * 8);
   }
@@ -519,6 +523,9 @@
   .mb-6 {
     margin-bottom: var(--spacing-6);
   }
+  .mb-10 {
+    margin-bottom: calc(var(--spacing) * 10);
+  }
   .ml-2 {
     margin-left: calc(var(--spacing) * 2);
   }
@@ -534,8 +541,14 @@
   .block {
     display: block;
   }
+  .block\! {
+    display: block !important;
+  }
   .flex {
     display: flex;
+  }
+  .flex\! {
+    display: flex !important;
   }
   .grid {
     display: grid;
@@ -1080,6 +1093,9 @@
   }
   .bg-black\/70 {
     background-color: color-mix(in oklab, var(--color-black) 70%, transparent);
+  }
+  .bg-blue-100 {
+    background-color: var(--color-blue-100);
   }
   .bg-blue-500 {
     background-color: var(--color-blue-500);

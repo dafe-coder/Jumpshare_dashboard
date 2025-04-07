@@ -1,0 +1,1921 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="robots" content="noindex, nofollow" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Jumpshare: Screen Recording, Screenshots & GIFs. Together.</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+		<meta
+			name="description"
+			content="Jumpshare helps you and your team communicate better with screen recordings, screenshots, GIFs, file sharing, and more - all in one software."
+		/>
+		<!-- Favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="57x57"
+			href="./assets/favicon/apple-icon-57x57.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="60x60"
+			href="./assets/favicon/apple-icon-60x60.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="72x72"
+			href="./assets/favicon/apple-icon-72x72.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="76x76"
+			href="./assets/favicon/apple-icon-76x76.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="114x114"
+			href="./assets/favicon/apple-icon-114x114.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="120x120"
+			href="./assets/favicon/apple-icon-120x120.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="144x144"
+			href="./assets/favicon/apple-icon-144x144.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="152x152"
+			href="./assets/favicon/apple-icon-152x152.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="./assets/favicon/apple-icon-180x180.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="192x192"
+			href="./assets/favicon/android-icon-192x192.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./assets/favicon/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="96x96"
+			href="./assets/favicon/favicon-96x96.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="./assets/favicon/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="./assets/favicon/manifest.json" />
+		<meta name="msapplication-TileColor" content="#ffffff" />
+		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+		<meta name="theme-color" content="#ffffff" />
+
+		<!-- Open Graph meta tags -->
+		<meta
+			property="og:title"
+			content="Jumpshare: Screen Recording, Screenshots & GIFs. Together."
+		/>
+		<meta
+			property="og:description"
+			content="Jumpshare helps you and your team communicate better with screen recordings, screenshots, GIFs, file sharing, and more - all in one software."
+		/>
+		<meta
+			property="og:image"
+			content="https://test.fltr.club/assets/og/homepage.png"
+		/>
+		<meta property="og:url" content="https://test.fltr.club/" />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Jumpshare" />
+
+		<!-- Optional: Twitter Card meta tags -->
+		<meta
+			name="twitter:card"
+			content="https://test.fltr.club/assets/og/homepage.png"
+		/>
+		<meta
+			name="twitter:title"
+			content="Jumpshare: Screen Recording, Screenshots & GIFs. Together."
+		/>
+		<meta
+			name="twitter:description"
+			content="Jumpshare helps you and your team communicate better with screen recordings, screenshots, GIFs, file sharing, and more - all in one software."
+		/>
+		<meta
+			name="twitter:image"
+			content="https://test.fltr.club/assets/og/homepage.png"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="stylesheet" href="./dist/output.css" />
+	</head>
+
+	<body class='drag-and-drop team-page'>
+		<div id='sheet' class='fixed bottom-0 left-0 right-0 z-100 size-full flex items-end justify-center transition-all duration-500 ease-in-out show-sheet hidden'>
+			<div class='overlay bg-[#090B13]/50 absolute top-0 left-0 size-full z-0 opacity-0 [.show-sheet_&]:opacity-100 transition-opacity duration-500 ease-in-out'></div>
+			<div class='content w-full max-w-[34.375rem] relative space-y-2.5 text-sm bg-white rounded-t-2xl px-3 pt-0 z-3 transition-all duration-500 [.show-sheet_&]:pt-6 ease-in-out [&.not-selectable]:transition-none! max-h-[80svh]'>
+				<div id='menuTrigger' class='flex items-center justify-center w-full h-6 absolute top-0 left-0 z-3'>
+					<span class='bg-blue-900/40 w-12 h-0.5 rounded-full block absolute top-4 left-1/2 -translate-x-1/2 cursor-pointer'></span>
+				</div>
+				<ul class='primary-sheet-menu w-full pb-0 [.show-sheet_&]:pb-2 overflow-auto h-full opacity-0 [.show-sheet_&]:opacity-100 transition-opacity duration-500 ease-in-out'>
+					<li class='text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-200 rounded-md transition-colors cursor-pointer py-2'>
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M7.09545 16.1112C7.80968 17.1801 8.82484 18.0132 10.0126 18.5052C11.2003 18.9972 12.5072 19.1259 13.7681 18.8751C15.029 18.6243 16.1871 18.0052 17.0962 17.0962C18.0052 16.1871 18.6243 15.029 18.8751 13.7681C19.1259 12.5072 18.9972 11.2003 18.5052 10.0126C18.0132 8.82484 17.1801 7.80968 16.1112 7.09545C15.0423 6.38122 13.7856 6 12.5 6C10.6829 6.00684 8.9387 6.71588 7.63222 7.97889L6 9.61111M6 9.61111V6M6 9.61111H9.61111" stroke="#0A0A0B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+						<span>Restore</span>
+					</li>
+					<li class='text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-200 rounded-md transition-colors cursor-pointer py-2'>
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M5 7H18M16.5556 7V17.5C16.5556 18.25 15.8333 19 15.1111 19H7.88889C7.16667 19 6.44444 18.25 6.44444 17.5V7M8.61111 7V5.5C8.61111 4.75 9.33333 4 10.0556 4H12.9444C13.6667 4 14.3889 4.75 14.3889 5.5V7M10.0556 10.75V15.25M12.9444 10.75V15.25" stroke="#0A0A0B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+						<span>Permanently Delete</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id='upload-files-modal' class='hidden fixed inset-0 bg-blue-1000/70 z-999 justify-center items-center [&.active]:flex backdrop-blur-xs'>
+			<div class='upload-files-drop-zone flex items-center justify-center w-[523px] h-[325px]'>
+				<div class='flex flex-col items-center justify-center gap-6 rounded-[14px] size-full'>
+					<svg width="241" height="157" viewBox="0 0 241 157" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<g clip-path="url(#clip0_9714_2659)">
+						<g filter="url(#filter0_d_9714_2659)">
+						<path d="M21.2517 62.4036L39.2655 129.632C39.8627 131.861 41.3259 133.76 43.3332 134.911C45.3405 136.062 47.7275 136.372 49.9691 135.771L100.68 122.183C102.922 121.582 104.834 120.121 105.997 118.12C107.16 116.119 107.478 113.743 106.88 111.515L93.755 62.5303C93.4549 61.4109 92.9329 60.363 92.2195 59.4482C91.5062 58.5334 90.6159 57.7703 89.601 57.2035L65.9494 43.9869C63.9591 42.8749 61.6083 42.5834 59.3999 43.1749L27.4519 51.7353C25.2103 52.336 23.2978 53.7974 22.135 55.798C20.9723 57.7987 20.6545 60.1748 21.2517 62.4036Z" fill="white" shape-rendering="crispEdges"/>
+						<path d="M21.2517 62.4036L39.2655 129.632C39.8627 131.861 41.3259 133.76 43.3332 134.911C45.3405 136.062 47.7275 136.372 49.9691 135.771L100.68 122.183C102.922 121.582 104.834 120.121 105.997 118.12C107.16 116.119 107.478 113.743 106.88 111.515L93.755 62.5303C93.4549 61.4109 92.9329 60.363 92.2195 59.4482C91.5062 58.5334 90.6159 57.7703 89.601 57.2035L65.9494 43.9869C63.9591 42.8749 61.6083 42.5834 59.3999 43.1749L27.4519 51.7353C25.2103 52.336 23.2978 53.7974 22.135 55.798C20.9723 57.7987 20.6545 60.1748 21.2517 62.4036Z" stroke="#D3D6DC" stroke-opacity="0.5" stroke-linecap="round" stroke-linejoin="round" shape-rendering="crispEdges"/>
+						</g>
+						<g filter="url(#filter1_d_9714_2659)">
+						<path d="M62 42.9688L66.4862 59.7115C67.0811 61.9317 68.5336 63.8246 70.5242 64.9739C72.5148 66.1232 74.8804 66.4346 77.1007 65.8397L93.8434 61.3535" fill="white"/>
+						</g>
+						<path d="M46.7129 94L71.827 87.2707L46.7129 94ZM51.1128 110.421L63.6698 107.056L51.1128 110.421Z" fill="white"/>
+						<path d="M46.7129 94L71.827 87.2707M51.1128 110.421L63.6699 107.056M48.9141 102.215L74.0282 95.4857" stroke="#2F76FF" stroke-width="2.49741" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M38.8086 70.6937L38.3169 68.8588L46.9622 66.5423L47.4538 68.3772L44.2311 69.2407L46.56 77.9323L44.3602 78.5217L42.0313 69.8302L38.8086 70.6937ZM53.2492 67.6782L53.6899 69.323L48.9355 70.5969L48.4948 68.9522L53.2492 67.6782ZM49.0674 66.7715L51.257 66.1848L53.2291 73.5451C53.2833 73.7473 53.3564 73.8966 53.4484 73.9932C53.5394 74.0863 53.6457 74.1404 53.7673 74.1556C53.8923 74.1698 54.0285 74.1572 54.1759 74.1177C54.2787 74.0902 54.3792 74.0541 54.4774 74.0094C54.5747 73.9613 54.6493 73.9248 54.7014 73.8998L55.4824 75.4369C55.3819 75.5005 55.2383 75.5812 55.0515 75.679C54.8656 75.7803 54.6318 75.8741 54.3501 75.9606C53.828 76.1226 53.3465 76.1763 52.9059 76.1217C52.4687 76.0663 52.095 75.8983 51.7848 75.6178C51.4746 75.3373 51.2519 74.9379 51.1167 74.4196L49.0674 66.7715Z" fill="#2F76FF"/>
+						</g>
+						<g clip-path="url(#clip1_9714_2659)">
+						<g filter="url(#filter2_d_9714_2659)">
+						<path d="M153.748 49.4036L135.734 116.632C135.137 118.861 135.455 121.237 136.618 123.237C137.78 125.238 139.693 126.7 141.935 127.3L192.646 140.888C194.887 141.489 197.274 141.179 199.282 140.028C201.289 138.877 202.752 136.978 203.349 134.749L216.475 85.765C216.774 84.6454 216.846 83.4769 216.686 82.328C216.525 81.1792 216.136 80.0731 215.541 79.0748L201.666 55.8031C200.498 53.845 198.608 52.4171 196.4 51.8251L164.452 43.2647C162.21 42.664 159.823 42.9734 157.816 44.1246C155.809 45.2759 154.345 47.1748 153.748 49.4036Z" fill="white" shape-rendering="crispEdges"/>
+						<path d="M153.748 49.4036L135.734 116.632C135.137 118.861 135.455 121.237 136.618 123.237C137.78 125.238 139.693 126.7 141.935 127.3L192.646 140.888C194.887 141.489 197.274 141.179 199.282 140.028C201.289 138.877 202.752 136.978 203.349 134.749L216.475 85.765C216.774 84.6454 216.846 83.4769 216.686 82.328C216.525 81.1792 216.136 80.0731 215.541 79.0748L201.666 55.8031C200.498 53.845 198.608 52.4171 196.4 51.8251L164.452 43.2647C162.21 42.664 159.823 42.9734 157.816 44.1246C155.809 45.2759 154.345 47.1748 153.748 49.4036Z" stroke="#D3D6DC" stroke-opacity="0.5" stroke-linecap="round" stroke-linejoin="round" shape-rendering="crispEdges"/>
+						</g>
+						<g filter="url(#filter3_d_9714_2659)">
+						<path d="M198.002 52L193.516 68.7427C192.921 70.9629 193.232 73.3286 194.382 75.3191C195.531 77.3097 197.424 78.7623 199.644 79.3572L216.387 83.8434" fill="white" shape-rendering="crispEdges"/>
+						<path d="M198.002 52L193.516 68.7427C192.921 70.9629 193.232 73.3286 194.382 75.3191C195.531 77.3097 197.424 78.7623 199.644 79.3572L216.387 83.8434" stroke="#D3D6DC" stroke-opacity="0.5" stroke-linecap="round" stroke-linejoin="round" shape-rendering="crispEdges"/>
+						</g>
+						<path d="M172.775 106.566L181.961 98.27L186.441 112.129L160.647 105.217L168.981 97.6908L171.762 106.294L172.059 107.212L172.775 106.566Z" fill="#2F76FF" stroke="#2F76FF" stroke-width="1.2487"/>
+						<circle cx="171.475" cy="84.2866" r="3.5" transform="rotate(15 171.475 84.2866)" fill="#2F76FF"/>
+						</g>
+						<path d="M-3.28852e-07 102.5L7.5 102.5M15 102.5L7.5 102.5M7.5 102.5L7.5 110M7.5 102.5L7.5 95" stroke="white" stroke-width="1.86189"/>
+						<circle cx="236" cy="72" r="4.37565" stroke="white" stroke-width="1.2487"/>
+						<circle cx="17" cy="20" r="4.37565" stroke="white" stroke-width="1.2487"/>
+						<path d="M179.243 4.24264L175 8.48528M170.757 12.7279L175 8.48528M175 8.48528L170.757 4.24264M175 8.48528L179.243 12.7279" stroke="white" stroke-width="1.47608"/>
+						<g clip-path="url(#clip2_9714_2659)">
+						<g filter="url(#filter4_d_9714_2659)">
+						<path d="M87 39.8V110.2C87 112.534 87.9219 114.772 89.5628 116.423C91.2038 118.073 93.4294 119 95.75 119H148.25C150.571 119 152.796 118.073 154.437 116.423C156.078 114.772 157 112.534 157 110.2V58.9048C157 57.7325 156.767 56.572 156.315 55.4915C155.862 54.411 155.2 53.4323 154.366 52.6128L134.941 33.508C133.307 31.9005 131.111 31.0003 128.825 31H95.75C93.4294 31 91.2038 31.9271 89.5628 33.5775C87.9219 35.2278 87 37.4661 87 39.8Z" fill="white" shape-rendering="crispEdges"/>
+						<path d="M87 39.8V110.2C87 112.534 87.9219 114.772 89.5628 116.423C91.2038 118.073 93.4294 119 95.75 119H148.25C150.571 119 152.796 118.073 154.437 116.423C156.078 114.772 157 112.534 157 110.2V58.9048C157 57.7325 156.767 56.572 156.315 55.4915C155.862 54.411 155.2 53.4323 154.366 52.6128L134.941 33.508C133.307 31.9005 131.111 31.0003 128.825 31H95.75C93.4294 31 91.2038 31.9271 89.5628 33.5775C87.9219 35.2278 87 37.4661 87 39.8Z" stroke="#D3D6DC" stroke-opacity="0.5" stroke-linecap="round" stroke-linejoin="round" shape-rendering="crispEdges"/>
+						</g>
+						<g filter="url(#filter5_d_9714_2659)">
+						<path d="M130 31V48.3333C130 50.6319 130.948 52.8363 132.636 54.4616C134.324 56.0869 136.613 57 139 57H157" fill="white" shape-rendering="crispEdges"/>
+						<path d="M130 31V48.3333C130 50.6319 130.948 52.8363 132.636 54.4616C134.324 56.0869 136.613 57 139 57H157" stroke="#D3D6DC" stroke-opacity="0.5" stroke-linecap="round" stroke-linejoin="round" shape-rendering="crispEdges"/>
+						</g>
+						<path d="M132.083 70H112.917C112.408 70 111.921 70.1932 111.561 70.537C111.202 70.8808 111 71.3471 111 71.8333V90.1667C111 90.6529 111.202 91.1192 111.561 91.463C111.921 91.8068 112.408 92 112.917 92H132.083C132.592 92 133.079 91.8068 133.439 91.463C133.798 91.1192 134 90.6529 134 90.1667V71.8333C134 71.3471 133.798 70.8808 133.439 70.537C133.079 70.1932 132.592 70 132.083 70Z" fill="#2F76FF" stroke="#2F76FF" stroke-width="1.2487" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M120 84V80L123.5 81.9993L127 84L123.5 86L120 88V84Z" fill="white"/>
+						<path d="M108.25 74.9961H135.75H108.25ZM128.875 68.7461L124.292 74.9961L128.875 68.7461ZM119.708 68.7461L115.125 74.9961L119.708 68.7461Z" fill="white"/>
+						<path d="M108.25 74.9961H135.75M128.875 68.7461L124.292 74.9961M119.708 68.7461L115.125 74.9961" stroke="white" stroke-width="1.2487" stroke-linecap="round" stroke-linejoin="round"/>
+						</g>
+						<defs>
+						<filter id="filter0_d_9714_2659" x="15.4622" y="42.375" width="97.2084" height="104.185" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+						<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+						<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+						<feOffset dy="4.99482"/>
+						<feGaussianBlur stdDeviation="2.49741"/>
+						<feComposite in2="hardAlpha" operator="out"/>
+						<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0"/>
+						<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_9714_2659"/>
+						<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_9714_2659" result="shape"/>
+						</filter>
+						<filter id="filter1_d_9714_2659" x="57.0052" y="42.9688" width="41.8334" height="33.1576" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+						<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+						<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+						<feOffset dy="4.99482"/>
+						<feGaussianBlur stdDeviation="2.49741"/>
+						<feComposite in2="hardAlpha" operator="out"/>
+						<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0"/>
+						<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_9714_2659"/>
+						<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_9714_2659" result="shape"/>
+						</filter>
+						<filter id="filter2_d_9714_2659" x="129.945" y="42.4648" width="92.3197" height="109.212" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+						<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+						<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+						<feOffset dy="4.99482"/>
+						<feGaussianBlur stdDeviation="2.49741"/>
+						<feComposite in2="hardAlpha" operator="out"/>
+						<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0"/>
+						<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_9714_2659"/>
+						<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_9714_2659" result="shape"/>
+						</filter>
+						<filter id="filter3_d_9714_2659" x="187.726" y="51.5" width="34.1557" height="42.8334" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+						<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+						<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+						<feOffset dy="4.99482"/>
+						<feGaussianBlur stdDeviation="2.49741"/>
+						<feComposite in2="hardAlpha" operator="out"/>
+						<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0"/>
+						<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_9714_2659"/>
+						<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_9714_2659" result="shape"/>
+						</filter>
+						<filter id="filter4_d_9714_2659" x="81.5052" y="30.5" width="80.9896" height="98.9896" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+						<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+						<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+						<feOffset dy="4.99482"/>
+						<feGaussianBlur stdDeviation="2.49741"/>
+						<feComposite in2="hardAlpha" operator="out"/>
+						<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0"/>
+						<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_9714_2659"/>
+						<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_9714_2659" result="shape"/>
+						</filter>
+						<filter id="filter5_d_9714_2659" x="124.505" y="30.5" width="37.9896" height="36.9896" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+						<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+						<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+						<feOffset dy="4.99482"/>
+						<feGaussianBlur stdDeviation="2.49741"/>
+						<feComposite in2="hardAlpha" operator="out"/>
+						<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0"/>
+						<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_9714_2659"/>
+						<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_9714_2659" result="shape"/>
+						</filter>
+						<clipPath id="clip0_9714_2659">
+						<rect width="105" height="105" fill="white" transform="translate(12 35)"/>
+						</clipPath>
+						<clipPath id="clip1_9714_2659">
+						<rect width="105" height="105" fill="white" transform="translate(126 40)"/>
+						</clipPath>
+						<clipPath id="clip2_9714_2659">
+						<rect width="105" height="105" fill="white" transform="translate(69 22)"/>
+						</clipPath>
+						</defs>
+					</svg>
+					<p class='text-3xl text-white font-medium'>Drop Files to Upload</p>
+				</div>
+			</div>
+		</div>
+		<div class="w-full min-h-screen">
+			<aside class="w-[240px] fixed left-0 top-0 bottom-0 flex flex-col h-screen z-101 max-lg:-left-full max-lg:top-0 max-lg:w-full transition-all duration-500 ease-in-out [&.active]:left-0">
+				<div class="mobile-menu-overlay absolute bg-[#090B13]/50 z-0 opacity-0 w-0 h-screen lg:hidden [.active_&]:opacity-100 [.active_&]:w-screen transition-all duration-500 ease-in-out delay-75"></div>
+				<div class='flex flex-col max-lg:w-[318px] max-lg:max-w-[318px] max-xs:w-[85%]! w-full bg-gray-150 max-lg:rounded-r-2xl z-3 h-full'>
+					<div class='dropdown-wrapper relative z-4'>
+						<a href='#' data-id='dropdown-workspaces' class='dropdown-button p-4 flex items-center justify-between relative [&.active]:bg-gray-300 transition-colors duration-300 max-lg:rounded-t-2xl'>
+							<div class='flex items-center'>
+								<div class="flex items-center justify-between mr-3">
+									<div class='flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white'>
+										<span class='font-semibold text-base text-blue-500'>S</span>
+									</div>
+								</div>
+								<div class='mr-1.5'>
+									<h3 class='text-sm font-semibold text-black'>Startup Co</h3>
+									<ul class='flex items-center text-xs text-dark-800/70 gap-3 text-nowrap'>
+										<li class='relative'>
+											enterprise
+											<span class='absolute top-1/2 -translate-y-1/2 -right-[7.5px]  size-[2px] rounded-full bg-blue-900/70'></span>
+										</li>
+										<li class='relative'>
+											<span>23</span>
+											Members
+										</li>
+									</ul>
+								</div>
+							</div>
+							<svg class='flex-shrink-0' width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M3.5 5.25L7 8.75L10.5 5.25" stroke="black" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</a>
+						<div data-dropdown-id="dropdown-workspaces" class='dropdown-content p-4 top-full w-[16.875rem] z-3 overflow-hidden hidden bg-white rounded-lg absolute left-4 shadow-dropdown transition-all duration-150 scale-0 [&.active]:scale-100 [&.active]:opacity-100 origin-top-left space-y-1'>
+							<div class='flex items-center justify-between'>
+								<p class='text-sm text-dark-800 font-normal'>Workspaces</p>
+								<span class='text-sm text-blue-500 font-medium hover:underline underline-offset-1 cursor-pointer'>+ Add Workspace</span>
+							</div>
+							<div class='flex flex-col gap-y-4 mt-4'>
+								<div class='flex items-center gap-x-3 cursor-pointer'>
+									<div class='flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white '>
+										<span class='font-semibold text-base text-blue-500'>S</span>
+									</div>
+									<div class='flex flex-col'>
+										<p class='text-sm text-dark-800 font-medium'>Startup Co</p>
+										<ul class='flex items-center text-xs text-dark-800/70 gap-3 text-nowrap'>
+											<li class='relative'>Enterprise
+												<span class='absolute top-1/2 -translate-y-1/2 -right-[7.5px]  size-[2px] rounded-full bg-blue-900/70'></span>
+											</li>
+											<li class='relative'>23 Members</li>
+										</ul>
+									</div>
+								</div>
+								<div class='flex items-center gap-x-3 cursor-pointer'>
+									<div class='flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white '>
+										<span class='font-semibold text-base text-blue-500'>N</span>
+									</div>
+									<div class='flex flex-col'>
+										<p class='text-sm text-dark-800 font-medium'>Neo Tools</p>
+										<ul class='flex items-center text-xs text-dark-800/70 gap-3 text-nowrap'>
+											<li class='relative'>Free
+												<span class='absolute top-1/2 -translate-y-1/2 -right-[7.5px]  size-[2px] rounded-full bg-blue-900/70'></span>
+											</li>
+											<li class='relative'>1 Member</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class='mt-4 flex flex-col gap-y-2'>
+								<button
+									type="button"
+									class="btn btn-primary-default rounded-lg"
+								>
+									<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M10.6654 14V12.6667C10.6654 11.9594 10.3844 11.2811 9.88432 10.781C9.38422 10.281 8.70594 10 7.9987 10H3.9987C3.29145 10 2.61318 10.281 2.11308 10.781C1.61298 11.2811 1.33203 11.9594 1.33203 12.6667V14M14.6654 14V12.6667C14.6649 12.0758 14.4683 11.5018 14.1063 11.0349C13.7443 10.5679 13.2375 10.2344 12.6654 10.0867M10.6654 2.08667C11.239 2.23353 11.7474 2.56713 12.1105 3.03487C12.4735 3.50261 12.6706 4.07789 12.6706 4.67C12.6706 5.26211 12.4735 5.83739 12.1105 6.30513C11.7474 6.77287 11.239 7.10647 10.6654 7.25333M8.66536 4.66667C8.66536 6.13943 7.47146 7.33333 5.9987 7.33333C4.52594 7.33333 3.33203 6.13943 3.33203 4.66667C3.33203 3.19391 4.52594 2 5.9987 2C7.47146 2 8.66536 3.19391 8.66536 4.66667Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
+									<span>
+										Invite Teammates
+									</span>
+								</button>
+								<button class='btn btn-border-default rounded-lg font-normal'>Set Default Workspace</button>
+							</div>
+						</div>
+					</div>
+					<div class="flex flex-col h-full overflow-y-auto px-4 pb-4">
+						<nav class='flex flex-col mt-5 mb-5'>
+							<p class='text-s text-dark-800/60 font-medium'>Libraries</p>
+							<ul class='flex flex-col mt-2'>
+								<li>
+									<a href='/' class='flex items-center gap-2 text-sm p-2 rounded-md hover:bg-blue-200 [&.active]:bg-blue-200 [&.active]:font-bold [&.active]:text-blue-500 [&.active]:stroke-blue-500 stroke-blue-1000 transition-colors font-medium'>
+										<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M2.38934 6.8679C2.2975 7.06583 2.24995 7.28141 2.25 7.49961V14.2496C2.25 14.6474 2.40804 15.029 2.68934 15.3103C2.97064 15.5916 3.35218 15.7496 3.75 15.7496H6.75V9.74961C6.75 9.5507 6.82902 9.35993 6.96967 9.21928C7.11032 9.07863 7.30109 8.99961 7.5 8.99961H10.5C10.6989 8.99961 10.8897 9.07863 11.0303 9.21928C11.171 9.35993 11.25 9.5507 11.25 9.74961V15.7496H14.25C14.6478 15.7496 15.0294 15.5916 15.3107 15.3103C15.592 15.029 15.75 14.6474 15.75 14.2496V7.49961C15.7501 7.28141 15.7025 7.06583 15.6107 6.8679C15.5188 6.66997 15.3849 6.49446 15.2183 6.35361L9.96825 1.85436C9.69751 1.62554 9.35448 1.5 9 1.5C8.64552 1.5 8.30249 1.62554 8.03175 1.85436L2.78175 6.35361C2.6151 6.49446 2.48118 6.66997 2.38934 6.8679Z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+										Personal
+									</a>
+								</li>
+								<li>
+									<a href='./shared.html' class='flex items-center gap-2 text-sm p-2 rounded-md hover:bg-blue-200 [&.active]:bg-blue-200 [&.active]:font-bold [&.active]:text-blue-500 [&.active]:stroke-blue-500 stroke-blue-1000 transition-colors font-medium'>
+										<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M12 15.75V14.25C12 13.4544 11.6839 12.6913 11.1213 12.1287C10.5587 11.5661 9.79565 11.25 9 11.25H4.5C3.70435 11.25 2.94129 11.5661 2.37868 12.1287C1.81607 12.6913 1.5 13.4544 1.5 14.25V15.75M16.5 15.75V14.25C16.4995 13.5853 16.2783 12.9396 15.871 12.4142C15.4638 11.8889 14.8936 11.5137 14.25 11.3475M12 2.3475C12.6453 2.51273 13.2173 2.88803 13.6257 3.41423C14.0342 3.94044 14.2559 4.58762 14.2559 5.25375C14.2559 5.91988 14.0342 6.56706 13.6257 7.09327C13.2173 7.61947 12.6453 7.99477 12 8.16M9.75 5.25C9.75 6.90685 8.40685 8.25 6.75 8.25C5.09315 8.25 3.75 6.90685 3.75 5.25C3.75 3.59315 5.09315 2.25 6.75 2.25C8.40685 2.25 9.75 3.59315 9.75 5.25Z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+										Shared
+									</a>
+								</li>
+								<li>
+									<a href='./team.html' class='flex items-center gap-2 text-sm p-2 rounded-md hover:bg-blue-200 [&.active]:bg-blue-200 [&.active]:font-bold [&.active]:text-blue-500 [&.active]:stroke-blue-500 stroke-blue-1000 transition-colors font-medium'>
+										<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M4.5 16.5V3C4.5 2.60218 4.65804 2.22064 4.93934 1.93934C5.22064 1.65804 5.60218 1.5 6 1.5H12C12.3978 1.5 12.7794 1.65804 13.0607 1.93934C13.342 2.22064 13.5 2.60218 13.5 3V16.5H4.5ZM4.5 16.5H3C2.60218 16.5 2.22064 16.342 1.93934 16.0607C1.65804 15.7794 1.5 15.3978 1.5 15V10.5C1.5 10.1022 1.65804 9.72064 1.93934 9.43934C2.22064 9.15804 2.60218 9 3 9H4.5M7.5 4.5H10.5M7.5 7.5H10.5M7.5 10.5H10.5M7.5 13.5H10.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+										Team
+									</a>
+								</li>
+							</ul>
+							<ul class='flex flex-col mt-5'>
+								<li>
+									<a href='./favorites.html' class='flex items-center gap-2 text-sm p-2 rounded-md hover:bg-blue-200 [&.active]:bg-blue-200 [&.active]:font-bold [&.active]:text-blue-500 [&.active]:stroke-blue-500 stroke-blue-1000 transition-colors font-medium'>
+										<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M8.6451 1.72508C8.67797 1.65867 8.72874 1.60278 8.79169 1.5637C8.85464 1.52461 8.92726 1.50391 9.00135 1.50391C9.07544 1.50391 9.14806 1.52461 9.21101 1.5637C9.27396 1.60278 9.32473 1.65867 9.3576 1.72508L11.0901 5.23433C11.2042 5.4653 11.3727 5.66513 11.5811 5.81667C11.7894 5.9682 12.0314 6.06691 12.2863 6.10433L16.1609 6.67133C16.2343 6.68196 16.3032 6.71293 16.36 6.76073C16.4167 6.80852 16.4589 6.87124 16.4819 6.94178C16.5048 7.01233 16.5076 7.08788 16.4898 7.1599C16.472 7.23193 16.4345 7.29754 16.3814 7.34933L13.5794 10.0778C13.3946 10.2579 13.2563 10.4802 13.1765 10.7255C13.0966 10.9709 13.0776 11.232 13.1211 11.4863L13.7826 15.3413C13.7956 15.4147 13.7876 15.4902 13.7597 15.5593C13.7318 15.6284 13.685 15.6883 13.6248 15.7321C13.5645 15.7759 13.4931 15.8018 13.4187 15.807C13.3444 15.8122 13.2701 15.7963 13.2043 15.7613L9.74085 13.9403C9.51264 13.8205 9.25873 13.7579 9.00097 13.7579C8.74322 13.7579 8.48931 13.8205 8.2611 13.9403L4.79835 15.7613C4.7326 15.7961 4.6584 15.8118 4.58419 15.8065C4.50998 15.8012 4.43874 15.7752 4.37857 15.7315C4.3184 15.6877 4.27172 15.628 4.24384 15.559C4.21596 15.49 4.20799 15.4146 4.22085 15.3413L4.8816 11.4871C4.92525 11.2326 4.90634 10.9714 4.8265 10.7259C4.74667 10.4803 4.60831 10.2579 4.42335 10.0778L1.62135 7.35008C1.5678 7.29835 1.52984 7.23262 1.51182 7.16038C1.4938 7.08814 1.49643 7.01229 1.51941 6.94147C1.54239 6.87065 1.5848 6.80771 1.64181 6.75981C1.69881 6.71192 1.76813 6.681 1.84185 6.67058L5.7156 6.10433C5.97079 6.0672 6.21314 5.96862 6.42179 5.81707C6.63043 5.66551 6.79913 5.46553 6.91335 5.23433L8.6451 1.72508Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+										Favorites
+									</a>
+								</li>
+								<li>
+									<a href='./analytics.html' class='flex items-center gap-2 text-sm p-2 rounded-md hover:bg-blue-200 [&.active]:bg-blue-200 [&.active]:font-bold [&.active]:text-blue-500 [&.active]:stroke-blue-500 stroke-blue-1000 transition-colors font-medium'>
+										<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M13.5 14.9961V7.49609M9 14.9961V2.99609M4.5 14.9961V10.4961" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+										Analytics
+									</a>
+								</li>
+								<li>
+									<a href='./inbox.html' class='flex items-center gap-2 text-sm p-2 rounded-md hover:bg-blue-200 [&.active]:bg-blue-200 [&.active]:font-bold [&.active]:text-blue-500 [&.active]:stroke-blue-500 stroke-blue-1000 transition-colors font-medium'>
+										<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M1.6875 10.125H4.5825C4.89585 10.1251 5.20299 10.2124 5.46951 10.3772C5.73602 10.542 5.9514 10.7777 6.0915 11.058L6.2835 11.442C6.42366 11.7224 6.63915 11.9582 6.90581 12.123C7.17248 12.2878 7.47977 12.3751 7.79325 12.375H10.2068C10.5202 12.3751 10.8275 12.2878 11.0942 12.123C11.3609 11.9582 11.5763 11.7224 11.7165 11.442L11.9085 11.058C12.0487 10.7776 12.2641 10.5418 12.5308 10.377C12.7975 10.2122 13.1048 10.1249 13.4183 10.125H16.3125M1.6875 10.3785V13.5C1.6875 13.9476 1.86529 14.3768 2.18176 14.6932C2.49822 15.0097 2.92745 15.1875 3.375 15.1875H14.625C15.0726 15.1875 15.5018 15.0097 15.8182 14.6932C16.1347 14.3768 16.3125 13.9476 16.3125 13.5V10.3785C16.3125 10.2095 16.2875 10.0443 16.2375 9.88275L14.43 4.0035C14.3238 3.65868 14.11 3.35696 13.8198 3.14261C13.5296 2.92826 13.1783 2.81257 12.8175 2.8125H5.18325C4.82246 2.81257 4.47119 2.92826 4.18098 3.14261C3.89077 3.35696 3.6769 3.65868 3.57075 4.0035L1.7625 9.88275C1.71349 10.0435 1.68822 10.2105 1.6875 10.3785Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+										Inbox
+									</a>
+								</li>
+								<li>
+									<a href='./trash.html' class='active flex items-center gap-2 text-sm p-2 rounded-md hover:bg-blue-200 [&.active]:bg-blue-200 [&.active]:font-bold [&.active]:text-blue-500 [&.active]:stroke-blue-500 stroke-blue-1000 transition-colors font-medium'>
+										<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M2.25 4.5H15.75M14.25 4.5V15C14.25 15.75 13.5 16.5 12.75 16.5H5.25C4.5 16.5 3.75 15.75 3.75 15V4.5M6 4.5V3C6 2.25 6.75 1.5 7.5 1.5H10.5C11.25 1.5 12 2.25 12 3V4.5M7.5 8.25V12.75M10.5 8.25V12.75" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+										Trash
+									</a>
+								</li>
+								<li>
+									<a href='./settings.html' class='flex items-center gap-2 text-sm p-2 rounded-md hover:bg-blue-200 [&.active]:bg-blue-200 [&.active]:font-bold [&.active]:text-blue-500 [&.active]:stroke-blue-500 stroke-blue-1000 transition-colors font-medium'>
+										<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M9.16647 1.5H8.83647C8.43864 1.5 8.05711 1.65804 7.77581 1.93934C7.4945 2.22064 7.33647 2.60218 7.33647 3V3.135C7.3362 3.39804 7.26676 3.65639 7.13512 3.88413C7.00348 4.11186 6.81427 4.30098 6.58647 4.4325L6.26397 4.62C6.03594 4.75165 5.77727 4.82096 5.51397 4.82096C5.25066 4.82096 4.992 4.75165 4.76397 4.62L4.65147 4.56C4.30726 4.36145 3.89834 4.30758 3.51447 4.41023C3.13059 4.51288 2.80313 4.76365 2.60397 5.1075L2.43897 5.3925C2.24041 5.7367 2.18655 6.14562 2.2892 6.5295C2.39185 6.91338 2.64262 7.24084 2.98647 7.44L3.09897 7.515C3.32567 7.64588 3.51418 7.83382 3.64575 8.06012C3.77733 8.28643 3.84739 8.54323 3.84897 8.805V9.1875C3.85002 9.45182 3.7812 9.71171 3.6495 9.94088C3.51779 10.17 3.32787 10.3603 3.09897 10.4925L2.98647 10.56C2.64262 10.7592 2.39185 11.0866 2.2892 11.4705C2.18655 11.8544 2.24041 12.2633 2.43897 12.6075L2.60397 12.8925C2.80313 13.2363 3.13059 13.4871 3.51447 13.5898C3.89834 13.6924 4.30726 13.6386 4.65147 13.44L4.76397 13.38C4.992 13.2483 5.25066 13.179 5.51397 13.179C5.77727 13.179 6.03594 13.2483 6.26397 13.38L6.58647 13.5675C6.81427 13.699 7.00348 13.8881 7.13512 14.1159C7.26676 14.3436 7.3362 14.602 7.33647 14.865V15C7.33647 15.3978 7.4945 15.7794 7.77581 16.0607C8.05711 16.342 8.43864 16.5 8.83647 16.5H9.16647C9.56429 16.5 9.94582 16.342 10.2271 16.0607C10.5084 15.7794 10.6665 15.3978 10.6665 15V14.865C10.6667 14.602 10.7362 14.3436 10.8678 14.1159C10.9995 13.8881 11.1887 13.699 11.4165 13.5675L11.739 13.38C11.967 13.2483 12.2257 13.179 12.489 13.179C12.7523 13.179 13.0109 13.2483 13.239 13.38L13.3515 13.44C13.6957 13.6386 14.1046 13.6924 14.4885 13.5898C14.8723 13.4871 15.1998 13.2363 15.399 12.8925L15.564 12.6C15.7625 12.2558 15.8164 11.8469 15.7137 11.463C15.6111 11.0791 15.3603 10.7517 15.0165 10.5525L14.904 10.4925C14.6751 10.3603 14.4851 10.17 14.3534 9.94088C14.2217 9.71171 14.1529 9.45182 14.154 9.1875V8.8125C14.1529 8.54818 14.2217 8.28829 14.3534 8.05912C14.4851 7.82995 14.6751 7.63966 14.904 7.5075L15.0165 7.44C15.3603 7.24084 15.6111 6.91338 15.7137 6.5295C15.8164 6.14562 15.7625 5.7367 15.564 5.3925L15.399 5.1075C15.1998 4.76365 14.8723 4.51288 14.4885 4.41023C14.1046 4.30758 13.6957 4.36145 13.3515 4.56L13.239 4.62C13.0109 4.75165 12.7523 4.82096 12.489 4.82096C12.2257 4.82096 11.967 4.75165 11.739 4.62L11.4165 4.4325C11.1887 4.30098 10.9995 4.11186 10.8678 3.88413C10.7362 3.65639 10.6667 3.39804 10.6665 3.135V3C10.6665 2.60218 10.5084 2.22064 10.2271 1.93934C9.94582 1.65804 9.56429 1.5 9.16647 1.5Z" stroke="#091329" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+											<path d="M9.00147 11.25C10.2441 11.25 11.2515 10.2426 11.2515 9C11.2515 7.75736 10.2441 6.75 9.00147 6.75C7.75883 6.75 6.75147 7.75736 6.75147 9C6.75147 10.2426 7.75883 11.25 9.00147 11.25Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+										Settings
+									</a>
+								</li>
+							</ul>
+						</nav>
+						<div class='mt-auto bg-white border-gray-400 border rounded-lg px-5 py-3.5'>
+							<p class='text-center text-sm font-normal text-dark-800/60 mb-2.5 max-w-[12.125rem] mx-auto'>Teams that communicate better, grow faster</p>
+							<button class='btn btn-border-default m-0 w-full text-sm justify-center text-center text-dark-800/80 h-8'>
+								<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M10.6654 14V12.6667C10.6654 11.9594 10.3844 11.2811 9.88432 10.781C9.38422 10.281 8.70594 10 7.9987 10H3.9987C3.29145 10 2.61318 10.281 2.11308 10.781C1.61298 11.2811 1.33203 11.9594 1.33203 12.6667V14M14.6654 14V12.6667C14.6649 12.0758 14.4683 11.5018 14.1063 11.0349C13.7443 10.5679 13.2375 10.2344 12.6654 10.0867M10.6654 2.08667C11.239 2.23353 11.7474 2.56713 12.1105 3.03487C12.4735 3.50261 12.6706 4.07789 12.6706 4.67C12.6706 5.26211 12.4735 5.83739 12.1105 6.30513C11.7474 6.77287 11.239 7.10647 10.6654 7.25333M8.66536 4.66667C8.66536 6.13943 7.47146 7.33333 5.9987 7.33333C4.52594 7.33333 3.33203 6.13943 3.33203 4.66667C3.33203 3.19391 4.52594 2 5.9987 2C7.47146 2 8.66536 3.19391 8.66536 4.66667Z" stroke="#424242" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								Invite members
+							</button>
+						</div>
+					</div>
+				</div>
+			</aside>
+			<main class='relative max-lg:w-full lg:ml-[240px]'>
+				<header class='pt-2.5 sticky top-0 z-51 bg-white transition-all duration-300'>
+					<div class="dashboard-container ">
+						<div class='w-full flex items-center justify-between max-md:bg-gray-150 max-md:rounded-lg'>
+							<form action='#' class='max-w-[44.75rem] h-[2.5625rem] w-full bg-gray-150 rounded-lg relative max-md:h-12'>
+								<button class="hamburger hamburger--squeeze flex lg:hidden! absolute left-0 top-1/2 -translate-y-1/2" type="button">
+									<span class="hamburger-box">
+									  <span class="hamburger-inner"></span>
+									</span>
+								  </button>
+								<button type='submit' class='hidden lg:block absolute left-3.5 top-1/2 -translate-y-1/2 cursor-pointer transition-transform transform-gpu hover:scale-105 origin-center'>
+									<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M7.96365 0.214844C12.3618 0.214844 15.9273 3.70154 15.9273 8.00261C15.9273 10.0324 15.1332 11.8808 13.8323 13.267L16.3908 15.7614C16.6306 15.9954 16.6311 16.3751 16.3919 16.6096C16.1745 16.8228 15.8338 16.8426 15.5935 16.6687L15.5246 16.6107L12.9359 14.0862C11.5733 15.1526 9.84464 15.7904 7.96365 15.7904C3.56545 15.7904 0 12.3037 0 8.00261C0 3.70154 3.56545 0.214844 7.96365 0.214844ZM7.96365 1.41437C4.24289 1.41437 1.22662 4.36402 1.22662 8.00261C1.22662 11.6412 4.24289 14.5908 7.96365 14.5908C11.6844 14.5908 14.7007 11.6412 14.7007 8.00261C14.7007 4.36402 11.6844 1.41437 7.96365 1.41437Z" fill="#122345"/>
+									</svg>
+								</button>
+								<input required type="text" class='size-full rounded-lg pl-10 pr-4 text-sm max-lg:pl-13' 
+								data-mobile-placeholder='Search for files...' placeholder='Search for people, Files, folder & spaces'>
+							</form>
+							<div class='flex items-center gap-5.5 max-md:gap-4'>
+								<div class='dropdown-wrapper relative'>
+									<a data-id="dropdown-notifications" href="#" class='dropdown-button size-9.5 flex justify-center items-center transition-colors hover:bg-gray-200 rounded-full relative [&.active]:bg-gray-200 cursor-pointer'>
+										<svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M8.3 20C8.46738 20.3044 8.71345 20.5583 9.01249 20.7352C9.31153 20.912 9.65258 21.0053 10 21.0053C10.3474 21.0053 10.6885 20.912 10.9875 20.7352C11.2866 20.5583 11.5326 20.3044 11.7 20M4 7C4 5.4087 4.63214 3.88258 5.75736 2.75736C6.88258 1.63214 8.4087 1 10 1C11.5913 1 13.1174 1.63214 14.2426 2.75736C15.3679 3.88258 16 5.4087 16 7C16 14 19 16 19 16H1C1 16 4 14 4 7Z" stroke="#0A0A0B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+										<span class='absolute top-0.5 left-3.5 z-1 bg-red-500 rounded-full border-2 border-white flex justify-center items-center h-4.5 min-w-4.5 px-1 text-[11px] text-white text-center font-medium text-nowrap'>9+</span>
+									</a>
+									<div data-dropdown-id="dropdown-notifications"  class='dropdown-content absolute top-[calc(100%_+_8px)] -right-2 bg-white shadow-dropdown rounded-lg  pt-4 w-[28.125rem] z-3 overflow-hidden hidden transition-all duration-150 scale-0 [&.active]:scale-100 [&.active]:opacity-100 origin-top-right'>
+										<div class='flex justify-between items-center px-6 pb-2'>
+											<p class='text-base font-semibold text-dark-800'>Notifications</p>
+											<a href='#' class='text-xs text-blue-500'>View All →</a>
+										</div>
+										<ul>
+											<li>
+												<a href="#" class='flex gap-3 items-start px-6 py-4 hover:bg-gray-200 transition-colors'>
+													<div class='mt-1 size-10 flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3 after:top-3.5 after:hidden'>
+														<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+													</div>
+													<div>
+														<p class='text-sm'>
+															Someone viewed <strong> Speaker Notes Hover Effect.mp4 </strong> for the first time
+														</p>
+														<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
+															<span>Feb 6, 2025</span>
+															<span 		class='relative after:content-[""] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5 '>11:41 pm</span>
+														</div>
+													</div>
+												</a>
+											</li>
+											<li class='unread'>
+												<a href="#" class='flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150 transition-colors'>
+													<div class='mt-1 size-10 flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
+														<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+													</div>
+													<div>
+														<p class='text-sm'>
+															Team Member moved Feb 3 - Technical Development Updates and Feature Planning.mp4 and 1 more items from folder Team Meetings to folder 2025
+														</p>
+														<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
+															<span>Feb 6, 2025</span>
+															<span class='relative after:content-[""] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5 '>11:41 pm</span>
+														</div>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a href="#" class='flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150 transition-colors'>
+													<div class='mt-1 size-10 flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
+														<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+													</div>
+													<div>
+														<p class='text-sm'>
+															You received _+8= +3 -5 +10 (1) HW.pdf in your Team Inbox test-zapeir-update from qweqw eqw (eqwe@asd.we)
+														</p>
+														<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
+															<span>Feb 6, 2025</span>
+														</div>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a href="#" class='flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150 transition-colors'>
+													<div class='mt-1 size-10 flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
+														<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+													</div>
+													<div>
+														<p class='text-sm'>
+															John Dalton added JumpshareInstaller 3.4.5 - 3.exe  to folder 3.4.5
+														</p>
+														<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
+															<span>Jue 6, 2024</span>
+														</div>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a href="#" class='flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150 transition-colors'>
+													<div class='mt-1 size-10 flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
+														<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+													</div>
+													<div>
+														<p class='text-sm'>
+															Someone viewed Screen Recording 2025-01-23 at 10.0... PM.mp4 for the first time
+														</p>
+														<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
+															<span class='relative after:content-[""] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-right-2.5 '>Feb 6</span>
+															<span>11:41 pm</span>
+														</div>
+													</div>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="dropdown-wrapper relative">
+									<a href='#' data-id="dropdown-avatar" class='dropdown-button flex gap-1.5 items-center cursor-pointer max-md:pr-3 [&.active]:bg-gray-150 px-2 py-[9px] rounded-lg'>
+										<div class='size-8.8 rounded-full overflow-hidden bg-gray-200 inset-ring-2 inset-ring-gray-100'>
+											<img src="./assets/images/avatar.png" alt="Avatar">
+										</div>
+										<svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M3.5 5.75L7 9.25L10.5 5.75" stroke="black" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+									</a>
+									<ul data-dropdown-id="dropdown-avatar"  class='dropdown-content absolute top-[calc(100%_+_8px)] -right-2 bg-white shadow-dropdown rounded-lg p-1.5 w-[15.75rem] z-3 overflow-hidden hidden transition-all duration-150 scale-0 [&.active]:scale-100 [&.active]:opacity-100 origin-top-right'>
+										<li class='flex items-center gap-3 p-3.5'>
+											<div class="size-[42px] rounded-full overflow-hidden">
+												<img class='size-full object-cover' src="./assets/images/avatar.png" alt="Avatar">
+											</div>
+											<div>
+												<span class='text-sm font-semibold text-dark-800 mb-1'>John Doe</span>
+												<p class='text-dark-800/50 text-xs'>johndoe252@cironex.com</p>
+											</div>
+										</li>
+										<hr class='border-gray-500 mt-0 mb-2'>
+										<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer transition-all hover:bg-gray-200 rounded-md text-sm'>
+											<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path opacity="0.8" d="M12.8889 9.33333V4H20V9.33333H12.8889ZM4 12.8889V4H11.1111V12.8889H4ZM12.8889 20V11.1111H20V20H12.8889ZM4 20V14.6667H11.1111V20H4ZM5.77778 11.1111H9.33333V5.77778H5.77778V11.1111ZM14.6667 18.2222H18.2222V12.8889H14.6667V18.2222ZM14.6667 7.55556H18.2222V5.77778H14.6667V7.55556ZM5.77778 18.2222H9.33333V16.4444H5.77778V18.2222Z" fill="#091329"/>
+											</svg>
+											<span>Workspace Settings</span>
+										</li>
+										<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer transition-all hover:bg-gray-200 rounded-md text-sm'>
+											<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path opacity="0.8" d="M12 4C11.2309 4 10.479 4.23151 9.83945 4.66525C9.19992 5.09899 8.70148 5.71549 8.40714 6.43678C8.11279 7.15806 8.03578 7.95175 8.18584 8.71746C8.33589 9.48318 8.70627 10.1865 9.25014 10.7386C9.79401 11.2906 10.4869 11.6666 11.2413 11.8189C11.9957 11.9712 12.7776 11.893 13.4882 11.5943C14.1988 11.2955 14.8062 10.7896 15.2335 10.1404C15.6608 9.49127 15.8889 8.72808 15.8889 7.94737C15.8889 6.90046 15.4792 5.89643 14.7499 5.15616C14.0206 4.41588 13.0314 4 12 4ZM12 10.3158C11.5385 10.3158 11.0874 10.1769 10.7037 9.91664C10.32 9.65639 10.0209 9.2865 9.84428 8.85372C9.66768 8.42095 9.62147 7.94474 9.7115 7.48531C9.80153 7.02588 10.0238 6.60387 10.3501 6.27264C10.6764 5.94141 11.0922 5.71584 11.5448 5.62446C11.9974 5.53307 12.4666 5.57997 12.8929 5.75923C13.3193 5.93849 13.6837 6.24206 13.9401 6.63154C14.1965 7.02103 14.3333 7.47894 14.3333 7.94737C14.3333 8.57551 14.0875 9.17793 13.6499 9.6221C13.2123 10.0663 12.6188 10.3158 12 10.3158ZM19 19V18.2105C19 16.7449 18.4264 15.3392 17.4054 14.3028C16.3843 13.2664 14.9995 12.6842 13.5556 12.6842H10.4444C9.00049 12.6842 7.61567 13.2664 6.59464 14.3028C5.57361 15.3392 5 16.7449 5 18.2105V19H6.55556V18.2105C6.55556 17.1636 6.96528 16.1596 7.69458 15.4193C8.42389 14.679 9.41305 14.2632 10.4444 14.2632H13.5556C14.587 14.2632 15.5761 14.679 16.3054 15.4193C17.0347 16.1596 17.4444 17.1636 17.4444 18.2105V19H19Z" fill="#091329"/>
+											</svg>
+											<span>Profile Settings</span>
+										</li>
+										<hr class='border-gray-500 my-2'>
+										<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer transition-all hover:bg-gray-200 rounded-md text-sm'>
+											<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M8 10.25L12 14M12 14L16 10.25M12 14L12 5" stroke="#091329" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+												<path d="M19 14V17.3333C19 17.7754 18.8361 18.1993 18.5444 18.5118C18.2527 18.8244 17.857 19 17.4444 19H6.55556C6.143 19 5.74733 18.8244 5.45561 18.5118C5.16389 18.1993 5 17.7754 5 17.3333V14" stroke="#091329" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+											</svg>
+											<span>Install Jumpshare</span>
+										</li>
+										<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer transition-all hover:bg-gray-200 rounded-md text-sm'>
+											<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M9.672 9.6C9.86008 9.06533 10.2313 8.61449 10.72 8.32731C11.2086 8.04013 11.7831 7.93515 12.3417 8.03097C12.9004 8.12679 13.4071 8.41722 13.7721 8.85082C14.1371 9.28443 14.3368 9.83322 14.336 10.4C14.336 12 11.936 12.8 11.936 12.8M12 16H12.008M20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12Z" stroke="#091329" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+											</svg>
+											<span>Help Center</span>
+										</li>
+										<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer transition-all hover:bg-gray-200 rounded-md text-sm'>
+											<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M12 7.55556V9.33333M12 12.8889H12.0089M20 14.6667C20 15.1382 19.8127 15.5903 19.4793 15.9237C19.1459 16.2571 18.6937 16.4444 18.2222 16.4444H7.55556L4 20V5.77778C4 5.30628 4.1873 4.8541 4.5207 4.5207C4.8541 4.1873 5.30628 4 5.77778 4H18.2222C18.6937 4 19.1459 4.1873 19.4793 4.5207C19.8127 4.8541 20 5.30628 20 5.77778V14.6667Z" stroke="#091329" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+											</svg>
+											<span>Send Feedback</span>
+										</li>
+										<hr class='border-gray-500 my-2'>
+										<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer transition-all hover:bg-gray-200 rounded-md text-sm'>
+											<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M9.33333 20H5.77778C5.30628 20 4.8541 19.8127 4.5207 19.4793C4.1873 19.1459 4 18.6937 4 18.2222V5.77778C4 5.30628 4.1873 4.8541 4.5207 4.5207C4.8541 4.1873 5.30628 4 5.77778 4H9.33333M15.5556 16.4444L20 12M20 12L15.5556 7.55556M20 12H9.33333" stroke="#091329" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+											</svg>
+											<span>Sign Out</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</header>
+				<div class='subheader-nav transition-all pt-9 pb-6 sticky top-[63px] z-50 bg-white max-md:pt-5 duration-300 after:content-[""] after:absolute after:bottom-1/2 after:left-0 after:right-0 after:w-full after:h-full after:bg-white after:-z-2'>
+					<div class="dashboard-container flex justify-between items-center">
+						<div class='flex! items-center gap-4'>
+							<h2 id='title-library' class='text-2xl font-semibold text-dark-800 tracking-normal flex-shrink-0 font-sans-semi'>Trash</h2>
+						</div>
+						<div class='@container/selected-wrapper w-full selected-wrapper gap-3 hidden pl-5 justify-end'>
+							<button class='btn btn-border-default btn-sm text-sm h-9 @max-[37.5rem]/selected-wrapper:px-2'>
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M7.09545 16.1112C7.80968 17.1801 8.82484 18.0132 10.0126 18.5052C11.2003 18.9972 12.5072 19.1259 13.7681 18.8751C15.029 18.6243 16.1871 18.0052 17.0962 17.0962C18.0052 16.1871 18.6243 15.029 18.8751 13.7681C19.1259 12.5072 18.9972 11.2003 18.5052 10.0126C18.0132 8.82484 17.1801 7.80968 16.1112 7.09545C15.0423 6.38122 13.7856 6 12.5 6C10.6829 6.00684 8.9387 6.71588 7.63222 7.97889L6 9.61111M6 9.61111V6M6 9.61111H9.61111" stroke="#0A0A0B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								<span class="hidden @[37.5rem]/selected-wrapper:block">Restore</span>
+							</button>
+							<button class='btn btn-border-default btn-sm text-sm h-9 @max-[37.5rem]/selected-wrapper:px-2'>
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M4.5 7.0013H19.5M17.8333 7.0013V18.668C17.8333 19.5013 17 20.3346 16.1667 20.3346H7.83333C7 20.3346 6.16667 19.5013 6.16667 18.668V7.0013M8.66667 7.0013V5.33464C8.66667 4.5013 9.5 3.66797 10.3333 3.66797H13.6667C14.5 3.66797 15.3333 4.5013 15.3333 5.33464V7.0013M10.3333 11.168V16.168M13.6667 11.168V16.168" stroke="#122345" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								<span class="hidden @[37.5rem]/selected-wrapper:block">Delete</span>
+							</button>
+							<button class='close-selected-wrapper btn btn-border-default btn-sm text-sm h-9 max-lg:hidden'>
+								<span>Cancel</span>
+							</button>
+							<button class='btn btn-border-default btn-sm text-sm h-9 px-2 hidden max-lg:flex'>
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<g clip-path="url(#clip0_9368_6860)">
+									<path d="M8 12C8 10.9 7.1 10 6 10C4.9 10 4 10.9 4 12C4 13.1 4.9 14 6 14C7.1 14 8 13.1 8 12ZM10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12C14 10.9 13.1 10 12 10C10.9 10 10 10.9 10 12ZM16 12C16 13.1 16.9 14 18 14C19.1 14 20 13.1 20 12C20 10.9 19.1 10 18 10C16.9 10 16 10.9 16 12Z" fill="#122345"/>
+									</g>
+									<defs>
+									<clipPath id="clip0_9368_6860">
+									<rect y="24" width="24" height="24" rx="12" transform="rotate(-90 0 24)" fill="white"/>
+									</clipPath>
+									</defs>
+								</svg>
+							</button>
+						</div>
+						<div class='flex gap-3.5'>
+							<button class='hidden is-select-btn btn btn-border-default btn-sm text-sm max-lg:flex h-9'>
+								<span>Select</span>
+							</button>
+							<button class='btn btn-border-default btn-sm max-lg:hidden h-9'>
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M5 7H18M16.5556 7V17.5C16.5556 18.25 15.8333 19 15.1111 19H7.88889C7.16667 19 6.44444 18.25 6.44444 17.5V7M8.61111 7V5.5C8.61111 4.75 9.33333 4 10.0556 4H12.9444C13.6667 4 14.3889 4.75 14.3889 5.5V7M10.0556 10.75V15.25M12.9444 10.75V15.25" stroke="#0A0A0B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								Delete All
+							</button>
+							<div class='dropdown-wrapper relative'>
+								<button data-id='dropdown-grid' class='dropdown-button relative z-1 btn p-0 border border-gray-600 size-9'>
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<rect x="5.5" y="5.5" width="5" height="5" fill="white" stroke="#122345"/>
+										<rect x="13.5" y="5.5" width="5" height="5" fill="white" stroke="#122345"/>
+										<rect x="5.5" y="13.5" width="5" height="5" fill="white" stroke="#122345"/>
+										<rect x="13.5" y="13.5" width="5" height="5" fill="white" stroke="#122345"/>
+									</svg>
+								</button>
+								<div data-dropdown-id="dropdown-grid" class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[10.625rem] absolute -right-2 top-[calc(100%_+_8px)] z-1 scale-0 opacity-0 transition-all duration-150 [&.active]:scale-100 [&.active]:opacity-100 origin-top-right max-lg:hidden!'>
+									<a href='#' data-link-type='large-grid' class='flex gap-2 items-center px-2 py-1.5 text-sm rounded-md hover:bg-gray-200 transition-colors'>
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<rect x="5.5" y="5.5" width="5" height="5" fill="white" stroke="#0A0A0B"/>
+											<rect x="13.5" y="5.5" width="5" height="5" fill="white" stroke="#0A0A0B"/>
+											<rect x="5.5" y="13.5" width="5" height="5" fill="white" stroke="#0A0A0B"/>
+											<rect x="13.5" y="13.5" width="5" height="5" fill="white" stroke="#0A0A0B"/>
+										</svg>
+										Large Grid
+									</a>
+									<a href='#' data-link-type='grid' class='flex gap-2 items-center px-2 py-1.5 text-sm rounded-md hover:bg-gray-200 transition-colors'>
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M8 8H4V4H8V8ZM14 4H10V8H14V4ZM20 4H16V8H20V4ZM8 10H4V14H8V10ZM14 10H10V14H14V10ZM20 10H16V14H20V10ZM8 16H4V20H8V16ZM14 16H10V20H14V16ZM20 16H16V20H20V16Z" fill="#0A0A0B"/>
+										</svg>
+										Grid
+									</a>
+									<a href='#' data-link-type='list' class='flex gap-2 items-center px-2 py-1.5 text-sm rounded-md hover:bg-gray-200 transition-colors'>
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M9 7H20M9 11.9958H20M9 16.9917H20M5 7V7.00833M5 11.9958V12.0042M5 16.9917V17" stroke="#0A0A0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+										List
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class='dashboard-container pb-5 pt-0'>
+					<div class='flex items-start bg-blue-100 mb-10 py-3 px-4 rounded-sm gap-2'>
+						<svg class='flex-shrink-0 mt-0.5' width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M9 12.75C9.2125 12.75 9.39075 12.678 9.53475 12.534C9.67875 12.39 9.7505 12.212 9.75 12V9C9.75 8.7875 9.678 8.6095 9.534 8.466C9.39 8.3225 9.212 8.2505 9 8.25C8.788 8.2495 8.61 8.3215 8.466 8.466C8.322 8.6105 8.25 8.7885 8.25 9V12C8.25 12.2125 8.322 12.3907 8.466 12.5347C8.61 12.6787 8.788 12.7505 9 12.75ZM9 6.75C9.2125 6.75 9.39075 6.678 9.53475 6.534C9.67875 6.39 9.7505 6.212 9.75 6C9.7495 5.788 9.6775 5.61 9.534 5.466C9.3905 5.322 9.2125 5.25 9 5.25C8.7875 5.25 8.6095 5.322 8.466 5.466C8.3225 5.61 8.2505 5.788 8.25 6C8.2495 6.212 8.3215 6.39025 8.466 6.53475C8.6105 6.67925 8.7885 6.751 9 6.75ZM9 16.5C7.9625 16.5 6.9875 16.303 6.075 15.909C5.1625 15.515 4.36875 14.9808 3.69375 14.3063C3.01875 13.6318 2.4845 12.838 2.091 11.925C1.6975 11.012 1.5005 10.037 1.5 9C1.4995 7.963 1.6965 6.988 2.091 6.075C2.4855 5.162 3.01975 4.36825 3.69375 3.69375C4.36775 3.01925 5.1615 2.485 6.075 2.091C6.9885 1.697 7.9635 1.5 9 1.5C10.0365 1.5 11.0115 1.697 11.925 2.091C12.8385 2.485 13.6323 3.01925 14.3063 3.69375C14.9803 4.36825 15.5148 5.162 15.9098 6.075C16.3048 6.988 16.5015 7.963 16.5 9C16.4985 10.037 16.3015 11.012 15.909 11.925C15.5165 12.838 14.9823 13.6318 14.3063 14.3063C13.6303 14.9808 12.8365 15.5152 11.925 15.9097C11.0135 16.3042 10.0385 16.501 9 16.5ZM9 15C10.675 15 12.0938 14.4187 13.2563 13.2562C14.4187 12.0937 15 10.675 15 9C15 7.325 14.4187 5.90625 13.2563 4.74375C12.0938 3.58125 10.675 3 9 3C7.325 3 5.90625 3.58125 4.74375 4.74375C3.58125 5.90625 3 7.325 3 9C3 10.675 3.58125 12.0937 4.74375 13.2562C5.90625 14.4187 7.325 15 9 15Z" fill="#0A0A0B"/>
+						</svg>
+						<p class='text-sm text-dark-800'>All items deleted from your account are stored in Trash for 30 days. You can restore your recently deleted items below.</p>
+					</div>
+					<div>
+						<div class='flex justify-between items-center'>
+							<h3 class='text-lg text-dark-800 font-semibold fake-loading-content'>Folders</h3>
+							<div class='fake-loading flex items-center h-[28px] animate-pulse'>
+								<span class='h-[20px] w-15 rounded bg-gray-300'></span>
+							</div>
+						</div>
+						<div class='grid grid-cols-4 gap-4 mt-5 [&.list-type]:flex flex-col [&.list-type]:gap-0 [&.grid-type]:grid-cols-5 max-sm:gap-2.5 max-sm:grid-cols-2 fake-loading-content' data-content-type>
+							<div class='hidden [.list-type_&]:grid grid-cols-[1fr_7rem_9rem_7.94rem] [.team-page_&]:grid-cols-[1fr_9rem_7rem_9rem_7.94rem] items-center gap-2 w-full pb-3 border-b border-gray-400 text-sm max-md:[.list-type_&]:hidden text-dark-800/60'>
+								<div>
+									Name
+								</div>
+								<div class='hidden [.team-page_&]:block'>
+									Owner
+								</div>
+								<div>
+									Size
+								</div>
+								<div>
+									Modified
+								</div>
+								<div>
+									Views
+								</div>
+							</div>
+							<a href="#" class='group folder-item dropdown-wrapper'>
+								<div class='flex items-center gap-3 [.list-type_&]:ml-2.5 max-lg:gap-5 max-lg:[.list-select-active.list-type_&]:pl-9! max-lg:[.list-type_&]:duration-300 max-lg:[.list-type_&]:transition-[padding-left] max-xl:not-[.list-type_&]:flex-col max-xl:items-start max-lg:[.list-type_&]:items-center truncate'>
+									<input data-select-item class="peer" hidden="" type="checkbox" id="select-file-2">
+									<label class="card-select-box" for="select-file-2">
+										<svg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M8.49392 1.43274C8.57351 1.35587 8.637 1.26391 8.68067 1.16224C8.72434 1.06057 8.74733 0.951224 8.74829 0.840574C8.74926 0.729925 8.72817 0.620192 8.68627 0.517779C8.64437 0.415365 8.58249 0.322321 8.50425 0.244077C8.426 0.165833 8.33296 0.103956 8.23055 0.0620551C8.12813 0.0201544 8.0184 -0.000930049 7.90775 3.14644e-05C7.7971 0.000992978 7.68775 0.0239814 7.58608 0.0676556C7.48441 0.11133 7.39246 0.174815 7.31559 0.254406L3.19059 4.37941L1.42309 2.61191C1.34572 2.53448 1.25385 2.47305 1.15274 2.43113C1.05163 2.38921 0.943254 2.36761 0.833797 2.36757C0.612738 2.36749 0.400703 2.45523 0.244335 2.61149C0.0879682 2.76775 7.81923e-05 2.97972 5.21481e-08 3.20078C-7.8088e-05 3.42184 0.0876622 3.63387 0.243919 3.79024L2.54225 6.08857C2.62738 6.17374 2.72845 6.2413 2.83969 6.28739C2.95094 6.33349 3.07017 6.35721 3.19059 6.35721C3.311 6.35721 3.43023 6.33349 3.54148 6.28739C3.65272 6.2413 3.75379 6.17374 3.83892 6.08857L8.49392 1.43274Z" fill="#ffffff"></path>
+										</svg>
+									</label>
+									<svg class='lg:group-hover:not-[.list-type_&]:opacity-0 not-[.list-type_&]:[.list-select-active_&]:opacity-0 flex-shrink-0 max-lg:[.list-select-active_&]:not-[.list-type_&]:opacity-0' width="22" height="17" viewBox="0 0 24 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M13.8333 4.4H20C21.6569 4.4 23 5.74314 23 7.4V15C23 16.6569 21.6569 18 20 18H4C2.34315 18 1 16.6569 1 15L1 4.4M13.8333 4.4L12.2867 2.24876C11.723 1.46477 10.8165 1 9.85088 1H4C2.34315 1 1 2.34315 1 4V4.4M13.8333 4.4H1" stroke="#0A0A0B"/>
+									</svg>
+									<div class='flex flex-col gap-1 truncate'>
+										<h4 class='text-sm text-dark-800 font-medium [.list-type_&]:mt-0 truncate'>Team Meetings Team Meetings Team Meetings Team Meetings Team Meetings Team Meetings Team Meetings</h4>
+										<ul class="flex items-center text-sm text-dark-800/70 gap-3 lg:[.list-type_&]:hidden">
+											<li class="relative">
+												2 Items
+												<span class="absolute top-1/2 -translate-y-1/2 -right-[7.5px]  size-[2px] rounded-full bg-blue-900/70"></span>
+											</li>
+											<li class="relative">Feb 10</li>
+										</ul>
+									</div>
+								</div>
+								<div class='hidden [.team-page_&]:[.list-type_&]:flex gap-2.5 items-center max-md:hidden!'>
+									<img class='size-6' src="./assets/images/avatar.png" alt="Cris">
+									<span class='truncate text-sm font-normal'>Anthony Crissage Anthony Crissage</span>
+								</div>
+								<div class='hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden'>
+									<p class='text-sm text-dark-800'>3 Items</p>
+								</div>
+								<div class='hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden'>
+									<p class='text-sm text-dark-800'>22 hrs ago</p>
+								</div>
+								<div class='[.list-type_&]:flex items-center gap-2 justify-between max-md:justify-end pr-3 max-lg:not-[.list-type_&]:flex'>
+									<span class='hidden text-sm text-dark-800 md:[.list-type_&]:flex w-10 justify-center items-center'>12</span>
+									<div class='absolute right-2.5 top-1/2 -translate-y-1/2 max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:translate-y-0 [.list-type_&]:top-auto [.list-type_&]:translate-y-0 [.list-type_&]:static z-1'>
+										<button data-id="dropdown-settings" data-open-sheet class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer h-5 flex justify-center items-center transition-transform hover:scale-110 size-7 [&.active]">
+											<svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<rect width="15" height="4" transform="translate(5 6.5)" fill="white"/>
+												<circle cx="7.5" cy="8.5" r="1.5" fill="black"/>
+												<circle cx="12.5" cy="8.5" r="1.5" fill="black"/>
+												<circle cx="17.5" cy="8.5" r="1.5" fill="black"/>
+											</svg>
+										</button>
+										<div 			data-dropdown-id='dropdown-settings' class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-2.5 z-1 [&.active]:flex [.list-type_&]:right-full! [.list-type_&]:left-auto!'>
+											<ul class='text-sm'>
+												<li class='text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M7.09545 16.1112C7.80968 17.1801 8.82484 18.0132 10.0126 18.5052C11.2003 18.9972 12.5072 19.1259 13.7681 18.8751C15.029 18.6243 16.1871 18.0052 17.0962 17.0962C18.0052 16.1871 18.6243 15.029 18.8751 13.7681C19.1259 12.5072 18.9972 11.2003 18.5052 10.0126C18.0132 8.82484 17.1801 7.80968 16.1112 7.09545C15.0423 6.38122 13.7856 6 12.5 6C10.6829 6.00684 8.9387 6.71588 7.63222 7.97889L6 9.61111M6 9.61111V6M6 9.61111H9.61111" stroke="#0A0A0B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+													</svg>
+													<span>Restore</span>
+												</li>
+												<li class='text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M5 7H18M16.5556 7V17.5C16.5556 18.25 15.8333 19 15.1111 19H7.88889C7.16667 19 6.44444 18.25 6.44444 17.5V7M8.61111 7V5.5C8.61111 4.75 9.33333 4 10.0556 4H12.9444C13.6667 4 14.3889 4.75 14.3889 5.5V7M10.0556 10.75V15.25M12.9444 10.75V15.25" stroke="#0A0A0B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+													</svg>
+													<span>Permanently Delete</span>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</a>
+							<a href="#" class='group folder-item dropdown-wrapper'>
+								<div class='flex items-center gap-3 [.list-type_&]:ml-2.5 max-lg:gap-5 max-lg:[.list-select-active.list-type_&]:pl-9! max-lg:[.list-type_&]:duration-300 max-lg:[.list-type_&]:transition-[padding-left] max-xl:not-[.list-type_&]:flex-col max-xl:items-start max-lg:[.list-type_&]:items-center truncate'>
+									<input data-select-item class="peer" hidden="" type="checkbox" id="select-file-1">
+									<label class="card-select-box" for="select-file-1">
+										<svg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M8.49392 1.43274C8.57351 1.35587 8.637 1.26391 8.68067 1.16224C8.72434 1.06057 8.74733 0.951224 8.74829 0.840574C8.74926 0.729925 8.72817 0.620192 8.68627 0.517779C8.64437 0.415365 8.58249 0.322321 8.50425 0.244077C8.426 0.165833 8.33296 0.103956 8.23055 0.0620551C8.12813 0.0201544 8.0184 -0.000930049 7.90775 3.14644e-05C7.7971 0.000992978 7.68775 0.0239814 7.58608 0.0676556C7.48441 0.11133 7.39246 0.174815 7.31559 0.254406L3.19059 4.37941L1.42309 2.61191C1.34572 2.53448 1.25385 2.47305 1.15274 2.43113C1.05163 2.38921 0.943254 2.36761 0.833797 2.36757C0.612738 2.36749 0.400703 2.45523 0.244335 2.61149C0.0879682 2.76775 7.81923e-05 2.97972 5.21481e-08 3.20078C-7.8088e-05 3.42184 0.0876622 3.63387 0.243919 3.79024L2.54225 6.08857C2.62738 6.17374 2.72845 6.2413 2.83969 6.28739C2.95094 6.33349 3.07017 6.35721 3.19059 6.35721C3.311 6.35721 3.43023 6.33349 3.54148 6.28739C3.65272 6.2413 3.75379 6.17374 3.83892 6.08857L8.49392 1.43274Z" fill="#ffffff"></path>
+										</svg>
+									</label>
+									<svg class='lg:group-hover:not-[.list-type_&]:opacity-0 not-[.list-type_&]:[.list-select-active_&]:opacity-0 flex-shrink-0 max-lg:[.list-select-active_&]:not-[.list-type_&]:opacity-0' width="22" height="17" viewBox="0 0 24 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M13.8333 4.4H20C21.6569 4.4 23 5.74314 23 7.4V15C23 16.6569 21.6569 18 20 18H4C2.34315 18 1 16.6569 1 15L1 4.4M13.8333 4.4L12.2867 2.24876C11.723 1.46477 10.8165 1 9.85088 1H4C2.34315 1 1 2.34315 1 4V4.4M13.8333 4.4H1" stroke="#0A0A0B"/>
+									</svg>
+									<div class='flex flex-col gap-1 truncate'>
+										<h4 class='text-sm text-dark-800 font-medium [.list-type_&]:mt-0 truncate'>Untitled</h4>
+										<ul class="flex items-center text-sm text-dark-800/70 gap-3 lg:[.list-type_&]:hidden">
+											<li class="relative">
+												2 Items
+												<span class="absolute top-1/2 -translate-y-1/2 -right-[7.5px]  size-[2px] rounded-full bg-blue-900/70"></span>
+											</li>
+											<li class="relative">Jan 10, 2024</li>
+										</ul>
+									</div>
+								</div>
+								<div class='hidden [.team-page_&]:[.list-type_&]:flex gap-2.5 items-center max-md:hidden!'>
+									<img class='size-6' src="./assets/images/avatar-2.png" alt="Cris">
+									<span class='truncate text-sm font-normal'>John Dancer</span>
+								</div>
+								<div class='hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden'>
+									<p class='text-sm text-dark-800'>3 Items</p>
+								</div>
+								<div class='hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden'>
+									<p class='text-sm text-dark-800'>22 hrs ago</p>
+								</div>
+								<div class='[.list-type_&]:flex items-center gap-2 justify-between max-md:justify-end pr-3 max-lg:not-[.list-type_&]:flex'>
+									<span class='hidden text-sm text-dark-800 md:[.list-type_&]:flex w-10 justify-center items-center'>12</span>
+									<div class='absolute right-2.5 top-1/2 -translate-y-1/2 max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:translate-y-0 [.list-type_&]:top-auto [.list-type_&]:translate-y-0 [.list-type_&]:static z-1'>
+										<button data-id="dropdown-settings" data-open-sheet class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer h-5 flex justify-center items-center transition-transform hover:scale-110 size-7 [&.active]">
+											<svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<rect width="15" height="4" transform="translate(5 6.5)" fill="white"/>
+												<circle cx="7.5" cy="8.5" r="1.5" fill="black"/>
+												<circle cx="12.5" cy="8.5" r="1.5" fill="black"/>
+												<circle cx="17.5" cy="8.5" r="1.5" fill="black"/>
+											</svg>
+										</button>
+										<div 			data-dropdown-id='dropdown-settings' class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-2.5 z-1 [&.active]:flex [.list-type_&]:right-full! [.list-type_&]:left-auto!'>
+											<ul class='text-sm'>
+												<li class='text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M7.09545 16.1112C7.80968 17.1801 8.82484 18.0132 10.0126 18.5052C11.2003 18.9972 12.5072 19.1259 13.7681 18.8751C15.029 18.6243 16.1871 18.0052 17.0962 17.0962C18.0052 16.1871 18.6243 15.029 18.8751 13.7681C19.1259 12.5072 18.9972 11.2003 18.5052 10.0126C18.0132 8.82484 17.1801 7.80968 16.1112 7.09545C15.0423 6.38122 13.7856 6 12.5 6C10.6829 6.00684 8.9387 6.71588 7.63222 7.97889L6 9.61111M6 9.61111V6M6 9.61111H9.61111" stroke="#0A0A0B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+													</svg>
+													<span>Restore</span>
+												</li>
+												<li class='text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M5 7H18M16.5556 7V17.5C16.5556 18.25 15.8333 19 15.1111 19H7.88889C7.16667 19 6.44444 18.25 6.44444 17.5V7M8.61111 7V5.5C8.61111 4.75 9.33333 4 10.0556 4H12.9444C13.6667 4 14.3889 4.75 14.3889 5.5V7M10.0556 10.75V15.25M12.9444 10.75V15.25" stroke="#0A0A0B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+													</svg>
+													<span>Permanently Delete</span>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</a>
+							<a href="#" class='group folder-item dropdown-wrapper'>
+								<div class='flex items-center gap-3 [.list-type_&]:ml-2.5 max-lg:gap-5 max-lg:[.list-select-active.list-type_&]:pl-9! max-lg:[.list-type_&]:duration-300 max-lg:[.list-type_&]:transition-[padding-left] max-xl:not-[.list-type_&]:flex-col max-xl:items-start max-lg:[.list-type_&]:items-center truncate'>
+									<input data-select-item class="peer" hidden="" type="checkbox" id="select-file-3">
+									<label class="card-select-box" for="select-file-3">
+										<svg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M8.49392 1.43274C8.57351 1.35587 8.637 1.26391 8.68067 1.16224C8.72434 1.06057 8.74733 0.951224 8.74829 0.840574C8.74926 0.729925 8.72817 0.620192 8.68627 0.517779C8.64437 0.415365 8.58249 0.322321 8.50425 0.244077C8.426 0.165833 8.33296 0.103956 8.23055 0.0620551C8.12813 0.0201544 8.0184 -0.000930049 7.90775 3.14644e-05C7.7971 0.000992978 7.68775 0.0239814 7.58608 0.0676556C7.48441 0.11133 7.39246 0.174815 7.31559 0.254406L3.19059 4.37941L1.42309 2.61191C1.34572 2.53448 1.25385 2.47305 1.15274 2.43113C1.05163 2.38921 0.943254 2.36761 0.833797 2.36757C0.612738 2.36749 0.400703 2.45523 0.244335 2.61149C0.0879682 2.76775 7.81923e-05 2.97972 5.21481e-08 3.20078C-7.8088e-05 3.42184 0.0876622 3.63387 0.243919 3.79024L2.54225 6.08857C2.62738 6.17374 2.72845 6.2413 2.83969 6.28739C2.95094 6.33349 3.07017 6.35721 3.19059 6.35721C3.311 6.35721 3.43023 6.33349 3.54148 6.28739C3.65272 6.2413 3.75379 6.17374 3.83892 6.08857L8.49392 1.43274Z" fill="#ffffff"></path>
+										</svg>
+									</label>
+									<svg class='lg:group-hover:not-[.list-type_&]:opacity-0 not-[.list-type_&]:[.list-select-active_&]:opacity-0 flex-shrink-0 max-lg:[.list-select-active_&]:not-[.list-type_&]:opacity-0' width="22" height="17" viewBox="0 0 24 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M13.8333 4.4H20C21.6569 4.4 23 5.74314 23 7.4V15C23 16.6569 21.6569 18 20 18H4C2.34315 18 1 16.6569 1 15L1 4.4M13.8333 4.4L12.2867 2.24876C11.723 1.46477 10.8165 1 9.85088 1H4C2.34315 1 1 2.34315 1 4V4.4M13.8333 4.4H1" stroke="#0A0A0B"/>
+									</svg>
+									<div class='flex flex-col gap-1 truncate'>
+										<h4 class='text-sm text-dark-800 font-medium [.list-type_&]:mt-0 truncate'>New Folder 2.0</h4>
+										<ul class="flex items-center text-sm text-dark-800/70 gap-3 lg:[.list-type_&]:hidden">
+											<li class="relative">
+												2 Items
+												<span class="absolute top-1/2 -translate-y-1/2 -right-[7.5px]  size-[2px] rounded-full bg-blue-900/70"></span>
+											</li>
+											<li class="relative">Jan 10, 2024</li>
+										</ul>
+									</div>
+								</div>
+								<div class='hidden [.team-page_&]:[.list-type_&]:flex gap-2.5 items-center max-md:hidden!'>
+									<img class='size-6' src="./assets/images/avatar-3.png" alt="Cris">
+									<span class='truncate text-sm font-normal'>Anthony Work</span>
+								</div>
+								<div class='hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden'>
+									<p class='text-sm text-dark-800'>12 Items</p>
+								</div>
+								<div class='hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden'>
+									<p class='text-sm text-dark-800'>22 hrs ago</p>
+								</div>
+								<div class='[.list-type_&]:flex items-center gap-2 justify-between max-md:justify-end pr-3 max-lg:not-[.list-type_&]:flex'>
+									<span class='hidden text-sm text-dark-800 md:[.list-type_&]:flex w-10 justify-center items-center'>12</span>
+									<div class='absolute right-2.5 top-1/2 -translate-y-1/2 max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:translate-y-0 [.list-type_&]:top-auto [.list-type_&]:translate-y-0 [.list-type_&]:static z-1'>
+										<button data-id="dropdown-settings" data-open-sheet class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer h-5 flex justify-center items-center transition-transform hover:scale-110 size-7 [&.active]">
+											<svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<rect width="15" height="4" transform="translate(5 6.5)" fill="white"/>
+												<circle cx="7.5" cy="8.5" r="1.5" fill="black"/>
+												<circle cx="12.5" cy="8.5" r="1.5" fill="black"/>
+												<circle cx="17.5" cy="8.5" r="1.5" fill="black"/>
+											</svg>
+										</button>
+										<div 			data-dropdown-id='dropdown-settings' class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-2.5 z-1 [&.active]:flex [.list-type_&]:right-full! [.list-type_&]:left-auto!'>
+											<ul class='text-sm'>
+												<li class='text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M7.09545 16.1112C7.80968 17.1801 8.82484 18.0132 10.0126 18.5052C11.2003 18.9972 12.5072 19.1259 13.7681 18.8751C15.029 18.6243 16.1871 18.0052 17.0962 17.0962C18.0052 16.1871 18.6243 15.029 18.8751 13.7681C19.1259 12.5072 18.9972 11.2003 18.5052 10.0126C18.0132 8.82484 17.1801 7.80968 16.1112 7.09545C15.0423 6.38122 13.7856 6 12.5 6C10.6829 6.00684 8.9387 6.71588 7.63222 7.97889L6 9.61111M6 9.61111V6M6 9.61111H9.61111" stroke="#0A0A0B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+													</svg>
+													<span>Restore</span>
+												</li>
+												<li class='text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M5 7H18M16.5556 7V17.5C16.5556 18.25 15.8333 19 15.1111 19H7.88889C7.16667 19 6.44444 18.25 6.44444 17.5V7M8.61111 7V5.5C8.61111 4.75 9.33333 4 10.0556 4H12.9444C13.6667 4 14.3889 4.75 14.3889 5.5V7M10.0556 10.75V15.25M12.9444 10.75V15.25" stroke="#0A0A0B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+													</svg>
+													<span>Permanently Delete</span>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</a>
+							<a href="#" class='group folder-item dropdown-wrapper'>
+								<div class='flex items-center gap-3 [.list-type_&]:ml-2.5 max-lg:gap-5 max-lg:[.list-select-active.list-type_&]:pl-9! max-lg:[.list-type_&]:duration-300 max-lg:[.list-type_&]:transition-[padding-left] max-xl:not-[.list-type_&]:flex-col max-xl:items-start max-lg:[.list-type_&]:items-center truncate'>
+									<input data-select-item class="peer" hidden="" type="checkbox" id="select-file-4">
+									<label class="card-select-box" for="select-file-4">
+										<svg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M8.49392 1.43274C8.57351 1.35587 8.637 1.26391 8.68067 1.16224C8.72434 1.06057 8.74733 0.951224 8.74829 0.840574C8.74926 0.729925 8.72817 0.620192 8.68627 0.517779C8.64437 0.415365 8.58249 0.322321 8.50425 0.244077C8.426 0.165833 8.33296 0.103956 8.23055 0.0620551C8.12813 0.0201544 8.0184 -0.000930049 7.90775 3.14644e-05C7.7971 0.000992978 7.68775 0.0239814 7.58608 0.0676556C7.48441 0.11133 7.39246 0.174815 7.31559 0.254406L3.19059 4.37941L1.42309 2.61191C1.34572 2.53448 1.25385 2.47305 1.15274 2.43113C1.05163 2.38921 0.943254 2.36761 0.833797 2.36757C0.612738 2.36749 0.400703 2.45523 0.244335 2.61149C0.0879682 2.76775 7.81923e-05 2.97972 5.21481e-08 3.20078C-7.8088e-05 3.42184 0.0876622 3.63387 0.243919 3.79024L2.54225 6.08857C2.62738 6.17374 2.72845 6.2413 2.83969 6.28739C2.95094 6.33349 3.07017 6.35721 3.19059 6.35721C3.311 6.35721 3.43023 6.33349 3.54148 6.28739C3.65272 6.2413 3.75379 6.17374 3.83892 6.08857L8.49392 1.43274Z" fill="#ffffff"></path>
+										</svg>
+									</label>
+									<svg class='lg:group-hover:not-[.list-type_&]:opacity-0 not-[.list-type_&]:[.list-select-active_&]:opacity-0 flex-shrink-0 max-lg:[.list-select-active_&]:not-[.list-type_&]:opacity-0' width="22" height="17" viewBox="0 0 24 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M13.8333 4.4H20C21.6569 4.4 23 5.74314 23 7.4V15C23 16.6569 21.6569 18 20 18H4C2.34315 18 1 16.6569 1 15L1 4.4M13.8333 4.4L12.2867 2.24876C11.723 1.46477 10.8165 1 9.85088 1H4C2.34315 1 1 2.34315 1 4V4.4M13.8333 4.4H1" stroke="#0A0A0B"/>
+									</svg>
+									<div class='flex flex-col gap-1 truncate'>
+										<h4 class='text-sm text-dark-800 font-medium [.list-type_&]:mt-0 truncate'>Untitled</h4>
+										<ul class="flex items-center text-sm text-dark-800/70 gap-3 lg:[.list-type_&]:hidden">
+											<li class="relative">
+												2 Items
+												<span class="absolute top-1/2 -translate-y-1/2 -right-[7.5px]  size-[2px] rounded-full bg-blue-900/70"></span>
+											</li>
+											<li class="relative">Jan 10, 2024</li>
+										</ul>
+									</div>
+								</div>
+								<div class='hidden [.team-page_&]:[.list-type_&]:flex gap-2.5 items-center max-md:hidden!'>
+									<span class='size-6 bg-blue-500 flex items-center justify-center font-semibold text-sm rounded-full flex-shrink-0 text-white'>J</span>
+									<span class='truncate text-sm font-normal'>John Doe</span>
+								</div>
+								<div class='hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden'>
+									<p class='text-sm text-dark-800'>12 Items</p>
+								</div>
+								<div class='hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden'>
+									<p class='text-sm text-dark-800'>22 hrs ago</p>
+								</div>
+								<div class='[.list-type_&]:flex items-center gap-2 justify-between max-md:justify-end pr-3 max-lg:not-[.list-type_&]:flex'>
+									<span class='hidden text-sm text-dark-800 md:[.list-type_&]:flex w-10 justify-center items-center'>12</span>
+									<div class='absolute right-2.5 top-1/2 -translate-y-1/2 max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:translate-y-0 [.list-type_&]:top-auto [.list-type_&]:translate-y-0 [.list-type_&]:static z-1'>
+										<button data-id="dropdown-settings" data-open-sheet class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer h-5 flex justify-center items-center transition-transform hover:scale-110 size-7 [&.active]:opacity-100">
+											<svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<rect width="15" height="4" transform="translate(5 6.5)" fill="white"/>
+												<circle cx="7.5" cy="8.5" r="1.5" fill="black"/>
+												<circle cx="12.5" cy="8.5" r="1.5" fill="black"/>
+												<circle cx="17.5" cy="8.5" r="1.5" fill="black"/>
+											</svg>
+										</button>
+										<div 			data-dropdown-id='dropdown-settings' class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-2.5 z-1 [&.active]:flex [.list-type_&]:right-full! [.list-type_&]:left-auto!'>
+											<ul class='text-sm'>
+												<li class='text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M7.09545 16.1112C7.80968 17.1801 8.82484 18.0132 10.0126 18.5052C11.2003 18.9972 12.5072 19.1259 13.7681 18.8751C15.029 18.6243 16.1871 18.0052 17.0962 17.0962C18.0052 16.1871 18.6243 15.029 18.8751 13.7681C19.1259 12.5072 18.9972 11.2003 18.5052 10.0126C18.0132 8.82484 17.1801 7.80968 16.1112 7.09545C15.0423 6.38122 13.7856 6 12.5 6C10.6829 6.00684 8.9387 6.71588 7.63222 7.97889L6 9.61111M6 9.61111V6M6 9.61111H9.61111" stroke="#0A0A0B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+													</svg>
+													<span>Restore</span>
+												</li>
+												<li class='text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M5 7H18M16.5556 7V17.5C16.5556 18.25 15.8333 19 15.1111 19H7.88889C7.16667 19 6.44444 18.25 6.44444 17.5V7M8.61111 7V5.5C8.61111 4.75 9.33333 4 10.0556 4H12.9444C13.6667 4 14.3889 4.75 14.3889 5.5V7M10.0556 10.75V15.25M12.9444 10.75V15.25" stroke="#0A0A0B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+													</svg>
+													<span>Permanently Delete</span>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class='grid grid-cols-4 gap-5 mt-5 [&.list-type]:hidden max-sm:gap-2.5 max-sm:grid-cols-2 fake-loading' data-content-type>
+							<div class="w-full rounded-xl border border-gray-500 overflow-hidden animate-pulse">
+								<div class="flex flex-col">
+									<div class="flex flex-col px-5 py-4">
+										<div class="size-[21px] rounded bg-gray-300 mb-5">
+										</div>
+										<div class="flex flex-col gap-2">
+											<span class="h-[11px] w-26 rounded bg-gray-300"></span>
+											<span class="h-[11px] w-12 rounded bg-gray-300"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="w-full rounded-xl border border-gray-500 overflow-hidden animate-pulse">
+								<div class="flex flex-col">
+									<div class="flex flex-col px-5 py-4">
+										<div class="size-[21px] rounded bg-gray-300 mb-5">
+										</div>
+										<div class="flex flex-col gap-2">
+											<span class="h-[11px] w-26 rounded bg-gray-300"></span>
+											<span class="h-[11px] w-12 rounded bg-gray-300"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="w-full rounded-xl border border-gray-500 overflow-hidden animate-pulse">
+								<div class="flex flex-col">
+									<div class="flex flex-col px-5 py-4">
+										<div class="size-[21px] rounded bg-gray-300 mb-5">
+										</div>
+										<div class="flex flex-col gap-2">
+											<span class="h-[11px] w-26 rounded bg-gray-300"></span>
+											<span class="h-[11px] w-12 rounded bg-gray-300"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="w-full rounded-xl border border-gray-500 overflow-hidden animate-pulse">
+								<div class="flex flex-col">
+									<div class="flex flex-col px-5 py-4">
+										<div class="size-[21px] rounded bg-gray-300 mb-5">
+										</div>
+										<div class="flex flex-col gap-2">
+											<span class="h-[11px] w-26 rounded bg-gray-300"></span>
+											<span class="h-[11px] w-12 rounded bg-gray-300"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class='hidden [&.list-type]:flex flex-col mt-5' data-content-type>
+							<div class='flex justify-between animate-pulse first:border-t border-b border-gray-300 py-4 relative pr-4'>
+								<span class='absolute -left-7.5 size-5 bg-gray-300 rounded'></span>
+								<div class='w-[191px] h-5 rounded bg-gray-300'></div>
+								<div class='flex items-center gap-3'>
+									<span class='h-5 w-[97px] bg-gray-300 rounded'></span>
+									<span class='h-5 w-[97px] bg-gray-300 rounded'></span>
+								</div>
+							</div>
+							<div class='flex justify-between animate-pulse first:border-t border-b border-gray-300 py-4 relative pr-4'>
+								<span class='absolute -left-7.5 size-5 bg-gray-300 rounded'></span>
+								<div class='w-[191px] h-5 rounded bg-gray-300'></div>
+								<div class='flex items-center gap-3'>
+									<span class='h-5 w-[97px] bg-gray-300 rounded'></span>
+									<span class='h-5 w-[97px] bg-gray-300 rounded'></span>
+								</div>
+							</div>
+							<div class='flex justify-between animate-pulse first:border-t border-b border-gray-300 py-4 relative pr-4'>
+								<span class='absolute -left-7.5 size-5 bg-gray-300 rounded'></span>
+								<div class='w-[191px] h-5 rounded bg-gray-300'></div>
+								<div class='flex items-center gap-3'>
+									<span class='h-5 w-[97px] bg-gray-300 rounded'></span>
+									<span class='h-5 w-[97px] bg-gray-300 rounded'></span>
+								</div>
+							</div>
+							<div class='flex justify-between animate-pulse first:border-t border-b border-gray-300 py-4 relative pr-4'>
+								<span class='absolute -left-7.5 size-5 bg-gray-300 rounded'></span>
+								<div class='w-[191px] h-5 rounded bg-gray-300'></div>
+								<div class='flex items-center gap-3'>
+									<span class='h-5 w-[97px] bg-gray-300 rounded'></span>
+									<span class='h-5 w-[97px] bg-gray-300 rounded'></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class='mt-8'>
+						<h3 class='text-lg text-dark-800 font-semibold fake-loading-content'>Files</h3>
+						<div class='fake-loading flex items-center h-[28px] animate-pulse'>
+							<span class='h-[20px] w-10 rounded bg-gray-300'></span>
+						</div>
+						<div class='grid grid-cols-4 gap-[1.125rem] mt-5 [&.list-type]:flex flex-col [&.list-type]:gap-0 [&.grid-type]:grid-cols-5 max-md:grid-cols-3 max-sm:grid-cols-2 max-sm:gap-2.5 fake-loading-content' data-content-type>
+							<div class='hidden [.list-type_&]:grid grid-cols-[1fr_7rem_9rem_7.94rem] [.team-page_&]:grid-cols-[1fr_9rem_7rem_9rem_7.94rem] items-center gap-2 w-full pb-3 border-b border-gray-400 text-sm max-md:[.list-type_&]:hidden text-dark-800/60'>
+								<div>
+									Name
+								</div>
+								<div class='hidden [.team-page_&]:block'>
+									Owner
+								</div>
+								<div>
+									Size
+								</div>
+								<div>
+									Modified
+								</div>
+								<div>
+									Views
+								</div>
+							</div>
+							<a href='#' class='file-item group dropdown-wrapper'>								
+								<div  class='file-item-top'>
+									<div class='file-item-top-wrapper'>
+										<!-- If Video -->
+										<div class="file-item-tag">
+											4 min
+										</div>
+										<div class='file-item-image-box'>
+											<!-- If Image or Video -->
+											<img class='video-poster' src="./assets/images/video-1.png" alt="file">
+											<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M24 48C37.2552 48 48 37.2552 48 24C48 10.7448 37.2552 0 24 0C10.7448 0 0 10.7448 0 24C0 37.2552 10.7448 48 24 48Z" fill="#151617" fill-opacity="0.78"/>
+												<path d="M19.1992 23.9972V17.6227C19.1992 16.7608 20.1322 16.2222 20.8785 16.6531L26.3992 19.8404L31.9199 23.0276C32.6662 23.4585 32.6662 24.5358 31.9199 24.9667L26.3992 28.154L20.8785 31.3413C20.1322 31.7722 19.1992 31.2335 19.1992 30.3717V23.9972Z" fill="white"/>
+											</svg>
+											<!-- Document Image -->
+											<!-- <img src="./assets/images/pdf-default.png" alt="file" class='h-13 w-auto'> -->
+										</div>
+										<h4>Troubleshooting Password Validation Troubleshooting Password Validation Troubleshooting Password Validation</h4>
+									</div>
+								</div>
+								<div class='file-item-bottom'>
+									<h4>Troubleshooting Password Validation</h4>
+									<p >
+										<span>17 Views</span>
+										<span>1.2 MB</span>
+									</p>
+									<div class='file-author'>
+										<div class='file-author-avatar'>
+											<img src="./assets/images/avatar.png" alt="avatar">
+										</div>
+										<div class='file-author-info'>
+											<p>Robert Michael</p>
+											<span>3 months ago</span>
+										</div>
+									</div>
+								</div>
+								<div class='hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden'>
+									<p class='text-sm text-dark-800'>MP4</p>
+								</div>
+								<div class='hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden'>
+									<p class='text-sm text-dark-800'>3 months ago</p>
+								</div>
+								<div class='flex items-center justify-between [.list-type_&]:pr-3 max-md:[.list-type_&]:justify-end'>
+									<p class='text-sm text-dark-800 hidden [.list-type_&]:block max-md:[.list-type_&]:hidden w-10 text-center'>12</p>
+									<input class="peer" hidden type="checkbox" data-select-item id="select-file-212">
+									<label for="select-file-212" class="card-select-box">
+										<svg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M8.49392 1.43274C8.57351 1.35587 8.637 1.26391 8.68067 1.16224C8.72434 1.06057 8.74733 0.951224 8.74829 0.840574C8.74926 0.729925 8.72817 0.620192 8.68627 0.517779C8.64437 0.415365 8.58249 0.322321 8.50425 0.244077C8.426 0.165833 8.33296 0.103956 8.23055 0.0620551C8.12813 0.0201544 8.0184 -0.000930049 7.90775 3.14644e-05C7.7971 0.000992978 7.68775 0.0239814 7.58608 0.0676556C7.48441 0.11133 7.39246 0.174815 7.31559 0.254406L3.19059 4.37941L1.42309 2.61191C1.34572 2.53448 1.25385 2.47305 1.15274 2.43113C1.05163 2.38921 0.943254 2.36761 0.833797 2.36757C0.612738 2.36749 0.400703 2.45523 0.244335 2.61149C0.0879682 2.76775 7.81923e-05 2.97972 5.21481e-08 3.20078C-7.8088e-05 3.42184 0.0876622 3.63387 0.243919 3.79024L2.54225 6.08857C2.62738 6.17374 2.72845 6.2413 2.83969 6.28739C2.95094 6.33349 3.07017 6.35721 3.19059 6.35721C3.311 6.35721 3.43023 6.33349 3.54148 6.28739C3.65272 6.2413 3.75379 6.17374 3.83892 6.08857L8.49392 1.43274Z" fill="#ffffff"></path>
+										</svg>
+									</label>
+									<div class='file-item-nav'>
+										<button 
+										data-id='dropdown-settings' class='dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 transition-all hover:bg-gray-300' data-open-sheet>
+											<svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<rect width="15" height="4" transform="translate(5 6.5)" fill="white"/>
+												<circle cx="7.5" cy="8.5" r="1.5" fill="black"/>
+												<circle cx="12.5" cy="8.5" r="1.5" fill="black"/>
+												<circle cx="17.5" cy="8.5" r="1.5" fill="black"/>
+											</svg>
+										</button>
+										<div 			data-dropdown-id='dropdown-settings' class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-2.5 z-1 [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto'>
+											<ul class='text-sm'>
+												<li class='text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M7.09545 16.1112C7.80968 17.1801 8.82484 18.0132 10.0126 18.5052C11.2003 18.9972 12.5072 19.1259 13.7681 18.8751C15.029 18.6243 16.1871 18.0052 17.0962 17.0962C18.0052 16.1871 18.6243 15.029 18.8751 13.7681C19.1259 12.5072 18.9972 11.2003 18.5052 10.0126C18.0132 8.82484 17.1801 7.80968 16.1112 7.09545C15.0423 6.38122 13.7856 6 12.5 6C10.6829 6.00684 8.9387 6.71588 7.63222 7.97889L6 9.61111M6 9.61111V6M6 9.61111H9.61111" stroke="#0A0A0B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+													</svg>
+													<span>Restore</span>
+												</li>
+												<li class='text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M5 7H18M16.5556 7V17.5C16.5556 18.25 15.8333 19 15.1111 19H7.88889C7.16667 19 6.44444 18.25 6.44444 17.5V7M8.61111 7V5.5C8.61111 4.75 9.33333 4 10.0556 4H12.9444C13.6667 4 14.3889 4.75 14.3889 5.5V7M10.0556 10.75V15.25M12.9444 10.75V15.25" stroke="#0A0A0B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+													</svg>
+													<span>Permanently Delete</span>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</a>
+							<a href='#' class='file-item group dropdown-wrapper'>
+								<div  class='file-item-top'>
+									<div class='file-item-top-wrapper'>
+										<!-- If Video -->
+										<div class="file-item-tag">
+											22 min
+										</div>
+										<div class='file-item-image-box'>
+											<!-- If Image or Video -->
+											<img class='video-poster' src="./assets/images/video-2.png" alt="file">
+											<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M24 48C37.2552 48 48 37.2552 48 24C48 10.7448 37.2552 0 24 0C10.7448 0 0 10.7448 0 24C0 37.2552 10.7448 48 24 48Z" fill="#151617" fill-opacity="0.78"/>
+												<path d="M19.1992 23.9972V17.6227C19.1992 16.7608 20.1322 16.2222 20.8785 16.6531L26.3992 19.8404L31.9199 23.0276C32.6662 23.4585 32.6662 24.5358 31.9199 24.9667L26.3992 28.154L20.8785 31.3413C20.1322 31.7722 19.1992 31.2335 19.1992 30.3717V23.9972Z" fill="white"/>
+											</svg>
+											<!-- Document Image -->
+											<!-- <img src="./assets/images/pdf-default.png" alt="file" class='h-13 w-auto'> -->
+										</div>
+										<h4>Guidelines for the tour</h4>
+									</div>
+								</div>
+								<div class='file-item-bottom'>
+									<h4>Guidelines for the tour</h4>
+									<p >
+										<span>37 Views</span>
+										<span>1.2 MB</span>
+									</p>
+									<div class='file-author'>
+										<div class='file-author-avatar'>
+											<img src="./assets/images/avatar.png" alt="avatar">
+										</div>
+										<div class='file-author-info'>
+											<p>Robert Michael</p>
+											<span>3 months ago</span>
+										</div>
+									</div>
+								</div>
+								<div class='hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden'>
+									<p class='text-sm text-dark-800'>MP4</p>
+								</div>
+								<div class='hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden'>
+									<p class='text-sm text-dark-800'>3 months ago</p>
+								</div>
+								<div class='flex items-center justify-between [.list-type_&]:pr-3 max-md:[.list-type_&]:justify-end'>
+									<p class='text-sm text-dark-800 hidden [.list-type_&]:block max-md:[.list-type_&]:hidden w-10 text-center'>37</p>
+									<input class="peer" hidden type="checkbox" data-select-item id="select-file-244">
+									<label class="card-select-box" for="select-file-244">
+										<svg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M8.49392 1.43274C8.57351 1.35587 8.637 1.26391 8.68067 1.16224C8.72434 1.06057 8.74733 0.951224 8.74829 0.840574C8.74926 0.729925 8.72817 0.620192 8.68627 0.517779C8.64437 0.415365 8.58249 0.322321 8.50425 0.244077C8.426 0.165833 8.33296 0.103956 8.23055 0.0620551C8.12813 0.0201544 8.0184 -0.000930049 7.90775 3.14644e-05C7.7971 0.000992978 7.68775 0.0239814 7.58608 0.0676556C7.48441 0.11133 7.39246 0.174815 7.31559 0.254406L3.19059 4.37941L1.42309 2.61191C1.34572 2.53448 1.25385 2.47305 1.15274 2.43113C1.05163 2.38921 0.943254 2.36761 0.833797 2.36757C0.612738 2.36749 0.400703 2.45523 0.244335 2.61149C0.0879682 2.76775 7.81923e-05 2.97972 5.21481e-08 3.20078C-7.8088e-05 3.42184 0.0876622 3.63387 0.243919 3.79024L2.54225 6.08857C2.62738 6.17374 2.72845 6.2413 2.83969 6.28739C2.95094 6.33349 3.07017 6.35721 3.19059 6.35721C3.311 6.35721 3.43023 6.33349 3.54148 6.28739C3.65272 6.2413 3.75379 6.17374 3.83892 6.08857L8.49392 1.43274Z" fill="#ffffff"></path>
+										</svg>
+									</label>
+									<div class='file-item-nav'>
+										<button 
+										data-id='dropdown-settings' class='dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 transition-all hover:bg-gray-300' data-open-sheet>
+											<svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<rect width="15" height="4" transform="translate(5 6.5)" fill="white"/>
+												<circle cx="7.5" cy="8.5" r="1.5" fill="black"/>
+												<circle cx="12.5" cy="8.5" r="1.5" fill="black"/>
+												<circle cx="17.5" cy="8.5" r="1.5" fill="black"/>
+											</svg>
+										</button>
+										<div 			data-dropdown-id='dropdown-settings' class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-2.5 z-1 [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto'>
+											<ul class='text-sm'>
+												<li class='text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M7.09545 16.1112C7.80968 17.1801 8.82484 18.0132 10.0126 18.5052C11.2003 18.9972 12.5072 19.1259 13.7681 18.8751C15.029 18.6243 16.1871 18.0052 17.0962 17.0962C18.0052 16.1871 18.6243 15.029 18.8751 13.7681C19.1259 12.5072 18.9972 11.2003 18.5052 10.0126C18.0132 8.82484 17.1801 7.80968 16.1112 7.09545C15.0423 6.38122 13.7856 6 12.5 6C10.6829 6.00684 8.9387 6.71588 7.63222 7.97889L6 9.61111M6 9.61111V6M6 9.61111H9.61111" stroke="#0A0A0B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+													</svg>
+													<span>Restore</span>
+												</li>
+												<li class='text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M5 7H18M16.5556 7V17.5C16.5556 18.25 15.8333 19 15.1111 19H7.88889C7.16667 19 6.44444 18.25 6.44444 17.5V7M8.61111 7V5.5C8.61111 4.75 9.33333 4 10.0556 4H12.9444C13.6667 4 14.3889 4.75 14.3889 5.5V7M10.0556 10.75V15.25M12.9444 10.75V15.25" stroke="#0A0A0B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+													</svg>
+													<span>Permanently Delete</span>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</a>
+							<a href='#' class='file-item group dropdown-wrapper'>
+								<div  class='file-item-top'>
+									<div class='file-item-top-wrapper'>
+
+										<div class='file-item-image-box'>
+											<!-- Document Image -->
+											<img src="./assets/images/pdf-default.png" alt="file" class='h-13 w-auto [.list-type_&]:h-7.5'>
+										</div>
+										<h4>Customer Relation Management</h4>
+									</div>
+								</div>
+								<div class='file-item-bottom'>
+									<h4>Customer Relation Management</h4>
+									<p >
+										<span>76 Views</span>
+										<span>1.2 MB</span>
+									</p>
+									<div class='file-author'>
+										<div class='file-author-avatar'>
+											<img src="./assets/images/avatar.png" alt="avatar">
+										</div>
+										<div class='file-author-info'>
+											<p>Robert Michael</p>
+											<span>3 months ago</span>
+										</div>
+									</div>
+								</div>
+								<div class='hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden'>
+									<p class='text-sm text-dark-800'>PDF</p>
+								</div>
+								<div class='hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden'>
+									<p class='text-sm text-dark-800'>3 months ago</p>
+								</div>
+								<div class='flex items-center justify-between [.list-type_&]:pr-3 max-md:[.list-type_&]:justify-end'>
+									<p class='text-sm text-dark-800 hidden [.list-type_&]:block max-md:[.list-type_&]:hidden w-10 text-center'>76</p>
+									<input class="peer" hidden type="checkbox" data-select-item id="select-file-241">
+									<label class='card-select-box' for="select-file-241">
+										<svg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M8.49392 1.43274C8.57351 1.35587 8.637 1.26391 8.68067 1.16224C8.72434 1.06057 8.74733 0.951224 8.74829 0.840574C8.74926 0.729925 8.72817 0.620192 8.68627 0.517779C8.64437 0.415365 8.58249 0.322321 8.50425 0.244077C8.426 0.165833 8.33296 0.103956 8.23055 0.0620551C8.12813 0.0201544 8.0184 -0.000930049 7.90775 3.14644e-05C7.7971 0.000992978 7.68775 0.0239814 7.58608 0.0676556C7.48441 0.11133 7.39246 0.174815 7.31559 0.254406L3.19059 4.37941L1.42309 2.61191C1.34572 2.53448 1.25385 2.47305 1.15274 2.43113C1.05163 2.38921 0.943254 2.36761 0.833797 2.36757C0.612738 2.36749 0.400703 2.45523 0.244335 2.61149C0.0879682 2.76775 7.81923e-05 2.97972 5.21481e-08 3.20078C-7.8088e-05 3.42184 0.0876622 3.63387 0.243919 3.79024L2.54225 6.08857C2.62738 6.17374 2.72845 6.2413 2.83969 6.28739C2.95094 6.33349 3.07017 6.35721 3.19059 6.35721C3.311 6.35721 3.43023 6.33349 3.54148 6.28739C3.65272 6.2413 3.75379 6.17374 3.83892 6.08857L8.49392 1.43274Z" fill="#ffffff"></path>
+										</svg>
+									</label>
+									<div class='file-item-nav'>
+										<button 
+										data-id='dropdown-settings' class='dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 transition-all hover:bg-gray-300' data-open-sheet>
+											<svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<rect width="15" height="4" transform="translate(5 6.5)" fill="white"/>
+												<circle cx="7.5" cy="8.5" r="1.5" fill="black"/>
+												<circle cx="12.5" cy="8.5" r="1.5" fill="black"/>
+												<circle cx="17.5" cy="8.5" r="1.5" fill="black"/>
+											</svg>
+										</button>
+										<div 			data-dropdown-id='dropdown-settings' class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-2.5 z-1 [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto'>
+											<ul class='text-sm'>
+												<li class='text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M7.09545 16.1112C7.80968 17.1801 8.82484 18.0132 10.0126 18.5052C11.2003 18.9972 12.5072 19.1259 13.7681 18.8751C15.029 18.6243 16.1871 18.0052 17.0962 17.0962C18.0052 16.1871 18.6243 15.029 18.8751 13.7681C19.1259 12.5072 18.9972 11.2003 18.5052 10.0126C18.0132 8.82484 17.1801 7.80968 16.1112 7.09545C15.0423 6.38122 13.7856 6 12.5 6C10.6829 6.00684 8.9387 6.71588 7.63222 7.97889L6 9.61111M6 9.61111V6M6 9.61111H9.61111" stroke="#0A0A0B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+													</svg>
+													<span>Restore</span>
+												</li>
+												<li class='text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M5 7H18M16.5556 7V17.5C16.5556 18.25 15.8333 19 15.1111 19H7.88889C7.16667 19 6.44444 18.25 6.44444 17.5V7M8.61111 7V5.5C8.61111 4.75 9.33333 4 10.0556 4H12.9444C13.6667 4 14.3889 4.75 14.3889 5.5V7M10.0556 10.75V15.25M12.9444 10.75V15.25" stroke="#0A0A0B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+													</svg>
+													<span>Permanently Delete</span>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</a>
+							<a href='#' class='file-item group dropdown-wrapper'>
+								<div class='file-item-top'>
+									<div class='file-item-top-wrapper'>
+										<div class='file-item-image-box'>
+											<!-- Document Image -->
+											<img src="./assets/images/exel-default.png" alt="file" class='h-13 w-auto [.list-type_&]:h-7.5'>
+										</div>
+										<h4>Guidelines for the tour of 2024 session</h4>
+									</div>
+								</div>
+								<div class='file-item-bottom'>
+									<h4>Guidelines for the tour of 2024 session</h4>
+									<p >
+										<span>76 Views</span>
+										<span>1.2 MB</span>
+									</p>
+									<div class='file-author'>
+										<div class='file-author-avatar'>
+											<img src="./assets/images/avatar.png" alt="avatar">
+										</div>
+										<div class='file-author-info'>
+											<p>Robert Michael Robert Michael Robert Michael</p>
+											<span>3 months ago</span>
+										</div>
+									</div>
+								</div>
+								<div class='hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden'>
+									<p class='text-sm text-dark-800'>DOCX</p>
+								</div>
+								<div class='hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden'>
+									<p class='text-sm text-dark-800'>3 months ago</p>
+								</div>
+								<div class='flex items-center justify-between [.list-type_&]:pr-3 max-md:[.list-type_&]:justify-end'>
+									<p class='text-sm text-dark-800 hidden [.list-type_&]:block max-md:[.list-type_&]:hidden w-10 text-center'>76</p>
+									<input class="peer" hidden type="checkbox" data-select-item id="select-file-532">
+									<label class="card-select-box" for="select-file-532">
+										<svg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M8.49392 1.43274C8.57351 1.35587 8.637 1.26391 8.68067 1.16224C8.72434 1.06057 8.74733 0.951224 8.74829 0.840574C8.74926 0.729925 8.72817 0.620192 8.68627 0.517779C8.64437 0.415365 8.58249 0.322321 8.50425 0.244077C8.426 0.165833 8.33296 0.103956 8.23055 0.0620551C8.12813 0.0201544 8.0184 -0.000930049 7.90775 3.14644e-05C7.7971 0.000992978 7.68775 0.0239814 7.58608 0.0676556C7.48441 0.11133 7.39246 0.174815 7.31559 0.254406L3.19059 4.37941L1.42309 2.61191C1.34572 2.53448 1.25385 2.47305 1.15274 2.43113C1.05163 2.38921 0.943254 2.36761 0.833797 2.36757C0.612738 2.36749 0.400703 2.45523 0.244335 2.61149C0.0879682 2.76775 7.81923e-05 2.97972 5.21481e-08 3.20078C-7.8088e-05 3.42184 0.0876622 3.63387 0.243919 3.79024L2.54225 6.08857C2.62738 6.17374 2.72845 6.2413 2.83969 6.28739C2.95094 6.33349 3.07017 6.35721 3.19059 6.35721C3.311 6.35721 3.43023 6.33349 3.54148 6.28739C3.65272 6.2413 3.75379 6.17374 3.83892 6.08857L8.49392 1.43274Z" fill="#ffffff"></path>
+										</svg>
+									</label>
+									<div class='file-item-nav'>
+										<button 
+										data-id='dropdown-settings' class='dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 transition-all hover:bg-gray-300' data-open-sheet>
+											<svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<rect width="15" height="4" transform="translate(5 6.5)" fill="white"/>
+												<circle cx="7.5" cy="8.5" r="1.5" fill="black"/>
+												<circle cx="12.5" cy="8.5" r="1.5" fill="black"/>
+												<circle cx="17.5" cy="8.5" r="1.5" fill="black"/>
+											</svg>
+										</button>
+										<div 			data-dropdown-id='dropdown-settings' class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[13rem] hidden absolute left-full top-2.5 z-1 [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto'>
+											<ul class='text-sm'>
+												<li class='text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M7.09545 16.1112C7.80968 17.1801 8.82484 18.0132 10.0126 18.5052C11.2003 18.9972 12.5072 19.1259 13.7681 18.8751C15.029 18.6243 16.1871 18.0052 17.0962 17.0962C18.0052 16.1871 18.6243 15.029 18.8751 13.7681C19.1259 12.5072 18.9972 11.2003 18.5052 10.0126C18.0132 8.82484 17.1801 7.80968 16.1112 7.09545C15.0423 6.38122 13.7856 6 12.5 6C10.6829 6.00684 8.9387 6.71588 7.63222 7.97889L6 9.61111M6 9.61111V6M6 9.61111H9.61111" stroke="#0A0A0B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+													</svg>
+													<span>Restore</span>
+												</li>
+												<li class='text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-200 rounded-md transition-colors cursor-pointer'>
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M5 7H18M16.5556 7V17.5C16.5556 18.25 15.8333 19 15.1111 19H7.88889C7.16667 19 6.44444 18.25 6.44444 17.5V7M8.61111 7V5.5C8.61111 4.75 9.33333 4 10.0556 4H12.9444C13.6667 4 14.3889 4.75 14.3889 5.5V7M10.0556 10.75V15.25M12.9444 10.75V15.25" stroke="#0A0A0B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+													</svg>
+													<span>Permanently Delete</span>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class='grid grid-cols-4 gap-[1.125rem] mt-5 [&.list-type]:hidden max-md:grid-cols-3 max-sm:grid-cols-2 max-sm:gap-2.5 fake-loading' data-content-type>
+							<div class="w-full rounded-xl border border-gray-500 overflow-hidden animate-pulse">
+								<div class="flex flex-col">
+								  	<div class="w-full pb-[75%] bg-gray-300 relative">
+									</div>
+									<div class="flex flex-col p-5">
+										<div class="h-[17px] rounded bg-gray-300 mb-2">
+										</div>
+										<div class="flex items-center gap-2">
+											<span class="h-[11px] w-9 rounded bg-gray-300"></span>
+											<span class='size-1 rounded-full bg-gray-300'></span>
+											<span class="h-[11px] w-15 rounded bg-gray-300"></span>
+										</div>
+										<div class="flex items-center gap-2 mt-5">
+											<span class="size-6 rounded-full bg-gray-300"></span>
+											<div class="flex flex-col gap-2">
+												<span class="h-[11px] w-22 rounded bg-gray-300"></span>
+												<span class="h-[11px] w-20 rounded bg-gray-300"></span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="w-full rounded-xl border border-gray-500 overflow-hidden animate-pulse">
+								<div class="flex flex-col">
+								  	<div class="w-full pb-[75%] bg-gray-300 relative">
+									</div>
+									<div class="flex flex-col p-5">
+										<div class="h-[17px] rounded bg-gray-300 mb-2">
+										</div>
+										<div class="flex items-center gap-2">
+											<span class="h-[11px] w-9 rounded bg-gray-300"></span>
+											<span class='size-1 rounded-full bg-gray-300'></span>
+											<span class="h-[11px] w-15 rounded bg-gray-300"></span>
+										</div>
+										<div class="flex items-center gap-2 mt-5">
+											<span class="size-6 rounded-full bg-gray-300"></span>
+											<div class="flex flex-col gap-2">
+												<span class="h-[11px] w-22 rounded bg-gray-300"></span>
+												<span class="h-[11px] w-20 rounded bg-gray-300"></span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="w-full rounded-xl border border-gray-500 overflow-hidden animate-pulse">
+								<div class="flex flex-col">
+								  	<div class="w-full pb-[75%] bg-gray-300 relative">
+									</div>
+									<div class="flex flex-col p-5">
+										<div class="h-[17px] rounded bg-gray-300 mb-2">
+										</div>
+										<div class="flex items-center gap-2">
+											<span class="h-[11px] w-9 rounded bg-gray-300"></span>
+											<span class='size-1 rounded-full bg-gray-300'></span>
+											<span class="h-[11px] w-15 rounded bg-gray-300"></span>
+										</div>
+										<div class="flex items-center gap-2 mt-5">
+											<span class="size-6 rounded-full bg-gray-300"></span>
+											<div class="flex flex-col gap-2">
+												<span class="h-[11px] w-22 rounded bg-gray-300"></span>
+												<span class="h-[11px] w-20 rounded bg-gray-300"></span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="w-full rounded-xl border border-gray-500 overflow-hidden animate-pulse">
+								<div class="flex flex-col">
+								  	<div class="w-full pb-[75%] bg-gray-300 relative">
+									</div>
+									<div class="flex flex-col p-5">
+										<div class="h-[17px] rounded bg-gray-300 mb-2">
+										</div>
+										<div class="flex items-center gap-2">
+											<span class="h-[11px] w-9 rounded bg-gray-300"></span>
+											<span class='size-1 rounded-full bg-gray-300'></span>
+											<span class="h-[11px] w-15 rounded bg-gray-300"></span>
+										</div>
+										<div class="flex items-center gap-2 mt-5">
+											<span class="size-6 rounded-full bg-gray-300"></span>
+											<div class="flex flex-col gap-2">
+												<span class="h-[11px] w-22 rounded bg-gray-300"></span>
+												<span class="h-[11px] w-20 rounded bg-gray-300"></span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class='hidden [&.list-type]:flex flex-col mt-5' data-content-type>
+							<div class='flex justify-between animate-pulse first:border-t border-b border-gray-300 py-4 relative pr-4'>
+								<span class='absolute -left-7.5 size-5 bg-gray-300 rounded'></span>
+								<div class='w-[191px] h-5 rounded bg-gray-300'></div>
+								<div class='flex items-center gap-3'>
+									<span class='h-5 w-[97px] bg-gray-300 rounded'></span>
+									<span class='h-5 w-[97px] bg-gray-300 rounded'></span>
+								</div>
+							</div>
+							<div class='flex justify-between animate-pulse first:border-t border-b border-gray-300 py-4 relative pr-4'>
+								<span class='absolute -left-7.5 size-5 bg-gray-300 rounded'></span>
+								<div class='w-[191px] h-5 rounded bg-gray-300'></div>
+								<div class='flex items-center gap-3'>
+									<span class='h-5 w-[97px] bg-gray-300 rounded'></span>
+									<span class='h-5 w-[97px] bg-gray-300 rounded'></span>
+								</div>
+							</div>
+							<div class='flex justify-between animate-pulse first:border-t border-b border-gray-300 py-4 relative pr-4'>
+								<span class='absolute -left-7.5 size-5 bg-gray-300 rounded'></span>
+								<div class='w-[191px] h-5 rounded bg-gray-300'></div>
+								<div class='flex items-center gap-3'>
+									<span class='h-5 w-[97px] bg-gray-300 rounded'></span>
+									<span class='h-5 w-[97px] bg-gray-300 rounded'></span>
+								</div>
+							</div>
+							<div class='flex justify-between animate-pulse first:border-t border-b border-gray-300 py-4 relative pr-4'>
+								<span class='absolute -left-7.5 size-5 bg-gray-300 rounded'></span>
+								<div class='w-[191px] h-5 rounded bg-gray-300'></div>
+								<div class='flex items-center gap-3'>
+									<span class='h-5 w-[97px] bg-gray-300 rounded'></span>
+									<span class='h-5 w-[97px] bg-gray-300 rounded'></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+
+		<!-- Dialog boxes -->
+		<div class="dialog hidden" data-dialog-type="delete-inbox">
+			<div class="dialog-card">
+				<button class="dialog-close" data-dialog-close>
+					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
+					</svg>
+				</button>
+				<div class="dialog-header">
+					<h4>Delete Inbox?</h4>
+				</div>
+				<div class="dialog-body">
+					<p>Are you sure you want to delete the inbox <strong>‘Untitled Entry’</strong>? Once deleted, it cannot be restored.</p>
+				</div>
+				<div class="dialog-footer">
+					<button class="btn btn-border-default" data-dialog-close>Cancel</button>
+					<button class="btn btn-danger font-semibold">Delete</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="dialog hidden" data-dialog-type="remove-file">
+			<div class="dialog-card">
+				<button class="dialog-close" data-dialog-close>
+					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
+					</svg>
+				</button>
+				<div class="dialog-header">
+					<h4>Remove File?</h4>
+				</div>
+				<div class="dialog-body">
+					<p>Are you sure you want to remove the file <strong>‘Untitled Entry’</strong>? Once removed, it cannot be restored.</p>
+				</div>
+				<div class="dialog-footer">
+					<button class="btn btn-border-default" data-dialog-close>Cancel</button>
+					<button class="btn btn-danger font-semibold">Delete</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="dialog hidden" data-dialog-type="delete-one-file">
+			<div class="dialog-card">
+				<button class="dialog-close" data-dialog-close>
+					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
+					</svg>
+				</button>
+				<div class="dialog-header">
+					<h4>Delete 1 file?</h4>
+				</div>
+				<div class="dialog-body">
+					<p>Are you sure you want to delete the file <strong>Items Hover Effect.mp4</strong>?.</p>
+				</div>
+				<div class="dialog-footer">
+					<button class="btn btn-border-default" data-dialog-close>Cancel</button>
+					<button class="btn btn-danger font-semibold">Delete</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="dialog hidden" data-dialog-type="too-many-sub-folders">
+			<div class="dialog-card">
+				<button class="dialog-close" data-dialog-close>
+					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
+					</svg>
+				</button>
+				<div class="dialog-header">
+					<h4>Too many sub-folders</h4>
+				</div>
+				<div class="dialog-body">
+					<p>The folder you’re trying to upload contains 60 sub-folders, which exceeds the allowed limit. Please limit your uploads to a maximum of 50 sub-folders at a time.</p>
+				</div>
+				<div class="dialog-footer">
+					<button class="btn btn-border-default" data-dialog-close>Okay, Got It</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="dialog hidden" data-dialog-type="sharing-disabled">
+			<div class="dialog-card">
+				<button class="dialog-close" data-dialog-close>
+					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
+					</svg>
+				</button>
+				<div class="dialog-header">
+					<h4>Sharing disabled</h4>
+				</div>
+				<div class="dialog-body">
+					<p>You’ve reached your storage limit. Please upgrade your plan or delete some files to re-enable sharing.</p>
+				</div>
+				<div class="dialog-footer justify-between">
+					<button class="btn btn-border-default" data-dialog-close>Maybe Later!</button>
+					<button class="btn btn-primary-default font-medium">Upgrade Now</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="dialog hidden" data-dialog-type="enable-folder-upload">
+			<div class="dialog-card">
+				<button class="dialog-close" data-dialog-close>
+					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
+					</svg>
+				</button>
+				<div class="dialog-header">
+					<h4>Enable Folder Upload</h4>
+				</div>
+				<div class="dialog-body">
+					<p>Your browser doesn't support folder uploads. We recommend that you use the Jumpshare desktop app instead, which supports folder uploads. Alternatively, you can install Chrome browser.</p>
+				</div>
+				<div class="dialog-footer justify-between">
+					<button class="btn btn-border-default" data-dialog-close>Maybe Later!</button>
+					<button class="btn btn-primary-default font-medium">Upgrade Now</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="dialog hidden" data-dialog-type="folder-is-full">
+			<div class="dialog-card">
+				<button class="dialog-close" data-dialog-close>
+					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
+					</svg>
+				</button>
+				<div class="dialog-header">
+					<h4>Folder is full</h4>
+				</div>
+				<div class="dialog-body">
+					<p>Oops! No more than 400 files per folder. The following files cannot be uploaded:</p>
+					<ul>
+						<li>Screenshot_3556.jpg</li>
+						<li>Video_rec_45-55-34.mp4</li>
+					</ul>
+				</div>
+				<div class="dialog-footer">
+					<button class="btn btn-border-default" data-dialog-close>OK</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="dialog hidden" data-dialog-type="delete-account">
+			<div class="dialog-card">
+				<button class="dialog-close" data-dialog-close>
+					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
+					</svg>
+				</button>
+				<div class="dialog-header">
+					<h4>Delete Account</h4>
+				</div>
+				<div class="dialog-body">
+					<p>This action is permanent. If you delete your account:</p>
+					<ul>
+						<li>All your uploads, comments, and shareable links will be deleted permanently</li>
+						<li>You will be removed from any workspace that you joined</li>
+						<li>All members who joined your workspace will be removed and their uploads deleted</li>
+						<li>Your personal information and data will be completely removed from our servers.</li>
+					</ul>
+				</div>
+				<div class="dialog-footer">
+					<button class="btn btn-border-default" data-dialog-close>Cancel</button>
+					<button class="btn btn-danger font-semibold">Delete my account</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="dialog hidden" data-dialog-type="permanently-delete">
+			<div class="dialog-card">
+				<button class="dialog-close" data-dialog-close>
+					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
+					</svg>
+				</button>
+				<div class="dialog-header">
+					<h4>Permanently delete?</h4>
+				</div>
+				<div class="dialog-body">
+					<p>Are you sure you want to permanently delete 1 item? This action will wipe 1 item from our server and make it unrecoverable.</p>
+				</div>
+				<div class="dialog-footer">
+					<button class="btn btn-border-default" data-dialog-close>Cancel</button>
+					<button class="btn btn-danger font-semibold">Delete</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="dialog hidden" data-dialog-type="restore-confirmation">
+			<div class="dialog-card">
+				<button class="dialog-close" data-dialog-close>
+					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
+					</svg>
+				</button>
+				<div class="dialog-header">
+					<h4>Restore confirmation?</h4>
+				</div>
+				<div class="dialog-body">
+					<p>Are you sure you want to restore 1 item?</p>
+				</div>
+				<div class="dialog-footer">
+					<button class="btn btn-border-default" data-dialog-close>Cancel</button>
+					<button class="btn btn-danger font-semibold">Restore</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="dialog hidden" data-dialog-type="self-destruct">
+			<div class="dialog-card">
+				<button class="dialog-close" data-dialog-close>
+					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
+					</svg>
+				</button>
+				<div class="dialog-header">
+					<h4>Self-Destruct</h4>
+				</div>
+				<div class="dialog-body">
+					<p>Select a time below for when this folder (and all items inside it) should automatically be deleted.</p>
+				</div>
+				<div class="dialog-footer justify-between">
+					<div class="relative dropdown-wrapper">
+						<button data-id='self-destruct' class="dropdown-button btn btn-border-default w-[8.5rem] px-4 justify-between">
+							24 Hours
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M9.52831 11.7783C9.38766 11.9189 9.19693 11.9979 8.99806 11.9979C8.79919 11.9979 8.60846 11.9189 8.46781 11.7783L4.22506 7.53556C4.15343 7.46637 4.09629 7.38362 4.05698 7.29211C4.01768 7.20061 3.99699 7.1022 3.99612 7.00261C3.99526 6.90303 4.01423 6.80427 4.05194 6.71209C4.08965 6.61992 4.14534 6.53618 4.21576 6.46576C4.28618 6.39534 4.36992 6.33965 4.46209 6.30194C4.55427 6.26423 4.65303 6.24526 4.75261 6.24612C4.8522 6.24699 4.95061 6.26768 5.04211 6.30698C5.13362 6.34629 5.21637 6.40343 5.28556 6.47506L8.99806 10.1876L12.7106 6.47506C12.852 6.33844 13.0415 6.26285 13.2381 6.26455C13.4348 6.26626 13.6229 6.34514 13.7619 6.4842C13.901 6.62325 13.9799 6.81136 13.9816 7.00801C13.9833 7.20466 13.9077 7.39411 13.7711 7.53556L9.52831 11.7783Z" fill="#0A0A0B"/>
+							</svg>
+						</button>
+						<ul class="dropdown-content bg-white shadow-card p-1 rounded-lg w-[8.5rem] hidden absolute flex-col left-0 top-full mt-0.5 z-1 [&.active]:flex" data-dropdown-id='self-destruct'>
+							<li class='h-9 flex items-center text-sm px-4 rounded-md hover:bg-gray-150 cursor-pointer'>24 Hours</li>
+							<li class='h-9 flex items-center text-sm px-4 rounded-md hover:bg-gray-150 cursor-pointer'>48 Hours</li>
+							<li class='h-9 flex items-center text-sm px-4 rounded-md hover:bg-gray-150 cursor-pointer'>7 Days</li>
+							<li class='h-9 flex items-center text-sm px-4 rounded-md hover:bg-gray-150 cursor-pointer'>14 Days</li>
+							<li class='h-9 flex items-center text-sm px-4 rounded-md hover:bg-gray-150 cursor-pointer'>30 Days</li>
+							<li class='h-9 flex items-center text-sm px-4 rounded-md hover:bg-gray-150 cursor-pointer'>Custom</li>
+						</ul>
+					</div>
+					<button class="btn btn-primary-default font-bold">Delete</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="dialog hidden" data-dialog-type="delete-one-file">
+			<div class="dialog-card">
+				<button class="dialog-close" data-dialog-close>
+					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
+					</svg>
+				</button>
+				<div class="dialog-header">
+					<h4>Delete 1 file?</h4>
+				</div>
+				<div class="dialog-body">
+					<p>Are you sure you want to delete the file <strong>Items Hover Effect.mp4</strong>?</p>
+				</div>
+				<div class="dialog-footer">
+					<button class="btn btn-border-default" data-dialog-close>Cancel</button>
+					<button class="btn btn-danger font-bold">Delete</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="dialog hidden" data-dialog-type="new-workspace">
+			<div class="dialog-card">
+				<button class="dialog-close" data-dialog-close>
+					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
+					</svg>
+				</button>
+				<div class="dialog-header">
+					<h4>New Workspace</h4>
+				</div>
+				<div class="dialog-body">
+					<p>Create a new workspace. This is the name of your company, team or organization.</p>
+					<input type="text" placeholder='Name of the Workspace' class='input-field mt-4'>
+				</div>
+				<div class="dialog-footer">
+					<button class="btn btn-border-default" data-dialog-close>Cancel</button>
+					<button class="btn btn-primary-default font-bold">Create</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="dialog hidden" data-dialog-type="copy-move-item">
+			<div class="dialog-card">
+				<button class="dialog-close" data-dialog-close>
+					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
+					</svg>
+				</button>
+				<div class="dialog-header">
+					<h4>Copy/Move 1 Item</h4>
+					<div class='flex items-center gap-4 mt-4'>
+						Currently in:
+						<button class="btn btn-border-default px-3">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M2.38934 6.8679C2.2975 7.06583 2.24995 7.28141 2.25 7.49961V14.2496C2.25 14.6474 2.40804 15.029 2.68934 15.3103C2.97064 15.5916 3.35218 15.7496 3.75 15.7496H6.75V9.74961C6.75 9.5507 6.82902 9.35993 6.96967 9.21928C7.11032 9.07863 7.30109 8.99961 7.5 8.99961H10.5C10.6989 8.99961 10.8897 9.07863 11.0303 9.21928C11.171 9.35993 11.25 9.5507 11.25 9.74961V15.7496H14.25C14.6478 15.7496 15.0294 15.5916 15.3107 15.3103C15.592 15.029 15.75 14.6474 15.75 14.2496V7.49961C15.7501 7.28141 15.7025 7.06583 15.6107 6.8679C15.5188 6.66997 15.3849 6.49446 15.2183 6.35361L9.96825 1.85436C9.69751 1.62554 9.35448 1.5 9 1.5C8.64552 1.5 8.30249 1.62554 8.03175 1.85436L2.78175 6.35361C2.6151 6.49446 2.48118 6.66997 2.38934 6.8679Z" stroke="#0A0A0B" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>	
+							<span>Personal Library</span>
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M9.52831 11.7783C9.38766 11.9189 9.19693 11.9979 8.99806 11.9979C8.79919 11.9979 8.60846 11.9189 8.46781 11.7783L4.22506 7.53556C4.15343 7.46637 4.09629 7.38362 4.05698 7.29211C4.01768 7.20061 3.99699 7.1022 3.99612 7.00261C3.99526 6.90303 4.01423 6.80427 4.05194 6.71209C4.08965 6.61992 4.14534 6.53618 4.21576 6.46576C4.28618 6.39534 4.36992 6.33965 4.46209 6.30194C4.55427 6.26423 4.65303 6.24526 4.75261 6.24612C4.8522 6.24699 4.95061 6.26768 5.04211 6.30698C5.13362 6.34629 5.21637 6.40343 5.28556 6.47506L8.99806 10.1876L12.7106 6.47506C12.852 6.33844 13.0415 6.26285 13.2381 6.26455C13.4348 6.26626 13.6229 6.34514 13.7619 6.4842C13.901 6.62325 13.9799 6.81136 13.9816 7.00801C13.9833 7.20466 13.9077 7.39411 13.7711 7.53556L9.52831 11.7783Z" fill="#0A0A0B"/>
+							</svg>
+						</button>
+					</div>
+				</div>
+				<div class="dialog-body">
+					<div class="folder-menu-tree">
+						<div class="folder-menu-item" data-level="0">
+							<div class="folder-menu-header">
+								<span class="toggle-menu-icon -rotate-90">
+									<img src="./assets/images/check-down.svg" alt="check">
+								</span>
+								
+									<img class='w-[19px] flex items-center justify-center' src="./assets/images/folder.svg" alt="folder">
+								</span>
+								<span class="folder-menu-name">New Folder 2.0</span>
+							</div>
+							<div class="folder-menu-content hidden">
+								<div class="folder-menu-item" data-level="1">
+									<div class="folder-menu-header">
+										<span class="toggle-menu-icon -rotate-90"><img src="./assets/images/check-down.svg" alt="check"></span>
+										<img class='w-[19px] flex items-center justify-center' src="./assets/images/folder.svg" alt="folder">
+										<span class="folder-menu-name">Jump Camp Meeting</span>
+									</div>
+									<div class="folder-menu-content hidden">
+										<div class="folder-menu-item" data-level="2">
+											<div class="folder-menu-header">
+												<span class="toggle-menu-icon -rotate-90"><img src="./assets/images/check-down.svg" alt="check"></span>
+												<img class='size-6 flex w-[19px]enter justify-center' src="./assets/images/folder.svg" alt="folder">
+												<span class="folder-menu-name">Subfolders Level 3</span>
+											</div>
+											<div class="folder-menu-content hidden">
+												<div class="folder-menu-item" data-level="3">
+													<div class="folder-menu-header">
+														<span class="toggle-menu-icon -rotate-90"></span>
+														<img class='size-6 flex items-center w-[19px]enter' src="./assets/images/folder.svg" alt="folder">
+														<span class="folder-menu-name">Deep File 1</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="folder-menu-item" data-level="1">
+									<div class="folder-menu-header">
+										<span class="toggle-menu-icon -rotate-90"><img src="./assets/images/check-down.svg" alt="check"></span>
+										<img class='w-[19px] flex items-center justify-center' src="./assets/images/folder.svg" alt="folder">
+										<span class="folder-menu-name">New Folder</span>
+									</div>
+									<div class="folder-menu-content hidden">
+										<div class="folder-menu-item" data-level="2">
+											<div class="folder-menu-header">
+												<span class="toggle-menu-icon -rotate-90"></span>
+												<img class='size-6 flex w-[19px]enter justify-center' src="./assets/images/folder.svg" alt="folder">
+												<span class="folder-menu-name">Subfolder</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="folder-menu-item" data-level="0">
+							<div class="folder-menu-header">
+								<span class="toggle-menu-icon -rotate-90"><img src="./assets/images/check-down.svg" alt="check"></span>
+								<img class='w-[19px] flex items-center justify-center' src="./assets/images/folder.svg" alt="folder">
+								<span class="folder-menu-name">Testing Formats</span>
+							</div>
+							<div class="folder-menu-content hidden">
+								<div class="folder-menu-item" data-level="1">
+									<div class="folder-menu-header">
+										<span class="toggle-menu-icon -rotate-90"><img src="./assets/images/check-down.svg" alt="check"></span>
+										<img class='w-[19px] flex items-center justify-center' src="./assets/images/folder.svg" alt="folder">
+										<span class="folder-menu-name">New Folder</span>
+									</div>
+									<div class="folder-menu-content hidden">
+										<div class="folder-menu-item" data-level="2">
+											<div class="folder-menu-header">
+												<span class="toggle-menu-icon -rotate-90"></span>
+												<img class='size-6 flex w-[19px]enter justify-center' src="./assets/images/folder.svg" alt="folder">
+												<span class="folder-menu-name">Deep File 2</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="dialog-footer justify-between">
+					<button class="btn btn-border-default px-4"><span class="mb-0.5">+</span> Create New</button>
+					<div class="flex items-center gap-2">
+						<button class="btn btn-primary-default font-bold">Copy</button>
+						<button class="btn btn-primary-default font-bold">Move</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src='./dist/js/bottom-sheet.js'></script>
+	<script src='./dist/js/dialog.js'></script>
+	<script src='./dist/js/menu-tree.js'></script>
+	<script src='./dist/js/dropdown.js'></script>
+	<script src="./dist/js/main.js"></script>
+</html>
