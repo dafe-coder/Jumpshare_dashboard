@@ -17,6 +17,9 @@
 				@apply block;
 			}
 		}
+		[data-id='dropdown-settings'] {
+			@apply hidden!;
+		}
 	}
 	.file-item {
 		@apply border border-gray-500 rounded-xl relative transition-colors duration-150 [.list-type_&]:[&.active-select]:bg-gray-200 max-md:[.list-type_&]:grid-cols-[1fr_50px] md:[.team-page_&]:[.list-type_&]:grid-cols-[1fr_9rem_7rem_9rem_7.94rem]  max-lg:[.list-select-active.list-type_&]:pl-7! max-lg:duration-300 max-lg:[.list-type_&]:transition-[padding-left] not-[.list-type_&]:[&.active-select]:border-blue-500 [.list-type_&]:[&.active-select]:after:scale-100 [.list-type_&]:[&.active-select]:bg-gray-200 [.active]:z-10;

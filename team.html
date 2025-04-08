@@ -765,21 +765,6 @@
 							<button class='hidden is-select-btn btn btn-border-default btn-sm text-sm max-lg:flex h-9'>
 								<span>Select</span>
 							</button>
-							<button class='btn btn-border-default btn-sm max-lg:hidden h-9'>
-								<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M8.88 3.52786L8.88008 3.52795L9.79813 4.63973C10.4868 5.47369 11.5118 5.9566 12.5933 5.9566H15.5469C15.9308 5.9566 16.2999 6.11047 16.5728 6.38585C16.8458 6.66138 17 7.03605 17 7.42767V8.4132V15C17 15.7594 16.3844 16.375 15.625 16.375H4.64981C3.43608 16.375 2.44984 15.3955 2.44153 14.1818L2.375 4.47107C2.375 4.47054 2.375 4.47001 2.375 4.46948C2.37542 4.07844 2.52957 3.70441 2.80222 3.42925C3.0751 3.15387 3.44422 3 3.82812 3L7.76544 3C7.76546 3 7.76548 3 7.76551 3C7.76555 3 7.76559 3 7.76562 3C7.97783 3.00011 8.18757 3.04727 8.38005 3.13833C8.57261 3.22942 8.74336 3.36229 8.88 3.52786Z" stroke="black"/>
-								</svg>
-								Create Folder
-							</button>
-							<button id='upload-files-btn' class='btn btn-primary-default px-5 max-lg:fixed max-lg:bottom-4 max-lg:right-4 max-lg:size-14 max-lg:rounded-full max-lg:p-0 max-lg:shadow-[0px_6px_17.7px_rgba(51,_53,_57,_0.3)] h-9'>
-								<svg class='hidden max-lg:block size-6 flex-shrink-0' width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M22 13.4286H13.4286V22H10.5714V13.4286H2V10.5714H10.5714V2H13.4286V10.5714H22V13.4286Z" fill="white"/>
-								</svg>
-								<svg class='max-lg:hidden' width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M14.5 10V12.6667C14.5 13.0203 14.3595 13.3594 14.1095 13.6095C13.8594 13.8595 13.5203 14 13.1667 14H3.83333C3.47971 14 3.14057 13.8595 2.89052 13.6095C2.64048 13.3594 2.5 13.0203 2.5 12.6667V10M11.8333 5.33333L8.5 2M8.5 2L5.16667 5.33333M8.5 2V10" stroke="white" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
-								</svg>
-								<span class="max-lg:hidden">Upload Files</span>
-							</button>
 							<div class='dropdown-wrapper relative'>
 								<button data-id='dropdown-grid' class='dropdown-button relative z-1 btn p-0 border border-gray-600 size-9'>
 									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -810,6 +795,87 @@
 											<path d="M9 7H20M9 11.9958H20M9 16.9917H20M5 7V7.00833M5 11.9958V12.0042M5 16.9917V17" stroke="#0A0A0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 										</svg>
 										List
+									</a>
+								</div>
+							</div>
+							<div class="dropdown-wrapper relative">
+								<button data-id='dropdown-add-new' class='dropdown-button btn btn-primary-default rounded-lg px-4 max-lg:fixed max-lg:bottom-4 max-lg:right-4 max-lg:size-14 max-lg:rounded-full max-lg:p-0 max-lg:shadow-[0px_6px_17.7px_rgba(51,_53,_57,_0.3)] h-9'>
+									<svg class='hidden max-lg:block size-6 flex-shrink-0' width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M22 13.4286H13.4286V22H10.5714V13.4286H2V10.5714H10.5714V2H13.4286V10.5714H22V13.4286Z" fill="white"/>
+									</svg>
+									<svg class='max-lg:hidden' width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M15 9.85714H9.85714V15H8.14286V9.85714H3V8.14286H8.14286V3H9.85714V8.14286H15V9.85714Z" fill="white"/>
+									</svg>
+									<span class="max-lg:hidden">New</span>
+								</button>
+								<div data-dropdown-id="dropdown-add-new" class='dropdown-content bg-white shadow-card p-2 rounded-lg w-[15.625rem] absolute -right-2 top-[calc(100%_+_8px)] z-1 scale-0 opacity-0 transition-all duration-150 [&.active]:scale-100 [&.active]:opacity-100 origin-top-right max-lg:hidden!'>
+									<a href='#' data-link-type='large-grid' class='flex gap-2 items-center px-2 py-1.5 text-sm rounded-md hover:bg-gray-200 transition-colors'>
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<g clip-path="url(#clip0_10462_5947)">
+											<path d="M12.1126 7.8H18C19.1046 7.8 20 8.69543 20 9.8V17C20 18.1046 19.1046 19 18 19H5C3.89543 19 3 18.1046 3 17L3 7.8M12.1126 7.8L10.9635 5.94624C10.5988 5.35792 9.95577 5 9.26358 5H5C3.89543 5 3 5.89543 3 7V7.8M12.1126 7.8H3" stroke="#0A0A0B" stroke-width="1.3"/>
+											<g filter="url(#filter0_d_10462_5947)">
+											<rect width="10" height="10" transform="translate(15 13)" fill="transparent"/>
+											<path d="M19.3333 18.6667H16.6667C16.4773 18.6667 16.3191 18.6027 16.192 18.4747C16.0649 18.3467 16.0009 18.188 16 17.9987C15.9991 17.8093 16.0631 17.6511 16.192 17.524C16.3209 17.3969 16.4791 17.3333 16.6667 17.3333H19.3333V14.6667C19.3333 14.4773 19.3973 14.3191 19.5253 14.192C19.6533 14.0649 19.812 14.0009 20.0013 14C20.1907 13.9991 20.3489 14.0631 20.476 14.192C20.6031 14.3209 20.6667 14.4791 20.6667 14.6667V17.3333H23.3333C23.5227 17.3333 23.6809 17.3973 23.808 17.5253C23.9351 17.6533 23.9991 17.812 24 18.0013C24.0009 18.1907 23.9369 18.3489 23.808 18.476C23.6791 18.6031 23.5209 18.6667 23.3333 18.6667H20.6667V21.3333C20.6667 21.5227 20.6027 21.6809 20.4747 21.808C20.3467 21.9351 20.188 21.9991 19.9987 22C19.8093 22.0009 19.6511 21.9369 19.524 21.808C19.3969 21.6791 19.3333 21.5209 19.3333 21.3333V18.6667Z" fill="black"/>
+											</g>
+											</g>
+											<defs>
+											<filter id="filter0_d_10462_5947" x="13" y="11" width="14" height="14" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+											<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+											<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+											<feMorphology radius="2" operator="dilate" in="SourceAlpha" result="effect1_dropShadow_10462_5947"/>
+											<feOffset/>
+											<feComposite in2="hardAlpha" operator="out"/>
+											<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+											<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_10462_5947"/>
+											<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_10462_5947" result="shape"/>
+											</filter>
+											<clipPath id="clip0_10462_5947">
+											<rect width="24" height="24" fill="transparent"/>
+											</clipPath>
+											</defs>
+										</svg>
+										New Folder
+									</a>
+									<hr class='my-2 border-gray-400'>
+									<a href='#' data-link-type='grid' class='flex gap-2 items-center px-2 py-1.5 text-sm rounded-md hover:bg-gray-200 transition-colors'>
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M14.3158 3.83594L18 8.29048V18.0905V18.0905C18 19.2386 17.0693 20.1693 15.9212 20.1693H6.33333C5.04467 20.1693 4 19.1246 4 17.8359V6.16927C4 4.88061 5.04467 3.83594 6.33333 3.83594H13.5789V7.39957C13.5789 7.87214 13.7342 8.32535 14.0106 8.65951C14.2869 8.99367 14.6618 9.18139 15.0526 9.18139H18" stroke="#0A0A0B" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+											<rect width="9" height="11" transform="translate(13 13)" fill="white"/>
+											<path d="M18.4316 15.173C18.3189 15.0622 18.1661 15 18.0068 15C17.8474 15 17.6946 15.0622 17.582 15.173L14.3866 18.3074C14.3292 18.3619 14.2834 18.4272 14.2519 18.4993C14.2204 18.5714 14.2038 18.6489 14.2031 18.7274C14.2025 18.8059 14.2177 18.8837 14.2479 18.9563C14.2781 19.029 14.3227 19.095 14.3791 19.1505C14.4355 19.206 14.5026 19.2498 14.5765 19.2796C14.6503 19.3093 14.7294 19.3242 14.8092 19.3236C14.889 19.3229 14.9678 19.3066 15.0412 19.2756C15.1145 19.2446 15.1808 19.1996 15.2362 19.1431L17.4059 17.0177L17.4058 22.409C17.4058 22.5657 17.4691 22.716 17.5818 22.8269C17.6945 22.9377 17.8473 23 18.0067 23C18.1661 23 18.3189 22.9377 18.4316 22.8269C18.5443 22.716 18.6076 22.5657 18.6076 22.409L18.6076 17.0177L20.7853 18.7274C20.8986 18.8351 21.0504 18.8946 21.208 18.8933C21.3655 18.8919 21.5162 18.8298 21.6276 18.7202C21.739 18.6106 21.8022 18.4624 21.8036 18.3074C21.8049 18.1524 21.7444 18.0031 21.6349 17.8917L18.4316 15.173Z" fill="#0A0A0B"/>
+										</svg>
+										Upload File
+									</a>
+									<a href='#' data-link-type='list' class='flex gap-2 items-center px-2 py-1.5 text-sm rounded-md hover:bg-gray-200 transition-colors'>
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M12.1126 8.6H18C19.1046 8.6 20 9.49543 20 10.6V17C20 18.1046 19.1046 19 18 19H5C3.89543 19 3 18.1046 3 17L3 8.6M12.1126 8.6L10.9707 6.88954C10.5997 6.33375 9.97558 6 9.30733 6H5C3.89543 6 3 6.89543 3 8V8.6M12.1126 8.6H3" stroke="#0A0A0B" stroke-width="1.2"/>
+											<rect width="9" height="11" transform="translate(15 12)" fill="white"/>
+											<path d="M20.4316 14.173C20.3189 14.0622 20.1661 14 20.0068 14C19.8474 14 19.6946 14.0622 19.582 14.173L16.3866 17.3074C16.3292 17.3619 16.2834 17.4272 16.2519 17.4993C16.2204 17.5714 16.2038 17.6489 16.2031 17.7274C16.2025 17.8059 16.2177 17.8837 16.2479 17.9563C16.2781 18.029 16.3227 18.095 16.3791 18.1505C16.4355 18.206 16.5026 18.2498 16.5765 18.2796C16.6503 18.3093 16.7294 18.3242 16.8092 18.3236C16.889 18.3229 16.9678 18.3066 17.0412 18.2756C17.1145 18.2446 17.1808 18.1996 17.2362 18.1431L19.4059 16.0177L19.4058 21.409C19.4058 21.5657 19.4691 21.716 19.5818 21.8269C19.6945 21.9377 19.8473 22 20.0067 22C20.1661 22 20.3189 21.9377 20.4316 21.8269C20.5443 21.716 20.6076 21.5657 20.6076 21.409L20.6076 16.0177L22.7853 17.7274C22.8986 17.8351 23.0504 17.8946 23.208 17.8933C23.3655 17.8919 23.5162 17.8298 23.6276 17.7202C23.739 17.6106 23.8022 17.4624 23.8036 17.3074C23.8049 17.1524 23.7444 17.0031 23.6349 16.8917L20.4316 14.173Z" fill="#0A0A0B"/>
+										</svg>
+										Upload Folder
+									</a>
+									<hr class='my-2 border-gray-400'>
+									<a href='#' data-link-type='grid' class='flex gap-2 items-center px-2 py-1.5 text-sm rounded-md hover:bg-gray-200 transition-colors'>
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M4.99403 6.80078H14.3704C16.1383 6.80078 17.5715 8.23394 17.5715 10.0018V16.005C17.5715 17.7729 16.1383 19.2061 14.3704 19.2061H4.99403C3.22613 19.2061 1.79297 17.7729 1.79297 16.005V10.0018C1.79297 8.23395 3.22613 6.80078 4.99403 6.80078ZM4.99403 8.00078C3.88887 8.00078 2.99297 8.89669 2.99297 10.0018V16.005C2.99297 17.1102 3.88887 18.0061 4.99403 18.0061H14.3704C15.4756 18.0061 16.3715 17.1102 16.3715 16.005V10.0018C16.3715 8.89669 15.4756 8.00078 14.3704 8.00078H4.99403Z" fill="#0A0A0B"/>
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M13.4557 7.72679H5.91016V6.50105C5.91016 5.56201 6.67139 4.80078 7.61042 4.80078H11.7555C12.6945 4.80078 13.4557 5.56202 13.4557 6.50105V7.72679ZM12.2557 7.00131V6.50105C12.2557 6.22476 12.0318 6.00078 11.7555 6.00078H7.61042C7.33413 6.00078 7.11016 6.22476 7.11016 6.50105V7.00131H12.2557Z" fill="#0A0A0B"/>
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M20.4007 9.37368L17.8065 11.7758C17.5633 12.0009 17.1837 11.9863 16.9586 11.7432C16.7334 11.5 16.748 11.1204 16.9912 10.8953L19.7529 8.33808C20.4573 7.68587 21.6007 8.18544 21.6007 9.14541V16.8607C21.6007 17.8207 20.4573 18.3203 19.7529 17.6681L16.9912 15.1109C16.748 14.8857 16.7334 14.5061 16.9586 14.263C17.1837 14.0198 17.5633 14.0052 17.8065 14.2304L20.4007 16.6325V9.37368Z" fill="#0A0A0B"/>
+										</svg>
+										Record Video
+									</a>
+									<a href='#' data-link-type='grid' class='flex gap-2 items-center px-2 py-1.5 text-sm rounded-md hover:bg-gray-200 transition-colors'>
+										<svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M4 5C4 3.89543 4.89543 3 6 3H17C18.1046 3 19 3.89543 19 5V16C19 17.1046 18.1046 18 17 18H6C4.89543 18 4 17.1046 4 16V5Z" fill="transparent"/>
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M6 18C4.89543 18 4 17.1046 4 16V12.7357C4.71797 12.7357 5.3 13.3177 5.3 14.0357V16C5.3 16.3866 5.6134 16.7 6 16.7H7.96429C8.68226 16.7 9.26429 17.282 9.26429 18H6ZM13.7357 3C13.7357 3.71797 14.3177 4.3 15.0357 4.3H17C17.3866 4.3 17.7 4.6134 17.7 5V6.96429C17.7 7.68226 18.282 8.26429 19 8.26429V5C19 3.89543 18.1046 3 17 3H13.7357ZM9.26429 3C9.26429 3.71797 8.68226 4.3 7.96429 4.3H6C5.6134 4.3 5.3 4.6134 5.3 5V6.96429C5.3 7.68226 4.71797 8.26429 4 8.26429V5C4 3.89543 4.89543 3 6 3H9.26429Z" fill="black"/>
+											<path d="M16.6229 16.6721H14.5246C14.3756 16.6721 14.2511 16.6217 14.1511 16.521C14.0511 16.4203 14.0007 16.2954 14 16.1464C13.9993 15.9975 14.0497 15.873 14.1511 15.7729C14.2525 15.6729 14.377 15.6229 14.5246 15.6229H16.6229V13.5246C16.6229 13.3756 16.6733 13.2511 16.774 13.1511C16.8747 13.0511 16.9996 13.0007 17.1485 13C17.2975 12.9993 17.422 13.0497 17.522 13.1511C17.6221 13.2525 17.6721 13.377 17.6721 13.5246V15.6229H19.7704C19.9194 15.6229 20.0439 15.6733 20.1439 15.774C20.2439 15.8747 20.2943 15.9996 20.295 16.1485C20.2957 16.2975 20.2453 16.422 20.1439 16.522C20.0425 16.6221 19.918 16.6721 19.7704 16.6721H17.6721V18.7704C17.6721 18.9194 17.6217 19.0439 17.521 19.1439C17.4203 19.2439 17.2954 19.2943 17.1464 19.295C16.9975 19.2957 16.873 19.2453 16.7729 19.1439C16.6729 19.0425 16.6229 18.918 16.6229 18.7704V16.6721Z" fill="black"/>
+										</svg>
+										Capture Screenshot
+									</a>
+									<a href='#' data-link-type='grid' class='flex gap-2 items-center px-2 py-1.5 text-sm rounded-md hover:bg-gray-200 transition-colors'>
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M14.5789 4L19 8.45455V18.2545V18.2545C19 19.4026 18.0693 20.3333 16.9212 20.3333H7.33333C6.04467 20.3333 5 19.2887 5 18V6.33333C5 5.04467 6.04467 4 7.33333 4H14.5789ZM14.5789 4V7.56364C14.5789 8.0362 14.7342 8.48942 15.0106 8.82357C15.2869 9.15773 15.6618 9.34545 16.0526 9.34545H19" stroke="#0A0A0B" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+											<path d="M8.4375 13.25C8.32147 13.25 8.21019 13.1842 8.12814 13.0669C8.04609 12.9497 8 12.7908 8 12.625C8 12.4592 8.04609 12.3003 8.12814 12.1831C8.21019 12.0658 8.32147 12 8.4375 12H14.5625C14.6785 12 14.7898 12.0658 14.8719 12.1831C14.9539 12.3003 15 12.4592 15 12.625C15 12.7908 14.9539 12.9497 14.8719 13.0669C14.7898 13.1842 14.6785 13.25 14.5625 13.25H8.4375ZM8.4375 17C8.32147 17 8.21019 16.9342 8.12814 16.8169C8.04609 16.6997 8 16.5408 8 16.375C8 16.2092 8.04609 16.0503 8.12814 15.9331C8.21019 15.8158 8.32147 15.75 8.4375 15.75H14.5625C14.6785 15.75 14.7898 15.8158 14.8719 15.9331C14.9539 16.0503 15 16.2092 15 16.375C15 16.5408 14.9539 16.6997 14.8719 16.8169C14.7898 16.9342 14.6785 17 14.5625 17H8.4375Z" fill="black"/>
+										</svg>
+										Compose Note
 									</a>
 								</div>
 							</div>
