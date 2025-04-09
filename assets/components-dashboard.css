@@ -93,12 +93,12 @@
 		}
 	}
 	.card-select-box {
-		@apply absolute z-1 top-0 left-0 size-0 h-full peer-checked:before:border-blue-500 peer-checked:before:bg-blue-500 peer-checked:[&>svg]:scale-100 peer-checked:[&>svg]:opacity-100 cursor-pointer flex items-center justify-center transition-colors opacity-0 lg:[.list-type_&]:opacity-100 [.list-type_&]:flex lg:group-hover:opacity-100 max-lg:[.list-select-active_&]:opacity-100 [.list-type_&]:transition-all [.list-type_&]:duration-300 max-lg:not-[.list-select-active_&]:pointer-events-none not-[.list-type_&]:before:left-4 not-[.list-type_&]:before:top-4 [.list-type_&]:before:top-1/2 [.list-type_&]:before:-translate-y-1/2 max-lg:[.list-type_&]:before:right-auto [.list-type_&]:before:right-[calc(100%+10px)] max-lg:before:left-0 max-lg:[.list-select-active.list-type_&]:before:left-3;
+		@apply absolute z-1 top-0 left-0 size-0 h-full peer-checked:before:border-blue-500 peer-checked:before:bg-blue-500 peer-checked:[&>svg]:scale-100 peer-checked:[&>svg]:opacity-100 cursor-pointer flex items-center justify-center transition-colors opacity-0 lg:[.list-type_&]:opacity-100 [.list-type_&]:flex lg:group-hover:opacity-100 max-lg:[.list-select-active_&]:opacity-100 [.list-type_&]:transition-all [.list-type_&]:duration-300 max-lg:not-[.list-select-active_&]:pointer-events-none not-[.list-type_&]:before:left-4 not-[.list-type_&]:before:top-4 [.list-type_&]:before:top-1/2 [.list-type_&]:before:-translate-y-1/2 max-lg:[.list-type_&]:before:right-auto [.list-type_&]:before:right-[calc(100%+10px)] max-lg:before:left-0 max-lg:[.list-select-active.list-type_&]:before:left-3 text-white;
 		&::before {
 			@apply content-[""] absolute size-[18px] border border-gray-700 rounded-sm bg-white transition-all duration-300 ease-in-out;
 		}
 		svg {
-			@apply absolute not-[.list-type_&]:top-[22px] not-[.list-type_&]:left-[20px] transition-all opacity-0 scale-0 [.list-type_&]:right-[calc(100%+15px)] [.list-type_&]:left-auto max-lg:[.list-type_&]:right-auto max-lg:left-0 max-lg:[.list-select-active.list-type_&]:left-[16px];
+			@apply absolute not-[.list-type_&]:top-[22px] not-[.list-type_&]:left-[20px] transition-all opacity-0 scale-0 [.list-type_&]:right-[calc(100%+14px)] [.list-type_&]:left-auto max-lg:[.list-type_&]:right-auto max-lg:left-0 max-lg:[.list-select-active.list-type_&]:left-[16px] w-[10px]! h-[7px]!;
 		}
 	}
 	.list-type {

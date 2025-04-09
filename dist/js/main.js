@@ -1,5 +1,13 @@
 $(document).ready(function() {
-
+	
+	// SVG sprite
+	fetch('../../assets/icons-sprite.svg')
+		.then(response => response.text())
+		.then(svg => {
+			const div = document.createElement('div');
+			div.innerHTML = svg;
+			document.body.insertBefore(div.firstChild, document.body.firstChild);
+		});
 
 	
 	// Select files \ folders
@@ -94,7 +102,7 @@ $(document).ready(function() {
 	setTimeout(() => {
 		fakeLoading.addClass('hidden');
 		fakeLoadingContent.removeClass('hidden');
-	}, 2000);
+	}, 100);
 
 
 	// Drag and drop

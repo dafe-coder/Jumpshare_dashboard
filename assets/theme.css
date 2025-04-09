@@ -182,3 +182,13 @@
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+.icon {
+	color: var(--icon-primary);
+	vertical-align: middle;
+}
+
+.icon-sm { width: 18px; height: 18px; }
+.icon-md { width: 24px; height: 24px; }
+.icon-lg { width: 32px; height: 32px; }
+.icon-xl { width: 48px; height: 48px; }
