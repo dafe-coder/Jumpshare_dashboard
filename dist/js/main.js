@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	
 	// SVG sprite
-	fetch('../../assets/icons-sprite.svg')
+	fetch('/assets/icons-sprite.svg')
 		.then(response => response.text())
 		.then(svg => {
 			const div = document.createElement('div');
