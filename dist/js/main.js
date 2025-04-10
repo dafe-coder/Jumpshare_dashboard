@@ -1,15 +1,13 @@
-$(document).ready(function() {
-	
-	// SVG sprite
-	fetch('assets/icons-sprite.svg')
-		.then(response => response.text())
-		.then(svg => {
-			const div = document.createElement('div');
-			div.innerHTML = svg;
-			document.body.insertBefore(div.firstChild, document.body.firstChild);
-		});
+// SVG sprite
+fetch('assets/icons-sprite.svg')
+.then(response => response.text())
+.then(svg => {
+	const div = document.createElement('div');
+	div.innerHTML = svg;
+	document.body.insertBefore(div.firstChild, document.body.firstChild);
+});
 
-	
+$(document).ready(function() {
 	// Select files \ folders
 	const selectWrapper = $('.selected-wrapper');	
 	const selectItem = $('[data-select-item]');
@@ -97,12 +95,12 @@ $(document).ready(function() {
 	// Fake loading
 	const fakeLoading = $('.fake-loading');
 	const fakeLoadingContent = $('.fake-loading-content');
-	fakeLoadingContent.addClass('hidden');
+	fakeLoadingContent.addClass('hidden!');
 
 	setTimeout(() => {
-		fakeLoading.addClass('hidden');
-		fakeLoadingContent.removeClass('hidden');
-	}, 100);
+		fakeLoading.addClass('hidden!');
+		fakeLoadingContent.removeClass('hidden!');
+	}, 2000);
 
 
 	// Drag and drop
