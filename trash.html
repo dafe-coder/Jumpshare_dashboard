@@ -242,7 +242,7 @@
 			<aside class="w-[240px] fixed left-0 top-0 bottom-0 flex flex-col h-screen z-101 max-lg:-left-full max-lg:top-0 max-lg:w-full transition-all duration-500 ease-in-out [&.active]:left-0">
 				<div class="mobile-menu-overlay absolute bg-[#090B13]/50 z-0 opacity-0 w-0 h-screen lg:hidden [.active_&]:opacity-100 [.active_&]:w-screen transition-all duration-500 ease-in-out delay-75"></div>
 				<div class='flex flex-col max-lg:w-[318px] max-lg:max-w-[318px] max-xs:w-[85%]! w-full bg-gray-150 max-lg:rounded-r-2xl z-3 h-full'>
-					<div class='dropdown-wrapper relative z-4'>
+					<div class='dropdown-wrapper z-4'>
 						<a href='#' data-id='dropdown-workspaces' class='dropdown-button p-4 flex items-center justify-between relative [&.active]:bg-gray-300 transition-colors duration-300 max-lg:rounded-t-2xl'>
 							<div class='flex items-center'>
 								<div class="flex items-center justify-between mr-3">
@@ -422,7 +422,7 @@
 								data-mobile-placeholder='Search for files...' placeholder='Search for people, Files, folder & spaces'>
 							</form>
 							<div class='flex items-center gap-4'>
-								<div class='dropdown-wrapper relative'>
+								<div class='dropdown-wrapper'>
 									<a data-id="dropdown-notifications" href="#" class='dropdown-button size-12 flex justify-center items-center transition-colors hover:bg-gray-150 rounded-lg relative [&.active]:bg-gray-150 cursor-pointer'>
 										<svg class='icon icon-md'>
 											<use href='#bell'></use>
@@ -516,7 +516,7 @@
 										</ul>
 									</div>
 								</div>
-								<div class="dropdown-wrapper relative">
+								<div class="dropdown-wrapper">
 									<a href='#' data-id="dropdown-avatar" class='dropdown-button flex gap-1.5 items-center cursor-pointer max-md:pr-3 [&.active]:bg-gray-150 px-2 h-12 rounded-lg'>
 										<div class='size-7.5 rounded-full overflow-hidden bg-gray-200 inset-ring-2 inset-ring-gray-100'>
 											<img src="./assets/images/avatar.png" alt="Avatar">
@@ -623,7 +623,7 @@
 							<button class='hidden is-select-btn btn btn-border-default btn-sm text-sm max-lg:flex h-9'>
 								<span>Select</span>
 							</button>
-							<div class='dropdown-wrapper relative'>
+							<div class='dropdown-wrapper'>
 								<button data-id='dropdown-grid' class='dropdown-button relative z-1 btn p-0 border border-gray-600 size-9'>
 									<svg class='icon icon-md'>
 										<use href='#large-grid'></use>
@@ -650,7 +650,7 @@
 									</a>
 								</div>
 							</div>
-							<div class="dropdown-wrapper relative">
+							<div class="dropdown-wrapper">
 								<button data-id='dropdown-add-new' class='dropdown-button btn btn-primary-default rounded-lg px-4 max-lg:fixed max-lg:bottom-4 max-lg:right-4 max-lg:size-14 max-lg:rounded-full max-lg:p-0 max-lg:shadow-[0px_6px_17.7px_rgba(51,_53,_57,_0.3)] h-9'>
 									<svg class='icon icon-md hidden max-lg:block flex-shrink-0 size-8!'>
 										<use href='#plus'></use>
@@ -741,7 +741,7 @@
 									<input data-select-item class="peer" hidden="" type="checkbox" id="select-file-2">
 									<label class="card-select-box" for="select-file-2">
 										<svg class='icon'>
-											<use href='#check'></use>
+											<use href='#check-bold'></use>
 										</svg>
 									</label>
 									<svg class='icon icon-md lg:group-hover:not-[.list-type_&]:opacity-0 not-[.list-type_&]:[.list-select-active_&]:opacity-0 flex-shrink-0 max-lg:[.list-select-active_&]:not-[.list-type_&]:opacity-0'>
@@ -875,7 +875,7 @@
 									<input data-select-item class="peer" hidden="" type="checkbox" id="select-file-1">
 									<label class="card-select-box" for="select-file-1">
 										<svg class='icon'>
-											<use href='#check'></use>
+											<use href='#check-bold'></use>
 										</svg>
 									</label>
 									<svg class='icon icon-md lg:group-hover:not-[.list-type_&]:opacity-0 not-[.list-type_&]:[.list-select-active_&]:opacity-0 flex-shrink-0 max-lg:[.list-select-active_&]:not-[.list-type_&]:opacity-0'>
@@ -1009,7 +1009,7 @@
 									<input data-select-item class="peer" hidden="" type="checkbox" id="select-file-3">
 									<label class="card-select-box" for="select-file-3">
 										<svg class='icon'>
-											<use href='#check'></use>
+											<use href='#check-bold'></use>
 										</svg>
 									</label>
 									<svg class='icon icon-md lg:group-hover:not-[.list-type_&]:opacity-0 not-[.list-type_&]:[.list-select-active_&]:opacity-0 flex-shrink-0 max-lg:[.list-select-active_&]:not-[.list-type_&]:opacity-0'>
@@ -1143,7 +1143,7 @@
 									<input data-select-item class="peer" hidden="" type="checkbox" id="select-file-4">
 									<label class="card-select-box" for="select-file-4">
 										<svg class='icon'>
-											<use href='#check'></use>
+											<use href='#check-bold'></use>
 										</svg>
 									</label>
 									<svg class='icon icon-md lg:group-hover:not-[.list-type_&]:opacity-0 not-[.list-type_&]:[.list-select-active_&]:opacity-0 flex-shrink-0 max-lg:[.list-select-active_&]:not-[.list-type_&]:opacity-0'>
@@ -1427,7 +1427,7 @@
 									<input class="peer" hidden type="checkbox" data-select-item id="select-file-212">
 									<label for="select-file-212" class="card-select-box">
 										<svg class='icon'>
-											<use href='#check'></use>
+											<use href='#check-bold'></use>
 										</svg>
 									</label>
 									<div class='file-item-nav'>
@@ -1577,7 +1577,7 @@
 									<input class="peer" hidden type="checkbox" data-select-item id="select-file-244">
 									<label class="card-select-box" for="select-file-244">
 										<svg class='icon'>
-											<use href='#check'></use>
+											<use href='#check-bold'></use>
 										</svg>
 									</label>
 									<div class='file-item-nav'>
@@ -1719,7 +1719,7 @@
 									<input class="peer" hidden type="checkbox" data-select-item id="select-file-241">
 									<label class='card-select-box' for="select-file-241">
 										<svg class='icon'>
-											<use href='#check'></use>
+											<use href='#check-bold'></use>
 										</svg>
 									</label>
 									<div class='file-item-nav'>
@@ -1860,7 +1860,7 @@
 									<input class="peer" hidden type="checkbox" data-select-item id="select-file-532">
 									<label class="card-select-box" for="select-file-532">
 										<svg class='icon'>
-											<use href='#check'></use>
+											<use href='#check-bold'></use>
 										</svg>
 									</label>
 									<div class='file-item-nav'>
