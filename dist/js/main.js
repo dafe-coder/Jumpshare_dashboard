@@ -8,6 +8,19 @@ fetch('assets/icons-sprite.svg')
 });
 
 $(document).ready(function() {
+
+	// Tabs
+	const tabs = $('[data-tab-id]');
+	tabs.on('click', function(e) {
+		e.preventDefault();
+		const tabId = $(this).attr('data-tab-id');
+		$(this).addClass('active');
+		$(this).siblings().removeClass('active');
+		$(`[data-tab-content-id="${tabId}"]`).addClass('active');
+		$(`[data-tab-content-id="${tabId}"]`).siblings().removeClass('active');
+	});
+
+
 	// Select files \ folders
 	const selectWrapper = $('.selected-wrapper');	
 	const selectItem = $('[data-select-item]');
