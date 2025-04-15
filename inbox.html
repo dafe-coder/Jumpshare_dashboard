@@ -323,7 +323,7 @@
 							<p class='text-s text-dark-800/60 font-medium'>Libraries</p>
 							<ul class='flex flex-col mt-2'>
 								<li>
-									<a href='./index.html' class='active flex items-center gap-2 text-sm p-2 rounded-md hover:bg-blue-200 [&.active]:bg-blue-200 [&.active]:font-bold [&.active]:text-blue-500 [&.active]:stroke-blue-500 stroke-blue-1000 font-medium'>
+									<a href='./index.html' class='flex items-center gap-2 text-sm p-2 rounded-md hover:bg-blue-200 [&.active]:bg-blue-200 [&.active]:font-bold [&.active]:text-blue-500 [&.active]:stroke-blue-500 stroke-blue-1000 font-medium'>
 										<svg class='icon icon-sm'>
 											<use href='#home-medium'></use>
 										</svg>
@@ -365,7 +365,7 @@
 									</a>
 								</li>
 								<li>
-									<a href='./inbox.html' class='flex items-center gap-2 text-sm p-2 rounded-md hover:bg-blue-200 [&.active]:bg-blue-200 [&.active]:font-bold [&.active]:text-blue-500 [&.active]:stroke-blue-500 stroke-blue-1000 font-medium'>
+									<a href='./inbox.html' class='active flex items-center gap-2 text-sm p-2 rounded-md hover:bg-blue-200 [&.active]:bg-blue-200 [&.active]:font-bold [&.active]:text-blue-500 [&.active]:stroke-blue-500 stroke-blue-1000 font-medium'>
 										<svg class='icon icon-sm'>
 											<use href='#inbox-medium'></use>
 										</svg>
@@ -582,429 +582,334 @@
 				<div class='subheader-nav transition-all pt-9 pb-6 sticky top-[63px] z-50 bg-white max-md:pt-5 duration-300 after:content-[""] after:absolute after:bottom-1/2 after:left-0 after:right-0 after:w-full after:h-full after:bg-white after:-z-2'>
 					<div class="dashboard-container">
 						<div class="flex justify-between items-center">
-						<h2 id='title-library' class='text-2xl font-semibold text-dark-800 tracking-normal flex-shrink-0 font-sans-semi'>Activity Center</h2>
+							<h2 id='title-library' class='text-2xl font-semibold text-dark-800 tracking-normal flex-shrink-0 font-sans-semi'>Inbox</h2>
+							<div>
+								<button class='btn btn-primary-default gap-1.5'>
+									<svg class='icon icon-sm'>
+										<use href='#plus'></use>
+									</svg>
+									<span>Create New Inbox</span>
+								</button>
+							</div>
 						</div>
-						<div class='border-b border-gray-400 pb-3.5 mt-7 max-sm:mt-5'>
+						<div class='border-b border-gray-400 pb-3.5 mt-7'>
 							<ul class='flex items-center gap-x-8.5'>
-								<li data-tab-id='activity-tab-general' class='active text-sm text-dark-800/60 font-medium cursor-pointer relative before:content-[""] before:absolute before:-bottom-[15px] before:left-0 before:h-0.5 before:bg-blue-900 before:w-[90%] before:scale-x-0 before:transition-all before:duration-300 before:ease-in-out before:origin-left [&.active]:before:scale-x-100 after:content-[attr(data-text)] after:absolute after:inset-0 after:font-semibold after:opacity-0 after:transition-opacity after:duration-300 [&.active]:after:opacity-100 [&.active]:text-blue-900 text-nowrap after:text-blue-800! [&.active]:text-transparent transition-all duration-300' data-text='General Activity'>General Activity</li>
-								<li data-tab-id='activity-tab-other' class='text-sm text-dark-800/60 font-medium cursor-pointer relative before:content-[""] before:absolute before:-bottom-[15px] before:left-0 before:h-0.5 before:bg-blue-900 before:w-[90%] before:scale-x-0 before:transition-all before:duration-300 before:ease-in-out before:origin-left [&.active]:before:scale-x-100 after:content-[attr(data-text)] after:absolute after:inset-0 after:font-semibold after:opacity-0 after:transition-opacity after:duration-300 [&.active]:after:opacity-100 [&.active]:text-blue-900 text-nowrap after:text-blue-800! [&.active]:text-transparent transition-all duration-300' data-text='Other Activity'>Other Activity</li>
-								<li data-tab-id='activity-tab-all' class='text-sm text-dark-800/60 font-medium cursor-pointer relative before:content-[""] before:absolute before:-bottom-[15px] before:left-0 before:h-0.5 before:bg-blue-900 before:w-[90%] before:scale-x-0 before:transition-all before:duration-300 before:ease-in-out before:origin-left [&.active]:before:scale-x-100 after:content-[attr(data-text)] after:absolute after:inset-0 after:font-semibold after:opacity-0 after:transition-opacity after:duration-300 [&.active]:after:opacity-100 [&.active]:text-blue-900 text-nowrap after:text-blue-800! [&.active]:text-transparent transition-all duration-300' data-text='All'>All</li>
+								<li data-tab-id='active-inboxes' class='active text-sm text-dark-800/60 font-medium cursor-pointer relative before:content-[""] before:absolute before:-bottom-[15px] before:left-0 before:h-0.5 before:bg-blue-900 before:w-[90%] before:scale-x-0 before:transition-all before:duration-300 before:ease-in-out before:origin-left [&.active]:before:scale-x-100 after:content-[attr(data-text)] after:absolute after:inset-0 after:font-semibold after:opacity-0 after:transition-opacity after:duration-300 [&.active]:after:opacity-100 [&.active]:text-blue-900 text-nowrap after:text-blue-800! [&.active]:text-transparent transition-all duration-300' data-text='Active Inboxes'>Active Inboxes</li>
+								<li data-tab-id='closed-inboxes' class='text-sm text-dark-800/60 font-medium cursor-pointer relative before:content-[""] before:absolute before:-bottom-[15px] before:left-0 before:h-0.5 before:bg-blue-900 before:w-[90%] before:scale-x-0 before:transition-all before:duration-300 before:ease-in-out before:origin-left [&.active]:before:scale-x-100 after:content-[attr(data-text)] after:absolute after:inset-0 after:font-semibold after:opacity-0 after:transition-opacity after:duration-300 [&.active]:after:opacity-100 [&.active]:text-blue-900 text-nowrap after:text-blue-800! [&.active]:text-transparent transition-all duration-300' data-text='Closed Inboxes'>Closed Inboxes</li>
 							</ul>
 						</div>
 					</div>
 				</div>
 				<div class='dashboard-container pb-5'>
-					<div data-tab-content-id='activity-tab-general' class='active hidden [&.active]:block'>
-						<div class="grid grid-cols-[1fr_minmax(200px,250px)_minmax(250px,324px)] gap-4">
-							<ul class='flex flex-col'>
-								<li class='flex items-start gap-4 py-4 px-3'>
-									<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar.png" alt="Avatar">
-									<div class='flex flex-col gap-1'>
-										<div class='[&_strong]:font-semibold [&_p]:text-sm! text-dark-800'>
-											<p>Brian Thomas  added file <strong>JumpshareInstaller-3.4.5 - 21.exe</strong> to folder 3.4.5</p>
-										</div>
-										<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-									</div>
-								</li>
-								<li class='flex items-start gap-4 py-4 px-3'>
-									<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-2.png" alt="Avatar">
-									<div class='flex flex-col gap-1'>
-										<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-											<p>You received <strong>Screen Recording 2022-12-07 at 12.11.44 PM.mp4</strong> in your Team Inbox <strong>jumpshare-team-inbox</strong> from Peter Steven (petersteven@gmail.com)</p>
-										</div>
-										<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-									</div>
-								</li>
-								<li class='flex items-start gap-4 py-4 px-3'>
-									<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-									<div class='flex flex-col gap-1'>
-										<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-											<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-										</div>
-										<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-									</div>
-								</li>
-								<li class='flex items-start gap-4 py-4 px-3'>
-									<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-									<div class='flex flex-col gap-1'>
-										<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-											<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-										</div>
-										<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-									</div>
-								</li>
-								<li class='flex items-start gap-4 py-4 px-3'>
-									<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-									<div class='flex flex-col gap-1'>
-										<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-											<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-										</div>
-										<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-									</div>
-								</li>
-								<li class='flex items-start gap-4 py-4 px-3'>
-									<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-									<div class='flex flex-col gap-1'>
-										<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-											<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-										</div>
-										<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-									</div>
-								</li>
-								<li class='flex items-start gap-4 py-4 px-3'>
-									<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-									<div class='flex flex-col gap-1'>
-										<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-											<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-										</div>
-										<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-									</div>
-								</li>
-								<li class='flex items-start gap-4 py-4 px-3'>
-									<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-									<div class='flex flex-col gap-1'>
-										<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-											<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-										</div>
-										<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-									</div>
-								</li>
-								<li class='flex items-start gap-4 py-4 px-3'>
-									<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-									<div class='flex flex-col gap-1'>
-										<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-											<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-										</div>
-										<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-									</div>
-								</li>
-								<li class='flex items-start gap-4 py-4 px-3'>
-						<ul class='flex flex-col'>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold [&_p]:text-sm! text-dark-800'>
-										<p>Brian Thomas  added file <strong>JumpshareInstaller-3.4.5 - 21.exe</strong> to folder 3.4.5</p>
-									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
+					<div data-tab-content-id='active-inboxes' class='active hidden [&.active]:block'>
+						<div class='grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 pb-2.5 pt-2 max-md:hidden gap-4'>
+							<div class='text-sm text-dark-800/60'>
+								Name
+							</div>
+							<div class='text-sm text-dark-800/60'>
+								Created By
+							</div>
+							<div class='text-sm text-dark-800/60'>
+								Location
+							</div>
+						</div>
+						<div class="flex flex-col">
+							<div class='grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4'>
+								<div class='flex flex-col gap-1.5 pl-5 max-md:pl-4'>
+									<p class='text-sm text-dark-800 font-medium'>Testing UI</p>
+									<span class='text-xs text-dark-800/70'>1 Submissions</span>
 								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-2.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You received <strong>Screen Recording 2022-12-07 at 12.11.44 PM.mp4</strong> in your Team Inbox <strong>jumpshare-team-inbox</strong> from Peter Steven (petersteven@gmail.com)</p>
-									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
+								<div class='flex items-center gap-2.5 max-md:hidden'>
+									<img class='size-[22px] rounded-full object-cover' src="./assets/images/avatar.png" alt="Avatar">
+									<p class='text-sm text-dark-800'>John Doe</p>
 								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
+								<div class='flex items-center justify-between max-md:justify-end pr-10 max-md:pr-4'>
+									<p class='text-sm text-dark-800 max-md:hidden'>Personal Library</p>
+									<div class="dropdown-wrapper">
+										<button data-id="dropdown-inbox" class='dropdown-button rounded-full size-6 flex items-center justify-center hover:bg-gray-400 cursor-pointer [&.active]:bg-gray-400'>
+											<svg class='icon icon-md'>
+												<use href='#dots-horizontal'></use>
+											</svg>
+										</button>
+										<ul data-dropdown-id="dropdown-inbox" class='dropdown-content absolute top-[calc(100%_+_8px)] right-0 bg-white shadow-dropdown rounded-lg p-1.5 w-[12.625rem] z-3 overflow-hidden hidden transition-opacity duration-150 scale-0 [&.active]:scale-100 [&.active]:opacity-100 border border-gray-400'>
+											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+												<svg class='icon icon-md'>
+													<use href='#share'></use>
+												</svg>
+												<span>Share Inbox</span>
+											</li>
+											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+												<svg class='icon icon-md'>
+													<use href='#crossed-eye'></use>
+												</svg>
+												<span>Close</span>
+											</li>
+											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+												<svg class='icon icon-md'>
+													<use href='#trash'></use>
+												</svg>
+												<span>Delete</span>
+											</li>
+										</ul>
 									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
 								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
+							</div>
+							<div class='grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4'>
+								<div class='flex flex-col gap-1.5 pl-5 max-md:pl-4'>
+									<p class='text-sm text-dark-800 font-medium'>Team Presentations</p>
+									<span class='text-xs text-dark-800/70'>4 Submissions</span>
+								</div>
+								<div class='flex items-center gap-2.5 max-md:hidden'>
+									<img class='size-[22px] rounded-full object-cover' src="./assets/images/avatar-2.png" alt="Avatar">
+									<p class='text-sm text-dark-800'>Ashley</p>
+								</div>
+								<div class='flex items-center justify-between max-md:justify-end pr-10 max-md:pr-4'>
+									<p class='text-sm text-dark-800 max-md:hidden'>Team Library</p>
+									<div class="dropdown-wrapper">
+										<button data-id="dropdown-inbox" class='dropdown-button rounded-full size-6 flex items-center justify-center hover:bg-gray-400 cursor-pointer [&.active]:bg-gray-400'>
+											<svg class='icon icon-md'>
+												<use href='#dots-horizontal'></use>
+											</svg>
+										</button>
+										<ul data-dropdown-id="dropdown-inbox" class='dropdown-content absolute top-[calc(100%_+_8px)] right-0 bg-white shadow-dropdown rounded-lg p-1.5 w-[12.625rem] z-3 overflow-hidden hidden transition-opacity duration-150 scale-0 [&.active]:scale-100 [&.active]:opacity-100 border border-gray-400'>
+											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+												<svg class='icon icon-md'>
+													<use href='#share'></use>
+												</svg>
+												<span>Share Inbox</span>
+											</li>
+											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+												<svg class='icon icon-md'>
+													<use href='#crossed-eye'></use>
+												</svg>
+												<span>Close</span>
+											</li>
+											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+												<svg class='icon icon-md'>
+													<use href='#trash'></use>
+												</svg>
+												<span>Delete</span>
+											</li>
+										</ul>
 									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
 								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
+							</div>
+							<div class='grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4'>
+								<div class='flex flex-col gap-1.5 pl-5 max-md:pl-4'>
+									<p class='text-sm text-dark-800 font-medium'>Jumpshare team inbox</p>
+									<span class='text-xs text-dark-800/70'>1 Submissions</span>
+								</div>
+								<div class='flex items-center gap-2.5 max-md:hidden'>
+									<img class='size-[22px] rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
+									<p class='text-sm text-dark-800'>John Doe</p>
+								</div>
+								<div class='flex items-center justify-between max-md:justify-end pr-10 max-md:pr-4'>
+									<p class='text-sm text-dark-800 max-md:hidden'>Personal Library</p>
+									<div class="dropdown-wrapper">
+										<button data-id="dropdown-inbox" class='dropdown-button rounded-full size-6 flex items-center justify-center hover:bg-gray-400 cursor-pointer [&.active]:bg-gray-400'>
+											<svg class='icon icon-md'>
+												<use href='#dots-horizontal'></use>
+											</svg>
+										</button>
+										<ul data-dropdown-id="dropdown-inbox" class='dropdown-content absolute top-[calc(100%_+_8px)] right-0 bg-white shadow-dropdown rounded-lg p-1.5 w-[12.625rem] z-3 overflow-hidden hidden transition-opacity duration-150 scale-0 [&.active]:scale-100 [&.active]:opacity-100 border border-gray-400'>
+											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+												<svg class='icon icon-md'>
+													<use href='#share'></use>
+												</svg>
+												<span>Share Inbox</span>
+											</li>
+											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+												<svg class='icon icon-md'>
+													<use href='#crossed-eye'></use>
+												</svg>
+												<span>Close</span>
+											</li>
+											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+												<svg class='icon icon-md'>
+													<use href='#trash'></use>
+												</svg>
+												<span>Delete</span>
+											</li>
+										</ul>
 									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
 								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
+							</div>
+							<div class='grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4'>
+								<div class='flex flex-col gap-1.5 truncate pl-5 max-md:pl-4'>
+									<p class='text-sm text-dark-800 font-medium truncate'>Jumpshare team inbox Jumpshare team inbox Jumpshare team inbox Jumpshare team inbox Jumpshare team inbox</p>
+									<span class='text-xs text-dark-800/70'>1 Submissions</span>
+								</div>
+								<div class='flex items-center gap-2.5 max-md:hidden'>
+									<img class='size-[22px] rounded-full object-cover' src="./assets/images/avatar.png" alt="Avatar">
+									<p class='text-sm text-dark-800'>John Doe</p>
+								</div>
+								<div class='flex items-center justify-between max-md:justify-end pr-10 max-md:pr-4'>
+									<p class='text-sm text-dark-800 max-md:hidden'>Personal Library</p>
+									<div class="dropdown-wrapper">
+										<button data-id="dropdown-inbox" class='dropdown-button rounded-full size-6 flex items-center justify-center hover:bg-gray-400 cursor-pointer [&.active]:bg-gray-400'>
+											<svg class='icon icon-md'>
+												<use href='#dots-horizontal'></use>
+											</svg>
+										</button>
+										<ul data-dropdown-id="dropdown-inbox" class='dropdown-content absolute top-[calc(100%_+_8px)] right-0 bg-white shadow-dropdown rounded-lg p-1.5 w-[12.625rem] z-3 overflow-hidden hidden transition-opacity duration-150 scale-0 [&.active]:scale-100 [&.active]:opacity-100 border border-gray-400'>
+											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+												<svg class='icon icon-md'>
+													<use href='#share'></use>
+												</svg>
+												<span>Share Inbox</span>
+											</li>
+											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+												<svg class='icon icon-md'>
+													<use href='#crossed-eye'></use>
+												</svg>
+												<span>Close</span>
+											</li>
+											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+												<svg class='icon icon-md'>
+													<use href='#trash'></use>
+												</svg>
+												<span>Delete</span>
+											</li>
+										</ul>
 									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
 								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
+							</div>
+							<div class='grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4'>
+								<div class='flex flex-col gap-1.5 pl-5 max-md:pl-4'>
+									<p class='text-sm text-dark-800 font-medium'>Testing UI</p>
+									<span class='text-xs text-dark-800/70'>1 Submissions</span>
+								</div>
+								<div class='flex items-center gap-2.5 max-md:hidden'>
+									<img class='size-[22px] rounded-full object-cover' src="./assets/images/avatar.png" alt="Avatar">
+									<p class='text-sm text-dark-800'>John Doe</p>
+								</div>
+								<div class='flex items-center justify-between max-md:justify-end pr-10 max-md:pr-4'>
+									<p class='text-sm text-dark-800 max-md:hidden'>Personal Library</p>
+									<div class="dropdown-wrapper">
+										<button data-id="dropdown-inbox" class='dropdown-button rounded-full size-6 flex items-center justify-center hover:bg-gray-400 cursor-pointer [&.active]:bg-gray-400'>
+											<svg class='icon icon-md'>
+												<use href='#dots-horizontal'></use>
+											</svg>
+										</button>
+										<ul data-dropdown-id="dropdown-inbox" class='dropdown-content absolute top-[calc(100%_+_8px)] right-0 bg-white shadow-dropdown rounded-lg p-1.5 w-[12.625rem] z-3 overflow-hidden hidden transition-opacity duration-150 scale-0 [&.active]:scale-100 [&.active]:opacity-100 border border-gray-400'>
+											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+												<svg class='icon icon-md'>
+													<use href='#share'></use>
+												</svg>
+												<span>Share Inbox</span>
+											</li>
+											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+												<svg class='icon icon-md'>
+													<use href='#crossed-eye'></use>
+												</svg>
+												<span>Close</span>
+											</li>
+											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+												<svg class='icon icon-md'>
+													<use href='#trash'></use>
+												</svg>
+												<span>Delete</span>
+											</li>
+										</ul>
 									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
 								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-								</div>
-							</li>
-						</ul>
+							</div>
+						</div>
 					</div>
-					<div data-tab-content-id='activity-tab-other' class='hidden [&.active]:block'>
-						<ul class='flex flex-col'>
-
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
+					<div data-tab-content-id='closed-inboxes' class='hidden [&.active]:block'>
+						<div class='grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 pb-2.5 pt-2 max-md:hidden gap-4'>
+							<div class='text-sm text-dark-800/60'>
+								Name
+							</div>
+							<div class='text-sm text-dark-800/60'>
+								Created By
+							</div>
+							<div class='text-sm text-dark-800/60'>
+								Location
+							</div>
+						</div>
+						<div class="flex flex-col">
+							<div class='grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4'>
+								<div class='flex flex-col gap-1.5 truncate pl-5 max-md:pl-4'>
+									<p class='text-sm text-dark-800 font-medium truncate'>Jumpshare team inbox</p>
+									<span class='text-xs text-dark-800/70'>1 Submissions</span>
 								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-2.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You received <strong>Screen Recording 2022-12-07 at 12.11.44 PM.mp4</strong> in your Team Inbox <strong>jumpshare-team-inbox</strong> from Peter Steven (petersteven@gmail.com)</p>
-									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
+								<div class='flex items-center gap-2.5 max-md:hidden'>
+									<img class='size-[22px] rounded-full object-cover' src="./assets/images/avatar.png" alt="Avatar">
+									<p class='text-sm text-dark-800'>John Doe</p>
 								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>Brian Thomas  added file <strong>JumpshareInstaller-3.4.5 - 21.exe</strong> to folder 3.4.5</p>
+								<div class='flex items-center justify-between max-md:justify-end pr-10 max-md:pr-4'>
+									<p class='text-sm text-dark-800 max-md:hidden'>Personal Library</p>
+									<div class="dropdown-wrapper">
+										<button data-id="dropdown-inbox" class='dropdown-button rounded-full size-6 flex items-center justify-center hover:bg-gray-400 cursor-pointer [&.active]:bg-gray-400'>
+											<svg class='icon icon-md'>
+												<use href='#dots-horizontal'></use>
+											</svg>
+										</button>
+										<ul data-dropdown-id="dropdown-inbox" class='dropdown-content absolute top-[calc(100%_+_8px)] right-0 bg-white shadow-dropdown rounded-lg p-1.5 w-[12.625rem] z-3 overflow-hidden hidden transition-opacity duration-150 scale-0 [&.active]:scale-100 [&.active]:opacity-100 border border-gray-400'>
+											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+												<svg class='icon icon-md'>
+													<use href='#share'></use>
+												</svg>
+												<span>Share Inbox</span>
+											</li>
+											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+												<svg class='icon icon-md'>
+													<use href='#crossed-eye'></use>
+												</svg>
+												<span>Close</span>
+											</li>
+											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+												<svg class='icon icon-md'>
+													<use href='#trash'></use>
+												</svg>
+												<span>Delete</span>
+											</li>
+										</ul>
 									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
 								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
+							</div>
+							<div class='grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4'>
+								<div class='flex flex-col gap-1.5 pl-5 max-md:pl-4'>
+									<p class='text-sm text-dark-800 font-medium'>Testing UI</p>
+									<span class='text-xs text-dark-800/70'>1 Submissions</span>
+								</div>
+								<div class='flex items-center gap-2.5 max-md:hidden'>
+									<img class='size-[22px] rounded-full object-cover' src="./assets/images/avatar.png" alt="Avatar">
+									<p class='text-sm text-dark-800'>John Doe</p>
+								</div>
+								<div class='flex items-center justify-between max-md:justify-end pr-10 max-md:pr-4'>
+									<p class='text-sm text-dark-800 max-md:hidden'>Personal Library</p>
+									<div class="dropdown-wrapper">
+										<button data-id="dropdown-inbox" class='dropdown-button rounded-full size-6 flex items-center justify-center hover:bg-gray-400 cursor-pointer [&.active]:bg-gray-400'>
+											<svg class='icon icon-md'>
+												<use href='#dots-horizontal'></use>
+											</svg>
+										</button>
+										<ul data-dropdown-id="dropdown-inbox" class='dropdown-content absolute top-[calc(100%_+_8px)] right-0 bg-white shadow-dropdown rounded-lg p-1.5 w-[12.625rem] z-3 overflow-hidden hidden transition-opacity duration-150 scale-0 [&.active]:scale-100 [&.active]:opacity-100 border border-gray-400'>
+											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+												<svg class='icon icon-md'>
+													<use href='#share'></use>
+												</svg>
+												<span>Share Inbox</span>
+											</li>
+											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+												<svg class='icon icon-md'>
+													<use href='#crossed-eye'></use>
+												</svg>
+												<span>Close</span>
+											</li>
+											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+												<svg class='icon icon-md'>
+													<use href='#trash'></use>
+												</svg>
+												<span>Delete</span>
+											</li>
+										</ul>
 									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
 								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div data-tab-content-id='activity-tab-all' class='hidden [&.active]:block'>
-						<ul class='flex flex-col'>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-								</div>
-							</li>
-							<li class='flex items-start gap-4 py-4 px-3'>
-								<img class='flex-shrink-0 size-7 rounded-full object-cover' src="./assets/images/avatar-3.png" alt="Avatar">
-								<div class='flex flex-col gap-1'>
-									<div class='[&_strong]:font-semibold text-sm text-dark-800'>
-										<p>You renamed file from Copy Text Badge.mp4 to copy text badge copy text badgecopy text badgecopy text badgecopy text badgecopy text <strong>badge.mp4</strong></p>
-									</div>
-									<p class='text-xs text-dark-800/70'>Mar 23 06:47 AM</p>
-								</div>
-							</li>
-						</ul>
+							</div>
+						</div>
 					</div>
 				</div>
 			</main>

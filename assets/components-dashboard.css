@@ -7,7 +7,7 @@
 	}
 	.list-type {
 		.file-item {
-			@apply grid grid-cols-[1fr_7rem_9rem_7.94rem] border-x-0 border-t-0 rounded-none py-2.5 gap-2 hover:bg-gray-200;
+			@apply grid grid-cols-[1fr_7rem_9rem_7.94rem] border-x-0 border-t-0 rounded-none py-2.5 gap-2 hover:bg-gray-150;
 		}
 	}
 	.list-select-active {

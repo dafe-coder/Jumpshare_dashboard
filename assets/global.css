@@ -124,13 +124,10 @@
 			line-height: 1.3rem;
 		}
 	}
-	p {
-		@apply text-base/5.5;
-	}
 	body {
 		background-color: #ffffff;
 		-webkit-overflow-scrolling: touch;
-		@apply flex flex-col min-h-screen;
+		@apply flex flex-col min-h-screen text-base/5.5;
 	}
 	.main-body {
 		@apply grow;
