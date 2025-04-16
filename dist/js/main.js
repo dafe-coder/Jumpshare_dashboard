@@ -27,7 +27,6 @@ $(document).ready(function() {
 	const titleLibrary = $('#title-library');
 	const titleLibraryTextDefault = titleLibrary.text();
 	const defaultSelectBtnCode = $('.is-select-btn').html();
-	console.log(defaultSelectBtnCode);
 	
 	selectItem.on('change', function(e) {
 		const selectedItems = selectItem.filter(':checked');

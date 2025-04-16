@@ -127,106 +127,333 @@
 		<link rel="stylesheet" href="./dist/output.css" />
 	</head>
 	<body class='drag-and-drop'>
-		<div id='sheet' class='fixed bottom-0 left-0 right-0 z-100 size-full flex items-end justify-center transition-all duration-500 ease-in-out show-sheet hidden'>
-			<div class='overlay bg-[#090B13]/50 absolute top-0 left-0 size-full z-0 opacity-0 [.show-sheet_&]:opacity-100 transition-opacity duration-500 ease-in-out'></div>
-			<div class='content w-full max-w-[34.375rem] relative space-y-2.5 text-sm bg-white rounded-t-2xl px-3 pt-0 z-3 transition-all duration-500 [.show-sheet_&]:pt-6 ease-in-out [&.not-selectable]:transition-none! max-h-[80svh]'>
-				<div id='menuTrigger' class='flex items-center justify-center w-full h-6 absolute top-0 left-0 z-3'>
-					<span class='bg-blue-900/40 w-12 h-0.5 rounded-full block absolute top-4 left-1/2 -translate-x-1/2 cursor-pointer'></span>
+		<div class='bottom-sheet hidden' data-sheet-modal='menu-settings'>
+			<div class='bottom-sheet-overlay'></div>
+			<div class='bottom-sheet-body'>
+				<div class='bottom-sheet-trigger'>
+					<span></span>
 				</div>
-				<ul class='primary-sheet-menu w-full pb-0 [.show-sheet_&]:pb-2 overflow-auto h-full opacity-0 [.show-sheet_&]:opacity-100 transition-opacity duration-500 ease-in-out'>
-					<li class='text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 rounded-md transition-colors cursor-pointer py-2'>
-						<svg class='icon icon-md'>
-							<use href='#link'></use>
-						</svg>
-						<span>Copy</span>
-					</li>
-					<li class='text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 rounded-md transition-colors cursor-pointer py-2'>
-						<svg class='icon icon-md'>
-							<use href='#share'></use>
-						</svg>
-						<span>Share</span>
-					</li>
-					<li class='text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 rounded-md transition-colors cursor-pointer py-2'>
-						<svg class='icon icon-md'>	
-							<use href='#lock'></use>
-						</svg>
-						<span>Lock</span>
-					</li>
-					<hr class='border-gray-500 my-2'>
-					<li class='text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 rounded-md transition-colors cursor-pointer py-2'>
-						<svg class='icon icon-md'>
-							<use href='#trash-with-clock'></use>
-						</svg>
-						<span>Self-Destruct</span>
-					</li>
-					<li class='text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 rounded-md transition-colors cursor-pointer py-2'>
-						<svg class='icon icon-md'>
-							<use href='#stats'></use>
-						</svg>
-						<span>View Stats</span>
-					</li>
-					<li class='text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 rounded-md transition-colors cursor-pointer py-2'>
-						<svg class='icon icon-md'>
-							<use href='#pencil'></use>
-						</svg>
-						<span>Rename</span>
-					</li>
-					<li class='text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 rounded-md transition-colors cursor-pointer py-2'>
-						<svg class='icon icon-md'>
-							<use href='#star'></use>
-						</svg>
-						<span>Favorite</span>
-					</li>
-					<li class='text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 rounded-md transition-colors cursor-pointer py-2'>
-						<svg class='icon icon-md'>
-							<use href='#download'></use>
-						</svg>
-						<span>Download</span>
-					</li>
-					<li class='text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 rounded-md transition-colors cursor-pointer py-2'>
-						<svg class='icon icon-md'>	
-							<use href='#copy'></use>
-						</svg>
-						<span>Copy / Move</span>
-					</li>
-					<li data-sheet-item-id="version-history" class='text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 rounded-md transition-colors cursor-pointer py-2 relative'>
-						<svg class='icon icon-md'>
-							<use href='#clock'></use>
-						</svg>
-						<span>Version History</span>
-						<svg class='icon icon-md absolute top-1/2 -translate-y-1/2 right-1'>
-							<use href='#check-right'></use>
-						</svg>
-					</li>
-					<hr class='border-gray-500 my-2'>
-					<li class='text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 rounded-md transition-colors cursor-pointer py-2'>
-						<svg class='icon icon-md'>
-							<use href='#trash'></use>
-						</svg>
-						<span>Delete</span>
-					</li>
-				</ul>
-				<ul class='sub-sheet-menu hidden w-full' data-sheet-menu-id='version-history'>
-					<li class='go-back text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 rounded-md transition-colors cursor-pointer py-2'>
-						<svg class='icon icon-md'>
-							<use href='#arrow-left'></use>
-						</svg>
-						<span>Version History</span>
-					</li>
-					<hr class="border-gray-500 mb-2">
-					<li class='text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 rounded-md transition-colors cursor-pointer py-2'>
-						<svg class='icon icon-md'>
-							<use href='#upload'></use>
-						</svg>
-						<span>Upload New Version</span>
-					</li>
-					<li class='text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 rounded-md transition-colors cursor-pointer py-2'>
-						<svg class='icon icon-md'>
-							<use href='#clock'></use>
-						</svg>
-						<span>View Version History</span>
-					</li>
-				</ul>
+				<div class='bottom-sheet-content'>
+					<ul class='px-2 primary-sheet-menu w-full h-auto pb-2'>
+						<li class='text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 rounded-md transition-colors cursor-pointer py-2'>
+							<svg class='icon icon-md'>
+								<use href='#link'></use>
+							</svg>
+							<span>Copy</span>
+						</li>
+						<li class='text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 rounded-md transition-colors cursor-pointer py-2'>
+							<svg class='icon icon-md'>
+								<use href='#share'></use>
+							</svg>
+							<span>Share</span>
+						</li>
+						<li class='text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 rounded-md transition-colors cursor-pointer py-2'>
+							<svg class='icon icon-md'>	
+								<use href='#lock'></use>
+							</svg>
+							<span>Lock</span>
+						</li>
+						<hr class='border-gray-500 my-2'>
+						<li class='text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 rounded-md transition-colors cursor-pointer py-2'>
+							<svg class='icon icon-md'>
+								<use href='#trash-with-clock'></use>
+							</svg>
+							<span>Self-Destruct</span>
+						</li>
+						<li class='text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 rounded-md transition-colors cursor-pointer py-2'>
+							<svg class='icon icon-md'>
+								<use href='#stats'></use>
+							</svg>
+							<span>View Stats</span>
+						</li>
+						<li class='text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 rounded-md transition-colors cursor-pointer py-2'>
+							<svg class='icon icon-md'>
+								<use href='#pencil'></use>
+							</svg>
+							<span>Rename</span>
+						</li>
+						<li class='text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 rounded-md transition-colors cursor-pointer py-2'>
+							<svg class='icon icon-md'>
+								<use href='#star'></use>
+							</svg>
+							<span>Favorite</span>
+						</li>
+						<li class='text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 rounded-md transition-colors cursor-pointer py-2'>
+							<svg class='icon icon-md'>
+								<use href='#download'></use>
+							</svg>
+							<span>Download</span>
+						</li>
+						<li class='text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 rounded-md transition-colors cursor-pointer py-2'>
+							<svg class='icon icon-md'>	
+								<use href='#copy'></use>
+							</svg>
+							<span>Copy / Move</span>
+						</li>
+						<li data-sheet-item-id="version-history" class='text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 rounded-md transition-colors cursor-pointer py-2 relative'>
+							<svg class='icon icon-md'>
+								<use href='#clock'></use>
+							</svg>
+							<span>Version History</span>
+							<svg class='icon icon-md absolute top-1/2 -translate-y-1/2 right-1'>
+								<use href='#check-right'></use>
+							</svg>
+						</li>
+						<hr class='border-gray-500 my-2'>
+						<li class='text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 rounded-md transition-colors cursor-pointer py-2'>
+							<svg class='icon icon-md'>
+								<use href='#trash'></use>
+							</svg>
+							<span>Delete</span>
+						</li>
+					</ul>
+					<ul class='px-2 sub-sheet-menu hidden w-full pb-2' data-sheet-menu-id='version-history'>
+						<li class='go-back text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 rounded-md transition-colors cursor-pointer py-2'>
+							<svg class='icon icon-md'>
+								<use href='#arrow-left'></use>
+							</svg>
+							<span>Version History</span>
+						</li>
+						<hr class="border-gray-500 mb-2">
+						<li class='text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 rounded-md transition-colors cursor-pointer py-2'>
+							<svg class='icon icon-md'>
+								<use href='#upload'></use>
+							</svg>
+							<span>Upload New Version</span>
+						</li>
+						<li class='text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 rounded-md transition-colors cursor-pointer py-2'>
+							<svg class='icon icon-md'>
+								<use href='#clock'></use>
+							</svg>
+							<span>View Version History</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class='bottom-sheet hidden' data-sheet-modal='sheet-notifications'>
+			<div class='bottom-sheet-overlay'></div>
+			<div class='bottom-sheet-body'>
+				<div class='bottom-sheet-trigger'>
+					<span></span>
+				</div>
+				<div class='bottom-sheet-content'>
+					<ul>
+						<li>
+							<a href="#" class='flex gap-3 items-start pl-7 pr-4 py-4 hover:bg-gray-150'>
+								<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
+									<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+								</div>
+								<div>
+									<p class='text-sm'>
+										Someone viewed <strong> Speaker Notes Hover Effect.mp4 </strong> for the first time
+									</p>
+									<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
+										<span>Feb 6, 2025</span>
+										<span 		class='relative after:content-[""] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5 '>11:41 pm</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#" class='flex gap-3 items-start pl-7 pr-4 py-4 hover:bg-gray-150'>
+								<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
+									<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+								</div>
+								<div>
+									<p class='text-sm'>
+										Someone viewed <strong> Speaker Notes Hover Effect.mp4 </strong> for the first time
+									</p>
+									<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
+										<span>Feb 6, 2025</span>
+										<span 		class='relative after:content-[""] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5 '>11:41 pm</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class='unread'>
+							<a href="#" class='flex gap-3 items-start pl-7 pr-4 py-4 hover:bg-gray-150'>
+								<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
+									<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+								</div>
+								<div>
+									<p class='text-sm'>
+										Someone viewed <strong> Speaker Notes Hover Effect.mp4 </strong> for the first time
+									</p>
+									<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
+										<span>Feb 6, 2025</span>
+										<span 		class='relative after:content-[""] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5 '>11:41 pm</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#" class='flex gap-3 items-start pl-7 pr-4 py-4 hover:bg-gray-150'>
+								<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
+									<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+								</div>
+								<div>
+									<p class='text-sm'>
+										Someone viewed <strong> Speaker Notes Hover Effect.mp4 </strong> for the first time
+									</p>
+									<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
+										<span>Feb 6, 2025</span>
+										<span 		class='relative after:content-[""] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5 '>11:41 pm</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#" class='flex gap-3 items-start pl-7 pr-4 py-4 hover:bg-gray-150'>
+								<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
+									<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+								</div>
+								<div>
+									<p class='text-sm'>
+										Someone viewed <strong> Speaker Notes Hover Effect.mp4 </strong> for the first time
+									</p>
+									<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
+										<span>Feb 6, 2025</span>
+										<span 		class='relative after:content-[""] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5 '>11:41 pm</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#" class='flex gap-3 items-start pl-7 pr-4 py-4 hover:bg-gray-150'>
+								<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
+									<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+								</div>
+								<div>
+									<p class='text-sm'>
+										Someone viewed <strong> Speaker Notes Hover Effect.mp4 </strong> for the first time
+									</p>
+									<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
+										<span>Feb 6, 2025</span>
+										<span 		class='relative after:content-[""] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5 '>11:41 pm</span>
+									</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class='bottom-sheet hidden' data-sheet-modal='sheet-workspaces'>
+			<div class='bottom-sheet-overlay'></div>
+			<div class='bottom-sheet-body'>
+				<div class='bottom-sheet-trigger'>
+					<span></span>
+				</div>
+				<div class='bottom-sheet-content'>
+					<div class='px-4 pb-4'>
+						<div class="flex items-center justify-between">
+							<p class="text-sm text-dark-800 font-normal">Workspaces</p>
+							<span class="text-sm text-blue-500 font-medium hover:underline underline-offset-1 cursor-pointer">+ Add Workspace</span>
+						</div>
+						<div class="flex flex-col gap-y-4 mt-4">
+							<div class="flex items-center gap-x-3 cursor-pointer">
+								<div class="flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white ">
+									<span class="font-semibold text-base text-blue-500">S</span>
+								</div>
+								<div class="flex flex-col">
+									<p class="text-sm text-dark-800 font-medium">Startup Co</p>
+									<ul class="flex items-center text-xs text-dark-800/70 gap-3 text-nowrap">
+										<li class="relative">Enterprise
+											<span class="absolute top-1/2 -translate-y-1/2 -right-[7.5px]  size-[2px] rounded-full bg-blue-900/70"></span>
+										</li>
+										<li class="relative">23 Members</li>
+									</ul>
+								</div>
+							</div>
+							<div class="flex items-center gap-x-3 cursor-pointer">
+								<div class="flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white ">
+									<span class="font-semibold text-base text-blue-500">N</span>
+								</div>
+								<div class="flex flex-col">
+									<p class="text-sm text-dark-800 font-medium">Neo Tools</p>
+									<ul class="flex items-center text-xs text-dark-800/70 gap-3 text-nowrap">
+										<li class="relative">Free
+											<span class="absolute top-1/2 -translate-y-1/2 -right-[7.5px]  size-[2px] rounded-full bg-blue-900/70"></span>
+										</li>
+										<li class="relative">1 Member</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="mt-4 flex flex-col gap-y-2">
+							<button type="button" class="btn btn-primary-default rounded-lg">
+								<svg class="icon icon-sm">
+									<use href="#members-medium"></use>
+								</svg>
+								<span>
+									Invite Teammates
+								</span>
+							</button>
+							<button class="btn btn-border-default rounded-lg font-normal">Set Default Workspace</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='bottom-sheet hidden' data-sheet-modal='sheet-avatar'>
+			<div class='bottom-sheet-overlay'></div>
+			<div class='bottom-sheet-body'>
+				<div class='bottom-sheet-trigger'>
+					<span></span>
+				</div>
+				<div class='bottom-sheet-content'>
+					<ul class='flex flex-col px-2 pb-2'>
+						<li class='flex items-center gap-3 p-3.5'>
+							<div class='size-[42px] rounded-full overflow-hidden'>
+								<img class='size-full object-cover' src='./assets/images/avatar.png' alt='Avatar'>
+							</div>
+							<div>
+								<span class='text-sm font-semibold text-dark-800 mb-1'>John Doe</span>
+								<p class='text-dark-800/50 text-xs'>johndoe252@cironex.com</p>
+							</div>
+						</li>
+						<hr class='border-gray-500 mt-0 mb-2'>
+						<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+							<svg class='icon icon-md'>
+								<use href='#workspace'></use>
+							</svg>
+							<span>Workspace Settings</span>
+						</li>
+						<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+							<svg class='icon icon-md'>
+								<use href='#user'></use>
+							</svg>
+							<span>Profile Settings</span>
+						</li>
+						<hr class='border-gray-500 my-2'>
+						<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+							<svg class='icon icon-md'>
+								<use href='#download'></use>
+							</svg>
+							<span>Install Jumpshare</span>
+						</li>
+						<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+							<svg class='icon icon-md'>
+								<use href='#help'></use>
+							</svg>
+							<span>Help Center</span>
+						</li>
+						<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+							<svg class='icon icon-md'>
+								<use href='#message-alert'></use>
+							</svg>
+							<span>Send Feedback</span>
+						</li>
+						<hr class='border-gray-500 my-2'>
+						<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+							<svg class='icon icon-md'>
+								<use href='#sign-out'></use>
+							</svg>
+							<span>Sign Out</span>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 		<div id='upload-files-modal' class='hidden fixed inset-0 bg-blue-1000/70 z-999 justify-center items-center [&.active]:flex backdrop-blur-xs'>
@@ -242,7 +469,7 @@
 				<div class="mobile-menu-overlay absolute bg-[#090B13]/50 z-0 opacity-0 w-0 h-screen lg:hidden [.active_&]:opacity-100 [.active_&]:w-screen transition-all duration-500 ease-in-out delay-75"></div>
 				<div class='flex flex-col max-lg:w-[318px] max-lg:max-w-[318px] max-xs:w-[85%]! w-full bg-gray-150 max-lg:rounded-r-2xl z-3 h-full'>
 					<div class='dropdown-wrapper z-4'>
-						<a href='#' data-id='dropdown-workspaces' class='dropdown-button p-4 flex items-center justify-between relative [&.active]:bg-gray-300 transition-colors duration-300 max-lg:rounded-t-2xl'>
+						<a href='#' data-id='dropdown-workspaces' data-sheet-id='sheet-workspaces' class='dropdown-button p-4 flex items-center justify-between relative [&.active]:bg-gray-300 transition-colors duration-300 max-lg:rounded-t-2xl'>
 							<div class='flex items-center'>
 								<div class="flex items-center justify-between mr-3">
 									<div class='flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white'>
@@ -422,7 +649,7 @@
 							</form>
 							<div class='flex items-center gap-4'>
 								<div class='dropdown-wrapper'>
-									<a data-id="dropdown-notifications" href="#" class='dropdown-button size-12 flex justify-center items-center transition-colors hover:bg-gray-150 rounded-lg relative [&.active]:bg-gray-150 cursor-pointer'>
+									<a data-id="dropdown-notifications" data-sheet-id="sheet-notifications" href="#" class='dropdown-button size-12 flex justify-center items-center transition-colors hover:bg-gray-150 rounded-lg relative [&.active]:bg-gray-150 cursor-pointer'>
 										<svg class='icon icon-md'>
 											<use href='#bell'></use>
 										</svg>
@@ -436,7 +663,7 @@
 										<ul>
 											<li>
 												<a href="#" class='flex gap-3 items-start px-6 py-4 hover:bg-gray-150'>
-													<div class='mt-1 size-10 flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3 after:top-3.5 after:hidden'>
+													<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
 														<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
 													</div>
 													<div>
@@ -452,7 +679,7 @@
 											</li>
 											<li class='unread'>
 												<a href="#" class='flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150'>
-													<div class='mt-1 size-10 flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
+													<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
 														<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
 													</div>
 													<div>
@@ -468,7 +695,7 @@
 											</li>
 											<li>
 												<a href="#" class='flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150'>
-													<div class='mt-1 size-10 flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
+													<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
 														<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
 													</div>
 													<div>
@@ -483,7 +710,7 @@
 											</li>
 											<li>
 												<a href="#" class='flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150'>
-													<div class='mt-1 size-10 flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
+													<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
 														<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
 													</div>
 													<div>
@@ -498,7 +725,7 @@
 											</li>
 											<li>
 												<a href="#" class='flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150'>
-													<div class='mt-1 size-10 flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
+													<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
 														<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
 													</div>
 													<div>
@@ -516,7 +743,7 @@
 									</div>
 								</div>
 								<div class="dropdown-wrapper">
-									<a href='#' data-id="dropdown-avatar" class='dropdown-button flex gap-1.5 items-center cursor-pointer max-md:pr-3 [&.active]:bg-gray-150 px-2 h-12 rounded-lg'>
+									<a href='#' data-id="dropdown-avatar" data-sheet-id="sheet-avatar" class='dropdown-button flex gap-1.5 items-center cursor-pointer max-md:pr-3 [&.active]:bg-gray-150 px-2 h-12 rounded-lg'>
 										<div class='size-7.5 rounded-full overflow-hidden bg-gray-200 inset-ring-2 inset-ring-gray-100'>
 											<img src="./assets/images/avatar.png" alt="Avatar">
 										</div>
@@ -762,7 +989,7 @@
 								<div class='[.list-type_&]:flex items-center gap-2 justify-between max-md:justify-end pr-3 max-lg:not-[.list-type_&]:flex'>
 									<span class='hidden text-sm text-dark-800 md:[.list-type_&]:flex w-10 justify-center items-center'>12</span>
 									<div class='absolute right-2.5 top-1/2 -translate-y-1/2 max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:translate-y-0 [.list-type_&]:top-auto [.list-type_&]:translate-y-0 [.list-type_&]:static z-10'>
-										<button data-id="dropdown-settings" data-open-sheet class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer h-5 flex justify-center items-center transition-transform size-7 [&.active]">
+										<button data-id="dropdown-settings" data-sheet-id='menu-settings' class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer h-5 flex justify-center items-center transition-transform size-7 [&.active]">
 											<svg class='icon icon-md'>
 												<use href='#dots-horizontal'></use>
 											</svg>
@@ -896,7 +1123,7 @@
 								<div class='[.list-type_&]:flex items-center gap-2 justify-between max-md:justify-end pr-3 max-lg:not-[.list-type_&]:flex'>
 									<span class='hidden text-sm text-dark-800 md:[.list-type_&]:flex w-10 justify-center items-center'>12</span>
 									<div class='absolute right-2.5 top-1/2 -translate-y-1/2 max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:translate-y-0 [.list-type_&]:top-auto [.list-type_&]:translate-y-0 [.list-type_&]:static z-10'>
-										<button data-id="dropdown-settings" data-open-sheet class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer h-5 flex justify-center items-center transition-transform size-7 [&.active]">
+										<button data-id="dropdown-settings" data-sheet-id='menu-settings' class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer h-5 flex justify-center items-center transition-transform size-7 [&.active]">
 											<svg class='icon icon-md'>
 												<use href='#dots-horizontal'></use>
 											</svg>
@@ -1030,7 +1257,7 @@
 								<div class='[.list-type_&]:flex items-center gap-2 justify-between max-md:justify-end pr-3 max-lg:not-[.list-type_&]:flex'>
 									<span class='hidden text-sm text-dark-800 md:[.list-type_&]:flex w-10 justify-center items-center'>12</span>
 									<div class='absolute right-2.5 top-1/2 -translate-y-1/2 max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:translate-y-0 [.list-type_&]:top-auto [.list-type_&]:translate-y-0 [.list-type_&]:static z-10'>
-										<button data-id="dropdown-settings" data-open-sheet class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer h-5 flex justify-center items-center transition-transform size-7 [&.active]">
+										<button data-id="dropdown-settings" data-sheet-id='menu-settings' class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer h-5 flex justify-center items-center transition-transform size-7 [&.active]">
 											<svg class='icon icon-md'>
 												<use href='#dots-horizontal'></use>
 											</svg>
@@ -1164,7 +1391,7 @@
 								<div class='[.list-type_&]:flex items-center gap-2 justify-between max-md:justify-end pr-3 max-lg:not-[.list-type_&]:flex'>
 									<span class='hidden text-sm text-dark-800 md:[.list-type_&]:flex w-10 justify-center items-center'>12</span>
 									<div class='absolute right-2.5 top-1/2 -translate-y-1/2 max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:translate-y-0 [.list-type_&]:top-auto [.list-type_&]:translate-y-0 [.list-type_&]:static z-10'>
-										<button data-id="dropdown-settings" data-open-sheet class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer h-5 flex justify-center items-center transition-transform size-7 [&.active]:opacity-100">
+										<button data-id="dropdown-settings" data-sheet-id='menu-settings' class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer h-5 flex justify-center items-center transition-transform size-7 [&.active]:opacity-100">
 											<svg class='icon icon-md'>
 												<use href='#dots-horizontal'></use>
 											</svg>
@@ -1423,7 +1650,7 @@
 									</label>
 									<div class='file-item-nav'>
 										<button 
-										data-id='dropdown-settings' class='dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 transition-all hover:bg-gray-300' data-open-sheet>
+										data-id='dropdown-settings' class='dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 transition-all hover:bg-gray-300' data-sheet-id='menu-settings'>
 											<svg class='icon icon-md'>
 												<use href='#dots-horizontal'></use>
 											</svg>
@@ -1573,7 +1800,7 @@
 									</label>
 									<div class='file-item-nav'>
 										<button 
-										data-id='dropdown-settings' class='dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 transition-all hover:bg-gray-300' data-open-sheet>
+										data-id='dropdown-settings' class='dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 transition-all hover:bg-gray-300' data-sheet-id='menu-settings'>
 											<svg class='icon icon-md'>
 												<use href='#dots-horizontal'></use>
 											</svg>
@@ -1715,7 +1942,7 @@
 									</label>
 									<div class='file-item-nav'>
 										<button 
-										data-id='dropdown-settings' class='dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 transition-all hover:bg-gray-300' data-open-sheet>
+										data-id='dropdown-settings' class='dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 transition-all hover:bg-gray-300' data-sheet-id='menu-settings'>
 											<svg class='icon icon-md'>
 												<use href='#dots-horizontal'></use>
 											</svg>
@@ -1856,7 +2083,7 @@
 									</label>
 									<div class='file-item-nav'>
 										<button 
-										data-id='dropdown-settings' class='dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 transition-all hover:bg-gray-300' data-open-sheet>
+										data-id='dropdown-settings' class='dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 transition-all hover:bg-gray-300' data-sheet-id='menu-settings'>
 											<svg class='icon icon-md'>
 												<use href='#dots-horizontal'></use>
 											</svg>
