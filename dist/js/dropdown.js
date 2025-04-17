@@ -1,23 +1,59 @@
 const Dropdown = {
 	dropdownIdTimer: null,
 	resizeTimer: null,
+	sheets: {},
+	activeSheet: null,
+	isDragging: false,
+	dragStartY: 0,
+	isMobile: window.innerWidth < 1024,
+	showSheetTimeout: null,
+	scrollbarWidth: 0,
 
 	init() {	
 		this.dropdownIdTimer = null;
 		this.resizeTimer = null;
+		this.scrollbarWidth = this.getScrollbarWidth();
 		this.dropdownWrappers = $('.dropdown-wrapper');
 		this.dropdownButtons = $('.dropdown-button');
 		this.dropdownContents = $('.dropdown-content');
 		this.subMenuItems = $('.sub-menu-item');
+		this.initializeSheets();
 		this.bootstrap();
 		this.adjustElementPositionOnResize();
 		this.initGridDropdown();
 		this.initMobileGridDropdown();
 	},
 
+	initializeSheets() {
+		$('[data-sheet-modal]').each((_, element) => {
+			const $sheet = $(element);
+			const sheetId = $sheet.data('sheet-modal');
+			
+			this.sheets[sheetId] = {
+				element: $sheet,
+				overlay: $sheet.find('.bottom-sheet-overlay'),
+				body: $sheet.find('.bottom-sheet-body'),
+				content: $sheet.find('.bottom-sheet-content'),
+				trigger: $sheet.find('.bottom-sheet-trigger'),
+				height: 0,
+				defaultHeight: 0
+			};
+		});
+	},
+
 	bootstrap() {
 		this.dropdownButtons.on('click', (e) => {
-			this.handleDropdownClick(e);
+			const $button = $(e.currentTarget);
+			const sheetId = $button.data('sheet-id');
+			
+			if (sheetId && this.isMobile) {
+				e.preventDefault();
+				e.stopImmediatePropagation();
+				this.openSheet(sheetId);
+				$('html').addClass('overflow-hidden');
+			} else {
+				this.handleDropdownClick(e);
+			}
 		});
 
 		this.subMenuItems.on('click', (e) => {
@@ -26,6 +62,46 @@ const Dropdown = {
 
 		$(document).on('click', (e) => {
 			this.handleDocumentClick(e);
+		});
+
+		$('[data-sheet-item-id]').on('click', (e) => {
+			e.preventDefault();
+			e.stopImmediatePropagation();
+			const itemId = $(e.currentTarget).data('sheet-item-id');
+			this.openSubMenu(itemId);
+		});
+		
+		$('.sub-sheet-menu .go-back').on('click', (e) => {
+			e.preventDefault();
+			e.stopImmediatePropagation();
+			this.closeSubMenu();
+		});
+		
+		$('.bottom-sheet-trigger').on('mousedown touchstart', (e) => {
+			this.handleDragStart(e);
+		});
+		
+		$(window).on('mousemove touchmove', (e) => {
+			this.handleDragMove(e);
+		});
+		
+		$(window).on('mouseup touchend', () => {
+			this.handleDragEnd();
+		});
+		
+		$('.bottom-sheet-overlay').on('click', () => {
+			this.closeActiveSheet();
+			$('html').removeClass('overflow-hidden');
+		});
+		
+		$(window).on('resize', () => {
+			this.isMobile = window.innerWidth < 1024;
+			if (!this.isMobile) {
+				this.closeActiveSheet();
+			} else if (this.activeSheet) {
+				this.calculateContentHeight(this.sheets[this.activeSheet]);
+				this.setSheetHeight(this.sheets[this.activeSheet], this.sheets[this.activeSheet].defaultHeight);
+			}
 		});
 	},
 
@@ -199,6 +275,159 @@ const Dropdown = {
 				}
 			}
 		});
+	},
+
+	getScrollbarWidth() {
+		const outer = document.createElement('div');
+		outer.style.visibility = 'hidden';
+		outer.style.overflow = 'scroll';
+		outer.style.msOverflowStyle = 'scrollbar';
+		document.body.appendChild(outer);
+		
+		const inner = document.createElement('div');
+		outer.appendChild(inner);
+		
+		const scrollbarWidth = outer.offsetWidth - inner.offsetWidth;
+		
+		outer.parentNode.removeChild(outer);
+		return scrollbarWidth;
+	},
+	
+	openSheet(sheetId) {
+		const sheet = this.sheets[sheetId];
+		if (!sheet) return;
+		
+		this.activeSheet = sheetId;
+		
+		$('html').css('padding-right', `${this.scrollbarWidth}px`);
+		$('html').addClass('overflow-hidden');
+		
+		sheet.element.removeClass('hidden');
+		clearTimeout(this.showSheetTimeout);
+		sheet.body.css('height', 'auto');
+		this.calculateContentHeight(sheet);
+		sheet.body.css('height', '0');
+		this.showSheetTimeout = setTimeout(() => {
+			this.setSheetHeight(sheet, sheet.defaultHeight);
+			sheet.element.addClass('show-sheet');
+		}, 10);
+	},
+	
+	openSubMenu(itemId) {
+		if (!this.activeSheet) return;
+		
+		const sheet = this.sheets[this.activeSheet];
+		const subMenu = sheet.element.find(`[data-sheet-menu-id="${itemId}"]`);
+		
+		if (!subMenu.length) return;
+		
+		sheet.element.find('.primary-sheet-menu').addClass('hidden');
+		
+		subMenu.removeClass('hidden');
+		clearTimeout(this.showSheetTimeout);
+		this.showSheetTimeout = setTimeout(() => {
+			this.calculateContentHeight(sheet);
+			this.setSheetHeight(sheet, sheet.defaultHeight);
+		}, 10);
+	},
+	
+	closeSubMenu() {
+		if (!this.activeSheet) return;
+		
+		const sheet = this.sheets[this.activeSheet];
+		
+		sheet.element.find('.sub-sheet-menu').addClass('hidden');
+		
+		sheet.element.find('.primary-sheet-menu').removeClass('hidden');
+		
+		clearTimeout(this.showSheetTimeout);
+		this.showSheetTimeout = setTimeout(() => {
+			this.calculateContentHeight(sheet);
+			this.setSheetHeight(sheet, sheet.defaultHeight);
+		}, 10);
+	},
+	
+	closeActiveSheet() {
+		if (!this.activeSheet) return;
+		
+		const sheet = this.sheets[this.activeSheet];
+		this.setSheetHeight(sheet, 0);
+		sheet.element.removeClass('show-sheet');
+		
+		sheet.element.find('.sub-sheet-menu').addClass('hidden');
+		sheet.element.find('.primary-sheet-menu').removeClass('hidden');
+		$('html').css('padding-right', '0');
+		$('html').removeClass('overflow-hidden');
+
+		setTimeout(() => {
+			sheet.element.addClass('hidden');
+			this.activeSheet = null;
+		}, 500);
+	},
+	
+	calculateContentHeight(sheet) {
+		const body = sheet.content;
+		
+		const contentHeight = body[0].scrollHeight;
+		const windowHeight = window.innerHeight;
+		const heightPercent = (contentHeight / windowHeight) * 100;
+		
+		sheet.height = heightPercent;
+		sheet.defaultHeight = heightPercent;
+		
+		return heightPercent;
+	},
+	
+	setSheetHeight(sheet, value) {
+		const height = Math.max(0, Math.min(100, value));
+		const windowHeight = window.innerHeight;
+		const heightInPixels = (height * windowHeight) / 100;
+		
+		sheet.body.css({
+			'height': `${heightInPixels}px`,
+		});
+		sheet.height = height;
+	},
+	
+	handleDragStart(event) {
+		if (!this.activeSheet) return;
+		
+		this.isDragging = true;
+		this.dragStartY = event.touches ? event.touches[0].pageY : event.pageY;
+		
+		const sheet = this.sheets[this.activeSheet];
+		sheet.body.addClass('not-selectable');
+		sheet.trigger.css('cursor', 'grabbing');
+		$('body').css('cursor', 'grabbing');
+	},
+	
+	handleDragMove(event) {
+		if (!this.isDragging || !this.activeSheet) return;
+		
+		const sheet = this.sheets[this.activeSheet];
+		const currentY = event.touches ? event.touches[0].pageY : event.pageY;
+		const deltaY = this.dragStartY - currentY;
+		const deltaHeight = (deltaY / window.innerHeight) * 100;
+		
+		this.setSheetHeight(sheet, sheet.height + deltaHeight);
+		this.dragStartY = currentY;
+	},
+	
+	handleDragEnd() {
+		if (!this.isDragging || !this.activeSheet) return;
+		
+		this.isDragging = false;
+		const sheet = this.sheets[this.activeSheet];
+		
+		sheet.body.removeClass('not-selectable');
+		sheet.trigger.css('cursor', '');
+		$('body').css('cursor', '');
+		
+		if (sheet.height < 25) {
+			this.closeActiveSheet();
+		} else {
+			this.setSheetHeight(sheet, sheet.defaultHeight);
+		}
 	}
 };
 
