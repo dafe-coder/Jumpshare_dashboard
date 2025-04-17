@@ -193,14 +193,14 @@
 	.js-dropdown {
 		@apply bg-white shadow-dropdown border border-gray-400 p-2 rounded-lg w-[14rem] absolute left-full top-2.5 z-10 [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto;
 		.js-dropdown-list-item {
-			@apply text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-150 rounded-md cursor-pointer;
+			@apply text-dark-800 text-sm font-normal flex items-center gap-2 p-2 hover:bg-gray-150 rounded-md cursor-pointer;
 		}
 		@media (min-width: 1024px) {
 			.js-dropdown-sub-list {
 				@apply w-[13rem] absolute bg-white shadow-dropdown border border-gray-400 p-2 rounded-lg left-full top-0! flex-col [&.active]:flex text-sm ml-[7px] [.adjust-position-right_&]:mr-[7px] [.adjust-position-right_&]:ml-auto;
 			}
 			.js-dropdown-body {
-				@apply h-auto!;
+				@apply h-auto! w-full!;
 			}
 		}
 		@media (max-width: 1024px) {

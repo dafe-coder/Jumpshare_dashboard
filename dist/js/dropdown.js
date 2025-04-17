@@ -121,12 +121,12 @@ const Dropdown = {
 		
 		if(!$button.hasClass('active')) {
 			this.subMenuItems.removeClass('active');
-			this.dropdownContents.removeClass('active').css('display', 'none');
+			this.dropdownContents.removeClass('active').addClass('hidden');
 			this.dropdownWrappers.removeClass('active');
 			this.dropdownButtons.removeClass('active');
 			$button.addClass('active');
 			$wrapper.addClass('active');
-			$content.css('display', 'block');
+			$content.removeClass('hidden');
 			
 			clearTimeout(this.dropdownIdTimer);
 			this.dropdownIdTimer = setTimeout(() => {
@@ -136,7 +136,7 @@ const Dropdown = {
 		} else {
 			$button.removeClass('active');
 			$wrapper.removeClass('active');
-			$content.removeClass('active').css('display', 'none');
+			$content.removeClass('active').addClass('hidden');
 		}
 	},
 
@@ -153,15 +153,15 @@ const Dropdown = {
 		} else {
 			// Для десктопа
 			this.subMenuItems.not($item).removeClass('active');
-			this.subMenuItems.not($item).find('.js-dropdown-sub-list').css('display', 'none');
+			this.subMenuItems.not($item).find('.js-dropdown-sub-list').addClass('hidden');
 			
 			if(!$item.hasClass('active')) {
 				$item.addClass('active');
-				$content.css('display', 'block');
+				$content.removeClass('hidden');
 				this.adjustElementPosition($content);
 			} else {
 				$item.removeClass('active');
-				$content.css('display', 'none');
+				$content.addClass('hidden');
 			}
 		}
 	},
@@ -170,14 +170,15 @@ const Dropdown = {
 		const $dropdown = $(e.target).closest('.dropdown-wrapper');
 		
 		if (!$dropdown.length) {
-			this.dropdownContents.removeClass('active').css('display', 'none');
+			this.dropdownContents.removeClass('active').addClass('hidden');
 			this.dropdownButtons.removeClass('active');
 			this.dropdownWrappers.removeClass('active');
 			this.subMenuItems.removeClass('active');
+			$('.js-dropdown-sub-list').removeClass('active').addClass('hidden');
 			
 			clearTimeout(this.dropdownIdTimer);
 			this.dropdownIdTimer = setTimeout(() => {
-				this.dropdownContents.css('display', 'none');
+				this.dropdownContents.addClass('hidden');
 			}, 150);
 		}
 	},
@@ -238,7 +239,7 @@ const Dropdown = {
 			
 			clearTimeout(this.dropdownIdTimer);
 			this.dropdownIdTimer = setTimeout(() => {
-				$content.css('display', 'none');
+				$content.addClass('hidden');
 			}, 150);
 
 			const contentType = $(e.currentTarget).attr('data-link-type');
@@ -395,9 +396,9 @@ const Dropdown = {
 	},
 	
 	setSheetHeight(sheet, value) {
-		const height = Math.max(0, Math.min(100, value));
-		const windowHeight = window.innerHeight;
-		const heightInPixels = (height * windowHeight) / 100;
+		const height = Math.max(0, Math.min(80, value));
+		const viewportHeight = window.innerHeight;
+		const heightInPixels = (height * viewportHeight) / 100;
 		
 		sheet.body.css({
 			'height': `${heightInPixels}px`,
@@ -423,9 +424,15 @@ const Dropdown = {
 		const sheet = this.sheets[this.activeSheet];
 		const currentY = event.touches ? event.touches[0].pageY : event.pageY;
 		const deltaY = this.dragStartY - currentY;
-		const deltaHeight = (deltaY / window.innerHeight) * 100;
 		
-		this.setSheetHeight(sheet, sheet.height + deltaHeight);
+		// Используем viewport height для расчета
+		const viewportHeight = window.innerHeight;
+		const deltaHeight = (deltaY / viewportHeight) * 100;
+		
+		// Ограничиваем максимальную высоту 80% от viewport
+		const newHeight = Math.min(80, sheet.height + deltaHeight);
+		this.setSheetHeight(sheet, newHeight);
+		
 		this.dragStartY = currentY;
 	},
 	
