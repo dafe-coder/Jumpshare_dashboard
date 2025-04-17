@@ -15,7 +15,7 @@ const Dropdown = {
 		this.scrollbarWidth = this.getScrollbarWidth();
 		this.dropdownWrappers = $('.dropdown-wrapper');
 		this.dropdownButtons = $('.dropdown-button');
-		this.dropdownContents = $('.dropdown-content');
+		this.dropdownContents = $('.js-dropdown');
 		this.subMenuItems = $('.sub-menu-item');
 		this.initializeSheets();
 		this.bootstrap();
@@ -27,14 +27,14 @@ const Dropdown = {
 	initializeSheets() {
 		$('[data-sheet-modal]').each((_, element) => {
 			const $sheet = $(element);
-			const sheetId = $sheet.data('sheet-modal');
+			const sheetId = $sheet.data('dropdown-id');
 			
 			this.sheets[sheetId] = {
 				element: $sheet,
-				overlay: $sheet.find('.bottom-sheet-overlay'),
-				body: $sheet.find('.bottom-sheet-body'),
-				content: $sheet.find('.bottom-sheet-content'),
-				trigger: $sheet.find('.bottom-sheet-trigger'),
+				overlay: $sheet.find('.js-dropdown-overlay'),
+				body: $sheet.find('.js-dropdown-body'),
+				content: $sheet.find('.js-dropdown-content'),
+				trigger: $sheet.find('.js-dropdown-trigger'),
 				height: 0,
 				defaultHeight: 0
 			};
@@ -42,14 +42,18 @@ const Dropdown = {
 	},
 
 	bootstrap() {
+		this.dropdownContents.on('click', (e) => {
+			e.preventDefault();
+		});
+
 		this.dropdownButtons.on('click', (e) => {
 			const $button = $(e.currentTarget);
-			const sheetId = $button.data('sheet-id');
+			const dropdownId = $button.attr('data-id');
 			
-			if (sheetId && this.isMobile) {
+			if (this.isMobile) {
 				e.preventDefault();
 				e.stopImmediatePropagation();
-				this.openSheet(sheetId);
+				this.openSheet(dropdownId);
 				$('html').addClass('overflow-hidden');
 			} else {
 				this.handleDropdownClick(e);
@@ -64,24 +68,26 @@ const Dropdown = {
 			this.handleDocumentClick(e);
 		});
 
-		$('[data-sheet-item-id]').on('click', (e) => {
+		$('[data-dropdown-sub-id]').on('click', (e) => {
 			e.preventDefault();
 			e.stopImmediatePropagation();
-			const itemId = $(e.currentTarget).data('sheet-item-id');
+			const itemId = $(e.currentTarget).data('dropdown-sub-id');
 			this.openSubMenu(itemId);
 		});
 		
-		$('.sub-sheet-menu .go-back').on('click', (e) => {
+		$('.js-dropdown-sub-list .go-back').on('click', (e) => {
 			e.preventDefault();
 			e.stopImmediatePropagation();
 			this.closeSubMenu();
 		});
 		
-		$('.bottom-sheet-trigger').on('mousedown touchstart', (e) => {
+		$('.js-dropdown-trigger').on('mousedown touchstart', (e) => {
+			e.preventDefault();
 			this.handleDragStart(e);
 		});
 		
 		$(window).on('mousemove touchmove', (e) => {
+			e.preventDefault();
 			this.handleDragMove(e);
 		});
 		
@@ -89,7 +95,7 @@ const Dropdown = {
 			this.handleDragEnd();
 		});
 		
-		$('.bottom-sheet-overlay').on('click', () => {
+		$('.js-dropdown-overlay').on('click', () => {
 			this.closeActiveSheet();
 			$('html').removeClass('overflow-hidden');
 		});
@@ -111,7 +117,7 @@ const Dropdown = {
 		const dropdownId = $button.attr('data-id');
 		
 		const $wrapper = $button.closest('.dropdown-wrapper');
-		const $content = $wrapper.find(`.dropdown-content[data-dropdown-id="${dropdownId}"]`);
+		const $content = $wrapper.find(`.js-dropdown[data-dropdown-id="${dropdownId}"]`);
 		
 		if(!$button.hasClass('active')) {
 			this.subMenuItems.removeClass('active');
@@ -137,18 +143,26 @@ const Dropdown = {
 	handleSubMenuItemClick(e) {
 		e.preventDefault();
 		const $item = $(e.currentTarget);
-		const $content = $item.find('.dropdown-content');
+		const $content = $item.find('.js-dropdown-sub-list');
 		
-		this.subMenuItems.not($item).removeClass('active');
-		this.subMenuItems.not($item).find('.dropdown-content').css('display', 'none');
-		
-		if(!$item.hasClass('active')) {
-			$item.addClass('active');
-			$content.css('display', 'block');
-			this.adjustElementPosition($content);
+		if (this.isMobile) {
+			const itemId = $item.data('sheet-item-id');
+			if (itemId) {
+				this.openSubMenu(itemId);
+			}
 		} else {
-			$item.removeClass('active');
-			$content.css('display', 'none');
+			// Для десктопа
+			this.subMenuItems.not($item).removeClass('active');
+			this.subMenuItems.not($item).find('.js-dropdown-sub-list').css('display', 'none');
+			
+			if(!$item.hasClass('active')) {
+				$item.addClass('active');
+				$content.css('display', 'block');
+				this.adjustElementPosition($content);
+			} else {
+				$item.removeClass('active');
+				$content.css('display', 'none');
+			}
 		}
 	},
 
@@ -169,7 +183,7 @@ const Dropdown = {
 	},
 
 	adjustElementPosition($element) {
-		const hasSubContent = $element.closest('.sub-menu-item').children('.dropdown-sub-content').length > 0;
+		const hasSubContent = $element.closest('.sub-menu-item').children('.js-dropdown-sub-list').length > 0;
 			
 		if($element.attr('data-dropdown-id') === 'dropdown-settings' || hasSubContent) {
 			$element.css({
@@ -214,7 +228,7 @@ const Dropdown = {
 		$("[data-dropdown-id='dropdown-grid'] a").on("click", (e) => {
 			e.preventDefault();
 			const $button = $(e.currentTarget).closest('.dropdown-wrapper').find('.dropdown-button');
-			const $content = $(e.currentTarget).closest('.dropdown-content');
+			const $content = $(e.currentTarget).closest('.js-dropdown');
 			const $svg = $(e.currentTarget).find('svg');
 
 			$button.find('svg').replaceWith($svg.clone());
@@ -317,13 +331,15 @@ const Dropdown = {
 		if (!this.activeSheet) return;
 		
 		const sheet = this.sheets[this.activeSheet];
-		const subMenu = sheet.element.find(`[data-sheet-menu-id="${itemId}"]`);
-		
+		const subMenu = sheet.element.find(`[data-dropdown-sub="${itemId}"]`);
+			
 		if (!subMenu.length) return;
 		
-		sheet.element.find('.primary-sheet-menu').addClass('hidden');
+		sheet.element.find('.js-dropdown-primary-list').addClass('hidden');
 		
 		subMenu.removeClass('hidden');
+		console.log(subMenu);
+		
 		clearTimeout(this.showSheetTimeout);
 		this.showSheetTimeout = setTimeout(() => {
 			this.calculateContentHeight(sheet);
@@ -336,9 +352,9 @@ const Dropdown = {
 		
 		const sheet = this.sheets[this.activeSheet];
 		
-		sheet.element.find('.sub-sheet-menu').addClass('hidden');
+		sheet.element.find('.js-dropdown-sub-list').addClass('hidden');
 		
-		sheet.element.find('.primary-sheet-menu').removeClass('hidden');
+		sheet.element.find('.js-dropdown-primary-list').removeClass('hidden');
 		
 		clearTimeout(this.showSheetTimeout);
 		this.showSheetTimeout = setTimeout(() => {
@@ -354,8 +370,8 @@ const Dropdown = {
 		this.setSheetHeight(sheet, 0);
 		sheet.element.removeClass('show-sheet');
 		
-		sheet.element.find('.sub-sheet-menu').addClass('hidden');
-		sheet.element.find('.primary-sheet-menu').removeClass('hidden');
+		sheet.element.find('.js-dropdown-sub-list').addClass('hidden');
+		sheet.element.find('.js-dropdown-primary-list').removeClass('hidden');
 		$('html').css('padding-right', '0');
 		$('html').removeClass('overflow-hidden');
 

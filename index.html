@@ -884,13 +884,13 @@
 								</div>
 								<div class='[.list-type_&]:flex items-center gap-2 justify-between max-md:justify-end pr-3 max-lg:not-[.list-type_&]:flex'>
 									<span class='hidden text-sm text-dark-800 md:[.list-type_&]:flex w-10 justify-center items-center'>12</span>
-									<div class='absolute right-2.5 top-1/2 -mt-5 max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:mt-0 [.list-type_&]:top-auto [.list-type_&]:mt-0 [.list-type_&]:static z-10'>
-										<button data-id="dropdown-settings" data-sheet-id='menu-settings' class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer h-5 flex justify-center items-center transition-transform size-7 [&.active]">
+									<div class='dropdown-wrapper absolute right-2.5 top-1/2 -mt-[9px] max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:mt-0 [.list-type_&]:top-auto [.list-type_&]:mt-0 [.list-type_&]:static'>
+										<button data-id="dropdown-settings" class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer h-5 flex justify-center items-center transition-transform size-7 [&.active]">
 											<svg class='icon icon-md'>
 												<use href='#dots-horizontal'></use>
 											</svg>
 										</button>
-										<div class='js-dropdown' data-dropdown-id='dropdown-settings' data-sheet-modal>
+										<div class='js-dropdown hidden' data-dropdown-id='dropdown-settings' data-sheet-modal>
 											<div class='js-dropdown-overlay'></div>
 											<div class='js-dropdown-body'>
 												<div class='js-dropdown-trigger'>
@@ -953,7 +953,7 @@
 															</svg>
 															<span>Copy / Move</span>
 														</li>
-														<li data-sheet-item-id="version-history" class='js-dropdown-list-item relative sub-menu-item'>
+														<li data-dropdown-sub-id="version-history" class='js-dropdown-list-item relative sub-menu-item'>
 															<svg class='icon icon-md'>
 																<use href='#clock'></use>
 															</svg>
@@ -961,7 +961,7 @@
 															<svg class='icon icon-md absolute top-1/2 -translate-y-1/2 right-1'>
 																<use href='#check-right'></use>
 															</svg>
-															<ul class='dropdown-content dropdown-sub-list hidden'>
+															<ul class='dropdown-content js-dropdown-sub-list hidden'>
 																<li class='sub-menu-item js-dropdown-list-item'>
 																	<svg class='icon icon-md'>
 																		<use href='#upload'></use>
@@ -984,7 +984,7 @@
 															<span>Delete</span>
 														</li>
 													</ul>
-													<ul class='js-dropdown-list js-dropdown-sub-list hidden' data-sheet-menu-id='version-history'>
+													<ul class='js-dropdown-list js-dropdown-sub-list hidden' data-dropdown-sub='version-history'>
 														<li class='go-back js-dropdown-list-item'>
 															<svg class='icon icon-md'>
 																<use href='#arrow-left'></use>

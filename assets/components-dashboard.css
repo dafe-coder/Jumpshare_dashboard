@@ -195,11 +195,16 @@
 		.js-dropdown-list-item {
 			@apply text-dark-800 font-normal flex items-center gap-2 p-2 hover:bg-gray-150 rounded-md cursor-pointer;
 		}
-		.js-dropdown-sub-list {
-			@apply w-[13rem] top-0! flex-col [&.active]:flex text-sm ml-[7px] [.adjust-position-right_&]:mr-[7px] [.adjust-position-right_&]:ml-auto;
+		@media (min-width: 1024px) {
+			.js-dropdown-sub-list {
+				@apply w-[13rem] absolute bg-white shadow-dropdown border border-gray-400 p-2 rounded-lg left-full top-0! flex-col [&.active]:flex text-sm ml-[7px] [.adjust-position-right_&]:mr-[7px] [.adjust-position-right_&]:ml-auto;
+			}
+			.js-dropdown-body {
+				@apply h-auto!;
+			}
 		}
 		@media (max-width: 1024px) {
-			@apply fixed bottom-0 left-0 right-0 top-0 z-10000! size-full flex items-end justify-center transition-all duration-500 ease-in-out p-0 bg-transparent;
+			@apply fixed bottom-0! left-0! right-0! top-0! z-10000! size-full flex items-end! justify-center! transition-all duration-500 ease-in-out p-0 bg-transparent border-none;
 
 			.js-dropdown-list {
 				@apply px-2 w-full h-auto pb-2;
@@ -220,7 +225,7 @@
 				}
 			}
 			.js-dropdown-content {
-				@apply overflow-auto h-auto pt-6;
+				@apply overflow-auto! h-auto max-h-full pt-6;
 				scrollbar-width: none;
 				-ms-overflow-style: none;
 				-webkit-overflow-scrolling: touch;

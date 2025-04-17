@@ -128,26 +128,60 @@ $(document).ready(function() {
 	
 	dragAndDrop.on('dragenter', function(e) {
 		e.preventDefault();
-		dragCounter++;
+		const dataTransfer = e.originalEvent.dataTransfer;
+		
+		if (dataTransfer.types.includes('Files')) {
+			dragCounter++;
+			
+			if(dragCounter === 1) {
+				uploadFilesModal.addClass('active');
+				dragAndDrop.addClass('active');
+			}
+		}
+	});
 
-		if(dragCounter === 1) {
-			uploadFilesModal.addClass('active');
-			dragAndDrop.addClass('active');
+	dragAndDrop.on('dragover', function(e) {
+		e.preventDefault();
+		const dataTransfer = e.originalEvent.dataTransfer;
+		
+		if (dataTransfer.types.includes('Files')) {
+			dataTransfer.dropEffect = 'copy';
 		}
 	});
 
 	dragAndDrop.on('dragleave', function(e) {
 		e.preventDefault();
-		dragCounter--;
-
-		if(dragCounter === 0) {
-			uploadFilesModal.removeClass('active');
-			dragAndDrop.removeClass('active');
+		const dataTransfer = e.originalEvent.dataTransfer;
+		
+		if (dataTransfer.types.includes('Files')) {
+			dragCounter--;
+			
+			if(dragCounter === 0) {
+				uploadFilesModal.removeClass('active');
+				dragAndDrop.removeClass('active');
+			}
 		}
 	});
 
 	dragAndDrop.on('drop', function(e) {
 		e.preventDefault();
+		const dataTransfer = e.originalEvent.dataTransfer;
+		
+		if (dataTransfer.types.includes('Files')) {
+			const files = Array.from(dataTransfer.files);
+			const validFiles = files.filter(file => {
+				const type = file.type;
+				return type.startsWith('image/') || 
+					   type.startsWith('video/') || 
+					   type.startsWith('application/');
+			});
+			
+			if (validFiles.length > 0) {
+				// Здесь можно добавить обработку загруженных файлов
+				console.log('Valid files dropped:', validFiles);
+			}
+		}
+		
 		dragCounter = 0;
 		uploadFilesModal.removeClass('active');
 		dragAndDrop.removeClass('active');
@@ -155,9 +189,13 @@ $(document).ready(function() {
 
 	dragAndDrop.on('dragend', function(e) {
 		e.preventDefault();
-		dragCounter = 0;
-		uploadFilesModal.removeClass('active');
-		dragAndDrop.removeClass('active');
+		const dataTransfer = e.originalEvent.dataTransfer;
+		
+		if (dataTransfer.types.includes('Files')) {
+			dragCounter = 0;
+			uploadFilesModal.removeClass('active');
+			dragAndDrop.removeClass('active');
+		}
 	});
 	
 
