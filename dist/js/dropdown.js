@@ -49,11 +49,15 @@ const Dropdown = {
 		this.dropdownButtons.on('click', (e) => {
 			const $button = $(e.currentTarget);
 			const dropdownId = $button.attr('data-id');
+			const $wrapper = $button.closest('.dropdown-wrapper');
 			
-			if (this.isMobile) {
+			const $sheetModal = $wrapper.find(`[data-sheet-modal][data-dropdown-id="${dropdownId}"]`);
+			const hasSheetModal = $sheetModal.length > 0;
+			
+			if (this.isMobile && hasSheetModal) {
 				e.preventDefault();
 				e.stopImmediatePropagation();
-				this.openSheet(dropdownId);
+				this.openSheet($sheetModal);
 				$('html').addClass('overflow-hidden');
 			} else {
 				this.handleDropdownClick(e);
@@ -61,7 +65,21 @@ const Dropdown = {
 		});
 
 		this.subMenuItems.on('click', (e) => {
-			this.handleSubMenuItemClick(e);
+			const $item = $(e.currentTarget);
+			const $wrapper = $item.closest('.dropdown-wrapper');
+			const dropdownId = $item.closest('.js-dropdown').attr('data-dropdown-id');
+			
+			const $sheetModal = $wrapper.find(`[data-sheet-modal][data-dropdown-id="${dropdownId}"]`);
+			const hasSheetModal = $sheetModal.length > 0;
+			
+			if (this.isMobile && hasSheetModal) {
+				const itemId = $item.data('sheet-item-id');
+				if (itemId) {
+					this.openSubMenu(itemId);
+				}
+			} else {
+				this.handleSubMenuItemClick(e);
+			}
 		});
 
 		$(document).on('click', (e) => {
@@ -102,11 +120,20 @@ const Dropdown = {
 		
 		$(window).on('resize', () => {
 			this.isMobile = window.innerWidth < 1024;
-			if (!this.isMobile) {
+			
+			if (this.isMobile) {
+				this.dropdownContents.removeClass('active').addClass('hidden');
+				this.dropdownButtons.removeClass('active');
+				this.dropdownWrappers.removeClass('active');
+				this.subMenuItems.removeClass('active');
+				$('.js-dropdown-sub-list').removeClass('active').addClass('hidden');
+			} else {
 				this.closeActiveSheet();
-			} else if (this.activeSheet) {
-				this.calculateContentHeight(this.sheets[this.activeSheet]);
-				this.setSheetHeight(this.sheets[this.activeSheet], this.sheets[this.activeSheet].defaultHeight);
+			}
+			
+			if (this.activeSheet) {
+				this.calculateContentHeight(this.activeSheet);
+				this.setSheetHeight(this.activeSheet, this.activeSheet.data('default-height') || 0);
 			}
 		});
 	},
@@ -120,10 +147,14 @@ const Dropdown = {
 		const $content = $wrapper.find(`.js-dropdown[data-dropdown-id="${dropdownId}"]`);
 		
 		if(!$button.hasClass('active')) {
+			// Close all other dropdowns
+			this.dropdownContents.not($content).removeClass('active').addClass('hidden');
+			this.dropdownButtons.not($button).removeClass('active');
+			this.dropdownWrappers.not($wrapper).removeClass('active');
 			this.subMenuItems.removeClass('active');
-			this.dropdownContents.removeClass('active').addClass('hidden');
-			this.dropdownWrappers.removeClass('active');
-			this.dropdownButtons.removeClass('active');
+			$('.js-dropdown-sub-list').removeClass('active').addClass('hidden');
+			
+			// Open current dropdown
 			$button.addClass('active');
 			$wrapper.addClass('active');
 			$content.removeClass('hidden');
@@ -134,6 +165,7 @@ const Dropdown = {
 				this.adjustElementPosition($content);
 			}, 10);
 		} else {
+			// Close current dropdown
 			$button.removeClass('active');
 			$wrapper.removeClass('active');
 			$content.removeClass('active').addClass('hidden');
@@ -184,6 +216,10 @@ const Dropdown = {
 	},
 
 	adjustElementPosition($element) {
+		if (!$element || !$element.length) {
+			return;
+		}
+
 		const hasSubContent = $element.closest('.sub-menu-item').children('.js-dropdown-sub-list').length > 0;
 			
 		if($element.attr('data-dropdown-id') === 'dropdown-settings' || hasSubContent) {
@@ -308,102 +344,94 @@ const Dropdown = {
 		return scrollbarWidth;
 	},
 	
-	openSheet(sheetId) {
-		const sheet = this.sheets[sheetId];
-		if (!sheet) return;
-		
-		this.activeSheet = sheetId;
+	openSheet($sheetModal) {
+		MobileMenu.closeMobileMenu();
+		if (this.activeSheet) {
+			this.closeActiveSheet();
+		}
+
+		this.activeSheet = $sheetModal;
 		
 		$('html').css('padding-right', `${this.scrollbarWidth}px`);
 		$('html').addClass('overflow-hidden');
 		
-		sheet.element.removeClass('hidden');
+		$sheetModal.removeClass('hidden');
 		clearTimeout(this.showSheetTimeout);
-		sheet.body.css('height', 'auto');
-		this.calculateContentHeight(sheet);
-		sheet.body.css('height', '0');
+		$sheetModal.find('.js-dropdown-body').css('height', 'auto');
+		this.calculateContentHeight($sheetModal);
+		$sheetModal.find('.js-dropdown-body').css('height', '0');
 		this.showSheetTimeout = setTimeout(() => {
-			this.setSheetHeight(sheet, sheet.defaultHeight);
-			sheet.element.addClass('show-sheet');
+			this.setSheetHeight($sheetModal, $sheetModal.data('default-height') || 0);
+			$sheetModal.addClass('show-sheet');
 		}, 10);
 	},
 	
 	openSubMenu(itemId) {
 		if (!this.activeSheet) return;
 		
-		const sheet = this.sheets[this.activeSheet];
-		const subMenu = sheet.element.find(`[data-dropdown-sub="${itemId}"]`);
+		const $sheetModal = this.activeSheet;
+		const $subMenu = $sheetModal.find(`[data-dropdown-sub="${itemId}"]`);
 			
-		if (!subMenu.length) return;
+		if (!$subMenu.length) return;
 		
-		sheet.element.find('.js-dropdown-primary-list').addClass('hidden');
-		
-		subMenu.removeClass('hidden');
-		console.log(subMenu);
+		$sheetModal.find('.js-dropdown-primary-list').addClass('hidden');
+		$subMenu.removeClass('hidden');
 		
 		clearTimeout(this.showSheetTimeout);
 		this.showSheetTimeout = setTimeout(() => {
-			this.calculateContentHeight(sheet);
-			this.setSheetHeight(sheet, sheet.defaultHeight);
+			this.calculateContentHeight($sheetModal);
+			this.setSheetHeight($sheetModal, $sheetModal.data('default-height') || 0);
 		}, 10);
 	},
 	
 	closeSubMenu() {
 		if (!this.activeSheet) return;
 		
-		const sheet = this.sheets[this.activeSheet];
+		const $sheetModal = this.activeSheet;
 		
-		sheet.element.find('.js-dropdown-sub-list').addClass('hidden');
-		
-		sheet.element.find('.js-dropdown-primary-list').removeClass('hidden');
+		$sheetModal.find('.js-dropdown-sub-list').addClass('hidden');
+		$sheetModal.find('.js-dropdown-primary-list').removeClass('hidden');
 		
 		clearTimeout(this.showSheetTimeout);
 		this.showSheetTimeout = setTimeout(() => {
-			this.calculateContentHeight(sheet);
-			this.setSheetHeight(sheet, sheet.defaultHeight);
+			this.calculateContentHeight($sheetModal);
+			this.setSheetHeight($sheetModal, $sheetModal.data('default-height') || 0);
 		}, 10);
 	},
 	
 	closeActiveSheet() {
-		if (!this.activeSheet) return;
-		
-		const sheet = this.sheets[this.activeSheet];
-		this.setSheetHeight(sheet, 0);
-		sheet.element.removeClass('show-sheet');
-		
-		sheet.element.find('.js-dropdown-sub-list').addClass('hidden');
-		sheet.element.find('.js-dropdown-primary-list').removeClass('hidden');
-		$('html').css('padding-right', '0');
-		$('html').removeClass('overflow-hidden');
+		if (this.activeSheet) {
+			const $sheetModal = this.activeSheet;
+			this.setSheetHeight($sheetModal, 0);
+			$sheetModal.removeClass('show-sheet');
+			
+			$sheetModal.find('.js-dropdown-sub-list').addClass('hidden');
+			$sheetModal.find('.js-dropdown-primary-list').removeClass('hidden');
+			$('html').css('padding-right', '0');
+			$('html').removeClass('overflow-hidden');
 
-		setTimeout(() => {
-			sheet.element.addClass('hidden');
-			this.activeSheet = null;
-		}, 500);
+			setTimeout(() => {
+				$sheetModal.addClass('hidden');
+				this.activeSheet = null;
+			}, 500);
+		}
 	},
 	
-	calculateContentHeight(sheet) {
-		const body = sheet.content;
-		
-		const contentHeight = body[0].scrollHeight;
+	calculateContentHeight($sheetModal) {
+		const $content = $sheetModal.find('.js-dropdown-content');
+		const contentHeight = $content[0].scrollHeight;
 		const windowHeight = window.innerHeight;
-		const heightPercent = (contentHeight / windowHeight) * 100;
-		
-		sheet.height = heightPercent;
-		sheet.defaultHeight = heightPercent;
-		
-		return heightPercent;
+		const heightPercent = Math.min(80, (contentHeight / windowHeight) * 100);
+		$sheetModal.data('height', heightPercent);
+		$sheetModal.data('default-height', heightPercent);
 	},
 	
-	setSheetHeight(sheet, value) {
+	setSheetHeight($sheetModal, value) {
 		const height = Math.max(0, Math.min(80, value));
 		const viewportHeight = window.innerHeight;
 		const heightInPixels = (height * viewportHeight) / 100;
-		
-		sheet.body.css({
-			'height': `${heightInPixels}px`,
-		});
-		sheet.height = height;
+		$sheetModal.find('.js-dropdown-body').css('height', `${heightInPixels}px`);
+		$sheetModal.data('height', height);
 	},
 	
 	handleDragStart(event) {
@@ -412,26 +440,23 @@ const Dropdown = {
 		this.isDragging = true;
 		this.dragStartY = event.touches ? event.touches[0].pageY : event.pageY;
 		
-		const sheet = this.sheets[this.activeSheet];
-		sheet.body.addClass('not-selectable');
-		sheet.trigger.css('cursor', 'grabbing');
+		const $sheetModal = this.activeSheet;
+		$sheetModal.find('.js-dropdown-body').addClass('not-selectable');
+		$sheetModal.find('.js-dropdown-trigger').css('cursor', 'grabbing');
 		$('body').css('cursor', 'grabbing');
 	},
 	
 	handleDragMove(event) {
 		if (!this.isDragging || !this.activeSheet) return;
 		
-		const sheet = this.sheets[this.activeSheet];
+		const $sheetModal = this.activeSheet;
 		const currentY = event.touches ? event.touches[0].pageY : event.pageY;
 		const deltaY = this.dragStartY - currentY;
-		
-		// Используем viewport height для расчета
 		const viewportHeight = window.innerHeight;
 		const deltaHeight = (deltaY / viewportHeight) * 100;
 		
-		// Ограничиваем максимальную высоту 80% от viewport
-		const newHeight = Math.min(80, sheet.height + deltaHeight);
-		this.setSheetHeight(sheet, newHeight);
+		const newHeight = Math.min(80, $sheetModal.data('height') + deltaHeight);
+		this.setSheetHeight($sheetModal, newHeight);
 		
 		this.dragStartY = currentY;
 	},
@@ -440,16 +465,16 @@ const Dropdown = {
 		if (!this.isDragging || !this.activeSheet) return;
 		
 		this.isDragging = false;
-		const sheet = this.sheets[this.activeSheet];
+		const $sheetModal = this.activeSheet;
 		
-		sheet.body.removeClass('not-selectable');
-		sheet.trigger.css('cursor', '');
+		$sheetModal.find('.js-dropdown-body').removeClass('not-selectable');
+		$sheetModal.find('.js-dropdown-trigger').css('cursor', '');
 		$('body').css('cursor', '');
 		
-		if (sheet.height < 25) {
+		if ($sheetModal.data('height') < 25) {
 			this.closeActiveSheet();
 		} else {
-			this.setSheetHeight(sheet, sheet.defaultHeight);
+			this.setSheetHeight($sheetModal, $sheetModal.data('default-height') || 0);
 		}
 	}
 };

@@ -591,13 +591,21 @@
 								<a href="#" class="dropdown-button" data-id="dropdown-tree">
 									...
 								</a>
-								<div data-dropdown-id="dropdown-tree" class="dropdown-content absolute top-[calc(100%_+_8px)] -left-2 bg-white shadow-card rounded-lg p-1.5 w-[12.8125rem] z-3 overflow-hidden hidden transition-opacity duration-150 scale-0 [&.active]:scale-100 [&.active]:opacity-100 max-lg:hidden!">
-									<a href="#" class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 transition-colors text-dark-800">
-										Team Meetings
-									</a>
-									<a href="#" class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 transition-colors text-dark-800">
-										Untitled Folder
-									</a>
+								<div class='js-dropdown hidden w-[12.8125rem]' data-dropdown-id='dropdown-tree'>
+									<div class='js-dropdown-overlay'></div>
+									<div class='js-dropdown-body'>
+										<div class='js-dropdown-trigger'>
+											<span></span>
+										</div>
+										<div class='js-dropdown-content'>
+											<a href="#" class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800">
+												Team Meetings
+											</a>
+											<a href="#" class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800">
+												Untitled Folder
+											</a>
+										</div>
+									</div>
 								</div>
 							</li>
 							<li>
@@ -618,13 +626,21 @@
 										<use href='#check-right'></use>
 									</svg>
 								</button>
-								<div data-dropdown-id="mobile-dropdown-tree" class="dropdown-content absolute top-[calc(100%_+_8px)] left-0 bg-white shadow-card rounded-lg p-1.5 w-[12.8125rem] z-3 overflow-hidden hidden transition-opacity duration-150 scale-0 [&.active]:scale-100 [&.active]:opacity-100">
-									<a href="#" class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800">
-										Team Meetings
-									</a>
-									<a href="#" class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800">
-										Untitled Folder
-									</a>
+								<div class='js-dropdown hidden w-[12.8125rem]' data-dropdown-id='mobile-dropdown-tree'>
+									<div class='js-dropdown-overlay'></div>
+									<div class='js-dropdown-body'>
+										<div class='js-dropdown-trigger'>
+											<span></span>
+										</div>
+										<div class='js-dropdown-content'>
+											<a href="#" class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800">
+												Team Meetings
+											</a>
+											<a href="#" class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800">
+												Untitled Folder
+											</a>
+										</div>
+									</div>
 								</div>
 							</div>
 							<h2 id='title-library' class='text-2xl font-semibold text-dark-800 tracking-normal font-sans-semi overflow-hidden text-ellipsis whitespace-nowrap min-w-0 flex-1 truncate max-xs:w-[110px]'>

@@ -83,19 +83,7 @@ $(document).ready(function() {
 	
 	window.addEventListener('resize', updatePlaceholder);
 	updatePlaceholder();
-	
-	// Mobile menu
-	$(".hamburger").on('click', function() {
-		$(this).toggleClass('is-active');
-		$('aside').toggleClass('active');
-	});
 
-	$('.mobile-menu-overlay').on('click', function() {
-		if($('aside').hasClass('active') && window.innerWidth < 1024) {
-			$('aside').removeClass('active');
-			$(".hamburger").removeClass('is-active');
-		}
-	});
 	
 	// Upload files
 	const uploadFilesModal = $('#upload-files-modal');
@@ -223,12 +211,14 @@ $(document).ready(function() {
 
 				if (currentScroll > lastScrollTop && currentScroll > headerHeight) {
 					header.css({
-						'transform': 'translateY(-100%)',
+						'top': '-100%',
+						'transition': 'top 0.3s ease'
 					});
 					$('.subheader-nav').addClass('top-0!');
 				} else {
 					header.css({
-						'transform': 'translateY(0)',
+						'top': '0',
+						'transition': 'top 0.3s ease'
 					});
 					$('.subheader-nav').removeClass('top-0!');
 				}
