@@ -9,6 +9,7 @@ const Dropdown = {
 	showSheetTimeout: null,
 	scrollbarWidth: 0,
 	sheetClosePercent: 45,	
+	heightTrigger: 25,
 
 	init() {	
 		this.dropdownIdTimer = null;
@@ -436,7 +437,7 @@ const Dropdown = {
 		const height = Math.max(0, Math.min(80, value));
 		const viewportHeight = window.innerHeight;
 		const heightInPixels = (height * viewportHeight) / 100;
-		$sheetModal.find('.js-dropdown-body').css('height', `${heightInPixels}px`);
+		$sheetModal.find('.js-dropdown-body').css('height', `${heightInPixels + this.heightTrigger}px`);
 		$sheetModal.data('height', height);
 	},
 	

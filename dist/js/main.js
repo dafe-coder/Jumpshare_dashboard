@@ -233,4 +233,15 @@ $(document).ready(function() {
 	$(window).resize(function() {
 		documentHeight = $(document).height() - $(window).height();
 	});
+
+	// Define browser UI height
+	function updateBrowserUIHeight() {
+		const windowHeight = window.innerHeight;
+		const documentHeight = document.documentElement.clientHeight;
+		const browserUIHeight = windowHeight - documentHeight;
+		document.documentElement.style.setProperty('--browser-ui-height', `${browserUIHeight}px`);
+	}
+	// Update when loading and window resize
+	updateBrowserUIHeight();
+	window.addEventListener('resize', updateBrowserUIHeight);
 });
