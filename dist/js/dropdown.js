@@ -354,6 +354,12 @@ const Dropdown = {
 		$sheetModal.find('.js-dropdown-body').css('height', 'auto');
 		this.calculateContentHeight($sheetModal);
 		$sheetModal.find('.js-dropdown-body').css('height', '0');
+		
+		$sheetModal.find('.js-dropdown-content').css({
+			'overscroll-behavior': 'contain',
+			'-webkit-overflow-scrolling': 'touch'
+		});
+		
 		this.showSheetTimeout = setTimeout(() => {
 			this.setSheetHeight($sheetModal, $sheetModal.data('default-height') || 0);
 			$sheetModal.addClass('show-sheet');
@@ -403,6 +409,11 @@ const Dropdown = {
 			$sheetModal.find('.js-dropdown-primary-list').removeClass('hidden');
 			$('html').css('padding-right', '0');
 			$('html').removeClass('overflow-hidden');
+			
+			$sheetModal.find('.js-dropdown-content').css({
+				'overscroll-behavior': '',
+				'-webkit-overflow-scrolling': ''
+			});
 
 			setTimeout(() => {
 				$sheetModal.addClass('hidden');
