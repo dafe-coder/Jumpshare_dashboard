@@ -441,7 +441,6 @@ const Dropdown = {
 	
 	handleDragStart(event) {
 		if (!this.activeSheet) return;
-		this.hideContentScroll();
 		
 		const $sheetModal = this.activeSheet;
 		const $content = $sheetModal.find('.js-dropdown-content');
@@ -461,13 +460,15 @@ const Dropdown = {
 	
 	handleDragMove(event) {
 		if (!this.isDragging || !this.activeSheet) return;
-		this.hideContentScroll();
 		
 		const $sheetModal = this.activeSheet;
 		const $content = $sheetModal.find('.js-dropdown-content');
 		const currentY = event.touches ? event.touches[0].pageY : event.pageY;
 		const deltaY = this.dragStartY - currentY;
 		
+		if(deltaY < 0 && $content.scrollTop() === 0) {
+			this.hideContentScroll();
+		}
 		if (deltaY < 0 && $content.scrollTop() > 0) {
 			return;
 		}
@@ -492,7 +493,7 @@ const Dropdown = {
 		$('body').css('cursor', '');
 		this.showContentScroll();
 		
-		if ($sheetModal.data('height') < 25) {
+		if ($sheetModal.data('height') < 35) {
 			this.closeActiveSheet();
 		} else {
 			this.setSheetHeight($sheetModal, $sheetModal.data('default-height') || 0);
@@ -500,11 +501,11 @@ const Dropdown = {
 	},
 	hideContentScroll() {
 		const $content = this.activeSheet.find('.js-dropdown-content');
-		$content.addClass('overflow-hidden!');
+		$content.addClass('overflow-y-hidden!');
 	},
 	showContentScroll() {
 		const $content = this.activeSheet.find('.js-dropdown-content');
-		$content.removeClass('overflow-hidden!');
+		$content.removeClass('overflow-y-hidden!');
 	}
 };
 
