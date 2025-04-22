@@ -8,6 +8,7 @@ const Dropdown = {
 	isMobile: window.innerWidth < 1024,
 	showSheetTimeout: null,
 	scrollbarWidth: 0,
+	sheetClosePercent: 45,	
 
 	init() {	
 		this.dropdownIdTimer = null;
@@ -493,7 +494,7 @@ const Dropdown = {
 		$('body').css('cursor', '');
 		this.showContentScroll();
 		
-		if ($sheetModal.data('height') < 35) {
+		if ($sheetModal.data('height') < this.sheetClosePercent) {
 			this.closeActiveSheet();
 		} else {
 			this.setSheetHeight($sheetModal, $sheetModal.data('default-height') || 0);
