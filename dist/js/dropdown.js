@@ -99,13 +99,11 @@ const Dropdown = {
 			this.closeSubMenu();
 		});
 		
-		$('.js-dropdown-trigger').on('mousedown touchstart', (e) => {
-			e.preventDefault();
+		$('.js-dropdown-body').on('mousedown touchstart', (e) => {
 			this.handleDragStart(e);
 		});
 		
 		$(window).on('mousemove touchmove', (e) => {
-			e.preventDefault();
 			this.handleDragMove(e);
 		});
 		
@@ -147,14 +145,12 @@ const Dropdown = {
 		const $content = $wrapper.find(`.js-dropdown[data-dropdown-id="${dropdownId}"]`);
 		
 		if(!$button.hasClass('active')) {
-			// Close all other dropdowns
 			this.dropdownContents.not($content).removeClass('active').addClass('hidden');
 			this.dropdownButtons.not($button).removeClass('active');
 			this.dropdownWrappers.not($wrapper).removeClass('active');
 			this.subMenuItems.removeClass('active');
 			$('.js-dropdown-sub-list').removeClass('active').addClass('hidden');
 			
-			// Open current dropdown
 			$button.addClass('active');
 			$wrapper.addClass('active');
 			$content.removeClass('hidden');
@@ -165,7 +161,6 @@ const Dropdown = {
 				this.adjustElementPosition($content);
 			}, 10);
 		} else {
-			// Close current dropdown
 			$button.removeClass('active');
 			$wrapper.removeClass('active');
 			$content.removeClass('active').addClass('hidden');
@@ -183,7 +178,6 @@ const Dropdown = {
 				this.openSubMenu(itemId);
 			}
 		} else {
-			// Для десктопа
 			this.subMenuItems.not($item).removeClass('active');
 			this.subMenuItems.not($item).find('.js-dropdown-sub-list').addClass('hidden');
 			
@@ -437,10 +431,17 @@ const Dropdown = {
 	handleDragStart(event) {
 		if (!this.activeSheet) return;
 		
+		const $sheetModal = this.activeSheet;
+		const $content = $sheetModal.find('.js-dropdown-content');
+		const contentScrollTop = $content.scrollTop();
+		
+		if (contentScrollTop > 0) {
+			return;
+		}
+		
 		this.isDragging = true;
 		this.dragStartY = event.touches ? event.touches[0].pageY : event.pageY;
 		
-		const $sheetModal = this.activeSheet;
 		$sheetModal.find('.js-dropdown-body').addClass('not-selectable');
 		$sheetModal.find('.js-dropdown-trigger').css('cursor', 'grabbing');
 		$('body').css('cursor', 'grabbing');
@@ -450,8 +451,14 @@ const Dropdown = {
 		if (!this.isDragging || !this.activeSheet) return;
 		
 		const $sheetModal = this.activeSheet;
+		const $content = $sheetModal.find('.js-dropdown-content');
 		const currentY = event.touches ? event.touches[0].pageY : event.pageY;
 		const deltaY = this.dragStartY - currentY;
+		
+		if (deltaY < 0 && $content.scrollTop() > 0) {
+			return;
+		}
+		
 		const viewportHeight = window.innerHeight;
 		const deltaHeight = (deltaY / viewportHeight) * 100;
 		
