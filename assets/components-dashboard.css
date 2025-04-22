@@ -159,7 +159,7 @@
 		@apply border border-gray-600 rounded-md p-3 w-full h-12 outline-none;
 	}
 	.folder-menu-header {
-		@apply flex items-center px-3 py-2 hover:bg-gray-150 transition-colors duration-150 rounded-lg cursor-pointer;
+		@apply flex items-center px-3 py-2 hover:bg-gray-150 active:bg-gray-150 transition-colors duration-150 rounded-lg cursor-pointer;
 	}
 	.toggle-menu-icon {
 		@apply size-[18px] flex items-center justify-center mr-2.5 transition-transform duration-300 ease-in-out;
@@ -190,7 +190,7 @@
 		}
 	}
 	.js-dropdown-list-item {
-		@apply text-dark-800 text-sm font-normal flex items-center gap-2 p-2 hover:bg-gray-150 rounded-md cursor-pointer;
+		@apply text-dark-800 text-sm font-normal flex items-center gap-2 p-2 hover:bg-gray-150 active:bg-gray-150 rounded-md cursor-pointer;
 	}
 	.js-dropdown-list .js-dropdown-list-item {
 		@apply max-lg:py-2.5!;
@@ -220,7 +220,7 @@
 					@apply w-full h-auto;
 				}
 				.js-dropdown-list-item {
-					@apply text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 rounded-md transition-colors cursor-pointer py-2;
+					@apply text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 active:bg-gray-150 rounded-md transition-colors cursor-pointer py-2;
 				}
 				.js-dropdown-overlay {
 					@apply bg-[#090B13]/50 absolute top-0 left-0 size-full z-0 opacity-0 [.show-sheet_&]:opacity-100 transition-opacity duration-500 ease-in-out;
