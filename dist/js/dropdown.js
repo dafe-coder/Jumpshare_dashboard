@@ -441,6 +441,7 @@ const Dropdown = {
 	
 	handleDragStart(event) {
 		if (!this.activeSheet) return;
+		this.hideContentScroll();
 		
 		const $sheetModal = this.activeSheet;
 		const $content = $sheetModal.find('.js-dropdown-content');
@@ -460,6 +461,7 @@ const Dropdown = {
 	
 	handleDragMove(event) {
 		if (!this.isDragging || !this.activeSheet) return;
+		this.hideContentScroll();
 		
 		const $sheetModal = this.activeSheet;
 		const $content = $sheetModal.find('.js-dropdown-content');
@@ -488,12 +490,21 @@ const Dropdown = {
 		$sheetModal.find('.js-dropdown-body').removeClass('not-selectable');
 		$sheetModal.find('.js-dropdown-trigger').css('cursor', '');
 		$('body').css('cursor', '');
+		this.showContentScroll();
 		
 		if ($sheetModal.data('height') < 25) {
 			this.closeActiveSheet();
 		} else {
 			this.setSheetHeight($sheetModal, $sheetModal.data('default-height') || 0);
 		}
+	},
+	hideContentScroll() {
+		const $content = this.activeSheet.find('.js-dropdown-content');
+		$content.addClass('overflow-hidden!');
+	},
+	showContentScroll() {
+		const $content = this.activeSheet.find('.js-dropdown-content');
+		$content.removeClass('overflow-hidden!');
 	}
 };
 
