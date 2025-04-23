@@ -171,14 +171,14 @@
 								<div class='js-dropdown-trigger'>
 									<span></span>
 								</div>
-								<div class='js-dropdown-content lg:px-3.5 pb-4 lg:pt-4 max-lg:px-4'>
-									<div class='flex items-center justify-between'>
+								<div class='js-dropdown-content lg:px-2 pb-4 lg:pt-4 max-lg:px-4'>
+									<div class='flex items-center justify-between px-1.5'>
 										<p class='text-sm text-dark-800 font-normal'>Workspaces</p>
 										<span class='text-sm text-blue-500 font-medium hover:underline underline-offset-1 cursor-pointer'>+ Add Workspace</span>
 									</div>
-									<div class='flex flex-col gap-y-4 mt-4'>
-										<div class='flex items-center gap-x-3 cursor-pointer'>
-											<div class='flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white '>
+									<div class='flex flex-col gap-y-1 mt-3'>
+										<div class='active-workspace flex items-center gap-x-3 cursor-pointer rounded-md hover:bg-gray-150 active:bg-gray-150 px-2 py-2.5'>
+											<div class='flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white'>
 												<span class='font-semibold text-base text-blue-500'>S</span>
 											</div>
 											<div class='flex flex-col'>
@@ -190,8 +190,13 @@
 													<li class='relative'>23 Members</li>
 												</ul>
 											</div>
+											<span class='hidden text-blue-500 shrink-0 ml-auto [.active-workspace_&]:block'>
+												<svg class='icon icon-md'>
+													<use href='#check'></use>
+												</svg>
+											</span>
 										</div>
-										<div class='flex items-center gap-x-3 cursor-pointer'>
+										<div class='flex items-center gap-x-3 cursor-pointer rounded-md hover:bg-gray-150 active:bg-gray-150 px-2 py-2.5'>
 											<div class='flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white '>
 												<span class='font-semibold text-base text-blue-500'>N</span>
 											</div>
@@ -204,9 +209,14 @@
 													<li class='relative'>1 Member</li>
 												</ul>
 											</div>
+											<span class='hidden text-blue-500 shrink-0 ml-auto [.active-workspace_&]:block'>
+												<svg class='icon icon-md'>
+													<use href='#check'></use>
+												</svg>
+											</span>
 										</div>
 									</div>
-									<div class='mt-4 flex flex-col gap-y-2'>
+									<div class='mt-3 flex flex-col gap-y-2 px-1.5'>
 										<button
 											type="button"
 											class="btn btn-primary-default rounded-lg"
@@ -329,10 +339,10 @@
 							<div class='flex items-center gap-4'>
 								<div class='dropdown-wrapper'>
 									<a data-id="dropdown-notifications"  href="#" class='dropdown-button size-12 flex justify-center items-center transition-colors hover:bg-gray-150 rounded-lg relative [&.active]:bg-gray-150 cursor-pointer'>
-										<svg class='icon icon-md'>
+										<svg class='icon w-[1.125rem] h-5'>
 											<use href='#bell'></use>
 										</svg>
-										<span class='absolute top-0.5 left-3.5 z-1 bg-red-500 rounded-full border-2 border-white flex justify-center items-center h-4.5 min-w-4.5 px-1 text-[11px] text-white text-center font-medium text-nowrap'>9+</span>
+										<span class='absolute top-1.5 left-5 z-1 bg-red-500 rounded-full border-2 border-white flex justify-center items-center h-4 min-w-4.5 px-1 text-[11px] text-white text-center font-medium text-nowrap'>9+</span>
 									</a>
 									<div class='js-dropdown hidden w-[28.125rem]' data-dropdown-id='dropdown-notifications' data-sheet-modal>
 										<div class='js-dropdown-overlay'></div>
@@ -340,10 +350,10 @@
 											<div class='js-dropdown-trigger'>
 												<span></span>
 											</div>
-											<div class='js-dropdown-content lg:pt-4 lg:max-h-[580px] lg:overflow-y-auto px-0 pb-0'>
-												<div class='flex justify-between items-center px-6 sticky top-0 -mt-1 bg-white z-1 pt-0 pb-3 border-b border-gray-400'>
+											<div class='js-dropdown-content lg:pt-0 lg:max-h-[580px] lg:overflow-y-auto px-0 pb-0'>
+												<div class='flex justify-between items-center px-6 sticky top-0 -mt-1 bg-white lg:rounded-t-lg z-1 lg:pt-4 pb-3 border-b border-gray-400'>
 													<p class='text-base font-semibold text-dark-800'>Notifications</p>
-													<a href='./activity-center.html' class='text-sm text-blue-500'>View All →</a>
+													<a href='./activity-center.html' class='text-sm text-blue-500 font-medium'>View All →</a>
 												</div>
 												<ul>
 													<li>
@@ -493,7 +503,7 @@
 											</div>
 											<div class='js-dropdown-content'>
 												<ul>
-													<li class='flex items-center gap-3 p-3.5'>
+													<li class='flex items-center gap-3 p-3.5 pt-1'>
 														<div class="size-[42px] rounded-full overflow-hidden">
 															<img class='size-full object-cover' src="./assets/images/avatar.png" alt="Avatar">
 														</div>
@@ -503,39 +513,39 @@
 														</div>
 													</li>
 													<hr class='border-gray-500 mt-0 mb-2'>
-													<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+													<li class='flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800'>
 														<svg class='icon icon-md'>
 															<use href='#workspace'></use>
 														</svg>
 														<span>Workspace Settings</span>
 													</li>
-													<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+													<li class='flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800'>
 														<svg class='icon icon-md'>
 															<use href='#user'></use>
 														</svg>
 														<span>Profile Settings</span>
 													</li>
 													<hr class='border-gray-500 my-2'>
-													<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+													<li class='flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800'>
 														<svg class='icon icon-md'>
 															<use href='#download'></use>
 														</svg>
 														<span>Install Jumpshare</span>
 													</li>
-													<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+													<li class='flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800'>
 														<svg class='icon icon-md'>
 															<use href='#help'></use>
 														</svg>
 														<span>Help Center</span>
 													</li>
-													<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+													<li class='flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800'>
 														<svg class='icon icon-md'>
 															<use href='#message-alert'></use>
 														</svg>
 														<span>Send Feedback</span>
 													</li>
 													<hr class='border-gray-500 my-2'>
-													<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
+													<li class='flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800'>
 														<svg class='icon icon-md'>
 															<use href='#sign-out'></use>
 														</svg>
@@ -727,12 +737,11 @@
 									</svg>
 									<div class='flex flex-col gap-1 truncate'>
 										<h4 class='text-sm text-dark-800 font-medium [.list-type_&]:mt-0 truncate'>Team Meetings Team Meetings Team Meetings Team Meetings Team Meetings Team Meetings Team Meetings</h4>
-										<ul class="flex items-center text-sm text-dark-800/70 gap-3 lg:[.list-type_&]:hidden">
-											<li class="relative">
+										<ul class="list-with-dots lg:[.list-type_&]:hidden">
+											<li>
 												2 Items
-												<span class="absolute top-1/2 -translate-y-1/2 -right-[7.5px]  size-[2px] rounded-full bg-blue-900/70"></span>
 											</li>
-											<li class="relative">Feb 10</li>
+											<li>22 hrs ago</li>
 										</ul>
 									</div>
 								</div>
@@ -748,8 +757,8 @@
 								</div>
 								<div class='[.list-type_&]:flex items-center gap-2 justify-between max-md:justify-end pr-3 max-lg:not-[.list-type_&]:flex'>
 									<span class='hidden text-sm text-dark-800 md:[.list-type_&]:flex w-10 justify-center items-center'>12</span>
-									<div class='dropdown-wrapper absolute right-2.5 top-1/2 -mt-[9px] max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:mt-0 [.list-type_&]:top-auto [.list-type_&]:mt-0 [.list-type_&]:static'>
-										<button data-id="dropdown-settings" class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer h-5 flex justify-center items-center transition-transform size-7 [&.active]">
+									<div class='dropdown-wrapper absolute right-2.5 top-1/2 -mt-[14px] max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:mt-0 [.list-type_&]:top-auto [.list-type_&]:mt-0 [.list-type_&]:static'>
+										<button data-id="dropdown-settings" class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer flex justify-center items-center transition-transform size-7 hover:bg-gray-400 rounded-full shrink-0">
 											<svg class='icon icon-md'>
 												<use href='#dots-horizontal'></use>
 											</svg>
@@ -774,24 +783,27 @@
 															</svg>
 															<span>Share</span>
 														</li>
+														<hr class='border-gray-500 my-2'>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>	
 																<use href='#lock'></use>
 															</svg>
 															<span>Lock</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 														</li>
-														<hr class='border-gray-500 my-2'>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>
 																<use href='#trash-with-clock'></use>
 															</svg>
 															<span>Self-Destruct</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 														</li>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>
 																<use href='#stats'></use>
 															</svg>
 															<span>View Stats</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 														</li>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>
@@ -822,6 +834,7 @@
 																<use href='#clock'></use>
 															</svg>
 															<span>Version History</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 															<svg class='icon icon-md absolute top-1/2 -translate-y-1/2 right-1'>
 																<use href='#check-right'></use>
 															</svg>
@@ -888,12 +901,11 @@
 									</svg>
 									<div class='flex flex-col gap-1 truncate'>
 										<h4 class='text-sm text-dark-800 font-medium [.list-type_&]:mt-0 truncate'>Untitled</h4>
-										<ul class="flex items-center text-sm text-dark-800/70 gap-3 lg:[.list-type_&]:hidden">
-											<li class="relative">
-												2 Items
-												<span class="absolute top-1/2 -translate-y-1/2 -right-[7.5px]  size-[2px] rounded-full bg-blue-900/70"></span>
+										<ul class="list-with-dots lg:[.list-type_&]:hidden">
+											<li>
+												41 Items
 											</li>
-											<li class="relative">Jan 10, 2024</li>
+											<li>Jan 10, 2024</li>
 										</ul>
 									</div>
 								</div>
@@ -909,8 +921,8 @@
 								</div>
 								<div class='[.list-type_&]:flex items-center gap-2 justify-between max-md:justify-end pr-3 max-lg:not-[.list-type_&]:flex'>
 									<span class='hidden text-sm text-dark-800 md:[.list-type_&]:flex w-10 justify-center items-center'>12</span>
-									<div class='dropdown-wrapper absolute right-2.5 top-1/2 -mt-[9px] max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:mt-0 [.list-type_&]:top-auto [.list-type_&]:mt-0 [.list-type_&]:static'>
-										<button data-id="dropdown-settings" class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer h-5 flex justify-center items-center transition-transform size-7 [&.active]">
+									<div class='dropdown-wrapper absolute right-2.5 top-1/2 -mt-[14px] max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:mt-0 [.list-type_&]:top-auto [.list-type_&]:mt-0 [.list-type_&]:static'>
+										<button data-id="dropdown-settings" class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer flex justify-center items-center transition-transform size-7 hover:bg-gray-400 rounded-full shrink-0">
 											<svg class='icon icon-md'>
 												<use href='#dots-horizontal'></use>
 											</svg>
@@ -935,24 +947,27 @@
 															</svg>
 															<span>Share</span>
 														</li>
+														<hr class='border-gray-500 my-2'>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>	
 																<use href='#lock'></use>
 															</svg>
 															<span>Lock</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 														</li>
-														<hr class='border-gray-500 my-2'>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>
 																<use href='#trash-with-clock'></use>
 															</svg>
 															<span>Self-Destruct</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 														</li>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>
 																<use href='#stats'></use>
 															</svg>
 															<span>View Stats</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 														</li>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>
@@ -983,6 +998,7 @@
 																<use href='#clock'></use>
 															</svg>
 															<span>Version History</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 															<svg class='icon icon-md absolute top-1/2 -translate-y-1/2 right-1'>
 																<use href='#check-right'></use>
 															</svg>
@@ -1049,12 +1065,11 @@
 									</svg>
 									<div class='flex flex-col gap-1 truncate'>
 										<h4 class='text-sm text-dark-800 font-medium [.list-type_&]:mt-0 truncate'>New Folder 2.0</h4>
-										<ul class="flex items-center text-sm text-dark-800/70 gap-3 lg:[.list-type_&]:hidden">
-											<li class="relative">
-												2 Items
-												<span class="absolute top-1/2 -translate-y-1/2 -right-[7.5px]  size-[2px] rounded-full bg-blue-900/70"></span>
+										<ul class="list-with-dots lg:[.list-type_&]:hidden">
+											<li>
+												1 Items
 											</li>
-											<li class="relative">Jan 10, 2024</li>
+											<li>Jan 10, 2024</li>
 										</ul>
 									</div>
 								</div>
@@ -1070,8 +1085,8 @@
 								</div>
 								<div class='[.list-type_&]:flex items-center gap-2 justify-between max-md:justify-end pr-3 max-lg:not-[.list-type_&]:flex'>
 									<span class='hidden text-sm text-dark-800 md:[.list-type_&]:flex w-10 justify-center items-center'>12</span>
-									<div class='dropdown-wrapper absolute right-2.5 top-1/2 -mt-[9px] max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:mt-0 [.list-type_&]:top-auto [.list-type_&]:mt-0 [.list-type_&]:static'>
-										<button data-id="dropdown-settings" class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer h-5 flex justify-center items-center transition-transform size-7 [&.active]">
+									<div class='dropdown-wrapper absolute right-2.5 top-1/2 -mt-[14px] max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:mt-0 [.list-type_&]:top-auto [.list-type_&]:mt-0 [.list-type_&]:static'>
+										<button data-id="dropdown-settings" class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer flex justify-center items-center transition-transform size-7 hover:bg-gray-400 rounded-full shrink-0">
 											<svg class='icon icon-md'>
 												<use href='#dots-horizontal'></use>
 											</svg>
@@ -1096,24 +1111,27 @@
 															</svg>
 															<span>Share</span>
 														</li>
+														<hr class='border-gray-500 my-2'>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>	
 																<use href='#lock'></use>
 															</svg>
 															<span>Lock</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 														</li>
-														<hr class='border-gray-500 my-2'>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>
 																<use href='#trash-with-clock'></use>
 															</svg>
 															<span>Self-Destruct</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 														</li>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>
 																<use href='#stats'></use>
 															</svg>
 															<span>View Stats</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 														</li>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>
@@ -1144,6 +1162,7 @@
 																<use href='#clock'></use>
 															</svg>
 															<span>Version History</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 															<svg class='icon icon-md absolute top-1/2 -translate-y-1/2 right-1'>
 																<use href='#check-right'></use>
 															</svg>
@@ -1209,13 +1228,12 @@
 										<use href='#folder'></use>
 									</svg>
 									<div class='flex flex-col gap-1 truncate'>
-										<h4 class='text-sm text-dark-800 font-medium [.list-type_&]:mt-0 truncate'>Untitled</h4>
-										<ul class="flex items-center text-sm text-dark-800/70 gap-3 lg:[.list-type_&]:hidden">
-											<li class="relative">
-												2 Items
-												<span class="absolute top-1/2 -translate-y-1/2 -right-[7.5px]  size-[2px] rounded-full bg-blue-900/70"></span>
+								<h4 class='text-sm text-dark-800 		font-medium [.list-type_&]:mt-0 truncate'>Untitled</h4>
+										<ul class="list-with-dots lg:[.list-type_&]:hidden">
+											<li>
+												0 Items
 											</li>
-											<li class="relative">Jan 10, 2024</li>
+											<li>Jan 10, 2024</li>
 										</ul>
 									</div>
 								</div>
@@ -1231,8 +1249,8 @@
 								</div>
 								<div class='[.list-type_&]:flex items-center gap-2 justify-between max-md:justify-end pr-3 max-lg:not-[.list-type_&]:flex'>
 									<span class='hidden text-sm text-dark-800 md:[.list-type_&]:flex w-10 justify-center items-center'>12</span>
-									<div class='dropdown-wrapper absolute right-2.5 top-1/2 -mt-[9px] max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:mt-0 [.list-type_&]:top-auto [.list-type_&]:mt-0 [.list-type_&]:static'>
-										<button data-id="dropdown-settings" class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer h-5 flex justify-center items-center transition-transform size-7 [&.active]">
+									<div class='dropdown-wrapper absolute right-2.5 top-1/2 -mt-[14px] max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:mt-0 [.list-type_&]:top-auto [.list-type_&]:mt-0 [.list-type_&]:static'>
+										<button data-id="dropdown-settings" class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer flex justify-center items-center transition-transform size-7 hover:bg-gray-400 rounded-full shrink-0">
 											<svg class='icon icon-md'>
 												<use href='#dots-horizontal'></use>
 											</svg>
@@ -1257,24 +1275,27 @@
 															</svg>
 															<span>Share</span>
 														</li>
+														<hr class='border-gray-500 my-2'>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>	
 																<use href='#lock'></use>
 															</svg>
 															<span>Lock</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 														</li>
-														<hr class='border-gray-500 my-2'>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>
 																<use href='#trash-with-clock'></use>
 															</svg>
 															<span>Self-Destruct</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 														</li>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>
 																<use href='#stats'></use>
 															</svg>
 															<span>View Stats</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 														</li>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>
@@ -1305,6 +1326,7 @@
 																<use href='#clock'></use>
 															</svg>
 															<span>Version History</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 															<svg class='icon icon-md absolute top-1/2 -translate-y-1/2 right-1'>
 																<use href='#check-right'></use>
 															</svg>
@@ -1487,11 +1509,15 @@
 									</div>
 								</div>
 								<div class='file-item-bottom'>
-									<h4>Troubleshooting Password Validation</h4>
-									<p >
-										<span>17 Views</span>
-										<span>1.2 MB</span>
-									</p>
+									<div class='flex flex-col gap-1'>
+										<h4>Troubleshooting Password Validation</h4>
+										<ul class="list-with-dots">
+											<li>
+												MP4
+											</li>
+											<li>0 views</li>
+										</ul>
+									</div>
 									<div class='file-author'>
 										<div class='file-author-avatar'>
 											<img src="./assets/images/avatar.png" alt="avatar">
@@ -1517,7 +1543,7 @@
 										</svg>
 									</label>
 									<div class='file-item-nav dropdown-wrapper'>
-										<button data-id="dropdown-settings" class="dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 transition-all hover:bg-gray-300">
+										<button data-id="dropdown-settings" class="dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 transition-all hover:bg-gray-300 group-hover:opacity-100 not-[.list-type_&]:opacity-0">
 											<svg class='icon icon-md'>
 												<use href='#dots-horizontal'></use>
 											</svg>
@@ -1542,24 +1568,27 @@
 															</svg>
 															<span>Share</span>
 														</li>
+														<hr class='border-gray-500 my-2'>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>	
 																<use href='#lock'></use>
 															</svg>
 															<span>Lock</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 														</li>
-														<hr class='border-gray-500 my-2'>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>
 																<use href='#trash-with-clock'></use>
 															</svg>
 															<span>Self-Destruct</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 														</li>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>
 																<use href='#stats'></use>
 															</svg>
 															<span>View Stats</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 														</li>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>
@@ -1590,6 +1619,7 @@
 																<use href='#clock'></use>
 															</svg>
 															<span>Version History</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 															<svg class='icon icon-md absolute top-1/2 -translate-y-1/2 right-1'>
 																<use href='#check-right'></use>
 															</svg>
@@ -1663,11 +1693,15 @@
 									</div>
 								</div>
 								<div class='file-item-bottom'>
-									<h4>Guidelines for the tour</h4>
-									<p >
-										<span>37 Views</span>
-										<span>1.2 MB</span>
-									</p>
+									<div class='flex flex-col gap-1'>
+										<h4>Guidelines for the tour</h4>
+										<ul class="list-with-dots">
+											<li>
+												MP4
+											</li>
+											<li>432 views</li>
+										</ul>
+									</div>
 									<div class='file-author'>
 										<div class='file-author-avatar'>
 											<img src="./assets/images/avatar.png" alt="avatar">
@@ -1693,7 +1727,7 @@
 										</svg>
 									</label>
 									<div class='file-item-nav dropdown-wrapper'>
-										<button data-id="dropdown-settings" class="dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 transition-all hover:bg-gray-300">
+										<button data-id="dropdown-settings" class="dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 transition-all hover:bg-gray-300 group-hover:opacity-100 not-[.list-type_&]:opacity-0">
 											<svg class='icon icon-md'>
 												<use href='#dots-horizontal'></use>
 											</svg>
@@ -1718,24 +1752,27 @@
 															</svg>
 															<span>Share</span>
 														</li>
+														<hr class='border-gray-500 my-2'>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>	
 																<use href='#lock'></use>
 															</svg>
 															<span>Lock</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 														</li>
-														<hr class='border-gray-500 my-2'>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>
 																<use href='#trash-with-clock'></use>
 															</svg>
 															<span>Self-Destruct</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 														</li>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>
 																<use href='#stats'></use>
 															</svg>
 															<span>View Stats</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 														</li>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>
@@ -1766,6 +1803,7 @@
 																<use href='#clock'></use>
 															</svg>
 															<span>Version History</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 															<svg class='icon icon-md absolute top-1/2 -translate-y-1/2 right-1'>
 																<use href='#check-right'></use>
 															</svg>
@@ -1831,11 +1869,15 @@
 								</div>
 								</div>
 								<div class='file-item-bottom'>
-									<h4>Customer Relation Management</h4>
-									<p >
-										<span>76 Views</span>
-										<span>1.2 MB</span>
-									</p>
+									<div class='flex flex-col gap-1'>
+										<h4>Customer Relation Management</h4>
+										<ul class="list-with-dots">
+											<li>
+												MP4
+											</li>
+											<li>21 views</li>
+										</ul>
+									</div>
 									<div class='file-author'>
 										<div class='file-author-avatar'>
 											<img src="./assets/images/avatar.png" alt="avatar">
@@ -1861,7 +1903,7 @@
 										</svg>
 									</label>
 									<div class='file-item-nav dropdown-wrapper'>
-										<button data-id="dropdown-settings" class="dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 transition-all hover:bg-gray-300">
+										<button data-id="dropdown-settings" class="dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 transition-all hover:bg-gray-300 group-hover:opacity-100 not-[.list-type_&]:opacity-0">
 											<svg class='icon icon-md'>
 												<use href='#dots-horizontal'></use>
 											</svg>
@@ -1886,24 +1928,27 @@
 															</svg>
 															<span>Share</span>
 														</li>
+														<hr class='border-gray-500 my-2'>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>	
 																<use href='#lock'></use>
 															</svg>
 															<span>Lock</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 														</li>
-														<hr class='border-gray-500 my-2'>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>
 																<use href='#trash-with-clock'></use>
 															</svg>
 															<span>Self-Destruct</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 														</li>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>
 																<use href='#stats'></use>
 															</svg>
 															<span>View Stats</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 														</li>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>
@@ -1934,6 +1979,7 @@
 																<use href='#clock'></use>
 															</svg>
 															<span>Version History</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 															<svg class='icon icon-md absolute top-1/2 -translate-y-1/2 right-1'>
 																<use href='#check-right'></use>
 															</svg>
@@ -1998,11 +2044,15 @@
 									</div>
 								</div>
 								<div class='file-item-bottom'>
-									<h4>Guidelines for the tour of 2024 session</h4>
-									<p >
-										<span>76 Views</span>
-										<span>1.2 MB</span>
-									</p>
+									<div class='flex flex-col gap-1'>
+										<h4>Guidelines for the tour of 2024 session</h4>
+										<ul class="list-with-dots">
+											<li>
+												XLSX
+											</li>
+											<li>12 views</li>
+									</div>
+									</ul>
 									<div class='file-author'>
 										<div class='file-author-avatar'>
 											<img src="./assets/images/avatar.png" alt="avatar">
@@ -2028,7 +2078,7 @@
 										</svg>
 									</label>
 									<div class='file-item-nav dropdown-wrapper'>
-										<button data-id="dropdown-settings" class="dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 transition-all hover:bg-gray-300">
+										<button data-id="dropdown-settings" class="dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 transition-all hover:bg-gray-300 group-hover:opacity-100 not-[.list-type_&]:opacity-0">
 											<svg class='icon icon-md'>
 												<use href='#dots-horizontal'></use>
 											</svg>
@@ -2053,24 +2103,27 @@
 															</svg>
 															<span>Share</span>
 														</li>
+														<hr class='border-gray-500 my-2'>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>	
 																<use href='#lock'></use>
 															</svg>
 															<span>Lock</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 														</li>
-														<hr class='border-gray-500 my-2'>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>
 																<use href='#trash-with-clock'></use>
 															</svg>
 															<span>Self-Destruct</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 														</li>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>
 																<use href='#stats'></use>
 															</svg>
 															<span>View Stats</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 														</li>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>
@@ -2101,6 +2154,7 @@
 																<use href='#clock'></use>
 															</svg>
 															<span>Version History</span>
+															<span class='text-sm text-blue-500 font-medium'>Plus</span>
 															<svg class='icon icon-md absolute top-1/2 -translate-y-1/2 right-1'>
 																<use href='#check-right'></use>
 															</svg>
