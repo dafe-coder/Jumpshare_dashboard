@@ -7,7 +7,7 @@
 	}
 	.list-type {
 		.file-item {
-			@apply grid grid-cols-[1fr_7rem_9rem_7.94rem] border-x-0 border-t-0 rounded-none py-2.5 gap-2 hover:bg-gray-150;
+			@apply grid grid-cols-[56px_1fr_7rem_9rem_7.94rem] border-x-0 border-t-0 rounded-none py-2.5 gap-2 hover:bg-gray-150;
 		}
 	}
 	.list-select-active {
@@ -22,13 +22,13 @@
 		}
 	}
 	.list-with-dots {
-		@apply text-xs text-dark-800/70 flex items-center gap-5;
+		@apply text-xs text-dark-800/70 flex items-center gap-5 [.list-type_&]:lg:hidden;
 		li {
 			@apply relative after:content-[""] after:absolute after:-right-3 after:top-1/2 after:-translate-y-1/2 after:size-[2px] after:bg-blue-900/70 after:rounded-full [&:last-child]:after:hidden;
 		}
 	}
 	.file-item {
-		@apply border border-gray-500 rounded-xl relative transition-colors duration-150 [.list-type_&]:[&.active-select]:bg-gray-200 max-md:[.list-type_&]:grid-cols-[1fr_50px] md:[.team-page_&]:[.list-type_&]:grid-cols-[1fr_9rem_7rem_9rem_7.94rem]  max-lg:[.list-select-active.list-type_&]:pl-7! max-lg:duration-150 max-lg:[.list-type_&]:transition-[padding-left] not-[.list-type_&]:[&.active-select]:border-blue-500 [.list-type_&]:[&.active-select]:after:scale-100 [.list-type_&]:[&.active-select]:bg-gray-200 [.active]:z-10;
+		@apply border border-gray-500 rounded-xl relative transition-colors duration-150 [.list-type_&]:[&.active-select]:bg-gray-200 max-md:[.list-type_&]:grid-cols-[60px_1fr_50px] md:[.team-page_&]:[.list-type_&]:grid-cols-[1fr_9rem_7rem_9rem_7.94rem]  max-lg:[.list-select-active.list-type_&]:pl-7! max-lg:duration-150 max-lg:[.list-type_&]:transition-[padding-left] not-[.list-type_&]:[&.active-select]:border-blue-500 [.list-type_&]:[&.active-select]:after:scale-100 [.list-type_&]:[&.active-select]:bg-gray-200 [.active]:z-10;
 		&::after {
 			@apply content-[""] left-0 absolute -top-px w-px h-[calc(100%_+_2px)] bg-blue-500 transition-transform duration-150 origin-center scale-0;
 		}
@@ -42,10 +42,7 @@
 			}
 		}
 		.file-item-top {
-			@apply relative not-[.list-type_&]:pb-[75%] max-sm:h-[8.125rem] bg-gray-150 w-full rounded-t-[11px] overflow-hidden flex items-center justify-center after:content-[""] after:absolute after:bg-blue-900/25 after:size-full after:top-0 after:left-0 after:z-0 after:rounded-t-[11px] after:opacity-0 after:transition-opacity after:duration-150 [.active-select_&]:after:opacity-100 after:ease-in group-hover:after:opacity-100 [.list-type_&]:after:hidden [.list-type_&]:bg-transparent [.list-type_&]:h-7.5 [.list-type_&]:justify-start [.list-type_&]:pl-2.5 max-lg:after:hidden truncate;
-			h4 {
-				@apply hidden ml-3 [.list-type_&]:block text-sm text-dark-800 font-medium truncate;
-			}
+			@apply relative not-[.list-type_&]:pb-[75%] bg-gray-150 w-full rounded-t-[11px] overflow-hidden flex items-center justify-center after:content-[""] after:absolute after:bg-blue-900/25 after:size-full after:top-0 after:left-0 after:z-0 after:rounded-t-[11px] after:opacity-0 after:transition-opacity after:duration-150 [.active-select_&]:after:opacity-100 after:ease-in group-hover:after:opacity-100 [.list-type_&]:after:hidden [.list-type_&]:bg-transparent [.list-type_&]:justify-start [.list-type_&]:pl-2.5 max-lg:after:hidden [.list-type_&]:h-full;
 			.file-item-top-wrapper {
 				@apply [.list-type_&]:flex [.list-type_&]:items-center not-[.list-type_&]:absolute not-[.list-type_&]:inset-0 truncate;
 			}
@@ -66,16 +63,16 @@
 			@apply absolute top-3 right-3 flex flex-col gap-3 duration-150 ease-in-out [.list-type_&]:relative [.list-type_&]:right-0 [.list-type_&]:top-0;
 		}
 		.file-item-bottom {
-			@apply px-5 py-4 max-lg:px-4 bg-white rounded-b-[11px] [.list-type_&]:not-[.team-page_&]:hidden [.list-type_&]:bg-transparent [.list-type_&]:px-0 [.list-type_&]:py-0;
+			@apply px-5 py-4 max-lg:px-4 bg-white rounded-b-[11px] [.list-type_&]:bg-transparent [.list-type_&]:px-0 [.list-type_&]:py-0 flex flex-col [.list-type_&]:justify-center truncate;
 			& > p {
 				@apply [.list-type_&]:hidden;
 			}
 			h4 {
-				@apply text-sm text-dark-800 font-medium truncate [.list-type_&]:hidden;
+				@apply text-sm text-dark-800 font-medium truncate;
 			}
 		}
 		.file-author {
-			@apply flex items-center gap-2 mt-2 [.list-type_&]:mt-0 truncate;
+			@apply flex items-center gap-2 mt-2 [.list-type_&]:hidden truncate;
 			.file-author-avatar {
 				@apply size-6 rounded-full bg-blue-950/10 flex items-center justify-center flex-shrink-0;
 				img {
