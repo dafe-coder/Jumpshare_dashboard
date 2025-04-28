@@ -74,6 +74,12 @@
 			background-color: var(--color-gray-200);
 		}
 	}
+	.btn-gray-default {
+		background-color: var(--color-gray-150);
+		border-radius: 6px;
+		padding: 0 12px;
+		height: 36px;
+	}
 	.btn-danger {
 		background-color: var(--color-red-500);
 		color: var(--color-white);
