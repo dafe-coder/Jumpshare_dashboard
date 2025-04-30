@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @import "../node_modules/hamburgers/dist/hamburgers.css";
-
 @font-face {
 	font-family: 'GeneralSans-semibold';
 	font-style: normal;
@@ -141,6 +140,7 @@
 @import "./components.css";
 @import "./hamburger.css";
 @import "./components-dashboard.css";
+@import "./datepicker.css";
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
@@ -150,6 +150,14 @@
   If we ever want to remove these styles, we need to add an explicit border
   color utility to any element that depends on these defaults.
 */
+
+@utility scrollbar-hide {
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+	&::-o-scrollbar {
+		display: none;
+	}
+}
 
 @utility container {
 	margin-inline: auto;
