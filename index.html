@@ -161,7 +161,7 @@
 									</ul>
 								</div>
 							</div>
-							<svg class='icon icon-sm flex-shrink-0'>
+							<svg class='icon icon-xs flex-shrink-0'>
 								<use href='#check-bottom'></use>
 							</svg>
 						</a>
@@ -177,7 +177,7 @@
 										<span class='text-sm text-blue-500 font-medium hover:underline underline-offset-1 cursor-pointer'>+ Add Workspace</span>
 									</div>
 									<div class='flex flex-col gap-y-1 mt-3'>
-										<div class='active-workspace flex items-center gap-x-3 cursor-pointer rounded-md hover:bg-gray-150 active:bg-gray-150 px-2 py-2.5'>
+										<div class='active-workspace flex items-center gap-x-3 cursor-pointer rounded-md hover:bg-gray-150 [&.active-workspace]:bg-gray-150 px-2 py-2.5'>
 											<div class='flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white'>
 												<span class='font-semibold text-base text-blue-500'>S</span>
 											</div>
@@ -196,7 +196,7 @@
 												</svg>
 											</span>
 										</div>
-										<div class='flex items-center gap-x-3 cursor-pointer rounded-md hover:bg-gray-150 active:bg-gray-150 px-2 py-2.5'>
+										<div class='flex items-center gap-x-3 cursor-pointer rounded-md hover:bg-gray-150 [&.active-workspace]:bg-gray-150 px-2 py-2.5'>
 											<div class='flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white '>
 												<span class='font-semibold text-base text-blue-500'>N</span>
 											</div>
@@ -329,7 +329,7 @@
 									</span>
 								  </button>
 								<button type='submit' class='hidden lg:block absolute left-3.5 top-1/2 -translate-y-1/2 cursor-pointer transition-transform transform-gpu hover:scale-105 origin-center text-dark-800'>
-									<svg class='icon icon-sm'>
+									<svg class='icon icon-xs'>
 										<use href='#search'></use>
 									</svg>
 								</button>
@@ -598,8 +598,70 @@
 							</button>
 						</div>
 						<div class='flex gap-3'>
-							<button class='hidden is-select-btn btn btn-border-default btn-sm text-sm max-lg:flex h-9'>
-								<span>Select</span>
+							<div class="dropdown-wrapper">
+								<button class='dropdown-button btn btn-border-default btn-sm text-sm h-9 px-2' data-id="dropdown-folder-settings">
+									<svg class='icon icon-md'>
+										<use href='#dots-horizontal'></use>
+									</svg>
+								</button>
+								<div class='js-dropdown hidden w-[14.5rem]' data-dropdown-id='dropdown-folder-settings' data-sheet-modal>
+									<div class='js-dropdown-overlay'></div>
+									<div class='js-dropdown-body'>
+										<div class='js-dropdown-trigger'>
+											<span></span>
+										</div>
+										<div class='js-dropdown-content'>
+											<a href="#" class='flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 transition-colors'>
+												<svg class='icon icon-md'>
+													<use href='#lock'></use>
+												</svg>
+												<span>Lock</span>
+											</a>
+											<a href="#" class='flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 transition-colors'>
+												<svg class='icon icon-md'>
+													<use href='#trash-with-clock'></use>
+												</svg>
+												<span>Self-Destruct</span>
+											</a>
+											<a href="#" class='flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 transition-colors'>
+												<svg class='icon icon-md'>
+													<use href='#stats'></use>
+												</svg>
+												<span>View Stats</span>
+											</a>
+											<a href="#" class='flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 transition-colors'>
+												<svg class='icon icon-md'>
+													<use href='#star'></use>
+												</svg>
+												<span>Favorite</span>
+											</a>
+											<a href="#" class='flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 transition-colors'>
+												<svg class='icon icon-md'>
+													<use href='#download'></use>
+												</svg>
+												<span>Download</span>
+											</a>
+											<a href="#" class='flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 transition-colors'>
+												<svg class='icon icon-md'>
+													<use href='#disable'></use>
+												</svg>
+												<span>Disable Download</span>
+											</a>
+											<a href="#" class='flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 transition-colors'>
+												<svg class='icon icon-md'>
+													<use href='#trash'></use>
+												</svg>
+												<span>Delete Folder</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<button class='hidden is-select-btn btn btn-border-default btn-sm text-sm max-lg:flex size-8 p-0 align-top relative [&.active-select]:bg-gray-300'>
+								<span class='size-6 border-r border-b border-gray-600 rounded-br-md absolute -right-[5px] -bottom-[5px]'></span>
+								<svg width="14" height="11" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M1 8.06402L5 12.625L15 1.625" stroke="#0A0A0B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
 							</button>
 							<div class='dropdown-wrapper'>
 								<button data-id='dropdown-grid' class='dropdown-button relative z-1 btn p-0 border border-gray-600 size-9'>

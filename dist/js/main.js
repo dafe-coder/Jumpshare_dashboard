@@ -24,7 +24,6 @@ $(document).ready(function () {
 	const selectItem = $('[data-select-item]')
 	const titleLibrary = $('#title-library')
 	const titleLibraryTextDefault = titleLibrary.text()
-	const defaultSelectBtnCode = $('.is-select-btn').html()
 
 	selectItem.on('change', function (e) {
 		const selectedItems = selectItem.filter(':checked')
@@ -42,7 +41,6 @@ $(document).ready(function () {
 			selectWrapper.siblings('div').css('display', 'flex')
 			titleLibrary.text(titleLibraryTextDefault)
 			$('[data-content-type]').removeClass('list-select-active')
-			$('.is-select-btn').html(defaultSelectBtnCode)
 		}
 	})
 
@@ -55,17 +53,11 @@ $(document).ready(function () {
 		selectItem.prop('checked', false)
 		titleLibrary.text(titleLibraryTextDefault)
 		$('[data-content-type]').removeClass('list-select-active')
-		$('.is-select-btn').html(defaultSelectBtnCode)
 	})
 
 	$('.is-select-btn').on('click', function (e) {
 		e.preventDefault()
 		$(this).toggleClass('active-select')
-		if ($(this).hasClass('active-select')) {
-			$(this).html('Cancel')
-		} else {
-			$(this).html(defaultSelectBtnCode)
-		}
 		$('[data-content-type]').toggleClass('list-select-active')
 	})
 
@@ -248,4 +240,24 @@ $(document).ready(function () {
 	// Update when loading and window resize
 	updateBrowserUIHeight()
 	window.addEventListener('resize', updateBrowserUIHeight)
+
+	const datepickerEl = document.getElementById('default-datepicker');
+
+if (datepickerEl) {
+    const datepicker = new Datepicker(datepickerEl, {
+        format: 'mm/dd/yyyy',
+        maxDate: new Date(),
+        minDate: null,
+        range: true,
+        multipleDates: true,
+        multipleDatesSeparator: ' - ',
+        onSelect: (selectedDates) => {
+            if (selectedDates.length === 1) {
+                datepickerEl.value = selectedDates[0];
+            } else if (selectedDates.length === 2) {
+                datepickerEl.value = `${selectedDates[0]} - ${selectedDates[1]}`;
+            }
+        }
+    });
+}
 })

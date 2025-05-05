@@ -2,6 +2,7 @@ const MobileMenu = {
 	hamburger: null,
 	overlay: null,
 	aside: null,
+	isMobileMenuActive: false,
 
 	init: function() {
 		this.hamburger = $(".hamburger");
@@ -15,11 +16,13 @@ const MobileMenu = {
 		this.hamburger.on('click', function() {
 			$(this).toggleClass('is-active');
 			self.aside.toggleClass('active');
+			self.isMobileMenuActive = !self.isMobileMenuActive;
 		}.bind(this));
 
 		this.overlay.on('click', function() {
 			if(self.aside.hasClass('active') && window.innerWidth < 1024) {
 				self.closeMobileMenu();
+				self.isMobileMenuActive = false;
 			}
 		}.bind(this));
 	},
@@ -33,6 +36,7 @@ const MobileMenu = {
 		this.init();
 		this.initMobileMenu();
 	}
+
 };
 
 $(document).ready(function() {

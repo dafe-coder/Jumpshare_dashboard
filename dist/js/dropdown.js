@@ -341,7 +341,10 @@ const Dropdown = {
 	},
 	
 	openSheet($sheetModal) {
-		MobileMenu.closeMobileMenu();
+		if(MobileMenu.isMobileMenuActive) {
+			MobileMenu.closeMobileMenu();
+		}
+
 		if (this.activeSheet) {
 			this.closeActiveSheet();
 		}
