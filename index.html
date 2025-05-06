@@ -165,7 +165,7 @@
 								<use href='#check-bottom'></use>
 							</svg>
 						</a>
-						<div class='js-dropdown hidden w-[16.875rem] top-full left-3 space-y-1' data-dropdown-id='dropdown-workspaces' data-sheet-modal>
+						<div class='js-dropdown hidden w-[16.875rem] top-full left-3' data-dropdown-id='dropdown-workspaces' data-sheet-modal>
 							<div class='js-dropdown-overlay'></div>
 							<div class='js-dropdown-body'>
 								<div class='js-dropdown-trigger'>
@@ -342,7 +342,7 @@
 										<svg class='icon w-[1.125rem] h-5'>
 											<use href='#bell'></use>
 										</svg>
-										<span class='absolute top-1.5 left-5 z-1 bg-red-500 rounded-full border-2 border-white flex justify-center items-center h-4 min-w-4.5 px-1 text-[11px] text-white text-center font-medium text-nowrap'>9+</span>
+										<span class='absolute top-2 left-[1.312rem] z-1 bg-red-500 rounded-full border-2 border-white flex justify-center items-center h-4.5 min-w-4.5 px-1 text-[11px] text-white text-center font-medium text-nowrap'>9+</span>
 									</a>
 									<div class='js-dropdown hidden w-[28.125rem]' data-dropdown-id='dropdown-notifications' data-sheet-modal>
 										<div class='js-dropdown-overlay'></div>
@@ -787,16 +787,18 @@
 								</div>
 							</div>
 							<a href="./folder-open.html" class='group folder-item dropdown-wrapper'>
-								<div class='flex items-center gap-3 [.list-type_&]:ml-2.5 max-lg:gap-5 max-lg:[.list-select-active.list-type_&]:pl-9! max-lg:[.list-type_&]:duration-300 max-lg:[.list-type_&]:transition-[padding-left] max-xl:not-[.list-type_&]:flex-col max-xl:items-start max-lg:[.list-type_&]:items-center truncate'>
+								<div class='flex items-center gap-3 [.list-type_&]:ml-2.5 max-lg:gap-5 max-lg:[.list-select-active.list-type_&]:pl-9! max-lg:[.list-type_&]:duration-300 max-lg:[.list-type_&]:transition-[padding-left] max-xl:not-[.list-type_&]:flex-col max-xl:not-[.list-type_&]:items-start max-lg:[.list-type_&]:items-center truncate'>
 									<input data-select-item class="peer" hidden="" type="checkbox" id="select-file-2">
 									<label class="card-select-box" for="select-file-2">
 										<svg class='icon'>
 											<use href='#check-bold'></use>
 										</svg>
 									</label>
-									<svg class='icon icon-md lg:group-hover:not-[.list-type_&]:opacity-0 not-[.list-type_&]:[.list-select-active_&]:opacity-0 flex-shrink-0 max-lg:[.list-select-active_&]:not-[.list-type_&]:opacity-0'>
-										<use href='#folder'></use>
-									</svg>
+									<div class='flex items-center justify-center [.list-type_&]:w-10 [.list-type_&]:h-7.5 [.list-type_&]:flex-shrink-0'>
+										<svg class='icon icon-md lg:group-hover:not-[.list-type_&]:opacity-0 not-[.list-type_&]:[.list-select-active_&]:opacity-0 flex-shrink-0 max-lg:[.list-select-active_&]:not-[.list-type_&]:opacity-0'>
+											<use href='#folder'></use>
+										</svg>
+									</div>
 									<div class='flex flex-col gap-1 truncate'>
 										<h4 class='text-sm text-dark-800 font-medium [.list-type_&]:mt-0 truncate'>Team Meetings Team Meetings Team Meetings Team Meetings Team Meetings Team Meetings Team Meetings</h4>
 										<ul class="list-with-dots lg:[.list-type_&]:hidden">
@@ -837,7 +839,7 @@
 															<svg class='icon icon-md'>
 																<use href='#link'></use>
 															</svg>
-															<span>Copy</span>
+															<span>Copy Link</span>
 														</li>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>
@@ -951,16 +953,18 @@
 								</div>
 							</a>
 							<a href="./folder-open.html" class='group folder-item dropdown-wrapper'>
-								<div class='flex items-center gap-3 [.list-type_&]:ml-2.5 max-lg:gap-5 max-lg:[.list-select-active.list-type_&]:pl-9! max-lg:[.list-type_&]:duration-300 max-lg:[.list-type_&]:transition-[padding-left] max-xl:not-[.list-type_&]:flex-col max-xl:items-start max-lg:[.list-type_&]:items-center truncate'>
+								<div class='flex items-center gap-3 [.list-type_&]:ml-2.5 max-lg:gap-5 max-lg:[.list-select-active.list-type_&]:pl-9! max-lg:[.list-type_&]:duration-300 max-lg:[.list-type_&]:transition-[padding-left] max-xl:not-[.list-type_&]:flex-col max-xl:not-[.list-type_&]:items-start max-lg:[.list-type_&]:items-center truncate'>
 									<input data-select-item class="peer" hidden="" type="checkbox" id="select-file-1">
 									<label class="card-select-box" for="select-file-1">
 										<svg class='icon'>
 											<use href='#check-bold'></use>
 										</svg>
 									</label>
-									<svg class='icon icon-md lg:group-hover:not-[.list-type_&]:opacity-0 not-[.list-type_&]:[.list-select-active_&]:opacity-0 flex-shrink-0 max-lg:[.list-select-active_&]:not-[.list-type_&]:opacity-0'>
-										<use href='#folder'></use>
-									</svg>
+									<div class='flex items-center justify-center [.list-type_&]:w-10 [.list-type_&]:h-7.5 [.list-type_&]:flex-shrink-0'>
+										<svg class='icon icon-md lg:group-hover:not-[.list-type_&]:opacity-0 not-[.list-type_&]:[.list-select-active_&]:opacity-0 flex-shrink-0 max-lg:[.list-select-active_&]:not-[.list-type_&]:opacity-0'>
+											<use href='#folder'></use>
+										</svg>
+									</div>
 									<div class='flex flex-col gap-1 truncate'>
 										<h4 class='text-sm text-dark-800 font-medium [.list-type_&]:mt-0 truncate'>Untitled</h4>
 										<ul class="list-with-dots lg:[.list-type_&]:hidden">
@@ -1001,7 +1005,7 @@
 															<svg class='icon icon-md'>
 																<use href='#link'></use>
 															</svg>
-															<span>Copy</span>
+															<span>Copy Link</span>
 														</li>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>
@@ -1115,16 +1119,18 @@
 								</div>
 							</a>
 							<a href="./folder-open.html" class='group folder-item dropdown-wrapper'>
-								<div class='flex items-center gap-3 [.list-type_&]:ml-2.5 max-lg:gap-5 max-lg:[.list-select-active.list-type_&]:pl-9! max-lg:[.list-type_&]:duration-300 max-lg:[.list-type_&]:transition-[padding-left] max-xl:not-[.list-type_&]:flex-col max-xl:items-start max-lg:[.list-type_&]:items-center truncate'>
+								<div class='flex items-center gap-3 [.list-type_&]:ml-2.5 max-lg:gap-5 max-lg:[.list-select-active.list-type_&]:pl-9! max-lg:[.list-type_&]:duration-300 max-lg:[.list-type_&]:transition-[padding-left] max-xl:not-[.list-type_&]:flex-col max-xl:not-[.list-type_&]:items-start max-lg:[.list-type_&]:items-center truncate'>
 									<input data-select-item class="peer" hidden="" type="checkbox" id="select-file-3">
 									<label class="card-select-box" for="select-file-3">
 										<svg class='icon'>
 											<use href='#check-bold'></use>
 										</svg>
 									</label>
-									<svg class='icon icon-md lg:group-hover:not-[.list-type_&]:opacity-0 not-[.list-type_&]:[.list-select-active_&]:opacity-0 flex-shrink-0 max-lg:[.list-select-active_&]:not-[.list-type_&]:opacity-0'>
-										<use href='#folder'></use>
-									</svg>
+									<div class='flex items-center justify-center [.list-type_&]:w-10 [.list-type_&]:h-7.5 [.list-type_&]:flex-shrink-0'>
+										<svg class='icon icon-md lg:group-hover:not-[.list-type_&]:opacity-0 not-[.list-type_&]:[.list-select-active_&]:opacity-0 flex-shrink-0 max-lg:[.list-select-active_&]:not-[.list-type_&]:opacity-0'>
+											<use href='#folder'></use>
+										</svg>
+									</div>
 									<div class='flex flex-col gap-1 truncate'>
 										<h4 class='text-sm text-dark-800 font-medium [.list-type_&]:mt-0 truncate'>New Folder 2.0</h4>
 										<ul class="list-with-dots lg:[.list-type_&]:hidden">
@@ -1165,7 +1171,7 @@
 															<svg class='icon icon-md'>
 																<use href='#link'></use>
 															</svg>
-															<span>Copy</span>
+															<span>Copy Link</span>
 														</li>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>
@@ -1279,16 +1285,18 @@
 								</div>
 							</a>
 							<a href="./folder-open.html" class='group folder-item dropdown-wrapper'>
-								<div class='flex items-center gap-3 [.list-type_&]:ml-2.5 max-lg:gap-5 max-lg:[.list-select-active.list-type_&]:pl-9! max-lg:[.list-type_&]:duration-300 max-lg:[.list-type_&]:transition-[padding-left] max-xl:not-[.list-type_&]:flex-col max-xl:items-start max-lg:[.list-type_&]:items-center truncate'>
+								<div class='flex items-center gap-3 [.list-type_&]:ml-2.5 max-lg:gap-5 max-lg:[.list-select-active.list-type_&]:pl-9! max-lg:[.list-type_&]:duration-300 max-lg:[.list-type_&]:transition-[padding-left] max-xl:not-[.list-type_&]:flex-col max-xl:not-[.list-type_&]:items-start max-lg:[.list-type_&]:items-center truncate'>
 									<input data-select-item class="peer" hidden="" type="checkbox" id="select-file-4">
 									<label class="card-select-box" for="select-file-4">
 										<svg class='icon'>
 											<use href='#check-bold'></use>
 										</svg>
 									</label>
-									<svg class='icon icon-md lg:group-hover:not-[.list-type_&]:opacity-0 not-[.list-type_&]:[.list-select-active_&]:opacity-0 flex-shrink-0 max-lg:[.list-select-active_&]:not-[.list-type_&]:opacity-0'>
-										<use href='#folder'></use>
-									</svg>
+									<div class='flex items-center justify-center [.list-type_&]:w-10 [.list-type_&]:h-7.5 [.list-type_&]:flex-shrink-0'>
+										<svg class='icon icon-md lg:group-hover:not-[.list-type_&]:opacity-0 not-[.list-type_&]:[.list-select-active_&]:opacity-0 flex-shrink-0 max-lg:[.list-select-active_&]:not-[.list-type_&]:opacity-0'>
+											<use href='#folder'></use>
+										</svg>
+									</div>
 									<div class='flex flex-col gap-1 truncate'>
 								<h4 class='text-sm text-dark-800 		font-medium [.list-type_&]:mt-0 truncate'>Untitled</h4>
 										<ul class="list-with-dots lg:[.list-type_&]:hidden">
@@ -1329,7 +1337,7 @@
 															<svg class='icon icon-md'>
 																<use href='#link'></use>
 															</svg>
-															<span>Copy</span>
+															<span>Copy Link</span>
 														</li>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>
@@ -1604,7 +1612,7 @@
 										</svg>
 									</label>
 									<div class='file-item-nav dropdown-wrapper'>
-										<button data-id="dropdown-settings" class="dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 transition-all hover:bg-gray-300 group-hover:opacity-100 not-[.list-type_&]:opacity-0">
+										<button data-id="dropdown-settings" class="dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 hover:bg-gray-300 [.list-type_&]:hover:bg-gray-400 group-hover:opacity-100 not-[.list-type_&]:opacity-0">
 											<svg class='icon icon-md'>
 												<use href='#dots-horizontal'></use>
 											</svg>
@@ -1621,7 +1629,7 @@
 															<svg class='icon icon-md'>
 																<use href='#link'></use>
 															</svg>
-															<span>Copy</span>
+															<span>Copy Link</span>
 														</li>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>
@@ -1787,7 +1795,7 @@
 										</svg>
 									</label>
 									<div class='file-item-nav dropdown-wrapper'>
-										<button data-id="dropdown-settings" class="dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 transition-all hover:bg-gray-300 group-hover:opacity-100 not-[.list-type_&]:opacity-0">
+										<button data-id="dropdown-settings" class="dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 hover:bg-gray-300 [.list-type_&]:hover:bg-gray-400 group-hover:opacity-100 not-[.list-type_&]:opacity-0">
 											<svg class='icon icon-md'>
 												<use href='#dots-horizontal'></use>
 											</svg>
@@ -1804,7 +1812,7 @@
 															<svg class='icon icon-md'>
 																<use href='#link'></use>
 															</svg>
-															<span>Copy</span>
+															<span>Copy Link</span>
 														</li>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>
@@ -1961,7 +1969,7 @@
 										</svg>
 									</label>
 									<div class='file-item-nav dropdown-wrapper'>
-										<button data-id="dropdown-settings" class="dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 transition-all hover:bg-gray-300 group-hover:opacity-100 not-[.list-type_&]:opacity-0">
+										<button data-id="dropdown-settings" class="dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 hover:bg-gray-300 [.list-type_&]:hover:bg-gray-400 group-hover:opacity-100 not-[.list-type_&]:opacity-0">
 											<svg class='icon icon-md'>
 												<use href='#dots-horizontal'></use>
 											</svg>
@@ -1978,7 +1986,7 @@
 															<svg class='icon icon-md'>
 																<use href='#link'></use>
 															</svg>
-															<span>Copy</span>
+															<span>Copy Link</span>
 														</li>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>
@@ -2135,7 +2143,7 @@
 										</svg>
 									</label>
 									<div class='file-item-nav dropdown-wrapper'>
-										<button data-id="dropdown-settings" class="dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 transition-all hover:bg-gray-300 group-hover:opacity-100 not-[.list-type_&]:opacity-0">
+										<button data-id="dropdown-settings" class="dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 hover:bg-gray-300 [.list-type_&]:hover:bg-gray-400 group-hover:opacity-100 not-[.list-type_&]:opacity-0">
 											<svg class='icon icon-md'>
 												<use href='#dots-horizontal'></use>
 											</svg>
@@ -2152,7 +2160,7 @@
 															<svg class='icon icon-md'>
 																<use href='#link'></use>
 															</svg>
-															<span>Copy</span>
+															<span>Copy Link</span>
 														</li>
 														<li class='js-dropdown-list-item'>
 															<svg class='icon icon-md'>

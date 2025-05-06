@@ -302,14 +302,11 @@ const Dropdown = {
 			
 			if(window.innerWidth < 1024) {
 				const $button = $(e.currentTarget).closest('.dropdown-wrapper').find('.dropdown-button');
-				const svgTypeList = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M7 6H18M7 12H18M7 18H18" stroke="#122345" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+				const svgTypeList = `<svg class="icon icon-md text-blue-500">
+					<use href="#list"></use>
 				</svg>`;
-				const svgTypeGrid = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<rect x="5.5" y="5.5" width="5" height="5" fill="white" stroke="#122345"></rect>
-					<rect x="13.5" y="5.5" width="5" height="5" fill="white" stroke="#122345"></rect>
-					<rect x="5.5" y="13.5" width="5" height="5" fill="white" stroke="#122345"></rect>
-					<rect x="13.5" y="13.5" width="5" height="5" fill="white" stroke="#122345"></rect>
+				const svgTypeGrid = `<svg class="icon icon-md">
+					<use href="#large-grid"></use>
 				</svg>`;
 
 				$(e.currentTarget).toggleClass('active-mobile');
