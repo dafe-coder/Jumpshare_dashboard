@@ -128,275 +128,6 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="stylesheet" href="./dist/output.css" />
-		<!-- <style>
-			.calendar-wrapper {
-				position: absolute;
-				top: 100%;
-				right: 0;
-				background: white;
-				border: 1px solid #ddd;
-				border-radius: 4px;
-				padding: 10px;
-				z-index: 1000;
-				display: none;
-				box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-			}
-
-			.calendar-wrapper.active {
-				display: block;
-			}
-
-			.arrow {
-				position: absolute;
-				top: -6px;
-				right: 20px;
-				width: 0;
-				height: 0;
-				border-left: 6px solid transparent;
-				border-right: 6px solid transparent;
-				border-bottom: 6px solid #ddd;
-			}
-
-			.arrow:after {
-				content: '';
-				position: absolute;
-				top: 1px;
-				right: 0;
-				width: 0;
-				height: 0;
-				border-left: 6px solid transparent;
-				border-right: 6px solid transparent;
-				border-bottom: 6px solid white;
-			}
-
-			.range-footer {
-				margin-top: 10px;
-				padding-top: 10px;
-				border-top: 1px solid #ddd;
-				display: flex;
-				justify-content: flex-end;
-				gap: 10px;
-			}
-
-			#analytics_date_range {
-				width: 100%;
-			}
-
-			.ui-datepicker {
-				width: auto;
-				padding: 0;
-			}
-
-			.ui-datepicker .ui-datepicker-header {
-				padding: 0.2em 0;
-			}
-
-			.ui-datepicker .ui-datepicker-prev,
-			.ui-datepicker .ui-datepicker-next {
-				top: 0.2em;
-			}
-
-			.ui-datepicker .ui-datepicker-title {
-				margin: 0 2.3em;
-				line-height: 1.8em;
-			}
-
-			.ui-datepicker .ui-datepicker-title select {
-				font-size: 1em;
-				margin: 1px 0;
-			}
-
-			.ui-datepicker select.ui-datepicker-month,
-			.ui-datepicker select.ui-datepicker-year {
-				width: 45%;
-			}
-
-			.ui-datepicker table {
-				width: 100%;
-				font-size: 0.9em;
-				border-collapse: collapse;
-				margin: 0 0 0.4em;
-			}
-
-			.ui-datepicker th {
-				padding: 0.7em 0.3em;
-				text-align: center;
-				font-weight: bold;
-				border: 0;
-			}
-
-			.ui-datepicker td {
-				border: 0;
-				padding: 1px;
-			}
-
-			.ui-datepicker td span,
-			.ui-datepicker td a {
-				display: block;
-				padding: 0.2em;
-				text-align: right;
-				text-decoration: none;
-			}
-
-			.ui-datepicker .ui-datepicker-buttonpane {
-				background-image: none;
-				margin: 0.7em 0 0 0;
-				padding: 0 0.2em;
-				border-left: 0;
-				border-right: 0;
-				border-bottom: 0;
-			}
-
-			.ui-datepicker .ui-datepicker-buttonpane button {
-				float: right;
-				margin: 0.5em 0.2em 0.4em;
-				cursor: pointer;
-				padding: 0.2em 0.6em 0.3em 0.6em;
-				width: auto;
-				overflow: visible;
-			}
-
-			.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
-				float: left;
-			}
-
-			.ui-datepicker.ui-datepicker-multi {
-				width: auto;
-			}
-
-			.ui-datepicker-multi .ui-datepicker-group {
-				float: left;
-			}
-
-			.ui-datepicker-multi .ui-datepicker-group table {
-				width: 95%;
-				margin: 0 auto 0.4em;
-			}
-
-			.ui-datepicker-multi-2 .ui-datepicker-group {
-				width: 50%;
-			}
-
-			.ui-datepicker-multi-3 .ui-datepicker-group {
-				width: 33.3%;
-			}
-
-			.ui-datepicker-multi-4 .ui-datepicker-group {
-				width: 25%;
-			}
-
-			.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header {
-				border-left-width: 0;
-			}
-
-			.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header {
-				border-left-width: 0;
-			}
-
-			.ui-datepicker-multi .ui-datepicker-buttonpane {
-				clear: left;
-			}
-
-			.ui-datepicker-row-break {
-				clear: both;
-				width: 100%;
-				font-size: 0;
-			}
-
-			.ui-datepicker-rtl {
-				direction: rtl;
-			}
-
-			.ui-datepicker-rtl .ui-datepicker-prev {
-				right: 2px;
-				left: auto;
-			}
-
-			.ui-datepicker-rtl .ui-datepicker-next {
-				left: 2px;
-				right: auto;
-			}
-
-			.ui-datepicker-rtl .ui-datepicker-prev:hover {
-				right: 3px;
-				left: auto;
-			}
-
-			.ui-datepicker-rtl .ui-datepicker-next:hover {
-				left: 3px;
-				right: auto;
-			}
-
-			.ui-datepicker-rtl .ui-datepicker-buttonpane {
-				clear: right;
-			}
-
-			.ui-datepicker-rtl .ui-datepicker-buttonpane button {
-				float: left;
-			}
-
-			.ui-datepicker-rtl .ui-datepicker-buttonpane button.ui-datepicker-current {
-				float: right;
-			}
-
-			.ui-datepicker-rtl .ui-datepicker-group {
-				float: right;
-			}
-
-			.ui-datepicker-rtl .ui-datepicker-group-last .ui-datepicker-header {
-				border-right-width: 0;
-				border-left-width: 1px;
-			}
-
-			.ui-datepicker-rtl .ui-datepicker-group-middle .ui-datepicker-header {
-				border-right-width: 0;
-				border-left-width: 1px;
-			}
-
-			.ui-datepicker-cover {
-				display: block;
-				position: absolute;
-				z-index: -1;
-				filter: mask();
-				top: -4px;
-				left: -4px;
-				width: 200px;
-				height: 200px;
-			}
-
-			.dp-highlight {
-				background: #e6f2ff;
-			}
-
-			.dp-highlight-first {
-				border-top-left-radius: 4px;
-				border-bottom-left-radius: 4px;
-			}
-
-			.dp-highlight-last {
-				border-top-right-radius: 4px;
-				border-bottom-right-radius: 4px;
-			}
-
-			#date_selector {
-				cursor: pointer;
-				padding: 5px 10px;
-				border: 1px solid #ddd;
-				border-radius: 4px;
-				background: white;
-			}
-
-			.caret {
-				display: inline-block;
-				width: 0;
-				height: 0;
-				margin-left: 2px;
-				vertical-align: middle;
-				border-top: 4px solid;
-				border-right: 4px solid transparent;
-				border-left: 4px solid transparent;
-			}
-		</style> -->
 	</head>
 	<body class="drag-and-drop">
 		<div
@@ -983,19 +714,45 @@
 									</button>
 								</div>
 							</div>
-							<div class="relative max-w-sm">
-								<div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-									 <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-											<path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
-										</svg>
+							<div class='dropdown-wrapper'>
+								<button data-id="dropdown-date" class="dropdown-button btn btn-border-default gap-1.5 font-normal">
+									17 Aug - 23 Aug, 2025
+									<svg class="icon icon-xs">
+										<use href="#check-bottom"></use>
+									</svg>
+								</button>
+								<div class='js-dropdown hidden' data-dropdown-id='dropdown-date' data-sheet-modal>
+									<div class='js-dropdown-overlay'></div>
+									<div class='js-dropdown-body'>
+										<div class='js-dropdown-trigger'>
+											<span></span>
+										</div>
+										<div class='js-dropdown-content'>
+											<div class='js-dropdown-list-item'>
+												Today
+											</div>
+											<div class='js-dropdown-list-item'>
+												Last 7 days
+											</div>
+											<div class='js-dropdown-list-item'>
+												Last 28 days
+											</div>
+											<div class='js-dropdown-list-item'>
+												Last 90 days
+											</div>
+											<hr class='border-gray-500 my-2'>
+											<div class='js-dropdown-list-item'>
+												January
+											</div>
+											<div class='js-dropdown-list-item'>
+												February
+											</div>
+											<div class='js-dropdown-list-item'>
+												Custom
+											</div>
+										</div>
+									</div>
 								</div>
-								<input 
-									type="text" 
-									id="default-datepicker" 
-									class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
-									placeholder="Select date"
-									data-datepicker-target="default-datepicker"
-								>
 							</div>
 						</div>
 					</div>
@@ -1607,76 +1364,9 @@
 		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
 		crossorigin="anonymous"
 	></script>
-	<!-- <script
-		src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
-		integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0="
-		crossorigin="anonymous"
-	></script>
-	<link
-		rel="stylesheet"
-		href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
-	/> -->
 	<script src="./dist/js/mobile-menu.js"></script>
 	<script src="./dist/js/dialog.js"></script>
 	<script src="./dist/js/menu-tree.js"></script>
 	<script src="./dist/js/dropdown.js"></script>
-	<script src="./dist/js/datepicker.js"></script>
-  <script src="./dist/js/datepicker-full.min.js"></script>
 	<script src="./dist/js/main.js"></script>
-	<!-- <script>
-		$(document).ready(function() {
-			var calendar_props = {
-				date_selector_el: "#date_selector",
-				from_date_label_el: "#date_selector .from_date",
-				to_date_label_el: "#date_selector .to_date",
-				apply_range_el: "#apply_date_range",
-				cancel_range_el: "#cancel_date_range",
-				calendar_el: "#analytics_date_range",
-				from_date: "17 Aug, 2025",
-				to_date: "23 Aug, 2025"
-			};
-
-			var onRangeApply = function(from, to) {
-				var from_date = $.datepicker.formatDate('yy-mm-dd', $.datepicker.parseDate($.datepicker._defaults.dateFormat, from));
-				var to_date = $.datepicker.formatDate('yy-mm-dd', $.datepicker.parseDate($.datepicker._defaults.dateFormat, to));
-				
-				// Обновляем отображение выбранного диапазона
-				$(calendar_props.from_date_label_el).text(from);
-				$(calendar_props.to_date_label_el).text(to);
-				
-				// Скрываем календарь после применения
-				$('.calendar-wrapper').removeClass('active');
-				
-				// Здесь вы можете добавить логику для обновления данных при изменении диапазона дат
-				console.log('Date range changed:', from_date, to_date);
-			};
-
-			// Инициализация календаря
-			JSAnalyticsDateSelector(calendar_props, onRangeApply);
-
-			// Обработчик клика по селектору даты
-			$(calendar_props.date_selector_el).on('click', function(e) {
-				e.stopPropagation();
-				var wrapper = $('.calendar-wrapper');
-				if (wrapper.length === 0) {
-					wrapper = $('<div class="calendar-wrapper"><span class="arrow"></span><div id="analytics_date_range"></div><div class="range-footer"><a id="apply_date_range" href="#" class="btn btn-blue">Apply</a><a id="cancel_date_range" href="#" class="btn-link">Cancel</a></div></div>');
-					$('body').append(wrapper);
-				}
-				wrapper.toggleClass('active');
-			});
-
-			// Обработчик клика по кнопке отмены
-			$(document).on('click', calendar_props.cancel_range_el, function(e) {
-				e.preventDefault();
-				$('.calendar-wrapper').removeClass('active');
-			});
-
-			// Закрытие календаря при клике вне его области
-			$(document).on('click', function(e) {
-				if (!$(e.target).closest('.calendar-wrapper').length && !$(e.target).closest(calendar_props.date_selector_el).length) {
-					$('.calendar-wrapper').removeClass('active');
-				}
-			});
-		});
-	</script> -->
 </html>

@@ -240,24 +240,4 @@ $(document).ready(function () {
 	// Update when loading and window resize
 	updateBrowserUIHeight()
 	window.addEventListener('resize', updateBrowserUIHeight)
-
-	const datepickerEl = document.getElementById('default-datepicker');
-
-if (datepickerEl) {
-    const datepicker = new Datepicker(datepickerEl, {
-        format: 'mm/dd/yyyy',
-        maxDate: new Date(),
-        minDate: null,
-        range: true,
-        multipleDates: true,
-        multipleDatesSeparator: ' - ',
-        onSelect: (selectedDates) => {
-            if (selectedDates.length === 1) {
-                datepickerEl.value = selectedDates[0];
-            } else if (selectedDates.length === 2) {
-                datepickerEl.value = `${selectedDates[0]} - ${selectedDates[1]}`;
-            }
-        }
-    });
-}
 })
