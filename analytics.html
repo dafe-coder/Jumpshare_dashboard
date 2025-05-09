@@ -150,231 +150,181 @@
 			</div>
 		</div>
 		<div class="w-full min-h-screen">
-			<aside
-				class="w-[240px] fixed left-0 top-0 bottom-0 flex flex-col h-screen z-101 max-lg:-left-full max-lg:top-0 max-lg:w-full transition-all duration-500 ease-in-out [&.active]:left-0"
-			>
-				<div
-					class="mobile-menu-overlay absolute bg-[#090B13]/50 z-0 opacity-0 w-0 h-screen lg:hidden [.active_&]:opacity-100 [.active_&]:w-screen transition-all duration-500 ease-in-out delay-75"
-				></div>
-				<div
-					class="flex flex-col max-lg:w-[318px] max-lg:max-w-[318px] max-xs:w-[85%]! w-full bg-gray-150 max-lg:rounded-r-2xl z-3 h-full"
-				>
-					<div class="dropdown-wrapper z-4">
-						<a
-							href="#"
-							data-id="dropdown-workspaces"
-							class="dropdown-button p-4 flex items-center justify-between relative [&.active]:bg-gray-300 transition-colors duration-300 max-lg:rounded-t-2xl"
-						>
-							<div class="flex items-center">
+			<aside class="w-[240px] fixed left-0 top-0 bottom-0 flex flex-col h-[calc(100vh-var(--browser-ui-height,0px))] z-101 max-lg:-left-full max-lg:top-0 max-lg:w-full transition-all duration-500 ease-in-out [&.active]:left-0">
+				<div class="mobile-menu-overlay absolute bg-[#090B13]/50 z-0 opacity-0 w-0 h-[calc(100vh-var(--browser-ui-height,0px))] lg:hidden [.active_&]:opacity-100 [.active_&]:w-screen transition-all duration-500 ease-in-out delay-75"></div>
+				<div class='flex flex-col max-lg:w-[318px] max-lg:max-w-[318px] max-xs:w-[85%]! w-full bg-gray-150 max-lg:rounded-r-2xl z-3 h-full'>
+					<div class='dropdown-wrapper z-4 max-md:border-b border-gray-400'>
+						<a href='#' data-id='dropdown-workspaces' class='dropdown-button p-4 flex items-center justify-between relative [&.active]:bg-gray-300 transition-colors duration-300 max-lg:rounded-t-2xl'>
+							<div class='flex items-center'>
 								<div class="flex items-center justify-between mr-3">
-									<div
-										class="flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white"
-									>
-										<span class="font-semibold text-base text-blue-500">S</span>
+									<div class='flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white'>
+										<span class='font-semibold text-base text-blue-500'>S</span>
 									</div>
 								</div>
-								<div class="mr-1.5">
-									<h3 class="text-sm font-semibold text-black">Startup Co</h3>
-									<ul
-										class="flex items-center text-xs text-dark-800/70 gap-3 text-nowrap"
-									>
-										<li class="relative">
-											enterprise
-											<span
-												class="absolute top-1/2 -translate-y-1/2 -right-[7.5px] size-[2px] rounded-full bg-blue-900/70"
-											></span>
+								<div class='mr-1.5'>
+									<h3 class='text-sm font-semibold text-black'>Startup Co</h3>
+									<ul class='flex items-center text-xs text-dark-800/70 gap-3 text-nowrap'>
+										<li class='relative'>
+											Enterprise
+											<span class='absolute top-1/2 -translate-y-1/2 -right-[7.5px]  size-[2px] rounded-full bg-blue-900/70'></span>
 										</li>
-										<li class="relative">
+										<li class='relative'>
 											<span>23</span>
 											Members
 										</li>
 									</ul>
 								</div>
 							</div>
-							<svg class="icon icon-sm flex-shrink-0">
-								<use href="#check-bottom"></use>
+							<svg class='icon icon-xs flex-shrink-0'>
+								<use href='#check-bottom'></use>
 							</svg>
 						</a>
-						<div
-							data-dropdown-id="dropdown-workspaces"
-							class="dropdown-content p-4 top-full w-[16.875rem] z-3 overflow-hidden hidden bg-white rounded-lg absolute left-4 shadow-dropdown transition-opacity duration-150 scale-0 [&.active]:scale-100 [&.active]:opacity-100 space-y-1"
-						>
-							<div class="flex items-center justify-between">
-								<p class="text-sm text-dark-800 font-normal">Workspaces</p>
-								<span
-									class="text-sm text-blue-500 font-medium hover:underline underline-offset-1 cursor-pointer"
-									>+ Add Workspace</span
-								>
-							</div>
-							<div class="flex flex-col gap-y-4 mt-4">
-								<div class="flex items-center gap-x-3 cursor-pointer">
-									<div
-										class="flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white"
-									>
-										<span class="font-semibold text-base text-blue-500">S</span>
+						<div class='js-dropdown hidden w-[16.875rem] top-full left-3' data-dropdown-id='dropdown-workspaces' data-sheet-modal>
+							<div class='js-dropdown-overlay'></div>
+							<div class='js-dropdown-body'>
+								<div class='js-dropdown-trigger'>
+									<span></span>
+								</div>
+								<div class='js-dropdown-content lg:px-2 pb-4 lg:pt-4 max-lg:px-4'>
+									<div class='flex items-center justify-between px-1.5'>
+										<p class='text-sm text-dark-800 font-normal'>Workspaces</p>
+										<span class='text-sm text-blue-500 font-medium hover:underline underline-offset-1 cursor-pointer'>+ Add Workspace</span>
 									</div>
-									<div class="flex flex-col">
-										<p class="text-sm text-dark-800 font-medium">Startup Co</p>
-										<ul
-											class="flex items-center text-xs text-dark-800/70 gap-3 text-nowrap"
+									<div class='flex flex-col gap-y-1 mt-3'>
+										<div class='active-workspace flex items-center gap-x-3 cursor-pointer rounded-md hover:bg-gray-150 [&.active-workspace]:bg-gray-150 px-2 py-2.5'>
+											<div class='flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white'>
+												<span class='font-semibold text-base text-blue-500'>S</span>
+											</div>
+											<div class='flex flex-col'>
+												<p class='text-sm text-dark-800 font-medium'>Startup Co</p>
+												<ul class='flex items-center text-xs text-dark-800/70 gap-3 text-nowrap'>
+													<li class='relative'>Enterprise
+														<span class='absolute top-1/2 -translate-y-1/2 -right-[7.5px]  size-[2px] rounded-full bg-blue-900/70'></span>
+													</li>
+													<li class='relative'>23 Members</li>
+												</ul>
+											</div>
+											<span class='hidden text-blue-500 shrink-0 ml-auto [.active-workspace_&]:block'>
+												<svg class='icon icon-md'>
+													<use href='#check'></use>
+												</svg>
+											</span>
+										</div>
+										<div class='flex items-center gap-x-3 cursor-pointer rounded-md hover:bg-gray-150 [&.active-workspace]:bg-gray-150 px-2 py-2.5'>
+											<div class='flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white '>
+												<span class='font-semibold text-base text-blue-500'>N</span>
+											</div>
+											<div class='flex flex-col'>
+												<p class='text-sm text-dark-800 font-medium'>Neo Tools</p>
+												<ul class='flex items-center text-xs text-dark-800/70 gap-3 text-nowrap'>
+													<li class='relative'>Free
+														<span class='absolute top-1/2 -translate-y-1/2 -right-[7.5px]  size-[2px] rounded-full bg-blue-900/70'></span>
+													</li>
+													<li class='relative'>1 Member</li>
+												</ul>
+											</div>
+											<span class='hidden text-blue-500 shrink-0 ml-auto [.active-workspace_&]:block'>
+												<svg class='icon icon-md'>
+													<use href='#check'></use>
+												</svg>
+											</span>
+										</div>
+									</div>
+									<div class='mt-3 flex flex-col gap-y-2 px-1.5'>
+										<button
+											type="button"
+											class="btn btn-primary-default rounded-lg"
 										>
-											<li class="relative">
-												Enterprise
-												<span
-													class="absolute top-1/2 -translate-y-1/2 -right-[7.5px] size-[2px] rounded-full bg-blue-900/70"
-												></span>
-											</li>
-											<li class="relative">23 Members</li>
-										</ul>
+											<svg class='icon icon-sm'>
+												<use href='#members-medium'></use>
+											</svg>
+											<span>
+												Invite Teammates
+											</span>
+										</button>
+										<button class='btn btn-border-default rounded-lg font-normal'>Set Default Workspace</button>
 									</div>
 								</div>
-								<div class="flex items-center gap-x-3 cursor-pointer">
-									<div
-										class="flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white"
-									>
-										<span class="font-semibold text-base text-blue-500">N</span>
-									</div>
-									<div class="flex flex-col">
-										<p class="text-sm text-dark-800 font-medium">Neo Tools</p>
-										<ul
-											class="flex items-center text-xs text-dark-800/70 gap-3 text-nowrap"
-										>
-											<li class="relative">
-												Free
-												<span
-													class="absolute top-1/2 -translate-y-1/2 -right-[7.5px] size-[2px] rounded-full bg-blue-900/70"
-												></span>
-											</li>
-											<li class="relative">1 Member</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="mt-4 flex flex-col gap-y-2">
-								<button
-									type="button"
-									class="btn btn-primary-default rounded-lg"
-								>
-									<svg class="icon icon-sm">
-										<use href="#members-medium"></use>
-									</svg>
-									<span> Invite Teammates </span>
-								</button>
-								<button class="btn btn-border-default rounded-lg font-normal">
-									Set Default Workspace
-								</button>
 							</div>
 						</div>
 					</div>
 					<div class="flex flex-col h-full overflow-y-auto px-4 pb-4">
-						<nav class="flex flex-col mt-5 mb-5">
-							<p class="text-s text-dark-800/60 font-medium">Libraries</p>
-							<ul class="flex flex-col mt-2">
+						<nav class='flex flex-col mt-5 mb-5'>
+							<p class='text-s text-dark-800/60 font-medium'>Libraries</p>
+							<ul class='flex flex-col mt-2'>
 								<li>
-									<a
-										href="./index.html"
-										class="flex items-center gap-2 text-sm p-2 rounded-md hover:bg-blue-200 [&.active]:bg-blue-200 [&.active]:font-bold [&.active]:text-blue-500 [&.active]:stroke-blue-500 stroke-blue-1000 font-medium"
-									>
-										<svg class="icon icon-sm">
-											<use href="#home-medium"></use>
+									<a href='./index.html' class='flex items-center gap-2 text-sm p-2 rounded-md hover:bg-blue-200 active:bg-blue-200 [&.active]:bg-blue-200 [&.active]:font-bold [&.active]:text-blue-500 [&.active]:stroke-blue-500 stroke-blue-1000 font-medium'>
+										<svg class='icon icon-sm'>
+											<use href='#home-medium'></use>
 										</svg>
 										Personal
 									</a>
 								</li>
 								<li>
-									<a
-										href="./shared.html"
-										class="flex items-center gap-2 text-sm p-2 rounded-md hover:bg-blue-200 [&.active]:bg-blue-200 [&.active]:font-bold [&.active]:text-blue-500 [&.active]:stroke-blue-500 stroke-blue-1000 font-medium"
-									>
-										<svg class="icon icon-sm">
-											<use href="#members-medium"></use>
+									<a href='./shared.html' class='flex items-center gap-2 text-sm p-2 rounded-md hover:bg-blue-200 active:bg-blue-200 [&.active]:bg-blue-200 [&.active]:font-bold [&.active]:text-blue-500 [&.active]:stroke-blue-500 stroke-blue-1000 font-medium'>
+										<svg class='icon icon-sm'>
+											<use href='#members-medium'></use>
 										</svg>
 										Shared
 									</a>
 								</li>
 								<li>
-									<a
-										href="./team.html"
-										class="flex items-center gap-2 text-sm p-2 rounded-md hover:bg-blue-200 [&.active]:bg-blue-200 [&.active]:font-bold [&.active]:text-blue-500 [&.active]:stroke-blue-500 stroke-blue-1000 font-medium"
-									>
-										<svg class="icon icon-sm">
-											<use href="#team-medium"></use>
+									<a href='./team.html' class='flex items-center gap-2 text-sm p-2 rounded-md hover:bg-blue-200 active:bg-blue-200 [&.active]:bg-blue-200 [&.active]:font-bold [&.active]:text-blue-500 [&.active]:stroke-blue-500 stroke-blue-1000 font-medium'>
+										<svg class='icon icon-sm'>
+											<use href='#team-medium'></use>
 										</svg>
 										Team
 									</a>
 								</li>
 							</ul>
-							<ul class="flex flex-col mt-5">
+							<ul class='flex flex-col mt-5'>
 								<li>
-									<a
-										href="./favorites.html"
-										class="flex items-center gap-2 text-sm p-2 rounded-md hover:bg-blue-200 [&.active]:bg-blue-200 [&.active]:font-bold [&.active]:text-blue-500 [&.active]:stroke-blue-500 stroke-blue-1000 font-medium"
-									>
-										<svg class="icon icon-sm" stroke-width="6">
-											<use href="#star-medium"></use>
+									<a href='./favorites.html' class='flex items-center gap-2 text-sm p-2 rounded-md hover:bg-blue-200 active:bg-blue-200 [&.active]:bg-blue-200 [&.active]:font-bold [&.active]:text-blue-500 [&.active]:stroke-blue-500 stroke-blue-1000 font-medium'>
+										<svg class='icon icon-sm' stroke-width='6'>
+											<use href='#star-medium'></use>
 										</svg>
 										Favorites
 									</a>
 								</li>
 								<li>
-									<a
-										href="./analytics.html"
-										class="active flex items-center gap-2 text-sm p-2 rounded-md hover:bg-blue-200 [&.active]:bg-blue-200 [&.active]:font-bold [&.active]:text-blue-500 [&.active]:stroke-blue-500 stroke-blue-1000 font-medium"
-									>
-										<svg class="icon icon-sm">
-											<use href="#analytics-medium"></use>
+									<a href='./analytics.html' class='active flex items-center gap-2 text-sm p-2 rounded-md hover:bg-blue-200 active:bg-blue-200 [&.active]:bg-blue-200 [&.active]:font-bold [&.active]:text-blue-500 [&.active]:stroke-blue-500 stroke-blue-1000 font-medium'>
+										<svg class='icon icon-sm'>
+											<use href='#analytics-medium'></use>
 										</svg>
 										Analytics
 									</a>
 								</li>
 								<li>
-									<a
-										href="./inbox.html"
-										class="flex items-center gap-2 text-sm p-2 rounded-md hover:bg-blue-200 [&.active]:bg-blue-200 [&.active]:font-bold [&.active]:text-blue-500 [&.active]:stroke-blue-500 stroke-blue-1000 font-medium"
-									>
-										<svg class="icon icon-sm">
-											<use href="#inbox-medium"></use>
+									<a href='./inbox.html' class='flex items-center gap-2 text-sm p-2 rounded-md hover:bg-blue-200 active:bg-blue-200 [&.active]:bg-blue-200 [&.active]:font-bold [&.active]:text-blue-500 [&.active]:stroke-blue-500 stroke-blue-1000 font-medium'>
+										<svg class='icon icon-sm'>
+											<use href='#inbox-medium'></use>
 										</svg>
 										Inbox
 									</a>
 								</li>
 								<li>
-									<a
-										href="./trash.html"
-										class="flex items-center gap-2 text-sm p-2 rounded-md hover:bg-blue-200 [&.active]:bg-blue-200 [&.active]:font-bold [&.active]:text-blue-500 [&.active]:stroke-blue-500 stroke-blue-1000 font-medium"
-									>
-										<svg class="icon icon-sm">
-											<use href="#trash-medium"></use>
+									<a href='./trash.html' class='flex items-center gap-2 text-sm p-2 rounded-md hover:bg-blue-200 active:bg-blue-200 [&.active]:bg-blue-200 [&.active]:font-bold [&.active]:text-blue-500 [&.active]:stroke-blue-500 stroke-blue-1000 font-medium'>
+										<svg class='icon icon-sm'>
+											<use href='#trash-medium'></use>
 										</svg>
 										Trash
 									</a>
 								</li>
 								<li>
-									<a
-										href="./settings.html"
-										class="flex items-center gap-2 text-sm p-2 rounded-md hover:bg-blue-200 [&.active]:bg-blue-200 [&.active]:font-bold [&.active]:text-blue-500 [&.active]:stroke-blue-500 stroke-blue-1000 font-medium"
-									>
-										<svg class="icon icon-sm">
-											<use href="#cog-medium"></use>
+									<a href='./settings.html' class='flex items-center gap-2 text-sm p-2 rounded-md hover:bg-blue-200 active:bg-blue-200 [&.active]:bg-blue-200 [&.active]:font-bold [&.active]:text-blue-500 [&.active]:stroke-blue-500 stroke-blue-1000 font-medium'>
+										<svg class='icon icon-sm'>
+											<use href='#cog-medium'></use>
 										</svg>
 										Settings
 									</a>
 								</li>
 							</ul>
 						</nav>
-						<div
-							class="mt-auto bg-white border-gray-400 border rounded-lg px-5 py-3.5"
-						>
-							<p
-								class="text-center text-sm font-normal text-dark-800/60 mb-2.5 max-w-[12.125rem] mx-auto"
-							>
-								Teams that communicate better, grow faster
-							</p>
-							<button
-								class="btn btn-border-default m-0 w-full text-sm justify-center text-center text-dark-800/80 h-8"
-							>
-								<svg class="icon icon-sm">
-									<use href="#members-semibold"></use>
+						<div class='mt-auto bg-white border-gray-400 border rounded-lg px-5 py-3.5'>
+							<p class='text-center text-sm font-normal text-dark-800/60 mb-2.5 max-w-[12.125rem] mx-auto'>Teams that communicate better, grow faster</p>
+							<button class='btn btn-border-default m-0 w-full text-sm justify-center text-center text-dark-800/80 h-8'>
+								<svg class='icon icon-sm'>
+									<use href='#members-semibold'></use>
 								</svg>
 								Invite members
 							</button>
@@ -383,312 +333,242 @@
 				</div>
 			</aside>
 			<main class="relative max-lg:w-full lg:ml-[240px]">
-				<header
-					class="pt-2.5 sticky top-0 z-51 bg-white transition-all duration-300"
-				>
+				<header class='pt-2.5 sticky top-0 z-51 bg-white transition-all duration-300'>
 					<div class="dashboard-container">
-						<div
-							class="w-full flex items-center justify-between max-md:bg-gray-150 max-md:rounded-lg"
-						>
-							<form
-								action="#"
-								class="max-w-[44.75rem] h-[2.5625rem] w-full bg-gray-150 rounded-lg relative max-md:h-12"
-							>
-								<button
-									class="hamburger hamburger--squeeze flex lg:hidden! absolute left-0 top-1/2 -translate-y-1/2"
-									type="button"
-								>
+						<div class='w-full flex items-center justify-between max-md:bg-gray-150 max-md:rounded-lg'>
+							<form action='#' class='max-w-[44.75rem] h-[2.5625rem] w-full bg-gray-150 rounded-lg relative max-md:h-12'>
+								<button class="hamburger hamburger--squeeze flex lg:hidden! absolute left-0 top-1/2 -translate-y-1/2" type="button">
 									<span class="hamburger-box">
-										<span class="hamburger-inner"></span>
+									  <span class="hamburger-inner"></span>
 									</span>
-								</button>
-								<button
-									type="submit"
-									class="hidden lg:block absolute left-3.5 top-1/2 -translate-y-1/2 cursor-pointer transition-transform transform-gpu hover:scale-105 origin-center text-dark-800"
-								>
-									<svg class="icon icon-sm">
-										<use href="#search"></use>
+								  </button>
+								<button type='submit' class='hidden lg:block absolute left-3.5 top-1/2 -translate-y-1/2 cursor-pointer transition-transform transform-gpu hover:scale-105 origin-center text-dark-800'>
+									<svg class='icon icon-xs'>
+										<use href='#search'></use>
 									</svg>
 								</button>
-								<input
-									required
-									type="text"
-									class="size-full rounded-lg pl-10 pr-4 text-sm max-lg:pl-13"
-									data-mobile-placeholder="Search for files..."
-									placeholder="Search for people, Files, folder & spaces"
-								/>
+								<input required type="text" class='size-full rounded-lg pl-10 pr-4 text-sm max-lg:pl-13' 
+								data-mobile-placeholder='Search for files...' placeholder='Search for people, Files, folder & spaces'>
 							</form>
-							<div class="flex items-center gap-4">
-								<div class="dropdown-wrapper">
-									<a
-										data-id="dropdown-notifications"
-										href="#"
-										class="dropdown-button size-12 flex justify-center items-center transition-colors hover:bg-gray-150 rounded-lg relative [&.active]:bg-gray-150 cursor-pointer"
-									>
-										<svg class="icon icon-md">
-											<use href="#bell"></use>
+							<div class='flex items-center gap-4'>
+								<div class='dropdown-wrapper'>
+									<a data-id="dropdown-notifications"  href="#" class='dropdown-button size-12 flex justify-center items-center transition-colors hover:bg-gray-150 rounded-lg relative [&.active]:bg-gray-150 cursor-pointer'>
+										<svg class='icon w-[1.125rem] h-5'>
+											<use href='#bell'></use>
 										</svg>
-										<span
-											class="absolute top-0.5 left-3.5 z-1 bg-red-500 rounded-full border-2 border-white flex justify-center items-center h-4.5 min-w-4.5 px-1 text-[11px] text-white text-center font-medium text-nowrap"
-											>9+</span
-										>
+										<span class='absolute top-2 left-[1.312rem] z-1 bg-red-500 rounded-full border-2 border-white flex justify-center items-center h-4.5 min-w-4.5 px-1 text-[11px] text-white text-center font-medium text-nowrap'>9+</span>
 									</a>
-									<div
-										data-dropdown-id="dropdown-notifications"
-										class="dropdown-content absolute top-[calc(100%_+_8px)] -right-2 bg-white shadow-dropdown rounded-lg pt-4 w-[28.125rem] z-3 overflow-hidden hidden transition-opacity duration-150 scale-0 [&.active]:scale-100 [&.active]:opacity-100"
-									>
-										<div class="flex justify-between items-center px-6 pb-2">
-											<p class="text-base font-semibold text-dark-800">
-												Notifications
-											</p>
-											<a
-												href="./activity-center.html"
-												class="text-xs text-blue-500"
-												>View All →</a
-											>
+									<div class='js-dropdown hidden w-[28.125rem]' data-dropdown-id='dropdown-notifications' data-sheet-modal>
+										<div class='js-dropdown-overlay'></div>
+										<div class='js-dropdown-body'>
+											<div class='js-dropdown-trigger'>
+												<span></span>
+											</div>
+											<div class='js-dropdown-content lg:pt-0 lg:max-h-[580px] lg:overflow-y-auto px-0 pb-0 lg:h-[85vh]'>
+												<div class='flex justify-between items-center px-6 sticky top-0 -mt-1 bg-white lg:rounded-t-lg z-1 lg:pt-4 pb-3 border-b border-gray-400'>
+													<p class='text-base font-semibold text-dark-800'>Notifications</p>
+													<a href='./activity-center.html' class='text-sm text-blue-500 font-medium'>View All →</a>
+												</div>
+												<ul>
+													<li>
+														<a href="#" class='flex gap-3 items-start px-6 py-4 hover:bg-gray-150'>
+															<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
+																<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+															</div>
+															<div>
+																<p class='text-sm'>
+																	Someone viewed <strong> Speaker Notes Hover Effect.mp4 </strong> for the first time
+																</p>
+																<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
+																	<span>Feb 6, 2025</span>
+																	<span 		class='relative after:content-[""] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5 '>11:41 pm</span>
+																</div>
+															</div>
+														</a>
+													</li>
+													<li class='unread'>
+														<a href="#" class='flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150'>
+															<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
+																<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+															</div>
+															<div>
+																<p class='text-sm'>
+																	Team Member moved Feb 3 - Technical Development Updates and Feature Planning.mp4 and 1 more items from folder Team Meetings to folder 2025
+																</p>
+																<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
+																	<span>Feb 6, 2025</span>
+																	<span class='relative after:content-[""] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5 '>11:41 pm</span>
+																</div>
+															</div>
+														</a>
+													</li>
+													<li>
+														<a href="#" class='flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150'>
+															<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
+																<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+															</div>
+															<div>
+																<p class='text-sm'>
+																	You received _+8= +3 -5 +10 (1) HW.pdf in your Team Inbox test-zapeir-update from qweqw eqw (eqwe@asd.we)
+																</p>
+																<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
+																	<span>Feb 6, 2025</span>
+																</div>
+															</div>
+														</a>
+													</li>
+													<li>
+														<a href="#" class='flex gap-3 items-start px-6 py-4 hover:bg-gray-150'>
+															<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
+																<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+															</div>
+															<div>
+																<p class='text-sm'>
+																	Someone viewed <strong> Speaker Notes Hover Effect.mp4 </strong> for the first time
+																</p>
+																<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
+																	<span>Feb 6, 2025</span>
+																	<span 		class='relative after:content-[""] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5 '>11:41 pm</span>
+																</div>
+															</div>
+														</a>
+													</li>
+													<li class='unread'>
+														<a href="#" class='flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150'>
+															<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
+																<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+															</div>
+															<div>
+																<p class='text-sm'>
+																	Team Member moved Feb 3 - Technical Development Updates and Feature Planning.mp4 and 1 more items from folder Team Meetings to folder 2025
+																</p>
+																<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
+																	<span>Feb 6, 2025</span>
+																	<span class='relative after:content-[""] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5 '>11:41 pm</span>
+																</div>
+															</div>
+														</a>
+													</li>
+													<li>
+														<a href="#" class='flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150'>
+															<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
+																<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+															</div>
+															<div>
+																<p class='text-sm'>
+																	You received _+8= +3 -5 +10 (1) HW.pdf in your Team Inbox test-zapeir-update from qweqw eqw (eqwe@asd.we)
+																</p>
+																<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
+																	<span>Feb 6, 2025</span>
+																</div>
+															</div>
+														</a>
+													</li>
+													<li>
+														<a href="#" class='flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150'>
+															<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
+																<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+															</div>
+															<div>
+																<p class='text-sm'>
+																	John Dalton added JumpshareInstaller 3.4.5 - 3.exe  to folder 3.4.5
+																</p>
+																<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
+																	<span>Jue 6, 2024</span>
+																</div>
+															</div>
+														</a>
+													</li>
+													<li>
+														<a href="#" class='flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150'>
+															<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
+																<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+															</div>
+															<div>
+																<p class='text-sm'>
+																	Someone viewed Screen Recording 2025-01-23 at 10.0... PM.mp4 for the first time
+																</p>
+																<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
+																	<span class='relative after:content-[""] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-right-2.5 '>Feb 6</span>
+																	<span>11:41 pm</span>
+																</div>
+															</div>
+														</a>
+													</li>
+												</ul>
+											</div>
 										</div>
-										<ul>
-											<li>
-												<a
-													href="#"
-													class="flex gap-3 items-start px-6 py-4 hover:bg-gray-150"
-												>
-													<div
-														class="mt-1 size-10 flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3 after:top-3.5 after:hidden"
-													>
-														<img
-															class="rounded-full object-cover size-full"
-															src="./assets/images/avatar.png"
-															alt="Avatar"
-														/>
-													</div>
-													<div>
-														<p class="text-sm">
-															Someone viewed
-															<strong> Speaker Notes Hover Effect.mp4 </strong>
-															for the first time
-														</p>
-														<div
-															class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
-														>
-															<span>Feb 6, 2025</span>
-															<span
-																class="relative after:content-[&quot;&quot;] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5"
-																>11:41 pm</span
-															>
-														</div>
-													</div>
-												</a>
-											</li>
-											<li class="unread">
-												<a
-													href="#"
-													class="flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150"
-												>
-													<div
-														class="mt-1 size-10 flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
-													>
-														<img
-															class="rounded-full object-cover size-full"
-															src="./assets/images/avatar.png"
-															alt="Avatar"
-														/>
-													</div>
-													<div>
-														<p class="text-sm">
-															Team Member moved Feb 3 - Technical Development
-															Updates and Feature Planning.mp4 and 1 more items
-															from folder Team Meetings to folder 2025
-														</p>
-														<div
-															class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
-														>
-															<span>Feb 6, 2025</span>
-															<span
-																class="relative after:content-[&quot;&quot;] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5"
-																>11:41 pm</span
-															>
-														</div>
-													</div>
-												</a>
-											</li>
-											<li>
-												<a
-													href="#"
-													class="flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150"
-												>
-													<div
-														class="mt-1 size-10 flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
-													>
-														<img
-															class="rounded-full object-cover size-full"
-															src="./assets/images/avatar.png"
-															alt="Avatar"
-														/>
-													</div>
-													<div>
-														<p class="text-sm">
-															You received _+8= +3 -5 +10 (1) HW.pdf in your
-															Team Inbox test-zapeir-update from qweqw eqw
-															(eqwe@asd.we)
-														</p>
-														<div
-															class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
-														>
-															<span>Feb 6, 2025</span>
-														</div>
-													</div>
-												</a>
-											</li>
-											<li>
-												<a
-													href="#"
-													class="flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150"
-												>
-													<div
-														class="mt-1 size-10 flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
-													>
-														<img
-															class="rounded-full object-cover size-full"
-															src="./assets/images/avatar.png"
-															alt="Avatar"
-														/>
-													</div>
-													<div>
-														<p class="text-sm">
-															John Dalton added JumpshareInstaller 3.4.5 - 3.exe
-															to folder 3.4.5
-														</p>
-														<div
-															class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
-														>
-															<span>Jue 6, 2024</span>
-														</div>
-													</div>
-												</a>
-											</li>
-											<li>
-												<a
-													href="#"
-													class="flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150"
-												>
-													<div
-														class="mt-1 size-10 flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
-													>
-														<img
-															class="rounded-full object-cover size-full"
-															src="./assets/images/avatar.png"
-															alt="Avatar"
-														/>
-													</div>
-													<div>
-														<p class="text-sm">
-															Someone viewed Screen Recording 2025-01-23 at
-															10.0... PM.mp4 for the first time
-														</p>
-														<div
-															class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
-														>
-															<span
-																class="relative after:content-[&quot;&quot;] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-right-2.5"
-																>Feb 6</span
-															>
-															<span>11:41 pm</span>
-														</div>
-													</div>
-												</a>
-											</li>
-										</ul>
 									</div>
 								</div>
 								<div class="dropdown-wrapper">
-									<a
-										href="#"
-										data-id="dropdown-avatar"
-										class="dropdown-button flex gap-1.5 items-center cursor-pointer max-md:pr-3 [&.active]:bg-gray-150 px-2 h-12 rounded-lg"
-									>
-										<div
-											class="size-7.5 rounded-full overflow-hidden bg-gray-200 inset-ring-2 inset-ring-gray-100"
-										>
-											<img src="./assets/images/avatar.png" alt="Avatar" />
+									<a href='#' data-id="dropdown-avatar" class='dropdown-button flex gap-1.5 items-center cursor-pointer max-md:pr-3 [&.active]:bg-gray-150 px-2 h-12 rounded-lg'>
+										<div class='size-7.5 rounded-full overflow-hidden bg-gray-200 inset-ring-2 inset-ring-gray-100'>
+											<img src="./assets/images/avatar.png" alt="Avatar">
 										</div>
-										<svg class="icon h-2.5! w-3! -mt-0.5">
-											<use href="#check-bottom"></use>
+										<svg class='icon h-2.5! w-3! -mt-0.5'>
+											<use href='#check-bottom'></use>
 										</svg>
 									</a>
-									<ul
-										data-dropdown-id="dropdown-avatar"
-										class="dropdown-content absolute top-[calc(100%_+_8px)] right-0 bg-white shadow-dropdown rounded-lg p-1.5 w-[15.75rem] z-3 overflow-hidden hidden transition-opacity duration-150 scale-0 [&.active]:scale-100 [&.active]:opacity-100"
-									>
-										<li class="flex items-center gap-3 p-3.5">
-											<div class="size-[42px] rounded-full overflow-hidden">
-												<img
-													class="size-full object-cover"
-													src="./assets/images/avatar.png"
-													alt="Avatar"
-												/>
+									<div class='js-dropdown hidden w-[15.75rem]' data-dropdown-id='dropdown-avatar' data-sheet-modal>
+										<div class='js-dropdown-overlay'></div>
+										<div class='js-dropdown-body'>
+											<div class='js-dropdown-trigger'>
+												<span></span>
 											</div>
-											<div>
-												<span class="text-sm font-semibold text-dark-800 mb-1"
-													>John Doe</span
-												>
-												<p class="text-dark-800/50 text-xs">
-													johndoe252@cironex.com
-												</p>
+											<div class='js-dropdown-content'>
+												<ul>
+													<li class='flex items-center gap-3 p-3.5 pt-1'>
+														<div class="size-[42px] rounded-full overflow-hidden">
+															<img class='size-full object-cover' src="./assets/images/avatar.png" alt="Avatar">
+														</div>
+														<div>
+															<span class='text-sm font-semibold text-dark-800 mb-1'>John Doe</span>
+															<p class='text-dark-800/50 text-xs'>johndoe252@cironex.com</p>
+														</div>
+													</li>
+													<hr class='border-gray-500 mt-0 mb-2'>
+													<li class='flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800'>
+														<svg class='icon icon-md'>
+															<use href='#workspace'></use>
+														</svg>
+														<span>Workspace Settings</span>
+													</li>
+													<li class='flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800'>
+														<svg class='icon icon-md'>
+															<use href='#user'></use>
+														</svg>
+														<span>Profile Settings</span>
+													</li>
+													<hr class='border-gray-500 my-2'>
+													<li class='flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800'>
+														<svg class='icon icon-md'>
+															<use href='#download'></use>
+														</svg>
+														<span>Install Jumpshare</span>
+													</li>
+													<li class='flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800'>
+														<svg class='icon icon-md'>
+															<use href='#help'></use>
+														</svg>
+														<span>Help Center</span>
+													</li>
+													<li class='flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800'>
+														<svg class='icon icon-md'>
+															<use href='#message-alert'></use>
+														</svg>
+														<span>Send Feedback</span>
+													</li>
+													<hr class='border-gray-500 my-2'>
+													<li class='flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800'>
+														<svg class='icon icon-md'>
+															<use href='#sign-out'></use>
+														</svg>
+														<span>Sign Out</span>
+													</li>
+												</ul>
 											</div>
-										</li>
-										<hr class="border-gray-500 mt-0 mb-2" />
-										<li
-											class="flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800"
-										>
-											<svg class="icon icon-md">
-												<use href="#workspace"></use>
-											</svg>
-											<span>Workspace Settings</span>
-										</li>
-										<li
-											class="flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800"
-										>
-											<svg class="icon icon-md">
-												<use href="#user"></use>
-											</svg>
-											<span>Profile Settings</span>
-										</li>
-										<hr class="border-gray-500 my-2" />
-										<li
-											class="flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800"
-										>
-											<svg class="icon icon-md">
-												<use href="#download"></use>
-											</svg>
-											<span>Install Jumpshare</span>
-										</li>
-										<li
-											class="flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800"
-										>
-											<svg class="icon icon-md">
-												<use href="#help"></use>
-											</svg>
-											<span>Help Center</span>
-										</li>
-										<li
-											class="flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800"
-										>
-											<svg class="icon icon-md">
-												<use href="#message-alert"></use>
-											</svg>
-											<span>Send Feedback</span>
-										</li>
-										<hr class="border-gray-500 my-2" />
-										<li
-											class="flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800"
-										>
-											<svg class="icon icon-md">
-												<use href="#sign-out"></use>
-											</svg>
-											<span>Sign Out</span>
-										</li>
-									</ul>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
