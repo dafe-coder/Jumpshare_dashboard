@@ -127,6 +127,7 @@
 		<link rel="stylesheet" href="./dist/output.css" />
 	</head>
 	<body class='drag-and-drop'>
+		<div id="progress-bar" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-blue-500/10 transform scale-x-0 origin-left transition-transform duration-300 ease-out z-99999"></div>
 		<div id='upload-files-modal' class='hidden fixed inset-0 bg-blue-1000/70 z-999 justify-center items-center [&.active]:flex backdrop-blur-xs'>
 			<div class='upload-files-drop-zone flex items-center justify-center w-[523px] h-[325px]'>
 				<div class='flex flex-col items-center justify-center gap-6 rounded-[14px] size-full'>
@@ -612,26 +613,36 @@
 												<use href='#dots-horizontal'></use>
 											</svg>
 										</button>
-										<ul data-dropdown-id="dropdown-inbox" class='dropdown-content absolute top-[calc(100%_+_8px)] right-0 bg-white shadow-dropdown rounded-lg p-1.5 w-[12.625rem] z-3 overflow-hidden hidden transition-opacity duration-150 scale-0 [&.active]:scale-100 [&.active]:opacity-100 border border-gray-400'>
-											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
-												<svg class='icon icon-md'>
-													<use href='#share'></use>
-												</svg>
-												<span>Share Inbox</span>
-											</li>
-											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
-												<svg class='icon icon-md'>
-													<use href='#crossed-eye'></use>
-												</svg>
-												<span>Close</span>
-											</li>
-											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
-												<svg class='icon icon-md'>
-													<use href='#trash'></use>
-												</svg>
-												<span>Delete</span>
-											</li>
-										</ul>
+										<div class='js-dropdown hidden w-[12.625rem]' data-dropdown-id='dropdown-inbox' data-sheet-modal>
+											<div class='js-dropdown-overlay'></div>
+											<div class='js-dropdown-body'>
+												<div class='js-dropdown-trigger'>
+													<span></span>
+												</div>
+												<div class='js-dropdown-content'>
+													<ul>
+														<li class='js-dropdown-list-item'>
+															<svg class='icon icon-md'>
+																<use href='#share'></use>
+															</svg>
+															<span>Share Inbox</span>
+														</li>
+														<li class='js-dropdown-list-item'>
+															<svg class='icon icon-md'>
+																<use href='#crossed-eye'></use>
+															</svg>
+															<span>Close</span>
+														</li>
+														<li class='js-dropdown-list-item'>
+															<svg class='icon icon-md'>
+																<use href='#trash'></use>
+															</svg>
+															<span>Delete</span>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -652,26 +663,36 @@
 												<use href='#dots-horizontal'></use>
 											</svg>
 										</button>
-										<ul data-dropdown-id="dropdown-inbox" class='dropdown-content absolute top-[calc(100%_+_8px)] right-0 bg-white shadow-dropdown rounded-lg p-1.5 w-[12.625rem] z-3 overflow-hidden hidden transition-opacity duration-150 scale-0 [&.active]:scale-100 [&.active]:opacity-100 border border-gray-400'>
-											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
-												<svg class='icon icon-md'>
-													<use href='#share'></use>
-												</svg>
-												<span>Share Inbox</span>
-											</li>
-											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
-												<svg class='icon icon-md'>
-													<use href='#crossed-eye'></use>
-												</svg>
-												<span>Close</span>
-											</li>
-											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
-												<svg class='icon icon-md'>
-													<use href='#trash'></use>
-												</svg>
-												<span>Delete</span>
-											</li>
-										</ul>
+										<div class='js-dropdown hidden w-[12.625rem]' data-dropdown-id='dropdown-inbox' data-sheet-modal>
+											<div class='js-dropdown-overlay'></div>
+											<div class='js-dropdown-body'>
+												<div class='js-dropdown-trigger'>
+													<span></span>
+												</div>
+												<div class='js-dropdown-content'>
+													<ul>
+														<li class='js-dropdown-list-item'>
+															<svg class='icon icon-md'>
+																<use href='#share'></use>
+															</svg>
+															<span>Share Inbox</span>
+														</li>
+														<li class='js-dropdown-list-item'>
+															<svg class='icon icon-md'>
+																<use href='#crossed-eye'></use>
+															</svg>
+															<span>Close</span>
+														</li>
+														<li class='js-dropdown-list-item'>
+															<svg class='icon icon-md'>
+																<use href='#trash'></use>
+															</svg>
+															<span>Delete</span>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -692,26 +713,36 @@
 												<use href='#dots-horizontal'></use>
 											</svg>
 										</button>
-										<ul data-dropdown-id="dropdown-inbox" class='dropdown-content absolute top-[calc(100%_+_8px)] right-0 bg-white shadow-dropdown rounded-lg p-1.5 w-[12.625rem] z-3 overflow-hidden hidden transition-opacity duration-150 scale-0 [&.active]:scale-100 [&.active]:opacity-100 border border-gray-400'>
-											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
-												<svg class='icon icon-md'>
-													<use href='#share'></use>
-												</svg>
-												<span>Share Inbox</span>
-											</li>
-											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
-												<svg class='icon icon-md'>
-													<use href='#crossed-eye'></use>
-												</svg>
-												<span>Close</span>
-											</li>
-											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
-												<svg class='icon icon-md'>
-													<use href='#trash'></use>
-												</svg>
-												<span>Delete</span>
-											</li>
-										</ul>
+										<div class='js-dropdown hidden w-[12.625rem]' data-dropdown-id='dropdown-inbox' data-sheet-modal>
+											<div class='js-dropdown-overlay'></div>
+											<div class='js-dropdown-body'>
+												<div class='js-dropdown-trigger'>
+													<span></span>
+												</div>
+												<div class='js-dropdown-content'>
+													<ul>
+														<li class='js-dropdown-list-item'>
+															<svg class='icon icon-md'>
+																<use href='#share'></use>
+															</svg>
+															<span>Share Inbox</span>
+														</li>
+														<li class='js-dropdown-list-item'>
+															<svg class='icon icon-md'>
+																<use href='#crossed-eye'></use>
+															</svg>
+															<span>Close</span>
+														</li>
+														<li class='js-dropdown-list-item'>
+															<svg class='icon icon-md'>
+																<use href='#trash'></use>
+															</svg>
+															<span>Delete</span>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -732,26 +763,36 @@
 												<use href='#dots-horizontal'></use>
 											</svg>
 										</button>
-										<ul data-dropdown-id="dropdown-inbox" class='dropdown-content absolute top-[calc(100%_+_8px)] right-0 bg-white shadow-dropdown rounded-lg p-1.5 w-[12.625rem] z-3 overflow-hidden hidden transition-opacity duration-150 scale-0 [&.active]:scale-100 [&.active]:opacity-100 border border-gray-400'>
-											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
-												<svg class='icon icon-md'>
-													<use href='#share'></use>
-												</svg>
-												<span>Share Inbox</span>
-											</li>
-											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
-												<svg class='icon icon-md'>
-													<use href='#crossed-eye'></use>
-												</svg>
-												<span>Close</span>
-											</li>
-											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
-												<svg class='icon icon-md'>
-													<use href='#trash'></use>
-												</svg>
-												<span>Delete</span>
-											</li>
-										</ul>
+										<div class='js-dropdown hidden w-[12.625rem]' data-dropdown-id='dropdown-inbox' data-sheet-modal>
+											<div class='js-dropdown-overlay'></div>
+											<div class='js-dropdown-body'>
+												<div class='js-dropdown-trigger'>
+													<span></span>
+												</div>
+												<div class='js-dropdown-content'>
+													<ul>
+														<li class='js-dropdown-list-item'>
+															<svg class='icon icon-md'>
+																<use href='#share'></use>
+															</svg>
+															<span>Share Inbox</span>
+														</li>
+														<li class='js-dropdown-list-item'>
+															<svg class='icon icon-md'>
+																<use href='#crossed-eye'></use>
+															</svg>
+															<span>Close</span>
+														</li>
+														<li class='js-dropdown-list-item'>
+															<svg class='icon icon-md'>
+																<use href='#trash'></use>
+															</svg>
+															<span>Delete</span>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -772,26 +813,36 @@
 												<use href='#dots-horizontal'></use>
 											</svg>
 										</button>
-										<ul data-dropdown-id="dropdown-inbox" class='dropdown-content absolute top-[calc(100%_+_8px)] right-0 bg-white shadow-dropdown rounded-lg p-1.5 w-[12.625rem] z-3 overflow-hidden hidden transition-opacity duration-150 scale-0 [&.active]:scale-100 [&.active]:opacity-100 border border-gray-400'>
-											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
-												<svg class='icon icon-md'>
-													<use href='#share'></use>
-												</svg>
-												<span>Share Inbox</span>
-											</li>
-											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
-												<svg class='icon icon-md'>
-													<use href='#crossed-eye'></use>
-												</svg>
-												<span>Close</span>
-											</li>
-											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
-												<svg class='icon icon-md'>
-													<use href='#trash'></use>
-												</svg>
-												<span>Delete</span>
-											</li>
-										</ul>
+										<div class='js-dropdown hidden w-[12.625rem]' data-dropdown-id='dropdown-inbox' data-sheet-modal>
+											<div class='js-dropdown-overlay'></div>
+											<div class='js-dropdown-body'>
+												<div class='js-dropdown-trigger'>
+													<span></span>
+												</div>
+												<div class='js-dropdown-content'>
+													<ul>
+														<li class='js-dropdown-list-item'>
+															<svg class='icon icon-md'>
+																<use href='#share'></use>
+															</svg>
+															<span>Share Inbox</span>
+														</li>
+														<li class='js-dropdown-list-item'>
+															<svg class='icon icon-md'>
+																<use href='#crossed-eye'></use>
+															</svg>
+															<span>Close</span>
+														</li>
+														<li class='js-dropdown-list-item'>
+															<svg class='icon icon-md'>
+																<use href='#trash'></use>
+															</svg>
+															<span>Delete</span>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -827,26 +878,36 @@
 												<use href='#dots-horizontal'></use>
 											</svg>
 										</button>
-										<ul data-dropdown-id="dropdown-inbox" class='dropdown-content absolute top-[calc(100%_+_8px)] right-0 bg-white shadow-dropdown rounded-lg p-1.5 w-[12.625rem] z-3 overflow-hidden hidden transition-opacity duration-150 scale-0 [&.active]:scale-100 [&.active]:opacity-100 border border-gray-400'>
-											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
-												<svg class='icon icon-md'>
-													<use href='#share'></use>
-												</svg>
-												<span>Share Inbox</span>
-											</li>
-											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
-												<svg class='icon icon-md'>
-													<use href='#crossed-eye'></use>
-												</svg>
-												<span>Close</span>
-											</li>
-											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
-												<svg class='icon icon-md'>
-													<use href='#trash'></use>
-												</svg>
-												<span>Delete</span>
-											</li>
-										</ul>
+										<div class='js-dropdown hidden w-[12.625rem]' data-dropdown-id='dropdown-inbox' data-sheet-modal>
+											<div class='js-dropdown-overlay'></div>
+											<div class='js-dropdown-body'>
+												<div class='js-dropdown-trigger'>
+													<span></span>
+												</div>
+												<div class='js-dropdown-content'>
+													<ul>
+														<li class='js-dropdown-list-item'>
+															<svg class='icon icon-md'>
+																<use href='#share'></use>
+															</svg>
+															<span>Share Inbox</span>
+														</li>
+														<li class='js-dropdown-list-item'>
+															<svg class='icon icon-md'>
+																<use href='#crossed-eye'></use>
+															</svg>
+															<span>Close</span>
+														</li>
+														<li class='js-dropdown-list-item'>
+															<svg class='icon icon-md'>
+																<use href='#trash'></use>
+															</svg>
+															<span>Delete</span>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -867,26 +928,36 @@
 												<use href='#dots-horizontal'></use>
 											</svg>
 										</button>
-										<ul data-dropdown-id="dropdown-inbox" class='dropdown-content absolute top-[calc(100%_+_8px)] right-0 bg-white shadow-dropdown rounded-lg p-1.5 w-[12.625rem] z-3 overflow-hidden hidden transition-opacity duration-150 scale-0 [&.active]:scale-100 [&.active]:opacity-100 border border-gray-400'>
-											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
-												<svg class='icon icon-md'>
-													<use href='#share'></use>
-												</svg>
-												<span>Share Inbox</span>
-											</li>
-											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
-												<svg class='icon icon-md'>
-													<use href='#crossed-eye'></use>
-												</svg>
-												<span>Close</span>
-											</li>
-											<li class='flex items-center gap-3 px-3 py-[7px] cursor-pointer hover:bg-gray-150 rounded-md text-sm text-dark-800'>
-												<svg class='icon icon-md'>
-													<use href='#trash'></use>
-												</svg>
-												<span>Delete</span>
-											</li>
-										</ul>
+										<div class='js-dropdown hidden w-[12.625rem]' data-dropdown-id='dropdown-inbox' data-sheet-modal>
+											<div class='js-dropdown-overlay'></div>
+											<div class='js-dropdown-body'>
+												<div class='js-dropdown-trigger'>
+													<span></span>
+												</div>
+												<div class='js-dropdown-content'>
+													<ul>
+														<li class='js-dropdown-list-item'>
+															<svg class='icon icon-md'>
+																<use href='#share'></use>
+															</svg>
+															<span>Share Inbox</span>
+														</li>
+														<li class='js-dropdown-list-item'>
+															<svg class='icon icon-md'>
+																<use href='#crossed-eye'></use>
+															</svg>
+															<span>Close</span>
+														</li>
+														<li class='js-dropdown-list-item'>
+															<svg class='icon icon-md'>
+																<use href='#trash'></use>
+															</svg>
+															<span>Delete</span>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>

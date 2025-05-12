@@ -128,6 +128,7 @@
 	</head>
 
 	<body class='drag-and-drop team-page'>
+		<div id="progress-bar" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-blue-500/10 transform scale-x-0 origin-left transition-transform duration-300 ease-out z-99999"></div>
 		<div id='upload-files-modal' class='hidden fixed inset-0 bg-blue-1000/70 z-999 justify-center items-center [&.active]:flex backdrop-blur-xs'>
 			<div class='upload-files-drop-zone flex items-center justify-center w-[523px] h-[325px]'>
 				<div class='flex flex-col items-center justify-center gap-6 rounded-[14px] size-full'>
@@ -601,6 +602,12 @@
 							</button>
 						</div>
 						<div class='flex gap-3'>
+							<button class='btn btn-border-default btn-sm text-sm h-9 px-2'>
+								<svg class='icon icon-md'>
+									<use href='#trash'></use>
+								</svg>
+								Delete All
+							</button>
 							<button class='hidden is-select-btn btn btn-border-default btn-sm text-sm max-lg:flex h-9'>
 								<span>Select</span>
 							</button>
@@ -628,57 +635,6 @@
 											<use href="#list"></use>
 										</svg>
 										List
-									</a>
-								</div>
-							</div>
-							<div class="dropdown-wrapper">
-								<button data-id='dropdown-add-new' class='dropdown-button btn btn-primary-default rounded-lg px-4 max-lg:fixed max-lg:bottom-4 max-lg:right-4 max-lg:size-14 max-lg:rounded-full max-lg:p-0 max-lg:shadow-[0px_6px_17.7px_rgba(51,_53,_57,_0.3)] h-9'>
-									<svg class='icon icon-md hidden max-lg:block flex-shrink-0 size-8!'>
-										<use href='#plus'></use>
-									</svg>
-									<svg class='icon icon-sm max-lg:hidden flex-shrink-0'>
-										<use href='#plus'></use>
-									</svg>
-									<span class="max-lg:hidden text-sm">New</span>
-								</button>
-								<div data-dropdown-id="dropdown-add-new" class='dropdown-content bg-white shadow-dropdown border border-gray-400 p-2 rounded-lg w-[15.625rem] absolute right-0 top-[calc(100%_+_8px)] z-1 scale-0 opacity-0 transition-opacity duration-150 [&.active]:scale-100 [&.active]:opacity-100 max-lg:hidden!'>
-									<a href='#' data-link-type='large-grid' class='flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800'>
-										<svg class='icon icon-md'>
-											<use href='#folder-with-plus'></use>
-										</svg>
-										New Folder
-									</a>
-									<hr class='my-2 border-gray-400'>
-									<a href='#' data-link-type='grid' class='flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800'>
-										<svg class='icon icon-md'>
-											<use href='#file-upload'></use>
-										</svg>
-										Upload File
-									</a>
-									<a href='#' data-link-type='list' class='flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150'>
-										<svg class='icon icon-md'>
-											<use href='#folder-upload'></use>
-										</svg>
-										Upload Folder
-									</a>
-									<hr class='my-2 border-gray-400'>
-									<a href='#' data-link-type='grid' class='flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150'>
-										<svg class='icon icon-md'>
-											<use href='#record-video'></use>
-										</svg>
-										Record Video
-									</a>
-									<a href='#' data-link-type='grid' class='flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150'>
-										<svg class='icon icon-md'>
-											<use href='#capture-screenshot'></use>
-										</svg>
-										Capture Screenshot
-									</a>
-									<a href='#' data-link-type='grid' class='flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150'>
-										<svg class='icon icon-md'>
-											<use href='#note'></use>
-										</svg>
-										Compose Note
 									</a>
 								</div>
 							</div>
