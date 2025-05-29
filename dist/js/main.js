@@ -1,11 +1,11 @@
 // SVG sprite
-fetch('assets/icons-sprite.svg')
-	.then(response => response.text())
-	.then(svg => {
-		const div = document.createElement('div')
-		div.innerHTML = svg
-		document.body.insertBefore(div.firstChild, document.body.firstChild)
-	})
+// fetch('assets/icons-sprite.svg')
+// 	.then(response => response.text())
+// 	.then(svg => {
+// 		const div = document.createElement('div')
+// 		div.innerHTML = svg
+// 		document.body.insertBefore(div.firstChild, document.body.firstChild)
+// 	})
 
 $(document).ready(function () {
 	// Tabs
