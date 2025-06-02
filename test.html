@@ -284,67 +284,69 @@
 					</li>
 				</ul>
 			</div>
-			<div class="max-w-xl mx-auto mt-8">
+			<div class="max-w-xl mx-auto mt-8 hidden">
 				<div class="link-settings max-w-[492px]">
-					<div class="link-settings-item">
-						<div class="link-settings-item__header">
-							<div class="link-settings-item__info">
-								<strong>Set Expiration<span class='tag-filled tag-sm bg-blue-500'>Plus</span></strong>
-								<p>Disable this link after specific period</p>
+					<div class='link-settings-list'>
+						<div class="link-settings-item">
+							<div class="link-settings-item__header">
+								<div class="link-settings-item__info">
+									<strong>Set Expiration<span class='tag-filled tag-sm bg-blue-500'>Plus</span></strong>
+									<p>Disable this link after specific period</p>
+								</div>
+								<label class="custom-controls switcher">
+									<span class='switcher-label'>No</span>
+									<input type="checkbox" name="" id="">
+									<span class='custom-control-indicator'></span>
+								</label>
 							</div>
-							<label class="custom-controls switcher">
-								<span class='switcher-label'>No</span>
-								<input type="checkbox" name="" id="">
-								<span class='custom-control-indicator'></span>
-							</label>
 						</div>
-					</div>
-					<div class="link-settings-item">
-						<div class="link-settings-item__header">
-							<div class="link-settings-item__info">
-								<strong>Require password<span class='tag-filled tag-sm bg-blue-500'>Plus</span></strong>
-								<p>Set a password to limit access using a password</p>
+						<div class="link-settings-item">
+							<div class="link-settings-item__header">
+								<div class="link-settings-item__info">
+									<strong>Require password<span class='tag-filled tag-sm bg-blue-500'>Plus</span></strong>
+									<p>Set a password to limit access using a password</p>
+								</div>
+								<label class="custom-controls switcher">
+									<span class='switcher-label'>No</span>
+									<input type="checkbox" name="" id="">
+									<span class='custom-control-indicator'></span>
+								</label>
 							</div>
-							<label class="custom-controls switcher">
-								<span class='switcher-label'>No</span>
-								<input type="checkbox" name="" id="">
-								<span class='custom-control-indicator'></span>
-							</label>
 						</div>
-					</div>
-					<div class="link-settings-item">
-						<div class="link-settings-item__header">
-							<div class="link-settings-item__info">
-								<strong>Disable Downloads<span class='tag-filled tag-sm bg-blue-500'>Plus</span></strong>
-								<p>Disallow people with this link to download the file</p>
+						<div class="link-settings-item">
+							<div class="link-settings-item__header">
+								<div class="link-settings-item__info">
+									<strong>Disable Downloads<span class='tag-filled tag-sm bg-blue-500'>Plus</span></strong>
+									<p>Disallow people with this link to download the file</p>
+								</div>
+								<label class="custom-controls switcher">
+									<span class='switcher-label'>No</span>
+									<input type="checkbox" name="" id="">
+									<span class='custom-control-indicator'></span>
+								</label>
 							</div>
-							<label class="custom-controls switcher">
-								<span class='switcher-label'>No</span>
-								<input type="checkbox" name="" id="">
-								<span class='custom-control-indicator'></span>
-							</label>
 						</div>
-					</div>
-					<div class="link-settings-item">
-						<div class="link-settings-item__header">
-							<div class="link-settings-item__info">
-								<strong>Custom Slug<span class='tag-filled tag-sm bg-violet-600'>Business</span></strong>
-								<p>Choose a custom URL slug to personalize it</p>
+						<div class="link-settings-item">
+							<div class="link-settings-item__header">
+								<div class="link-settings-item__info">
+									<strong>Custom Slug<span class='tag-filled tag-sm bg-violet-600'>Business</span></strong>
+									<p>Choose a custom URL slug to personalize it</p>
+								</div>
+								<label class="custom-controls switcher">
+									<span class='switcher-label'>No</span>
+									<input type="checkbox" name="" id="">
+									<span class='custom-control-indicator'></span>
+								</label>
 							</div>
-							<label class="custom-controls switcher">
-								<span class='switcher-label'>No</span>
-								<input type="checkbox" name="" id="">
-								<span class='custom-control-indicator'></span>
-							</label>
-						</div>
-						<div class="form-controls">
-							<input type="text" name="custom-slug" id="custom-slug" placeholder="Your custom domain">
-						</div>
-						<div class="link-settings-item__alert mt-4">
-							<svg class="icon icon-xs">
-								<use href="#alert"/>
-							</svg>
-							<p>Set up a custom domain to enable custom slugs. <a href="#">Set up now</a></p>
+							<div class="form-controls">
+								<input type="text" name="custom-slug" id="custom-slug" placeholder="Your custom domain">
+							</div>
+							<div class="link-settings-item__alert mt-4">
+								<svg class="icon icon-xs">
+									<use href="#alert"/>
+								</svg>
+								<p>Set up a custom domain to enable custom slugs. <a href="#">Set up now</a></p>
+							</div>
 						</div>
 					</div>
 					<div class="link-settings-footer">
@@ -359,6 +361,85 @@
 							<button class="btn btn-primary-default">
 								Save Changes
 							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class='max-w-xl mx-auto mt-8'>
+				<div class="recent-suggestions shadow-dropdown max-w-[491px]">
+					<div class="recent-suggestions-header">
+						<span>Recent Suggestions</span>
+					</div>
+					<div class='recent-suggestions-list'>
+						<div class="recent-suggestions-item group">
+							<div class='avatar avatar-sm'>
+								A
+							</div>
+							<div class='recent-suggestions-item__info'>
+								<span class='recent-suggestions-item__name'>John Doe</span>
+								<span class='recent-suggestions-item__email'>john.doe@example.com</span>
+							</div>
+							<div class='recent-suggestions-item__actions'>
+								<button class="btn btn-close">
+									<span class="icn-close"></span>
+								</button>
+							</div>
+						</div>
+						<div class="recent-suggestions-item group">
+							<div class='avatar avatar-sm'>
+								A
+							</div>
+							<div class='recent-suggestions-item__info'>
+								<span class='recent-suggestions-item__name'>John Doe</span>
+								<span class='recent-suggestions-item__email'>john.doe@example.com</span>
+							</div>
+							<div class='recent-suggestions-item__actions'>
+								<button class="btn btn-close">
+									<span class="icn-close"></span>
+								</button>
+							</div>
+						</div>
+						<div class="recent-suggestions-item group">
+							<div class='avatar avatar-sm'>
+								A
+							</div>
+							<div class='recent-suggestions-item__info'>
+								<span class='recent-suggestions-item__name'>John Doe</span>
+								<span class='recent-suggestions-item__email'>john.doe@example.com</span>
+							</div>
+							<div class='recent-suggestions-item__actions'>
+								<button class="btn btn-close">
+									<span class="icn-close"></span>
+								</button>
+							</div>
+						</div>
+						<div class="recent-suggestions-item group">
+							<div class='avatar avatar-sm'>
+								A
+							</div>
+							<div class='recent-suggestions-item__info'>
+								<span class='recent-suggestions-item__name'>John Doe</span>
+								<span class='recent-suggestions-item__email'>john.doe@example.com</span>
+							</div>
+							<div class='recent-suggestions-item__actions'>
+								<button class="btn btn-close">
+									<span class="icn-close"></span>
+								</button>
+							</div>
+						</div>
+						<div class="recent-suggestions-item group">
+							<div class='avatar avatar-sm'>
+								A
+							</div>
+							<div class='recent-suggestions-item__info'>
+								<span class='recent-suggestions-item__name'>John Doe</span>
+								<span class='recent-suggestions-item__email'>john.doe@example.com</span>
+							</div>
+							<div class='recent-suggestions-item__actions'>
+								<button class="btn btn-close">
+									<span class="icn-close"></span>
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>

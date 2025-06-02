@@ -116,3 +116,47 @@ ul.who-can-access {
 		}
 	}
 }
+
+
+
+
+
+
+.recent-suggestions {
+	@apply border border-gray-400 rounded-lg;
+
+	.recent-suggestions-header {
+		@apply px-6 pt-4 pb-3;
+
+		span {
+			@apply text-dark-800/60 text-xs font-normal;
+		}
+	}
+
+	.recent-suggestions-list {
+		@apply flex flex-col overflow-y-auto max-h-[13.9375rem];
+	}
+
+	.recent-suggestions-item {
+		@apply flex items-center gap-3 px-6 py-2.5 hover:bg-gray-150;
+
+		.recent-suggestions-item__info {
+			@apply flex flex-col gap-0.5;
+
+			.recent-suggestions-item__name {
+				@apply text-[14px] font-medium text-dark-800;
+			}
+			.recent-suggestions-item__email {
+				@apply text-xs text-dark-800/70;
+			}
+		}
+
+		.recent-suggestions-item__actions {
+			@apply ml-auto opacity-0 group-hover:opacity-100;
+		}
+
+		.btn-close {
+			@apply size-8 bg-gray-400 rounded-md cursor-pointer;
+		}
+	}
+}
