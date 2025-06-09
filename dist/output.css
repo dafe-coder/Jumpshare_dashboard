@@ -396,9 +396,6 @@
   .my-2 {
     margin-block: calc(var(--spacing) * 2);
   }
-  .my-auto {
-    margin-block: auto;
-  }
   .-mt-0\.5 {
     margin-top: calc(var(--spacing) * -0.5);
   }
@@ -802,9 +799,6 @@
   .max-w-\[390px\] {
     max-width: 390px;
   }
-  .max-w-\[400px\] {
-    max-width: 400px;
-  }
   .max-w-\[445px\] {
     max-width: 445px;
   }
@@ -1197,6 +1191,9 @@
   .px-6 {
     padding-inline: var(--spacing-6);
   }
+  .px-\[7px\] {
+    padding-inline: 7px;
+  }
   .py-0\.5 {
     padding-block: calc(var(--spacing) * 0.5);
   }
@@ -1283,9 +1280,6 @@
   }
   .text-left {
     text-align: left;
-  }
-  .align-middle {
-    vertical-align: middle;
   }
   .align-top {
     vertical-align: top;
