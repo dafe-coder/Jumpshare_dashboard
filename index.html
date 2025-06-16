@@ -127,6 +127,592 @@
 		<link rel="stylesheet" href="./dist/output.css" />
 	</head>
 	<body class='drag-and-drop'>
+    <div id="lightbox">
+      <div class="modal" id="modal">
+        <div class="modal-dialog modal-bs modal-email-share">
+          <div class="modal-content modal-share">
+            <button type="button" class="close pull-right" data-dismiss="modal" aria-hidden="true"><span class="icn-close"></span></button>
+            <div class="modal-header">
+              <h4 class="text-lg font-semibold text-dark-800">Share 'm12.png'</h4>
+              <div class="modal-share tabs_share_ui">
+                <a href="" id="share_modal_tab" class="modal-share-icon active">
+                  Send
+                </a>
+                <a href="" id="collaborate_tab" class="modal-share-icon">
+                  Invite
+                </a>
+                <a href="" id="embed_modal_tab" class="modal-share-icon">
+                  Embed
+                </a>
+                <a href="" id="link-settings" class="modal-share-icon">
+                  Link Settings
+                </a>
+              </div>
+            </div>
+            <div class="modal-body modal-email">
+              <form action="" method="post" id="popup_email_form" autocomplete="off">
+                <ul class="modal-email-wrapper clearfix acjs-holder relative pr-25">
+                  <li class="absolute top-[5px] right-[5px]">
+                    <button class="h-8 px-2 text-sm flex items-center gap-1.5 cursor-pointer hover:bg-gray-400 rounded-md">
+                      <span>Viewers</span>
+                      <svg class="icon icon-sm">
+                        <use href="#chevron-down"></use>
+                      </svg>
+                    </button>
+                    <div class="email-dropdown-menu shadow-dropdown hidden">
+                      <a href="#">
+                        Editor
+                      </a>
+                      <a href="#">
+                        Viewers
+                      </a>
+                    </div>
+                  </li>
+                  <li class="open"><input type="email" name="email_to" id="email_to" placeholder="Type name or email address"
+                      class="form-control input-slim pull-left acjs-input ac_input" onclick="$('.info-tip').addClass('hide');"
+                      style="width: 270px;" autocomplete="off"></li>
+                </ul><textarea tabindex="3" class="form-control input-slim " name="email_message" id="email_message"
+                  placeholder="Add a message (optional)"></textarea> <input type="hidden" name="item_type" id="item_type"
+                  value="file"> <input type="hidden" name="item_id" id="item_id" value="y40vjOQeoW3ykjafsfCH">
+                <div class="recent-suggestions shadow-dropdown hidden">
+                  <div class="recent-suggestions-header">
+                    <span>Recent Suggestions</span>
+                  </div>
+                  <div class="recent-suggestions-list">
+                    <div class="recent-suggestions-item">
+                      <div class="avatar avatar-sm">
+                        A
+                      </div>
+                      <div class="recent-suggestions-item__info">
+                        <span class="recent-suggestions-item__name">John Doe</span>
+                        <span class="recent-suggestions-item__email">john.doe@example.com</span>
+                      </div>
+                      <div class="recent-suggestions-item__actions">
+                        <button class="btn btn-close">
+                          <span class="icn-close"></span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="recent-suggestions-item">
+                      <div class="avatar avatar-sm">
+                        A
+                      </div>
+                      <div class="recent-suggestions-item__info">
+                        <span class="recent-suggestions-item__name">John Doe</span>
+                        <span class="recent-suggestions-item__email">john.doe@example.com</span>
+                      </div>
+                      <div class="recent-suggestions-item__actions">
+                        <button class="btn btn-close">
+                          <span class="icn-close"></span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="recent-suggestions-item">
+                      <div class="avatar avatar-sm">
+                        A
+                      </div>
+                      <div class="recent-suggestions-item__info">
+                        <span class="recent-suggestions-item__name">John Doe</span>
+                        <span class="recent-suggestions-item__email">john.doe@example.com</span>
+                      </div>
+                      <div class="recent-suggestions-item__actions">
+                        <button class="btn btn-close">
+                          <span class="icn-close"></span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="recent-suggestions-item">
+                      <div class="avatar avatar-sm">
+                        A
+                      </div>
+                      <div class="recent-suggestions-item__info">
+                        <span class="recent-suggestions-item__name">John Doe</span>
+                        <span class="recent-suggestions-item__email">john.doe@example.com</span>
+                      </div>
+                      <div class="recent-suggestions-item__actions">
+                        <button class="btn btn-close">
+                          <span class="icn-close"></span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="recent-suggestions-item">
+                      <div class="avatar avatar-sm">
+                        A
+                      </div>
+                      <div class="recent-suggestions-item__info">
+                        <span class="recent-suggestions-item__name">John Doe</span>
+                        <span class="recent-suggestions-item__email">john.doe@example.com</span>
+                      </div>
+                      <div class="recent-suggestions-item__actions">
+                        <button class="btn btn-close">
+                          <span class="icn-close"></span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <h4 class="block text-sm font-semibold text-dark-800 mb-3 text-left mt-6">Who can access</h4>
+                <ul class="who-can-access">
+                  <li>
+                    <div class="avatar">
+                      A
+                      <!-- <img src="" alt=""> -->
+                    </div>
+                    <div class="who-can-access-info">
+                      <span class="who-can-access__name">David Robert</span>
+                      <span class="who-can-access__email">david@marksman.com</span>
+                    </div>
+                    <div class="who-can-access-actions">
+                      <span class="who-can-access__role">Owner</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="avatar">
+                      B
+                      <!-- <img src="" alt=""> -->
+                    </div>
+                    <div class="who-can-access-info">
+                      <span class="who-can-access__name">John Doe</span>
+                      <span class="who-can-access__email">johndoe@gmail.com</span>
+                    </div>
+                    <div class="who-can-access-actions">
+                      <button class="btn btn-sm">
+                        <span>Viewer</span>
+                        <svg class="icon icon-sm">
+                          <use href="#chevron-down"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="avatar">
+                      R
+                      <!-- <img src="" alt=""> -->
+                    </div>
+                    <div class="who-can-access-info">
+                      <span class="who-can-access__name">robertpattinson@gmail.com</span>
+                      <span class="who-can-access__email">robertpattinson@gmail.com</span>
+                    </div>
+                    <div class="who-can-access-actions">
+                      <button class="btn btn-sm">
+                        <span>Viewer</span>
+                        <svg class="icon icon-sm">
+                          <use href="#chevron-down"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="avatar">
+                      J
+                      <!-- <img src="" alt=""> -->
+                    </div>
+                    <div class="who-can-access-info">
+                      <span class="who-can-access__name">James Patrick</span>
+                      <span class="who-can-access__email">patrickjames@gmail.com</span>
+                    </div>
+                    <div class="who-can-access-actions">
+                      <button class="btn btn-sm">
+                        <span>Editor</span>
+                        <svg class="icon icon-sm">
+                          <use href="#chevron-down"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </li>
+                </ul>
+                <h4 class="block mt-4 text-sm font-semibold text-dark-800 mb-4 text-left">General access</h4>
+                <div class="privacy-settings-wrapper">
+                  <div class="privacy-settings-item">
+                    <svg class="icon icon-md">
+                      <use href="#world"></use>
+                    </svg>
+                    <div class="privacy-settings-item__info">
+                      <div class="privacy-settings-item__title">Anyone with a link</div>
+                      <div class="privacy-settings-item__description">Anyone with a link can access. Hidden from search engines.
+                      </div>
+                    </div>
+                    <svg class="icon icon-md ml-auto">
+                      <use href="#chevron-down"></use>
+                    </svg>
+                  </div>
+                  <div class="privacy-settings-menu shadow-dropdown hidden">
+                    <div class="privacy-settings-menu__item">
+                      <svg class="icon icon-md">
+                        <use href="#world"></use>
+                      </svg>
+                      <div>
+                        <div class="font-medium text-dark-800 text-sm">Anyone with a link</div>
+                        <div class="text-xs text-dark-800/70">Anyone with a link can access. Hidden from search engines.</div>
+                      </div>
+                    </div>
+                    <div class="privacy-settings-menu__item">
+                      <svg class="icon icon-md">
+                        <use href="#user"></use>
+                      </svg>
+                      <div>
+                        <div class="font-medium text-dark-800 text-sm flex items-center">Restricted<span
+                            class="bg-blue-500 text-white text-[10px] font-medium px-1.5 h-5 flex items-center rounded-md ml-1.5">Plus</span>
+                        </div>
+                        <div class="text-xs text-dark-800/70">Only people added can access.</div>
+                      </div>
+                    </div>
+                    <div class="privacy-settings-menu__item">
+                      <svg class="icon icon-md">
+                        <use href="#team"></use>
+                      </svg>
+                      <div>
+                        <div class="font-medium text-dark-800 text-sm flex items-center">Members of Jumpshare Enterprise<span
+                            class="bg-violet-600 text-white text-[10px] font-medium px-1.5 h-5 flex items-center rounded-md ml-1.5">Business</span>
+                        </div>
+                        <div class="text-xs text-dark-800/70">Only Workspace members can access.</div>
+                      </div>
+                    </div>
+                    <div class="privacy-settings-menu__item">
+                      <svg class="icon icon-md">
+                        <use href="#disable-outline"></use>
+                      </svg>
+                      <div>
+                        <div class="font-medium text-dark-800 text-sm flex items-center">Only Me<span
+                            class="bg-blue-500 text-white text-[10px] font-medium px-1.5 h-5 flex items-center rounded-md ml-1.5">Plus</span>
+                        </div>
+                        <div class="text-xs text-dark-800/70">Only you can access this file.</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="input-group date-picker pull-left">
+                  <div class="schedule_calendar "><svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_10784_6082)">
+                        <path
+                          d="M6.0026 13.332H4.0026C3.29536 13.332 2.61708 13.0511 2.11699 12.551C1.61689 12.0509 1.33594 11.3726 1.33594 10.6654V4.66536C1.33594 3.95812 1.61689 3.27984 2.11699 2.77975C2.61708 2.27965 3.29536 1.9987 4.0026 1.9987H11.3359C12.0432 1.9987 12.7215 2.27965 13.2216 2.77975C13.7217 3.27984 14.0026 3.95812 14.0026 4.66536V6.66536M5.33594 1.33203V2.66536M10.0026 1.33203V2.66536M1.33594 5.33203H14.0026M12.3359 10.4274L11.3359 11.4274"
+                          stroke="#0A0A0B" stroke-width="0.888889" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path
+                          d="M11.3333 14.6667C13.1743 14.6667 14.6667 13.1743 14.6667 11.3333C14.6667 9.49238 13.1743 8 11.3333 8C9.49238 8 8 9.49238 8 11.3333C8 13.1743 9.49238 14.6667 11.3333 14.6667Z"
+                          stroke="#0A0A0B" stroke-width="0.888889" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_10784_6082">
+                          <rect width="16" height="16" fill="white"></rect>
+                        </clipPath>
+                      </defs>
+                    </svg> <input type="text" class="distxts hasDatepicker" name="email_date" id="email_date" placeholder=""
+                      value="Schedule" style="width:66px;" readonly="">
+                    <tester
+                      style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: 400; letter-spacing: 0px; white-space: nowrap;">
+                      Schedule</tester>
+                  </div>
+                </div>
+                <div class="share-footer flex items-center justify-between mt-4">
+                  <div class="flex items-center gap-3.5">
+                    <button id="copy_advLink" data-type="file" data-link="http://jmp.jsa.de/v/y40vjOQeoW3ykjafsfCH" type="button"
+                      class="btn btn-default h-9">
+                      <svg class="icon icon-xs">
+                        <use href="#link"></use>
+                      </svg>
+                      <span class="text-sm text-dark-800">Copy link</span>
+                    </button>
+                    <label class="custom-controls checkbox">
+                      <input type="checkbox" class="custom-control-input">
+                      <span class="custom-control-indicator"></span>
+                      <span class="text-sm text-dark-800">Share video at 0:00</span>
+                    </label>
+                  </div>
+                  <button class="btn btn-primary-default h-9">Done</button>
+                </div>
+                <div class="group"></div>
+                <p class="error newerror plus"></p>
+              </form>
+              <div class="modal-footer clearfix">
+                <button class="btn btn-submit pull-right btn-primary-default send_mail " id="send_email">Send</button>
+              </div>
+            </div>
+            <div class="modal-body modal-collaborate">
+              <label style="margin-top: -5px;">Once you invite a team member from your workspace, this item can be found in your Shared library.<a style="color: #2F76FF; padding-left: 5px; text-decoration: none;" href="settings/workspace/members">View members</a></label>
+              <div class="modal-frm-collaborate">
+                <form action="" method="post" id="popup_collaborate_invite_form" autocomplete="off">
+                  <div class="modal-collaborate-invite"> <button class="btn btn-submit btn-primary-default invite_to_collaborate"
+                      id="invite_to_collaborate">Invite</button>
+                    <ul class="modal-email-wrapper clearfix acjs-team-holder">
+                      <li class="open"> 
+                        <input 
+                          type="email" 
+                          name="email_to_collaborate" 
+                          id="email_to_collaborate"
+                          placeholder="Type names of team members" class="form-control input-slim pull-left acjs-input ac_input"
+                          style="width: 270px;" 
+                          autocomplete="off"> 
+                        </li>
+                    </ul>
+                  </div>
+                  <div class="enabled">
+                    <div class="modal-share-options">
+                      <div class="clearfix"></div> <input type="hidden" name="item_type" id="item_type" value="file"> <input
+                        type="hidden" name="file_type" id="file_type" value="image"> <input type="hidden" name="item_id"
+                        id="item_id" value="y40vjOQeoW3ykjafsfCH">
+                    </div>
+                  </div>
+                  <div class="invite-members-wrapper">
+                    <ul class="invite_member_list"></ul>
+                    <div class="empty-team-text">No team members invited</div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="modal-body modal-embed">
+              <form class="modal-embedMedia">
+                <div class="enabled">
+                  <div class="modal-share-options">
+                    <div class="copy_embed_group">
+                      <div>
+                        <h4 class="text-sm font-semibold text-dark-800">For email:</h4>
+                        <div class="for_email_wrppr"> <button class="btn btn-default font-normal" id="embed_copy_thumb"><svg
+                              class="icon icon-sm">
+                              <use href="#thumbnail"></use>
+                            </svg><span>Copy thumbnail</span></button> <a href="#" id="embed_copy_thumb_code"><svg width="19"
+                              height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="1.3501" y="0.75" width="10.7404" height="10.6688" rx="2.25" stroke="black"
+                                stroke-width="1.5"></rect>
+                              <rect x="4.69019" y="4.33105" width="13.2404" height="13.1688" rx="3.5" fill="white" stroke="white">
+                              </rect>
+                              <rect x="5.94019" y="5.58105" width="10.7404" height="10.6688" rx="2.25" fill="white" stroke="black"
+                                stroke-width="1.5"></rect>
+                            </svg><span>Copy thumbnail code</span></a> </div>
+                      </div>
+                      <div class="mt-7.5">
+                        <h4 class="text-sm font-semibold text-dark-800 mb-4">For web page:</h4> <input
+                          style="display: none !important;" name="txt_embedCode" id="txt_embedCode" class="form-control" type="text"
+                          data-item_id="y40vjOQeoW3ykjafsfCH" value="" readonly=""> <button id="copy_embedCode"
+                          class="btn btn-default font-normal"><svg class="icon icon-sm">
+                            <use href="#embed-code"></use>
+                          </svg><span>Copy embed code</span></button>
+                        <div class="embed-type-optoins">
+                          <div class="option" id="embed_size_optns_cntrols">
+                            <div class="options-wrapper relative"> <label class="custom-controls checkbox "
+                                style="clear: both; overflow: hidden; "> <input type="checkbox" name="hide_video_title"
+                                  id="hide_video_title" value="1" class=""> <span class="custom-control-indicator "></span> <span
+                                  class="pull-left ">Hide video title</span> </label> <label class="custom-controls checkbox "
+                                style="clear: both; overflow: hidden; "> <input type="checkbox" name="disable_embed_download_video"
+                                  id="disable_embed_download_video" value="1" class=""> <span
+                                  class="custom-control-indicator "></span> <span class="pull-left ">Disable download</span>
+                              </label> <label class="custom-controls checkbox  hidden" style="clear: both; overflow: hidden; ">
+                                <input type="checkbox" name="embed_muted" id="embed_muted" value="1" class=""> <span
+                                  class="custom-control-indicator "></span> <span class="pull-left ">Mute</span> </label>
+                              <div style="display: flex; align-items: center; gap: 5px"><label
+                                  class="custom-controls checkbox  hidden" style="clear: both; overflow: hidden; padding-right: 0">
+                                  <input type="checkbox" name="embed_autoplay" id="embed_autoplay" value="1" class=""> <span
+                                    class="custom-control-indicator "></span> <span class="pull-left "
+                                    style="display: flex; align-items: center;">Autoplay </span> </label></div>
+                            </div>
+                            <div class="options-wrapper mt-5"> <label class="custom-controls radio"> <input type="radio" name="embed_type" value="1"
+                                  checked="checked"> <span class="custom-control-indicator radio"></span><span>Responsive</span> </label> <label
+                                class="custom-controls radio fixed_siz"> <input type="radio" name="embed_type" value="2"> <span
+                                  class="custom-control-indicator radio"></span><span>Fixed size</span> </label>
+                              <div class="video_size_embed" style="display: none;"> 
+                                <input 
+                                  type="phone" 
+                                  id="vid_width" 
+                                  name="vid_width" 
+                                  value="640"
+                                  min="1" 
+                                  disabled="disabled" 
+                                  class="form-control" 
+                                  maxlength="4"> 
+                                <span> x </span> 
+                                <input 
+                                  type="phone" 
+                                  id="vid_height" 
+                                  name="vid_height" 
+                                  value="400" 
+                                  min="1" 
+                                  disabled="disabled" 
+                                  class="form-control" 
+                                  maxlength="4"> 
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="embed-type-optoins">
+                    <div class="option clearfix">
+                      <div class="preview_window mt-4">
+                        <p class="text-sm text-dark-800/50">Video Preview: </p>
+                      </div>
+                      <div class="modal-footer clearfix"></div> <input type="hidden" name="item_type" id="item_type"
+                        value="file"><input type="hidden" name="file_type" id="file_type" value="image"> <input type="hidden"
+                        name="item_id" id="item_id" value="y40vjOQeoW3ykjafsfCH">
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-body modal-link-settings clearfix">
+              <div class="link-settings-list">
+                <div class="link-settings-item">
+                  <div class="link-settings-item__header">
+                    <div class="link-settings-item__info">
+                      <strong>Set Expiration<span class="tag-filled tag-sm bg-blue-500">Plus</span></strong>
+                      <p>Disable this link after specific period</p>
+                    </div>
+                    <label class="custom-controls switcher">
+                      <span class="switcher-label">No</span>
+                      <input type="checkbox" name="" id="">
+                      <span class="custom-control-indicator"></span>
+                    </label>
+                  </div>
+                  <div class="link-settings-item__footer">
+                    <div class="flex items-center mt-4">
+                      <p class="text-[14px] mr-3.5">Expire after:</p>
+                      <div class="days pull-left clearfix">
+                        <input class="form-control modal-share-days" id="expire_after_number_copy_link"
+                          name="expire_after_number_copy_link" min="01" max="99999" value="01" type="number">
+                        <div class="controls-number" id="expire_after_number_control">
+                          <a href="#" class="icon-wrapper pull-left"><span class="ab-center icn-numberup-arrow"></span></a>
+                          <a href="#" class="icon-wrapper pull-left"><span class="ab-center icn-numberdown-arrow"></span></a>
+                        </div>
+                      </div>
+                      <div class="options-dropdown pull-left">
+                        <div class="btn-group btn-compact pull-left">
+                          <button id="expire_after_button_copy_link" type="button" class="btn btn-default dropdown-toggle"
+                            data-toggle="dropdown" data-tooltip="true" data-placement="top" data-trigger="click" data-html="true"
+                            title=""
+                            data-original-title="&lt;strong&gt;Tip:&lt;/strong&gt; Other options are only available when sharing single files.">
+                            Day<span class="caret"></span></button>
+                          <ul class="dropdown-menu" id="expire_after_list_copy_link" role="menu">
+                            <li data-value="Day"><a href="#">Days</a></li>
+                            <li data-value="View"><a href="#">Views</a></li>
+                            <li data-value="Download" class=""><a href="#">Downloads</a></li>
+                          </ul>
+                          <input type="hidden" name="expire_after_type_copy_link" id="expire_after_type_copy_link" value="Day">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="link-settings-item">
+                  <div class="link-settings-item__header">
+                    <div class="link-settings-item__info">
+                      <strong>Require password<span class="tag-filled tag-sm bg-blue-500">Plus</span></strong>
+                      <p>Set a password to limit access using a password</p>
+                    </div>
+                    <label class="custom-controls switcher">
+                      <span class="switcher-label">No</span>
+                      <input type="checkbox" name="" id="">
+                      <span class="custom-control-indicator"></span>
+                    </label>
+                  </div>
+                  <div class="link-settings-item__footer">
+                    <div class="password_form_field">
+                      <input class="form-control" type="password" placeholder="Password">
+                      <svg id="showPasswordField" width="21" height="21" viewBox="0 0 21 21" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M13.125 10.5C13.125 11.9497 11.9497 13.125 10.5 13.125C9.05025 13.125 7.875 11.9497 7.875 10.5C7.875 9.05025 9.05025 7.875 10.5 7.875C11.9497 7.875 13.125 9.05025 13.125 10.5Z"
+                          fill="#586266"></path>
+                        <path
+                          d="M19.1576 10.1087C17.2692 6.3318 13.9152 4.375 10.5 4.375C7.08476 4.375 3.73082 6.3318 1.84238 10.1087C1.71921 10.355 1.71921 10.645 1.84238 10.8913C3.73082 14.6682 7.08476 16.625 10.5 16.625C13.9152 16.625 17.2692 14.6682 19.1576 10.8913C19.2808 10.645 19.2808 10.355 19.1576 10.1087ZM10.5 14.875C7.90231 14.875 5.2483 13.4568 3.61345 10.5C5.2483 7.54318 7.90231 6.125 10.5 6.125C13.0977 6.125 15.7517 7.54318 17.3866 10.5C15.7517 13.4568 13.0977 14.875 10.5 14.875Z"
+                          fill="#586266"></path>
+                      </svg>
+                      <svg id="hidePasswordField" style="display: none;" width="18" height="15" viewBox="0 0 18 15" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M2.35519 0.244078C2.01543 -0.0813592 1.46458 -0.0813592 1.12482 0.244078C0.785062 0.569515 0.785062 1.09715 1.12482 1.42259L3.23385 3.44273C1.98917 4.33948 0.904151 5.57119 0.0918485 7.12732C-0.0306162 7.36193 -0.0306162 7.63807 0.0918485 7.87268C1.9695 11.4697 5.30429 13.3333 8.70002 13.3333C10.053 13.3333 11.3963 13.0375 12.6416 12.454L15.0448 14.7559C15.3846 15.0814 15.9355 15.0814 16.2752 14.7559C16.615 14.4305 16.615 13.9028 16.2752 13.5774L2.35519 0.244078ZM11.322 11.19C10.4698 11.5093 9.58166 11.6667 8.70002 11.6667C6.11717 11.6667 3.47831 10.316 1.85281 7.5C2.56408 6.2678 3.46937 5.31617 4.4791 4.63549L6.34438 6.42216C6.18132 6.74852 6.09001 7.11405 6.09001 7.50001C6.09001 8.88072 7.25855 10 8.70002 10C9.10296 10 9.48457 9.91255 9.82529 9.75636L11.322 11.19Z"
+                          fill="#586266"></path>
+                        <path
+                          d="M14.4005 9.07956C14.8207 8.6168 15.2063 8.09063 15.5472 7.5C13.9217 4.68398 11.2828 3.33333 8.69998 3.33333C8.60254 3.33333 8.50502 3.33526 8.40747 3.33911L6.85509 1.85215C7.46236 1.72876 8.08016 1.66667 8.69998 1.66667C12.0957 1.66667 15.4305 3.53029 17.3081 7.12732C17.4306 7.36193 17.4306 7.63807 17.3081 7.87268C16.8349 8.77931 16.2691 9.57581 15.633 10.2601L14.4005 9.07956Z"
+                          fill="#586266"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="link-settings-item">
+                  <div class="link-settings-item__header">
+                    <div class="link-settings-item__info">
+                      <strong>Disable Downloads<span class="tag-filled tag-sm bg-blue-500">Plus</span></strong>
+                      <p>Disallow people with this link to download the file</p>
+                    </div>
+                    <label class="custom-controls switcher">
+                      <span class="switcher-label">No</span>
+                      <input type="checkbox" name="" id="">
+                      <span class="custom-control-indicator"></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="link-settings-item">
+                  <div class="link-settings-item__header">
+                    <div class="link-settings-item__info">
+                      <strong>Custom Slug<span class="tag-filled tag-sm bg-violet-600">Business</span></strong>
+                      <p>Choose a custom URL slug to personalize it</p>
+                    </div>
+                    <label class="custom-controls switcher">
+                      <span class="switcher-label">No</span>
+                      <input type="checkbox" name="" id="">
+                      <span class="custom-control-indicator"></span>
+                    </label>
+                  </div>
+                  <div class="link-settings-item__footer">
+                    <div class="password_form_field">
+                      <input type="text" name="custom-slug" id="custom-slug" placeholder="Your custom domain">
+                    </div>
+                  </div>
+                  <div class="link-settings-item__alert mt-4">
+                    <svg class="icon icon-xs">
+                      <use href="#alert"></use>
+                    </svg>
+                    <p>Set up a custom domain to enable custom slugs. <a href="#">Set up now</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="link-settings-footer">
+                <a href="#">Delete Link</a>
+                <div class="flex items-center gap-3">
+                  <button class="btn btn-border" id="qr-code-btn">
+                    <svg class="icon icon-sm">
+                      <use href="#qr-code"></use>
+                    </svg>
+                    <span class="font-normal">QR Code</span>
+                  </button>
+                  <button class="btn btn-primary">
+                    Save Changes
+                  </button>
+                </div>
+              </div>
+              <div class="qrcode-modal hidden">
+                <div class="qrcode-modal-body">
+                  <button type="button" class="qrcode-modal-close" aria-hidden="true"><span class="icn-close"></span></button>
+                  <div class="qrcode-modal-header">
+                    <h4 class="text-lg font-semibold">Scan QR Code</h4>
+                  </div>
+                  <div class="qrcode-modal-content">
+                    <div class="qrcode-modal-code">
+                      <img src="./assets/images/qr-code-blurred.png" alt="QR Code">
+                      <div class="qrcode-modal-upgrade">
+                        <h3 class="text-lg font-semibold">Upgrade to Plus to Unlock</h3>
+                        <p>Upgrade your account to copy or download the QR code, allowing you to easily access your files on mobile.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="qrcode-modal-footer">
+                    <div class="qrcode-modal-actions mt-4">
+                      <button class="btn btn-primary !w-full">
+                        Upgrade Now
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-backdrop"></div>
+    </div>
+
+    
 		<div id="progress-bar" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-blue-500/10 transform scale-x-0 origin-left transition-transform duration-300 ease-out z-99999"></div>
 		<div id='upload-files-modal' class='hidden fixed inset-0 bg-blue-1000/70 z-999 justify-center items-center [&.active]:flex backdrop-blur-xs'>
 			<div class='upload-files-drop-zone flex items-center justify-center w-[523px] h-[325px]'>
@@ -2117,8 +2703,16 @@
 												XLSX
 											</li>
 											<li>12 views</li>
+										</ul>
 									</div>
-									</ul>
+								</div>
+								<div class='file-item-bottom'>
+									<div class='flex flex-col gap-1'>
+										<h4>Guidelines for the tour of 2024 session</h4>
+										<ul class="list-with-dots">
+											<li>XLSX</li>
+									  </ul>
+									</div>
 									<div class='file-author'>
 										<div class='file-author-avatar'>
 											<img src="./assets/images/avatar.png" alt="avatar">
@@ -2718,9 +3312,7 @@
 								<span class="toggle-menu-icon -rotate-90">
 									<img src="./assets/images/check-down.svg" alt="check">
 								</span>
-								
-									<img class='w-[19px] flex items-center justify-center' src="./assets/images/folder.svg" alt="folder">
-								</span>
+                <img class='w-[19px] flex items-center justify-center' src="./assets/images/folder.svg" alt="folder">
 								<span class="folder-menu-name">New Folder 2.0</span>
 							</div>
 							<div class="folder-menu-content hidden">

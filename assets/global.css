@@ -142,6 +142,7 @@
 @import "./hamburger.css";
 @import "./components-dashboard.css";
 @import "./test.css";
+@import "./dialog.css";
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
