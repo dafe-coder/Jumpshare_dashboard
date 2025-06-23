@@ -324,6 +324,9 @@
   .left-0 {
     left: calc(var(--spacing) * 0);
   }
+  .left-1\/2 {
+    left: calc(1/2 * 100%);
+  }
   .left-3 {
     left: calc(var(--spacing) * 3);
   }
@@ -629,6 +632,9 @@
   .h-8 {
     height: calc(var(--spacing) * 8);
   }
+  .h-8\.5 {
+    height: var(--spacing-8_5);
+  }
   .h-9 {
     height: calc(var(--spacing) * 9);
   }
@@ -652,6 +658,9 @@
   }
   .h-\[11px\] {
     height: 11px;
+  }
+  .h-\[16\.875rem\] {
+    height: 16.875rem;
   }
   .h-\[17px\] {
     height: 17px;
@@ -728,6 +737,9 @@
   .w-\[8\.5rem\] {
     width: 8.5rem;
   }
+  .w-\[8\.75rem\] {
+    width: 8.75rem;
+  }
   .w-\[10\.625rem\] {
     width: 10.625rem;
   }
@@ -790,6 +802,9 @@
   }
   .w-\[240px\] {
     width: 240px;
+  }
+  .w-\[490px\] {
+    width: 490px;
   }
   .w-\[523px\] {
     width: 523px;
@@ -859,6 +874,10 @@
   }
   .origin-left {
     transform-origin: left;
+  }
+  .-translate-x-1\/2 {
+    --tw-translate-x: calc(calc(1/2 * 100%) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .-translate-y-1\/2 {
     --tw-translate-y: calc(calc(1/2 * 100%) * -1);
@@ -1117,6 +1136,12 @@
       background-color: color-mix(in oklab, var(--color-blue-1000) 70%, transparent);
     }
   }
+  .bg-dark-800\/80 {
+    background-color: color-mix(in srgb, #0A0A0B 80%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-dark-800) 80%, transparent);
+    }
+  }
   .bg-gray-150 {
     background-color: var(--color-gray-150);
   }
@@ -1201,6 +1226,9 @@
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
   }
+  .px-2\.5 {
+    padding-inline: calc(var(--spacing) * 2.5);
+  }
   .px-3 {
     padding-inline: calc(var(--spacing) * 3);
   }
@@ -1215,6 +1243,9 @@
   }
   .px-\[7px\] {
     padding-inline: 7px;
+  }
+  .py-0 {
+    padding-block: calc(var(--spacing) * 0);
   }
   .py-0\.5 {
     padding-block: calc(var(--spacing) * 0.5);
@@ -5922,7 +5953,8 @@ ul.who-can-access {
     }
     .modal-body {
       position: static;
-      max-height: 70vh;
+      height: calc(80vh - 110px);
+      max-height: 500px;
       overflow-y: auto;
       padding: var(--spacing-6);
     }
@@ -6106,24 +6138,9 @@ ul.who-can-access {
       }
       .lnk-privacy-menu {
         width: 100%;
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-        border-color: var(--color-gray-600);
         li {
-          width: 100%;
-          a {
-            display: flex;
-            height: calc(var(--spacing) * 8);
-            width: 100%;
-            align-items: center;
-            justify-content: space-between;
-            padding-inline: calc(var(--spacing) * 3);
-            &:hover {
-              @media (hover: hover) {
-                background-color: var(--color-gray-300);
-              }
-            }
-          }
+          padding-inline: calc(var(--spacing) * 3);
+          padding-block: calc(var(--spacing) * 2.5);
         }
       }
     }
@@ -7002,13 +7019,14 @@ ul.who-can-access {
   max-height: 195px;
   width: calc(100% + 3rem);
   overflow-y: auto;
+  background-color: transparent;
   li {
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: flex-start;
     gap: calc(var(--spacing) * 3);
-    background-color: var(--color-white);
+    background-color: transparent;
     padding-inline: var(--spacing-6);
     padding-block: calc(var(--spacing) * 2);
     &:hover {
@@ -7052,11 +7070,13 @@ ul.who-can-access {
       height: calc(var(--spacing) * 8);
       cursor: pointer;
       gap: calc(var(--spacing) * 1.5);
+      background-color: transparent;
       padding-inline: calc(var(--spacing) * 2);
       font-size: 14px;
       --tw-font-weight: var(--font-weight-normal);
       font-weight: var(--font-weight-normal);
       color: var(--color-dark-800);
+      transition-property: none;
       &:hover {
         @media (hover: hover) {
           background-color: var(--color-gray-400);
@@ -7115,19 +7135,6 @@ ul.who-can-access {
         color: color-mix(in oklab, var(--color-dark-800) 70%, transparent);
       }
     }
-  }
-  .privacy-settings-menu {
-    position: absolute;
-    top: calc(100% + 8px);
-    left: calc(var(--spacing) * 0);
-    z-index: 10;
-    width: 100%;
-    border-radius: var(--radius-lg);
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-    border-color: var(--color-gray-400);
-    background-color: var(--color-white);
-    padding: calc(var(--spacing) * 2);
   }
   .privacy-settings-menu__item {
     display: flex;
@@ -7275,6 +7282,11 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 }
 .dark-input::-webkit-contacts-auto-fill-button {
   background-color: var(--color-violet-300);
+}
+.dropdown-fixed {
+  position: fixed !important;
+  z-index: 9999 !important;
+  transform: none !important;
 }
 @property --tw-translate-x {
   syntax: "*";

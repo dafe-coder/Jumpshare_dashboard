@@ -1,6 +1,6 @@
 const Dialog = {
 	init: function() {
-		this.dialogs = $('.dialog');
+		this.dialogs = $('#lightbox');
 		this.dialogs.each((_, dialog) => {
 			this.initDialog($(dialog));
 		});
@@ -18,6 +18,18 @@ const Dialog = {
 		$closeBtn.on('click', () => {
 			$dialog.addClass('hidden');
 		});
+
+    $('.modal').on('click', function(e) {
+      if (e.target === this) {
+        $dialog.addClass('hidden');
+      }
+    });
+
+    $('[data-dialog-open-id="share"]').on('click', (e) =>{
+      e.preventDefault()
+      e.stopPropagation()
+      $dialog.removeClass('hidden');
+    })
 	},
 
 	openDialog: function($dialog) {
@@ -122,7 +134,7 @@ const Lightbox = {
 
     $('#embed_size_optns_cntrols input').on('change', function() {
       if($('.fixed_siz input').is(':checked')) {
-        $('.video_size_embed').css('display', 'block');
+        $('.video_size_embed').css('display', 'flex');
       } else {
         $('.video_size_embed').css('display', 'none');
       }

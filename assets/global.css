@@ -308,3 +308,10 @@ input:-webkit-autofill:active {
 .dark-input::-webkit-contacts-auto-fill-button {
 	@apply bg-violet-300;
 }
+
+/* Dropdown fixed positioning for overflow hidden contexts */
+.dropdown-fixed {
+	position: fixed !important;
+	z-index: 9999 !important;
+	transform: none !important;
+}

@@ -172,7 +172,7 @@
 			@apply overflow-hidden;
 		}
 		.modal-body {
-			@apply p-6 max-h-[70vh] overflow-y-auto static;
+			@apply p-6 max-h-[500px] h-[calc(80vh-110px)] overflow-y-auto static;
 		}
 	}
 
@@ -278,17 +278,10 @@
 			}
 
 			.lnk-privacy-menu {
-				@apply w-full rounded-t-none border-gray-600;
-
-				li {
-					@apply w-full;
-
-					a {
-						@apply w-full h-8 flex items-center justify-between hover:bg-gray-300 px-3;
-					}
-
-				}
-
+				@apply w-full;
+        li {
+          @apply py-2.5 px-3;
+        }
 			}
 
 		}
@@ -788,10 +781,10 @@
 }
 
 ul.who-can-access {
-	@apply relative w-[calc(100%+3rem)] -mx-6 max-h-[195px] overflow-y-auto;
+	@apply relative w-[calc(100%+3rem)] -mx-6 max-h-[195px] overflow-y-auto bg-[transparent];
 
 	li {
-		@apply flex justify-start items-center gap-3 px-6 py-2 hover:bg-gray-150 w-full bg-white;
+		@apply flex justify-start items-center gap-3 px-6 py-2 hover:bg-gray-150 w-full bg-[transparent];
 	}
 
 	.who-can-access-info {
@@ -814,7 +807,7 @@ ul.who-can-access {
 		}
 
 		.btn {
-			@apply h-8 px-2 hover:bg-gray-400 text-dark-800 cursor-pointer gap-1.5 text-[14px] font-normal; 
+			@apply h-8 px-2 bg-[transparent] hover:bg-gray-400 text-dark-800 cursor-pointer gap-1.5 text-[14px] font-normal transition-none; 
 		}
 	}
 }
@@ -844,10 +837,6 @@ ul.who-can-access {
 		.privacy-settings-item__description {
 			@apply text-xs text-dark-800/70;
 		}
-	}
-
-	.privacy-settings-menu {
-		@apply bg-white rounded-lg p-2 absolute top-[calc(100%+8px)] left-0 w-full border border-gray-400 z-10;
 	}
 
 	.privacy-settings-menu__item {

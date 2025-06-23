@@ -10,6 +10,8 @@ const Dropdown = {
 	scrollbarWidth: 0,
 	sheetClosePercent: 45,	
 	heightTrigger: 25,
+	scrollableParents: [],
+	scrollHandlers: [],
 
 	init() {	
 		this.dropdownIdTimer = null;
@@ -166,6 +168,8 @@ const Dropdown = {
 			$button.removeClass('active');
 			$wrapper.removeClass('active');
 			$content.removeClass('active').addClass('hidden');
+			$content.removeClass('dropdown-fixed');
+			this.detachScrollListeners();
 		}
 	},
 
@@ -204,6 +208,9 @@ const Dropdown = {
 			this.subMenuItems.removeClass('active');
 			$('.js-dropdown-sub-list').removeClass('active').addClass('hidden');
 			
+			this.dropdownContents.removeClass('dropdown-fixed');
+			this.detachScrollListeners();
+			
 			clearTimeout(this.dropdownIdTimer);
 			this.dropdownIdTimer = setTimeout(() => {
 				this.dropdownContents.addClass('hidden');
@@ -216,8 +223,20 @@ const Dropdown = {
 			return;
 		}
 
+		const hasOverflowVisible = $element.attr('data-overflow-visible') !== undefined;
+		const needsFixedPosition = hasOverflowVisible && this.isInsideOverflowHidden($element);
+
+		if (needsFixedPosition) {
+			$element.addClass('dropdown-fixed');
+			this.attachScrollListeners($element);
+			this.calculateFixedPosition($element);
+			return;
+		} else {
+			$element.removeClass('dropdown-fixed');
+			this.detachScrollListeners();
+		}
+
 		const hasSubContent = $element.closest('.sub-menu-item').children('.js-dropdown-sub-list').length > 0;
-			
 		if($element.attr('data-dropdown-id') === 'dropdown-settings' || hasSubContent) {
 			$element.css({
 				'top': '10px',
@@ -225,17 +244,17 @@ const Dropdown = {
 				'right': 'auto'
 			});
 		}
-		
+
 		const rect = $element[0].getBoundingClientRect();
 		const viewportHeight = $(window).height();
 		const viewportWidth = $(window).width();
-		
+
 		if (rect.bottom > viewportHeight) {
 			const overflowBottom = rect.bottom - viewportHeight;
 			const newTop = parseInt($element.css('top')) - overflowBottom - 20;
 			$element.css('top', newTop + 'px');
 		}
-		
+
 		if (rect.right > viewportWidth && ($element.attr('data-dropdown-id') === 'dropdown-settings' || hasSubContent)) {
 			$element.addClass('adjust-position-right')
 				.css({
@@ -245,15 +264,50 @@ const Dropdown = {
 		}
 	},
 
+	isInsideOverflowHidden($element) {
+		let $parent = $element.parent();
+		while ($parent.length && !$parent.is('body')) {
+			const overflow = $parent.css('overflow');
+			if (overflow === 'hidden' || overflow === 'scroll' || overflow === 'auto') {
+				return true;
+			}
+			$parent = $parent.parent();
+		}
+		return false;
+	},
+
+	calculateFixedPosition($element) {
+		const $trigger = $element.closest('.dropdown-wrapper').find('.dropdown-button');
+		const triggerRect = $trigger[0].getBoundingClientRect();
+		const top = triggerRect.bottom + 10;
+		const left = triggerRect.left;
+		$element.css({
+			'top': top + 'px',
+			'left': left + 'px',
+			'right': 'auto'
+		});
+	},
+
 	adjustElementPositionOnResize() {
 		$(window).on('resize', () => {
 			clearTimeout(this.resizeTimer);
 			this.resizeTimer = setTimeout(() => {
 				const $activeDropdown = this.dropdownContents.filter('.active');
 				if ($activeDropdown.length) {
-					this.adjustElementPosition($activeDropdown);
+					if ($activeDropdown.hasClass('dropdown-fixed')) {
+						this.calculateFixedPosition($activeDropdown);
+					} else {
+						this.adjustElementPosition($activeDropdown);
+					}
 				}
 			}, 50);
+		});
+
+		$(window).on('scroll', () => {
+			const $activeDropdown = this.dropdownContents.filter('.active.dropdown-fixed');
+			if ($activeDropdown.length) {
+				this.calculateFixedPosition($activeDropdown);
+			}
 		});
 	},
 
@@ -508,6 +562,38 @@ const Dropdown = {
 	showContentScroll() {
 		const $content = this.activeSheet.find('.js-dropdown-content');
 		$content.removeClass('overflow-y-hidden!');
+	},
+
+	attachScrollListeners($element) {
+		this.detachScrollListeners();
+		this.scrollableParents = [];
+		this.scrollHandlers = [];
+		let parent = $element.parent();
+		while (parent.length && !parent.is('body')) {
+			const overflow = parent.css('overflow');
+			if (overflow === 'auto' || overflow === 'scroll' || overflow === 'hidden') {
+				this.scrollableParents.push(parent[0]);
+			}
+			parent = parent.parent();
+		}
+		const self = this;
+		this.scrollableParents.forEach(function(el) {
+			const handler = function() {
+				self.calculateFixedPosition(self.dropdownContents.filter('.active.dropdown-fixed'));
+			};
+			el.addEventListener('scroll', handler, { passive: true });
+			self.scrollHandlers.push({el, handler});
+		});
+	},
+
+	detachScrollListeners() {
+		if (this.scrollHandlers && this.scrollHandlers.length) {
+			this.scrollHandlers.forEach(function(obj) {
+				obj.el.removeEventListener('scroll', obj.handler);
+			});
+		}
+		this.scrollableParents = [];
+		this.scrollHandlers = [];
 	}
 };
 

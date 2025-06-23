@@ -246,17 +246,14 @@ $(document).ready(function () {
 	function showProgressBar() {
 		const progressBar = $('#progress-bar');
 		
-		// Сбрасываем начальное состояние
 		progressBar
 			.css('width', '0%')
 			.removeClass('scale-x-0')
 			.addClass('scale-x-100');
 		
-		// Анимируем до 100%
 		progressBar.animate({
 			width: '100%'
 		}, 1000, 'linear', function() {
-			// После завершения анимации скрываем полосу
 			setTimeout(hideProgressBar, 200);
 		});
 	}
@@ -268,15 +265,14 @@ $(document).ready(function () {
 			.css('width', '0%');
 	}
 
-	// Показываем полосу при загрузке страницы
 	$(document).ready(function() {
 		showProgressBar();
 	});
 
-	// Показываем полосу при клике на ссылки
-	$(document).on('click', 'a', function(e) {
+	$(document).on('click', 'a[href]:not([href=""])', function(e) {
 		const link = $(this);
-		if (!link.attr('target') && !e.ctrlKey && !e.metaKey) {
+		const href = link.attr('href');
+		if (href && href !== '#' && !link.attr('target') && !e.ctrlKey && !e.metaKey) {
 			showProgressBar();
 		}
 	});

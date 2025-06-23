@@ -131,7 +131,7 @@
       <div class="modal" id="modal">
         <div class="modal-dialog modal-bs modal-email-share">
           <div class="modal-content modal-share">
-            <button type="button" class="close pull-right" data-dismiss="modal" aria-hidden="true"><span class="icn-close"></span></button>
+            <button type="button" class="close pull-right" data-dismiss="modal" aria-hidden="true" data-dialog-close><span class="icn-close"></span></button>
             <div class="modal-header">
               <h4 class="text-lg font-semibold text-dark-800">Share 'm12.png'</h4>
               <div class="modal-share tabs_share_ui">
@@ -149,7 +149,7 @@
                 </a>
               </div>
             </div>
-            <div class="modal-body modal-email">
+            <div class="modal-body modal-email scrollbar-hide">
               <form action="" method="post" id="popup_email_form" autocomplete="off">
                 <ul class="modal-email-wrapper clearfix acjs-holder relative pr-25">
                   <li class="absolute top-[5px] right-[5px]">
@@ -160,17 +160,31 @@
                       </svg>
                     </button>
                     <div class="email-dropdown-menu shadow-dropdown hidden">
-                      <a href="#">
-                        Editor
-                      </a>
-                      <a href="#">
-                        Viewers
-                      </a>
+                      <ul class="js-dropdown-list">
+                        <li class='js-dropdown-list-item'>
+                          <a href="#">
+                            Editor
+                          </a>
+                        </li>
+                        <li class='js-dropdown-list-item'>
+                          <a href="#">
+                            Viewers
+                          </a>
+                        </li>
+                      </ul>
                     </div>
                   </li>
-                  <li class="open"><input type="email" name="email_to" id="email_to" placeholder="Type name or email address"
-                      class="form-control input-slim pull-left acjs-input ac_input" onclick="$('.info-tip').addClass('hide');"
-                      style="width: 270px;" autocomplete="off"></li>
+                  <li class="open">
+                    <input 
+                      type="email" 
+                      name="email_to" 
+                      id="email_to" 
+                      placeholder="Type name or email address"
+                      class="form-control input-slim pull-left acjs-input ac_input" 
+                      onclick="$('.info-tip').addClass('hide');"
+                      style="width: 270px;" 
+                      autocomplete="off">
+                  </li>
                 </ul><textarea tabindex="3" class="form-control input-slim " name="email_message" id="email_message"
                   placeholder="Add a message (optional)"></textarea> <input type="hidden" name="item_type" id="item_type"
                   value="file"> <input type="hidden" name="item_id" id="item_id" value="y40vjOQeoW3ykjafsfCH">
@@ -275,13 +289,33 @@
                       <span class="who-can-access__name">John Doe</span>
                       <span class="who-can-access__email">johndoe@gmail.com</span>
                     </div>
-                    <div class="who-can-access-actions">
-                      <button class="btn btn-sm">
+                    <div class="who-can-access-actions dropdown-wrapper">
+                      <button class="btn btn-sm dropdown-button" data-id="who-can-access-menu">
                         <span>Viewer</span>
                         <svg class="icon icon-sm">
                           <use href="#chevron-down"></use>
                         </svg>
                       </button>
+                      <div class="js-dropdown hidden w-[8.75rem]" data-dropdown-id="who-can-access-menu" data-sheet-modal data-overflow-visible data-dropdown-position="right">
+                        <div class="js-dropdown-overlay"></div>
+                        <div class="js-dropdown-body">
+                          <div class="js-dropdown-trigger"></div>
+                          <div class="js-dropdown-content">
+                            <ul class="js-dropdown-list lnk-privacy-menu">
+                              <li class='js-dropdown-list-item'>
+                                <a href="#">
+                                  Editor
+                                </a>
+                              </li>
+                              <li class='js-dropdown-list-item'>
+                                <a href="#">
+                                  Viewers
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </li>
                   <li>
@@ -322,8 +356,8 @@
                   </li>
                 </ul>
                 <h4 class="block mt-4 text-sm font-semibold text-dark-800 mb-4 text-left">General access</h4>
-                <div class="privacy-settings-wrapper">
-                  <div class="privacy-settings-item">
+                <div class="privacy-settings-wrapper dropdown-wrapper">
+                  <div data-id="privacy-settings-menu" class="privacy-settings-item dropdown-button">
                     <svg class="icon icon-md">
                       <use href="#world"></use>
                     </svg>
@@ -336,79 +370,65 @@
                       <use href="#chevron-down"></use>
                     </svg>
                   </div>
-                  <div class="privacy-settings-menu shadow-dropdown hidden">
-                    <div class="privacy-settings-menu__item">
-                      <svg class="icon icon-md">
-                        <use href="#world"></use>
-                      </svg>
-                      <div>
-                        <div class="font-medium text-dark-800 text-sm">Anyone with a link</div>
-                        <div class="text-xs text-dark-800/70">Anyone with a link can access. Hidden from search engines.</div>
-                      </div>
-                    </div>
-                    <div class="privacy-settings-menu__item">
-                      <svg class="icon icon-md">
-                        <use href="#user"></use>
-                      </svg>
-                      <div>
-                        <div class="font-medium text-dark-800 text-sm flex items-center">Restricted<span
-                            class="bg-blue-500 text-white text-[10px] font-medium px-1.5 h-5 flex items-center rounded-md ml-1.5">Plus</span>
+                  <div class="js-dropdown hidden w-[490px]" data-dropdown-id="privacy-settings-menu" data-sheet-modal data-overflow-visible>
+                    <div class="js-dropdown-overlay"></div>
+                    <div class="js-dropdown-body">
+                      <div class="js-dropdown-trigger"></div>
+                      <div class="js-dropdown-content">
+                        <div class="privacy-settings-menu__item">
+                          <svg class="icon icon-md">
+                            <use href="#world"></use>
+                          </svg>
+                          <div>
+                            <div class="font-medium text-dark-800 text-sm">Anyone with a link</div>
+                            <div class="text-xs text-dark-800/70">Anyone with a link can access. Hidden from search engines.</div>
+                          </div>
                         </div>
-                        <div class="text-xs text-dark-800/70">Only people added can access.</div>
-                      </div>
-                    </div>
-                    <div class="privacy-settings-menu__item">
-                      <svg class="icon icon-md">
-                        <use href="#team"></use>
-                      </svg>
-                      <div>
-                        <div class="font-medium text-dark-800 text-sm flex items-center">Members of Jumpshare Enterprise<span
-                            class="bg-violet-600 text-white text-[10px] font-medium px-1.5 h-5 flex items-center rounded-md ml-1.5">Business</span>
+                        <div class="privacy-settings-menu__item">
+                          <svg class="icon icon-md">
+                            <use href="#user"></use>
+                          </svg>
+                          <div>
+                            <div class="font-medium text-dark-800 text-sm flex items-center">Restricted<span
+                                class="bg-blue-500 text-white text-[10px] font-medium px-1.5 h-5 flex items-center rounded-md ml-1.5">Plus</span>
+                            </div>
+                            <div class="text-xs text-dark-800/70">Only people added can access.</div>
+                          </div>
                         </div>
-                        <div class="text-xs text-dark-800/70">Only Workspace members can access.</div>
-                      </div>
-                    </div>
-                    <div class="privacy-settings-menu__item">
-                      <svg class="icon icon-md">
-                        <use href="#disable-outline"></use>
-                      </svg>
-                      <div>
-                        <div class="font-medium text-dark-800 text-sm flex items-center">Only Me<span
-                            class="bg-blue-500 text-white text-[10px] font-medium px-1.5 h-5 flex items-center rounded-md ml-1.5">Plus</span>
+                        <div class="privacy-settings-menu__item">
+                          <svg class="icon icon-md">
+                            <use href="#team"></use>
+                          </svg>
+                          <div>
+                            <div class="font-medium text-dark-800 text-sm flex items-center">Members of Jumpshare Enterprise<span
+                                class="bg-violet-600 text-white text-[10px] font-medium px-1.5 h-5 flex items-center rounded-md ml-1.5">Business</span>
+                            </div>
+                            <div class="text-xs text-dark-800/70">Only Workspace members can access.</div>
+                          </div>
                         </div>
-                        <div class="text-xs text-dark-800/70">Only you can access this file.</div>
+                        <div class="privacy-settings-menu__item">
+                          <svg class="icon icon-md">
+                            <use href="#disable-outline"></use>
+                          </svg>
+                          <div>
+                            <div class="font-medium text-dark-800 text-sm flex items-center">Only Me<span
+                                class="bg-blue-500 text-white text-[10px] font-medium px-1.5 h-5 flex items-center rounded-md ml-1.5">Plus</span>
+                            </div>
+                            <div class="text-xs text-dark-800/70">Only you can access this file.</div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="input-group date-picker pull-left">
-                  <div class="schedule_calendar "><svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <g clip-path="url(#clip0_10784_6082)">
-                        <path
-                          d="M6.0026 13.332H4.0026C3.29536 13.332 2.61708 13.0511 2.11699 12.551C1.61689 12.0509 1.33594 11.3726 1.33594 10.6654V4.66536C1.33594 3.95812 1.61689 3.27984 2.11699 2.77975C2.61708 2.27965 3.29536 1.9987 4.0026 1.9987H11.3359C12.0432 1.9987 12.7215 2.27965 13.2216 2.77975C13.7217 3.27984 14.0026 3.95812 14.0026 4.66536V6.66536M5.33594 1.33203V2.66536M10.0026 1.33203V2.66536M1.33594 5.33203H14.0026M12.3359 10.4274L11.3359 11.4274"
-                          stroke="#0A0A0B" stroke-width="0.888889" stroke-linecap="round" stroke-linejoin="round"></path>
-                        <path
-                          d="M11.3333 14.6667C13.1743 14.6667 14.6667 13.1743 14.6667 11.3333C14.6667 9.49238 13.1743 8 11.3333 8C9.49238 8 8 9.49238 8 11.3333C8 13.1743 9.49238 14.6667 11.3333 14.6667Z"
-                          stroke="#0A0A0B" stroke-width="0.888889" stroke-linecap="round" stroke-linejoin="round"></path>
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_10784_6082">
-                          <rect width="16" height="16" fill="white"></rect>
-                        </clipPath>
-                      </defs>
-                    </svg> <input type="text" class="distxts hasDatepicker" name="email_date" id="email_date" placeholder=""
-                      value="Schedule" style="width:66px;" readonly="">
-                    <tester
-                      style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: 400; letter-spacing: 0px; white-space: nowrap;">
-                      Schedule</tester>
-                  </div>
-                </div>
-                <div class="share-footer flex items-center justify-between mt-4">
+                <div class="share-footer flex items-center justify-between mt-6">
                   <div class="flex items-center gap-3.5">
-                    <button id="copy_advLink" data-type="file" data-link="http://jmp.jsa.de/v/y40vjOQeoW3ykjafsfCH" type="button"
-                      class="btn btn-default h-9">
-                      <svg class="icon icon-xs">
+                    <button 
+                      id="copy_advLink" 
+                      data-type="file" 
+                      data-link="http://jmp.jsa.de/v/y40vjOQeoW3ykjafsfCH" type="button"
+                      class="btn btn-border-default h-9 gap-1.5">
+                      <svg class="icon icon-sm">
                         <use href="#link"></use>
                       </svg>
                       <span class="text-sm text-dark-800">Copy link</span>
@@ -421,15 +441,10 @@
                   </div>
                   <button class="btn btn-primary-default h-9">Done</button>
                 </div>
-                <div class="group"></div>
-                <p class="error newerror plus"></p>
               </form>
-              <div class="modal-footer clearfix">
-                <button class="btn btn-submit pull-right btn-primary-default send_mail " id="send_email">Send</button>
-              </div>
             </div>
             <div class="modal-body modal-collaborate">
-              <label style="margin-top: -5px;">Once you invite a team member from your workspace, this item can be found in your Shared library.<a style="color: #2F76FF; padding-left: 5px; text-decoration: none;" href="settings/workspace/members">View members</a></label>
+              <label class="text-sm">Once you invite a team member from your workspace, this item can be found in your Shared library.<a style="color: #2F76FF; padding-left: 5px; text-decoration: none;" href="settings/workspace/members">View members</a></label>
               <div class="modal-frm-collaborate">
                 <form action="" method="post" id="popup_collaborate_invite_form" autocomplete="off">
                   <div class="modal-collaborate-invite"> <button class="btn btn-submit btn-primary-default invite_to_collaborate"
@@ -467,7 +482,7 @@
                     <div class="copy_embed_group">
                       <div>
                         <h4 class="text-sm font-semibold text-dark-800">For email:</h4>
-                        <div class="for_email_wrppr"> <button class="btn btn-default font-normal" id="embed_copy_thumb"><svg
+                        <div class="for_email_wrppr"> <button class="btn btn-border-default font-normal" id="embed_copy_thumb"><svg
                               class="icon icon-sm">
                               <use href="#thumbnail"></use>
                             </svg><span>Copy thumbnail</span></button> <a href="#" id="embed_copy_thumb_code"><svg width="19"
@@ -484,7 +499,7 @@
                         <h4 class="text-sm font-semibold text-dark-800 mb-4">For web page:</h4> <input
                           style="display: none !important;" name="txt_embedCode" id="txt_embedCode" class="form-control" type="text"
                           data-item_id="y40vjOQeoW3ykjafsfCH" value="" readonly=""> <button id="copy_embedCode"
-                          class="btn btn-default font-normal"><svg class="icon icon-sm">
+                          class="btn btn-border-default font-normal"><svg class="icon icon-sm">
                             <use href="#embed-code"></use>
                           </svg><span>Copy embed code</span></button>
                         <div class="embed-type-optoins">
@@ -541,9 +556,16 @@
                       <div class="preview_window mt-4">
                         <p class="text-sm text-dark-800/50">Video Preview: </p>
                       </div>
-                      <div class="modal-footer clearfix"></div> <input type="hidden" name="item_type" id="item_type"
-                        value="file"><input type="hidden" name="file_type" id="file_type" value="image"> <input type="hidden"
-                        name="item_id" id="item_id" value="y40vjOQeoW3ykjafsfCH">
+                      <div class="h-[16.875rem] p-5 relative rounded-xl overflow-hidden mt-3">
+                        <button class='btn bg-dark-800/80 px-2.5 py-0 h-8.5 font-base font-semibold relative z-1 text-white'>Team Meetings</button>
+                        <a href="#" class='text-blue-500 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-1 size-10 flex items-center justify-center'>
+                          <svg class='flex-shrink-0' width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="28" cy="28" r="28" fill="#2F76FF"/>
+                            <path d="M22 20.1727C22 19.9734 22.0493 19.778 22.1427 19.6032C22.4493 19.0374 23.1427 18.833 23.6933 19.148L37.4134 26.9754C37.6001 27.0821 37.7534 27.2402 37.8561 27.4318C38.1628 27.9975 37.9628 28.7111 37.4134 29.0248L23.6933 36.8521C23.5264 36.9493 23.335 37.0004 23.14 37C22.5107 37 22 36.4754 22 35.8287V20.1727Z" fill="white"/>
+                          </svg>
+                        </a>
+                        <img class='z-0 absolute top-0 left-0 size-full object-cover' src="./assets/images/video-preview.png" alt="preview">
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -576,7 +598,7 @@
                       </div>
                       <div class="options-dropdown pull-left">
                         <div class="btn-group btn-compact pull-left">
-                          <button id="expire_after_button_copy_link" type="button" class="btn btn-default dropdown-toggle"
+                          <button id="expire_after_button_copy_link" type="button" class="btn btn-border-default dropdown-toggle"
                             data-toggle="dropdown" data-tooltip="true" data-placement="top" data-trigger="click" data-html="true"
                             title=""
                             data-original-title="&lt;strong&gt;Tip:&lt;/strong&gt; Other options are only available when sharing single files.">
@@ -669,13 +691,13 @@
               <div class="link-settings-footer">
                 <a href="#">Delete Link</a>
                 <div class="flex items-center gap-3">
-                  <button class="btn btn-border" id="qr-code-btn">
+                  <button class="btn btn-border-default" id="qr-code-btn">
                     <svg class="icon icon-sm">
                       <use href="#qr-code"></use>
                     </svg>
                     <span class="font-normal">QR Code</span>
                   </button>
-                  <button class="btn btn-primary">
+                  <button class="btn btn-primary-default">
                     Save Changes
                   </button>
                 </div>
@@ -698,7 +720,7 @@
                   </div>
                   <div class="qrcode-modal-footer">
                     <div class="qrcode-modal-actions mt-4">
-                      <button class="btn btn-primary !w-full">
+                      <button class="btn btn-primary-default !w-full">
                         Upgrade Now
                       </button>
                     </div>
@@ -1428,7 +1450,7 @@
 															</svg>
 															<span>Copy Link</span>
 														</li>
-														<li class='js-dropdown-list-item'>
+														<li class='js-dropdown-list-item' data-dialog-open-id='share'>
 															<svg class='icon icon-md'>
 																<use href='#share'></use>
 															</svg>
@@ -1594,7 +1616,7 @@
 															</svg>
 															<span>Copy Link</span>
 														</li>
-														<li class='js-dropdown-list-item'>
+														<li class='js-dropdown-list-item' data-dialog-open-id='share'>
 															<svg class='icon icon-md'>
 																<use href='#share'></use>
 															</svg>
@@ -1760,7 +1782,7 @@
 															</svg>
 															<span>Copy Link</span>
 														</li>
-														<li class='js-dropdown-list-item'>
+														<li class='js-dropdown-list-item' data-dialog-open-id='share'>
 															<svg class='icon icon-md'>
 																<use href='#share'></use>
 															</svg>
@@ -1926,7 +1948,7 @@
 															</svg>
 															<span>Copy Link</span>
 														</li>
-														<li class='js-dropdown-list-item'>
+														<li class='js-dropdown-list-item' data-dialog-open-id='share'>
 															<svg class='icon icon-md'>
 																<use href='#share'></use>
 															</svg>
@@ -2218,7 +2240,7 @@
 															</svg>
 															<span>Copy Link</span>
 														</li>
-														<li class='js-dropdown-list-item'>
+														<li class='js-dropdown-list-item' data-dialog-open-id='share'>
 															<svg class='icon icon-md'>
 																<use href='#share'></use>
 															</svg>
@@ -2401,7 +2423,7 @@
 															</svg>
 															<span>Copy Link</span>
 														</li>
-														<li class='js-dropdown-list-item'>
+														<li class='js-dropdown-list-item' data-dialog-open-id='share'>
 															<svg class='icon icon-md'>
 																<use href='#share'></use>
 															</svg>
@@ -2575,7 +2597,7 @@
 															</svg>
 															<span>Copy Link</span>
 														</li>
-														<li class='js-dropdown-list-item'>
+														<li class='js-dropdown-list-item' data-dialog-open-id='share'>
 															<svg class='icon icon-md'>
 																<use href='#share'></use>
 															</svg>
@@ -2705,14 +2727,6 @@
 											<li>12 views</li>
 										</ul>
 									</div>
-								</div>
-								<div class='file-item-bottom'>
-									<div class='flex flex-col gap-1'>
-										<h4>Guidelines for the tour of 2024 session</h4>
-										<ul class="list-with-dots">
-											<li>XLSX</li>
-									  </ul>
-									</div>
 									<div class='file-author'>
 										<div class='file-author-avatar'>
 											<img src="./assets/images/avatar.png" alt="avatar">
@@ -2757,7 +2771,7 @@
 															</svg>
 															<span>Copy Link</span>
 														</li>
-														<li class='js-dropdown-list-item'>
+														<li class='js-dropdown-list-item' data-dialog-open-id='share'>
 															<svg class='icon icon-md'>
 																<use href='#share'></use>
 															</svg>
