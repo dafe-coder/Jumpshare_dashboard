@@ -279,12 +279,30 @@ const Dropdown = {
 	calculateFixedPosition($element) {
 		const $trigger = $element.closest('.dropdown-wrapper').find('.dropdown-button');
 		const triggerRect = $trigger[0].getBoundingClientRect();
-		const top = triggerRect.bottom + 10;
-		const left = triggerRect.left;
+		const dropdownRect = $element[0].getBoundingClientRect();
+		const viewportHeight = window.innerHeight;
+		const viewportWidth = window.innerWidth;
+
+		let top, left, right;
+		if (triggerRect.bottom + 10 + dropdownRect.height > viewportHeight) {
+			top = triggerRect.top - dropdownRect.height - 10;
+		} else {
+			top = triggerRect.bottom + 10;
+		}
+
+		const hasRightClass = Array.from($element[0].classList).some(cls => cls.startsWith('right-'));
+		if (hasRightClass) {
+			left = 'auto';
+			right = (viewportWidth - triggerRect.right) + 'px';
+		} else {
+			left = triggerRect.left + 'px';
+			right = 'auto';
+		}
+
 		$element.css({
 			'top': top + 'px',
-			'left': left + 'px',
-			'right': 'auto'
+			'left': left,
+			'right': right
 		});
 	},
 
