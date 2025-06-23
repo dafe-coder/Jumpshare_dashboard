@@ -11,6 +11,16 @@
     position: relative;
     width: auto;
     margin: 10px;
+    input, textarea {
+      font-size: 14px;
+    }
+    input::-webkit-contacts-auto-fill-button {
+      visibility: hidden;
+      display: none !important;
+      pointer-events: none;
+      position: absolute;
+      right: 0;
+    }
   }
   .modal-content {
     position: relative;
@@ -546,14 +556,12 @@
 			}
 
 			.recent-suggestions-item__actions {
-				@apply ml-auto opacity-0;
+				@apply ml-auto opacity-100 bg-gray-400;
 			}
 
 			.btn-close {
 				@apply size-8 hover:bg-gray-400 rounded-md cursor-pointer p-0 flex items-center justify-center transition-none;
-				span::after, span::before {
-					@apply bg-dark-800 h-3.5;
-				}
+			
 			}
 		}
 	}

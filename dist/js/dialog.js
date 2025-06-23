@@ -139,6 +139,13 @@ const Lightbox = {
         $('.video_size_embed').css('display', 'none');
       }
     });
+    $("#email_to").on("input", (e) => {
+      if(e.target.value.length > 0) {
+        $("#email_message").removeClass("hidden")
+      } else {
+        $("#email_message").addClass("hidden")
+      }
+    })
   }
 }
 

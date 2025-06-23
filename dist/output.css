@@ -5786,6 +5786,16 @@ ul.who-can-access {
     position: relative;
     width: auto;
     margin: 10px;
+    input, textarea {
+      font-size: 14px;
+    }
+    input::-webkit-contacts-auto-fill-button {
+      visibility: hidden;
+      display: none !important;
+      pointer-events: none;
+      position: absolute;
+      right: 0;
+    }
   }
   .modal-content {
     position: relative;
@@ -6606,7 +6616,8 @@ ul.who-can-access {
       }
       .recent-suggestions-item__actions {
         margin-left: auto;
-        opacity: 0%;
+        background-color: var(--color-gray-400);
+        opacity: 100%;
       }
       .btn-close {
         display: flex;
@@ -6622,10 +6633,6 @@ ul.who-can-access {
           @media (hover: hover) {
             background-color: var(--color-gray-400);
           }
-        }
-        span::after, span::before {
-          height: calc(var(--spacing) * 3.5);
-          background-color: var(--color-dark-800);
         }
       }
     }
