@@ -80,6 +80,21 @@
   .modal .close_icon:hover {
     opacity: 1;
   }
+
+	.icn-close:before, .icn-close:after {
+    position: absolute;
+    left: 14px;
+    content: ' ';
+    height: 13px;
+    width: 1.5px;
+    background-color: var(--color-dark-800);
+  }
+  .icn-close:before {
+    transform: rotate(45deg);
+  }
+  .icn-close:after {
+    transform: rotate(-45deg);
+  }
   
   /* Modal title */
   .modal-title {
@@ -142,23 +157,9 @@
 
   .modal .close {
     position: absolute;
-    right: 10px;
-    top: 10px;
+    right: 24px;
+    top: 22px;
     opacity: 1;
-  }
-  .icn-close:before, .icn-close:after {
-    position: absolute;
-    left: 14px;
-    content: ' ';
-    height: 18px;
-    width: 1.5px;
-    background-color: #837D84;
-  }
-  .icn-close:before {
-    transform: rotate(45deg);
-  }
-  .icn-close:after {
-    transform: rotate(-45deg);
   }
 
 	.tabs_share_ui {
@@ -261,88 +262,6 @@
 
 	}
 
-	.modal-cps {
-
-		.lnk-privacy-group {
-			@apply grid grid-cols-[86px_1fr] gap-6;
-
-			.caret {
-				@apply top-3.5;
-			}
-
-			label {
-				@apply text-[14px] pt-[5px];
-			}
-
-		}
-
-		.info_note {
-			@apply text-[14px] mt-2 block;
-		}
-
-		.lnk-privacy-wrapper {
-			@apply w-full relative;
-
-			.dropdown-toggle {
-				@apply w-full h-9 flex items-center justify-between pr-7 active:bg-white focus:bg-white;
-			}
-
-			.lnk-privacy-menu {
-				@apply w-full;
-        li {
-          @apply py-2.5 px-3;
-        }
-			}
-
-		}
-
-		.restricted_acces_cps_share, .password_acces_cps_share {
-			@apply grid grid-cols-[86px_1fr] gap-6 mt-4;
-
-			label {
-				@apply text-[14px];
-			}
-
-		}
-		.email_invitee_list_cps {
-			ul li {
-				@apply flex items-center gap-2 justify-between;
-			}
-		}
-		.password_acces_cps_share {
-
-			label {
-				@apply pt-2;
-			}
-
-		}
-
-		#privacy-options-parent {
-			.restricted_acces_cps_share {
-
-				label {
-					@apply pt-[10px];
-				}
-
-				.emails_cps_container {
-					@apply w-full;
-				}
-
-				.email_invitee_list_cps {
-					@apply block border border-gray-600 rounded-md mt-2.5 px-4 py-2.5 min-h-[91px] relative;
-
-			 		ul:empty:before {
-						content: "Nobody added yet";
-						@apply text-center pt-6 absolute left-0 right-0 mx-auto text-[14px];
-						color: #989898;
-					}
-
-				}
-
-			}
-		}
-
-	}
 
 	.modal-aclink-share {
 
@@ -536,7 +455,7 @@
 		}
 
 		.recent-suggestions-item {
-			@apply flex items-center gap-3 px-6 py-2.5 hover:bg-gray-150;
+			@apply flex items-center gap-3 px-6 py-2.5 hover:bg-gray-150 cursor-pointer;
 
 			&:hover {
 				.recent-suggestions-item__actions {
@@ -791,7 +710,7 @@
 ul.who-can-access {
 	@apply relative w-[calc(100%+3rem)] -mx-6 max-h-[195px] overflow-y-auto bg-[transparent];
 
-	li {
+	& > li {
 		@apply flex justify-start items-center gap-3 px-6 py-2 hover:bg-gray-150 w-full bg-[transparent];
 	}
 

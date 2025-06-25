@@ -139,13 +139,25 @@ const Lightbox = {
         $('.video_size_embed').css('display', 'none');
       }
     });
+
     $("#email_to").on("input", (e) => {
       if(e.target.value.length > 0) {
         $("#email_message").removeClass("hidden")
+				$("#share-select-role").removeClass("hidden")
       } else {
-        $("#email_message").addClass("hidden")
+				$("#email_message").addClass("hidden")
+				$("#share-select-role").addClass("hidden")
       }
     })
+		$("#hide_video_title").on('change', (e) => {
+			if(e.target.checked) {
+				$("#preview-window-private").removeClass("hidden")
+				$("#preview-window-info").addClass("hidden")
+			} else {
+				$("#preview-window-private").addClass("hidden")
+				$("#preview-window-info").removeClass("hidden")
+			}
+		})
   }
 }
 

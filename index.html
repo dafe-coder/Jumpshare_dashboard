@@ -133,10 +133,10 @@
           <div class="modal-content modal-share">
             <button type="button" class="close pull-right" data-dismiss="modal" aria-hidden="true" data-dialog-close><span class="icn-close"></span></button>
             <div class="modal-header">
-              <h4 class="text-lg font-semibold text-dark-800">Share 'm12.png'</h4>
+              <h4 class="text-lg/[120%] font-semibold text-dark-800 font-sans-semi">Share 'm12.png'</h4>
               <div class="modal-share tabs_share_ui">
                 <a href="" id="share_modal_tab" class="modal-share-icon active">
-                  Send
+                  Share
                 </a>
                 <a href="" id="collaborate_tab" class="modal-share-icon">
                   Invite
@@ -152,27 +152,33 @@
             <div class="modal-body modal-email scrollbar-hide">
               <form action="" method="post" id="popup_email_form" autocomplete="off">
                 <ul class="modal-email-wrapper clearfix acjs-holder relative pr-25">
-                  <li class="absolute top-[5px] right-[5px]">
-                    <button class="h-8 px-2 text-sm flex items-center gap-1.5 cursor-pointer hover:bg-gray-400 rounded-md">
+                  <li id="share-select-role" class="hidden absolute top-[5px] right-[5px] dropdown-wrapper">
+                    <button class="dropdown-button h-8 px-2 text-sm flex items-center gap-1.5 cursor-pointer hover:bg-gray-400 rounded-md" data-id="who-can-access-menu">
                       <span>Viewers</span>
                       <svg class="icon icon-sm">
                         <use href="#chevron-down"></use>
                       </svg>
                     </button>
-                    <div class="email-dropdown-menu shadow-dropdown hidden">
-                      <ul class="js-dropdown-list">
-                        <li class='js-dropdown-list-item'>
-                          <a href="#">
-                            Editor
-                          </a>
-                        </li>
-                        <li class='js-dropdown-list-item'>
-                          <a href="#">
-                            Viewers
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
+                    <div class="js-dropdown w-[8.75rem] right-0 hidden" data-dropdown-id="who-can-access-menu" data-sheet-modal="" data-overflow-visible="" data-dropdown-position="right" style="top: 383.75px; left: auto; right: 621.5625px;">
+											<div class="js-dropdown-overlay"></div>
+											<div class="js-dropdown-body">
+												<div class="js-dropdown-trigger"></div>
+												<div class="js-dropdown-content">
+													<ul class="js-dropdown-list lnk-privacy-menu">
+														<li class="js-dropdown-list-item">
+															<a href="#">
+																Editor
+															</a>
+														</li>
+														<li class="js-dropdown-list-item">
+															<a href="#">
+																Viewers
+															</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
                   </li>
                   <li class="open">
                     <input 
@@ -331,13 +337,33 @@
                       <span class="who-can-access__name">robertpattinson@gmail.com</span>
                       <span class="who-can-access__email">robertpattinson@gmail.com</span>
                     </div>
-                    <div class="who-can-access-actions">
-                      <button class="btn btn-sm">
+										<div class="who-can-access-actions dropdown-wrapper">
+                      <button class="btn btn-sm dropdown-button" data-id="who-can-access-menu">
                         <span>Viewer</span>
                         <svg class="icon icon-sm">
                           <use href="#chevron-down"></use>
                         </svg>
                       </button>
+                      <div class="js-dropdown hidden w-[8.75rem] right-0" data-dropdown-id="who-can-access-menu" data-sheet-modal data-overflow-visible data-dropdown-position="right">
+                        <div class="js-dropdown-overlay"></div>
+                        <div class="js-dropdown-body">
+                          <div class="js-dropdown-trigger"></div>
+                          <div class="js-dropdown-content">
+                            <ul class="js-dropdown-list lnk-privacy-menu">
+                              <li class='js-dropdown-list-item'>
+                                <a href="#">
+                                  Editor
+                                </a>
+                              </li>
+                              <li class='js-dropdown-list-item'>
+                                <a href="#">
+                                  Viewers
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </li>
                   <li>
@@ -349,13 +375,33 @@
                       <span class="who-can-access__name">James Patrick</span>
                       <span class="who-can-access__email">patrickjames@gmail.com</span>
                     </div>
-                    <div class="who-can-access-actions">
-                      <button class="btn btn-sm">
+                    <div class="who-can-access-actions dropdown-wrapper">
+                      <button class="btn btn-sm dropdown-button" data-id="who-can-access-menu">
                         <span>Editor</span>
                         <svg class="icon icon-sm">
                           <use href="#chevron-down"></use>
                         </svg>
                       </button>
+                      <div class="js-dropdown hidden w-[8.75rem] right-0" data-dropdown-id="who-can-access-menu" data-sheet-modal data-overflow-visible data-dropdown-position="right">
+                        <div class="js-dropdown-overlay"></div>
+                        <div class="js-dropdown-body">
+                          <div class="js-dropdown-trigger"></div>
+                          <div class="js-dropdown-content">
+                            <ul class="js-dropdown-list lnk-privacy-menu">
+                              <li class='js-dropdown-list-item'>
+                                <a href="#">
+                                  Editor
+                                </a>
+                              </li>
+                              <li class='js-dropdown-list-item'>
+                                <a href="#">
+                                  Viewers
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </li>
                 </ul>
@@ -431,7 +477,7 @@
                       id="copy_advLink" 
                       data-type="file" 
                       data-link="http://jmp.jsa.de/v/y40vjOQeoW3ykjafsfCH" type="button"
-                      class="btn btn-border-default h-9 gap-1.5">
+                      class="btn btn-border-default h-9 gap-1.5 pl-4 pr-5 font-normal">
                       <svg class="icon icon-sm">
                         <use href="#link"></use>
                       </svg>
@@ -443,7 +489,7 @@
                       <span class="text-sm text-dark-800">Share video at 0:00</span>
                     </label>
                   </div>
-                  <button class="btn btn-primary-default h-9">Done</button>
+                  <button class="btn btn-primary-default h-9 w-[7.5rem]">Done</button>
                 </div>
               </form>
             </div>
@@ -485,49 +531,94 @@
                   <div class="modal-share-options">
                     <div class="copy_embed_group">
                       <div>
-                        <h4 class="text-sm font-semibold text-dark-800">For email:</h4>
-                        <div class="for_email_wrppr"> <button class="btn btn-border-default font-normal" id="embed_copy_thumb"><svg
-                              class="icon icon-sm">
+                        <h4 class="text-sm font-semibold text-dark-800">Embed on Email</h4>
+                        <div class="for_email_wrppr">
+													<button 
+														class="btn btn-border-default font-normal" id="embed_copy_thumb">
+														<svg class="icon icon-sm">
                               <use href="#thumbnail"></use>
-                            </svg><span>Copy thumbnail</span></button> <a href="#" id="embed_copy_thumb_code"><svg width="19"
-                              height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+														<span>Copy thumbnail</span>
+													</button> 
+													<a href="#" id="embed_copy_thumb_code">
+														<svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="1.3501" y="0.75" width="10.7404" height="10.6688" rx="2.25" stroke="black"
                                 stroke-width="1.5"></rect>
                               <rect x="4.69019" y="4.33105" width="13.2404" height="13.1688" rx="3.5" fill="white" stroke="white">
                               </rect>
                               <rect x="5.94019" y="5.58105" width="10.7404" height="10.6688" rx="2.25" fill="white" stroke="black"
                                 stroke-width="1.5"></rect>
-                            </svg><span>Copy thumbnail code</span></a> </div>
+                            </svg>
+														<span>Copy thumbnail code</span>
+													</a> 
+												</div>
                       </div>
                       <div class="mt-7.5">
-                        <h4 class="text-sm font-semibold text-dark-800 mb-4">For web page:</h4> <input
-                          style="display: none !important;" name="txt_embedCode" id="txt_embedCode" class="form-control" type="text"
-                          data-item_id="y40vjOQeoW3ykjafsfCH" value="" readonly=""> <button id="copy_embedCode"
-                          class="btn btn-border-default font-normal"><svg class="icon icon-sm">
-                            <use href="#embed-code"></use>
-                          </svg><span>Copy embed code</span></button>
+                        <h4 class="text-sm font-semibold text-dark-800 mb-4">Embed on Website</h4> 
+												<input
+                          style="display: none !important;" name="txt_embedCode" 
+													id="txt_embedCode" 
+													class="form-control" 
+													type="text"
+                          data-item_id="y40vjOQeoW3ykjafsfCH" 
+													value="" readonly=""> 
+												<button id="copy_embedCode" class="btn btn-border-default font-normal">
+													<svg class="icon icon-sm">
+														<use href="#embed-code"></use>
+													</svg>
+													<span>Copy embed code</span>
+												</button>
                         <div class="embed-type-optoins">
                           <div class="option" id="embed_size_optns_cntrols">
-                            <div class="options-wrapper relative"> <label class="custom-controls checkbox "
-                                style="clear: both; overflow: hidden; "> <input type="checkbox" name="hide_video_title"
-                                  id="hide_video_title" value="1" class=""> <span class="custom-control-indicator "></span> <span
-                                  class="pull-left ">Hide video title</span> </label> <label class="custom-controls checkbox "
-                                style="clear: both; overflow: hidden; "> <input type="checkbox" name="disable_embed_download_video"
-                                  id="disable_embed_download_video" value="1" class=""> <span
-                                  class="custom-control-indicator "></span> <span class="pull-left ">Disable download</span>
-                              </label> <label class="custom-controls checkbox  hidden" style="clear: both; overflow: hidden; ">
-                                <input type="checkbox" name="embed_muted" id="embed_muted" value="1" class=""> <span
-                                  class="custom-control-indicator "></span> <span class="pull-left ">Mute</span> </label>
-                              <div style="display: flex; align-items: center; gap: 5px"><label
-                                  class="custom-controls checkbox  hidden" style="clear: both; overflow: hidden; padding-right: 0">
-                                  <input type="checkbox" name="embed_autoplay" id="embed_autoplay" value="1" class=""> <span
-                                    class="custom-control-indicator "></span> <span class="pull-left "
-                                    style="display: flex; align-items: center;">Autoplay </span> </label></div>
+                            <div class="options-wrapper relative"> 
+															<label class="custom-controls checkbox"> 
+																<input 
+																	type="checkbox" 
+																	name="hide_video_title"
+                                  id="hide_video_title" 
+																	value="1" 
+																	class=""> 
+																<span class="custom-control-indicator"></span>
+																<span>Hide video title</span> 
+															</label> 
+															<label class="custom-controls checkbox"> 
+																<input 
+																	type="checkbox" name="disable_embed_download_video"
+                                  id="disable_embed_download_video" value="1" class=""> 
+																<span class="custom-control-indicator"></span> <span>Disable download</span>
+                              </label>
+															<label 
+																class="custom-controls checkbox hidden">
+                                <input type="checkbox" name="embed_muted" id="embed_muted" value="1" class="">
+																<span class="custom-control-indicator"></span>
+																<span>Mute</span> 
+															</label>
+															<label class="custom-controls checkbox hidden">
+																<input 
+																	type="checkbox"
+																	name="embed_autoplay" 
+																	id="embed_autoplay" 
+																	value="1" 
+																	class="">
+																<span class="custom-control-indicator"></span>
+																<span>Autoplay</span>
+															</label>
                             </div>
-                            <div class="options-wrapper mt-5"> <label class="custom-controls radio"> <input type="radio" name="embed_type" value="1"
-                                  checked="checked"> <span class="custom-control-indicator radio"></span><span>Responsive</span> </label> <label
-                                class="custom-controls radio fixed_siz"> <input type="radio" name="embed_type" value="2"> <span
-                                  class="custom-control-indicator radio"></span><span>Fixed size</span> </label>
+                            <div class="options-wrapper mt-5">
+															<label class="custom-controls radio">
+																<input 
+																	type="radio" 
+																	name="embed_type" 
+																	value="1"
+                                  checked="checked"> 
+																<span class="custom-control-indicator radio"></span>
+																<span>Responsive</span> 
+															</label> 
+															<label class="custom-controls radio fixed_siz">
+																<input type="radio" name="embed_type" value="2"> 
+																<span class="custom-control-indicator radio"></span>
+																<span>Fixed size</span> 
+															</label>
                               <div class="video_size_embed" style="display: none;"> 
                                 <input 
                                   type="phone" 
@@ -561,13 +652,21 @@
                         <p class="text-sm text-dark-800/50">Video Preview: </p>
                       </div>
                       <div class="h-[16.875rem] p-5 relative rounded-xl overflow-hidden mt-3">
-                        <button class='btn bg-dark-800/80 px-2.5 py-0 h-8.5 font-base font-semibold relative z-1 text-white'>Team Meetings</button>
-                        <a href="#" class='text-blue-500 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-1 size-10 flex items-center justify-center'>
-                          <svg class='flex-shrink-0' width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="28" cy="28" r="28" fill="#2F76FF"/>
-                            <path d="M22 20.1727C22 19.9734 22.0493 19.778 22.1427 19.6032C22.4493 19.0374 23.1427 18.833 23.6933 19.148L37.4134 26.9754C37.6001 27.0821 37.7534 27.2402 37.8561 27.4318C38.1628 27.9975 37.9628 28.7111 37.4134 29.0248L23.6933 36.8521C23.5264 36.9493 23.335 37.0004 23.14 37C22.5107 37 22 36.4754 22 35.8287V20.1727Z" fill="white"/>
-                          </svg>
-                        </a>
+												<div id="preview-window-private" class="backdrop-blur-xs absolute inset-0 z-10 flex flex-col justify-center items-center hidden">
+													<h4 class='text-lg/[120%] font-semibold font-sans-semi mb-3'>This video is private</h4>
+													<p class='max-w-[370px] text-sm/[20px] text-center'>Please log in to your Jumpshare account to verify your access and watch the video.</p>
+													<button class='btn btn-primary-default mt-5 font-semibold'>View it on Jumpshare</button>
+												</div>
+                        <div id="preview-window-info">
+													<button
+													class='cursor-default pointer-events-none btn bg-dark-800/80 px-2.5 py-0 h-8.5 font-base font-semibold relative z-1 text-white'>Team Meetings</button>
+													<a href="#" class='text-blue-500 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-1 size-10 flex items-center justify-center'>
+														<svg class='flex-shrink-0' width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<circle cx="28" cy="28" r="28" fill="#2F76FF"/>
+															<path d="M22 20.1727C22 19.9734 22.0493 19.778 22.1427 19.6032C22.4493 19.0374 23.1427 18.833 23.6933 19.148L37.4134 26.9754C37.6001 27.0821 37.7534 27.2402 37.8561 27.4318C38.1628 27.9975 37.9628 28.7111 37.4134 29.0248L23.6933 36.8521C23.5264 36.9493 23.335 37.0004 23.14 37C22.5107 37 22 36.4754 22 35.8287V20.1727Z" fill="white"/>
+														</svg>
+													</a>
+												</div>
                         <img class='z-0 absolute top-0 left-0 size-full object-cover' src="./assets/images/video-preview.png" alt="preview">
                       </div>
                     </div>
