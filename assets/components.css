@@ -27,6 +27,11 @@
 		position: relative;
 		transition: all ease .2s;
 	}
+	.btn[disabled] {
+		opacity: 0.5;
+		cursor: default;
+		pointer-events: none;
+	}
 	.btn-hover-right {
 		padding-right: 2.75rem !important;
 		svg {

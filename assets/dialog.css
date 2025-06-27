@@ -183,7 +183,7 @@
 			@apply overflow-hidden;
 		}
 		.modal-body {
-			@apply p-6 max-h-[500px] h-[calc(80vh-110px)] overflow-y-auto static;
+			@apply p-6 max-h-[calc(83vh-110px)] overflow-y-auto static;
 		}
 	}
 
