@@ -476,23 +476,163 @@
 					</div>
 				</header>
 				<div class='dashboard-container pb-5 pt-5'>
-					<div class="flex items-center bg-white border-gray-400 border rounded-xl p-6">
-						<div class='flex items-center justify-center border border-gray-400 bg-gray-150 rounded-xl size-13.5 mr-4 flex-shrink-0'>
-							<svg width="20" height="25" viewBox="0 0 20 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M11.755 1.45312C12.3429 1.4532 12.9074 1.67918 13.3278 2.08272L18.3228 6.87865C18.5371 7.08436 18.7074 7.33006 18.8237 7.6013C18.94 7.87254 19 8.16386 19 8.45815V21.3349C19 21.9208 18.7629 22.4827 18.341 22.897C17.919 23.3113 17.3467 23.544 16.75 23.544H3.25C2.65326 23.544 2.08097 23.3113 1.65901 22.897C1.23705 22.4827 1 21.9208 1 21.3349V3.66222C1 3.07633 1.23705 2.51444 1.65901 2.10015C2.08097 1.68587 2.65326 1.45313 3.25 1.45312H11.755ZM11.755 1.45312V6.5804C11.755 7.40883 12.4266 8.0804 13.255 8.0804H19M6.625 13.6031H13.375M6.625 18.0213H10" stroke="currentColor" stroke-width="1.63636" stroke-linecap="round" stroke-linejoin="round"/>
+					<h3 class='text-lg text-dark-800 font-semibold'>Integrations</h3>
+					<div class="flex items-center bg-white border-gray-400 border rounded-xl p-6 mt-4">
+						<div class='flex items-center justify-center bg-gray-150 rounded-xl size-10.5 mr-4 flex-shrink-0'>
+							<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M16.25 13.0064C16.2494 13.943 16.0804 14.8722 15.7508 15.7508C14.8747 16.081 13.9446 16.2502 13.0065 16.25H12.9935C12.0559 16.2501 11.1262 16.0809 10.2505 15.7508C9.92004 14.8723 9.75015 13.9432 9.7487 13.0064V12.9936C9.7487 12.0272 9.9268 11.103 10.2479 10.2479C11.1244 9.91753 12.055 9.74833 12.9935 9.74872H13.0039C13.9698 9.74872 14.8954 9.92664 15.7495 10.2479C16.0797 11.126 16.2487 12.0553 16.2487 12.9936L16.25 13.0064ZM25.8193 10.8329H18.2312L23.5963 5.46701C22.7557 4.28474 21.72 3.24938 20.5322 2.4039L15.1658 7.76979V0.180484C14.4528 0.0613258 13.731 0.000954787 13.0078 0H12.9935C12.2568 0.00170671 11.5371 0.0618682 10.8342 0.180484V7.76979L5.4665 2.4039C4.87457 2.8246 4.32163 3.29224 3.8077 3.80681L3.8051 3.80937C3.29203 4.32224 2.8249 4.87521 2.4037 5.46829L7.7701 10.8329H0.182C0.182 10.8329 0 12.2589 0 12.9962V13.0051C0.000866667 13.7424 0.0615335 14.4631 0.182 15.1671H7.7701L2.4024 20.5317C3.24512 21.713 4.28097 22.7485 5.4678 23.5961L10.8342 18.2315V25.8208C11.5468 25.9395 12.2682 25.9994 12.9909 26H13.0091C13.7319 26 14.4512 25.9403 15.1671 25.8208V18.2302L20.5322 23.5974C21.1241 23.175 21.6775 22.7073 22.1923 22.1945H22.1936C22.7067 21.679 23.1742 21.1256 23.5963 20.5343L18.2299 15.1671H25.8206C25.9393 14.4639 25.9991 13.745 26 13.0102V12.991C26 12.2665 25.9402 11.5476 25.8206 10.8342" fill="#FF4A00"/>
 							</svg>
 						</div>
 						<div class='flex flex-col gap-1 mr-10'>
-							<strong class='text-sm font-semibold'>Export Workspace Data</strong>
-							<p class='text-sm text-gray-900'>You can export all data of your workspace activity, including team members activity.</p>
+							<strong class='text-sm font-semibold'>Zapier</strong>
+							<p class='text-sm text-gray-900'>Zapier helps you to connect Jumpshare with thousands of other apps to automate the workflow. <a class='text-blue-500 hover:underline' href="#">Example Zaps</a></p>
 						</div>
 						<div class='ml-auto flex-shrink-0'>
-							<button class='btn btn-primary-default px-5 h-10'>
-								<svg class='icon icon-md'>
-									<use href='#download'/>
-								</svg>
-								<span>Download CSV</span>
+							<button class='btn btn-border-default px-5 h-10'>
+								Connect
 							</button>
+						</div>
+					</div>
+					<div class="bg-white border-gray-400 border rounded-xl p-6 mt-6">
+						<div class="flex items-center">
+							<div class='flex items-center justify-center bg-gray-150 rounded-xl size-10.5 mr-4 flex-shrink-0'>
+								<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M5.4621 16.428C5.4621 17.932 4.23572 19.1604 2.73177 19.1604C1.22782 19.1604 0 17.932 0 16.428C0 14.9241 1.22823 13.6957 2.73198 13.6957H5.46231L5.4621 16.428ZM6.83845 16.428C6.83845 14.9241 8.06668 13.6957 9.57043 13.6957C11.0742 13.6957 12.3024 14.9239 12.3024 16.428V23.2676C12.3024 24.7716 11.0744 26 9.57043 26C8.06668 26 6.83845 24.7716 6.83845 23.2676V16.428Z" fill="#DE1C59"/>
+									<path d="M9.57409 5.46287C8.07034 5.46287 6.84212 4.23632 6.84212 2.73216C6.84212 1.22799 8.07034 0 9.57409 0C11.0778 0 12.3061 1.2284 12.3061 2.73236V5.46308L9.57409 5.46287ZM9.57409 6.83942C11.0778 6.83942 12.3061 8.06782 12.3061 9.57177C12.3061 11.0757 11.078 12.3041 9.57409 12.3041H2.73543C1.23169 12.3041 0.00366338 11.0759 0.00366338 9.57177C0.00366338 8.06782 1.23189 6.83942 2.73564 6.83942H9.57409Z" fill="#35C5F0"/>
+									<path d="M20.5377 9.57177C20.5377 8.06782 21.7641 6.83942 23.268 6.83942C24.772 6.83942 26 8.06782 26 9.57177C26 11.0757 24.7718 12.3041 23.268 12.3041H20.5377V9.57177ZM19.1613 9.57177C19.1613 11.0757 17.9331 12.3041 16.4294 12.3041C14.9256 12.3041 13.6974 11.0759 13.6974 9.57177V2.73216C13.6974 1.2282 14.9254 0 16.4294 0C17.9331 0 19.1613 1.2284 19.1613 2.73236V9.57177Z" fill="#2EB57D"/>
+									<path d="M16.4294 20.5369C17.9331 20.5369 19.1613 21.7635 19.1613 23.2676C19.1613 24.7718 17.9331 26 16.4294 26C14.9256 26 13.6974 24.7716 13.6974 23.2676V20.5369H16.4294ZM16.4294 19.1604C14.9256 19.1604 13.6974 17.932 13.6974 16.428C13.6974 14.9241 14.9254 13.6957 16.4294 13.6957H23.268C24.7718 13.6957 26 14.9239 26 16.428C26 17.932 24.7718 19.1604 23.268 19.1604H16.4294Z" fill="#EBB02E"/>
+								</svg>
+							</div>
+							<div class='flex flex-col gap-1 mr-10'>
+								<strong class='text-sm font-semibold'>Slack</strong>
+								<p class='text-sm text-gray-900'>Slack is a messaging program used by teams to communicate with each other. <a class='text-blue-500 hover:underline' href="#">Learn to connect Slack</a></p>
+							</div>
+							<div class='ml-auto flex-shrink-0'>
+								<button class='btn btn-border-default px-5 h-10 border-red-500/30 text-red-500'>
+									Disconnect
+								</button>
+							</div>
+						</div>
+						<div class='grid grid-cols-[245px_245px] mt-8 gap-[6.5rem]'>
+							<div class='flex flex-col items-start'>
+								<strong class='text-sm font-semibold mb-6 block'>Personal Library Notifications:</strong>
+								<div class='dropdown-wrapper mb-6'>
+									<strong class='text-sm font-medium mb-2.5 block'>Select channel:</strong>
+									<button class='dropdown-button btn btn-border-default justify-between w-[12.4375rem] text-sm font-normal'>
+										<span>#away</span>
+										<svg class='icon icon-sm'>
+											<use href='#chevron-down'></use>
+										</svg>
+									</button>
+								</div>
+								<p class='text-sm text-gray-900'>Send notification when:</p>
+								<ul class="mt-3 space-y-4 mb-6">
+									<li>
+										<label class="custom-controls checkbox !gap-3">
+											<input type="checkbox" name="file-viewed" id="file-viewed" value="1" class="">
+											<span class="custom-control-indicator"></span>
+											<span>File is viewed</span> 
+										</label>
+									</li>
+									<li>
+										<label class="custom-controls checkbox !gap-3">
+											<input type="checkbox" name="sso_enabled" id="sso_enabled" value="1" class="">
+											<span class="custom-control-indicator"></span>
+											<span>File is downloaded</span> 
+										</label>
+									</li>
+									<li>
+										<label class="custom-controls checkbox !gap-3">
+											<input type="checkbox" name="files-sent-successfully" id="files-sent-successfully" value="1" class="">
+											<span class="custom-control-indicator"></span>
+											<span>File received in Inbox</span> 
+										</label>
+									</li>
+									<li>
+										<label class="custom-controls checkbox !gap-3">
+											<input type="checkbox" name="files-sent-successfully" id="files-sent-successfully" value="1" class="">
+											<span class="custom-control-indicator"></span>
+											<span>Someone commented on file</span> 
+										</label>
+									</li>
+									<li>
+										<label class="custom-controls checkbox !gap-3">
+											<input type="checkbox" name="files-sent-successfully" id="files-sent-successfully" value="1" class="">
+											<span class="custom-control-indicator"></span>
+											<span>Someone mentioned you on file</span> 
+										</label>
+									</li>
+								</ul>
+								<button
+									type="button"
+									class="btn btn-primary-default px-5"
+								>
+									Update
+								</button>
+							</div>
+							<div class='flex flex-col items-start'>
+								<strong class='text-sm font-semibold mb-6 block'>Team Library Notifications:</strong>
+								<div class='dropdown-wrapper mb-6'>
+									<strong class='text-sm font-medium mb-2.5 block'>Select channel:</strong>
+									<button class='dropdown-button btn btn-border-default justify-between w-[12.4375rem] text-sm font-normal'>
+										<span>#away</span>
+										<svg class='icon icon-sm'>
+											<use href='#chevron-down'></use>
+										</svg>
+									</button>
+								</div>
+								<p class='text-sm text-gray-900'>Send notification when:</p>
+								<ul class="mt-3 space-y-4 mb-6">
+									<li>
+										<label class="custom-controls checkbox !gap-3">
+											<input type="checkbox" name="file-viewed" id="file-viewed" value="1" class="">
+											<span class="custom-control-indicator"></span>
+											<span>File is viewed</span> 
+										</label>
+									</li>
+									<li>
+										<label class="custom-controls checkbox !gap-3">
+											<input type="checkbox" name="sso_enabled" id="sso_enabled" value="1" class="">
+											<span class="custom-control-indicator"></span>
+											<span>File is downloaded</span> 
+										</label>
+									</li>
+									<li>
+										<label class="custom-controls checkbox !gap-3">
+											<input type="checkbox" name="sso_enabled" id="sso_enabled" value="1" class="">
+											<span class="custom-control-indicator"></span>
+											<span>File is uploaded</span> 
+										</label>
+									</li>
+									<li>
+										<label class="custom-controls checkbox !gap-3">
+											<input type="checkbox" name="files-sent-successfully" id="files-sent-successfully" value="1" class="">
+											<span class="custom-control-indicator"></span>
+											<span>File received in Inbox</span> 
+										</label>
+									</li>
+									<li>
+										<label class="custom-controls checkbox !gap-3">
+											<input type="checkbox" name="files-sent-successfully" id="files-sent-successfully" value="1" class="">
+											<span class="custom-control-indicator"></span>
+											<span>Someone commented on file</span> 
+										</label>
+									</li>
+									<li>
+										<label class="custom-controls checkbox !gap-3">
+											<input type="checkbox" name="files-sent-successfully" id="files-sent-successfully" value="1" class="">
+											<span class="custom-control-indicator"></span>
+											<span>Someone mentioned you on file</span> 
+										</label>
+									</li>
+								</ul>
+								<button
+									type="button"
+									class="btn btn-primary-default px-5"
+								>
+									Update
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>

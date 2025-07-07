@@ -5,6 +5,12 @@
 	.dropdown-content {
 		z-index: 1000 !important;
 	}
+	.aside-nav-item {
+		@apply flex items-center gap-3 text-sm px-2 h-10 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500;
+		svg {
+			@apply flex-shrink-0
+		}
+	}
 	.list-type {
 		.file-item {
 			@apply grid grid-cols-[56px_1fr_7rem_9rem_7.94rem] border-x-0 border-t-0 rounded-none py-2.5 gap-2 hover:bg-gray-150;
