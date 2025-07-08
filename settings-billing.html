@@ -221,15 +221,6 @@
 								</li>
 							</ul>
 						</nav>
-						<div class='mt-auto bg-white border-gray-400 border rounded-lg px-5 py-3.5'>
-							<p class='text-center text-sm font-normal text-dark-800/60 mb-2.5 max-w-[12.125rem] mx-auto'>Teams that communicate better, grow faster</p>
-							<button class='btn btn-border-default m-0 w-full text-sm justify-center text-center text-dark-800/80 h-8'>
-								<svg class='icon icon-sm'>
-									<use href='#members-semibold'></use>
-								</svg>
-								Invite members
-							</button>
-						</div>
 					</div>
 				</div>
 			</aside>
@@ -477,6 +468,43 @@
 				</header>
 				<div class='dashboard-container pb-5 pt-5'>
 					<div>
+						<div class=''>
+							<h3 class='text-lg text-dark-800 font-semibold'>Your Current Subscription</h3>
+							<div class='grid grid-cols-3 gap-4 mt-4'>
+								<div class='border border-gray-600 rounded-xl p-5'>
+									<ul class='space-y-1'>
+										<li class='flex items-center gap-x-2'>
+											<strong class='text-lg font-semibold'>Enterprise</strong>
+											<div class="tag-filled h-6.5 text-dark-800 bg-gray-150 font-medium">
+												Yearly
+											</div>
+										</li>
+										<li class='text-sm text-gray-900'>Current Plan</li>
+									</ul>
+									<button class='btn btn-border-default w-full mt-4'>Change Plan</button>
+								</div>
+								<div class='border border-gray-600 rounded-xl p-5'>
+									<ul class='space-y-1'>
+										<li class='flex items-center gap-x-2'>
+											<strong class='text-lg font-semibold'>25</strong>
+										</li>
+										<li class='text-sm text-gray-900'>Total Seats</li>
+									</ul>
+									<button class='btn btn-border-default w-full mt-4'>Edit Seats</button>
+								</div>
+								<div class='border border-gray-600 rounded-xl p-5'>
+									<ul class='space-y-1'>
+										<li class='flex items-center gap-x-2'>
+											<strong class='text-lg font-semibold'>Jan 22, 2025</strong>
+										</li>
+										<li class='text-sm text-gray-900'>Next Renewal</li>
+									</ul>
+									<p class='mt-3 text-sm max-w-[14rem] w-full'>Your plan is set to $7200 per year for 25 seats</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class='mt-10'>
 						<h3 class="text-lg text-dark-800 font-semibold flex items-center gap-x-3">Billing Details
 							<svg class="icon icon-sm cursor-pointer">
 								<use href="#alert"></use>
@@ -510,18 +538,76 @@
 					</div>
 					<div class='mt-10'>
 						<h3 class="text-lg text-dark-800 font-semibold flex items-center gap-x-3">Payment Method</h3>
-						<div class="flex items-center w-full max-w-[43rem] bg-white border-gray-600 border rounded-xl p-6 mt-4">
+						<div class="flex items-center w-full max-w-[43rem] bg-white border-gray-600 border rounded-xl p-3 mt-4">
 							<div class="flex items-center justify-center border border-gray-400 rounded-lg w-15.5 h-8 mr-4 flex-shrink-0">
 								<img class='w-10.5' src="./assets/images/settings/visa-logo.png" alt="visa">
 							</div>
-							<div class="flex flex-col gap-1 mr-3">
+							<div class="flex flex-col mr-3">
 								<strong class="text-sm font-semibold">Visa ending in 0353</strong>
-								<p class="text-sm text-gray-900">Expires 09/28</p>
+								<p class="text-xs text-gray-900">Expires 09/28</p>
 							</div>
 							<div class="ml-auto flex-shrink-0">
 								<button class="btn btn-border-default px-5 h-10">
-									<span>Edit</span>
+									Edit
 								</button>
+							</div>
+						</div>
+						<label class="custom-controls checkbox !gap-3 mt-4">
+							<input type="checkbox" name="billing-updates" id="billing-updates" value="1" class="">
+							<span class="custom-control-indicator"></span>
+							<span>Notify all members of billing related updates</span> 
+						</label>
+					</div>
+					<div class='mt-10'>
+						<h3 class='text-lg text-dark-800 font-semibold'>Billing History</h3>
+						<div class='grid grid-cols-[138px_minmax(170px,auto)_minmax(100px,140px)_minmax(180px,256px)] mt-7.5 gap-3 pb-3'>
+							<div class='flex items-center text-sm text-gray-900'>Date</div>
+							<div class='flex items-center text-sm text-gray-900'>Description</div>
+							<div class='flex items-center text-sm text-gray-900'>Amount</div>
+							<div class='flex items-center text-sm text-gray-900'>Status</div>
+						</div>
+						<div class='grid grid-cols-[138px_minmax(170px,auto)_minmax(100px,140px)_minmax(180px,256px)] border-t border-gray-400 py-4 gap-3'>
+							<div class='flex items-center text-sm'>Jan 22, 2025</div>
+							<div class='flex items-center text-sm'>
+								<p class='truncate'>Enterprise - 25 seats</p>
+							</div>
+							<div class='flex items-center text-sm'>$0</div>
+							<div class='flex items-center text-sm justify-between'>
+								<span class="tag-filled bg-green-20 font-normal h-6">Paid</span>
+								<button class='btn btn-border-default px-5 h-10 min-w-27.5'>Download</button>
+							</div>
+						</div>
+						<div class='grid grid-cols-[138px_minmax(170px,auto)_minmax(100px,140px)_minmax(180px,256px)] border-t border-gray-400 py-4 gap-3'>
+							<div class='flex items-center text-sm'>Dec 19, 2024</div>
+							<div class='flex items-center text-sm'>
+								<p class='truncate'>Enterprise - 25 seats</p>
+							</div>
+							<div class='flex items-center text-sm'>$7,300</div>
+							<div class='flex items-center text-sm justify-between'>
+								<span class="tag-filled bg-green-20 font-normal h-6">Paid</span>
+								<button class='btn btn-border-default px-5 h-10 min-w-27.5'>Download</button>
+							</div>
+						</div>
+						<div class='grid grid-cols-[138px_minmax(170px,auto)_minmax(100px,140px)_minmax(180px,256px)] border-t border-gray-400 py-4 gap-3'>
+							<div class='flex items-center text-sm'>Dec 19, 2024</div>
+							<div class='flex items-center text-sm'>
+								<p class='truncate'>Enterprise - Added Robert Johnson Enterprise - Added Robert Johnson Enterprise - Added Robert Johnson Enterprise - Added Robert Johnson</p>
+							</div>
+							<div class='flex items-center text-sm'>$33,211</div>
+							<div class='flex items-center text-sm justify-between'>
+								<span class="tag-filled bg-red-500/5 text-red-500 font-normal h-6">Unpaid</span>
+								<button class='btn btn-border-default px-5 h-10 min-w-27.5'>Pay Now</button>
+							</div>
+						</div>
+						<div class='grid grid-cols-[138px_minmax(170px,auto)_minmax(100px,140px)_minmax(180px,256px)] border-t border-gray-400 py-4 gap-3'>
+							<div class='flex items-center text-sm'>Jan 22, 2025</div>
+							<div class='flex items-center text-sm'>
+								<p class='truncate'>Enterprise - 25 seats</p>
+							</div>
+							<div class='flex items-center text-sm'>$0</div>
+							<div class='flex items-center text-sm justify-between'>
+								<span class="tag-filled bg-green-20 font-normal h-6">Paid</span>
+								<button class='btn btn-border-default px-5 h-10 min-w-27.5'>Download</button>
 							</div>
 						</div>
 					</div>
