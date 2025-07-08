@@ -475,7 +475,7 @@
 						</div>
 					</div>
 				</header>
-				<div class='dashboard-container pb-5 pt-5 grid grid-cols-2 gap-9'>
+				<div class='dashboard-container pb-5 pt-5 grid grid-cols-[1fr_430px] gap-9'>
 					<div>
 						<h3 class='text-lg text-dark-800 font-semibold'>Jumpshare AI</h3>
 						<div class="flex items-center bg-white border-gray-400 border rounded-xl p-6 mt-4">
@@ -520,8 +520,19 @@
 					</div>
 					<div>
 						<strong class='text-sm font-semibold'>Preview:</strong>
-						<div class='w-full h-9.5 bg-gray-150 rounded-lg mt-4.5'></div>
-						<div class='w-full h-64 border border-gray-150 mt-4 rounded-xl bg-[#B1B1B1]/15'>
+						<div class='w-full h-9.5 bg-gray-150 rounded-lg mt-4.5 grid grid-cols-3 p-1 relative'>
+							<div class='w-1/3 h-[calc(100%-0.5rem)] top-1 left-1 bg-white rounded-lg absolute z-0'></div>
+							<span class='flex items-center justify-center cursor-pointer relative z-1 text-sm font-medium'>Title</span>
+							<span class='flex items-center justify-center cursor-pointer relative z-1 text-sm'>Summary</span>
+							<span class='flex items-center justify-center cursor-pointer relative z-1 text-sm'>Chapters</span>
+						</div>
+						<div class='w-full h-64 border border-gray-150 mt-4 rounded-xl bg-[#B1B1B1]/15 relative overflow-hidden'>
+							<img class='lazy-image h-full w-full object-contain absolute right-0 top-0'
+								data-src="./assets/images/settings/preview-title.png"
+								loading="lazy"
+								data-srcset="./assets/images/settings/preview-title.png 1x, ./assets/images/settings/preview-title-2x.png 2x"
+								alt="Title"
+							/>
 						</div>
 					</div>
 				</div>

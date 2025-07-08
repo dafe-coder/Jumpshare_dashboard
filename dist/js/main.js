@@ -15,6 +15,37 @@ fetch('assets/menu-icons-sprite.svg')
 	})
 
 $(document).ready(function () {
+	// Lazy images
+	const lazyImages = document.querySelectorAll('.lazy-image')
+
+	if ('IntersectionObserver' in window) {
+		const imageObserver = new IntersectionObserver(
+			(entries, observer) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						const img = entry.target
+						img.src = img.getAttribute('data-src')
+						img.srcset = img.getAttribute('data-srcset')
+						img.classList.remove('lazy-image')
+						observer.unobserve(img)
+					}
+				})
+			},
+			{
+				rootMargin: '1500px',
+			}
+		)
+
+		lazyImages.forEach(image => {
+			imageObserver.observe(image)
+		})
+	} else {
+		lazyImages.forEach(img => {
+			img.src = img.getAttribute('data-src')
+			img.srcset = img.getAttribute('data-srcset')
+			img.classList.remove('lazy-image')
+		})
+	}
 	// Tabs
 	const tabs = $('[data-tab-id]')
 	tabs.on('click', function (e) {
