@@ -129,7 +129,6 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="stylesheet" href="./dist/output.css" />
 	</head>
-
 	<body class="drag-and-drop">
 		<div
 			id="progress-bar"
@@ -182,7 +181,7 @@
 							</p>
 							<ul class="flex flex-col mt-2">
 								<li>
-									<a href="./settings.html" class="active aside-nav-item">
+									<a href="./settings.html" class="aside-nav-item">
 										<svg
 											width="18"
 											height="18"
@@ -250,7 +249,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="./trash.html" class="aside-nav-item">
+									<a href="./trash.html" class="active aside-nav-item">
 										<svg class="icon icon-sm">
 											<use href="#icon-data"></use>
 										</svg>
@@ -726,331 +725,289 @@
 						</div>
 					</div>
 				</header>
-				<div class="dashboard-container pb-5 pt-5">
+				<div
+					class="dashboard-container pb-5 pt-5 grid grid-cols-[1fr_430px] gap-9"
+				>
 					<div>
-						<h3 class="text-lg text-dark-800 font-semibold">
-							Custom Domain for Files
-						</h3>
-						<div class="border border-gray-600 rounded-xl p-6 mt-4">
-							<strong class="text-sm font-semibold mb-2 block">
-								Custom Domain
-							</strong>
-							<p class="text-gray-900 text-sm max-w-[37.5rem]">
-								Custom domain allows you to share files using your own domain
-								name. You can use any subdomain that you own.
-							</p>
-							<a href="#" class="block text-blue-500 mt-3 hover:underline">
-								Learn how to set up custom domain →
-							</a>
-							<div class="max-w-[33.875rem] mt-4 flex items-center gap-4">
-								<div
-									class="flex items-center h-10 rounded-lg bg-gray-150 flex-grow-1 relative"
-								>
+						<div>
+							<h3 class="text-lg text-dark-800 font-semibold">
+								Viewer Settings
+							</h3>
+							<div class="bg-white border-gray-600 border rounded-xl p-6 mt-4">
+								<div class="flex flex-col gap-1">
+									<strong class="text-sm font-semibold">
+										File Viewer Theme
+									</strong>
+									<div class="grid grid-cols-2 gap-3 mt-4">
+										<button
+											type="button"
+											class="active btn btn-border-default [&.active]:border-blue-500 [&.active]:bg-gray-100 h-10"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-light-theme"></use>
+											</svg>
+											<span>Light Theme</span>
+										</button>
+										<button
+											type="button"
+											class="btn btn-border-default [&.active]:border-blue-500 [&.active]:bg-gray-100 h-10"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-dark-theme"></use>
+											</svg>
+											<span>Dark Theme</span>
+										</button>
+									</div>
+								</div>
+								<div class="flex flex-col gap-1 mr-10 mt-8">
+									<strong class="text-sm font-semibold">
+										Public Folder View
+									</strong>
+									<p class="text-sm text-gray-900 max-w-[27.375rem] w-full">
+										Choose how you want folders to be displayed to recipients
+										when sharing with them.
+									</p>
+								</div>
+								<div class="mt-3.5">
+									<button
+										type="button"
+										class="btn btn-border-default w-full justify-between font-normal h-10"
+									>
+										<span>Large Grid</span>
+										<svg class="icon icon-sm">
+											<use href="#chevron-down"></use>
+										</svg>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="mt-10">
+							<h3
+								class="text-lg text-dark-800 font-semibold flex items-center gap-x-3"
+							>
+								Add your logo
+								<svg class="icon icon-sm cursor-pointer">
+									<use href="#alert"></use>
+								</svg>
+							</h3>
+							<div class="border border-gray-600 rounded-xl p-6 mt-4">
+								<p class="text-sm text-gray-900 max-w-[28.125rem] w-full">
+									For best results, use a transparent PNG. Max file size is
+									100KB. All dimensions (width x height) below are in pixels.
+								</p>
+								<strong class="text-sm font-medium mt-6 block">
+									Light Theme Logo (240x100px)
+								</strong>
+								<div class="flex gap-3 mt-4 items-center">
 									<div
-										class="tag-filled gap-2 absolute right-1.5 font-sans bg-green-20"
+										class="flex items-center justify-center h-13.5 bg-gray-150 rounded-md flex-grow-1"
 									>
 										<svg
-											width="14"
-											height="14"
-											viewBox="0 0 14 14"
+											width="157"
+											height="22"
+											viewBox="0 0 157 22"
 											fill="none"
 											xmlns="http://www.w3.org/2000/svg"
 										>
 											<path
 												fill-rule="evenodd"
 												clip-rule="evenodd"
-												d="M0 7C0 5.14348 0.737498 3.36301 2.05025 2.05025C3.36301 0.737498 5.14348 0 7 0C8.85652 0 10.637 0.737498 11.9497 2.05025C13.2625 3.36301 14 5.14348 14 7C14 8.85652 13.2625 10.637 11.9497 11.9497C10.637 13.2625 8.85652 14 7 14C5.14348 14 3.36301 13.2625 2.05025 11.9497C0.737498 10.637 0 8.85652 0 7ZM6.60053 9.996L10.6307 4.95787L9.90267 4.37547L6.46613 8.66973L4.032 6.6416L3.43467 7.3584L6.60053 9.996Z"
-												fill="#078D4A"
+												d="M32.105 3.61846L31.4346 2.76046C31.3469 2.64796 31.2251 2.56531 31.0866 2.52423C30.7634 2.4292 29.9003 2.30465 29.4629 2.28355C29.386 2.27894 29.3113 2.25653 29.245 2.21817C29.1787 2.17981 29.1227 2.1266 29.0816 2.06293C28.6639 1.43439 27.1934 -0.0624484 26.8509 0.00201829C26.4641 0.0748447 26.6014 0.262748 26.6727 0.625473C26.8771 1.66818 27.8131 3.04513 27.8131 3.04513C27.8131 3.04513 27.2078 4.79825 26.1924 4.98936C24.4259 5.322 22.7635 2.01524 17.9277 1.98293C5.68208 1.98293 7.53128 18.576 0.595687 18.576C0.0658932 18.576 0.000746947 18.8587 0.000746947 18.9182C0.000746947 19.0389 -0.0614769 19.3202 0.949925 19.3202C8.68031 19.3202 9.79002 9.70147 11.9314 9.70147C12.7153 9.70147 12.6451 11.9953 12.6451 12.7465C12.6451 16.7593 10.9559 17.6527 10.9559 18.8069C10.9559 19.2455 11.2211 19.5519 11.8441 19.8373C13.4413 20.5684 17.943 22 19.1259 22C20.3089 22 17.197 19.6627 16.3384 19.6627C15.4796 19.6627 13.5835 19.4028 13.5835 18.21C13.5835 16.8774 19.3726 14.4227 19.3726 11.5428C20.8465 11.5428 22.1144 11.3749 23.2155 11.0878C23.4347 11.6085 23.8118 12.5345 23.8843 12.9049C23.9431 13.2049 23.7631 13.6976 23.2794 13.7886C22.7957 13.8796 21.8824 14.5197 21.9378 14.8039C21.9931 15.0881 22.7157 15.33 23.1994 15.239C23.683 15.1481 24.8579 14.7847 25.0142 13.7067C25.0894 13.1886 25.4424 11.1302 25.8538 10.0297C27.8399 8.90295 29.0533 7.33255 30.0163 5.97827C30.0544 5.92431 30.1035 5.87853 30.1604 5.8438C30.2174 5.80907 30.281 5.78611 30.3473 5.77635C30.7218 5.67386 31.1089 5.62159 31.4979 5.62096C32.1381 5.62096 32.7141 5.8659 33.0873 5.8659C33.5144 5.8659 33.7556 5.35709 33.7556 5.12171C33.7559 4.43762 32.105 3.61846 32.105 3.61846Z"
+												fill="#2F76FF"
+											/>
+											<path
+												d="M43.3179 20.1173L43.1963 17.8407C43.5499 17.8977 43.9368 17.9262 44.3568 17.9262C45.1746 17.9262 45.7273 17.7231 46.0146 17.317C46.302 16.9108 46.4456 16.2409 46.4456 15.3075V0.98481H49.4518V15.1151C49.4518 16.013 49.367 16.7682 49.1976 17.3811C49.0356 18.001 48.7555 18.5248 48.3577 18.9523C47.9671 19.387 47.444 19.7041 46.7883 19.9036C46.1399 20.1031 45.3331 20.2029 44.3678 20.2029C43.9626 20.2029 43.6126 20.1744 43.3179 20.1173ZM61.366 15.7671C60.4008 16.5296 59.1298 16.9108 57.553 16.9108C55.9762 16.9108 54.7053 16.5296 53.74 15.7671C52.7822 15.0046 52.3033 13.8859 52.3033 12.4109V4.93956H55.21V12.3041C55.21 13.1805 55.3978 13.8146 55.7736 14.2066C56.1567 14.5985 56.7609 14.7945 57.5861 14.7945C58.3967 14.7945 58.9862 14.6021 59.3545 14.2173C59.7302 13.8254 59.9182 13.1876 59.9182 12.3041V4.93956H62.8138V12.4109C62.8138 13.8788 62.3313 14.9976 61.366 15.7671ZM65.4664 16.6864V4.93956H67.8094L68.141 6.43598C68.2884 6.25784 68.4283 6.10105 68.561 5.96568C68.701 5.82314 68.8888 5.66643 69.1246 5.49538C69.3678 5.31725 69.622 5.17117 69.8872 5.05714C70.1598 4.94319 70.4914 4.84695 70.882 4.7686C71.2798 4.69016 71.7035 4.65103 72.1529 4.65103C73.1181 4.65103 73.8881 4.83978 74.4628 5.21747C75.0449 5.59516 75.4538 6.03695 75.6896 6.54284C76.1243 5.93717 76.688 5.47042 77.3805 5.14266C78.0732 4.8149 78.8432 4.65103 79.6904 4.65103C81.083 4.65103 82.1035 5.03226 82.7519 5.79463C83.4077 6.55709 83.7356 7.68653 83.7356 9.18294V16.6864H80.8288V10.0167C80.8288 8.86944 80.6962 8.04279 80.4309 7.53691C80.1731 7.02385 79.6757 6.76736 78.9389 6.76736C77.8116 6.76736 77.0011 7.259 76.5075 8.24235C76.3011 8.67706 76.1611 9.20074 76.0874 9.81358V16.6864H73.1918V9.88839C73.1918 8.84093 73.0481 8.06068 72.7608 7.54762C72.4734 7.03456 71.954 6.77799 71.2025 6.77799C70.5908 6.77799 70.0641 6.9277 69.622 7.22694C69.1798 7.52619 68.8446 7.91814 68.6162 8.40269C68.4467 9.12239 68.3621 9.98463 68.3621 10.9893V16.6864H65.4664ZM86.5982 21.571V4.93956H89.0846L89.3941 6.5856C89.7923 5.96568 90.3187 5.4883 90.9751 5.15337C91.6379 4.81136 92.3748 4.64031 93.185 4.64031C94.1801 4.64031 95.0525 4.90751 95.8041 5.44191C96.563 5.97639 97.1379 6.7068 97.5288 7.63314C97.9188 8.55231 98.1147 9.59268 98.1147 10.7542C98.1147 12.5713 97.6579 14.0534 96.7443 15.2007C95.838 16.3407 94.6076 16.9108 93.0522 16.9108C92.286 16.9108 91.5903 16.7647 90.9641 16.4725C90.3443 16.1733 89.8252 15.7706 89.405 15.2648C89.4645 16.2909 89.4938 16.868 89.4938 16.9963V21.4321L86.5982 21.571ZM92.4334 14.7731C93.2958 14.7731 93.9732 14.4239 94.4675 13.7256C94.9683 13.0273 95.2191 12.0297 95.2191 10.7328C95.2191 9.41455 94.9683 8.42402 94.4675 7.76134C93.9659 7.09866 93.2701 6.76736 92.3785 6.76736C90.4624 6.76736 89.4938 8.02863 89.4719 10.5511C89.4719 12.0047 89.7181 13.0736 90.2125 13.7576C90.7132 14.4346 91.4538 14.7731 92.4334 14.7731ZM104.359 16.9001C102.568 16.9001 101.135 16.6044 100.059 16.013L100.358 13.9073C100.845 14.1638 101.464 14.3954 102.215 14.6021C102.967 14.8015 103.651 14.9013 104.27 14.9013C104.911 14.9013 105.409 14.7874 105.763 14.5593C106.123 14.3242 106.308 13.9821 106.315 13.5332C106.315 13.1271 106.145 12.8064 105.806 12.5713C105.475 12.3361 104.838 12.0439 103.895 11.6948C103.571 11.5807 103.36 11.5059 103.265 11.4703C102.145 11.0499 101.338 10.5831 100.845 10.0701C100.35 9.54992 100.104 8.84802 100.104 7.96444C100.104 6.89556 100.501 6.07617 101.298 5.50609C102.101 4.93602 103.217 4.65103 104.647 4.65103C106.194 4.65103 107.553 4.93248 108.724 5.49538L108.006 7.43004C106.849 6.90981 105.748 6.64979 104.701 6.64979C104.119 6.64979 103.662 6.74594 103.331 6.93832C103.007 7.12362 102.845 7.40862 102.845 7.79348C102.845 8.15683 103.003 8.44191 103.32 8.64855C103.637 8.84802 104.256 9.11167 105.177 9.43952C105.206 9.4466 105.302 9.47865 105.464 9.53567C105.626 9.59268 105.752 9.63899 105.839 9.67467C106.953 10.0665 107.77 10.5368 108.294 11.0856C108.816 11.627 109.078 12.3361 109.078 13.2125C109.071 14.3883 108.658 15.2968 107.841 15.9381C107.022 16.5794 105.862 16.9001 104.359 16.9001ZM111.377 16.6864V0.610716L114.273 0.429007V3.81729C114.273 3.98117 114.262 4.43721 114.24 5.18542C114.218 5.92646 114.207 6.30415 114.207 6.3184C115.172 5.20676 116.468 4.65103 118.097 4.65103C119.452 4.65103 120.502 5.02863 121.247 5.78401C121.998 6.53221 122.374 7.68653 122.374 9.24704V16.6864H119.478V9.55709C119.478 8.59507 119.32 7.88963 119.003 7.44076C118.686 6.9918 118.148 6.76736 117.389 6.76736C116.741 6.76736 116.166 6.9277 115.665 7.24828C115.164 7.56187 114.788 7.96798 114.538 8.46679C114.361 9.12239 114.273 9.97745 114.273 11.0321V16.6864H111.377ZM128.441 16.9108C127.314 16.9108 126.401 16.6115 125.7 16.013C125.008 15.4073 124.661 14.538 124.661 13.4049C124.661 12.1865 125.074 11.285 125.899 10.7007C126.725 10.1093 127.97 9.73522 129.635 9.57843C129.864 9.54992 130.11 9.52141 130.376 9.4929C130.641 9.46439 130.94 9.43589 131.271 9.40738C131.602 9.37887 131.864 9.35399 132.055 9.33257V8.71265C132.055 8.00012 131.886 7.48343 131.547 7.16285C131.208 6.835 130.692 6.67112 129.999 6.67112C129.012 6.67112 127.793 6.93832 126.341 7.47281C126.334 7.45138 126.213 7.12717 125.977 6.50007C125.741 5.87307 125.62 5.5524 125.612 5.53814C127.042 4.94673 128.589 4.65103 130.254 4.65103C131.89 4.65103 133.08 4.99658 133.824 5.68777C134.568 6.37188 134.94 7.48343 134.94 9.02261V16.6864H132.796C132.789 16.6578 132.707 16.4192 132.553 15.9702C132.398 15.5212 132.321 15.2825 132.321 15.254C131.717 15.8241 131.124 16.2446 130.541 16.5153C129.966 16.779 129.267 16.9108 128.441 16.9108ZM129.226 14.9227C129.897 14.9227 130.479 14.7695 130.973 14.4631C131.473 14.1496 131.831 13.7719 132.045 13.3301V11.0641C132.023 11.0641 131.828 11.0784 131.459 11.1069C131.098 11.1354 130.902 11.1497 130.873 11.1497C129.702 11.2494 128.843 11.4632 128.298 11.791C127.753 12.1188 127.48 12.6461 127.48 13.3729C127.48 13.8717 127.631 14.2564 127.933 14.5273C128.235 14.7909 128.666 14.9227 129.226 14.9227ZM137.869 16.6864V4.93956H140.3L140.676 6.73522C141.472 5.50255 142.625 4.88617 144.136 4.88617C144.453 4.88617 144.71 4.90043 144.909 4.92894L144.865 7.26971C144.57 7.22694 144.264 7.20561 143.947 7.20561C142.879 7.20561 142.08 7.47989 141.549 8.02863C141.026 8.57728 140.764 9.33974 140.764 10.3159V16.6864H137.869ZM152.181 16.9108C150.229 16.9108 148.708 16.3692 147.617 15.2861C146.534 14.1959 145.992 12.6924 145.992 10.7755C145.992 8.90857 146.504 7.42287 147.529 6.3184C148.553 5.21393 149.949 4.65811 151.717 4.65103C153.389 4.65103 154.687 5.15691 155.608 6.16878C156.536 7.18064 157 8.5238 157 10.1983C157 10.3195 156.996 10.5155 156.989 10.7862C156.989 11.057 156.989 11.2565 156.989 11.3848H148.91C148.939 12.4822 149.249 13.3337 149.838 13.9394C150.435 14.538 151.253 14.8372 152.292 14.8372C153.618 14.8372 154.893 14.5023 156.116 13.8325L156.525 15.8206C155.309 16.5474 153.862 16.9108 152.181 16.9108ZM148.965 9.62119H154.27C154.27 8.66634 154.046 7.93239 153.596 7.41933C153.147 6.90627 152.524 6.64979 151.728 6.64979C150.984 6.64979 150.354 6.89919 149.838 7.39799C149.33 7.8968 149.039 8.63784 148.965 9.62119Z"
+												fill="#122345"
 											/>
 										</svg>
-										Verified
 									</div>
-									<input
-										class="h-full flex-grow-1 px-3.5 text-sm text-dark-800 placeholder:text-dark-800/50"
-										type="text"
-										value="files.customlink.io"
-										placeholder=""
-										disabled
-									/>
+									<button
+										type="button"
+										class="btn btn-border-default p-0 size-10 flex-shrink-0"
+									>
+										<svg class="icon icon-md">
+											<use href="#icon-trash-lite"></use>
+										</svg>
+										<span class="sr-only">Delete</span>
+									</button>
 								</div>
-								<button
-									type="button"
-									class="btn btn-danger flex-shrink-0 px-5 h-10"
+								<strong class="text-sm font-medium mt-7 block">
+									Dark Theme Logo (240x100px)
+								</strong>
+								<div class="flex gap-3 mt-4 items-center">
+									<div
+										class="flex items-center justify-center h-13.5 bg-[#272727] rounded-md flex-grow-1"
+									>
+										<svg
+											width="157"
+											height="22"
+											viewBox="0 0 157 22"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg"
+										>
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M32.105 3.61846L31.4346 2.76046C31.3469 2.64796 31.2251 2.56531 31.0866 2.52423C30.7634 2.4292 29.9003 2.30465 29.4629 2.28355C29.386 2.27894 29.3113 2.25653 29.245 2.21817C29.1787 2.17981 29.1227 2.1266 29.0816 2.06293C28.6639 1.43439 27.1934 -0.0624484 26.8509 0.00201829C26.4641 0.0748447 26.6014 0.262748 26.6727 0.625473C26.8771 1.66818 27.8131 3.04513 27.8131 3.04513C27.8131 3.04513 27.2078 4.79825 26.1924 4.98936C24.4259 5.322 22.7635 2.01524 17.9277 1.98293C5.68208 1.98293 7.53128 18.576 0.595687 18.576C0.0658932 18.576 0.000746947 18.8587 0.000746947 18.9182C0.000746947 19.0389 -0.0614769 19.3202 0.949925 19.3202C8.68031 19.3202 9.79002 9.70147 11.9314 9.70147C12.7153 9.70147 12.6451 11.9953 12.6451 12.7465C12.6451 16.7593 10.9559 17.6527 10.9559 18.8069C10.9559 19.2455 11.2211 19.5519 11.8441 19.8373C13.4413 20.5684 17.943 22 19.1259 22C20.3089 22 17.197 19.6627 16.3384 19.6627C15.4796 19.6627 13.5835 19.4028 13.5835 18.21C13.5835 16.8774 19.3726 14.4227 19.3726 11.5428C20.8465 11.5428 22.1144 11.3749 23.2155 11.0878C23.4347 11.6085 23.8118 12.5345 23.8843 12.9049C23.9431 13.2049 23.7631 13.6976 23.2794 13.7886C22.7957 13.8796 21.8824 14.5197 21.9378 14.8039C21.9931 15.0881 22.7157 15.33 23.1994 15.239C23.683 15.1481 24.8579 14.7847 25.0142 13.7067C25.0894 13.1886 25.4424 11.1302 25.8538 10.0297C27.8399 8.90295 29.0533 7.33255 30.0163 5.97827C30.0544 5.92431 30.1035 5.87853 30.1604 5.8438C30.2174 5.80907 30.281 5.78611 30.3473 5.77635C30.7218 5.67386 31.1089 5.62159 31.4979 5.62096C32.1381 5.62096 32.7141 5.8659 33.0873 5.8659C33.5144 5.8659 33.7556 5.35709 33.7556 5.12171C33.7559 4.43762 32.105 3.61846 32.105 3.61846Z"
+												fill="white"
+											/>
+											<path
+												d="M43.3179 20.1173L43.1963 17.8407C43.5499 17.8977 43.9368 17.9262 44.3568 17.9262C45.1746 17.9262 45.7273 17.7231 46.0146 17.317C46.302 16.9108 46.4456 16.2409 46.4456 15.3075V0.98481H49.4518V15.1151C49.4518 16.013 49.367 16.7682 49.1976 17.3811C49.0356 18.001 48.7555 18.5248 48.3577 18.9523C47.9671 19.387 47.444 19.7041 46.7883 19.9036C46.1399 20.1031 45.3331 20.2029 44.3678 20.2029C43.9626 20.2029 43.6126 20.1744 43.3179 20.1173ZM61.366 15.7671C60.4008 16.5296 59.1298 16.9108 57.553 16.9108C55.9762 16.9108 54.7053 16.5296 53.74 15.7671C52.7822 15.0046 52.3033 13.8859 52.3033 12.4109V4.93956H55.21V12.3041C55.21 13.1805 55.3978 13.8146 55.7736 14.2066C56.1567 14.5985 56.7609 14.7945 57.5861 14.7945C58.3967 14.7945 58.9862 14.6021 59.3545 14.2173C59.7302 13.8254 59.9182 13.1876 59.9182 12.3041V4.93956H62.8138V12.4109C62.8138 13.8788 62.3313 14.9976 61.366 15.7671ZM65.4664 16.6864V4.93956H67.8094L68.141 6.43598C68.2884 6.25784 68.4283 6.10105 68.561 5.96568C68.701 5.82314 68.8888 5.66643 69.1246 5.49538C69.3678 5.31725 69.622 5.17117 69.8872 5.05714C70.1598 4.94319 70.4914 4.84695 70.882 4.7686C71.2798 4.69016 71.7035 4.65103 72.1529 4.65103C73.1181 4.65103 73.8881 4.83978 74.4628 5.21747C75.0449 5.59516 75.4538 6.03695 75.6896 6.54284C76.1243 5.93717 76.688 5.47042 77.3805 5.14266C78.0732 4.8149 78.8432 4.65103 79.6904 4.65103C81.083 4.65103 82.1035 5.03226 82.7519 5.79463C83.4077 6.55709 83.7356 7.68653 83.7356 9.18294V16.6864H80.8288V10.0167C80.8288 8.86944 80.6962 8.04279 80.4309 7.53691C80.1731 7.02385 79.6757 6.76736 78.9389 6.76736C77.8116 6.76736 77.0011 7.259 76.5075 8.24235C76.3011 8.67706 76.1611 9.20074 76.0874 9.81358V16.6864H73.1918V9.88839C73.1918 8.84093 73.0481 8.06068 72.7608 7.54762C72.4734 7.03456 71.954 6.77799 71.2025 6.77799C70.5908 6.77799 70.0641 6.9277 69.622 7.22694C69.1798 7.52619 68.8446 7.91814 68.6162 8.40269C68.4467 9.12239 68.3621 9.98463 68.3621 10.9893V16.6864H65.4664ZM86.5982 21.571V4.93956H89.0846L89.3941 6.5856C89.7923 5.96568 90.3187 5.4883 90.9751 5.15337C91.6379 4.81136 92.3748 4.64031 93.185 4.64031C94.1801 4.64031 95.0525 4.90751 95.8041 5.44191C96.563 5.97639 97.1379 6.7068 97.5288 7.63314C97.9188 8.55231 98.1147 9.59268 98.1147 10.7542C98.1147 12.5713 97.6579 14.0534 96.7443 15.2007C95.838 16.3407 94.6076 16.9108 93.0522 16.9108C92.286 16.9108 91.5903 16.7647 90.9641 16.4725C90.3443 16.1733 89.8252 15.7706 89.405 15.2648C89.4645 16.2909 89.4938 16.868 89.4938 16.9963V21.4321L86.5982 21.571ZM92.4334 14.7731C93.2958 14.7731 93.9732 14.4239 94.4675 13.7256C94.9683 13.0273 95.2191 12.0297 95.2191 10.7328C95.2191 9.41455 94.9683 8.42402 94.4675 7.76134C93.9659 7.09866 93.2701 6.76736 92.3785 6.76736C90.4624 6.76736 89.4938 8.02863 89.4719 10.5511C89.4719 12.0047 89.7181 13.0736 90.2125 13.7576C90.7132 14.4346 91.4538 14.7731 92.4334 14.7731ZM104.359 16.9001C102.568 16.9001 101.135 16.6044 100.059 16.013L100.358 13.9073C100.845 14.1638 101.464 14.3954 102.215 14.6021C102.967 14.8015 103.651 14.9013 104.27 14.9013C104.911 14.9013 105.409 14.7874 105.763 14.5593C106.123 14.3242 106.308 13.9821 106.315 13.5332C106.315 13.1271 106.145 12.8064 105.806 12.5713C105.475 12.3361 104.838 12.0439 103.895 11.6948C103.571 11.5807 103.36 11.5059 103.265 11.4703C102.145 11.0499 101.338 10.5831 100.845 10.0701C100.35 9.54992 100.104 8.84802 100.104 7.96444C100.104 6.89556 100.501 6.07617 101.298 5.50609C102.101 4.93602 103.217 4.65103 104.647 4.65103C106.194 4.65103 107.553 4.93248 108.724 5.49538L108.006 7.43004C106.849 6.90981 105.748 6.64979 104.701 6.64979C104.119 6.64979 103.662 6.74594 103.331 6.93832C103.007 7.12362 102.845 7.40862 102.845 7.79348C102.845 8.15683 103.003 8.44191 103.32 8.64855C103.637 8.84802 104.256 9.11167 105.177 9.43952C105.206 9.4466 105.302 9.47865 105.464 9.53567C105.626 9.59268 105.752 9.63899 105.839 9.67467C106.953 10.0665 107.77 10.5368 108.294 11.0856C108.816 11.627 109.078 12.3361 109.078 13.2125C109.071 14.3883 108.658 15.2968 107.841 15.9381C107.022 16.5794 105.862 16.9001 104.359 16.9001ZM111.377 16.6864V0.610716L114.273 0.429007V3.81729C114.273 3.98117 114.262 4.43721 114.24 5.18542C114.218 5.92646 114.207 6.30415 114.207 6.3184C115.172 5.20676 116.468 4.65103 118.097 4.65103C119.452 4.65103 120.502 5.02863 121.247 5.78401C121.998 6.53221 122.374 7.68653 122.374 9.24704V16.6864H119.478V9.55709C119.478 8.59507 119.32 7.88963 119.003 7.44076C118.686 6.9918 118.148 6.76736 117.389 6.76736C116.741 6.76736 116.166 6.9277 115.665 7.24828C115.164 7.56187 114.788 7.96798 114.538 8.46679C114.361 9.12239 114.273 9.97745 114.273 11.0321V16.6864H111.377ZM128.441 16.9108C127.314 16.9108 126.401 16.6115 125.7 16.013C125.008 15.4073 124.661 14.538 124.661 13.4049C124.661 12.1865 125.074 11.285 125.899 10.7007C126.725 10.1093 127.97 9.73522 129.635 9.57843C129.864 9.54992 130.11 9.52141 130.376 9.4929C130.641 9.46439 130.94 9.43589 131.271 9.40738C131.602 9.37887 131.864 9.35399 132.055 9.33257V8.71265C132.055 8.00012 131.886 7.48343 131.547 7.16285C131.208 6.835 130.692 6.67112 129.999 6.67112C129.012 6.67112 127.793 6.93832 126.341 7.47281C126.334 7.45138 126.213 7.12717 125.977 6.50007C125.741 5.87307 125.62 5.5524 125.612 5.53814C127.042 4.94673 128.589 4.65103 130.254 4.65103C131.89 4.65103 133.08 4.99658 133.824 5.68777C134.568 6.37188 134.94 7.48343 134.94 9.02261V16.6864H132.796C132.789 16.6578 132.707 16.4192 132.553 15.9702C132.398 15.5212 132.321 15.2825 132.321 15.254C131.717 15.8241 131.124 16.2446 130.541 16.5153C129.966 16.779 129.267 16.9108 128.441 16.9108ZM129.226 14.9227C129.897 14.9227 130.479 14.7695 130.973 14.4631C131.473 14.1496 131.831 13.7719 132.045 13.3301V11.0641C132.023 11.0641 131.828 11.0784 131.459 11.1069C131.098 11.1354 130.902 11.1497 130.873 11.1497C129.702 11.2494 128.843 11.4632 128.298 11.791C127.753 12.1188 127.48 12.6461 127.48 13.3729C127.48 13.8717 127.631 14.2564 127.933 14.5273C128.235 14.7909 128.666 14.9227 129.226 14.9227ZM137.869 16.6864V4.93956H140.3L140.676 6.73522C141.472 5.50255 142.625 4.88617 144.136 4.88617C144.453 4.88617 144.71 4.90043 144.909 4.92894L144.865 7.26971C144.57 7.22694 144.264 7.20561 143.947 7.20561C142.879 7.20561 142.08 7.47989 141.549 8.02863C141.026 8.57728 140.764 9.33974 140.764 10.3159V16.6864H137.869ZM152.181 16.9108C150.229 16.9108 148.708 16.3692 147.617 15.2861C146.534 14.1959 145.992 12.6924 145.992 10.7755C145.992 8.90857 146.504 7.42287 147.529 6.3184C148.553 5.21393 149.949 4.65811 151.717 4.65103C153.389 4.65103 154.687 5.15691 155.608 6.16878C156.536 7.18064 157 8.5238 157 10.1983C157 10.3195 156.996 10.5155 156.989 10.7862C156.989 11.057 156.989 11.2565 156.989 11.3848H148.91C148.939 12.4822 149.249 13.3337 149.838 13.9394C150.435 14.538 151.253 14.8372 152.292 14.8372C153.618 14.8372 154.893 14.5023 156.116 13.8325L156.525 15.8206C155.309 16.5474 153.862 16.9108 152.181 16.9108ZM148.965 9.62119H154.27C154.27 8.66634 154.046 7.93239 153.596 7.41933C153.147 6.90627 152.524 6.64979 151.728 6.64979C150.984 6.64979 150.354 6.89919 149.838 7.39799C149.33 7.8968 149.039 8.63784 148.965 9.62119Z"
+												fill="white"
+											/>
+										</svg>
+									</div>
+									<button
+										type="button"
+										class="btn btn-border-default p-0 size-10 flex-shrink-0"
+									>
+										<svg class="icon icon-md">
+											<use href="#icon-trash-lite"></use>
+										</svg>
+										<span class="sr-only">Delete</span>
+									</button>
+								</div>
+								<strong class="text-sm font-medium mt-7 block">
+									Favicon (48x48px)
+								</strong>
+								<div class="relative mt-3.5 h-13.5">
+									<input
+										type="file"
+										class="size-full border border-gray-600 rounded-md border-dashed cursor-pointer appearance-none text-transparent"
+									/>
+									<span
+										class="flex items-center gap-2.5 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-sm pointer-events-none"
+									>
+										<svg class="icon icon-sm">
+											<use href="#upload"></use>
+										</svg>
+										Upload Favicon
+									</span>
+								</div>
+								<strong class="text-sm font-medium mt-7 block">
+									Link to your website
+								</strong>
+								<p class="text-sm text-gray-900 mt-2">
+									When visitors click your logo, they will be taken to the
+									following URL.
+								</p>
+								<div
+									class="w-full mt-4 flex items-center gap-3 relative text-dark-800/40"
 								>
-									Remove Domain
-								</button>
+									<svg
+										class="icon icon-sm absolute left-3.5 top-1/2 -translate-y-1/2"
+									>
+										<use href="#icon-link-2"></use>
+									</svg>
+									<input
+										type="text"
+										placeholder="domain.com"
+										class="form-control-settings flex-grow-1 pl-10"
+									/>
+									<button
+										type="button"
+										class="btn btn-primary-default h-10 px-5"
+									>
+										Update
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="mt-10">
+							<h3
+								class="text-lg text-dark-800 font-semibold flex items-center gap-x-3"
+							>
+								Customize Email Template
+								<svg class="icon icon-sm cursor-pointer">
+									<use href="#alert"></use>
+								</svg>
+							</h3>
+							<div class="bg-white border-gray-600 border rounded-xl p-6 mt-4">
+								<div class="flex flex-col gap-3">
+									<span class="text-sm">Email Theme</span>
+									<div class="dropdown-wrapper">
+										<button
+											type="button"
+											class="btn btn-border-default h-10 w-full justify-between"
+										>
+											<span class="flex items-center gap-2">
+												<span class="size-6 bg-[#FF4F22] rounded-md"></span>
+												<span class="text-sm font-normal">#D45F56</span>
+											</span>
+											<svg class="icon icon-sm">
+												<use href="#chevron-down"></use>
+											</svg>
+										</button>
+									</div>
+								</div>
+								<div class="flex flex-col gap-3 mt-8 relative">
+									<span class="text-sm">Email Footer Message</span>
+									<textarea
+										name="email-footer-message"
+										id="email-footer-message"
+										class="border border-gray-600 rounded-lg h-21.5 resize-none"
+									></textarea>
+									<span class="absolute bottom-2 right-3 text-xs text-gray-900">
+										110
+									</span>
+								</div>
+								<label class="custom-controls checkbox !gap-3 mt-4">
+									<input
+										type="checkbox"
+										name="file-viewed"
+										id="file-viewed"
+										value="1"
+										class=""
+									/>
+									<span class="custom-control-indicator"></span>
+									<span>Hide "Powered by Jumpshare" in the footer</span>
+								</label>
+								<div class="mt-6">
+									<button
+										type="button"
+										class="btn btn-primary-default px-5 h-10"
+									>
+										Update
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div class="mt-10">
-						<h3 class="text-lg text-dark-800 font-semibold">
-							Custom Domain for Email
-						</h3>
-						<div class="border border-gray-600 rounded-xl p-6 mt-4">
-							<strong class="text-sm font-semibold mb-2 block">
-								Custom Email
-							</strong>
-							<p class="text-gray-900 text-sm max-w-[37.5rem]">
-								By default, user emails are sent from "hello@jumpsharemail.com".
-								To send emails from a custom domain, please authenticate your
-								domain name.
-							</p>
-							<a href="#" class="block text-blue-500 mt-3 hover:underline">
-								Learn how to white label your emails →
-							</a>
-							<div class="max-w-[41rem] mt-4 flex flex-col gap-4 items-start">
-								<div class="grid grid-cols-2 w-full gap-4">
-									<div class="flex flex-col gap-2.5">
-										<label class="text-sm" for="name">Name</label>
-										<input
-											id="name"
-											type="text"
-											placeholder="Your name"
-											value="Jumpshare"
-											class="max-w-[25.1875rem] w-full bg-gray-150 text-dark-800 placeholder:text-dark-800/40 px-4 h-10 rounded-lg text-sm"
-											disabled
-										/>
-									</div>
-									<div class="flex flex-col gap-2.5">
-										<label class="text-sm" for="name">Email</label>
-										<input
-											id="mail"
-											type="text"
-											placeholder="mail@your-domain.com"
-											value="jumpshare.com"
-											class="max-w-[25.1875rem] w-full bg-gray-150 text-dark-800 placeholder:text-dark-800/40 px-4 h-10 rounded-lg text-sm"
-											disabled
-										/>
-									</div>
-								</div>
-							</div>
-							<div class="mt-7.5">
-								<div
-									class="grid grid-cols-[minmax(100px,220px)_minmax(100px,337px)_minmax(100px,205px)_minmax(100px,254px)] border-b border-gray-400 pb-2 gap-4"
-								>
-									<div class="flex items-center text-sm text-gray-900">
-										Type
-									</div>
-									<div class="flex items-center text-sm text-gray-900">
-										Name
-									</div>
-									<div class="flex items-center text-sm text-gray-900">
-										Value
-									</div>
-									<div
-										class="flex items-center justify-end text-sm text-gray-900 pr-11.5"
-									>
-										Status
-									</div>
-								</div>
-								<div
-									class="grid grid-cols-[minmax(100px,220px)_minmax(100px,337px)_minmax(100px,205px)_minmax(100px,254px)] border-b border-gray-400 py-[15px] gap-4"
-								>
-									<div class="flex items-center text-sm text-dark-800">TXT</div>
-									<div class="flex items-center text-sm text-dark-800 gap-3">
-										<span class="truncate max-w-[177px]">your-domain.com</span>
-										<button
-											type="button"
-											class="cursor-pointer text-dark-800/70"
-										>
-											<svg class="icon icon-sm">
-												<use href="#copy" />
-											</svg>
-											<span class="sr-only">Copy</span>
-										</button>
-									</div>
-									<div
-										class="flex items-center justify-between text-sm text-dark-800"
-									>
-										<span class="truncate max-w-[177px]">
-											v=spf1 include:sparkpostmail.com
-										</span>
-										<button
-											type="button"
-											class="cursor-pointer text-dark-800/70"
-										>
-											<svg class="icon icon-sm">
-												<use href="#copy" />
-											</svg>
-											<span class="sr-only">Copy</span>
-										</button>
-									</div>
-									<div
-										class="flex items-center justify-end gap-2 text-sm text-dark-800 pr-11.5"
-									>
-										<div class="w-[90px] flex justify-center">
-											<span class="tag-filled bg-green-20 font-sans">
-												Valid
-											</span>
-										</div>
-										<div class="flex justify-center w-10">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 20 20"
-												fill="none"
-												xmlns="http://www.w3.org/2000/svg"
-											>
-												<g clip-path="url(#clip0_12632_12375)">
-													<path
-														fill-rule="evenodd"
-														clip-rule="evenodd"
-														d="M0 10C0 7.34784 1.05357 4.8043 2.92893 2.92893C4.8043 1.05357 7.34784 0 10 0C12.6522 0 15.1957 1.05357 17.0711 2.92893C18.9464 4.8043 20 7.34784 20 10C20 12.6522 18.9464 15.1957 17.0711 17.0711C15.1957 18.9464 12.6522 20 10 20C7.34784 20 4.8043 18.9464 2.92893 17.0711C1.05357 15.1957 0 12.6522 0 10ZM9.42933 14.28L15.1867 7.08267L14.1467 6.25067L9.23733 12.3853L5.76 9.488L4.90667 10.512L9.42933 14.28Z"
-														fill="#429D17"
-													/>
-												</g>
-												<defs>
-													<clipPath id="clip0_12632_12375">
-														<rect width="20" height="20" fill="white" />
-													</clipPath>
-												</defs>
-											</svg>
-										</div>
-									</div>
-								</div>
-								<div
-									class="grid grid-cols-[minmax(100px,220px)_minmax(100px,337px)_minmax(100px,205px)_minmax(100px,254px)] border-b border-gray-400 py-[15px] gap-4"
-								>
-									<div class="flex items-center text-sm text-dark-800">TXT</div>
-									<div class="flex items-center text-sm text-dark-800 gap-3">
-										<span class="truncate max-w-[177px]">
-											scph123._domainkey.your-domain.com
-										</span>
-										<button
-											type="button"
-											class="cursor-pointer text-dark-800/70"
-										>
-											<svg class="icon icon-sm">
-												<use href="#copy" />
-											</svg>
-											<span class="sr-only">Copy</span>
-										</button>
-									</div>
-									<div
-										class="flex items-center justify-between text-sm text-dark-800"
-									>
-										<span class="truncate max-w-[177px]">
-											v=Dkim1; k=rsa; h=sha256; p=MIGhNB0FC
-										</span>
-										<button
-											type="button"
-											class="cursor-pointer text-dark-800/70"
-										>
-											<svg class="icon icon-sm">
-												<use href="#copy" />
-											</svg>
-											<span class="sr-only">Copy</span>
-										</button>
-									</div>
-									<div
-										class="flex items-center justify-end gap-2 text-sm text-dark-800 pr-11.5"
-									>
-										<div class="w-[90px] flex justify-center">
-											<span
-												class="tag-filled bg-orange-500/15 text-orange-500 font-sans"
-											>
-												Unverified
-											</span>
-										</div>
-										<div class="flex justify-center w-10">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 20 20"
-												fill="none"
-												xmlns="http://www.w3.org/2000/svg"
-											>
-												<g clip-path="url(#clip0_12632_12341)">
-													<path
-														d="M10 0C4.42857 0 0 4.42857 0 10C0 15.5714 4.42857 20 10 20C15.5714 20 20 15.5714 20 10C20 4.42857 15.5714 0 10 0ZM13.8571 15L10 11.1429L6.14286 15L5 13.8571L8.85714 10L5 6.14286L6.14286 5L10 8.85714L13.8571 5L15 6.14286L11.1429 10L15 13.8571L13.8571 15Z"
-														fill="#E61320"
-													/>
-												</g>
-												<defs>
-													<clipPath id="clip0_12632_12341">
-														<rect width="20" height="20" fill="white" />
-													</clipPath>
-												</defs>
-											</svg>
-										</div>
-									</div>
-								</div>
-								<div
-									class="grid grid-cols-[minmax(100px,220px)_minmax(100px,337px)_minmax(100px,205px)_minmax(100px,254px)] border-b border-gray-400 py-[15px] gap-4"
-								>
-									<div class="flex items-center text-sm text-dark-800">TXT</div>
-									<div class="flex items-center text-sm text-dark-800 gap-3">
-										<span class="truncate max-w-[177px]">
-											scph123._domainkey.your-domain.com
-										</span>
-										<button
-											type="button"
-											class="cursor-pointer text-dark-800/70"
-										>
-											<svg class="icon icon-sm">
-												<use href="#copy" />
-											</svg>
-											<span class="sr-only">Copy</span>
-										</button>
-									</div>
-									<div
-										class="flex items-center justify-between text-sm text-dark-800"
-									>
-										<span class="truncate max-w-[177px]">
-											sparkpostmail.com
-										</span>
-										<button
-											type="button"
-											class="cursor-pointer text-dark-800/70"
-										>
-											<svg class="icon icon-sm">
-												<use href="#copy" />
-											</svg>
-											<span class="sr-only">Copy</span>
-										</button>
-									</div>
-									<div
-										class="flex items-center justify-end gap-2 text-sm text-dark-800 pr-11.5"
-									>
-										<div class="w-[90px] flex justify-center">
-											<span
-												class="tag-filled bg-orange-500/15 text-orange-500 font-sans"
-											>
-												Unverified
-											</span>
-										</div>
-										<div class="flex justify-center w-10">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 20 20"
-												fill="none"
-												xmlns="http://www.w3.org/2000/svg"
-											>
-												<g clip-path="url(#clip0_12632_12341)">
-													<path
-														d="M10 0C4.42857 0 0 4.42857 0 10C0 15.5714 4.42857 20 10 20C15.5714 20 20 15.5714 20 10C20 4.42857 15.5714 0 10 0ZM13.8571 15L10 11.1429L6.14286 15L5 13.8571L8.85714 10L5 6.14286L6.14286 5L10 8.85714L13.8571 5L15 6.14286L11.1429 10L15 13.8571L13.8571 15Z"
-														fill="#E61320"
-													/>
-												</g>
-												<defs>
-													<clipPath id="clip0_12632_12341">
-														<rect width="20" height="20" fill="white" />
-													</clipPath>
-												</defs>
-											</svg>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="flex gap-2.5 flex-shrink-0 mt-7.5">
-								<button type="button" class="btn btn-primary-default px-5 h-10">
-									Refresh
-								</button>
-								<button type="button" class="btn btn-danger px-5 h-10">
-									Remove Domain
-								</button>
-							</div>
+					<div>
+						<strong class="text-sm font-semibold">Preview:</strong>
+						<div
+							class="w-full h-9.5 bg-gray-150 rounded-lg mt-4.5 grid grid-cols-3 p-1 relative"
+						>
+							<div
+								class="w-1/3 h-[calc(100%-0.5rem)] top-1 left-1 bg-white rounded-lg absolute z-0"
+							></div>
+							<span
+								class="flex items-center justify-center cursor-pointer relative z-1 text-sm font-medium"
+							>
+								File Viewer
+							</span>
+							<span
+								class="flex items-center justify-center cursor-pointer relative z-1 text-sm"
+							>
+								Folder
+							</span>
+							<span
+								class="flex items-center justify-center cursor-pointer relative z-1 text-sm"
+							>
+								Email
+							</span>
+						</div>
+						<div
+							class="w-full h-64 border border-gray-150 mt-4 rounded-xl bg-[#B1B1B1]/15 relative overflow-hidden"
+						>
+							<img
+								src="./assets/images/settings/preview-title.png"
+								class="lazy-image h-full w-full object-contain absolute right-0 top-0"
+								data-src="./assets/images/settings/preview-title.png"
+								loading="lazy"
+								data-srcset="./assets/images/settings/preview-title.png 1x, ./assets/images/settings/preview-title-2x.png 2x"
+								alt="Title"
+							/>
 						</div>
 					</div>
 				</div>

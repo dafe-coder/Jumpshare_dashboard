@@ -739,14 +739,6 @@ ul.who-can-access {
 	}
 }
 
-.avatar {
-	@apply size-8 rounded-full bg-blue-950/10 flex items-center justify-center flex-shrink-0;
-
-	img {
-		@apply size-full object-cover;
-	}
-}
-
 .privacy-settings-wrapper {
 	@apply relative;
 

@@ -260,4 +260,16 @@
 			}
 		}
 	}
+
+	.form-control-settings {
+		@apply border border-gray-600 px-4 h-10 text-sm text-dark-800 rounded-lg active:border-blue-500 focus-visible:border-blue-500 outline-0 disabled:bg-gray-150 disabled:border-none disabled:text-dark-800/60;
+	}
+
+	.avatar {
+		@apply size-8 rounded-full bg-blue-950/10 flex items-center justify-center flex-shrink-0 overflow-hidden;
+
+		img {
+			@apply size-full object-cover;
+		}
+	}
 }
