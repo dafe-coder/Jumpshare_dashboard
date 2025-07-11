@@ -128,6 +128,26 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="stylesheet" href="./dist/output.css" />
+		<link
+			rel="preload"
+			as="image"
+			href="./assets/images/settings/preview-summary.png"
+		/>
+		<link
+			rel="preload"
+			as="image"
+			href="./assets/images/settings/preview-summary-2x.png"
+		/>
+		<link
+			rel="preload"
+			as="image"
+			href="./assets/images/settings/preview-chapters.png"
+		/>
+		<link
+			rel="preload"
+			as="image"
+			href="./assets/images/settings/preview-chapters-2x.png"
+		/>
 	</head>
 	<body class="drag-and-drop">
 		<div
@@ -742,7 +762,12 @@
 							</div>
 							<div class="ml-auto flex-shrink-0">
 								<label class="custom-controls switcher">
-									<span class="switcher-label">Enabled</span>
+									<span
+										class="switcher-label"
+										data-switcher-label-on="Enabled"
+										data-switcher-label-off="Disabled"
+										>Enabled</span
+									>
 									<input type="checkbox" name="" id="show-comments3" checked />
 									<span class="custom-control-indicator"></span>
 								</label>
@@ -760,7 +785,12 @@
 							</div>
 							<div class="ml-auto flex-shrink-0">
 								<label class="custom-controls switcher">
-									<span class="switcher-label">Enabled</span>
+									<span
+										class="switcher-label"
+										data-switcher-label-on="Enabled"
+										data-switcher-label-off="Disabled"
+										>Enabled</span
+									>
 									<input type="checkbox" name="" id="show-comments2" checked />
 									<span class="custom-control-indicator"></span>
 								</label>
@@ -780,7 +810,12 @@
 							</div>
 							<div class="ml-auto flex-shrink-0">
 								<label class="custom-controls switcher">
-									<span class="switcher-label">Enabled</span>
+									<span
+										class="switcher-label"
+										data-switcher-label-on="Enabled"
+										data-switcher-label-off="Disabled"
+										>Enabled</span
+									>
 									<input type="checkbox" name="" id="show-comments1" checked />
 									<span class="custom-control-indicator"></span>
 								</label>
@@ -788,39 +823,69 @@
 						</div>
 					</div>
 					<div>
-						<strong class="text-sm font-semibold">Preview:</strong>
+						<strong class="text-sm font-medium">Preview:</strong>
 						<div
 							class="w-full h-9.5 bg-gray-150 rounded-lg mt-4.5 grid grid-cols-3 p-1 relative"
 						>
 							<div
-								class="w-1/3 h-[calc(100%-0.5rem)] top-1 left-1 bg-white rounded-lg absolute z-0"
+								class="settings-tab-slider w-1/3 h-[calc(100%-0.5rem)] top-1 left-1 bg-white rounded-lg absolute z-0"
 							></div>
 							<span
+								data-settings-tab-id="preview-title"
 								class="flex items-center justify-center cursor-pointer relative z-1 text-sm font-medium"
 							>
 								Title
 							</span>
 							<span
+								data-settings-tab-id="preview-summary"
 								class="flex items-center justify-center cursor-pointer relative z-1 text-sm"
 							>
 								Summary
 							</span>
 							<span
+								data-settings-tab-id="preview-chapters"
 								class="flex items-center justify-center cursor-pointer relative z-1 text-sm"
 							>
 								Chapters
 							</span>
 						</div>
 						<div
+							data-settings-tab-content="preview-title"
 							class="w-full h-64 border border-gray-150 mt-4 rounded-xl bg-[#B1B1B1]/15 relative overflow-hidden"
 						>
 							<img
 								src="./assets/images/settings/preview-title.png"
-								class="lazy-image h-full w-full object-contain absolute right-0 top-0"
+								class="lazy-image h-full w-full object-contain absolute right-0 top-0 object-right"
 								data-src="./assets/images/settings/preview-title.png"
 								loading="lazy"
 								data-srcset="./assets/images/settings/preview-title.png 1x, ./assets/images/settings/preview-title-2x.png 2x"
 								alt="Title"
+							/>
+						</div>
+						<div
+							data-settings-tab-content="preview-summary"
+							class="hidden w-full h-64 border border-gray-150 mt-4 rounded-xl bg-[#B1B1B1]/15 relative overflow-hidden"
+						>
+							<img
+								src="./assets/images/settings/preview-summary.png"
+								class="lazy-image h-full w-full object-contain absolute right-0 top-0 object-right"
+								data-src="./assets/images/settings/preview-summary.png"
+								loading="lazy"
+								data-srcset="./assets/images/settings/preview-summary.png 1x, ./assets/images/settings/preview-summary-2x.png 2x"
+								alt="Summary"
+							/>
+						</div>
+						<div
+							data-settings-tab-content="preview-chapters"
+							class="hidden w-full h-64 border border-gray-150 mt-4 rounded-xl bg-[#B1B1B1]/15 relative overflow-hidden"
+						>
+							<img
+								src="./assets/images/settings/preview-chapters.png"
+								class="lazy-image h-full w-full object-contain absolute right-0 top-0 object-right"
+								data-src="./assets/images/settings/preview-chapters.png"
+								loading="lazy"
+								data-srcset="./assets/images/settings/preview-chapters.png 1x, ./assets/images/settings/preview-chapters-2x.png 2x"
+								alt="Chapters"
 							/>
 						</div>
 					</div>
