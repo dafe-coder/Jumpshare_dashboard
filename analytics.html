@@ -130,7 +130,10 @@
 		<link rel="stylesheet" href="./dist/output.css" />
 	</head>
 	<body class="drag-and-drop">
-		<div id="progress-bar" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-blue-500/10 transform scale-x-0 origin-left transition-transform duration-300 ease-out z-99999"></div>
+		<div
+			id="progress-bar"
+			class="fixed top-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-blue-500/10 transform scale-x-0 origin-left transition-transform duration-300 ease-out z-99999"
+		></div>
 		<div
 			id="upload-files-modal"
 			class="hidden fixed inset-0 bg-blue-1000/70 z-999 justify-center items-center [&.active]:flex backdrop-blur-xs"
@@ -151,181 +154,270 @@
 			</div>
 		</div>
 		<div class="w-full min-h-screen">
-			<aside class="w-[240px] fixed left-0 top-0 bottom-0 flex flex-col h-[calc(100vh-var(--browser-ui-height,0px))] z-101 max-lg:-left-full max-lg:top-0 max-lg:w-full transition-all duration-500 ease-in-out [&.active]:left-0">
-				<div class="mobile-menu-overlay absolute bg-[#090B13]/50 z-0 opacity-0 w-0 h-[calc(100vh-var(--browser-ui-height,0px))] lg:hidden [.active_&]:opacity-100 [.active_&]:w-screen transition-all duration-500 ease-in-out delay-75"></div>
-				<div class='flex flex-col max-lg:w-[318px] max-lg:max-w-[318px] max-xs:w-[85%]! w-full bg-gray-150 max-lg:rounded-r-2xl z-3 h-full'>
-					<div class='dropdown-wrapper z-4 max-md:border-b border-gray-400'>
-						<a href='#' data-id='dropdown-workspaces' class='dropdown-button p-4 flex items-center justify-between relative [&.active]:bg-gray-300 transition-colors duration-300 max-lg:rounded-t-2xl'>
-							<div class='flex items-center'>
+			<aside
+				class="w-[240px] fixed left-0 top-0 bottom-0 flex flex-col h-[calc(100vh-var(--browser-ui-height,0px))] z-101 max-lg:-left-full max-lg:top-0 max-lg:w-full transition-all duration-500 ease-in-out [&.active]:left-0"
+			>
+				<div
+					class="mobile-menu-overlay absolute bg-[#090B13]/50 z-0 opacity-0 w-0 h-[calc(100vh-var(--browser-ui-height,0px))] lg:hidden [.active_&]:opacity-100 [.active_&]:w-screen transition-all duration-500 ease-in-out delay-75"
+				></div>
+				<div
+					class="flex flex-col max-lg:w-[318px] max-lg:max-w-[318px] max-xs:w-[85%]! w-full bg-gray-150 max-lg:rounded-r-2xl z-3 h-full"
+				>
+					<div class="dropdown-wrapper z-4 max-md:border-b border-gray-400">
+						<a
+							href="#"
+							data-id="dropdown-workspaces"
+							class="dropdown-button p-4 flex items-center justify-between relative [&.active]:bg-gray-300 transition-colors duration-300 max-lg:rounded-t-2xl"
+						>
+							<div class="flex items-center">
 								<div class="flex items-center justify-between mr-3">
-									<div class='flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white'>
-										<span class='font-semibold text-base text-blue-500'>S</span>
+									<div
+										class="flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white"
+									>
+										<span class="font-semibold text-base text-blue-500">S</span>
 									</div>
 								</div>
-								<div class='mr-1.5'>
-									<h3 class='text-sm font-semibold text-black'>Startup Co</h3>
-									<ul class='flex items-center text-xs text-dark-800/70 gap-3 text-nowrap'>
-										<li class='relative'>
+								<div class="mr-1.5">
+									<h3 class="text-sm font-semibold text-black">Startup Co</h3>
+									<ul
+										class="flex items-center text-xs text-dark-800/70 gap-3 text-nowrap"
+									>
+										<li class="relative">
 											Enterprise
-											<span class='absolute top-1/2 -translate-y-1/2 -right-[7.5px]  size-[2px] rounded-full bg-blue-900/70'></span>
+											<span
+												class="absolute top-1/2 -translate-y-1/2 -right-[7.5px] size-[2px] rounded-full bg-blue-900/70"
+											></span>
 										</li>
-										<li class='relative'>
+										<li class="relative">
 											<span>23</span>
 											Members
 										</li>
 									</ul>
 								</div>
 							</div>
-							<svg class='icon icon-xs flex-shrink-0'>
-								<use href='#check-bottom'></use>
+							<svg class="icon icon-xs flex-shrink-0">
+								<use href="#check-bottom"></use>
 							</svg>
 						</a>
-						<div class='js-dropdown hidden w-[16.875rem] top-full left-3' data-dropdown-id='dropdown-workspaces' data-sheet-modal>
-							<div class='js-dropdown-overlay'></div>
-							<div class='js-dropdown-body'>
-								<div class='js-dropdown-trigger'>
+						<div
+							class="js-dropdown hidden w-[16.875rem] top-full left-3"
+							data-dropdown-id="dropdown-workspaces"
+							data-sheet-modal
+						>
+							<div class="js-dropdown-overlay"></div>
+							<div class="js-dropdown-body">
+								<div class="js-dropdown-trigger">
 									<span></span>
 								</div>
-								<div class='js-dropdown-content lg:px-2 pb-4 lg:pt-4 max-lg:px-4'>
-									<div class='flex items-center justify-between px-1.5'>
-										<p class='text-sm text-dark-800 font-normal'>Workspaces</p>
-										<span class='text-sm text-blue-500 font-medium hover:underline underline-offset-1 cursor-pointer'>+ Add Workspace</span>
+								<div
+									class="js-dropdown-content lg:px-2 pb-4 lg:pt-4 max-lg:px-4"
+								>
+									<div class="flex items-center justify-between px-1.5">
+										<p class="text-sm text-dark-800 font-normal">Workspaces</p>
+										<span
+											class="text-sm text-blue-500 font-medium hover:underline underline-offset-1 cursor-pointer"
+											>+ Add Workspace</span
+										>
 									</div>
-									<div class='flex flex-col gap-y-1 mt-3'>
-										<div class='active-workspace flex items-center gap-x-3 cursor-pointer rounded-md hover:bg-gray-150 [&.active-workspace]:bg-gray-150 px-2 py-2.5'>
-											<div class='flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white'>
-												<span class='font-semibold text-base text-blue-500'>S</span>
+									<div class="flex flex-col gap-y-1 mt-3">
+										<div
+											class="active-workspace flex items-center gap-x-3 cursor-pointer rounded-md hover:bg-gray-150 [&.active-workspace]:bg-gray-150 px-2 py-2.5"
+										>
+											<div
+												class="flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white"
+											>
+												<span class="font-semibold text-base text-blue-500"
+													>S</span
+												>
 											</div>
-											<div class='flex flex-col'>
-												<p class='text-sm text-dark-800 font-medium'>Startup Co</p>
-												<ul class='flex items-center text-xs text-dark-800/70 gap-3 text-nowrap'>
-													<li class='relative'>Enterprise
-														<span class='absolute top-1/2 -translate-y-1/2 -right-[7.5px]  size-[2px] rounded-full bg-blue-900/70'></span>
+											<div class="flex flex-col">
+												<p class="text-sm text-dark-800 font-medium">
+													Startup Co
+												</p>
+												<ul
+													class="flex items-center text-xs text-dark-800/70 gap-3 text-nowrap"
+												>
+													<li class="relative">
+														Enterprise
+														<span
+															class="absolute top-1/2 -translate-y-1/2 -right-[7.5px] size-[2px] rounded-full bg-blue-900/70"
+														></span>
 													</li>
-													<li class='relative'>23 Members</li>
+													<li class="relative">23 Members</li>
 												</ul>
 											</div>
-											<span class='hidden text-blue-500 shrink-0 ml-auto [.active-workspace_&]:block'>
-												<svg class='icon icon-md'>
-													<use href='#check'></use>
+											<span
+												class="hidden text-blue-500 shrink-0 ml-auto [.active-workspace_&]:block"
+											>
+												<svg class="icon icon-md">
+													<use href="#check"></use>
 												</svg>
 											</span>
 										</div>
-										<div class='flex items-center gap-x-3 cursor-pointer rounded-md hover:bg-gray-150 [&.active-workspace]:bg-gray-150 px-2 py-2.5'>
-											<div class='flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white '>
-												<span class='font-semibold text-base text-blue-500'>N</span>
+										<div
+											class="flex items-center gap-x-3 cursor-pointer rounded-md hover:bg-gray-150 [&.active-workspace]:bg-gray-150 px-2 py-2.5"
+										>
+											<div
+												class="flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white"
+											>
+												<span class="font-semibold text-base text-blue-500"
+													>N</span
+												>
 											</div>
-											<div class='flex flex-col'>
-												<p class='text-sm text-dark-800 font-medium'>Neo Tools</p>
-												<ul class='flex items-center text-xs text-dark-800/70 gap-3 text-nowrap'>
-													<li class='relative'>Free
-														<span class='absolute top-1/2 -translate-y-1/2 -right-[7.5px]  size-[2px] rounded-full bg-blue-900/70'></span>
+											<div class="flex flex-col">
+												<p class="text-sm text-dark-800 font-medium">
+													Neo Tools
+												</p>
+												<ul
+													class="flex items-center text-xs text-dark-800/70 gap-3 text-nowrap"
+												>
+													<li class="relative">
+														Free
+														<span
+															class="absolute top-1/2 -translate-y-1/2 -right-[7.5px] size-[2px] rounded-full bg-blue-900/70"
+														></span>
 													</li>
-													<li class='relative'>1 Member</li>
+													<li class="relative">1 Member</li>
 												</ul>
 											</div>
-											<span class='hidden text-blue-500 shrink-0 ml-auto [.active-workspace_&]:block'>
-												<svg class='icon icon-md'>
-													<use href='#check'></use>
+											<span
+												class="hidden text-blue-500 shrink-0 ml-auto [.active-workspace_&]:block"
+											>
+												<svg class="icon icon-md">
+													<use href="#check"></use>
 												</svg>
 											</span>
 										</div>
 									</div>
-									<div class='mt-3 flex flex-col gap-y-2 px-1.5'>
+									<div class="mt-3 flex flex-col gap-y-2 px-1.5">
 										<button
 											type="button"
 											class="btn btn-primary-default rounded-lg"
 										>
-											<svg class='icon icon-sm'>
-												<use href='#members-medium'></use>
+											<svg class="icon icon-sm">
+												<use href="#members-medium"></use>
 											</svg>
-											<span>
-												Invite Teammates
-											</span>
+											<span> Invite Teammates </span>
 										</button>
-										<button class='btn btn-border-default rounded-lg font-normal'>Set Default Workspace</button>
+										<button
+											class="btn btn-border-default rounded-lg font-normal"
+										>
+											Set Default Workspace
+										</button>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="flex flex-col h-full overflow-y-auto px-4 pb-4">
-						<nav class='flex flex-col mt-5 mb-5'>
-							<p class='text-s text-dark-800/60 font-medium'>Libraries</p>
-							<ul class='flex flex-col mt-2'>
+						<nav class="flex flex-col mt-5 mb-5">
+							<p class="text-s text-dark-800/60 font-medium">Libraries</p>
+							<ul class="flex flex-col mt-2">
 								<li>
-									<a href='./index.html' class='flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500'>
-										<svg class='icon icon-sm'>
-											<use href='#home-medium'></use>
+									<a
+										href="./index.html"
+										class="flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500"
+									>
+										<svg class="icon icon-sm">
+											<use href="#home-medium"></use>
 										</svg>
 										Personal
 									</a>
 								</li>
 								<li>
-									<a href='./shared.html' class='flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500'>
-										<svg class='icon icon-sm'>
-											<use href='#members-medium'></use>
+									<a
+										href="./shared.html"
+										class="flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500"
+									>
+										<svg class="icon icon-sm">
+											<use href="#members-medium"></use>
 										</svg>
 										Shared
 									</a>
 								</li>
 								<li>
-									<a href='./team.html' class='flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500'>
-										<svg class='icon icon-sm'>
-											<use href='#team-medium'></use>
+									<a
+										href="./team.html"
+										class="flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500"
+									>
+										<svg class="icon icon-sm">
+											<use href="#team-medium"></use>
 										</svg>
 										Team
 									</a>
 								</li>
 							</ul>
-							<ul class='flex flex-col mt-5'>
+							<ul class="flex flex-col mt-5">
 								<li>
-									<a href='./favorites.html' class='flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500'>
-										<svg class='icon icon-sm' stroke-width='6'>
-											<use href='#star-medium'></use>
+									<a
+										href="./favorites.html"
+										class="flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500"
+									>
+										<svg class="icon icon-sm" stroke-width="6">
+											<use href="#star-medium"></use>
 										</svg>
 										Favorites
 									</a>
 								</li>
 								<li>
-									<a href='./analytics.html' class='active flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500'>
-										<svg class='icon icon-sm'>
-											<use href='#analytics-medium'></use>
+									<a
+										href="./analytics.html"
+										class="active flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500"
+									>
+										<svg class="icon icon-sm">
+											<use href="#analytics-medium"></use>
 										</svg>
 										Analytics
 									</a>
 								</li>
 								<li>
-									<a href='./inbox.html' class='flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500'>
-										<svg class='icon icon-sm'>
-											<use href='#inbox-medium'></use>
+									<a
+										href="./inbox.html"
+										class="flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500"
+									>
+										<svg class="icon icon-sm">
+											<use href="#inbox-medium"></use>
 										</svg>
 										Inbox
 									</a>
 								</li>
 								<li>
-									<a href='./trash.html' class='flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500'>
-										<svg class='icon icon-sm'>
-											<use href='#trash-medium'></use>
+									<a
+										href="./trash.html"
+										class="flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500"
+									>
+										<svg class="icon icon-sm">
+											<use href="#trash-medium"></use>
 										</svg>
 										Trash
 									</a>
 								</li>
 								<li>
-									<a href='./settings.html' class='flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500'>
-										<svg class='icon icon-sm'>
-											<use href='#cog-medium'></use>
+									<a
+										href="./settings.html"
+										class="flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500"
+									>
+										<svg class="icon icon-sm">
+											<use href="#cog-medium"></use>
 										</svg>
 										Settings
 									</a>
 								</li>
 							</ul>
 						</nav>
-						<div class='mt-auto bg-white border-gray-400 border rounded-lg px-5 py-3.5'>
-							<p class='text-center text-sm font-normal text-dark-800/60 mb-2.5 max-w-[12.125rem] mx-auto'>Teams that communicate better, grow faster</p>
-							<button class='btn btn-border-default m-0 w-full text-sm justify-center text-center text-dark-800/80 h-8'>
-								<svg class='icon icon-sm'>
-									<use href='#members-semibold'></use>
+						<div
+							class="mt-auto bg-white border-gray-400 border rounded-lg px-5 py-3.5"
+						>
+							<p
+								class="text-center text-sm font-normal text-dark-800/60 mb-2.5 max-w-[12.125rem] mx-auto"
+							>
+								Teams that communicate better, grow faster
+							</p>
+							<button
+								class="btn btn-border-default m-0 w-full text-sm justify-center text-center text-dark-800/80 h-8"
+							>
+								<svg class="icon icon-sm">
+									<use href="#members-semibold"></use>
 								</svg>
 								Invite members
 							</button>
@@ -334,163 +426,325 @@
 				</div>
 			</aside>
 			<main class="relative max-lg:w-full lg:ml-[240px]">
-				<header class='pt-2.5 sticky top-0 z-51 bg-white transition-all duration-300'>
+				<header
+					class="pt-2.5 sticky top-0 z-51 bg-white transition-all duration-300"
+				>
 					<div class="dashboard-container">
-						<div class='w-full flex items-center justify-between max-md:bg-gray-150 max-md:rounded-lg'>
-							<form action='#' class='max-w-[44.75rem] h-[2.5625rem] w-full bg-gray-150 rounded-lg relative max-md:h-12'>
-								<button class="hamburger hamburger--squeeze flex lg:hidden! absolute left-0 top-1/2 -translate-y-1/2" type="button">
+						<div
+							class="w-full flex items-center justify-between max-md:bg-gray-150 max-md:rounded-lg"
+						>
+							<form
+								action="#"
+								class="max-w-[44.75rem] h-[2.5625rem] w-full bg-gray-150 rounded-lg relative max-md:h-12"
+							>
+								<button
+									class="hamburger hamburger--squeeze flex lg:hidden! absolute left-0 top-1/2 -translate-y-1/2"
+									type="button"
+								>
 									<span class="hamburger-box">
-									  <span class="hamburger-inner"></span>
+										<span class="hamburger-inner"></span>
 									</span>
-								  </button>
-								<button type='submit' class='hidden lg:block absolute left-3.5 top-1/2 -translate-y-1/2 cursor-pointer transition-transform transform-gpu hover:scale-105 origin-center text-dark-800'>
-									<svg class='icon icon-xs'>
-										<use href='#search'></use>
+								</button>
+								<button
+									type="submit"
+									class="hidden lg:block absolute left-3.5 top-1/2 -translate-y-1/2 cursor-pointer transition-transform transform-gpu hover:scale-105 origin-center text-dark-800"
+								>
+									<svg class="icon icon-xs">
+										<use href="#search"></use>
 									</svg>
 								</button>
-								<input required type="text" class='size-full rounded-lg pl-10 pr-4 text-sm max-lg:pl-13' 
-								data-mobile-placeholder='Search for files...' placeholder='Search for people, Files, folder & spaces'>
+								<input
+									required
+									type="text"
+									class="size-full rounded-lg pl-10 pr-4 text-sm max-lg:pl-13"
+									data-mobile-placeholder="Search for files..."
+									placeholder="Search for people, Files, folder & spaces"
+								/>
 							</form>
-							<div class='flex items-center gap-4'>
-								<div class='dropdown-wrapper'>
-									<a data-id="dropdown-notifications"  href="#" class='dropdown-button size-12 flex justify-center items-center transition-colors hover:bg-gray-150 rounded-lg relative [&.active]:bg-gray-150 cursor-pointer'>
-										<svg class='icon w-[1.125rem] h-5'>
-											<use href='#bell'></use>
+							<div class="flex items-center gap-4">
+								<div class="dropdown-wrapper">
+									<a
+										data-id="dropdown-notifications"
+										href="#"
+										class="dropdown-button size-12 flex justify-center items-center transition-colors hover:bg-gray-150 rounded-lg relative [&.active]:bg-gray-150 cursor-pointer"
+									>
+										<svg class="icon w-[1.125rem] h-5">
+											<use href="#bell"></use>
 										</svg>
-										<span class='absolute top-2 left-[1.312rem] z-1 bg-red-500 rounded-full border-2 border-white flex justify-center items-center h-4.5 min-w-4.5 px-1 text-[11px] text-white text-center font-medium text-nowrap'>9+</span>
+										<span
+											class="absolute top-[7px] left-[1.39rem] z-1 bg-red-500 rounded-full border-1 border-white flex justify-center items-center h-4.5 min-w-4.5 px-1 text-[11px] text-white text-center font-medium text-nowrap"
+											>9+</span
+										>
 									</a>
-									<div class='js-dropdown hidden w-[28.125rem]' data-dropdown-id='dropdown-notifications' data-sheet-modal>
-										<div class='js-dropdown-overlay'></div>
-										<div class='js-dropdown-body'>
-											<div class='js-dropdown-trigger'>
+									<div
+										class="js-dropdown hidden w-[28.125rem]"
+										data-dropdown-id="dropdown-notifications"
+										data-sheet-modal
+									>
+										<div class="js-dropdown-overlay"></div>
+										<div class="js-dropdown-body">
+											<div class="js-dropdown-trigger">
 												<span></span>
 											</div>
-											<div class='js-dropdown-content lg:pt-0 lg:max-h-[580px] lg:overflow-y-auto px-0 pb-0 lg:h-[85vh]'>
-												<div class='flex justify-between items-center px-6 sticky top-0 -mt-1 bg-white lg:rounded-t-lg z-1 lg:pt-4 pb-3 border-b border-gray-400'>
-													<p class='text-base font-semibold text-dark-800'>Notifications</p>
-													<a href='./activity-center.html' class='text-sm text-blue-500 font-medium'>View All →</a>
+											<div
+												class="js-dropdown-content lg:pt-0 lg:max-h-[580px] lg:overflow-y-auto px-0 pb-0 lg:h-[85vh]"
+											>
+												<div
+													class="flex justify-between items-center px-6 sticky top-0 -mt-1 bg-white lg:rounded-t-lg z-1 lg:pt-4 pb-3 border-b border-gray-400"
+												>
+													<p class="text-base font-semibold text-dark-800">
+														Notifications
+													</p>
+													<a
+														href="./activity-center.html"
+														class="text-sm text-blue-500 font-medium"
+														>View All →</a
+													>
 												</div>
 												<ul>
 													<li>
-														<a href="#" class='flex gap-3 items-start px-6 py-4 hover:bg-gray-150'>
-															<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
-																<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+														<a
+															href="#"
+															class="flex gap-3 items-start px-6 py-4 hover:bg-gray-150"
+														>
+															<div
+																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
+															>
+																<img
+																	class="rounded-full object-cover size-full"
+																	src="./assets/images/avatar.png"
+																	alt="Avatar"
+																/>
 															</div>
 															<div>
-																<p class='text-sm'>
-																	Someone viewed <strong> Speaker Notes Hover Effect.mp4 </strong> for the first time
+																<p class="text-sm">
+																	Someone viewed
+																	<strong>
+																		Speaker Notes Hover Effect.mp4
+																	</strong>
+																	for the first time
 																</p>
-																<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
+																<div
+																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
+																>
 																	<span>Feb 6, 2025</span>
-																	<span 		class='relative after:content-[""] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5 '>11:41 pm</span>
+																	<span
+																		class="relative after:content-[&quot;&quot;] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5"
+																		>11:41 pm</span
+																	>
 																</div>
 															</div>
 														</a>
 													</li>
-													<li class='unread'>
-														<a href="#" class='flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150'>
-															<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
-																<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+													<li class="unread">
+														<a
+															href="#"
+															class="flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150"
+														>
+															<div
+																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
+															>
+																<img
+																	class="rounded-full object-cover size-full"
+																	src="./assets/images/avatar.png"
+																	alt="Avatar"
+																/>
 															</div>
 															<div>
-																<p class='text-sm'>
-																	Team Member moved Feb 3 - Technical Development Updates and Feature Planning.mp4 and 1 more items from folder Team Meetings to folder 2025
+																<p class="text-sm">
+																	Team Member moved Feb 3 - Technical
+																	Development Updates and Feature Planning.mp4
+																	and 1 more items from folder Team Meetings to
+																	folder 2025
 																</p>
-																<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
+																<div
+																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
+																>
 																	<span>Feb 6, 2025</span>
-																	<span class='relative after:content-[""] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5 '>11:41 pm</span>
-																</div>
-															</div>
-														</a>
-													</li>
-													<li>
-														<a href="#" class='flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150'>
-															<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
-																<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
-															</div>
-															<div>
-																<p class='text-sm'>
-																	You received _+8= +3 -5 +10 (1) HW.pdf in your Team Inbox test-zapeir-update from qweqw eqw (eqwe@asd.we)
-																</p>
-																<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
-																	<span>Feb 6, 2025</span>
-																</div>
-															</div>
-														</a>
-													</li>
-													<li>
-														<a href="#" class='flex gap-3 items-start px-6 py-4 hover:bg-gray-150'>
-															<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
-																<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
-															</div>
-															<div>
-																<p class='text-sm'>
-																	Someone viewed <strong> Speaker Notes Hover Effect.mp4 </strong> for the first time
-																</p>
-																<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
-																	<span>Feb 6, 2025</span>
-																	<span 		class='relative after:content-[""] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5 '>11:41 pm</span>
-																</div>
-															</div>
-														</a>
-													</li>
-													<li class='unread'>
-														<a href="#" class='flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150'>
-															<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
-																<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
-															</div>
-															<div>
-																<p class='text-sm'>
-																	Team Member moved Feb 3 - Technical Development Updates and Feature Planning.mp4 and 1 more items from folder Team Meetings to folder 2025
-																</p>
-																<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
-																	<span>Feb 6, 2025</span>
-																	<span class='relative after:content-[""] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5 '>11:41 pm</span>
+																	<span
+																		class="relative after:content-[&quot;&quot;] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5"
+																		>11:41 pm</span
+																	>
 																</div>
 															</div>
 														</a>
 													</li>
 													<li>
-														<a href="#" class='flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150'>
-															<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
-																<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+														<a
+															href="#"
+															class="flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150"
+														>
+															<div
+																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
+															>
+																<img
+																	class="rounded-full object-cover size-full"
+																	src="./assets/images/avatar.png"
+																	alt="Avatar"
+																/>
 															</div>
 															<div>
-																<p class='text-sm'>
-																	You received _+8= +3 -5 +10 (1) HW.pdf in your Team Inbox test-zapeir-update from qweqw eqw (eqwe@asd.we)
+																<p class="text-sm">
+																	You received _+8= +3 -5 +10 (1) HW.pdf in your
+																	Team Inbox test-zapeir-update from qweqw eqw
+																	(eqwe@asd.we)
 																</p>
-																<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
+																<div
+																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
+																>
 																	<span>Feb 6, 2025</span>
 																</div>
 															</div>
 														</a>
 													</li>
 													<li>
-														<a href="#" class='flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150'>
-															<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
-																<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+														<a
+															href="#"
+															class="flex gap-3 items-start px-6 py-4 hover:bg-gray-150"
+														>
+															<div
+																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
+															>
+																<img
+																	class="rounded-full object-cover size-full"
+																	src="./assets/images/avatar.png"
+																	alt="Avatar"
+																/>
 															</div>
 															<div>
-																<p class='text-sm'>
-																	John Dalton added JumpshareInstaller 3.4.5 - 3.exe  to folder 3.4.5
+																<p class="text-sm">
+																	Someone viewed
+																	<strong>
+																		Speaker Notes Hover Effect.mp4
+																	</strong>
+																	for the first time
 																</p>
-																<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
+																<div
+																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
+																>
+																	<span>Feb 6, 2025</span>
+																	<span
+																		class="relative after:content-[&quot;&quot;] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5"
+																		>11:41 pm</span
+																	>
+																</div>
+															</div>
+														</a>
+													</li>
+													<li class="unread">
+														<a
+															href="#"
+															class="flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150"
+														>
+															<div
+																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
+															>
+																<img
+																	class="rounded-full object-cover size-full"
+																	src="./assets/images/avatar.png"
+																	alt="Avatar"
+																/>
+															</div>
+															<div>
+																<p class="text-sm">
+																	Team Member moved Feb 3 - Technical
+																	Development Updates and Feature Planning.mp4
+																	and 1 more items from folder Team Meetings to
+																	folder 2025
+																</p>
+																<div
+																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
+																>
+																	<span>Feb 6, 2025</span>
+																	<span
+																		class="relative after:content-[&quot;&quot;] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5"
+																		>11:41 pm</span
+																	>
+																</div>
+															</div>
+														</a>
+													</li>
+													<li>
+														<a
+															href="#"
+															class="flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150"
+														>
+															<div
+																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
+															>
+																<img
+																	class="rounded-full object-cover size-full"
+																	src="./assets/images/avatar.png"
+																	alt="Avatar"
+																/>
+															</div>
+															<div>
+																<p class="text-sm">
+																	You received _+8= +3 -5 +10 (1) HW.pdf in your
+																	Team Inbox test-zapeir-update from qweqw eqw
+																	(eqwe@asd.we)
+																</p>
+																<div
+																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
+																>
+																	<span>Feb 6, 2025</span>
+																</div>
+															</div>
+														</a>
+													</li>
+													<li>
+														<a
+															href="#"
+															class="flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150"
+														>
+															<div
+																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
+															>
+																<img
+																	class="rounded-full object-cover size-full"
+																	src="./assets/images/avatar.png"
+																	alt="Avatar"
+																/>
+															</div>
+															<div>
+																<p class="text-sm">
+																	John Dalton added JumpshareInstaller 3.4.5 -
+																	3.exe to folder 3.4.5
+																</p>
+																<div
+																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
+																>
 																	<span>Jue 6, 2024</span>
 																</div>
 															</div>
 														</a>
 													</li>
 													<li>
-														<a href="#" class='flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150'>
-															<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
-																<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+														<a
+															href="#"
+															class="flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150"
+														>
+															<div
+																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
+															>
+																<img
+																	class="rounded-full object-cover size-full"
+																	src="./assets/images/avatar.png"
+																	alt="Avatar"
+																/>
 															</div>
 															<div>
-																<p class='text-sm'>
-																	Someone viewed Screen Recording 2025-01-23 at 10.0... PM.mp4 for the first time
+																<p class="text-sm">
+																	Someone viewed Screen Recording 2025-01-23 at
+																	10.0... PM.mp4 for the first time
 																</p>
-																<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
-																	<span class='relative after:content-[""] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-right-2.5 '>Feb 6</span>
+																<div
+																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
+																>
+																	<span
+																		class="relative after:content-[&quot;&quot;] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-right-2.5"
+																		>Feb 6</span
+																	>
 																	<span>11:41 pm</span>
 																</div>
 															</div>
@@ -502,67 +756,100 @@
 									</div>
 								</div>
 								<div class="dropdown-wrapper">
-									<a href='#' data-id="dropdown-avatar" class='dropdown-button flex gap-1.5 items-center cursor-pointer max-md:pr-3 [&.active]:bg-gray-150 px-2 h-12 rounded-lg'>
-										<div class='size-7.5 rounded-full overflow-hidden bg-gray-200 inset-ring-2 inset-ring-gray-100'>
-											<img src="./assets/images/avatar.png" alt="Avatar">
+									<a
+										href="#"
+										data-id="dropdown-avatar"
+										class="dropdown-button flex gap-1.5 items-center cursor-pointer max-md:pr-3 [&.active]:bg-gray-150 px-2 h-12 rounded-lg"
+									>
+										<div
+											class="size-7.5 rounded-full overflow-hidden bg-gray-200 inset-ring-2 inset-ring-gray-100"
+										>
+											<img src="./assets/images/avatar.png" alt="Avatar" />
 										</div>
-										<svg class='icon icon-xs flex-shrink-0'>
-											<use href='#check-bottom'></use>
+										<svg class="icon icon-xs flex-shrink-0">
+											<use href="#check-bottom"></use>
 										</svg>
 									</a>
-									<div class='js-dropdown hidden w-[15.75rem]' data-dropdown-id='dropdown-avatar' data-sheet-modal>
-										<div class='js-dropdown-overlay'></div>
-										<div class='js-dropdown-body'>
-											<div class='js-dropdown-trigger'>
+									<div
+										class="js-dropdown hidden w-[15.75rem]"
+										data-dropdown-id="dropdown-avatar"
+										data-sheet-modal
+									>
+										<div class="js-dropdown-overlay"></div>
+										<div class="js-dropdown-body">
+											<div class="js-dropdown-trigger">
 												<span></span>
 											</div>
-											<div class='js-dropdown-content'>
+											<div class="js-dropdown-content">
 												<ul>
-													<li class='flex items-center gap-3 p-3.5 pt-1'>
-														<div class="size-[42px] rounded-full overflow-hidden">
-															<img class='size-full object-cover' src="./assets/images/avatar.png" alt="Avatar">
+													<li class="flex items-center gap-3 p-3.5 pt-1">
+														<div
+															class="size-[42px] rounded-full overflow-hidden"
+														>
+															<img
+																class="size-full object-cover"
+																src="./assets/images/avatar.png"
+																alt="Avatar"
+															/>
 														</div>
 														<div>
-															<span class='text-sm font-semibold text-dark-800 mb-1'>John Doe</span>
-															<p class='text-dark-800/50 text-xs'>johndoe252@cironex.com</p>
+															<span
+																class="text-sm font-semibold text-dark-800 mb-1"
+																>John Doe</span
+															>
+															<p class="text-dark-800/50 text-xs">
+																johndoe252@cironex.com
+															</p>
 														</div>
 													</li>
-													<hr class='border-gray-500 mt-0 mb-2'>
-													<li class='flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800'>
-														<svg class='icon icon-md'>
-															<use href='#workspace'></use>
+													<hr class="border-gray-500 mt-0 mb-2" />
+													<li
+														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+													>
+														<svg class="icon icon-md">
+															<use href="#workspace"></use>
 														</svg>
 														<span>Workspace Settings</span>
 													</li>
-													<li class='flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800'>
-														<svg class='icon icon-md'>
-															<use href='#user'></use>
+													<li
+														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+													>
+														<svg class="icon icon-md">
+															<use href="#user"></use>
 														</svg>
 														<span>Profile Settings</span>
 													</li>
-													<hr class='border-gray-500 my-2'>
-													<li class='flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800'>
-														<svg class='icon icon-md'>
-															<use href='#download'></use>
+													<hr class="border-gray-500 my-2" />
+													<li
+														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+													>
+														<svg class="icon icon-md">
+															<use href="#download"></use>
 														</svg>
 														<span>Install Jumpshare</span>
 													</li>
-													<li class='flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800'>
-														<svg class='icon icon-md'>
-															<use href='#help'></use>
+													<li
+														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+													>
+														<svg class="icon icon-md">
+															<use href="#help"></use>
 														</svg>
 														<span>Help Center</span>
 													</li>
-													<li class='flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800'>
-														<svg class='icon icon-md'>
-															<use href='#message-alert'></use>
+													<li
+														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+													>
+														<svg class="icon icon-md">
+															<use href="#message-alert"></use>
 														</svg>
 														<span>Send Feedback</span>
 													</li>
-													<hr class='border-gray-500 my-2'>
-													<li class='flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800'>
-														<svg class='icon icon-md'>
-															<use href='#sign-out'></use>
+													<hr class="border-gray-500 my-2" />
+													<li
+														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+													>
+														<svg class="icon icon-md">
+															<use href="#sign-out"></use>
 														</svg>
 														<span>Sign Out</span>
 													</li>
@@ -576,61 +863,55 @@
 					</div>
 				</header>
 				<div
-					class="subheader-nav transition-all pt-9 pb-6 sticky top-[63px] z-50 bg-white max-md:pt-5 duration-300 after:content-[&quot;&quot;] after:absolute after:bottom-1/2 after:left-0 after:right-0 after:w-full after:h-full after:bg-white after:-z-2"
+					class="subheader-nav transition-all pt-7.5 pb-6 sticky top-[63px] z-50 bg-white max-md:pt-5 duration-300 after:content-[&quot;&quot;] after:absolute after:bottom-1/2 after:left-0 after:right-0 after:w-full after:h-full after:bg-white after:-z-2"
 				>
 					<div class="dashboard-container">
 						<div class="flex justify-between items-center">
-							<div class='flex items-center gap-5'>
+							<div class="flex items-center gap-5">
 								<h2
 									id="title-library"
 									class="text-2xl font-semibold text-dark-800 tracking-normal flex-shrink-0 font-sans-semi"
 								>
 									Analytics
 								</h2>
-								<div class='flex items-center gap-1 max-md:hidden'>
-									<button class='btn btn-gray-default'>Guidelines for the tour.mp4
+								<div class="flex items-center gap-1 max-md:hidden">
+									<button class="btn btn-gray-default">
+										Guidelines for the tour.mp4
 										<svg class="icon icon-xs">
 											<use href="#close"></use>
 										</svg>
 									</button>
 								</div>
 							</div>
-							<div class='dropdown-wrapper'>
-								<button data-id="dropdown-date" class="dropdown-button btn btn-border-default gap-1.5 font-normal">
+							<div class="dropdown-wrapper">
+								<button
+									data-id="dropdown-date"
+									class="dropdown-button btn btn-border-default gap-1.5 font-normal"
+								>
 									17 Aug - 23 Aug, 2025
 									<svg class="icon icon-xs">
 										<use href="#check-bottom"></use>
 									</svg>
 								</button>
-								<div class='js-dropdown hidden' data-dropdown-id='dropdown-date' data-sheet-modal>
-									<div class='js-dropdown-overlay'></div>
-									<div class='js-dropdown-body'>
-										<div class='js-dropdown-trigger'>
+								<div
+									class="js-dropdown hidden"
+									data-dropdown-id="dropdown-date"
+									data-sheet-modal
+								>
+									<div class="js-dropdown-overlay"></div>
+									<div class="js-dropdown-body">
+										<div class="js-dropdown-trigger">
 											<span></span>
 										</div>
-										<div class='js-dropdown-content'>
-											<div class='js-dropdown-list-item'>
-												Today
-											</div>
-											<div class='js-dropdown-list-item'>
-												Last 7 days
-											</div>
-											<div class='js-dropdown-list-item'>
-												Last 28 days
-											</div>
-											<div class='js-dropdown-list-item'>
-												Last 90 days
-											</div>
-											<hr class='border-gray-500 my-2'>
-											<div class='js-dropdown-list-item'>
-												January
-											</div>
-											<div class='js-dropdown-list-item'>
-												February
-											</div>
-											<div class='js-dropdown-list-item'>
-												Custom
-											</div>
+										<div class="js-dropdown-content">
+											<div class="js-dropdown-list-item">Today</div>
+											<div class="js-dropdown-list-item">Last 7 days</div>
+											<div class="js-dropdown-list-item">Last 28 days</div>
+											<div class="js-dropdown-list-item">Last 90 days</div>
+											<hr class="border-gray-500 my-2" />
+											<div class="js-dropdown-list-item">January</div>
+											<div class="js-dropdown-list-item">February</div>
+											<div class="js-dropdown-list-item">Custom</div>
 										</div>
 									</div>
 								</div>
@@ -639,598 +920,992 @@
 					</div>
 				</div>
 				<div class="dashboard-container pb-5 pt-5">
-					<div class='grid grid-cols-4 gap-4 max-md:grid-cols-2'>
-						<div class='flex flex-col gap-1 bg-[#E7F7FF] px-6 py-4 rounded-xl max-md:px-4 max-md:py-3'>
-							<p class='text-sm text-dark-800/50'>Video Views</p>
-							<span class='text-2xl font-medium text-dark-800'>63</span>
+					<div class="grid grid-cols-4 gap-4 max-md:grid-cols-2">
+						<div
+							class="flex flex-col gap-1 bg-[#E7F7FF] px-6 py-4 rounded-xl max-md:px-4 max-md:py-3"
+						>
+							<p class="text-sm text-dark-800/50">Video Views</p>
+							<span class="text-2xl font-medium text-dark-800">63</span>
 						</div>
-						<div class='flex flex-col gap-1 bg-[#E3E8FF] px-6 py-4 rounded-xl max-md:px-4 max-md:py-3'>
-							<p class='text-sm text-dark-800/50'>Downloads</p>
-							<span class='text-2xl font-medium text-dark-800'>22</span>
+						<div
+							class="flex flex-col gap-1 bg-[#E3E8FF] px-6 py-4 rounded-xl max-md:px-4 max-md:py-3"
+						>
+							<p class="text-sm text-dark-800/50">Downloads</p>
+							<span class="text-2xl font-medium text-dark-800">22</span>
 						</div>
-						<div class='flex flex-col gap-1 bg-[#FADDFF] px-6 py-4 rounded-xl max-md:px-4 max-md:py-3'>
-							<p class='text-sm text-dark-800/50'>CTA Clicks</p>
-							<span class='text-2xl font-medium text-dark-800'>6</span>
+						<div
+							class="flex flex-col gap-1 bg-[#FADDFF] px-6 py-4 rounded-xl max-md:px-4 max-md:py-3"
+						>
+							<p class="text-sm text-dark-800/50">CTA Clicks</p>
+							<span class="text-2xl font-medium text-dark-800">6</span>
 						</div>
-						<div class='flex flex-col gap-1 bg-[#F4FFC2] px-6 py-4 rounded-xl max-md:px-4 max-md:py-3'>
-							<p class='text-sm text-dark-800/50'>Avg Completion Rate</p>
-							<span class='text-2xl font-medium text-dark-800'>7</span>
+						<div
+							class="flex flex-col gap-1 bg-[#F4FFC2] px-6 py-4 rounded-xl max-md:px-4 max-md:py-3"
+						>
+							<p class="text-sm text-dark-800/50">Avg Completion Rate</p>
+							<span class="text-2xl font-medium text-dark-800">7</span>
 						</div>
 					</div>
-					<div class='mt-4.5'>
-						<img src="./assets/images/analytics-chart.png" alt="Analytics Chart">
+					<div class="mt-4.5">
+						<img
+							src="./assets/images/analytics-chart.png"
+							alt="Analytics Chart"
+						/>
 					</div>
-          <div class='border border-gray-400 rounded-xl p-6 mt-4.5 max-md:p-4'>
-            <strong class='text-base font-semibold text-dark-800'>All Activity</strong>
-            <ul class='flex flex-col gap-6 mt-5.5 max-h-[240px] overflow-y-auto scrollbar-hide'>
-              <li class='flex items-start gap-3'>
-                <img class='block size-10 rounded-full object-cover overflow-hidden flex-shrink-0' src="./assets/images/avatar-default.png" alt="avatar">
-                <div class='flex flex-col gap-0.5 truncate'>
-                  <p class='text-sm text-dark-800 truncate'>Someone viewed <span class='text-blue-500'>Speaker No...ect</span> <span class='hidden md:inline'>from</span></p>
-                  <ul class='list-with-dots'>
-                    <li>Feb 6</li>
-                    <li>11:41 pm</li>
-                    <li class='dropdown-wrapper max-md:block hidden'>
-                      <a href="#" data-id='dropdown-view-details' class='dropdown-button text-blue-900/70 flex items-center gap-1 text-xs'>
-                        <svg class='icon icon-sm'>
-                          <use href='#info'></use>
-                        </svg>
-                        View Details</a>
-                      <div class='js-dropdown hidden' data-dropdown-id='dropdown-view-details' data-sheet-modal>
-                        <div class='js-dropdown-overlay'></div>
-                        <div class='js-dropdown-body'>
-                          <div class='js-dropdown-trigger'>
-                            <span></span>
-                          </div>
-                          <div class='js-dropdown-content'>
-                            <div class='flex items-center justify-between border-b border-gray-500 pb-2.5 px-2'>
-                              <p class='flex items-center gap-2 text-sm text-dark-800 font-semibold'>
-                                <svg class='icon icon-sm'>
-                                  <use href='#info'></use>
-                                </svg>
-                                Activity Details
-                              </p>
-                            </div>
-                            <div class='js-dropdown-list-item'>
-                              <div class='flex items-center justify-center size-6'>
-                                <img src="./assets/images/pakistan.png" alt="Pakistan" class='block h-3.5 border border-gray-300 rounded-[2px]'>
-                              </div>
-                              <p class='text-sm text-dark-800 font-normal'>Pakistan</p>
-                            </div>
-                            <div class='js-dropdown-list-item'>
-                              <svg class='icon icon-md'>
-                                <use href='#browser'></use>
-                              </svg>
-                              <p class='text-sm text-dark-800 font-normal'>Chrome</p>
-                            </div>
-                            <div class='js-dropdown-list-item'>
-                              <svg class='icon icon-md'>
-                                <use href='#screen'></use>
-                              </svg>
-                              <p class='text-sm text-dark-800 font-normal'>1920x720</p>
-                            </div>
-                            <div class='js-dropdown-list-item'>
-                              <svg class='icon icon-md'>
-                                <use href='#laptop'></use>
-                              </svg>
-                              <p class='text-sm text-dark-800 font-normal'>Windows 10</p>
-                            </div>
-                            <div class='js-dropdown-list-item'>
-                              <svg class='icon icon-md'>
-                                <use href='#ip'></use>
-                              </svg>
-                              <p class='text-sm text-dark-800 font-normal'>133.345.654.2</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class='flex items-center gap-2 flex-shrink-0 max-md:hidden'>
-                  <img src="./assets/images/pakistan.png" alt="Pakistan" class='block h-3.5'>
-                  <svg class="icon icon-md flex-shrink-0">
-                    <use href="#laptop"></use>
-                  </svg>
-                </div>
-              </li>
-              <li class='flex items-start gap-3'>
-                <img class='block size-10 rounded-full object-cover overflow-hidden flex-shrink-0' src="./assets/images/avatar.png" alt="avatar">
-                <div class='flex flex-col gap-0.5 truncate'>
-                  <p class='text-sm text-dark-800 truncate'>John Doe downloaded <span class='text-blue-500'>Jumpshare...3.4.5 - beta 3</span> <span class='hidden md:inline'>from</span></p>
-                  <ul class='list-with-dots'>
-                    <li>Feb 6</li>
-                    <li>11:41 pm</li>
-                    <li>View Details</li>
-                  </ul>
-                </div>
-                <div class='flex items-center gap-2 flex-shrink-0 max-md:hidden'>
-                  <img src="./assets/images/brazil.png" alt="Brazil" class='block h-3.5'>
-                  <svg class="icon icon-md flex-shrink-0">
-                    <use href="#laptop"></use>
-                  </svg>
-                </div>
-              </li>
-              <li class='flex items-start gap-3'>
-                <img class='block size-10 rounded-full object-cover overflow-hidden flex-shrink-0' src="./assets/images/avatar.png" alt="avatar">
-                <div class='flex flex-col gap-0.5 truncate'>
-                  <p class='text-sm text-dark-800 truncate'>Someone viewed <span class='text-blue-500'>Speaker Notes Hover Effect.mp4</span> <span class='hidden md:inline'>from</span></p>
-                  <ul class='list-with-dots'>
-                    <li>Feb 6</li>
-                    <li>11:41 pm</li>
-                    <li>View Details</li>
-                  </ul>
-                </div>
-                <div class='flex items-center gap-2 flex-shrink-0 max-md:hidden'>
-                  <img src="./assets/images/usa.png" alt="United States" class='block h-3.5'>
-                  <svg class="icon icon-md flex-shrink-0">
-                    <use href="#laptop"></use>
-                  </svg>
-                </div>
-              </li>
-              <li class='flex items-start gap-3'>
-                <img class='block size-10 rounded-full object-cover overflow-hidden flex-shrink-0' src="./assets/images/avatar.png" alt="avatar">
-                <div class='flex flex-col gap-0.5 truncate'>
-                  <p class='text-sm text-dark-800 truncate'>John Doe downloaded <span class='text-blue-500'>Jumpshare...3.4.5 - beta 3</span> <span class='hidden md:inline'>from</span></p>
-                  <ul class='list-with-dots'>
-                    <li>Feb 6</li>
-                    <li>11:41 pm</li>
-                    <li>View Details</li>
-                  </ul>
-                </div>
-                <div class='flex items-center gap-2 flex-shrink-0 max-md:hidden'>
-                  <img src="./assets/images/pakistan.png" alt="Pakistan" class='block h-3.5'>
-                  <svg class="icon icon-md flex-shrink-0">
-                    <use href="#laptop"></use>
-                  </svg>
-                </div>
-              </li>
-              <li class='flex items-start gap-3'>
-                <img class='block size-10 rounded-full object-cover overflow-hidden flex-shrink-0' src="./assets/images/avatar-default.png" alt="avatar">
-                <div class='flex flex-col gap-0.5 truncate'>
-                  <p class='text-sm text-dark-800 truncate'>Someone viewed <span class='text-blue-500'>Speaker No...ect</span> <span class='hidden md:inline'>from</span></p>
-                  <ul class='list-with-dots'>
-                    <li>Feb 6</li>
-                    <li>11:41 pm</li>
-                    <li>View Details</li>
-                  </ul>
-                </div>
-                <div class='flex items-center gap-2 flex-shrink-0 max-md:hidden'>
-                  <img src="./assets/images/pakistan.png" alt="Pakistan" class='block h-3.5'>
-                  <svg class="icon icon-md flex-shrink-0">
-                    <use href="#laptop"></use>
-                  </svg>
-                </div>
-              </li>
-              <li class='flex items-start gap-3'>
-                <img class='block size-10 rounded-full object-cover overflow-hidden flex-shrink-0' src="./assets/images/avatar.png" alt="avatar">
-                <div class='flex flex-col gap-0.5 truncate'>
-                  <p class='text-sm text-dark-800 truncate'>John Doe downloaded <span class='text-blue-500'>Jumpshare...3.4.5 - beta 3</span> <span class='hidden md:inline'>from</span></p>
-                  <ul class='list-with-dots'>
-                    <li>Feb 6</li>
-                    <li>11:41 pm</li>
-                    <li>View Details</li>
-                  </ul>
-                </div>
-                <div class='flex items-center gap-2 flex-shrink-0 max-md:hidden'>
-                  <img src="./assets/images/brazil.png" alt="Brazil" class='block h-3.5'>
-                  <svg class="icon icon-md flex-shrink-0">
-                    <use href="#laptop"></use>
-                  </svg>
-                </div>
-              </li>
-              <li class='flex items-start gap-3'>
-                <img class='block size-10 rounded-full object-cover overflow-hidden flex-shrink-0' src="./assets/images/avatar.png" alt="avatar">
-                <div class='flex flex-col gap-0.5 truncate'>
-                  <p class='text-sm text-dark-800 truncate'>Someone viewed <span class='text-blue-500'>Speaker Notes Hover Effect.mp4</span> <span class='hidden md:inline'>from</span></p>
-                  <ul class='list-with-dots'>
-                    <li>Feb 6</li>
-                    <li>11:41 pm</li>
-                    <li>View Details</li>
-                  </ul>
-                </div>
-                <div class='flex items-center gap-2 flex-shrink-0 max-md:hidden'>
-                  <img src="./assets/images/usa.png" alt="United States" class='block h-3.5'>
-                  <svg class="icon icon-md flex-shrink-0">
-                    <use href="#laptop"></use>
-                  </svg>
-                </div>
-              </li>
-              <li class='flex items-start gap-3'>
-                <img class='block size-10 rounded-full object-cover overflow-hidden flex-shrink-0' src="./assets/images/avatar.png" alt="avatar">
-                <div class='flex flex-col gap-0.5 truncate'>
-                  <p class='text-sm text-dark-800 truncate'>John Doe downloaded <span class='text-blue-500'>Jumpshare...3.4.5 - beta 3</span> <span class='hidden md:inline'>from</span></p>
-                  <ul class='list-with-dots'>
-                    <li>Feb 6</li>
-                    <li>11:41 pm</li>
-                    <li>View Details</li>
-                  </ul>
-                </div>
-                <div class='flex items-center gap-2 flex-shrink-0 max-md:hidden'>
-                  <img src="./assets/images/pakistan.png" alt="Pakistan" class='block h-3.5'>
-                  <svg class="icon icon-md flex-shrink-0">
-                    <use href="#laptop"></use>
-                  </svg>
-                </div>
-              </li>
-            </ul>
-          </div>
-					<div class='grid grid-cols-2 mt-4.5 gap-4 max-md:grid-cols-1'>
-						<div class='border border-gray-400 rounded-xl p-6 max-md:p-4'>
-							<div class='flex justify-between items-center'>
-								<strong class='text-base font-semibold text-dark-800'>Top Referrers</strong>
-								<p class='text-sm text-dark-800/50'>Views</p>
+					<div class="border border-gray-400 rounded-xl p-6 mt-4.5 max-md:p-4">
+						<strong class="text-base font-semibold text-dark-800"
+							>All Activity</strong
+						>
+						<ul
+							class="flex flex-col gap-6 mt-5.5 max-h-[240px] overflow-y-auto scrollbar-hide"
+						>
+							<li class="flex items-start gap-3">
+								<img
+									class="block size-10 rounded-full object-cover overflow-hidden flex-shrink-0"
+									src="./assets/images/avatar-default.png"
+									alt="avatar"
+								/>
+								<div class="flex flex-col gap-0.5 truncate">
+									<p class="text-sm text-dark-800 truncate">
+										Someone viewed
+										<span class="text-blue-500">Speaker No...ect</span>
+										<span class="hidden md:inline">from</span>
+									</p>
+									<ul class="list-with-dots">
+										<li>Feb 6</li>
+										<li>11:41 pm</li>
+										<li class="dropdown-wrapper max-md:block hidden">
+											<a
+												href="#"
+												data-id="dropdown-view-details"
+												class="dropdown-button text-blue-900/70 flex items-center gap-1 text-xs"
+											>
+												<svg class="icon icon-sm">
+													<use href="#info"></use>
+												</svg>
+												View Details</a
+											>
+											<div
+												class="js-dropdown hidden"
+												data-dropdown-id="dropdown-view-details"
+												data-sheet-modal
+											>
+												<div class="js-dropdown-overlay"></div>
+												<div class="js-dropdown-body">
+													<div class="js-dropdown-trigger">
+														<span></span>
+													</div>
+													<div class="js-dropdown-content">
+														<div
+															class="flex items-center justify-between border-b border-gray-500 pb-2.5 px-2"
+														>
+															<p
+																class="flex items-center gap-2 text-sm text-dark-800 font-semibold"
+															>
+																<svg class="icon icon-sm">
+																	<use href="#info"></use>
+																</svg>
+																Activity Details
+															</p>
+														</div>
+														<div class="js-dropdown-list-item">
+															<div
+																class="flex items-center justify-center size-6"
+															>
+																<img
+																	src="./assets/images/pakistan.png"
+																	alt="Pakistan"
+																	class="block h-3.5 border border-gray-300 rounded-[2px]"
+																/>
+															</div>
+															<p class="text-sm text-dark-800 font-normal">
+																Pakistan
+															</p>
+														</div>
+														<div class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#browser"></use>
+															</svg>
+															<p class="text-sm text-dark-800 font-normal">
+																Chrome
+															</p>
+														</div>
+														<div class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#screen"></use>
+															</svg>
+															<p class="text-sm text-dark-800 font-normal">
+																1920x720
+															</p>
+														</div>
+														<div class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#laptop"></use>
+															</svg>
+															<p class="text-sm text-dark-800 font-normal">
+																Windows 10
+															</p>
+														</div>
+														<div class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#ip"></use>
+															</svg>
+															<p class="text-sm text-dark-800 font-normal">
+																133.345.654.2
+															</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div
+									class="flex items-center gap-2 flex-shrink-0 max-md:hidden"
+								>
+									<img
+										src="./assets/images/pakistan.png"
+										alt="Pakistan"
+										class="block h-3.5"
+									/>
+									<svg class="icon icon-md flex-shrink-0">
+										<use href="#laptop"></use>
+									</svg>
+								</div>
+							</li>
+							<li class="flex items-start gap-3">
+								<img
+									class="block size-10 rounded-full object-cover overflow-hidden flex-shrink-0"
+									src="./assets/images/avatar.png"
+									alt="avatar"
+								/>
+								<div class="flex flex-col gap-0.5 truncate">
+									<p class="text-sm text-dark-800 truncate">
+										John Doe downloaded
+										<span class="text-blue-500"
+											>Jumpshare...3.4.5 - beta 3</span
+										>
+										<span class="hidden md:inline">from</span>
+									</p>
+									<ul class="list-with-dots">
+										<li>Feb 6</li>
+										<li>11:41 pm</li>
+										<li>View Details</li>
+									</ul>
+								</div>
+								<div
+									class="flex items-center gap-2 flex-shrink-0 max-md:hidden"
+								>
+									<img
+										src="./assets/images/brazil.png"
+										alt="Brazil"
+										class="block h-3.5"
+									/>
+									<svg class="icon icon-md flex-shrink-0">
+										<use href="#laptop"></use>
+									</svg>
+								</div>
+							</li>
+							<li class="flex items-start gap-3">
+								<img
+									class="block size-10 rounded-full object-cover overflow-hidden flex-shrink-0"
+									src="./assets/images/avatar.png"
+									alt="avatar"
+								/>
+								<div class="flex flex-col gap-0.5 truncate">
+									<p class="text-sm text-dark-800 truncate">
+										Someone viewed
+										<span class="text-blue-500"
+											>Speaker Notes Hover Effect.mp4</span
+										>
+										<span class="hidden md:inline">from</span>
+									</p>
+									<ul class="list-with-dots">
+										<li>Feb 6</li>
+										<li>11:41 pm</li>
+										<li>View Details</li>
+									</ul>
+								</div>
+								<div
+									class="flex items-center gap-2 flex-shrink-0 max-md:hidden"
+								>
+									<img
+										src="./assets/images/usa.png"
+										alt="United States"
+										class="block h-3.5"
+									/>
+									<svg class="icon icon-md flex-shrink-0">
+										<use href="#laptop"></use>
+									</svg>
+								</div>
+							</li>
+							<li class="flex items-start gap-3">
+								<img
+									class="block size-10 rounded-full object-cover overflow-hidden flex-shrink-0"
+									src="./assets/images/avatar.png"
+									alt="avatar"
+								/>
+								<div class="flex flex-col gap-0.5 truncate">
+									<p class="text-sm text-dark-800 truncate">
+										John Doe downloaded
+										<span class="text-blue-500"
+											>Jumpshare...3.4.5 - beta 3</span
+										>
+										<span class="hidden md:inline">from</span>
+									</p>
+									<ul class="list-with-dots">
+										<li>Feb 6</li>
+										<li>11:41 pm</li>
+										<li>View Details</li>
+									</ul>
+								</div>
+								<div
+									class="flex items-center gap-2 flex-shrink-0 max-md:hidden"
+								>
+									<img
+										src="./assets/images/pakistan.png"
+										alt="Pakistan"
+										class="block h-3.5"
+									/>
+									<svg class="icon icon-md flex-shrink-0">
+										<use href="#laptop"></use>
+									</svg>
+								</div>
+							</li>
+							<li class="flex items-start gap-3">
+								<img
+									class="block size-10 rounded-full object-cover overflow-hidden flex-shrink-0"
+									src="./assets/images/avatar-default.png"
+									alt="avatar"
+								/>
+								<div class="flex flex-col gap-0.5 truncate">
+									<p class="text-sm text-dark-800 truncate">
+										Someone viewed
+										<span class="text-blue-500">Speaker No...ect</span>
+										<span class="hidden md:inline">from</span>
+									</p>
+									<ul class="list-with-dots">
+										<li>Feb 6</li>
+										<li>11:41 pm</li>
+										<li>View Details</li>
+									</ul>
+								</div>
+								<div
+									class="flex items-center gap-2 flex-shrink-0 max-md:hidden"
+								>
+									<img
+										src="./assets/images/pakistan.png"
+										alt="Pakistan"
+										class="block h-3.5"
+									/>
+									<svg class="icon icon-md flex-shrink-0">
+										<use href="#laptop"></use>
+									</svg>
+								</div>
+							</li>
+							<li class="flex items-start gap-3">
+								<img
+									class="block size-10 rounded-full object-cover overflow-hidden flex-shrink-0"
+									src="./assets/images/avatar.png"
+									alt="avatar"
+								/>
+								<div class="flex flex-col gap-0.5 truncate">
+									<p class="text-sm text-dark-800 truncate">
+										John Doe downloaded
+										<span class="text-blue-500"
+											>Jumpshare...3.4.5 - beta 3</span
+										>
+										<span class="hidden md:inline">from</span>
+									</p>
+									<ul class="list-with-dots">
+										<li>Feb 6</li>
+										<li>11:41 pm</li>
+										<li>View Details</li>
+									</ul>
+								</div>
+								<div
+									class="flex items-center gap-2 flex-shrink-0 max-md:hidden"
+								>
+									<img
+										src="./assets/images/brazil.png"
+										alt="Brazil"
+										class="block h-3.5"
+									/>
+									<svg class="icon icon-md flex-shrink-0">
+										<use href="#laptop"></use>
+									</svg>
+								</div>
+							</li>
+							<li class="flex items-start gap-3">
+								<img
+									class="block size-10 rounded-full object-cover overflow-hidden flex-shrink-0"
+									src="./assets/images/avatar.png"
+									alt="avatar"
+								/>
+								<div class="flex flex-col gap-0.5 truncate">
+									<p class="text-sm text-dark-800 truncate">
+										Someone viewed
+										<span class="text-blue-500"
+											>Speaker Notes Hover Effect.mp4</span
+										>
+										<span class="hidden md:inline">from</span>
+									</p>
+									<ul class="list-with-dots">
+										<li>Feb 6</li>
+										<li>11:41 pm</li>
+										<li>View Details</li>
+									</ul>
+								</div>
+								<div
+									class="flex items-center gap-2 flex-shrink-0 max-md:hidden"
+								>
+									<img
+										src="./assets/images/usa.png"
+										alt="United States"
+										class="block h-3.5"
+									/>
+									<svg class="icon icon-md flex-shrink-0">
+										<use href="#laptop"></use>
+									</svg>
+								</div>
+							</li>
+							<li class="flex items-start gap-3">
+								<img
+									class="block size-10 rounded-full object-cover overflow-hidden flex-shrink-0"
+									src="./assets/images/avatar.png"
+									alt="avatar"
+								/>
+								<div class="flex flex-col gap-0.5 truncate">
+									<p class="text-sm text-dark-800 truncate">
+										John Doe downloaded
+										<span class="text-blue-500"
+											>Jumpshare...3.4.5 - beta 3</span
+										>
+										<span class="hidden md:inline">from</span>
+									</p>
+									<ul class="list-with-dots">
+										<li>Feb 6</li>
+										<li>11:41 pm</li>
+										<li>View Details</li>
+									</ul>
+								</div>
+								<div
+									class="flex items-center gap-2 flex-shrink-0 max-md:hidden"
+								>
+									<img
+										src="./assets/images/pakistan.png"
+										alt="Pakistan"
+										class="block h-3.5"
+									/>
+									<svg class="icon icon-md flex-shrink-0">
+										<use href="#laptop"></use>
+									</svg>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="grid grid-cols-2 mt-4.5 gap-4 max-md:grid-cols-1">
+						<div class="border border-gray-400 rounded-xl p-6 max-md:p-4">
+							<div class="flex justify-between items-center">
+								<strong class="text-base font-semibold text-dark-800"
+									>Top Referrers</strong
+								>
+								<p class="text-sm text-dark-800/50">Views</p>
 							</div>
-							<ul class='flex flex-col gap-6 mt-5.5 max-h-[201px] overflow-y-auto scrollbar-hide'>
-								<li class='text-sm text-dark-800 flex justify-between items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px]'>
+							<ul
+								class="flex flex-col gap-6 mt-5.5 max-h-[201px] overflow-y-auto scrollbar-hide"
+							>
+								<li
+									class="text-sm text-dark-800 flex justify-between items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px]"
+								>
 									<p>Direct</p>
 									<span>23</span>
 								</li>
-								<li class='text-sm text-dark-800 flex justify-between items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px]'>
-									<a href='#'>support.jumpshare.com</a>
+								<li
+									class="text-sm text-dark-800 flex justify-between items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px]"
+								>
+									<a href="#">support.jumpshare.com</a>
 									<span>5</span>
 								</li>
-								<li class='text-sm text-dark-800 flex justify-between items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px]'>
-									<a href='#'>com.slack</a>
+								<li
+									class="text-sm text-dark-800 flex justify-between items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px]"
+								>
+									<a href="#">com.slack</a>
 									<span>3</span>
 								</li>
 							</ul>
 						</div>
-						<div class='border border-gray-400 rounded-xl p-6 max-md:p-4'>
-							<div class='flex justify-between items-center'>
-								<strong class='text-base font-semibold text-dark-800'>Most Viewed Files</strong>
-								<p class='text-sm text-dark-800/50'>Views</p>
+						<div class="border border-gray-400 rounded-xl p-6 max-md:p-4">
+							<div class="flex justify-between items-center">
+								<strong class="text-base font-semibold text-dark-800"
+									>Most Viewed Files</strong
+								>
+								<p class="text-sm text-dark-800/50">Views</p>
 							</div>
-							<ul class='flex flex-col gap-6 mt-5.5 max-h-[201px] overflow-y-auto scrollbar-hide'>
-								<li class='text-sm text-dark-800 flex justify-between items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px]'>
-									<a href='#'>Speaker Notes Hover Effect</a>
+							<ul
+								class="flex flex-col gap-6 mt-5.5 max-h-[201px] overflow-y-auto scrollbar-hide"
+							>
+								<li
+									class="text-sm text-dark-800 flex justify-between items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px]"
+								>
+									<a href="#">Speaker Notes Hover Effect</a>
 									<span>23</span>
 								</li>
-								<li class='text-sm text-dark-800 flex justify-between items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px]'>
-									<a href='#'>JumpshareInstaller 3.4.5 - 9.exe</a>
+								<li
+									class="text-sm text-dark-800 flex justify-between items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px]"
+								>
+									<a href="#">JumpshareInstaller 3.4.5 - 9.exe</a>
 									<span>5</span>
 								</li>
-								<li class='text-sm text-dark-800 flex justify-between items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px]'>
-									<a href='#'>Dashboard Mobile Version</a>
+								<li
+									class="text-sm text-dark-800 flex justify-between items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px]"
+								>
+									<a href="#">Dashboard Mobile Version</a>
 									<span>3</span>
 								</li>
-								<li class='text-sm text-dark-800 flex justify-between items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px]'>
-									<a href='#'>Disabling Audio Enhancement in A...</a>
+								<li
+									class="text-sm text-dark-800 flex justify-between items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px]"
+								>
+									<a href="#">Disabling Audio Enhancement in A...</a>
 									<span>3</span>
 								</li>
-								<li class='text-sm text-dark-800 flex justify-between items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px]'>
-									<a href='#'>Dashboard Mobile Version</a>
+								<li
+									class="text-sm text-dark-800 flex justify-between items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px]"
+								>
+									<a href="#">Dashboard Mobile Version</a>
 									<span>3</span>
 								</li>
 							</ul>
 						</div>
 					</div>
-					<div class='mt-4.5 border border-gray-400 rounded-xl p-5 py-4 flex max-xl:flex-col'>
-						<strong class='text-base font-semibold text-dark-800'>World Map</strong>
-						<img class='max-h-[444px] max-w-full' src="./assets/images/analytics-map.png" alt="Analytics Map">
+					<div
+						class="mt-4.5 border border-gray-400 rounded-xl p-5 py-4 flex max-xl:flex-col"
+					>
+						<strong class="text-base font-semibold text-dark-800"
+							>World Map</strong
+						>
+						<img
+							class="max-h-[444px] max-w-full"
+							src="./assets/images/analytics-map.png"
+							alt="Analytics Map"
+						/>
 					</div>
-					<div class='grid grid-cols-2 gap-4 mt-4.5 max-md:grid-cols-1'>
-						<div class='border border-gray-400 rounded-xl p-6 max-md:p-4'>
-							<div class='flex justify-between items-center'>
-								<strong class='text-base font-semibold text-dark-800'>Top Countries</strong>
+					<div class="grid grid-cols-2 gap-4 mt-4.5 max-md:grid-cols-1">
+						<div class="border border-gray-400 rounded-xl p-6 max-md:p-4">
+							<div class="flex justify-between items-center">
+								<strong class="text-base font-semibold text-dark-800"
+									>Top Countries</strong
+								>
 							</div>
-							<ul class='flex flex-col gap-6 mt-5.5 max-h-[201px] overflow-y-auto scrollbar-hide'>
-								<li class='text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4'>
+							<ul
+								class="flex flex-col gap-6 mt-5.5 max-h-[201px] overflow-y-auto scrollbar-hide"
+							>
+								<li
+									class="text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4"
+								>
 									<p>Pakistan</p>
-									<div class='block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative'>
-										<span class='absolute top-0 right-0 bottom-0 block w-[80.05%] h-full bg-violet-450 rounded-full'></span>
+									<div
+										class="block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative"
+									>
+										<span
+											class="absolute top-0 right-0 bottom-0 block w-[80.05%] h-full bg-violet-450 rounded-full"
+										></span>
 									</div>
-									<div class='flex items-center gap-2 flex-shrink-0'>
+									<div class="flex items-center gap-2 flex-shrink-0">
 										<span>58</span>
-										<span class='text-dark-800/50'>(80.05%)</span>
+										<span class="text-dark-800/50">(80.05%)</span>
 									</div>
 								</li>
-								<li class='text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4'>
+								<li
+									class="text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4"
+								>
 									<p>United States</p>
-									<div class='block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative'>
-										<span class='absolute top-0 right-0 bottom-0 block w-[31.94%] h-full bg-violet-450 rounded-full'></span>
+									<div
+										class="block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative"
+									>
+										<span
+											class="absolute top-0 right-0 bottom-0 block w-[31.94%] h-full bg-violet-450 rounded-full"
+										></span>
 									</div>
-									<div class='flex items-center gap-2 flex-shrink-0'>
+									<div class="flex items-center gap-2 flex-shrink-0">
 										<span>24</span>
-										<span class='text-dark-800/50'>(31.94%)</span>
+										<span class="text-dark-800/50">(31.94%)</span>
 									</div>
 								</li>
-								<li class='text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4'>
+								<li
+									class="text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4"
+								>
 									<p>Turkey</p>
-									<div class='block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative'>
-										<span class='absolute top-0 right-0 bottom-0 block w-[14.71%] h-full bg-violet-450 rounded-full'></span>
+									<div
+										class="block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative"
+									>
+										<span
+											class="absolute top-0 right-0 bottom-0 block w-[14.71%] h-full bg-violet-450 rounded-full"
+										></span>
 									</div>
-									<div class='flex items-center gap-2 flex-shrink-0'>
+									<div class="flex items-center gap-2 flex-shrink-0">
 										<span>9</span>
-										<span class='text-dark-800/50'>(14.71%)</span>
+										<span class="text-dark-800/50">(14.71%)</span>
 									</div>
 								</li>
-								<li class='text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4'>
+								<li
+									class="text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4"
+								>
 									<p>Ukraine</p>
-									<div class='block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative'>
-										<span class='absolute top-0 right-0 bottom-0 block w-[5.33%] h-full bg-violet-450 rounded-full'></span>
+									<div
+										class="block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative"
+									>
+										<span
+											class="absolute top-0 right-0 bottom-0 block w-[5.33%] h-full bg-violet-450 rounded-full"
+										></span>
 									</div>
-									<div class='flex items-center gap-2 flex-shrink-0'>
+									<div class="flex items-center gap-2 flex-shrink-0">
 										<span>2</span>
-										<span class='text-dark-800/50'>(5.33%)</span>
+										<span class="text-dark-800/50">(5.33%)</span>
 									</div>
 								</li>
-								<li class='text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4'>
+								<li
+									class="text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4"
+								>
 									<p>Netherlands</p>
-									<div class='block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative'>
-										<span class='absolute top-0 right-0 bottom-0 block w-[5.33%] h-full bg-violet-450 rounded-full'></span>
+									<div
+										class="block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative"
+									>
+										<span
+											class="absolute top-0 right-0 bottom-0 block w-[5.33%] h-full bg-violet-450 rounded-full"
+										></span>
 									</div>
-									<div class='flex items-center gap-2 flex-shrink-0'>
+									<div class="flex items-center gap-2 flex-shrink-0">
 										<span>2</span>
-										<span class='text-dark-800/50'>(5.33%)</span>
+										<span class="text-dark-800/50">(5.33%)</span>
 									</div>
 								</li>
-								<li class='text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4'>
+								<li
+									class="text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4"
+								>
 									<p>Brazil</p>
-									<div class='block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative'>
-										<span class='absolute top-0 right-0 bottom-0 block w-[1.67%] h-full bg-violet-450 rounded-full'></span>
+									<div
+										class="block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative"
+									>
+										<span
+											class="absolute top-0 right-0 bottom-0 block w-[1.67%] h-full bg-violet-450 rounded-full"
+										></span>
 									</div>
-									<div class='flex items-center gap-2 flex-shrink-0'>
+									<div class="flex items-center gap-2 flex-shrink-0">
 										<span>1</span>
-										<span class='text-dark-800/50'>(1.67%)</span>
+										<span class="text-dark-800/50">(1.67%)</span>
 									</div>
 								</li>
 							</ul>
 						</div>
-						<div class='border border-gray-400 rounded-xl p-6 max-md:p-4'>
-							<div class='flex justify-between items-center'>
-								<strong class='text-base font-semibold text-dark-800'>Browsers</strong>
+						<div class="border border-gray-400 rounded-xl p-6 max-md:p-4">
+							<div class="flex justify-between items-center">
+								<strong class="text-base font-semibold text-dark-800"
+									>Browsers</strong
+								>
 							</div>
-							<ul class='flex flex-col gap-6 mt-5.5 max-h-[201px] overflow-y-auto scrollbar-hide'>
-								<li class='text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4'>
+							<ul
+								class="flex flex-col gap-6 mt-5.5 max-h-[201px] overflow-y-auto scrollbar-hide"
+							>
+								<li
+									class="text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4"
+								>
 									<p>Chrome</p>
-									<div class='block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative'>
-										<span class='absolute top-0 right-0 bottom-0 block w-[55.05%] h-full bg-violet-450 rounded-full'></span>
+									<div
+										class="block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative"
+									>
+										<span
+											class="absolute top-0 right-0 bottom-0 block w-[55.05%] h-full bg-violet-450 rounded-full"
+										></span>
 									</div>
-									<div class='flex items-center gap-2 flex-shrink-0'>
+									<div class="flex items-center gap-2 flex-shrink-0">
 										<span>58</span>
-										<span class='text-dark-800/50'>(55.05%)</span>
+										<span class="text-dark-800/50">(55.05%)</span>
 									</div>
 								</li>
-								<li class='text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4'>
+								<li
+									class="text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4"
+								>
 									<p>Safari</p>
-									<div class='block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative'>
-										<span class='absolute top-0 right-0 bottom-0 block w-[21.94%] h-full bg-violet-450 rounded-full'></span>
+									<div
+										class="block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative"
+									>
+										<span
+											class="absolute top-0 right-0 bottom-0 block w-[21.94%] h-full bg-violet-450 rounded-full"
+										></span>
 									</div>
-									<div class='flex items-center gap-2 flex-shrink-0'>
+									<div class="flex items-center gap-2 flex-shrink-0">
 										<span>24</span>
-										<span class='text-dark-800/50'>(21.94%)</span>
+										<span class="text-dark-800/50">(21.94%)</span>
 									</div>
 								</li>
-								<li class='text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4'>
+								<li
+									class="text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4"
+								>
 									<p>Firefox</p>
-									<div class='block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative'>
-										<span class='absolute top-0 right-0 bottom-0 block w-[11.71%] h-full bg-violet-450 rounded-full'></span>
+									<div
+										class="block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative"
+									>
+										<span
+											class="absolute top-0 right-0 bottom-0 block w-[11.71%] h-full bg-violet-450 rounded-full"
+										></span>
 									</div>
-									<div class='flex items-center gap-2 flex-shrink-0'>
+									<div class="flex items-center gap-2 flex-shrink-0">
 										<span>9</span>
-										<span class='text-dark-800/50'>(11.71%)</span>
+										<span class="text-dark-800/50">(11.71%)</span>
 									</div>
 								</li>
-								<li class='text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4'>
+								<li
+									class="text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4"
+								>
 									<p>Edge</p>
-									<div class='block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative'>
-										<span class='absolute top-0 right-0 bottom-0 block w-[5.33%] h-full bg-violet-450 rounded-full'></span>
+									<div
+										class="block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative"
+									>
+										<span
+											class="absolute top-0 right-0 bottom-0 block w-[5.33%] h-full bg-violet-450 rounded-full"
+										></span>
 									</div>
-									<div class='flex items-center gap-2 flex-shrink-0'>
+									<div class="flex items-center gap-2 flex-shrink-0">
 										<span>2</span>
-										<span class='text-dark-800/50'>(5.33%)</span>
+										<span class="text-dark-800/50">(5.33%)</span>
 									</div>
 								</li>
-								<li class='text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4'>
+								<li
+									class="text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4"
+								>
 									<p>Mobile Safari</p>
-									<div class='block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative'>
-										<span class='absolute top-0 right-0 bottom-0 block w-[5.33%] h-full bg-violet-450 rounded-full'></span>
+									<div
+										class="block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative"
+									>
+										<span
+											class="absolute top-0 right-0 bottom-0 block w-[5.33%] h-full bg-violet-450 rounded-full"
+										></span>
 									</div>
-									<div class='flex items-center gap-2 flex-shrink-0'>
+									<div class="flex items-center gap-2 flex-shrink-0">
 										<span>2</span>
-										<span class='text-dark-800/50'>(5.33%)</span>
+										<span class="text-dark-800/50">(5.33%)</span>
 									</div>
 								</li>
-								<li class='text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4'>
+								<li
+									class="text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4"
+								>
 									<p>crawler</p>
-									<div class='block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative'>
-										<span class='absolute top-0 right-0 bottom-0 block w-[1.67%] h-full bg-violet-450 rounded-full'></span>
+									<div
+										class="block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative"
+									>
+										<span
+											class="absolute top-0 right-0 bottom-0 block w-[1.67%] h-full bg-violet-450 rounded-full"
+										></span>
 									</div>
-									<div class='flex items-center gap-2 flex-shrink-0'>
+									<div class="flex items-center gap-2 flex-shrink-0">
 										<span>1</span>
-										<span class='text-dark-800/50'>(1.67%)</span>
+										<span class="text-dark-800/50">(1.67%)</span>
 									</div>
 								</li>
-								<li class='text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4'>
+								<li
+									class="text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4"
+								>
 									<p>Chrome Mobile</p>
-									<div class='block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative'>
-										<span class='absolute top-0 right-0 bottom-0 block w-[1.67%] h-full bg-violet-450 rounded-full'></span>
+									<div
+										class="block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative"
+									>
+										<span
+											class="absolute top-0 right-0 bottom-0 block w-[1.67%] h-full bg-violet-450 rounded-full"
+										></span>
 									</div>
-									<div class='flex items-center gap-2 flex-shrink-0'>
+									<div class="flex items-center gap-2 flex-shrink-0">
 										<span>1</span>
-										<span class='text-dark-800/50'>(1.67%)</span>
+										<span class="text-dark-800/50">(1.67%)</span>
 									</div>
 								</li>
 							</ul>
 						</div>
-						<div class='border border-gray-400 rounded-xl p-6 max-md:p-4'>
-							<div class='flex justify-between items-center'>
-								<strong class='text-base font-semibold text-dark-800'>Platforms</strong>
+						<div class="border border-gray-400 rounded-xl p-6 max-md:p-4">
+							<div class="flex justify-between items-center">
+								<strong class="text-base font-semibold text-dark-800"
+									>Platforms</strong
+								>
 							</div>
-							<ul class='flex flex-col gap-6 mt-5.5 max-h-[201px] overflow-y-auto scrollbar-hide'>
-								<li class='text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4'>
+							<ul
+								class="flex flex-col gap-6 mt-5.5 max-h-[201px] overflow-y-auto scrollbar-hide"
+							>
+								<li
+									class="text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4"
+								>
 									<p>Windows 10</p>
-									<div class='block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative'>
-										<span class='absolute top-0 right-0 bottom-0 block w-[55.05%] h-full bg-violet-450 rounded-full'></span>
+									<div
+										class="block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative"
+									>
+										<span
+											class="absolute top-0 right-0 bottom-0 block w-[55.05%] h-full bg-violet-450 rounded-full"
+										></span>
 									</div>
-									<div class='flex items-center gap-2 flex-shrink-0'>
+									<div class="flex items-center gap-2 flex-shrink-0">
 										<span>58</span>
-										<span class='text-dark-800/50'>(55.05%)</span>
+										<span class="text-dark-800/50">(55.05%)</span>
 									</div>
 								</li>
-								<li class='text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4'>
+								<li
+									class="text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4"
+								>
 									<p>Mac OS X</p>
-									<div class='block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative'>
-										<span class='absolute top-0 right-0 bottom-0 block w-[21.94%] h-full bg-violet-450 rounded-full'></span>
+									<div
+										class="block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative"
+									>
+										<span
+											class="absolute top-0 right-0 bottom-0 block w-[21.94%] h-full bg-violet-450 rounded-full"
+										></span>
 									</div>
-									<div class='flex items-center gap-2 flex-shrink-0'>
+									<div class="flex items-center gap-2 flex-shrink-0">
 										<span>24</span>
-										<span class='text-dark-800/50'>(21.94%)</span>
+										<span class="text-dark-800/50">(21.94%)</span>
 									</div>
 								</li>
-								<li class='text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4'>
+								<li
+									class="text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4"
+								>
 									<p>Linux</p>
-									<div class='block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative'>
-										<span class='absolute top-0 right-0 bottom-0 block w-[11.71%] h-full bg-violet-450 rounded-full'></span>
+									<div
+										class="block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative"
+									>
+										<span
+											class="absolute top-0 right-0 bottom-0 block w-[11.71%] h-full bg-violet-450 rounded-full"
+										></span>
 									</div>
-									<div class='flex items-center gap-2 flex-shrink-0'>
+									<div class="flex items-center gap-2 flex-shrink-0">
 										<span>9</span>
-										<span class='text-dark-800/50'>(11.71%)</span>
+										<span class="text-dark-800/50">(11.71%)</span>
 									</div>
 								</li>
-								<li class='text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4'>
+								<li
+									class="text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4"
+								>
 									<p>Android</p>
-									<div class='block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative'>
-										<span class='absolute top-0 right-0 bottom-0 block w-[5.33%] h-full bg-violet-450 rounded-full'></span>
+									<div
+										class="block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative"
+									>
+										<span
+											class="absolute top-0 right-0 bottom-0 block w-[5.33%] h-full bg-violet-450 rounded-full"
+										></span>
 									</div>
-									<div class='flex items-center gap-2 flex-shrink-0'>
+									<div class="flex items-center gap-2 flex-shrink-0">
 										<span>2</span>
-										<span class='text-dark-800/50'>(5.33%)</span>
+										<span class="text-dark-800/50">(5.33%)</span>
 									</div>
 								</li>
-								<li class='text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4'>
+								<li
+									class="text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4"
+								>
 									<p>iOS</p>
-									<div class='block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative'>
-										<span class='absolute top-0 right-0 bottom-0 block w-[5.33%] h-full bg-violet-450 rounded-full'></span>
+									<div
+										class="block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative"
+									>
+										<span
+											class="absolute top-0 right-0 bottom-0 block w-[5.33%] h-full bg-violet-450 rounded-full"
+										></span>
 									</div>
-									<div class='flex items-center gap-2 flex-shrink-0'>
+									<div class="flex items-center gap-2 flex-shrink-0">
 										<span>2</span>
-										<span class='text-dark-800/50'>(5.33%)</span>
+										<span class="text-dark-800/50">(5.33%)</span>
 									</div>
 								</li>
-								<li class='text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4'>
+								<li
+									class="text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4"
+								>
 									<p>Other</p>
-									<div class='block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative'>
-										<span class='absolute top-0 right-0 bottom-0 block w-[1.67%] h-full bg-violet-450 rounded-full'></span>
+									<div
+										class="block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative"
+									>
+										<span
+											class="absolute top-0 right-0 bottom-0 block w-[1.67%] h-full bg-violet-450 rounded-full"
+										></span>
 									</div>
-									<div class='flex items-center gap-2 flex-shrink-0'>
+									<div class="flex items-center gap-2 flex-shrink-0">
 										<span>1</span>
-										<span class='text-dark-800/50'>(1.67%)</span>
+										<span class="text-dark-800/50">(1.67%)</span>
 									</div>
 								</li>
 							</ul>
 						</div>
-						<div class='border border-gray-400 rounded-xl p-6 max-md:p-4'>
-							<div class='flex justify-between items-center'>
-								<strong class='text-base font-semibold text-dark-800'>Screen Resolutions</strong>
+						<div class="border border-gray-400 rounded-xl p-6 max-md:p-4">
+							<div class="flex justify-between items-center">
+								<strong class="text-base font-semibold text-dark-800"
+									>Screen Resolutions</strong
+								>
 							</div>
-							<ul class='flex flex-col gap-6 mt-5.5 max-h-[201px] overflow-y-auto scrollbar-hide'>
-								<li class='text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4'>
+							<ul
+								class="flex flex-col gap-6 mt-5.5 max-h-[201px] overflow-y-auto scrollbar-hide"
+							>
+								<li
+									class="text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4"
+								>
 									<p>1920x1080</p>
-									<div class='block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative'>
-										<span class='absolute top-0 right-0 bottom-0 block w-[55.05%] h-full bg-violet-450 rounded-full'></span>
+									<div
+										class="block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative"
+									>
+										<span
+											class="absolute top-0 right-0 bottom-0 block w-[55.05%] h-full bg-violet-450 rounded-full"
+										></span>
 									</div>
-									<div class='flex items-center gap-2 flex-shrink-0'>
+									<div class="flex items-center gap-2 flex-shrink-0">
 										<span>58</span>
-										<span class='text-dark-800/50'>(55.05%)</span>
+										<span class="text-dark-800/50">(55.05%)</span>
 									</div>
 								</li>
-								<li class='text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4'>
+								<li
+									class="text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4"
+								>
 									<p>1366x768</p>
-									<div class='block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative'>
-										<span class='absolute top-0 right-0 bottom-0 block w-[11.71%] h-full bg-violet-450 rounded-full'></span>
+									<div
+										class="block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative"
+									>
+										<span
+											class="absolute top-0 right-0 bottom-0 block w-[11.71%] h-full bg-violet-450 rounded-full"
+										></span>
 									</div>
-									<div class='flex items-center gap-2 flex-shrink-0'>
+									<div class="flex items-center gap-2 flex-shrink-0">
 										<span>9</span>
-										<span class='text-dark-800/50'>(11.71%)</span>
+										<span class="text-dark-800/50">(11.71%)</span>
 									</div>
 								</li>
-								<li class='text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4'>
+								<li
+									class="text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4"
+								>
 									<p>1024x768</p>
-									<div class='block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative'>
-										<span class='absolute top-0 right-0 bottom-0 block w-[11.71%] h-full bg-violet-450 rounded-full'></span>
+									<div
+										class="block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative"
+									>
+										<span
+											class="absolute top-0 right-0 bottom-0 block w-[11.71%] h-full bg-violet-450 rounded-full"
+										></span>
 									</div>
-									<div class='flex items-center gap-2 flex-shrink-0'>
+									<div class="flex items-center gap-2 flex-shrink-0">
 										<span>9</span>
-										<span class='text-dark-800/50'>(11.71%)</span>
+										<span class="text-dark-800/50">(11.71%)</span>
 									</div>
 								</li>
-								<li class='text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4'>
+								<li
+									class="text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4"
+								>
 									<p>1024x600</p>
-									<div class='block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative'>
-										<span class='absolute top-0 right-0 bottom-0 block w-[5.33%] h-full bg-violet-450 rounded-full'></span>
+									<div
+										class="block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative"
+									>
+										<span
+											class="absolute top-0 right-0 bottom-0 block w-[5.33%] h-full bg-violet-450 rounded-full"
+										></span>
 									</div>
-									<div class='flex items-center gap-2 flex-shrink-0'>
+									<div class="flex items-center gap-2 flex-shrink-0">
 										<span>2</span>
-										<span class='text-dark-800/50'>(5.33%)</span>
+										<span class="text-dark-800/50">(5.33%)</span>
 									</div>
 								</li>
-								<li class='text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4'>
+								<li
+									class="text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4"
+								>
 									<p>800x600</p>
-									<div class='block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative'>
-										<span class='absolute top-0 right-0 bottom-0 block w-[5.33%] h-full bg-violet-450 rounded-full'></span>
+									<div
+										class="block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative"
+									>
+										<span
+											class="absolute top-0 right-0 bottom-0 block w-[5.33%] h-full bg-violet-450 rounded-full"
+										></span>
 									</div>
-									<div class='flex items-center gap-2 flex-shrink-0'>
+									<div class="flex items-center gap-2 flex-shrink-0">
 										<span>2</span>
-										<span class='text-dark-800/50'>(5.33%)</span>
+										<span class="text-dark-800/50">(5.33%)</span>
 									</div>
 								</li>
 							</ul>
 						</div>
-						<div class='border border-gray-400 rounded-xl p-6 max-md:p-4'>
-							<div class='flex justify-between items-center'>
-								<strong class='text-base font-semibold text-dark-800'>IP Addresses</strong>
+						<div class="border border-gray-400 rounded-xl p-6 max-md:p-4">
+							<div class="flex justify-between items-center">
+								<strong class="text-base font-semibold text-dark-800"
+									>IP Addresses</strong
+								>
 							</div>
-							<ul class='flex flex-col gap-6 mt-5.5 max-h-[201px] overflow-y-auto scrollbar-hide'>
-								<li class='text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4'>
+							<ul
+								class="flex flex-col gap-6 mt-5.5 max-h-[201px] overflow-y-auto scrollbar-hide"
+							>
+								<li
+									class="text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4"
+								>
 									<p>192.168.1.1</p>
-									<div class='block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative'>
-										<span class='absolute top-0 right-0 bottom-0 block w-[55.05%] h-full bg-violet-450 rounded-full'></span>
+									<div
+										class="block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative"
+									>
+										<span
+											class="absolute top-0 right-0 bottom-0 block w-[55.05%] h-full bg-violet-450 rounded-full"
+										></span>
 									</div>
-									<div class='flex items-center gap-2 flex-shrink-0'>
+									<div class="flex items-center gap-2 flex-shrink-0">
 										<span>58</span>
-										<span class='text-dark-800/50'>(55.05%)</span>
+										<span class="text-dark-800/50">(55.05%)</span>
 									</div>
 								</li>
-								<li class='text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4'>
+								<li
+									class="text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4"
+								>
 									<p>192.168.1.2</p>
-									<div class='block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative'>
-										<span class='absolute top-0 right-0 bottom-0 block w-[11.71%] h-full bg-violet-450 rounded-full'></span>
+									<div
+										class="block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative"
+									>
+										<span
+											class="absolute top-0 right-0 bottom-0 block w-[11.71%] h-full bg-violet-450 rounded-full"
+										></span>
 									</div>
-									<div class='flex items-center gap-2 flex-shrink-0'>
+									<div class="flex items-center gap-2 flex-shrink-0">
 										<span>9</span>
-										<span class='text-dark-800/50'>(11.71%)</span>
+										<span class="text-dark-800/50">(11.71%)</span>
 									</div>
 								</li>
-								<li class='text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4'>
+								<li
+									class="text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4"
+								>
 									<p>192.168.1.3</p>
-									<div class='block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative'>
-										<span class='absolute top-0 right-0 bottom-0 block w-[11.71%] h-full bg-violet-450 rounded-full'></span>
+									<div
+										class="block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative"
+									>
+										<span
+											class="absolute top-0 right-0 bottom-0 block w-[11.71%] h-full bg-violet-450 rounded-full"
+										></span>
 									</div>
-									<div class='flex items-center gap-2 flex-shrink-0'>
+									<div class="flex items-center gap-2 flex-shrink-0">
 										<span>9</span>
-										<span class='text-dark-800/50'>(11.71%)</span>
+										<span class="text-dark-800/50">(11.71%)</span>
 									</div>
 								</li>
-								<li class='text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4'>
+								<li
+									class="text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4"
+								>
 									<p>192.168.1.4</p>
-									<div class='block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative'>
-										<span class='absolute top-0 right-0 bottom-0 block w-[5.33%] h-full bg-violet-450 rounded-full'></span>
+									<div
+										class="block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative"
+									>
+										<span
+											class="absolute top-0 right-0 bottom-0 block w-[5.33%] h-full bg-violet-450 rounded-full"
+										></span>
 									</div>
-									<div class='flex items-center gap-2 flex-shrink-0'>
+									<div class="flex items-center gap-2 flex-shrink-0">
 										<span>2</span>
-										<span class='text-dark-800/50'>(5.33%)</span>
+										<span class="text-dark-800/50">(5.33%)</span>
 									</div>
 								</li>
-								<li class='text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4'>
+								<li
+									class="text-sm text-dark-800 flex justify-end items-center [&_a]:text-blue-500 [&_a]:hover:underline gap-6 [&_a,&_p]:truncate [&_a,&_p]:max-w-[238px] [&_p,&_a]:min-w-[80px] [&_p,&_a]:mr-auto max-lg:gap-4"
+								>
 									<p>192.168.1.5</p>
-									<div class='block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative'>
-										<span class='absolute top-0 right-0 bottom-0 block w-[5.33%] h-full bg-violet-450 rounded-full'></span>
+									<div
+										class="block max-w-[210px] w-full h-2 rounded-full flex-shrink-1 relative"
+									>
+										<span
+											class="absolute top-0 right-0 bottom-0 block w-[5.33%] h-full bg-violet-450 rounded-full"
+										></span>
 									</div>
-									<div class='flex items-center gap-2 flex-shrink-0'>
+									<div class="flex items-center gap-2 flex-shrink-0">
 										<span>2</span>
-										<span class='text-dark-800/50'>(5.33%)</span>
+										<span class="text-dark-800/50">(5.33%)</span>
 									</div>
 								</li>
 							</ul>
