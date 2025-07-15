@@ -825,18 +825,18 @@
 
 		<div class="w-full min-h-screen">
 			<aside
-				class="w-[15rem] fixed left-0 top-0 bottom-0 flex flex-col h-[calc(100vh-var(--browser-ui-height,0rem))] z-101 max-lg:-left-full max-lg:top-0 max-lg:w-full transition-all duration-500 ease-in-out [&.active]:left-0"
+				class="w-[240px] fixed left-0 top-0 bottom-0 flex flex-col h-[calc(100vh-var(--browser-ui-height,0px))] z-101 max-lg:-left-full max-lg:top-0 max-lg:w-full transition-all duration-500 ease-in-out [&.active]:left-0"
 			>
 				<div
-					class="mobile-menu-overlay absolute bg-[#090B13]/50 z-0 opacity-0 w-0 h-[calc(100vh-var(--browser-ui-height,0rem))] lg:hidden [.active_&]:opacity-100 [.active_&]:w-screen transition-all duration-500 ease-in-out delay-75"
+					class="mobile-menu-overlay absolute bg-[#090B13]/50 z-0 opacity-0 w-0 h-[calc(100vh-var(--browser-ui-height,0px))] lg:hidden [.active_&]:opacity-100 [.active_&]:w-screen transition-all duration-500 ease-in-out delay-75"
 				></div>
 				<div
-					class="flex flex-col max-lg:w-[19.875rem] max-lg:max-w-[19.875rem] max-xs:w-[85%]! w-full bg-gray-150 max-lg:rounded-r-2xl z-3 h-full"
+					class="flex flex-col max-lg:w-[318px] max-lg:max-w-[318px] max-xs:w-[85%]! w-full bg-gray-150 max-lg:rounded-r-2xl z-3 h-full"
 				>
 					<div class="px-5 pt-7.5 mb-5">
 						<a
 							href="./index.html"
-							class="flex items-center text-base font-semibold"
+							class="flex items-center text-base font-semibold gap-2"
 						>
 							<svg class="icon icon-md">
 								<use href="#chevron-left" />
@@ -903,6 +903,33 @@
 									</a>
 								</li>
 								<li>
+									<a
+										href="./settings-custom-domain.html"
+										class="aside-nav-item"
+									>
+										<svg class="icon icon-sm" stroke-width="6">
+											<use href="#icon-custom-domain"></use>
+										</svg>
+										Custom Domain
+									</a>
+								</li>
+								<li>
+									<a href="./settings-video-player.html" class="aside-nav-item">
+										<svg class="icon icon-sm" stroke-width="6">
+											<use href="#icon-video-player"></use>
+										</svg>
+										Video Player
+									</a>
+								</li>
+								<li>
+									<a href="./settings-ai.html" class="aside-nav-item">
+										<svg class="icon icon-sm" stroke-width="6">
+											<use href="#icon-jumpshare-ai"></use>
+										</svg>
+										Jumpshare AI
+									</a>
+								</li>
+								<li>
 									<a href="./settings-billing.html" class="aside-nav-item">
 										<svg class="icon icon-sm">
 											<use href="#icon-billing"></use>
@@ -919,7 +946,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="./trash.html" class="active aside-nav-item">
+									<a href="./settings-data.html" class="aside-nav-item">
 										<svg class="icon icon-sm">
 											<use href="#icon-data"></use>
 										</svg>
@@ -932,6 +959,33 @@
 											<use href="#icon-integrations"></use>
 										</svg>
 										Integrations
+									</a>
+								</li>
+							</ul>
+							<p class="text-s text-dark-800/60 font-medium px-2.5 mt-6">
+								Personal Settings
+							</p>
+							<ul class="flex flex-col mt-2">
+								<li>
+									<a
+										href="./settings-account.html"
+										class="active aside-nav-item"
+									>
+										<svg class="icon icon-sm">
+											<use href="#icon-account1" />
+										</svg>
+										<span>Account</span>
+									</a>
+								</li>
+								<li>
+									<a
+										href="./settings-notifications.html"
+										class="aside-nav-item"
+									>
+										<svg class="icon icon-sm">
+											<use href="#icon-notifications" />
+										</svg>
+										<span>Notifications</span>
 									</a>
 								</li>
 							</ul>
