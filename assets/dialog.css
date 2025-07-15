@@ -47,18 +47,6 @@
 		background-color: rgba(0, 0, 0, 0.8);
 	}
 
-	/* Modal header */
-	.modal-header {
-		padding: 36px;
-		padding-bottom: 0;
-	}
-
-	@media all and (max-width: 768px) {
-		.modal-header {
-			padding: 20px;
-		}
-	}
-
 	/* Modal close button */
 	.modal .close,
 	.modal .close_icon {
@@ -107,13 +95,6 @@
 		font-size: 20px;
 	}
 
-	/* Modal body */
-	.modal-body {
-		position: relative;
-		padding: 36px;
-		padding-top: 20px;
-	}
-
 	@media all and (max-width: 768px) {
 		.modal-body {
 			padding: 20px;
@@ -126,31 +107,9 @@
 
 	/* Modal footer */
 	.modal-footer {
-		margin-top: 23px;
-		text-align: right;
-		display: flex;
-		flex-direction: row-reverse;
+		padding: 1.5rem;
 	}
 
-	.modal-footer::after {
-		content: "";
-		display: table;
-		clear: both;
-	}
-
-	/* Spacing between buttons */
-	.modal-footer .btn + .btn {
-		margin-right: 8px;
-		margin-bottom: 0;
-	}
-
-	.modal-footer .btn-group .btn + .btn {
-		margin-left: -1px;
-	}
-
-	.modal-footer .btn-block + .btn-block {
-		margin-left: 0;
-	}
 	.modal-bs {
 		width: 100%;
 		max-width: 540px;
@@ -178,13 +137,13 @@
 
 	.modal-dialog {
 		.modal-header {
-			@apply px-6 pt-6 pb-0;
+			@apply p-6 pb-4;
 		}
 		.modal-content {
 			@apply overflow-hidden;
 		}
 		.modal-body {
-			@apply p-6 max-h-[calc(83vh-110px)] overflow-y-auto static;
+			@apply px-6 max-h-[calc(83vh-110px)] overflow-y-auto static;
 		}
 	}
 
