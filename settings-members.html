@@ -164,7 +164,9 @@
 				<div
 					class="flex flex-col max-lg:w-[318px] max-lg:max-w-[318px] max-xs:w-[85%]! w-full bg-gray-150 max-lg:rounded-r-2xl z-3 h-full"
 				>
-					<div class="px-5 pt-7.5 mb-5">
+					<div
+						class="px-5 pt-7.5 pb-5 max-lg:border-b max-lg:pt-5 border-gray-400"
+					>
 						<a
 							href="./index.html"
 							class="flex items-center text-base font-semibold gap-2"
@@ -785,22 +787,24 @@
 						<div class="flex justify-between items-center">
 							<h3 class="text-lg text-dark-800 font-semibold">Members List</h3>
 						</div>
-						<div class="flex justify-between items-center gap-4 mt-4">
+						<div
+							class="flex justify-between items-center gap-4 mt-4 max-md:flex-wrap"
+						>
 							<input
 								type="text"
 								placeholder="startup.com"
-								class="form-control-settings max-w-[25.1875rem] w-full"
+								class="form-control-settings max-w-[25.1875rem] w-full max-md:max-w-full"
 							/>
-							<div class="flex gap-3 flex-shrink-0">
+							<div class="flex gap-3 flex-shrink-0 max-xs:w-full">
 								<button
 									type="button"
-									class="btn btn-border-default h-10 px-6 font-normal"
+									class="btn btn-border-default h-10 px-6 font-normal max-xs:w-full"
 								>
 									Leave workspace
 								</button>
 								<button
 									type="button"
-									class="btn btn-primary-default h-10 px-5 font-semibold"
+									class="btn btn-primary-default h-10 px-5 font-semibold max-xs:w-full"
 								>
 									<svg class="icon icon-s">
 										<use href="#icon-members-semibold"></use>
@@ -811,13 +815,15 @@
 						</div>
 					</div>
 					<div class="mt-10">
-						<div class="grid grid-cols-[1fr_162px_211px] py-[0.9375rem]">
+						<div
+							class="grid grid-cols-[1fr_162px_211px] gap-4 py-[0.9375rem] max-md:hidden"
+						>
 							<div class="text-sm text-gray-900">Name</div>
 							<div class="text-sm text-gray-900">Team Role</div>
 							<div class="text-sm text-gray-900">Last Active</div>
 						</div>
 						<div
-							class="grid grid-cols-[1fr_162px_211px] border-t border-gray-400 py-2 hover:bg-gray-150"
+							class="grid grid-cols-[1fr_162px_211px] gap-4 border-t border-gray-400 py-2 hover:bg-gray-150 max-md:grid-cols-[1fr_auto_50px]"
 						>
 							<div class="flex items-center gap-3 pl-2.5">
 								<div class="avatar size-7.5">J</div>
@@ -828,11 +834,13 @@
 									</span>
 								</div>
 							</div>
-							<div class="flex items-center text-sm">
+							<div class="flex items-center text-sm max-md:justify-end">
 								<span>Owner</span>
 							</div>
-							<div class="text-sm flex items-center justify-between pr-4">
-								<span>5 hours ago</span>
+							<div
+								class="text-sm flex items-center justify-between pr-4 max-md:justify-end"
+							>
+								<span class="max-md:hidden">5 hours ago</span>
 								<button
 									type="button"
 									class="size-6 rounded-full hover:bg-gray-400 cursor-pointer flex items-center justify-center"
@@ -845,7 +853,7 @@
 							</div>
 						</div>
 						<div
-							class="grid grid-cols-[1fr_162px_211px] border-t border-gray-400 py-2 hover:bg-gray-150"
+							class="grid grid-cols-[1fr_162px_211px] gap-4 border-t border-gray-400 py-2 hover:bg-gray-150 max-md:grid-cols-[1fr_auto_50px]"
 						>
 							<div class="flex items-center gap-3 pl-2.5">
 								<div class="avatar size-7.5">
@@ -858,11 +866,13 @@
 									</span>
 								</div>
 							</div>
-							<div class="flex items-center text-sm">
-								<span>Owner</span>
+							<div class="flex items-center text-sm max-md:justify-end">
+								<span>Member</span>
 							</div>
-							<div class="text-sm flex items-center justify-between pr-4">
-								<span>5 hours ago</span>
+							<div
+								class="text-sm flex items-center justify-between pr-4 max-md:justify-end"
+							>
+								<span class="max-md:hidden">5 hours ago</span>
 								<button
 									type="button"
 									class="size-6 rounded-full hover:bg-gray-400 cursor-pointer flex items-center justify-center"
@@ -875,7 +885,7 @@
 							</div>
 						</div>
 						<div
-							class="grid grid-cols-[1fr_162px_211px] border-t border-gray-400 py-2 hover:bg-gray-150"
+							class="grid grid-cols-[1fr_162px_211px] gap-4 border-t border-gray-400 py-2 hover:bg-gray-150 max-md:grid-cols-[1fr_auto_50px]"
 						>
 							<div class="flex items-center gap-3 pl-2.5">
 								<div class="avatar size-7.5">
@@ -888,11 +898,13 @@
 									</span>
 								</div>
 							</div>
-							<div class="flex items-center text-sm">
-								<span>Owner</span>
+							<div class="flex items-center text-sm max-md:justify-end">
+								<span>Member</span>
 							</div>
-							<div class="text-sm flex items-center justify-between pr-4">
-								<span>5 hours ago</span>
+							<div
+								class="text-sm flex items-center justify-between pr-4 max-md:justify-end"
+							>
+								<span class="max-md:hidden">5 hours ago</span>
 								<button
 									type="button"
 									class="size-6 rounded-full hover:bg-gray-400 cursor-pointer flex items-center justify-center"
@@ -905,7 +917,7 @@
 							</div>
 						</div>
 						<div
-							class="grid grid-cols-[1fr_162px_211px] border-t border-gray-400 py-2 hover:bg-gray-150"
+							class="grid grid-cols-[1fr_162px_211px] gap-4 border-t border-gray-400 py-2 hover:bg-gray-150 max-md:grid-cols-[1fr_auto_50px]"
 						>
 							<div class="flex items-center gap-3 pl-2.5">
 								<div class="avatar size-7.5">
@@ -918,11 +930,13 @@
 									</span>
 								</div>
 							</div>
-							<div class="flex items-center text-sm">
+							<div class="flex items-center text-sm max-md:justify-end">
 								<span>Owner</span>
 							</div>
-							<div class="text-sm flex items-center justify-between pr-4">
-								<span>5 hours ago</span>
+							<div
+								class="text-sm flex items-center justify-between pr-4 max-md:justify-end"
+							>
+								<span class="max-md:hidden">5 hours ago</span>
 								<button
 									type="button"
 									class="size-6 rounded-full hover:bg-gray-400 cursor-pointer flex items-center justify-center"
@@ -935,7 +949,7 @@
 							</div>
 						</div>
 						<div
-							class="grid grid-cols-[1fr_162px_211px] border-t border-gray-400 py-2 hover:bg-gray-150"
+							class="grid grid-cols-[1fr_162px_211px] gap-4 border-t border-gray-400 py-2 hover:bg-gray-150 max-md:grid-cols-[1fr_auto_50px]"
 						>
 							<div class="flex items-center gap-3 pl-2.5">
 								<div class="avatar size-7.5">J</div>
@@ -946,11 +960,13 @@
 									</span>
 								</div>
 							</div>
-							<div class="flex items-center text-sm">
+							<div class="flex items-center text-sm max-md:justify-end">
 								<span>Owner</span>
 							</div>
-							<div class="text-sm flex items-center justify-between pr-4">
-								<span>5 hours ago</span>
+							<div
+								class="text-sm flex items-center justify-between pr-4 max-md:justify-end"
+							>
+								<span class="max-md:hidden">5 hours ago</span>
 								<button
 									type="button"
 									class="size-6 rounded-full hover:bg-gray-400 cursor-pointer flex items-center justify-center"
@@ -963,7 +979,7 @@
 							</div>
 						</div>
 						<div
-							class="grid grid-cols-[1fr_162px_211px] border-t border-gray-400 py-2 hover:bg-gray-150"
+							class="grid grid-cols-[1fr_162px_211px] gap-4 border-t border-gray-400 py-2 hover:bg-gray-150 max-md:grid-cols-[1fr_auto_50px]"
 						>
 							<div class="flex items-center gap-3 pl-2.5">
 								<div class="avatar size-7.5">J</div>
@@ -974,11 +990,13 @@
 									</span>
 								</div>
 							</div>
-							<div class="flex items-center text-sm">
-								<span>Owner</span>
+							<div class="flex items-center text-sm max-md:justify-end">
+								<span>Admin</span>
 							</div>
-							<div class="text-sm flex items-center justify-between pr-4">
-								<span>5 hours ago</span>
+							<div
+								class="text-sm flex items-center justify-between pr-4 max-md:justify-end"
+							>
+								<span class="max-md:hidden">5 hours ago</span>
 								<button
 									type="button"
 									class="size-6 rounded-full hover:bg-gray-400 cursor-pointer flex items-center justify-center"
@@ -991,7 +1009,7 @@
 							</div>
 						</div>
 						<div
-							class="grid grid-cols-[1fr_162px_211px] border-t border-gray-400 py-2 hover:bg-gray-150"
+							class="grid grid-cols-[1fr_162px_211px] gap-4 border-t border-gray-400 py-2 hover:bg-gray-150 max-md:grid-cols-[1fr_auto_50px]"
 						>
 							<div class="flex items-center gap-3 pl-2.5">
 								<div class="avatar size-7.5">J</div>
@@ -1002,11 +1020,13 @@
 									</span>
 								</div>
 							</div>
-							<div class="flex items-center text-sm">
+							<div class="flex items-center text-sm max-md:justify-end">
 								<span>Owner</span>
 							</div>
-							<div class="text-sm flex items-center justify-between pr-4">
-								<span>5 hours ago</span>
+							<div
+								class="text-sm flex items-center justify-between pr-4 max-md:justify-end"
+							>
+								<span class="max-md:hidden">5 hours ago</span>
 								<button
 									type="button"
 									class="size-6 rounded-full hover:bg-gray-400 cursor-pointer flex items-center justify-center"
@@ -1020,7 +1040,7 @@
 						</div>
 						<div class="flex justify-between items-center mt-6">
 							<div class="flex items-center gap-5">
-								<p class="text-sm">Members Per Page:</p>
+								<p class="text-sm max-md:hidden">Members Per Page:</p>
 								<button type="button" class="btn btn-border-default px-3 gap-5">
 									<span>10</span>
 									<svg class="icon icon-sm">
@@ -1047,12 +1067,12 @@
 									2
 								</li>
 								<li
-									class="flex items-center justify-center size-8 cursor-pointer [&.active]:border border-dark-800 rounded-md"
+									class="flex items-center justify-center size-8 cursor-pointer [&.active]:border border-dark-800 rounded-md max-md:hidden"
 								>
 									3
 								</li>
 								<li
-									class="flex items-center justify-center size-8 cursor-pointer [&.active]:border border-dark-800 rounded-md"
+									class="flex items-center justify-center size-8 cursor-pointer [&.active]:border border-dark-800 rounded-md max-md:hidden"
 								>
 									4
 								</li>
@@ -1089,8 +1109,8 @@
 						>
 							Members Settings
 						</h3>
-						<div class="border border-gray-600 rounded-xl p-6 mt-3">
-							<div class="flex items-center justify-between">
+						<div class="border border-gray-600 rounded-xl p-6 mt-3 max-sm:p-5">
+							<div class="flex items-center justify-between gap-x-4">
 								<p class="text-sm">
 									Existing members can invite new team members?
 								</p>
@@ -1106,7 +1126,7 @@
 								</label>
 							</div>
 							<hr class="my-5.5 border-gray-600" />
-							<div class="flex items-center justify-between">
+							<div class="flex items-center justify-between gap-x-4">
 								<p class="text-sm">
 									Only allow members whose email address matches the
 									organization domain?
@@ -1123,14 +1143,17 @@
 								</label>
 							</div>
 							<div
-								class="max-w-[471px] mt-4 flex items-center gap-3 relative text-dark-800/40"
+								class="max-w-[471px] mt-4 flex items-center gap-3 relative text-dark-800/40 max-sm:flex-wrap"
 							>
 								<input
 									type="text"
 									placeholder="startup.com"
 									class="flex-grow-1 border border-gray-600 text-gray-900 placeholder:text-gray-900 px-4 h-10 rounded-lg text-sm"
 								/>
-								<button type="button" class="btn btn-primary-default h-10 px-5">
+								<button
+									type="button"
+									class="btn btn-primary-default h-10 px-5 max-xs:w-full"
+								>
 									Update
 								</button>
 							</div>

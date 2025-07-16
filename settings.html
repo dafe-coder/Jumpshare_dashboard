@@ -163,7 +163,9 @@
 				<div
 					class="flex flex-col max-lg:w-[318px] max-lg:max-w-[318px] max-xs:w-[85%]! w-full bg-gray-150 max-lg:rounded-r-2xl z-3 h-full"
 				>
-					<div class="px-5 pt-7.5 mb-5">
+					<div
+						class="px-5 pt-7.5 pb-5 max-lg:border-b max-lg:pt-5 border-gray-400"
+					>
 						<a
 							href="./index.html"
 							class="flex items-center text-base font-semibold gap-2"
@@ -783,14 +785,16 @@
 								Workspace Settings
 							</h3>
 						</div>
-						<div class="border border-gray-600 rounded-xl p-6 mt-3">
+						<div class="border border-gray-600 rounded-xl p-6 mt-3 max-xs:p-5">
 							<strong class="text-sm font-semibold mb-2 block">
 								Workspace name
 							</strong>
 							<p class="text-gray-900 text-sm">
 								Choose a name for your workspace.
 							</p>
-							<div class="max-w-[27.625rem] mt-4 flex items-center gap-4 mb-6">
+							<div
+								class="max-w-[27.625rem] mt-4 flex items-center gap-4 mb-6 max-xs:flex-wrap"
+							>
 								<input
 									class="form-control-settings flex-grow-1 text-dark-800"
 									type="text"
@@ -800,7 +804,7 @@
 								/>
 								<button
 									type="button"
-									class="btn btn-border-default flex-shrink-0 px-5 h-10"
+									class="btn btn-border-default flex-shrink-0 px-5 h-10 max-xs:w-full"
 								>
 									Edit
 								</button>
@@ -838,7 +842,7 @@
 								<use href="#alert" />
 							</svg>
 						</h3>
-						<div class="border border-gray-600 rounded-xl p-6 mt-3">
+						<div class="border border-gray-600 rounded-xl p-6 mt-3 max-xs:p-5">
 							<p class="text-gray-900 text-sm">
 								Choose the type of shareable link for your Workspace.
 							</p>
@@ -852,14 +856,16 @@
 											checked
 										/>
 										<span class="custom-control-indicator radio"></span>
-										<span>files.ghaus.me/v/yt123IuhGd8a6J8dvxz</span>
+										<span class="truncate"
+											>files.ghaus.me/v/yt123IuhGd8a6J8dvxz</span
+										>
 									</label>
 								</li>
 								<li>
 									<label class="custom-controls radio">
 										<input type="radio" name="sharable-link" value="1" />
 										<span class="custom-control-indicator radio"></span>
-										<span>files.ghaus.me/xEd1a3I</span>
+										<span class="truncate">files.ghaus.me/xEd1a3I</span>
 									</label>
 								</li>
 							</ul>
@@ -874,8 +880,8 @@
 								<use href="#alert" />
 							</svg>
 						</h3>
-						<div class="border border-gray-600 rounded-xl p-6 mt-3">
-							<div class="flex items-center justify-between">
+						<div class="border border-gray-600 rounded-xl p-6 mt-3 max-xs:p-5">
+							<div class="flex items-center justify-between gap-3">
 								<div>
 									<strong class="text-sm font-semibold mb-2 block">
 										Comments
@@ -897,7 +903,7 @@
 								</label>
 							</div>
 							<hr class="my-5.5 border-gray-600" />
-							<div class="flex items-center justify-between">
+							<div class="flex items-center justify-between gap-3">
 								<div>
 									<strong class="text-sm font-semibold mb-2 block">
 										Downloads
@@ -919,7 +925,9 @@
 								</label>
 							</div>
 							<hr class="my-5.5 border-gray-600" />
-							<div class="flex items-center justify-between">
+							<div
+								class="flex items-center justify-between gap-3 max-sm:flex-wrap"
+							>
 								<div>
 									<strong class="text-sm font-semibold mb-2 block">
 										Self Destruct
@@ -929,10 +937,10 @@
 										secure sharing.
 									</p>
 								</div>
-								<div class="dropdown-wrapper">
+								<div class="dropdown-wrapper max-sm:w-full">
 									<button
 										type="button"
-										class="btn btn-border-default w-[246px] justify-between px-4 h-10 font-normal"
+										class="btn btn-border-default w-[246px] justify-between px-4 h-10 font-normal max-xs:w-full"
 									>
 										Keep Forever
 										<svg class="icon icon-sm flex-shrink-0">
@@ -942,7 +950,9 @@
 								</div>
 							</div>
 							<hr class="my-5.5 border-gray-600" />
-							<div class="flex items-center justify-between">
+							<div
+								class="flex items-center justify-between gap-3 max-sm:flex-wrap"
+							>
 								<div>
 									<strong class="text-sm font-semibold mb-2 block">
 										Content Privacy
@@ -952,10 +962,10 @@
 										to your Workspace.
 									</p>
 								</div>
-								<div class="dropdown-wrapper">
+								<div class="dropdown-wrapper max-sm:w-full">
 									<button
 										type="button"
-										class="btn btn-border-default w-[246px] justify-between px-4 h-10 font-normal"
+										class="btn btn-border-default w-[246px] justify-between px-4 h-10 font-normal max-xs:w-full"
 									>
 										Anyone with a link
 										<svg class="icon icon-sm">
@@ -970,17 +980,15 @@
 						<h3 class="text-lg text-dark-800 font-semibold">
 							Video Embedding Controls
 						</h3>
-						<div class="border border-gray-600 rounded-xl p-6 mt-3">
+						<div class="border border-gray-600 rounded-xl p-6 mt-3 max-xs:p-5">
 							<p class="text-sm">
 								Specify domains and subdomains where you want your videos to be
 								embeddable. You can enter multiple domains separated by commas.
 							</p>
 							<div
-								class="max-w-[471px] mt-4 flex items-center gap-3 relative text-dark-800/40"
+								class="max-w-[471px] mt-4 flex items-center gap-3 relative text-dark-800/40 max-sm:flex-wrap"
 							>
-								<svg
-									class="icon icon-sm absolute left-3.5 top-1/2 -translate-y-1/2"
-								>
+								<svg class="icon icon-sm absolute left-3.5 top-[0.6875rem]">
 									<use href="#icon-link-2" />
 								</svg>
 								<input
@@ -990,7 +998,7 @@
 								/>
 								<button
 									type="button"
-									class="btn btn-primary-default h-10 px-5"
+									class="btn btn-primary-default h-10 px-5 max-xs:w-full"
 									disabled
 								>
 									Update

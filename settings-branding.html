@@ -163,7 +163,9 @@
 				<div
 					class="flex flex-col max-lg:w-[318px] max-lg:max-w-[318px] max-xs:w-[85%]! w-full bg-gray-150 max-lg:rounded-r-2xl z-3 h-full"
 				>
-					<div class="px-5 pt-7.5 mb-5">
+					<div
+						class="px-5 pt-7.5 pb-5 max-lg:border-b max-lg:pt-5 border-gray-400"
+					>
 						<a
 							href="./index.html"
 							class="flex items-center text-base font-semibold gap-2"
@@ -780,19 +782,21 @@
 					</div>
 				</header>
 				<div
-					class="dashboard-container pb-5 pt-5 grid grid-cols-[1fr_430px] gap-9"
+					class="dashboard-container pb-5 pt-5 grid grid-cols-[1fr_minmax(300px,430px)] gap-9 max-md:grid-cols-1"
 				>
-					<div>
+					<div class="max-md:order-2">
 						<div>
 							<h3 class="text-lg text-dark-800 font-semibold">
 								Viewer Settings
 							</h3>
-							<div class="bg-white border-gray-600 border rounded-xl p-6 mt-3">
+							<div
+								class="bg-white border-gray-600 border rounded-xl p-6 mt-3 max-sm:p-5"
+							>
 								<div class="flex flex-col gap-1">
 									<strong class="text-sm font-semibold">
 										File Viewer Theme
 									</strong>
-									<div class="grid grid-cols-2 gap-3 mt-4">
+									<div class="grid grid-cols-2 gap-3 mt-4 max-xs:grid-cols-1">
 										<button
 											type="button"
 											class="active btn btn-border-default [&.active]:border-blue-500 [&.active]:bg-gray-100 h-10"
@@ -844,7 +848,9 @@
 									<use href="#alert"></use>
 								</svg>
 							</h3>
-							<div class="border border-gray-600 rounded-xl p-6 mt-3">
+							<div
+								class="border border-gray-600 rounded-xl p-6 mt-3 max-sm:p-5"
+							>
 								<p class="text-sm text-gray-900 max-w-[28.125rem] w-full">
 									For best results, use a transparent PNG. Max file size is
 									100KB. All dimensions (width x height) below are in pixels.
@@ -946,11 +952,9 @@
 									following URL.
 								</p>
 								<div
-									class="w-full mt-4 flex items-center gap-3 relative text-dark-800/40"
+									class="w-full mt-4 flex items-center gap-3 relative text-dark-800/40 max-sm:flex-wrap"
 								>
-									<svg
-										class="icon icon-sm absolute left-3.5 top-1/2 -translate-y-1/2"
-									>
+									<svg class="icon icon-sm absolute left-3.5 top-[0.6875rem]">
 										<use href="#icon-link-2"></use>
 									</svg>
 									<input
@@ -960,7 +964,7 @@
 									/>
 									<button
 										type="button"
-										class="btn btn-primary-default h-10 px-5"
+										class="btn btn-primary-default h-10 px-5 max-xs:w-full"
 									>
 										Update
 									</button>
@@ -976,7 +980,9 @@
 									<use href="#alert"></use>
 								</svg>
 							</h3>
-							<div class="bg-white border-gray-600 border rounded-xl p-6 mt-3">
+							<div
+								class="bg-white border-gray-600 border rounded-xl p-6 mt-3 max-sm:p-5"
+							>
 								<div class="flex flex-col gap-3">
 									<span class="text-sm">Email Theme</span>
 									<div class="dropdown-wrapper">
@@ -1019,7 +1025,7 @@
 								<div class="mt-6">
 									<button
 										type="button"
-										class="btn btn-primary-default px-5 h-10"
+										class="btn btn-primary-default px-5 h-10 max-xs:w-full"
 									>
 										Update
 									</button>
@@ -1027,7 +1033,7 @@
 							</div>
 						</div>
 					</div>
-					<div>
+					<div class="max-md:order-1">
 						<strong class="text-sm font-medium">Preview:</strong>
 						<div
 							class="w-full h-9.5 bg-gray-150 rounded-lg mt-3.5 grid grid-cols-3 p-1 relative"
@@ -1052,7 +1058,7 @@
 							</span>
 						</div>
 						<div
-							class="w-full h-70 border border-gray-150 mt-4 rounded-xl bg-white relative overflow-hidden"
+							class="w-full pb-[64%] border border-gray-150 mt-4 rounded-xl bg-white relative overflow-hidden"
 						>
 							<img
 								src="./assets/images/settings/preview-file-viewer.png"
