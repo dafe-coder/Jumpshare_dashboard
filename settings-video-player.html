@@ -781,361 +781,372 @@
 						</div>
 					</div>
 				</header>
-				<div
-					class="dashboard-container pb-5 pt-5 grid grid-cols-[minmax(380px,574px)_minmax(300px,430px)] gap-9 max-md:grid-cols-1"
-				>
-					<div class="order-1 max-md:order-2">
-						<div>
-							<h3 class="text-lg text-dark-800 font-semibold">
-								Customize Video Player
-							</h3>
-							<div class="bg-white border-gray-600 border rounded-xl p-6 mt-3">
+				<div class="dashboard-container pb-5 pt-5">
+					<h3 class="text-lg text-dark-800 font-semibold">
+						Customize Video Player
+					</h3>
+					<div
+						class="grid grid-cols-[minmax(380px,574px)_minmax(300px,430px)] gap-9 max-md:grid-cols-1"
+					>
+						<div class="max-md:order-2">
+							<div>
 								<div
-									class="flex items-center justify-between gap-3 max-sm:flex-wrap"
+									class="bg-white border-gray-600 border rounded-xl p-6 mt-3 max-sm:p-5"
 								>
-									<div>
-										<strong class="text-sm font-medium mb-2 block">
-											Choose Player Color
-										</strong>
-										<p class="text-gray-900 text-sm">
-											Set a custom color for your video player.
-										</p>
-									</div>
-									<button
-										type="button"
-										class="btn btn-border-default font-normal pr-3 pl-4 w-41 flex-shrink-0 justify-between h-10 max-xs:w-full"
+									<div
+										class="flex items-center justify-between gap-3 max-sm:flex-wrap"
 									>
-										<span>#D45F56</span>
-										<span class="size-[24px] rounded-md bg-[#FF4F22]"></span>
-									</button>
-								</div>
-								<hr class="my-5.5 border-gray-600" />
-								<div
-									class="flex items-center justify-between gap-3 max-sm:flex-wrap"
-								>
-									<div>
-										<strong class="text-sm font-medium mb-2 block">
-											Default Playback Speed
-										</strong>
-										<p class="text-gray-900 text-sm">
-											Speed can be adjusted during playback.
-										</p>
-									</div>
-									<button
-										type="button"
-										class="btn btn-border-default font-normal px-4 w-41 flex-shrink-0 justify-between h-10 max-xs:w-full"
-									>
-										<span>1x</span>
-										<svg class="icon icon-sm">
-											<use href="#chevron-down"></use>
-										</svg>
-									</button>
-								</div>
-								<hr class="my-5.5 border-gray-600" />
-								<div class="flex items-center justify-between gap-5">
-									<div>
-										<strong class="text-sm font-medium mb-2 block">
-											Automatic Captioning
-										</strong>
-										<p class="text-gray-900 text-sm">
-											Show captions for new video and audio files.
-										</p>
-									</div>
-									<label class="custom-controls switcher">
-										<span
-											class="switcher-label"
-											data-switcher-label-on="Enabled"
-											data-switcher-label-off="Disabled"
-											>Enabled</span
-										>
-										<input type="checkbox" name="" id="show-comments" checked />
-										<span class="custom-control-indicator"></span>
-									</label>
-								</div>
-								<hr class="my-5.5 border-gray-600" />
-								<div
-									class="flex items-center justify-between gap-3 max-sm:flex-wrap"
-								>
-									<div>
-										<strong class="text-sm font-medium mb-2 block">
-											Default Playback Speed
-										</strong>
-										<p class="text-gray-900 text-sm">
-											Speed can be adjusted during playback.
-										</p>
-									</div>
-									<button
-										type="button"
-										class="btn btn-border-default font-normal px-4 w-41 flex-shrink-0 justify-between h-10 max-xs:w-full"
-									>
-										<span>English (US)</span>
-										<svg class="icon icon-sm">
-											<use href="#chevron-down"></use>
-										</svg>
-									</button>
-								</div>
-								<hr class="my-5.5 border-gray-600" />
-								<div class="flex flex-col">
-									<strong class="text-sm font-medium mb-2 block">
-										Customize Captions
-									</strong>
-									<p class="text-gray-900 text-sm">
-										Pick a style, size, and color to make it stand out.
-									</p>
-									<div class="flex flex-wrap mt-4 gap-2">
-										<div
-											class="flex items-center gap-1 py-[3px] px-[5px] border border-gray-600 rounded-lg"
-										>
-											<button
-												type="button"
-												class="active btn size-8 [&.active]:bg-gray-400 p-0"
-											>
-												<svg
-													class="flex-shrink-0"
-													width="13"
-													height="16"
-													viewBox="0 0 13 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M1.29688 8.00156H8.49687C9.34557 8.00156 10.1595 8.3387 10.7596 8.93882C11.3597 9.53894 11.6969 10.3529 11.6969 11.2016C11.6969 12.0503 11.3597 12.8642 10.7596 13.4643C10.1595 14.0644 9.34557 14.4016 8.49687 14.4016H2.09687C1.8847 14.4016 1.68122 14.3173 1.53119 14.1672C1.38116 14.0172 1.29688 13.8137 1.29688 13.6016V2.40156C1.29688 2.18939 1.38116 1.98591 1.53119 1.83588C1.68122 1.68585 1.8847 1.60156 2.09687 1.60156H7.69687C8.54557 1.60156 9.3595 1.9387 9.95962 2.53882C10.5597 3.13894 10.8969 3.95287 10.8969 4.80156C10.8969 5.65026 10.5597 6.46419 9.95962 7.0643C9.3595 7.66442 8.54557 8.00156 7.69687 8.00156"
-														stroke="black"
-														stroke-width="1.3"
-														stroke-linecap="round"
-														stroke-linejoin="round"
-													/>
-												</svg>
-												<span class="sr-only">Font Normal</span>
-											</button>
-											<button
-												type="button"
-												class="btn size-8 [&.active]:bg-gray-400 p-0"
-											>
-												<svg
-													class="flex-shrink-0"
-													width="14"
-													height="14"
-													viewBox="0 0 14 14"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														d="M12.5984 0.601562H5.39844M8.59844 13.4016H1.39844M9.39844 0.601562L4.59844 13.4016"
-														stroke="black"
-														stroke-linecap="round"
-														stroke-linejoin="round"
-													/>
-												</svg>
-
-												<span class="sr-only">Font Italic</span>
-											</button>
+										<div>
+											<strong class="text-sm font-medium mb-2 block">
+												Choose Player Color
+											</strong>
+											<p class="text-gray-900 text-sm">
+												Set a custom color for your video player.
+											</p>
 										</div>
 										<button
 											type="button"
-											class="btn btn-border-default font-normal px-4 justify-between h-10 flex-grow-1 min-w-1/3"
+											class="btn btn-border-default font-normal pr-3 pl-4 w-41 flex-shrink-0 justify-between h-10 max-xs:w-full"
 										>
-											<span class="font-medium">Size</span>
-											<span class="flex items-center gap-1.5">
-												<span>Large</span>
-												<svg class="icon icon-sm">
-													<use href="#chevron-down"></use>
-												</svg>
-											</span>
+											<span>#D45F56</span>
+											<span class="size-[24px] rounded-md bg-[#FF4F22]"></span>
 										</button>
+									</div>
+									<hr class="my-5.5 border-gray-600" />
+									<div
+										class="flex items-center justify-between gap-3 max-sm:flex-wrap"
+									>
+										<div>
+											<strong class="text-sm font-medium mb-2 block">
+												Default Playback Speed
+											</strong>
+											<p class="text-gray-900 text-sm">
+												Speed can be adjusted during playback.
+											</p>
+										</div>
 										<button
 											type="button"
-											class="btn btn-border-default font-normal px-4 justify-between h-10 flex-grow-1 min-w-1/3 max-xs:w-full"
+											class="btn btn-border-default font-normal px-4 w-41 flex-shrink-0 justify-between h-10 max-xs:w-full"
 										>
-											<span class="font-medium">Style</span>
-											<span class="flex items-center gap-1.5">
-												<span>Highlight</span>
-												<svg class="icon icon-sm">
-													<use href="#chevron-down"></use>
-												</svg>
-											</span>
+											<span>1x</span>
+											<svg class="icon icon-sm">
+												<use href="#chevron-down"></use>
+											</svg>
 										</button>
-										<button
-											type="button"
-											class="btn btn-border-default font-normal px-4 justify-between h-10 flex-grow-1 max-xs:w-full"
-										>
-											<span>Text Color</span>
+									</div>
+									<hr class="my-5.5 border-gray-600" />
+									<div class="flex items-center justify-between gap-5">
+										<div>
+											<strong class="text-sm font-medium mb-2 block">
+												Automatic Captioning
+											</strong>
+											<p class="text-gray-900 text-sm">
+												Show captions for new video and audio files.
+											</p>
+										</div>
+										<label class="custom-controls switcher">
 											<span
-												class="flex-shrink-0 size-[24px] border border-gray-500 rounded-md bg-white"
-											></span>
-										</button>
+												class="switcher-label"
+												data-switcher-label-on="Enabled"
+												data-switcher-label-off="Disabled"
+												>Enabled</span
+											>
+											<input
+												type="checkbox"
+												name=""
+												id="show-comments"
+												checked
+											/>
+											<span class="custom-control-indicator"></span>
+										</label>
+									</div>
+									<hr class="my-5.5 border-gray-600" />
+									<div
+										class="flex items-center justify-between gap-3 max-sm:flex-wrap"
+									>
+										<div>
+											<strong class="text-sm font-medium mb-2 block">
+												Default Playback Speed
+											</strong>
+											<p class="text-gray-900 text-sm">
+												Speed can be adjusted during playback.
+											</p>
+										</div>
 										<button
 											type="button"
-											class="btn btn-border-default font-normal px-4 justify-between h-10 flex-grow-1 max-xs:w-full"
+											class="btn btn-border-default font-normal px-4 w-41 flex-shrink-0 justify-between h-10 max-xs:w-full"
 										>
-											<span>Text Outline</span>
-											<span
-												class="flex-shrink-0 size-[24px] bg-[#B3F976] rounded-md"
-											></span>
+											<span>English (US)</span>
+											<svg class="icon icon-sm">
+												<use href="#chevron-down"></use>
+											</svg>
 										</button>
-										<button
-											type="button"
-											class="btn btn-border-default font-normal px-4 justify-between h-10 flex-grow-1 max-xs:w-full"
-										>
-											<span>Background</span>
-											<span
-												class="flex-shrink-0 size-[24px] bg-[#343533] rounded-md"
-											></span>
-										</button>
+									</div>
+									<hr class="my-5.5 border-gray-600" />
+									<div class="flex flex-col">
+										<strong class="text-sm font-medium mb-2 block">
+											Customize Captions
+										</strong>
+										<p class="text-gray-900 text-sm">
+											Pick a style, size, and color to make it stand out.
+										</p>
+										<div class="flex flex-wrap mt-4 gap-2">
+											<div
+												class="flex items-center gap-1 py-[3px] px-[5px] border border-gray-600 rounded-lg"
+											>
+												<button
+													type="button"
+													class="active btn size-8 [&.active]:bg-gray-400 p-0"
+												>
+													<svg
+														class="flex-shrink-0"
+														width="13"
+														height="16"
+														viewBox="0 0 13 16"
+														fill="none"
+														xmlns="http://www.w3.org/2000/svg"
+													>
+														<path
+															d="M1.29688 8.00156H8.49687C9.34557 8.00156 10.1595 8.3387 10.7596 8.93882C11.3597 9.53894 11.6969 10.3529 11.6969 11.2016C11.6969 12.0503 11.3597 12.8642 10.7596 13.4643C10.1595 14.0644 9.34557 14.4016 8.49687 14.4016H2.09687C1.8847 14.4016 1.68122 14.3173 1.53119 14.1672C1.38116 14.0172 1.29688 13.8137 1.29688 13.6016V2.40156C1.29688 2.18939 1.38116 1.98591 1.53119 1.83588C1.68122 1.68585 1.8847 1.60156 2.09687 1.60156H7.69687C8.54557 1.60156 9.3595 1.9387 9.95962 2.53882C10.5597 3.13894 10.8969 3.95287 10.8969 4.80156C10.8969 5.65026 10.5597 6.46419 9.95962 7.0643C9.3595 7.66442 8.54557 8.00156 7.69687 8.00156"
+															stroke="black"
+															stroke-width="1.3"
+															stroke-linecap="round"
+															stroke-linejoin="round"
+														/>
+													</svg>
+													<span class="sr-only">Font Normal</span>
+												</button>
+												<button
+													type="button"
+													class="btn size-8 [&.active]:bg-gray-400 p-0"
+												>
+													<svg
+														class="flex-shrink-0"
+														width="14"
+														height="14"
+														viewBox="0 0 14 14"
+														fill="none"
+														xmlns="http://www.w3.org/2000/svg"
+													>
+														<path
+															d="M12.5984 0.601562H5.39844M8.59844 13.4016H1.39844M9.39844 0.601562L4.59844 13.4016"
+															stroke="black"
+															stroke-linecap="round"
+															stroke-linejoin="round"
+														/>
+													</svg>
+
+													<span class="sr-only">Font Italic</span>
+												</button>
+											</div>
+											<button
+												type="button"
+												class="btn btn-border-default font-normal px-4 justify-between h-10 flex-grow-1 min-w-1/3"
+											>
+												<span class="font-medium">Size</span>
+												<span class="flex items-center gap-1.5">
+													<span>Large</span>
+													<svg class="icon icon-sm">
+														<use href="#chevron-down"></use>
+													</svg>
+												</span>
+											</button>
+											<button
+												type="button"
+												class="btn btn-border-default font-normal px-4 justify-between h-10 flex-grow-1 min-w-1/3 max-xs:w-full"
+											>
+												<span class="font-medium">Style</span>
+												<span class="flex items-center gap-1.5">
+													<span>Highlight</span>
+													<svg class="icon icon-sm">
+														<use href="#chevron-down"></use>
+													</svg>
+												</span>
+											</button>
+											<button
+												type="button"
+												class="btn btn-border-default font-normal px-4 justify-between h-10 flex-grow-1 max-xs:w-full"
+											>
+												<span>Text Color</span>
+												<span
+													class="flex-shrink-0 size-[24px] border border-gray-500 rounded-md bg-white"
+												></span>
+											</button>
+											<button
+												type="button"
+												class="btn btn-border-default font-normal px-4 justify-between h-10 flex-grow-1 max-xs:w-full"
+											>
+												<span>Text Outline</span>
+												<span
+													class="flex-shrink-0 size-[24px] bg-[#B3F976] rounded-md"
+												></span>
+											</button>
+											<button
+												type="button"
+												class="btn btn-border-default font-normal px-4 justify-between h-10 flex-grow-1 max-xs:w-full"
+											>
+												<span>Background</span>
+												<span
+													class="flex-shrink-0 size-[24px] bg-[#343533] rounded-md"
+												></span>
+											</button>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="order-2 max-md:order-1">
-						<strong class="text-sm font-medium">Preview:</strong>
-						<div
-							class="relative w-full pb-[64%] border border-gray-150 mt-4 rounded-xl bg-[#B1B1B1]/15 overflow-hidden"
-						>
-							<img
-								src="./assets/images/settings/preview-player.png"
-								class="lazy-image h-full w-full object-cover absolute right-0 top-0"
-								data-src="./assets/images/settings/preview-player.png"
-								loading="lazy"
-								data-srcset="./assets/images/settings/preview-player.png 1x, ./assets/images/settings/preview-player-2x.png 2x"
-								alt="Player"
-							/>
-							<div class="caption-stack bg-[#343533] w-[385px] max-w-[90%]">
-								<svg width="100%" height="20">
-									<text
-										x="50%"
-										y="50%"
-										text-anchor="middle"
-										dy=".35em"
-										font-size="90%"
-										font-family="Inter, Arial, sans-serif"
-										fill="#fff"
-										stroke="#b3f976"
-										stroke-width="2"
-										paint-order="stroke"
-										font-weight="semibold"
-										letter-spacing="1px"
-									>
-										Automatic Captions Improve Accessibility
-									</text>
-								</svg>
-							</div>
-							<svg
-								class="absolute top-[50%] -translate-y-[90%] left-1/2 -translate-x-1/2 max-xl:size-16 max-sm:top-[46%]"
-								width="88"
-								height="88"
-								viewBox="0 0 88 88"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg"
+						<div class="-mt-6 max-md:order-1 max-md:mt-3">
+							<strong class="text-sm font-medium">Preview:</strong>
+							<div
+								class="relative w-full pb-[64%] border border-gray-150 mt-4 rounded-xl bg-[#B1B1B1]/15 overflow-hidden"
 							>
-								<rect
-									x="31.5625"
-									y="24.0938"
-									width="33.5854"
-									height="38.561"
-									fill="white"
+								<img
+									src="./assets/images/settings/preview-player.png"
+									class="lazy-image h-full w-full object-cover absolute right-0 top-0"
+									data-src="./assets/images/settings/preview-player.png"
+									loading="lazy"
+									data-srcset="./assets/images/settings/preview-player.png 1x, ./assets/images/settings/preview-player-2x.png 2x"
+									alt="Player"
 								/>
-								<mask
-									id="mask0_14517_1663"
-									style="mask-type: luminance"
-									maskUnits="userSpaceOnUse"
-									x="0"
-									y="0"
+								<div class="caption-stack bg-[#343533] w-[385px] max-w-[90%]">
+									<svg width="100%" height="20">
+										<text
+											x="50%"
+											y="50%"
+											text-anchor="middle"
+											dy=".35em"
+											font-size="90%"
+											font-family="Inter, Arial, sans-serif"
+											fill="#fff"
+											stroke="#b3f976"
+											stroke-width="2"
+											paint-order="stroke"
+											font-weight="semibold"
+											letter-spacing="1px"
+										>
+											Automatic Captions Improve Accessibility
+										</text>
+									</svg>
+								</div>
+								<svg
+									class="absolute top-[50%] -translate-y-[90%] left-1/2 -translate-x-1/2 max-xl:size-16 max-sm:top-[46%]"
 									width="88"
 									height="88"
+									viewBox="0 0 88 88"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
 								>
-									<path
-										d="M44 86.5C67.4727 86.5 86.5 67.4727 86.5 44C86.5 20.5273 67.4727 1.5 44 1.5C20.5273 1.5 1.5 20.5273 1.5 44C1.5 67.4727 20.5273 86.5 44 86.5Z"
+									<rect
+										x="31.5625"
+										y="24.0938"
+										width="33.5854"
+										height="38.561"
 										fill="white"
-										stroke="white"
-										stroke-width="2"
-										stroke-linejoin="round"
 									/>
-									<path
-										d="M35.5 44.0032V29.2812L48.25 36.6422L61 44.0032L48.25 51.3643L35.5 58.7252V44.0032Z"
-										fill="black"
-										stroke="black"
-										stroke-width="2"
-										stroke-linejoin="round"
-									/>
-								</mask>
-								<g mask="url(#mask0_14517_1663)">
-									<path d="M-7 -7H95V95H-7V-7Z" fill="#FF4F22" />
-								</g>
-							</svg>
-							<div class="absolute w-full h-1 bg-white bottom-11 left-0">
+									<mask
+										id="mask0_14517_1663"
+										style="mask-type: luminance"
+										maskUnits="userSpaceOnUse"
+										x="0"
+										y="0"
+										width="88"
+										height="88"
+									>
+										<path
+											d="M44 86.5C67.4727 86.5 86.5 67.4727 86.5 44C86.5 20.5273 67.4727 1.5 44 1.5C20.5273 1.5 1.5 20.5273 1.5 44C1.5 67.4727 20.5273 86.5 44 86.5Z"
+											fill="white"
+											stroke="white"
+											stroke-width="2"
+											stroke-linejoin="round"
+										/>
+										<path
+											d="M35.5 44.0032V29.2812L48.25 36.6422L61 44.0032L48.25 51.3643L35.5 58.7252V44.0032Z"
+											fill="black"
+											stroke="black"
+											stroke-width="2"
+											stroke-linejoin="round"
+										/>
+									</mask>
+									<g mask="url(#mask0_14517_1663)">
+										<path d="M-7 -7H95V95H-7V-7Z" fill="#FF4F22" />
+									</g>
+								</svg>
+								<div class="absolute w-full h-1 bg-white bottom-11 left-0">
+									<div
+										class="w-3/4 h-full absolute top-0 left-0"
+										style="background-color: #ff4f22"
+									></div>
+								</div>
+								<div class="absolute flex items-center gap-4 left-5 bottom-2.5">
+									<svg
+										width="24"
+										height="24"
+										viewBox="0 0 24 24"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M5 12.3136V5.89888C5 5.04611 5.91535 4.50644 6.66152 4.91928L12.513 8.1568L18.2556 11.334C19.0256 11.7601 19.0256 12.8671 18.2556 13.2932L12.513 16.4704L6.66152 19.7079C5.91535 20.1208 5 19.5811 5 18.7283V12.3136Z"
+											fill="white"
+										/>
+									</svg>
+									<svg
+										width="24"
+										height="24"
+										viewBox="0 0 24 24"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M3 10.0001V14.0001C3 14.5501 3.45 15.0001 4 15.0001H7L10.29 18.2901C10.92 18.9201 12 18.4701 12 17.5801V6.41008C12 5.52008 10.92 5.07008 10.29 5.70008L7 9.00008H4C3.45 9.00008 3 9.45008 3 10.0001ZM16.5 12.0001C16.4998 11.1622 16.2657 10.341 15.824 9.62903C15.3823 8.91702 14.7506 8.34247 14 7.97008V16.0201C15.48 15.2901 16.5 13.7701 16.5 12.0001ZM14 4.45008V4.65009C14 5.03009 14.25 5.36009 14.6 5.50009C17.18 6.53009 19 9.06008 19 12.0001C19 14.9401 17.18 17.4701 14.6 18.5001C14.24 18.6401 14 18.9701 14 19.3501V19.5501C14 20.1801 14.63 20.6201 15.21 20.4001C18.6 19.1101 21 15.8401 21 12.0001C21 8.16008 18.6 4.89008 15.21 3.60009C14.63 3.37009 14 3.82008 14 4.45008Z"
+											fill="white"
+										/>
+									</svg>
+								</div>
 								<div
-									class="w-3/4 h-full absolute top-0 left-0"
-									style="background-color: #ff4f22"
-								></div>
-							</div>
-							<div class="absolute flex items-center gap-4 left-5 bottom-2.5">
-								<svg
-									width="24"
-									height="24"
-									viewBox="0 0 24 24"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
+									class="absolute flex items-center gap-4 right-5 bottom-2.5"
 								>
-									<path
-										d="M5 12.3136V5.89888C5 5.04611 5.91535 4.50644 6.66152 4.91928L12.513 8.1568L18.2556 11.334C19.0256 11.7601 19.0256 12.8671 18.2556 13.2932L12.513 16.4704L6.66152 19.7079C5.91535 20.1208 5 19.5811 5 18.7283V12.3136Z"
-										fill="white"
-									/>
-								</svg>
-								<svg
-									width="24"
-									height="24"
-									viewBox="0 0 24 24"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										d="M3 10.0001V14.0001C3 14.5501 3.45 15.0001 4 15.0001H7L10.29 18.2901C10.92 18.9201 12 18.4701 12 17.5801V6.41008C12 5.52008 10.92 5.07008 10.29 5.70008L7 9.00008H4C3.45 9.00008 3 9.45008 3 10.0001ZM16.5 12.0001C16.4998 11.1622 16.2657 10.341 15.824 9.62903C15.3823 8.91702 14.7506 8.34247 14 7.97008V16.0201C15.48 15.2901 16.5 13.7701 16.5 12.0001ZM14 4.45008V4.65009C14 5.03009 14.25 5.36009 14.6 5.50009C17.18 6.53009 19 9.06008 19 12.0001C19 14.9401 17.18 17.4701 14.6 18.5001C14.24 18.6401 14 18.9701 14 19.3501V19.5501C14 20.1801 14.63 20.6201 15.21 20.4001C18.6 19.1101 21 15.8401 21 12.0001C21 8.16008 18.6 4.89008 15.21 3.60009C14.63 3.37009 14 3.82008 14 4.45008Z"
-										fill="white"
-									/>
-								</svg>
-							</div>
-							<div class="absolute flex items-center gap-4 right-5 bottom-2.5">
-								<svg
-									width="22"
-									height="19"
-									viewBox="0 0 22 19"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										d="M6.28551 3.36364V15H3.47869V5.98864H3.41051L0.808239 7.57955V5.14773L3.67756 3.36364H6.28551Z"
-										fill="white"
-									/>
-									<path
-										d="M19 12.6427L16.3583 10.0005L18.999 7.35878L17.6417 6L14.9995 8.6417L12.3578 6L11 7.35878L13.6407 10.0005L11 12.6422L12.3588 14L14.9995 11.3583L17.6403 14L19 12.6427Z"
-										fill="white"
-									/>
-								</svg>
-								<svg
-									width="24"
-									height="24"
-									viewBox="0 0 24 24"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										d="M18.6667 10.875H17V10.3125H14.7778V13.6875H17V13.125H18.6667V14.25C18.6667 14.5484 18.5496 14.8345 18.3412 15.0455C18.1329 15.2565 17.8502 15.375 17.5556 15.375H14.2222C13.9275 15.375 13.6449 15.2565 13.4365 15.0455C13.2282 14.8345 13.1111 14.5484 13.1111 14.25V9.75C13.1111 9.45163 13.2282 9.16548 13.4365 8.9545C13.6449 8.74353 13.9275 8.625 14.2222 8.625H17.5556C17.8502 8.625 18.1329 8.74353 18.3412 8.9545C18.5496 9.16548 18.6667 9.45163 18.6667 9.75M10.8889 10.875H9.22222V10.3125H7V13.6875H9.22222V13.125H10.8889V14.25C10.8889 14.5484 10.7718 14.8345 10.5635 15.0455C10.3551 15.2565 10.0725 15.375 9.77778 15.375H6.44444C6.14976 15.375 5.86714 15.2565 5.65877 15.0455C5.4504 14.8345 5.33333 14.5484 5.33333 14.25V9.75C5.33333 9.45163 5.4504 9.16548 5.65877 8.9545C5.86714 8.74353 6.14976 8.625 6.44444 8.625H9.77778C10.0725 8.625 10.3551 8.74353 10.5635 8.9545C10.7718 9.16548 10.8889 9.45163 10.8889 9.75M19.7778 3H4.22222C2.98889 3 2 4.00125 2 5.25V18.75C2 19.3467 2.23413 19.919 2.65087 20.341C3.06762 20.7629 3.63285 21 4.22222 21H19.7778C20.3671 21 20.9324 20.7629 21.3491 20.341C21.7659 19.919 22 19.3467 22 18.75V5.25C22 4.65326 21.7659 4.08097 21.3491 3.65901C20.9324 3.23705 20.3671 3 19.7778 3Z"
-										fill="white"
-									/>
-								</svg>
-								<svg
-									width="24"
-									height="24"
-									viewBox="0 0 24 24"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										d="M5.37189 16.401H14.9614V15.1153H5.37189V16.401ZM17.4059 16.401H18.6281V15.1153H17.4059V16.401ZM5.37189 11.802H6.59411V10.5163H5.37189V11.802ZM9.03856 11.802H18.6281V10.5163H9.03856V11.802ZM2.97511 21C2.41207 21 1.94233 20.802 1.56589 20.406C1.18944 20.01 1.00081 19.5154 1 18.9223V5.07771C1 4.48543 1.18863 3.99129 1.56589 3.59529C1.94315 3.19929 2.41248 3.00086 2.97389 3H21.0261C21.5883 3 22.0577 3.19843 22.4341 3.59529C22.8106 3.99214 22.9992 4.48629 23 5.07771V18.9236C23 19.515 22.8114 20.0091 22.4341 20.406C22.0569 20.8029 21.5875 21.0009 21.0261 21H2.97511ZM2.97511 19.7143H21.0261C21.2135 19.7143 21.3859 19.632 21.5431 19.4674C21.7004 19.3029 21.7786 19.1211 21.7778 18.9223V5.07771C21.7778 4.87971 21.6996 4.698 21.5431 4.53257C21.3867 4.36714 21.2143 4.28486 21.0261 4.28571H2.97389C2.78648 4.28571 2.61415 4.368 2.45689 4.53257C2.29963 4.69714 2.22141 4.87886 2.22222 5.07771V18.9236C2.22222 19.1207 2.30044 19.302 2.45689 19.4674C2.61333 19.6329 2.78567 19.7151 2.97389 19.7143"
-										fill="white"
-									/>
-								</svg>
+									<svg
+										width="22"
+										height="19"
+										viewBox="0 0 22 19"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M6.28551 3.36364V15H3.47869V5.98864H3.41051L0.808239 7.57955V5.14773L3.67756 3.36364H6.28551Z"
+											fill="white"
+										/>
+										<path
+											d="M19 12.6427L16.3583 10.0005L18.999 7.35878L17.6417 6L14.9995 8.6417L12.3578 6L11 7.35878L13.6407 10.0005L11 12.6422L12.3588 14L14.9995 11.3583L17.6403 14L19 12.6427Z"
+											fill="white"
+										/>
+									</svg>
+									<svg
+										width="24"
+										height="24"
+										viewBox="0 0 24 24"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M18.6667 10.875H17V10.3125H14.7778V13.6875H17V13.125H18.6667V14.25C18.6667 14.5484 18.5496 14.8345 18.3412 15.0455C18.1329 15.2565 17.8502 15.375 17.5556 15.375H14.2222C13.9275 15.375 13.6449 15.2565 13.4365 15.0455C13.2282 14.8345 13.1111 14.5484 13.1111 14.25V9.75C13.1111 9.45163 13.2282 9.16548 13.4365 8.9545C13.6449 8.74353 13.9275 8.625 14.2222 8.625H17.5556C17.8502 8.625 18.1329 8.74353 18.3412 8.9545C18.5496 9.16548 18.6667 9.45163 18.6667 9.75M10.8889 10.875H9.22222V10.3125H7V13.6875H9.22222V13.125H10.8889V14.25C10.8889 14.5484 10.7718 14.8345 10.5635 15.0455C10.3551 15.2565 10.0725 15.375 9.77778 15.375H6.44444C6.14976 15.375 5.86714 15.2565 5.65877 15.0455C5.4504 14.8345 5.33333 14.5484 5.33333 14.25V9.75C5.33333 9.45163 5.4504 9.16548 5.65877 8.9545C5.86714 8.74353 6.14976 8.625 6.44444 8.625H9.77778C10.0725 8.625 10.3551 8.74353 10.5635 8.9545C10.7718 9.16548 10.8889 9.45163 10.8889 9.75M19.7778 3H4.22222C2.98889 3 2 4.00125 2 5.25V18.75C2 19.3467 2.23413 19.919 2.65087 20.341C3.06762 20.7629 3.63285 21 4.22222 21H19.7778C20.3671 21 20.9324 20.7629 21.3491 20.341C21.7659 19.919 22 19.3467 22 18.75V5.25C22 4.65326 21.7659 4.08097 21.3491 3.65901C20.9324 3.23705 20.3671 3 19.7778 3Z"
+											fill="white"
+										/>
+									</svg>
+									<svg
+										width="24"
+										height="24"
+										viewBox="0 0 24 24"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M5.37189 16.401H14.9614V15.1153H5.37189V16.401ZM17.4059 16.401H18.6281V15.1153H17.4059V16.401ZM5.37189 11.802H6.59411V10.5163H5.37189V11.802ZM9.03856 11.802H18.6281V10.5163H9.03856V11.802ZM2.97511 21C2.41207 21 1.94233 20.802 1.56589 20.406C1.18944 20.01 1.00081 19.5154 1 18.9223V5.07771C1 4.48543 1.18863 3.99129 1.56589 3.59529C1.94315 3.19929 2.41248 3.00086 2.97389 3H21.0261C21.5883 3 22.0577 3.19843 22.4341 3.59529C22.8106 3.99214 22.9992 4.48629 23 5.07771V18.9236C23 19.515 22.8114 20.0091 22.4341 20.406C22.0569 20.8029 21.5875 21.0009 21.0261 21H2.97511ZM2.97511 19.7143H21.0261C21.2135 19.7143 21.3859 19.632 21.5431 19.4674C21.7004 19.3029 21.7786 19.1211 21.7778 18.9223V5.07771C21.7778 4.87971 21.6996 4.698 21.5431 4.53257C21.3867 4.36714 21.2143 4.28486 21.0261 4.28571H2.97389C2.78648 4.28571 2.61415 4.368 2.45689 4.53257C2.29963 4.69714 2.22141 4.87886 2.22222 5.07771V18.9236C2.22222 19.1207 2.30044 19.302 2.45689 19.4674C2.61333 19.6329 2.78567 19.7151 2.97389 19.7143"
+											fill="white"
+										/>
+									</svg>
+								</div>
 							</div>
 						</div>
 					</div>

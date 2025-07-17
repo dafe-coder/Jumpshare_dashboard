@@ -269,7 +269,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="./settings-sso.html" class="avtive aside-nav-item">
+									<a href="./settings-sso.html" class="active aside-nav-item">
 										<svg class="icon icon-sm">
 											<use href="#icon-sso" />
 										</svg>
@@ -778,7 +778,9 @@
 					</div>
 				</header>
 				<div class="dashboard-container pb-5 pt-5">
-					<div class="bg-white border-gray-600 border rounded-lg p-6">
+					<div
+						class="bg-white border-gray-600 border rounded-lg p-6 max-sm:p-5"
+					>
 						<h3
 							class="text-lg text-dark-800 font-semibold flex items-center gap-3.5"
 						>
@@ -811,19 +813,23 @@
 							</label>
 						</div>
 					</div>
-					<div class="bg-white border-gray-600 border rounded-lg p-6 mt-6">
+					<div
+						class="bg-white border-gray-600 border rounded-lg p-6 mt-6 max-sm:p-5"
+					>
 						<h3 class="text-lg text-dark-800 font-semibold">
 							SSO Configuration
 						</h3>
-						<div class="flex items-center gap-3 mt-3">
+						<div
+							class="grid grid-cols-2 gap-3 mt-3 w-full max-w-[36.25rem] max-sm:grid-cols-1"
+						>
 							<input
 								type="text"
-								class="form-control-settings max-w-[17.75rem] w-full"
+								class="form-control-settings w-full"
 								placeholder="Organization name"
 							/>
 							<input
 								type="text"
-								class="form-control-settings max-w-[17.75rem] w-full"
+								class="form-control-settings w-full"
 								placeholder="Organization domain"
 							/>
 						</div>
@@ -843,7 +849,10 @@
 								</span>
 							</label>
 						</div>
-						<button type="button" class="btn btn-primary-default mt-4 px-5">
+						<button
+							type="button"
+							class="btn btn-primary-default mt-4 px-5 h-10 max-xs:w-full"
+						>
 							Update
 						</button>
 					</div>

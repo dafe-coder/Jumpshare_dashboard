@@ -293,7 +293,7 @@
 	}
 
 	.custom-controls.checkbox {
-		@apply relative flex items-center gap-1.5;
+		@apply relative flex items-start gap-3;
 		span {
 			@apply cursor-pointer text-[14px];
 		}
@@ -309,7 +309,7 @@
 			}
 		}
 		.custom-control-indicator {
-			@apply relative size-4.5 rounded-sm border border-gray-700 transition-all duration-150 flex-shrink-0;
+			@apply relative size-4.5 rounded-sm border border-gray-700 transition-all duration-150 flex-shrink-0 mt-0.5;
 			&::after {
 				@apply content-[''] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-0 transition-all duration-150;
 				background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTEiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDExIDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMC42ODAxIDEuODAyOThDMTAuNzgwMiAxLjcwNjI0IDEwLjg2IDEuNTkwNTMgMTAuOTE0OSAxLjQ2MjU4QzEwLjk2OTggMS4zMzQ2NCAxMC45OTg4IDEuMTk3MDMgMTEgMS4wNTc3OUMxMS4wMDEyIDAuOTE4NTQ3IDEwLjk3NDcgMC43ODA0NTkgMTAuOTIyIDAuNjUxNThDMTAuODY5MyAwLjUyMjcwMSAxMC43OTE1IDAuNDA1NjEzIDEwLjY5MzEgMC4zMDcxNUMxMC41OTQ3IDAuMjA4Njg3IDEwLjQ3NzcgMC4xMzA4MTkgMTAuMzQ5IDAuMDgwOTFDMTAuMjIwMiAwLjAyNTM2MjUgMTAuMDgyMiAtMC4wMDE3MDM5IDkuOTQzMDggMy45NTk1M2UtMDVDOS44MDM5NSAwLjAwMTI0OTU4IDkuNjY2NDUgMC4wMzAxNzg1IDkuNTM4NjEgMC4wODUxMzg3QzkuNDEwNzggMC4xNDAxOTkgOS4yOTUxNSAwLjIxOTk4OSA5LjE5ODUgMC4zMjAxNDlMNCA1LjUxMTExTDEuNzg5MzYgMy4yODY2QzEuNjkyMDggMy4xODk0MyAxLjU3NjU3IDMuMTEyMTIgMS40NDk0NCAzLjA1OTM3QzEuMzIyMyAzLjAwNjYxIDEuMTg2MDMgMi45Nzk0MyAxLjA0ODQgMi45NzkzOEMwLjc3MDQ0NyAyLjk3OTI5IDAuNTAzODM3IDMuMDg5NyAwLjMwNzIyMyAzLjI4NjMzQzAuMTEwNjEgMy40ODI5NyA5LjgzMTc3ZS0wNSAzLjc0OTcyIDYuNTU3MDFlLTA4IDQuMDI3OUMtOS44MTg2NmUtMDUgNC4zMDYwOSAwLjExMDIyNSA0LjU3MjkyIDAuMzA2NyA0Ljc2OTY5TDMuMTk2NTggNy42NjE5NEMzLjMwMzYyIDcuNzY5MTIgMy40MzA3MSA3Ljg1NDE0IDMuNTcwNTggNy45MTIxNEMzLjcxMDQ2IDcuOTcwMTUgMy44NjAzOCA4IDQuMDExNzkgOEM0LjE2MzIgOCA0LjMxMzEyIDcuOTcwMTUgNC40NTMgNy45MTIxNEM0LjU5Mjg3IDcuODU0MTQgNC43MTk5NiA3Ljc2OTEyIDQuODI2OTkgNy42NjE5NEwxMC42ODAxIDEuODAyOThaIiBmaWxsPSJ3aGl0ZSIvPjwvc3ZnPg==");

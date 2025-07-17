@@ -784,7 +784,7 @@
 				<div class="dashboard-container pb-5 pt-5">
 					<h3 class="text-lg text-dark-800 font-semibold">Integrations</h3>
 					<div
-						class="flex items-center bg-white border-gray-600 border rounded-xl p-6 mt-3"
+						class="flex items-center bg-white border-gray-600 border rounded-xl p-6 mt-3 max-sm:p-5 max-md:flex-col max-md:items-start max-md:gap-5"
 					>
 						<div
 							class="flex items-center justify-center bg-gray-150 rounded-xl size-10.5 mr-4 flex-shrink-0"
@@ -812,14 +812,21 @@
 								</a>
 							</p>
 						</div>
-						<div class="ml-auto flex-shrink-0">
-							<button type="button" class="btn btn-border-default px-5 h-10">
+						<div class="ml-auto flex-shrink-0 max-md:ml-0 max-xs:w-full">
+							<button
+								type="button"
+								class="btn btn-border-default px-5 h-10 max-xs:w-full"
+							>
 								Connect
 							</button>
 						</div>
 					</div>
-					<div class="bg-white border-gray-600 border rounded-xl p-6 mt-6">
-						<div class="flex items-center">
+					<div
+						class="bg-white border-gray-600 border rounded-xl p-6 mt-6 max-sm:p-5"
+					>
+						<div
+							class="flex items-center max-md:flex-col max-md:items-start max-md:gap-5"
+						>
 							<div
 								class="flex items-center justify-center bg-gray-150 rounded-xl size-10.5 mr-4 flex-shrink-0"
 							>
@@ -858,27 +865,29 @@
 									</a>
 								</p>
 							</div>
-							<div class="ml-auto flex-shrink-0">
+							<div class="ml-auto flex-shrink-0 max-md:ml-0 max-xs:w-full">
 								<button
 									type="button"
-									class="btn btn-border-default px-5 h-10 border-red-500/30 text-red-500"
+									class="btn btn-border-default px-5 h-10 border-red-500/30 text-red-500 max-xs:w-full"
 								>
 									Disconnect
 								</button>
 							</div>
 						</div>
-						<div class="grid grid-cols-[245px_245px] mt-8 gap-[6.5rem]">
+						<div
+							class="grid grid-cols-[repeat(auto-fit,_minmax(245px,_1fr))] mt-8 gap-[6.5rem] max-xs:grid-cols-1 max-sm:gap-10"
+						>
 							<div class="flex flex-col items-start">
 								<strong class="text-sm font-semibold mb-6 block">
 									Personal Library Notifications:
 								</strong>
-								<div class="dropdown-wrapper mb-6">
+								<div class="dropdown-wrapper mb-6 max-xs:w-full">
 									<strong class="text-sm font-medium mb-2.5 block">
 										Select channel:
 									</strong>
 									<button
 										type="button"
-										class="dropdown-button btn btn-border-default justify-between w-[12.4375rem] text-sm font-normal h-10"
+										class="dropdown-button btn btn-border-default justify-between w-[12.4375rem] text-sm font-normal h-10 max-xs:w-full"
 									>
 										<span>#away</span>
 										<svg class="icon icon-sm">
@@ -954,7 +963,10 @@
 										</label>
 									</li>
 								</ul>
-								<button type="button" class="btn btn-primary-default px-5 h-10">
+								<button
+									type="button"
+									class="btn btn-primary-default px-5 h-10 max-xs:w-full"
+								>
 									Update
 								</button>
 							</div>
@@ -962,13 +974,13 @@
 								<strong class="text-sm font-semibold mb-6 block">
 									Team Library Notifications:
 								</strong>
-								<div class="dropdown-wrapper mb-6">
+								<div class="dropdown-wrapper mb-6 max-xs:w-full">
 									<strong class="text-sm font-medium mb-2.5 block">
 										Select channel:
 									</strong>
 									<button
 										type="button"
-										class="dropdown-button btn btn-border-default justify-between w-[12.4375rem] text-sm font-normal h-10"
+										class="dropdown-button btn btn-border-default justify-between w-[12.4375rem] text-sm font-normal h-10 max-xs:w-full"
 									>
 										<span>#away</span>
 										<svg class="icon icon-sm">
@@ -1057,7 +1069,10 @@
 										</label>
 									</li>
 								</ul>
-								<button type="button" class="btn btn-primary-default px-5 h-10">
+								<button
+									type="button"
+									class="btn btn-primary-default px-5 h-10 max-xs:w-full"
+								>
 									Update
 								</button>
 							</div>

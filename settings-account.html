@@ -1456,7 +1456,7 @@
 						<h3 class="text-lg text-dark-800 font-semibold">
 							Account Settings
 						</h3>
-						<div class="border border-gray-600 p-6 rounded-xl mt-3">
+						<div class="border border-gray-600 p-6 rounded-xl mt-3 max-sm:p-5">
 							<strong class="text-sm font-semibold mb-2 block">
 								Upload your profile photo
 							</strong>
@@ -1473,46 +1473,30 @@
 							</div>
 							<form
 								action="#"
-								class="mt-8 max-w-[596.8px] w-full grid grid-cols-[minmax(100px,194px)_minmax(100px,194px)_auto] items-end gap-3"
+								class="mt-8 max-w-[490px] w-full flex items-end gap-3 max-sm:mt-6"
 							>
-								<div class="flex flex-col gap-2.5">
+								<div class="flex flex-col gap-2.5 flex-grow-1">
 									<label for="firstname" class="text-sm font-semibold">
-										First Name
+										Name
 									</label>
 									<input
-										type="text"
-										class="form-control-settings disabled:bg-gray-150"
-										value="Robert"
-									/>
-								</div>
-								<div class="flex flex-col gap-2.5">
-									<label for="firstname" class="text-sm font-semibold">
-										Last Name
-									</label>
-									<input
+										name="name"
 										type="text"
 										class="form-control-settings"
-										value="Dean"
+										value="Robert Dean"
+										disabled
 									/>
 								</div>
-								<div class="flex gap-3">
-									<button
-										type="submit"
-										class="btn btn-primary-default h-10 px-6"
-									>
-										Save
-									</button>
-									<button
-										type="button"
-										class="btn btn-border-default h-10 px-5"
-									>
-										Cancel
-									</button>
-								</div>
+								<button
+									type="submit"
+									class="btn btn-border-default px-6 h-10 flex-shrink-0 max-xs:px-5"
+								>
+									Edit
+								</button>
 							</form>
 							<form
 								action="#"
-								class="mt-8 max-w-[490px] w-full flex items-end gap-3"
+								class="mt-8 max-w-[490px] w-full flex items-end gap-3 max-sm:mt-6"
 							>
 								<div class="flex flex-col gap-2.5 flex-grow-1">
 									<label for="firstname" class="text-sm font-semibold">
@@ -1527,14 +1511,14 @@
 								</div>
 								<button
 									type="submit"
-									class="btn btn-border-default px-6 h-10 flex-shrink-0"
+									class="btn btn-border-default px-6 h-10 flex-shrink-0 max-xs:px-5"
 								>
 									Edit
 								</button>
 							</form>
 							<form
 								action="#"
-								class="mt-8 max-w-[490px] w-full flex items-end gap-3"
+								class="mt-8 max-w-[490px] w-full flex items-end gap-3 max-sm:mt-6"
 							>
 								<div class="flex flex-col gap-2.5 flex-grow-1">
 									<label for="firstname" class="text-sm font-semibold">
@@ -1549,7 +1533,7 @@
 								</div>
 								<button
 									type="submit"
-									class="btn btn-border-default px-6 h-10 flex-shrink-0"
+									class="btn btn-border-default px-6 h-10 flex-shrink-0 max-xs:px-5"
 								>
 									Edit
 								</button>
@@ -1558,14 +1542,16 @@
 					</div>
 					<div class="mt-10">
 						<h3 class="text-lg text-dark-800 font-semibold">Social Accounts</h3>
-						<div class="w-full border border-gray-600 p-6 rounded-xl mt-3">
+						<div
+							class="w-full border border-gray-600 p-6 rounded-xl mt-3 max-sm:p-5"
+						>
 							<p class="text-sm text-gray-900">
 								Connecting with Social Accounts allow you to login to your
 								Jumpshare account using one-click on any device.
 							</p>
-							<div class="grid grid-cols-2 mt-4 gap-4">
+							<div class="grid grid-cols-2 mt-4 gap-4 max-md:grid-cols-1">
 								<div
-									class="flex items-center border border-gray-600 pl-6 pr-3 py-[0.8125rem] rounded-xl gap-3"
+									class="flex items-center border border-gray-600 pl-6 pr-3 py-[0.8125rem] rounded-xl gap-3 max-xs:pl-4"
 								>
 									<div class="size-6 flex items-center justify-center">
 										<svg
@@ -1597,7 +1583,7 @@
 									<div class="ml-auto">
 										<button
 											type="button"
-											class="btn btn-border-default px-6 h-10 disabled:bg-gray-200"
+											class="btn btn-border-default px-6 h-10 disabled:bg-gray-200 max-sm:px-4 min-w-[6.5625rem]"
 											disabled
 										>
 											Disconnect
@@ -1605,7 +1591,7 @@
 									</div>
 								</div>
 								<div
-									class="flex items-center border border-gray-600 pl-6 pr-3 py-[0.8125rem] rounded-xl gap-3"
+									class="flex items-center border border-gray-600 pl-6 pr-3 py-[0.8125rem] rounded-xl gap-3 max-xs:pl-4"
 								>
 									<div class="size-6 flex items-center justify-center">
 										<svg
@@ -1625,14 +1611,14 @@
 									<div class="ml-auto">
 										<button
 											type="button"
-											class="btn btn-border-default px-6 h-10 disabled:bg-gray-200"
+											class="btn btn-border-default px-6 h-10 disabled:bg-gray-200 max-sm:px-4 min-w-[6.5625rem]"
 										>
 											Connect
 										</button>
 									</div>
 								</div>
 								<div
-									class="flex items-center border border-gray-600 pl-6 pr-3 py-[0.8125rem] rounded-xl gap-3"
+									class="flex items-center border border-gray-600 pl-6 pr-3 py-[0.8125rem] rounded-xl gap-3 max-xs:pl-4"
 								>
 									<div class="size-6 flex items-center justify-center">
 										<svg
@@ -1664,7 +1650,7 @@
 									<div class="ml-auto">
 										<button
 											type="button"
-											class="btn btn-border-default px-6 h-10 disabled:bg-gray-200"
+											class="btn btn-border-default px-6 h-10 disabled:bg-gray-200 max-sm:px-4 min-w-[6.5625rem]"
 										>
 											Connect
 										</button>
@@ -1679,8 +1665,10 @@
 						>
 							Two-Factor Authentication (2FA)
 						</h3>
-						<div class="border border-gray-600 rounded-xl p-6 mt-3">
-							<div class="flex items-center gap-3">
+						<div class="border border-gray-600 rounded-xl p-6 mt-3 max-sm:p-5">
+							<div
+								class="flex items-center gap-3 max-lg:flex-col max-lg:gap-4 max-lg:items-start"
+							>
 								<svg class="icon icon-md flex-shrink-0">
 									<use href="#icon-envelope"></use>
 								</svg>
@@ -1698,10 +1686,12 @@
 										rob*****gmail.com each time you login to your device
 									</p>
 								</div>
-								<div class="flex items-center gap-4 ml-auto">
+								<div
+									class="flex items-center gap-4 ml-auto max-lg:ml-0 max-xs:w-full"
+								>
 									<button
 										type="button"
-										class="btn btn-danger-outline px-6 h-10"
+										class="btn btn-danger-outline px-6 h-10 min-w-[6.5625rem] max-xs:w-full"
 									>
 										Remove
 									</button>
@@ -1715,8 +1705,10 @@
 						>
 							Two-Factor Authentication (2FA)
 						</h3>
-						<div class="border border-gray-600 rounded-xl p-6 mt-3">
-							<div class="flex items-center gap-3">
+						<div class="border border-gray-600 rounded-xl p-6 mt-3 max-sm:p-5">
+							<div
+								class="flex items-center gap-3 max-lg:flex-col max-lg:gap-4 max-lg:items-start"
+							>
 								<svg class="icon icon-md">
 									<use href="#icon-smartphone"></use>
 								</svg>
@@ -1734,10 +1726,12 @@
 										***491 each time you login to your device
 									</p>
 								</div>
-								<div class="flex items-center gap-4 ml-auto">
+								<div
+									class="flex items-center gap-4 ml-auto max-lg:ml-0 max-xs:w-full"
+								>
 									<button
 										type="button"
-										class="btn btn-danger-outline px-6 h-10"
+										class="btn btn-danger-outline px-6 h-10 min-w-[6.5625rem] max-xs:w-full"
 									>
 										Remove
 									</button>
@@ -1751,8 +1745,43 @@
 						>
 							Two-Factor Authentication (2FA)
 						</h3>
-						<div class="border border-gray-600 rounded-xl p-6 mt-3">
-							<div class="flex items-center gap-3">
+						<div
+							class="flex items-center bg-white border-gray-600 border rounded-xl p-6 mt-3 max-sm:p-5 max-md:flex-col max-md:items-start max-md:gap-5"
+						>
+							<svg class="icon icon-md flex-shrink-0 mr-4">
+								<use href="#icon-security"></use>
+							</svg>
+							<div class="flex flex-col gap-1 mr-10">
+								<strong class="text-sm font-semibold">Setup 2FA</strong>
+								<p class="text-sm text-gray-900">
+									2-Step Verification can help protect your account from
+									unauthorized access by requiring you to enter an additional
+									code when you sign in.
+									<a class="text-blue-500 hover:underline" href="#">
+										Learn more
+									</a>
+								</p>
+							</div>
+							<div class="ml-auto flex-shrink-0 max-md:ml-0 max-xs:w-full">
+								<button
+									type="button"
+									class="btn btn-border-default px-5 h-10 min-w-[6.5625rem] max-xs:w-full"
+								>
+									Set up
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="mt-10">
+						<h3
+							class="text-lg text-dark-800 font-semibold flex items-center gap-x-3"
+						>
+							Two-Factor Authentication (2FA)
+						</h3>
+						<div class="border border-gray-600 rounded-xl p-6 mt-3 max-sm:p-5">
+							<div
+								class="flex items-center gap-3 max-lg:flex-col max-lg:gap-4 max-lg:items-start"
+							>
 								<svg class="icon icon-md">
 									<use href="#icon-key"></use>
 								</svg>
@@ -1769,10 +1798,10 @@
 										You’ve setup authenticator app as your 2FA Method
 									</p>
 								</div>
-								<div class="flex items-center gap-4 ml-auto">
+								<div class="flex items-center gap-4 ml-auto max-lg:ml-0">
 									<button
 										type="button"
-										class="btn btn-border-default px-6 h-10"
+										class="btn btn-border-default px-6 h-10 max-sm:px-5"
 									>
 										View Backup Codes
 									</button>
@@ -1792,7 +1821,7 @@
 						>
 							Time Zone
 						</h3>
-						<div class="border border-gray-600 rounded-xl p-6 mt-3">
+						<div class="border border-gray-600 rounded-xl p-6 mt-3 max-sm:p-5">
 							<div class="flex flex-col gap-3">
 								<p class="text-sm text-gray-900">Select your time zone.</p>
 								<div class="dropdown-wrapper">
@@ -1815,7 +1844,7 @@
 						>
 							Delete Account
 						</h3>
-						<div class="border border-gray-600 rounded-xl p-6 mt-3">
+						<div class="border border-gray-600 rounded-xl p-6 mt-3 max-sm:p-5">
 							<div class="flex flex-col gap-4 items-start">
 								<p class="text-sm text-gray-900">
 									Deleting your account cannot be undone. All uploads and
@@ -1824,7 +1853,7 @@
 								</p>
 								<button
 									type="button"
-									class="btn btn-danger px-5 h-10 font-semibold"
+									class="btn btn-danger px-5 h-10 font-semibold max-xs:w-full"
 								>
 									Delete Account
 								</button>

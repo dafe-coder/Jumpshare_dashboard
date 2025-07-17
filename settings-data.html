@@ -780,10 +780,10 @@
 				</header>
 				<div class="dashboard-container pb-5 pt-5">
 					<div
-						class="flex items-center bg-white border-gray-600 border rounded-xl p-6"
+						class="flex items-center bg-white border-gray-600 border rounded-xl p-6 max-md:flex-col max-md:justify-start max-md:items-start max-sm:p-5"
 					>
 						<div
-							class="flex items-center justify-center border border-gray-400 bg-gray-150 rounded-xl size-13.5 mr-4 flex-shrink-0"
+							class="flex items-center justify-center border border-gray-400 bg-gray-150 rounded-xl size-13.5 mr-4 flex-shrink-0 max-md:mb-6"
 						>
 							<svg
 								width="20"
@@ -801,7 +801,7 @@
 								/>
 							</svg>
 						</div>
-						<div class="flex flex-col gap-1 mr-10">
+						<div class="flex flex-col gap-1 mr-10 max-md:mr-0">
 							<strong class="text-sm font-semibold">
 								Export Workspace Data
 							</strong>
@@ -810,8 +810,13 @@
 								team members activity.
 							</p>
 						</div>
-						<div class="ml-auto flex-shrink-0">
-							<button type="button" class="btn btn-primary-default px-5 h-10">
+						<div
+							class="ml-auto flex-shrink-0 max-md:ml-0 max-xs:w-full max-md:mt-5"
+						>
+							<button
+								type="button"
+								class="btn btn-primary-default px-5 h-10 max-xs:w-full"
+							>
 								<svg class="icon icon-md">
 									<use href="#download" />
 								</svg>
