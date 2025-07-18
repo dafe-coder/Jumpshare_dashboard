@@ -75,7 +75,7 @@
 		position: absolute;
 		left: 14px;
 		content: " ";
-		height: 13px;
+		height: 16px;
 		width: 1.5px;
 		background-color: var(--color-dark-800);
 	}
@@ -118,8 +118,8 @@
 
 	.modal .close {
 		position: absolute;
-		right: 24px;
-		top: 22px;
+		right: 8px;
+		top: 8px;
 		opacity: 1;
 	}
 
@@ -140,7 +140,7 @@
 			@apply p-6 pb-4;
 		}
 		.modal-content {
-			@apply overflow-hidden;
+			@apply overflow-hidden max-w-[90vw] left-1/2 -translate-x-1/2;
 		}
 		.modal-body {
 			@apply px-6 max-h-[calc(83vh-110px)] overflow-y-auto static;
