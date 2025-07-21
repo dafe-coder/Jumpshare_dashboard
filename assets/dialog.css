@@ -56,13 +56,17 @@
 	}
 
 	.icn-close {
-		height: 30px;
-		width: 30px;
+		height: 32px;
+		width: 32px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		position: relative;
 		cursor: pointer;
+		border-radius: 6px;
+		&:hover {
+			background-color: var(--color-gray-200);
+		}
 	}
 
 	.modal .close:hover,
@@ -73,7 +77,8 @@
 	.icn-close:before,
 	.icn-close:after {
 		position: absolute;
-		left: 14px;
+		left: 50%;
+		transform: translateX(-50%);
 		content: " ";
 		height: 16px;
 		width: 1.5px;
