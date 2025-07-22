@@ -129,7 +129,6 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="stylesheet" href="./dist/output.css" />
 	</head>
-
 	<body class="drag-and-drop">
 		<div
 			id="progress-bar"
@@ -374,7 +373,7 @@
 										<span
 											class="absolute top-[7px] left-[1.39rem] z-1 bg-red-500 rounded-full border-1 border-white flex justify-center items-center h-4.5 min-w-4.5 px-1 text-[11px] text-white text-center font-medium text-nowrap"
 										>
-											9+
+											9
 										</span>
 									</a>
 									<div
@@ -673,7 +672,7 @@
 										>
 											<img src="./assets/images/avatar.png" alt="Avatar" />
 										</div>
-										<svg class="icon icon-xs flex-shrink-0">
+										<svg class="icon icon-xs">
 											<use href="#icon-check-bottom"></use>
 										</svg>
 									</a>
@@ -781,335 +780,308 @@
 				</header>
 				<div class="dashboard-container pb-5 pt-5">
 					<div>
-						<h3 class="text-lg text-dark-800 font-semibold">
-							Custom Domain for Files
-						</h3>
+						<div class="flex justify-between items-center">
+							<h3 class="text-lg text-dark-800 font-semibold">
+								Workspace Settings
+							</h3>
+						</div>
 						<div class="border border-gray-600 rounded-xl p-6 mt-3 max-sm:p-5">
 							<strong class="text-sm font-semibold mb-2 block">
-								Custom Domain
+								Workspace name
 							</strong>
-							<p class="text-gray-900 text-sm max-w-[37.5rem]">
-								Custom domain allows you to share files using your own domain
-								name. You can use any subdomain that you own.
+							<p class="text-gray-900 text-sm">
+								Choose a name for your workspace.
 							</p>
-							<a
-								href="#"
-								class="text-sm block text-blue-500 mt-3 hover:underline"
+							<div
+								class="max-w-[27.625rem] mt-4 flex items-center gap-4 mb-6 max-xs:flex-wrap"
 							>
-								Learn how to set up custom domain →
-							</a>
-							<div class="max-w-[33.875rem] mt-4 flex items-center gap-3">
-								<div
-									class="flex items-center h-10 rounded-lg bg-gray-150 flex-grow-1 relative"
+								<input
+									class="form-control-settings flex-grow-1 text-dark-800"
+									type="text"
+									value="Startup Co"
+									placeholder=""
+									disabled
+								/>
+								<button
+									type="button"
+									class="btn btn-border-default flex-shrink-0 px-5 h-10 max-xs:w-full"
 								>
-									<div
-										class="tag-filled gap-2 absolute right-1.5 font-sans bg-green-20"
-									>
-										<svg
-											width="14"
-											height="14"
-											viewBox="0 0 14 14"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												fill-rule="evenodd"
-												clip-rule="evenodd"
-												d="M0 7C0 5.14348 0.737498 3.36301 2.05025 2.05025C3.36301 0.737498 5.14348 0 7 0C8.85652 0 10.637 0.737498 11.9497 2.05025C13.2625 3.36301 14 5.14348 14 7C14 8.85652 13.2625 10.637 11.9497 11.9497C10.637 13.2625 8.85652 14 7 14C5.14348 14 3.36301 13.2625 2.05025 11.9497C0.737498 10.637 0 8.85652 0 7ZM6.60053 9.996L10.6307 4.95787L9.90267 4.37547L6.46613 8.66973L4.032 6.6416L3.43467 7.3584L6.60053 9.996Z"
-												fill="#078D4A"
-											/>
-										</svg>
-										Verified
-									</div>
-									<input
-										class="h-full flex-grow-1 px-3.5 text-sm text-dark-800 placeholder:text-dark-800/50"
-										type="text"
-										value="files.customlink.io"
-										placeholder=""
-										disabled
-									/>
+									Edit
+								</button>
+							</div>
+							<strong class="text-sm font-semibold mb-2 block">
+								Workspace logo
+							</strong>
+							<p class="text-gray-900 text-sm">
+								Use PNG or JPEG. Max size: 245 x 245 pixels.
+							</p>
+							<div class="flex items-center mt-3 gap-2.5">
+								<div
+									class="flex items-center justify-center border border-blue-500/20 text-base font-semibold size-10 rounded-md text-blue-500"
+								>
+									<span>S</span>
 								</div>
 								<button
 									type="button"
-									class="btn btn-danger flex-shrink-0 px-5 h-10"
+									class="btn btn-border-default h-10 text-dark-800"
 								>
-									Remove Domain
+									<svg class="icon icon-sm">
+										<use href="#icon-upload-medium" />
+									</svg>
+									Upload Logo
 								</button>
 							</div>
 						</div>
 					</div>
 					<div class="mt-10">
-						<h3 class="text-lg text-dark-800 font-semibold">
-							Custom Domain for Email
+						<h3
+							class="text-lg text-dark-800 font-semibold flex items-center gap-x-3"
+						>
+							Shareable Links
+							<svg class="icon icon-sm cursor-pointer">
+								<use href="#icon-alert" />
+							</svg>
 						</h3>
 						<div class="border border-gray-600 rounded-xl p-6 mt-3 max-sm:p-5">
-							<strong class="text-sm font-semibold mb-2 block">
-								Custom Email
-							</strong>
-							<p class="text-gray-900 text-sm max-w-[37.5rem]">
-								By default, user emails are sent from "hello@jumpsharemail.com".
-								To send emails from a custom domain, please authenticate your
-								domain name.
+							<p class="text-gray-900 text-sm">
+								Choose the type of shareable link for your Workspace.
 							</p>
-							<a
-								href="#"
-								class="text-sm block text-blue-500 mt-3 hover:underline"
+							<ul class="mt-4 space-y-3">
+								<li>
+									<label class="custom-controls radio">
+										<input
+											type="radio"
+											name="sharable-link"
+											value="1"
+											checked
+										/>
+										<span class="custom-control-indicator radio"></span>
+										<span class="truncate"
+											>files.ghaus.me/v/yt123IuhGd8a6J8dvxz</span
+										>
+									</label>
+								</li>
+								<li>
+									<label class="custom-controls radio">
+										<input type="radio" name="sharable-link" value="1" />
+										<span class="custom-control-indicator radio"></span>
+										<span class="truncate">files.ghaus.me/xEd1a3I</span>
+									</label>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="mt-10">
+						<h3
+							class="text-lg text-dark-800 font-semibold flex items-center gap-x-3"
+						>
+							New Uploads Behavior
+							<svg class="icon icon-sm cursor-pointer">
+								<use href="#icon-alert" />
+							</svg>
+						</h3>
+						<div class="border border-gray-600 rounded-xl p-6 mt-3 max-sm:p-5">
+							<div
+								class="disabled-child flex items-center justify-between gap-3"
 							>
-								Learn how to white label your emails →
-							</a>
-							<div class="max-w-[41rem] mt-4 flex flex-col gap-4 items-start">
-								<div class="grid grid-cols-2 w-full gap-4">
-									<div class="flex flex-col gap-2.5">
-										<label class="text-sm" for="name">Name</label>
-										<input
-											id="name"
-											type="text"
-											placeholder="Your name"
-											value="Jumpshare"
-											class="max-w-[25.1875rem] w-full bg-gray-150 text-dark-800 placeholder:text-dark-800/40 px-4 h-10 rounded-lg text-sm"
-											disabled
-										/>
-									</div>
-									<div class="flex flex-col gap-2.5">
-										<label class="text-sm" for="name">Email</label>
-										<input
-											id="mail"
-											type="text"
-											placeholder="mail@your-domain.com"
-											value="jumpshare.com"
-											class="max-w-[25.1875rem] w-full bg-gray-150 text-dark-800 placeholder:text-dark-800/40 px-4 h-10 rounded-lg text-sm"
-											disabled
-										/>
-									</div>
+								<div>
+									<strong
+										class="text-sm font-semibold mb-2 flex items-center gap-2.5"
+									>
+										<span class="[.disabled-child_&]:opacity-60">Comments</span>
+										<span
+											class="tag-filled text-white bg-blue-500 font-sans font-medium"
+										>
+											<svg class="icon icon-sm">
+												<use href="#icon-subscription-filled"></use>
+											</svg>
+											Plus
+										</span>
+									</strong>
+									<p
+										class="text-gray-900 text-sm [.disabled-child_&]:opacity-60"
+									>
+										Set the default comments preference for new uploads in your
+										Workspace.
+									</p>
+								</div>
+								<label
+									class="custom-controls switcher [.disabled-child_&]:pointer-events-none"
+								>
+									<span
+										class="switcher-label [.disabled-child_&]:opacity-60"
+										data-switcher-label-on="On"
+										data-switcher-label-off="Off"
+										>Off</span
+									>
+									<input type="checkbox" name="" id="show-comments" />
+									<span class="custom-control-indicator"></span>
+								</label>
+							</div>
+							<hr class="my-5.5 border-gray-600" />
+							<div
+								class="disabled-child flex items-center justify-between gap-3"
+							>
+								<div>
+									<strong
+										class="text-sm font-semibold mb-2 flex items-center gap-2.5"
+									>
+										<span class="[.disabled-child_&]:opacity-60"
+											>Downloads</span
+										>
+										<span
+											class="tag-filled text-white bg-blue-500 font-sans font-medium"
+										>
+											<svg class="icon icon-sm">
+												<use href="#icon-subscription-filled"></use>
+											</svg>
+											Plus
+										</span>
+									</strong>
+									<p
+										class="text-gray-900 text-sm [.disabled-child_&]:opacity-60"
+									>
+										Set the default download preference for new uploads in your
+										Workspace.
+									</p>
+								</div>
+								<label
+									class="custom-controls switcher [.disabled-child_&]:pointer-events-none"
+								>
+									<span
+										class="switcher-label [.disabled-child_&]:opacity-60"
+										data-switcher-label-on="On"
+										data-switcher-label-off="Off"
+										>Off</span
+									>
+									<input type="checkbox" name="" id="show-downloads" />
+									<span class="custom-control-indicator"></span>
+								</label>
+							</div>
+							<hr class="my-5.5 border-gray-600" />
+							<div
+								class="disabled-child flex items-center justify-between gap-3 max-sm:flex-wrap"
+							>
+								<div>
+									<strong
+										class="text-sm font-semibold mb-2 flex items-center gap-2.5"
+									>
+										<span class="[.disabled-child_&]:opacity-60"
+											>Self Destruct</span
+										>
+										<span
+											class="tag-filled text-white bg-blue-500 font-sans font-medium"
+										>
+											<svg class="icon icon-sm">
+												<use href="#icon-subscription-filled"></use>
+											</svg>
+											Plus
+										</span>
+									</strong>
+									<p
+										class="text-gray-900 text-sm [.disabled-child_&]:opacity-60"
+									>
+										Control how long uploads stay in your Workspace to ensure
+										secure sharing.
+									</p>
+								</div>
+								<div class="dropdown-wrapper max-sm:w-full">
+									<button
+										type="button"
+										class="btn btn-border-default w-[246px] justify-between px-4 h-10 font-normal max-xs:w-full [.disabled-child_&]:opacity-60 [.disabled-child_&]:pointer-events-none"
+									>
+										Keep Forever
+										<svg class="icon icon-sm flex-shrink-0">
+											<use href="#icon-chevron-down" />
+										</svg>
+									</button>
 								</div>
 							</div>
-							<div class="mt-7.5">
-								<div
-									class="grid grid-cols-[minmax(100px,220px)_minmax(100px,337px)_minmax(100px,205px)_minmax(100px,254px)] border-b border-gray-400 pb-2 gap-4"
-								>
-									<div class="flex items-center text-sm text-gray-900">
-										Type
-									</div>
-									<div class="flex items-center text-sm text-gray-900">
-										Name
-									</div>
-									<div class="flex items-center text-sm text-gray-900">
-										Value
-									</div>
-									<div
-										class="flex items-center justify-end text-sm text-gray-900 pr-11.5"
+							<hr class="my-5.5 border-gray-600" />
+							<div
+								class="disabled-child flex items-center justify-between gap-3 max-sm:flex-wrap"
+							>
+								<div>
+									<strong
+										class="text-sm font-semibold mb-2 flex items-center gap-2.5"
 									>
-										Status
-									</div>
+										<span class="[.disabled-child_&]:opacity-60"
+											>Content Privacy</span
+										>
+										<span
+											class="tag-filled text-white bg-purple-600 font-sans font-medium"
+										>
+											<svg class="icon icon-sm">
+												<use href="#icon-subscription-filled"></use>
+											</svg>
+											Business
+										</span>
+									</strong>
+									<p
+										class="text-gray-900 text-sm [.disabled-child_&]:opacity-60"
+									>
+										Set the default privacy settings for all new files uploaded
+										to your Workspace.
+									</p>
 								</div>
-								<div
-									class="grid grid-cols-[minmax(100px,220px)_minmax(100px,337px)_minmax(100px,205px)_minmax(100px,254px)] border-b border-gray-400 py-[15px] gap-4"
-								>
-									<div class="flex items-center text-sm text-dark-800">TXT</div>
-									<div class="flex items-center text-sm text-dark-800 gap-3">
-										<span class="truncate max-w-[177px]">your-domain.com</span>
-										<button
-											type="button"
-											class="cursor-pointer text-dark-800/70"
-										>
-											<svg class="icon icon-sm">
-												<use href="#icon-copy" />
-											</svg>
-											<span class="sr-only">Copy</span>
-										</button>
-									</div>
-									<div
-										class="flex items-center justify-between text-sm text-dark-800"
+								<div class="dropdown-wrapper max-sm:w-full">
+									<button
+										type="button"
+										class="btn btn-border-default w-[246px] justify-between px-4 h-10 font-normal max-xs:w-full [.disabled-child_&]:opacity-60 [.disabled-child_&]:pointer-events-none"
 									>
-										<span class="truncate max-w-[177px]">
-											v=spf1 include:sparkpostmail.com
-										</span>
-										<button
-											type="button"
-											class="cursor-pointer text-dark-800/70"
-										>
-											<svg class="icon icon-sm">
-												<use href="#icon-copy" />
-											</svg>
-											<span class="sr-only">Copy</span>
-										</button>
-									</div>
-									<div
-										class="flex items-center justify-end gap-2 text-sm text-dark-800 pr-11.5"
-									>
-										<div class="w-[90px] flex justify-center">
-											<span class="tag-filled bg-green-20 font-sans">
-												Valid
-											</span>
-										</div>
-										<div class="flex justify-center w-10">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 20 20"
-												fill="none"
-												xmlns="http://www.w3.org/2000/svg"
-											>
-												<g clip-path="url(#clip0_12632_12375)">
-													<path
-														fill-rule="evenodd"
-														clip-rule="evenodd"
-														d="M0 10C0 7.34784 1.05357 4.8043 2.92893 2.92893C4.8043 1.05357 7.34784 0 10 0C12.6522 0 15.1957 1.05357 17.0711 2.92893C18.9464 4.8043 20 7.34784 20 10C20 12.6522 18.9464 15.1957 17.0711 17.0711C15.1957 18.9464 12.6522 20 10 20C7.34784 20 4.8043 18.9464 2.92893 17.0711C1.05357 15.1957 0 12.6522 0 10ZM9.42933 14.28L15.1867 7.08267L14.1467 6.25067L9.23733 12.3853L5.76 9.488L4.90667 10.512L9.42933 14.28Z"
-														fill="#429D17"
-													/>
-												</g>
-												<defs>
-													<clipPath id="clip0_12632_12375">
-														<rect width="20" height="20" fill="white" />
-													</clipPath>
-												</defs>
-											</svg>
-										</div>
-									</div>
-								</div>
-								<div
-									class="grid grid-cols-[minmax(100px,220px)_minmax(100px,337px)_minmax(100px,205px)_minmax(100px,254px)] border-b border-gray-400 py-[15px] gap-4"
-								>
-									<div class="flex items-center text-sm text-dark-800">TXT</div>
-									<div class="flex items-center text-sm text-dark-800 gap-3">
-										<span class="truncate max-w-[177px]">
-											scph123._domainkey.your-domain.com
-										</span>
-										<button
-											type="button"
-											class="cursor-pointer text-dark-800/70"
-										>
-											<svg class="icon icon-sm">
-												<use href="#icon-copy" />
-											</svg>
-											<span class="sr-only">Copy</span>
-										</button>
-									</div>
-									<div
-										class="flex items-center justify-between text-sm text-dark-800"
-									>
-										<span class="truncate max-w-[177px]">
-											v=Dkim1; k=rsa; h=sha256; p=MIGhNB0FC
-										</span>
-										<button
-											type="button"
-											class="cursor-pointer text-dark-800/70"
-										>
-											<svg class="icon icon-sm">
-												<use href="#icon-copy" />
-											</svg>
-											<span class="sr-only">Copy</span>
-										</button>
-									</div>
-									<div
-										class="flex items-center justify-end gap-2 text-sm text-dark-800 pr-11.5"
-									>
-										<div class="w-[90px] flex justify-center">
-											<span
-												class="tag-filled bg-orange-500/15 text-orange-500 font-sans"
-											>
-												Unverified
-											</span>
-										</div>
-										<div class="flex justify-center w-10">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 20 20"
-												fill="none"
-												xmlns="http://www.w3.org/2000/svg"
-											>
-												<g clip-path="url(#clip0_12632_12341)">
-													<path
-														d="M10 0C4.42857 0 0 4.42857 0 10C0 15.5714 4.42857 20 10 20C15.5714 20 20 15.5714 20 10C20 4.42857 15.5714 0 10 0ZM13.8571 15L10 11.1429L6.14286 15L5 13.8571L8.85714 10L5 6.14286L6.14286 5L10 8.85714L13.8571 5L15 6.14286L11.1429 10L15 13.8571L13.8571 15Z"
-														fill="#E61320"
-													/>
-												</g>
-												<defs>
-													<clipPath id="clip0_12632_12341">
-														<rect width="20" height="20" fill="white" />
-													</clipPath>
-												</defs>
-											</svg>
-										</div>
-									</div>
-								</div>
-								<div
-									class="grid grid-cols-[minmax(100px,220px)_minmax(100px,337px)_minmax(100px,205px)_minmax(100px,254px)] border-b border-gray-400 py-[15px] gap-4"
-								>
-									<div class="flex items-center text-sm text-dark-800">TXT</div>
-									<div class="flex items-center text-sm text-dark-800 gap-3">
-										<span class="truncate max-w-[177px]">
-											scph123._domainkey.your-domain.com
-										</span>
-										<button
-											type="button"
-											class="cursor-pointer text-dark-800/70"
-										>
-											<svg class="icon icon-sm">
-												<use href="#icon-copy" />
-											</svg>
-											<span class="sr-only">Copy</span>
-										</button>
-									</div>
-									<div
-										class="flex items-center justify-between text-sm text-dark-800"
-									>
-										<span class="truncate max-w-[177px]">
-											sparkpostmail.com
-										</span>
-										<button
-											type="button"
-											class="cursor-pointer text-dark-800/70"
-										>
-											<svg class="icon icon-sm">
-												<use href="#icon-copy" />
-											</svg>
-											<span class="sr-only">Copy</span>
-										</button>
-									</div>
-									<div
-										class="flex items-center justify-end gap-2 text-sm text-dark-800 pr-11.5"
-									>
-										<div class="w-[90px] flex justify-center">
-											<span
-												class="tag-filled bg-orange-500/15 text-orange-500 font-sans"
-											>
-												Unverified
-											</span>
-										</div>
-										<div class="flex justify-center w-10">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 20 20"
-												fill="none"
-												xmlns="http://www.w3.org/2000/svg"
-											>
-												<g clip-path="url(#clip0_12632_12341)">
-													<path
-														d="M10 0C4.42857 0 0 4.42857 0 10C0 15.5714 4.42857 20 10 20C15.5714 20 20 15.5714 20 10C20 4.42857 15.5714 0 10 0ZM13.8571 15L10 11.1429L6.14286 15L5 13.8571L8.85714 10L5 6.14286L6.14286 5L10 8.85714L13.8571 5L15 6.14286L11.1429 10L15 13.8571L13.8571 15Z"
-														fill="#E61320"
-													/>
-												</g>
-												<defs>
-													<clipPath id="clip0_12632_12341">
-														<rect width="20" height="20" fill="white" />
-													</clipPath>
-												</defs>
-											</svg>
-										</div>
-									</div>
+										Anyone with a link
+										<svg class="icon icon-sm">
+											<use href="#icon-chevron-down" />
+										</svg>
+									</button>
 								</div>
 							</div>
-							<div class="flex gap-2.5 flex-shrink-0 mt-7.5">
-								<button type="button" class="btn btn-primary-default px-5 h-10">
-									Refresh
-								</button>
-								<button type="button" class="btn btn-danger px-5 h-10">
-									Remove Domain
+						</div>
+					</div>
+					<div class="mt-10">
+						<h3
+							class="text-lg text-dark-800 font-semibold flex items-center gap-2.5"
+						>
+							Video Embedding Controls
+							<span
+								class="tag-filled text-white bg-purple-600 font-sans font-medium"
+							>
+								<svg class="icon icon-sm">
+									<use href="#icon-subscription-filled"></use>
+								</svg>
+								Business
+							</span>
+						</h3>
+						<div
+							class="disabled-child border border-gray-600 rounded-xl p-6 mt-3 max-sm:p-5"
+						>
+							<p class="text-sm [.disabled-child_&]:opacity-60">
+								Specify domains and subdomains where you want your videos to be
+								embeddable. You can enter multiple domains separated by commas.
+							</p>
+							<div
+								class="max-w-[471px] mt-4 flex items-center gap-3 relative text-dark-800/40 max-sm:flex-wrap [.disabled-child_&]:pointer-events-none"
+							>
+								<svg class="icon icon-sm absolute left-3.5 top-[0.6875rem]">
+									<use href="#icon-link-2" />
+								</svg>
+								<input
+									type="text"
+									placeholder="domain.com or cloud.domain.com"
+									class="form-control-settings flex-grow-1 pl-10"
+								/>
+								<button
+									type="button"
+									class="btn btn-primary-default h-10 px-5 max-xs:w-full"
+									disabled
+								>
+									Update
 								</button>
 							</div>
+							<p class="text-xs text-gray-900 mt-3">
+								If you leave this field empty, your videos can be embeddable
+								anywhere.
+							</p>
 						</div>
 					</div>
 				</div>

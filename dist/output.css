@@ -91,6 +91,7 @@
     --color-green-500: #047857;
     --color-yellow-500: #FBC045;
     --color-yellow-600: #FFBC03;
+    --color-purple-600: #9452FF;
   }
 }
 @layer base {
@@ -1595,6 +1596,9 @@
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-orange-500) 15%, transparent);
     }
+  }
+  .bg-purple-600 {
+    background-color: var(--color-purple-600);
   }
   .bg-red-500 {
     background-color: var(--color-red-500);
@@ -3385,6 +3389,11 @@
       background-color: var(--color-gray-150);
     }
   }
+  .\[\&\.disabled-child\]\:opacity-60 {
+    &.disabled-child {
+      opacity: 60%;
+    }
+  }
   .\[\&\.grid-type\]\:grid-cols-5 {
     &.grid-type {
       grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -3438,6 +3447,16 @@
   .\[\.adjust-position-right_\&\]\:ml-auto {
     .adjust-position-right & {
       margin-left: auto;
+    }
+  }
+  .\[\.disabled-child_\&\]\:pointer-events-none {
+    .disabled-child & {
+      pointer-events: none;
+    }
+  }
+  .\[\.disabled-child_\&\]\:opacity-60 {
+    .disabled-child & {
+      opacity: 60%;
     }
   }
   .not-\[\.list-type_\&\]\:\[\.list-select-active_\&\]\:opacity-0 {
@@ -4656,6 +4675,17 @@
       }
     }
   }
+  .btn-violet-default {
+    background-color: var(--color-violet-600);
+    color: var(--color-white);
+    transition: all ease 0.2s;
+    &:hover {
+      background-color: color-mix(	in srgb,	#9452FF 90%,	transparent	);
+      @supports (color: color-mix(in lab, red, red)) {
+        background-color: color-mix(	in srgb,	var(--color-violet-600) 90%,	transparent	);
+      }
+    }
+  }
   .btn-dark-contact {
     background-color: #131320;
     color: var(--color-white);
@@ -4843,6 +4873,7 @@
     justify-content: center;
     align-items: center;
     white-space: nowrap;
+    gap: 4px;
   }
   .btn-toggle {
     label {

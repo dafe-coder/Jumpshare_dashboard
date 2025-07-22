@@ -176,6 +176,19 @@
 		}
 	}
 
+	.btn-violet-default {
+		background-color: var(--color-violet-600);
+		color: var(--color-white);
+		transition: all ease 0.2s;
+		&:hover {
+			background-color: color-mix(
+				in srgb,
+				var(--color-violet-600) 90%,
+				transparent
+			);
+		}
+	}
+
 	.btn-dark-contact {
 		background-color: #131320;
 		color: var(--color-white);
@@ -386,6 +399,7 @@
 		justify-content: center;
 		align-items: center;
 		white-space: nowrap;
+		gap: 4px;
 	}
 
 	.btn-toggle {
