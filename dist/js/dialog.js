@@ -9,27 +9,28 @@ const Dialog = {
 	initDialog: function ($dialog) {
 		const $closeBtn = $("[data-dialog-close]");
 
-		$dialog.on("click", (e) => {
-			if (e.target === $dialog[0]) {
+		if (!BottomSheet.isMobile) {
+			console.log("desktop");
+			$dialog.on("click", (e) => {
+				if (e.target === $dialog[0]) {
+					$dialog.addClass("hidden");
+				}
+			});
+
+			$closeBtn.on("click", () => {
 				$dialog.addClass("hidden");
-			}
-		});
-
-		$closeBtn.on("click", () => {
-			$dialog.addClass("hidden");
-		});
-
-		$(".modal").on("click", function (e) {
-			if (e.target === this) {
-				$dialog.addClass("hidden");
-			}
-		});
-
-		$('[data-dialog-open-id="share"]').on("click", (e) => {
-			e.preventDefault();
-			e.stopPropagation();
-			$dialog.removeClass("hidden");
-		});
+			});
+			$(".modal").on("click", function (e) {
+				if (e.target === this) {
+					$dialog.addClass("hidden");
+				}
+			});
+			$('[data-dialog-open-id="share"]').on("click", (e) => {
+				e.preventDefault();
+				e.stopPropagation();
+				$dialog.removeClass("hidden");
+			});
+		}
 	},
 
 	openDialog: function ($dialog) {

@@ -153,9 +153,9 @@
 			</div>
 		</div>
 		<!-- Dialogs -->
-		<div id="lightbox" class="">
+		<div id="lightbox" class="hidden">
 			<div class="modal" id="modal">
-				<div class="modal-dialog modal-bs edit-billing-details hidden">
+				<div class="modal-dialog modal-bs edit-billing-details">
 					<div class="modal-content modal-share">
 						<button
 							type="button"
@@ -174,7 +174,7 @@
 							</h4>
 						</div>
 						<div class="modal-body scrollbar-hide">
-							<div class="grid grid-cols-2 gap-4 mb-8">
+							<div class="grid grid-cols-2 gap-4 mb-8 max-xs:grid-cols-1">
 								<div class="flex flex-col gap-2.5">
 									<label class="text-sm" for="name">Name</label>
 									<input
@@ -196,7 +196,7 @@
 									/>
 								</div>
 							</div>
-							<div class="grid grid-cols-2 gap-4 mb-8">
+							<div class="grid grid-cols-2 gap-4 mb-8 max-xs:grid-cols-1">
 								<div class="flex flex-col gap-2.5">
 									<label class="text-sm" for="phone">Phone</label>
 									<input
@@ -299,7 +299,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="modal-dialog modal-bs payment-details">
+				<div class="modal-dialog modal-bs payment-details hidden">
 					<div class="modal-content modal-share">
 						<button
 							type="button"
@@ -1159,6 +1159,7 @@
 								<button
 									type="button"
 									class="btn btn-border-default w-full mt-4"
+									data-dialog="change-plan"
 								>
 									Change Plan
 								</button>
@@ -1475,6 +1476,7 @@
 			integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
 			crossorigin="anonymous"
 		></script>
+		<script src="./dist/js/bottom-sheet.js"></script>
 		<script src="./dist/js/table-accordion.js"></script>
 		<script src="./dist/js/mobile-menu.js"></script>
 		<script src="./dist/js/dialog.js"></script>

@@ -5,7 +5,6 @@ const TableAccordion = {
 	},
 	initAccordion: function () {
 		const openAccordionLinks = $(".table-accordion-open");
-		console.log(openAccordionLinks);
 
 		openAccordionLinks.on("click", function (e) {
 			e.preventDefault();

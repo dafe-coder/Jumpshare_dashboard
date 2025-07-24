@@ -10,7 +10,7 @@
 	.modal-dialog {
 		position: relative;
 		width: auto;
-		margin: 10px;
+		transition: all ease 0.5s;
 		input,
 		textarea {
 			font-size: 14px;
@@ -22,6 +22,13 @@
 			position: absolute;
 			right: 0;
 		}
+		@media screen and (max-width: 1024px) {
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			margin: 0;
+		}
 	}
 	.modal-content {
 		position: relative;
@@ -30,6 +37,11 @@
 		box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 		background-clip: padding-box;
 		outline: 0;
+		@media screen and (max-width: 1024px) {
+			border-radius: 12px 12px 0 0;
+			width: 100%;
+			margin: 0;
+		}
 	}
 
 	.modal-backdrop {
@@ -118,7 +130,6 @@
 	.modal-bs {
 		width: 100%;
 		max-width: 540px;
-		margin: 65px auto 10px;
 	}
 
 	.modal .close {
@@ -145,7 +156,7 @@
 			@apply p-6 pb-4;
 		}
 		.modal-content {
-			@apply overflow-hidden max-w-[90vw] left-1/2 -translate-x-1/2;
+			@apply overflow-hidden left-1/2 -translate-x-1/2;
 		}
 		.modal-body {
 			@apply px-6 max-h-[calc(83vh-110px)] overflow-y-auto static;

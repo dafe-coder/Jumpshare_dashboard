@@ -3389,11 +3389,6 @@
       background-color: var(--color-gray-150);
     }
   }
-  .\[\&\.disabled-child\]\:opacity-60 {
-    &.disabled-child {
-      opacity: 60%;
-    }
-  }
   .\[\&\.grid-type\]\:grid-cols-5 {
     &.grid-type {
       grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -6785,7 +6780,7 @@
   .modal-dialog {
     position: relative;
     width: auto;
-    margin: 10px;
+    transition: all ease 0.5s;
     input,	textarea {
       font-size: 14px;
     }
@@ -6796,6 +6791,13 @@
       position: absolute;
       right: 0;
     }
+    @media screen and (max-width: 1024px) {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+    }
   }
   .modal-content {
     position: relative;
@@ -6804,6 +6806,11 @@
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
     background-clip: padding-box;
     outline: 0;
+    @media screen and (max-width: 1024px) {
+      border-radius: 12px 12px 0 0;
+      width: 100%;
+      margin: 0;
+    }
   }
   .modal-backdrop {
     position: fixed;
@@ -6875,7 +6882,6 @@
   .modal-bs {
     width: 100%;
     max-width: 540px;
-    margin: 65px auto 10px;
   }
   .modal .close {
     position: absolute;
@@ -6932,7 +6938,6 @@
     }
     .modal-content {
       left: calc(1/2 * 100%);
-      max-width: 90vw;
       --tw-translate-x: calc(calc(1/2 * 100%) * -1);
       translate: var(--tw-translate-x) var(--tw-translate-y);
       overflow: hidden;
