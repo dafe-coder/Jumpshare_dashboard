@@ -6770,13 +6770,15 @@
 }
 @layer components {
   #lightbox {
-    .modal-backdrop {
-      transition: all ease-in-out 0.5s;
-      opacity: 0;
-    }
-    &.show-sheet {
+    @media screen and (max-width: 1024px) {
       .modal-backdrop {
-        opacity: 1;
+        transition: all ease-in-out 0.5s;
+        opacity: 0;
+      }
+      &.show-sheet {
+        .modal-backdrop {
+          opacity: 1;
+        }
       }
     }
   }
@@ -6792,6 +6794,7 @@
     position: relative;
     width: auto;
     transition: all ease 0.5s;
+    margin: 50px auto 20px;
     input,	textarea {
       font-size: 14px;
     }

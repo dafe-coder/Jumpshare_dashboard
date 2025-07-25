@@ -21,11 +21,11 @@ const Dialog = {
 				$dialog.addClass("hidden");
 			});
 			$(".modal").on("click", function (e) {
-				if (e.target === this) {
+				if (e.target === this && !BottomSheet.isMobile) {
 					$dialog.addClass("hidden");
 				}
 			});
-			$('[data-dialog-open-id="share"]').on("click", (e) => {
+			$("[data-dialog-open-id]").on("click", (e) => {
 				e.preventDefault();
 				e.stopPropagation();
 				$dialog.removeClass("hidden");
