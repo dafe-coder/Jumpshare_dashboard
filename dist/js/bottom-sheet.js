@@ -47,6 +47,8 @@ const BottomSheet = {
 
 		$(document).on("click", overlaySelector, (e) => {
 			if ($(e.target).is(overlaySelector)) {
+				e.preventDefault();
+				e.stopPropagation();
 				this.close();
 			}
 		});
