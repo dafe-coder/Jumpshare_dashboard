@@ -153,13 +153,16 @@
 
 	.modal-dialog {
 		.modal-header {
-			@apply p-6 pb-4;
+			@apply p-6 pb-4 flex-shrink-0;
+		}
+		.modal-footer {
+			@apply flex-shrink-0;
 		}
 		.modal-content {
-			@apply overflow-hidden left-1/2 -translate-x-1/2;
+			@apply overflow-hidden left-1/2 -translate-x-1/2 flex flex-col h-full;
 		}
 		.modal-body {
-			@apply px-6 max-h-[calc(83vh-110px)] overflow-y-auto static;
+			@apply px-6 flex-grow-1 overflow-y-auto static;
 		}
 	}
 

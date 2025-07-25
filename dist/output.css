@@ -6933,18 +6933,25 @@
   }
   .modal-dialog {
     .modal-header {
+      flex-shrink: 0;
       padding: var(--spacing-6);
       padding-bottom: calc(var(--spacing) * 4);
     }
+    .modal-footer {
+      flex-shrink: 0;
+    }
     .modal-content {
       left: calc(1/2 * 100%);
+      display: flex;
+      height: 100%;
       --tw-translate-x: calc(calc(1/2 * 100%) * -1);
       translate: var(--tw-translate-x) var(--tw-translate-y);
+      flex-direction: column;
       overflow: hidden;
     }
     .modal-body {
       position: static;
-      max-height: calc(83vh - 110px);
+      flex-grow: 1;
       overflow-y: auto;
       padding-inline: var(--spacing-6);
     }
