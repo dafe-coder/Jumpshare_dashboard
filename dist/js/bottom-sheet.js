@@ -42,18 +42,18 @@ const BottomSheet = {
 	},
 
 	setupEventHandlers(overlaySelector, closeButtonSelector) {
-		$(document).off("click", this.config.selectors.overlaySelector);
-		$(document).off("click", this.config.selectors.closeButtonSelector);
+		$(document).off("click.bottomSheet", overlaySelector);
+		$(document).off("click.bottomSheet", closeButtonSelector);
 
-		$(document).on("click", overlaySelector, (e) => {
-			if ($(e.target).is(overlaySelector)) {
+		$(document).on("click.bottomSheet", overlaySelector, (e) => {
+			if (e.target === e.currentTarget || $(e.target).is(overlaySelector)) {
 				e.preventDefault();
 				e.stopPropagation();
 				this.close();
 			}
 		});
 
-		$(document).on("click", closeButtonSelector, (e) => {
+		$(document).on("click.bottomSheet", closeButtonSelector, (e) => {
 			e.preventDefault();
 			e.stopPropagation();
 			this.close();
@@ -64,9 +64,10 @@ const BottomSheet = {
 		this.isMobile = window.innerWidth < 1024;
 
 		if (this.activeSheet) {
-			this.calculateContentHeight(this.activeSheet);
+			this.calculateContentHeight(this.activeSheet, this.activeSheetContent[0]);
 			this.setSheetHeight(
 				this.activeSheet,
+				this.activeSheetBody,
 				this.activeSheet.data("default-height") || this.config.defaultHeight,
 			);
 		}
@@ -96,7 +97,10 @@ const BottomSheet = {
 			triggerHeight = 0,
 			overlaySelector = this.config.selectors.overlaySelector,
 			closeButtonSelector = this.config.selectors.closeButtonSelector,
+			scrollBlockSelector = null,
 		} = options;
+
+		$(document).off("click.bottomSheet");
 
 		this.heightTrigger = triggerHeight;
 		if (event) {
@@ -105,14 +109,14 @@ const BottomSheet = {
 		}
 		this.setupEventHandlers(overlaySelector, closeButtonSelector);
 
-		this.openSheet(modal, body, content);
+		this.openSheet(modal, body, content, scrollBlockSelector);
 	},
 
 	close(e) {
 		this.closeActiveSheet();
 	},
 
-	openSheet($sheetModal, $sheetBody, $sheetContent) {
+	openSheet($sheetModal, $sheetBody, $sheetContent, scrollBlockSelector) {
 		if (this.activeSheet) {
 			this.closeActiveSheet();
 		}
@@ -124,6 +128,10 @@ const BottomSheet = {
 		this.activeSheet = $sheetModal;
 		this.activeSheetBody = $sheetBody;
 		this.activeSheetContent = $sheetContent;
+
+		this.activeScrollBlock = scrollBlockSelector
+			? $sheetModal.find(scrollBlockSelector)
+			: $sheetContent;
 
 		this.lockPageScroll();
 
@@ -152,6 +160,8 @@ const BottomSheet = {
 		const $sheetModal = this.activeSheet;
 		const $sheetBody = this.activeSheetBody;
 
+		$(document).off("click.bottomSheet");
+
 		this.setSheetHeight($sheetModal, $sheetBody, 0);
 		$sheetModal.removeClass("show-sheet");
 
@@ -162,6 +172,7 @@ const BottomSheet = {
 			this.activeSheet = null;
 			this.activeSheetBody = null;
 			this.activeSheetContent = null;
+			this.activeScrollBlock = null;
 		}, this.config.animationDuration);
 	},
 
@@ -180,7 +191,8 @@ const BottomSheet = {
 		const viewportHeight = window.innerHeight;
 		const heightInPixels = (height * viewportHeight) / 100;
 
-		$sheetBody.css("height", `${heightInPixels + this.heightTrigger}px`);
+		const finalHeight = value === 0 ? 0 : heightInPixels + this.heightTrigger;
+		$sheetBody.css("height", `${finalHeight}px`);
 		$sheetModal.data("height", height);
 	},
 
@@ -217,8 +229,8 @@ const BottomSheet = {
 	handleDragStart(event) {
 		if (!this.activeSheet) return;
 
-		const $content = this.activeSheetContent;
-		const contentScrollTop = $content.scrollTop();
+		const $scrollBlock = this.activeScrollBlock;
+		const contentScrollTop = $scrollBlock.scrollTop();
 
 		if (contentScrollTop > 0) {
 			return;
@@ -227,24 +239,25 @@ const BottomSheet = {
 		this.isDragging = true;
 		this.dragStartY = event.touches ? event.touches[0].pageY : event.pageY;
 
+		this.activeSheetBody.css("transition", "none");
 		this.activeSheetBody.addClass("not-selectable");
 		$("body").css("cursor", "grabbing");
 	},
 
 	handleDragMove(event) {
+		if (!this.isDragging || !this.activeSheet) return;
 		event.preventDefault();
 		event.stopPropagation();
-		if (!this.isDragging || !this.activeSheet) return;
 
-		const $content = this.activeSheetContent;
+		const $scrollBlock = this.activeScrollBlock;
 		const currentY = event.touches ? event.touches[0].pageY : event.pageY;
 		const deltaY = this.dragStartY - currentY;
 
-		if (deltaY < 0 && $content.scrollTop() === 0) {
+		if (deltaY < 0 && $scrollBlock.scrollTop() === 0) {
 			this.hideContentScroll();
 		}
 
-		if (deltaY < 0 && $content.scrollTop() > 0) {
+		if (deltaY < 0 && $scrollBlock.scrollTop() > 0) {
 			return;
 		}
 
@@ -261,13 +274,12 @@ const BottomSheet = {
 	},
 
 	handleDragEnd() {
-		event.preventDefault();
-		event.stopPropagation();
 		if (!this.isDragging || !this.activeSheet) return;
 
 		this.isDragging = false;
 		const $sheetModal = this.activeSheet;
 
+		this.activeSheetBody.css("transition", "");
 		this.activeSheetBody.removeClass("not-selectable");
 		$("body").css("cursor", "");
 		this.showContentScroll();
@@ -284,14 +296,14 @@ const BottomSheet = {
 	},
 
 	hideContentScroll() {
-		if (this.activeSheetContent) {
-			this.activeSheetContent.addClass("overflow-y-hidden!");
+		if (this.activeScrollBlock) {
+			this.activeScrollBlock.addClass("overflow-y-hidden!");
 		}
 	},
 
 	showContentScroll() {
-		if (this.activeSheetContent) {
-			this.activeSheetContent.removeClass("overflow-y-hidden!");
+		if (this.activeScrollBlock) {
+			this.activeScrollBlock.removeClass("overflow-y-hidden!");
 		}
 	},
 
@@ -360,6 +372,7 @@ $(document).ready(() => {
 				body: modalBody,
 				content: modalContent,
 				overlaySelector: ".modal",
+				scrollBlockSelector: ".modal-body",
 				closeButtonSelector: "[data-dialog-close]",
 			});
 		}

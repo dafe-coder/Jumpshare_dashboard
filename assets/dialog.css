@@ -1,4 +1,15 @@
 @layer components {
+	#lightbox {
+		.modal-backdrop {
+			transition: all ease-in-out 0.5s;
+			opacity: 0;
+		}
+		&.show-sheet {
+			.modal-backdrop {
+				opacity: 1;
+			}
+		}
+	}
 	#modal {
 		position: fixed;
 		top: 0;
