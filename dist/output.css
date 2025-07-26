@@ -388,6 +388,9 @@
   .left-1\/2 {
     left: calc(1/2 * 100%);
   }
+  .left-2\.5 {
+    left: calc(var(--spacing) * 2.5);
+  }
   .left-3 {
     left: calc(var(--spacing) * 3);
   }
@@ -669,6 +672,10 @@
     width: var(--spacing-6);
     height: var(--spacing-6);
   }
+  .size-6\.5 {
+    width: var(--spacing-6_5);
+    height: var(--spacing-6_5);
+  }
   .size-7 {
     width: calc(var(--spacing) * 7);
     height: calc(var(--spacing) * 7);
@@ -777,6 +784,9 @@
   }
   .h-13\.5 {
     height: calc(var(--spacing) * 13.5);
+  }
+  .h-14 {
+    height: calc(var(--spacing) * 14);
   }
   .h-16 {
     height: calc(var(--spacing) * 16);
@@ -1765,6 +1775,9 @@
   .pt-2\.5 {
     padding-top: calc(var(--spacing) * 2.5);
   }
+  .pt-4 {
+    padding-top: calc(var(--spacing) * 4);
+  }
   .pt-4\.5 {
     padding-top: var(--spacing-4_5);
   }
@@ -2114,6 +2127,12 @@
   .outline-none {
     --tw-outline-style: none;
     outline-style: none;
+  }
+  .not-last\:border-b {
+    &:not(*:last-child) {
+      border-bottom-style: var(--tw-border-style);
+      border-bottom-width: 1px;
+    }
   }
   .not-\[\.list-type_\&\]\:opacity-0 {
     &:not(.list-type *) {
@@ -2465,10 +2484,24 @@
       }
     }
   }
+  .hover\:bg-gray-100 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-gray-100);
+      }
+    }
+  }
   .hover\:bg-gray-150 {
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-gray-150);
+      }
+    }
+  }
+  .hover\:bg-gray-200 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-gray-200);
       }
     }
   }
@@ -2804,6 +2837,11 @@
       padding-left: calc(var(--spacing) * 4);
     }
   }
+  .max-xs\:text-gray-900 {
+    @media (width < 480px) {
+      color: var(--color-gray-900);
+    }
+  }
   .max-xl\:size-16 {
     @media (width < 80rem) {
       width: calc(var(--spacing) * 16);
@@ -3094,6 +3132,11 @@
   .max-sm\:px-5 {
     @media (width < 40rem) {
       padding-inline: calc(var(--spacing) * 5);
+    }
+  }
+  .max-sm\:text-gray-900 {
+    @media (width < 40rem) {
+      color: var(--color-gray-900);
     }
   }
   .md\:hidden {

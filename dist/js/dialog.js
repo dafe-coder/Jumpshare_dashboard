@@ -9,28 +9,39 @@ const Dialog = {
 	initDialog: function ($dialog) {
 		const $closeBtn = $("[data-dialog-close]");
 
-		if (!BottomSheet.isMobile) {
-			console.log("desktop");
-			$dialog.on("click", (e) => {
-				if (e.target === $dialog[0]) {
-					$dialog.addClass("hidden");
-				}
-			});
-
-			$closeBtn.on("click", () => {
+		$dialog.on("click", (e) => {
+			if (e.target === $dialog[0] && !BottomSheet.isMobile) {
 				$dialog.addClass("hidden");
-			});
-			$(".modal").on("click", function (e) {
-				if (e.target === this && !BottomSheet.isMobile) {
-					$dialog.addClass("hidden");
-				}
-			});
-			$("[data-dialog-open-id]").on("click", (e) => {
-				e.preventDefault();
-				e.stopPropagation();
+			}
+		});
+
+		$closeBtn.on("click", () => {
+			if (!BottomSheet.isMobile) {
+				$dialog.addClass("hidden");
+			}
+		});
+		$(".modal").on("click", function (e) {
+			if (e.target === this && !BottomSheet.isMobile) {
+				$dialog.addClass("hidden");
+			}
+		});
+		$("[data-dialog-open-id]").on("click", (e) => {
+			e.preventDefault();
+			e.stopPropagation();
+			if (BottomSheet.isMobile) {
+				BottomSheet.open({
+					event: e,
+					modal: $dialog,
+					body: $dialog.find(".filter-by-members"),
+					content: $dialog.find(".modal-content"),
+					overlaySelector: ".modal",
+					scrollBlockSelector: ".modal-body",
+					closeButtonSelector: "[data-dialog-close]",
+				});
+			} else {
 				$dialog.removeClass("hidden");
-			});
-		}
+			}
+		});
 	},
 
 	openDialog: function ($dialog) {

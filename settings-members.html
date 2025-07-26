@@ -814,22 +814,103 @@
 									</span>
 								</div>
 							</div>
-							<div class="flex items-center text-sm max-md:justify-end">
+							<div
+								class="flex items-center text-sm max-md:justify-end max-xs:text-gray-900"
+							>
 								<span>Owner</span>
 							</div>
 							<div
 								class="text-sm flex items-center justify-between pr-4 max-md:justify-end"
 							>
 								<span class="max-md:hidden">5 hours ago</span>
-								<button
-									type="button"
-									class="size-6 rounded-full hover:bg-gray-400 cursor-pointer flex items-center justify-center"
-								>
-									<svg class="icon icon-md">
-										<use href="#icon-dots-horizontal" />
-									</svg>
-									<span class="sr-only">Settings dropdown</span>
-								</button>
+								<div class="dropdown-wrapper">
+									<button
+										type="button"
+										class="dropdown-button size-6 rounded-full hover:bg-gray-400 cursor-pointer flex items-center justify-center"
+										data-id="dropdown-user"
+									>
+										<svg class="icon icon-md">
+											<use href="#icon-dots-horizontal" />
+										</svg>
+										<span class="sr-only">Settings dropdown</span>
+									</button>
+									<div
+										class="js-dropdown w-[12.625rem] hidden"
+										data-dropdown-id="dropdown-user"
+										data-sheet-modal
+									>
+										<div class="js-dropdown-overlay"></div>
+										<div class="js-dropdown-body">
+											<div class="js-dropdown-trigger">
+												<span></span>
+											</div>
+											<div class="js-dropdown-content">
+												<ul class="max-lg:hidden">
+													<li class="js-dropdown-list-item">Reset Password</li>
+													<li class="js-dropdown-list-item">Made Admin</li>
+													<li class="js-dropdown-list-item">Remove User</li>
+												</ul>
+												<div class="hidden max-lg:flex flex-col px-4 pt-4">
+													<div class="flex items-center gap-3 mb-5">
+														<div class="avatar size-7.5">
+															<img
+																src="./assets/images/avatar.png"
+																alt="avatar"
+															/>
+														</div>
+														<div class="flex flex-col">
+															<p class="text-sm">Richard Hanely</p>
+															<span class="text-xs text-gray-900"
+																>hanrichard@gmail.com</span
+															>
+														</div>
+													</div>
+													<div class="grid grid-cols-2 gap-3">
+														<button class="btn btn-border-default font-normal">
+															Make Admin
+														</button>
+														<button class="btn btn-border-default font-normal">
+															Reset Password
+														</button>
+													</div>
+													<ul class="mt-4">
+														<li
+															class="flex items-center justify-between h-14 px-2 not-last:border-b border-gray-400 text-sm"
+														>
+															<span class="text-gray-900">Last Active</span>
+															<span>5 hours ago</span>
+														</li>
+														<li
+															class="flex items-center justify-between h-14 px-2 not-last:border-b border-gray-400 text-sm"
+														>
+															<span class="text-gray-900">Last Active</span>
+															<span>5 hours ago</span>
+														</li>
+														<li
+															class="flex items-center justify-between h-14 px-2 not-last:border-b border-gray-400 text-sm"
+														>
+															<span class="text-gray-900">2FA</span>
+															<span class="flex items-center gap-2">
+																Active
+																<svg class="icon icon-m">
+																	<use href="#icon-security" />
+																</svg>
+															</span>
+														</li>
+													</ul>
+													<div class="flex items-center justify-center py-4">
+														<a
+															href="#"
+															class="text-red-500 text-sm font-medium"
+														>
+															Remove User
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 						<div
@@ -846,22 +927,103 @@
 									</span>
 								</div>
 							</div>
-							<div class="flex items-center text-sm max-md:justify-end">
+							<div
+								class="flex items-center text-sm max-md:justify-end max-xs:text-gray-900"
+							>
 								<span>Member</span>
 							</div>
 							<div
 								class="text-sm flex items-center justify-between pr-4 max-md:justify-end"
 							>
 								<span class="max-md:hidden">5 hours ago</span>
-								<button
-									type="button"
-									class="size-6 rounded-full hover:bg-gray-400 cursor-pointer flex items-center justify-center"
-								>
-									<svg class="icon icon-md">
-										<use href="#icon-dots-horizontal" />
-									</svg>
-									<span class="sr-only">Settings dropdown</span>
-								</button>
+								<div class="dropdown-wrapper">
+									<button
+										type="button"
+										class="dropdown-button size-6 rounded-full hover:bg-gray-400 cursor-pointer flex items-center justify-center"
+										data-id="dropdown-user"
+									>
+										<svg class="icon icon-md">
+											<use href="#icon-dots-horizontal" />
+										</svg>
+										<span class="sr-only">Settings dropdown</span>
+									</button>
+									<div
+										class="js-dropdown w-[12.625rem] hidden"
+										data-dropdown-id="dropdown-user"
+										data-sheet-modal
+									>
+										<div class="js-dropdown-overlay"></div>
+										<div class="js-dropdown-body">
+											<div class="js-dropdown-trigger">
+												<span></span>
+											</div>
+											<div class="js-dropdown-content">
+												<ul class="max-lg:hidden">
+													<li class="js-dropdown-list-item">Reset Password</li>
+													<li class="js-dropdown-list-item">Made Admin</li>
+													<li class="js-dropdown-list-item">Remove User</li>
+												</ul>
+												<div class="hidden max-lg:flex flex-col px-4 pt-4">
+													<div class="flex items-center gap-3 mb-5">
+														<div class="avatar size-7.5">
+															<img
+																src="./assets/images/avatar.png"
+																alt="avatar"
+															/>
+														</div>
+														<div class="flex flex-col">
+															<p class="text-sm">Richard Hanely</p>
+															<span class="text-xs text-gray-900"
+																>hanrichard@gmail.com</span
+															>
+														</div>
+													</div>
+													<div class="grid grid-cols-2 gap-3">
+														<button class="btn btn-border-default font-normal">
+															Make Admin
+														</button>
+														<button class="btn btn-border-default font-normal">
+															Reset Password
+														</button>
+													</div>
+													<ul class="mt-4">
+														<li
+															class="flex items-center justify-between h-14 px-2 not-last:border-b border-gray-400 text-sm"
+														>
+															<span class="text-gray-900">Last Active</span>
+															<span>5 hours ago</span>
+														</li>
+														<li
+															class="flex items-center justify-between h-14 px-2 not-last:border-b border-gray-400 text-sm"
+														>
+															<span class="text-gray-900">Last Active</span>
+															<span>5 hours ago</span>
+														</li>
+														<li
+															class="flex items-center justify-between h-14 px-2 not-last:border-b border-gray-400 text-sm"
+														>
+															<span class="text-gray-900">2FA</span>
+															<span class="flex items-center gap-2">
+																Active
+																<svg class="icon icon-m">
+																	<use href="#icon-security" />
+																</svg>
+															</span>
+														</li>
+													</ul>
+													<div class="flex items-center justify-center py-4">
+														<a
+															href="#"
+															class="text-red-500 text-sm font-medium"
+														>
+															Remove User
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 						<div
@@ -878,22 +1040,103 @@
 									</span>
 								</div>
 							</div>
-							<div class="flex items-center text-sm max-md:justify-end">
+							<div
+								class="flex items-center text-sm max-md:justify-end max-xs:text-gray-900"
+							>
 								<span>Member</span>
 							</div>
 							<div
 								class="text-sm flex items-center justify-between pr-4 max-md:justify-end"
 							>
 								<span class="max-md:hidden">5 hours ago</span>
-								<button
-									type="button"
-									class="size-6 rounded-full hover:bg-gray-400 cursor-pointer flex items-center justify-center"
-								>
-									<svg class="icon icon-md">
-										<use href="#icon-dots-horizontal" />
-									</svg>
-									<span class="sr-only">Settings dropdown</span>
-								</button>
+								<div class="dropdown-wrapper">
+									<button
+										type="button"
+										class="dropdown-button size-6 rounded-full hover:bg-gray-400 cursor-pointer flex items-center justify-center"
+										data-id="dropdown-user"
+									>
+										<svg class="icon icon-md">
+											<use href="#icon-dots-horizontal" />
+										</svg>
+										<span class="sr-only">Settings dropdown</span>
+									</button>
+									<div
+										class="js-dropdown w-[12.625rem] hidden"
+										data-dropdown-id="dropdown-user"
+										data-sheet-modal
+									>
+										<div class="js-dropdown-overlay"></div>
+										<div class="js-dropdown-body">
+											<div class="js-dropdown-trigger">
+												<span></span>
+											</div>
+											<div class="js-dropdown-content">
+												<ul class="max-lg:hidden">
+													<li class="js-dropdown-list-item">Reset Password</li>
+													<li class="js-dropdown-list-item">Made Admin</li>
+													<li class="js-dropdown-list-item">Remove User</li>
+												</ul>
+												<div class="hidden max-lg:flex flex-col px-4 pt-4">
+													<div class="flex items-center gap-3 mb-5">
+														<div class="avatar size-7.5">
+															<img
+																src="./assets/images/avatar.png"
+																alt="avatar"
+															/>
+														</div>
+														<div class="flex flex-col">
+															<p class="text-sm">Richard Hanely</p>
+															<span class="text-xs text-gray-900"
+																>hanrichard@gmail.com</span
+															>
+														</div>
+													</div>
+													<div class="grid grid-cols-2 gap-3">
+														<button class="btn btn-border-default font-normal">
+															Make Admin
+														</button>
+														<button class="btn btn-border-default font-normal">
+															Reset Password
+														</button>
+													</div>
+													<ul class="mt-4">
+														<li
+															class="flex items-center justify-between h-14 px-2 not-last:border-b border-gray-400 text-sm"
+														>
+															<span class="text-gray-900">Last Active</span>
+															<span>5 hours ago</span>
+														</li>
+														<li
+															class="flex items-center justify-between h-14 px-2 not-last:border-b border-gray-400 text-sm"
+														>
+															<span class="text-gray-900">Last Active</span>
+															<span>5 hours ago</span>
+														</li>
+														<li
+															class="flex items-center justify-between h-14 px-2 not-last:border-b border-gray-400 text-sm"
+														>
+															<span class="text-gray-900">2FA</span>
+															<span class="flex items-center gap-2">
+																Active
+																<svg class="icon icon-m">
+																	<use href="#icon-security" />
+																</svg>
+															</span>
+														</li>
+													</ul>
+													<div class="flex items-center justify-center py-4">
+														<a
+															href="#"
+															class="text-red-500 text-sm font-medium"
+														>
+															Remove User
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 						<div
@@ -910,22 +1153,103 @@
 									</span>
 								</div>
 							</div>
-							<div class="flex items-center text-sm max-md:justify-end">
+							<div
+								class="flex items-center text-sm max-md:justify-end max-xs:text-gray-900"
+							>
 								<span>Owner</span>
 							</div>
 							<div
 								class="text-sm flex items-center justify-between pr-4 max-md:justify-end"
 							>
 								<span class="max-md:hidden">5 hours ago</span>
-								<button
-									type="button"
-									class="size-6 rounded-full hover:bg-gray-400 cursor-pointer flex items-center justify-center"
-								>
-									<svg class="icon icon-md">
-										<use href="#icon-dots-horizontal" />
-									</svg>
-									<span class="sr-only">Settings dropdown</span>
-								</button>
+								<div class="dropdown-wrapper">
+									<button
+										type="button"
+										class="dropdown-button size-6 rounded-full hover:bg-gray-400 cursor-pointer flex items-center justify-center"
+										data-id="dropdown-user"
+									>
+										<svg class="icon icon-md">
+											<use href="#icon-dots-horizontal" />
+										</svg>
+										<span class="sr-only">Settings dropdown</span>
+									</button>
+									<div
+										class="js-dropdown w-[12.625rem] hidden"
+										data-dropdown-id="dropdown-user"
+										data-sheet-modal
+									>
+										<div class="js-dropdown-overlay"></div>
+										<div class="js-dropdown-body">
+											<div class="js-dropdown-trigger">
+												<span></span>
+											</div>
+											<div class="js-dropdown-content">
+												<ul class="max-lg:hidden">
+													<li class="js-dropdown-list-item">Reset Password</li>
+													<li class="js-dropdown-list-item">Made Admin</li>
+													<li class="js-dropdown-list-item">Remove User</li>
+												</ul>
+												<div class="hidden max-lg:flex flex-col px-4 pt-4">
+													<div class="flex items-center gap-3 mb-5">
+														<div class="avatar size-7.5">
+															<img
+																src="./assets/images/avatar.png"
+																alt="avatar"
+															/>
+														</div>
+														<div class="flex flex-col">
+															<p class="text-sm">Richard Hanely</p>
+															<span class="text-xs text-gray-900"
+																>hanrichard@gmail.com</span
+															>
+														</div>
+													</div>
+													<div class="grid grid-cols-2 gap-3">
+														<button class="btn btn-border-default font-normal">
+															Make Admin
+														</button>
+														<button class="btn btn-border-default font-normal">
+															Reset Password
+														</button>
+													</div>
+													<ul class="mt-4">
+														<li
+															class="flex items-center justify-between h-14 px-2 not-last:border-b border-gray-400 text-sm"
+														>
+															<span class="text-gray-900">Last Active</span>
+															<span>5 hours ago</span>
+														</li>
+														<li
+															class="flex items-center justify-between h-14 px-2 not-last:border-b border-gray-400 text-sm"
+														>
+															<span class="text-gray-900">Last Active</span>
+															<span>5 hours ago</span>
+														</li>
+														<li
+															class="flex items-center justify-between h-14 px-2 not-last:border-b border-gray-400 text-sm"
+														>
+															<span class="text-gray-900">2FA</span>
+															<span class="flex items-center gap-2">
+																Active
+																<svg class="icon icon-m">
+																	<use href="#icon-security" />
+																</svg>
+															</span>
+														</li>
+													</ul>
+													<div class="flex items-center justify-center py-4">
+														<a
+															href="#"
+															class="text-red-500 text-sm font-medium"
+														>
+															Remove User
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 						<div
@@ -940,22 +1264,103 @@
 									</span>
 								</div>
 							</div>
-							<div class="flex items-center text-sm max-md:justify-end">
+							<div
+								class="flex items-center text-sm max-md:justify-end max-xs:text-gray-900"
+							>
 								<span>Owner</span>
 							</div>
 							<div
 								class="text-sm flex items-center justify-between pr-4 max-md:justify-end"
 							>
 								<span class="max-md:hidden">5 hours ago</span>
-								<button
-									type="button"
-									class="size-6 rounded-full hover:bg-gray-400 cursor-pointer flex items-center justify-center"
-								>
-									<svg class="icon icon-md">
-										<use href="#icon-dots-horizontal" />
-									</svg>
-									<span class="sr-only">Settings dropdown</span>
-								</button>
+								<div class="dropdown-wrapper">
+									<button
+										type="button"
+										class="dropdown-button size-6 rounded-full hover:bg-gray-400 cursor-pointer flex items-center justify-center"
+										data-id="dropdown-user"
+									>
+										<svg class="icon icon-md">
+											<use href="#icon-dots-horizontal" />
+										</svg>
+										<span class="sr-only">Settings dropdown</span>
+									</button>
+									<div
+										class="js-dropdown w-[12.625rem] hidden"
+										data-dropdown-id="dropdown-user"
+										data-sheet-modal
+									>
+										<div class="js-dropdown-overlay"></div>
+										<div class="js-dropdown-body">
+											<div class="js-dropdown-trigger">
+												<span></span>
+											</div>
+											<div class="js-dropdown-content">
+												<ul class="max-lg:hidden">
+													<li class="js-dropdown-list-item">Reset Password</li>
+													<li class="js-dropdown-list-item">Made Admin</li>
+													<li class="js-dropdown-list-item">Remove User</li>
+												</ul>
+												<div class="hidden max-lg:flex flex-col px-4 pt-4">
+													<div class="flex items-center gap-3 mb-5">
+														<div class="avatar size-7.5">
+															<img
+																src="./assets/images/avatar.png"
+																alt="avatar"
+															/>
+														</div>
+														<div class="flex flex-col">
+															<p class="text-sm">Richard Hanely</p>
+															<span class="text-xs text-gray-900"
+																>hanrichard@gmail.com</span
+															>
+														</div>
+													</div>
+													<div class="grid grid-cols-2 gap-3">
+														<button class="btn btn-border-default font-normal">
+															Make Admin
+														</button>
+														<button class="btn btn-border-default font-normal">
+															Reset Password
+														</button>
+													</div>
+													<ul class="mt-4">
+														<li
+															class="flex items-center justify-between h-14 px-2 not-last:border-b border-gray-400 text-sm"
+														>
+															<span class="text-gray-900">Last Active</span>
+															<span>5 hours ago</span>
+														</li>
+														<li
+															class="flex items-center justify-between h-14 px-2 not-last:border-b border-gray-400 text-sm"
+														>
+															<span class="text-gray-900">Last Active</span>
+															<span>5 hours ago</span>
+														</li>
+														<li
+															class="flex items-center justify-between h-14 px-2 not-last:border-b border-gray-400 text-sm"
+														>
+															<span class="text-gray-900">2FA</span>
+															<span class="flex items-center gap-2">
+																Active
+																<svg class="icon icon-m">
+																	<use href="#icon-security" />
+																</svg>
+															</span>
+														</li>
+													</ul>
+													<div class="flex items-center justify-center py-4">
+														<a
+															href="#"
+															class="text-red-500 text-sm font-medium"
+														>
+															Remove User
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 						<div
@@ -970,22 +1375,103 @@
 									</span>
 								</div>
 							</div>
-							<div class="flex items-center text-sm max-md:justify-end">
+							<div
+								class="flex items-center text-sm max-md:justify-end max-xs:text-gray-900"
+							>
 								<span>Admin</span>
 							</div>
 							<div
 								class="text-sm flex items-center justify-between pr-4 max-md:justify-end"
 							>
 								<span class="max-md:hidden">5 hours ago</span>
-								<button
-									type="button"
-									class="size-6 rounded-full hover:bg-gray-400 cursor-pointer flex items-center justify-center"
-								>
-									<svg class="icon icon-md">
-										<use href="#icon-dots-horizontal" />
-									</svg>
-									<span class="sr-only">Settings dropdown</span>
-								</button>
+								<div class="dropdown-wrapper">
+									<button
+										type="button"
+										class="dropdown-button size-6 rounded-full hover:bg-gray-400 cursor-pointer flex items-center justify-center"
+										data-id="dropdown-user"
+									>
+										<svg class="icon icon-md">
+											<use href="#icon-dots-horizontal" />
+										</svg>
+										<span class="sr-only">Settings dropdown</span>
+									</button>
+									<div
+										class="js-dropdown w-[12.625rem] hidden"
+										data-dropdown-id="dropdown-user"
+										data-sheet-modal
+									>
+										<div class="js-dropdown-overlay"></div>
+										<div class="js-dropdown-body">
+											<div class="js-dropdown-trigger">
+												<span></span>
+											</div>
+											<div class="js-dropdown-content">
+												<ul class="max-lg:hidden">
+													<li class="js-dropdown-list-item">Reset Password</li>
+													<li class="js-dropdown-list-item">Made Admin</li>
+													<li class="js-dropdown-list-item">Remove User</li>
+												</ul>
+												<div class="hidden max-lg:flex flex-col px-4 pt-4">
+													<div class="flex items-center gap-3 mb-5">
+														<div class="avatar size-7.5">
+															<img
+																src="./assets/images/avatar.png"
+																alt="avatar"
+															/>
+														</div>
+														<div class="flex flex-col">
+															<p class="text-sm">Richard Hanely</p>
+															<span class="text-xs text-gray-900"
+																>hanrichard@gmail.com</span
+															>
+														</div>
+													</div>
+													<div class="grid grid-cols-2 gap-3">
+														<button class="btn btn-border-default font-normal">
+															Make Admin
+														</button>
+														<button class="btn btn-border-default font-normal">
+															Reset Password
+														</button>
+													</div>
+													<ul class="mt-4">
+														<li
+															class="flex items-center justify-between h-14 px-2 not-last:border-b border-gray-400 text-sm"
+														>
+															<span class="text-gray-900">Last Active</span>
+															<span>5 hours ago</span>
+														</li>
+														<li
+															class="flex items-center justify-between h-14 px-2 not-last:border-b border-gray-400 text-sm"
+														>
+															<span class="text-gray-900">Last Active</span>
+															<span>5 hours ago</span>
+														</li>
+														<li
+															class="flex items-center justify-between h-14 px-2 not-last:border-b border-gray-400 text-sm"
+														>
+															<span class="text-gray-900">2FA</span>
+															<span class="flex items-center gap-2">
+																Active
+																<svg class="icon icon-m">
+																	<use href="#icon-security" />
+																</svg>
+															</span>
+														</li>
+													</ul>
+													<div class="flex items-center justify-center py-4">
+														<a
+															href="#"
+															class="text-red-500 text-sm font-medium"
+														>
+															Remove User
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 						<div
@@ -1000,22 +1486,103 @@
 									</span>
 								</div>
 							</div>
-							<div class="flex items-center text-sm max-md:justify-end">
+							<div
+								class="flex items-center text-sm max-md:justify-end max-xs:text-gray-900"
+							>
 								<span>Owner</span>
 							</div>
 							<div
 								class="text-sm flex items-center justify-between pr-4 max-md:justify-end"
 							>
 								<span class="max-md:hidden">5 hours ago</span>
-								<button
-									type="button"
-									class="size-6 rounded-full hover:bg-gray-400 cursor-pointer flex items-center justify-center"
-								>
-									<svg class="icon icon-md">
-										<use href="#icon-dots-horizontal" />
-									</svg>
-									<span class="sr-only">Settings dropdown</span>
-								</button>
+								<div class="dropdown-wrapper">
+									<button
+										type="button"
+										class="dropdown-button size-6 rounded-full hover:bg-gray-400 cursor-pointer flex items-center justify-center"
+										data-id="dropdown-user"
+									>
+										<svg class="icon icon-md">
+											<use href="#icon-dots-horizontal" />
+										</svg>
+										<span class="sr-only">Settings dropdown</span>
+									</button>
+									<div
+										class="js-dropdown w-[12.625rem] hidden"
+										data-dropdown-id="dropdown-user"
+										data-sheet-modal
+									>
+										<div class="js-dropdown-overlay"></div>
+										<div class="js-dropdown-body">
+											<div class="js-dropdown-trigger">
+												<span></span>
+											</div>
+											<div class="js-dropdown-content">
+												<ul class="max-lg:hidden">
+													<li class="js-dropdown-list-item">Reset Password</li>
+													<li class="js-dropdown-list-item">Made Admin</li>
+													<li class="js-dropdown-list-item">Remove User</li>
+												</ul>
+												<div class="hidden max-lg:flex flex-col px-4 pt-4">
+													<div class="flex items-center gap-3 mb-5">
+														<div class="avatar size-7.5">
+															<img
+																src="./assets/images/avatar.png"
+																alt="avatar"
+															/>
+														</div>
+														<div class="flex flex-col">
+															<p class="text-sm">Richard Hanely</p>
+															<span class="text-xs text-gray-900"
+																>hanrichard@gmail.com</span
+															>
+														</div>
+													</div>
+													<div class="grid grid-cols-2 gap-3">
+														<button class="btn btn-border-default font-normal">
+															Make Admin
+														</button>
+														<button class="btn btn-border-default font-normal">
+															Reset Password
+														</button>
+													</div>
+													<ul class="mt-4">
+														<li
+															class="flex items-center justify-between h-14 px-2 not-last:border-b border-gray-400 text-sm"
+														>
+															<span class="text-gray-900">Last Active</span>
+															<span>5 hours ago</span>
+														</li>
+														<li
+															class="flex items-center justify-between h-14 px-2 not-last:border-b border-gray-400 text-sm"
+														>
+															<span class="text-gray-900">Last Active</span>
+															<span>5 hours ago</span>
+														</li>
+														<li
+															class="flex items-center justify-between h-14 px-2 not-last:border-b border-gray-400 text-sm"
+														>
+															<span class="text-gray-900">2FA</span>
+															<span class="flex items-center gap-2">
+																Active
+																<svg class="icon icon-m">
+																	<use href="#icon-security" />
+																</svg>
+															</span>
+														</li>
+													</ul>
+													<div class="flex items-center justify-center py-4">
+														<a
+															href="#"
+															class="text-red-500 text-sm font-medium"
+														>
+															Remove User
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 						<div class="flex justify-between items-center mt-6">
@@ -1148,6 +1715,7 @@
 			crossorigin="anonymous"
 		></script>
 		<script src="./dist/js/mobile-menu.js"></script>
+		<script src="./dist/js/bottom-sheet.js"></script>
 		<script src="./dist/js/dialog.js"></script>
 		<script src="./dist/js/menu-tree.js"></script>
 		<script src="./dist/js/dropdown.js"></script>
