@@ -132,6 +132,7 @@
 		<link rel="stylesheet" href="./dist/output.css" />
 	</head>
 	<body class="drag-and-drop">
+		<a href="#" data-dialog-open-id="share">Open Share Modal</a>
 		<div id="lightbox" class="hidden">
 			<div class="modal" id="modal">
 				<div class="modal-dialog modal-bs modal-email-share">
@@ -166,7 +167,7 @@
 								</a>
 							</div>
 						</div>
-						<div class="modal-body modal-email scrollbar-hide">
+						<div class="modal-body pb-6 modal-email scrollbar-hide">
 							<form
 								action="#"
 								method="post"
@@ -558,7 +559,7 @@
 												</div>
 												<div class="privacy-settings-menu__item">
 													<svg class="icon icon-md">
-														<use href="#team"></use>
+														<use href="#icon-team"></use>
 													</svg>
 													<div>
 														<div
@@ -599,37 +600,41 @@
 								<div
 									class="share-footer flex items-center justify-between mt-6"
 								>
-									<div class="flex items-center gap-3.5">
+									<div
+										class="flex items-center gap-3.5 max-sm:flex-wrap w-full max-sm:gap-y-5"
+									>
 										<button
 											id="copy_advLink"
 											data-type="file"
 											data-link="http://jmp.jsa.de/v/y40vjOQeoW3ykjafsfCH"
 											type="button"
-											class="btn btn-border-default h-9 gap-1.5 pl-4 pr-5 font-normal"
+											class="btn btn-border-default h-9 gap-1.5 pl-4 pr-5 font-normal max-sm:order-2 max-xs:flex-grow-1"
 										>
 											<svg class="icon icon-sm">
 												<use href="#icon-link"></use>
 											</svg>
 											<span class="text-sm text-dark-800">Copy link</span>
 										</button>
-										<label class="custom-controls checkbox">
+										<label
+											class="custom-controls checkbox max-sm:order-1 max-sm:w-full"
+										>
 											<input type="checkbox" class="custom-control-input" />
 											<span class="custom-control-indicator"></span>
 											<span class="text-sm text-dark-800"
 												>Share video at 0:00</span
 											>
 										</label>
+										<button
+											type="submit"
+											class="btn btn-primary-default h-9 w-[7.5rem] max-sm:order-3 sm:ml-auto max-xs:flex-grow-1"
+										>
+											Done
+										</button>
 									</div>
-									<button
-										type="submit"
-										class="btn btn-primary-default h-9 w-[7.5rem]"
-									>
-										Done
-									</button>
 								</div>
 							</form>
 						</div>
-						<div class="modal-body modal-collaborate">
+						<div class="modal-body pb-6 modal-collaborate">
 							<label class="text-sm"
 								>Once you invite a team member from your workspace, this item
 								can be found in your Shared library.<a
@@ -701,7 +706,7 @@
 								</form>
 							</div>
 						</div>
-						<div class="modal-body modal-embed">
+						<div class="modal-body pb-6 modal-embed">
 							<form class="modal-embedMedia">
 								<div class="enabled">
 									<div class="modal-share-options">
@@ -710,10 +715,12 @@
 												<h4 class="text-sm font-semibold text-dark-800">
 													Embed on Email
 												</h4>
-												<div class="for_email_wrppr">
+												<div
+													class="for_email_wrppr max-xs:flex-wrap max-xs:gap-y-3"
+												>
 													<button
 														type="button"
-														class="btn btn-border-default font-normal"
+														class="btn btn-border-default font-normal max-xs:w-full"
 														id="embed_copy_thumb"
 													>
 														<svg class="icon icon-sm">
@@ -721,7 +728,11 @@
 														</svg>
 														<span>Copy thumbnail</span>
 													</button>
-													<a href="#" id="embed_copy_thumb_code">
+													<a
+														href="#"
+														class="max-xs:w-full justify-center max-xs:h-9"
+														id="embed_copy_thumb_code"
+													>
 														<svg
 															width="19"
 															height="18"
@@ -762,7 +773,7 @@
 													</a>
 												</div>
 											</div>
-											<div class="mt-7.5">
+											<div class="mt-7.5 max-xs:mt-6">
 												<h4 class="text-sm font-semibold text-dark-800 mb-4">
 													Embed on Website
 												</h4>
@@ -779,7 +790,7 @@
 												<button
 													type="button"
 													id="copy_embedCode"
-													class="btn btn-border-default font-normal"
+													class="btn btn-border-default font-normal max-xs:w-full"
 												>
 													<svg class="icon icon-sm">
 														<use href="#icon-embed-code"></use>
@@ -954,7 +965,9 @@
 								</div>
 							</form>
 						</div>
-						<div class="modal-body modal-link-settings clearfix">
+						<div
+							class="modal-body pb-6 max-lg:pt-4 modal-link-settings clearfix"
+						>
 							<div class="link-settings-list">
 								<div class="link-settings-item">
 									<div class="link-settings-item__header">
@@ -1174,16 +1187,21 @@
 									</div>
 								</div>
 							</div>
-							<div class="link-settings-footer">
-								<a href="#">Delete Link</a>
-								<div class="flex items-center gap-3">
-									<button class="btn btn-border-default" id="qr-code-btn">
+							<div class="link-settings-footer max-sm:flex-wrap max-sm:gap-y-5">
+								<a href="#" class="max-sm:w-full">Delete Link</a>
+								<div class="flex items-center gap-3 max-sm:w-full">
+									<button
+										class="btn btn-border-default max-xs:w-[9.125rem]"
+										id="qr-code-btn"
+									>
 										<svg class="icon icon-sm">
 											<use href="#icon-qr-code"></use>
 										</svg>
 										<span class="font-normal">QR Code</span>
 									</button>
-									<button class="btn btn-primary-default">Save Changes</button>
+									<button class="btn btn-primary-default max-xs:flex-grow-1">
+										Save Changes
+									</button>
 								</div>
 							</div>
 							<div class="qrcode-modal hidden">

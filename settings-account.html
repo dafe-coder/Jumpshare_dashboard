@@ -154,7 +154,7 @@
 		</div>
 
 		<!-- Dialogs -->
-		<div id="lightbox" class="">
+		<div id="lightbox" class="hidden">
 			<div class="modal" id="modal">
 				<div class="modal-dialog modal-bs two-step-verification">
 					<div class="modal-content modal-share">
@@ -225,13 +225,13 @@
 							<div class="flex items-center justify-end gap-3">
 								<button
 									type="button"
-									class="btn btn-border-default px-4 font-normal"
+									class="btn btn-border-default px-4 font-normal max-xs:flex-shrink-0 max-xs:w-[9.125rem]"
 								>
 									Cancel
 								</button>
 								<button
 									type="button"
-									class="btn btn-primary-default min-w-24.5 px-4 font-semibold"
+									class="btn btn-primary-default min-w-24.5 px-4 font-semibold max-xs:flex-grow-1"
 								>
 									Next
 								</button>
@@ -330,13 +330,13 @@
 							<div class="flex items-center justify-end gap-3">
 								<button
 									type="button"
-									class="btn btn-border-default px-4 font-normal"
+									class="btn btn-border-default px-4 font-normal max-xs:flex-shrink-0 max-xs:w-[9.125rem]"
 								>
-									Cancel
+									Back
 								</button>
 								<button
 									type="button"
-									class="btn btn-primary-default min-w-24.5 px-4 font-semibold"
+									class="btn btn-primary-default min-w-24.5 px-4 font-semibold max-xs:flex-grow-1"
 								>
 									Submit
 								</button>
@@ -368,7 +368,7 @@
 								these codes in your account settings under 2FA Section
 							</p>
 							<ul
-								class="grid grid-cols-4 bg-gray-150 py-3 mt-5 gap-y-6 rounded-lg"
+								class="grid grid-cols-4 bg-gray-150 py-3 mt-5 gap-y-6 rounded-lg max-xs:grid-cols-2"
 							>
 								<li
 									class="flex items-center justify-center text-sm font-medium"
@@ -416,13 +416,13 @@
 							<div class="flex items-center justify-end gap-3">
 								<button
 									type="button"
-									class="btn btn-border-default px-4 font-normal"
+									class="btn btn-border-default px-4 font-normal max-xs:flex-shrink-0 max-xs:w-[9.125rem]"
 								>
 									Copy Codes
 								</button>
 								<button
 									type="button"
-									class="btn btn-primary-default min-w-24.5 px-4 font-semibold"
+									class="btn btn-primary-default min-w-24.5 px-4 font-semibold max-xs:flex-grow-1"
 								>
 									Close
 								</button>
@@ -457,7 +457,7 @@
 								these codes in your account settings under 2FA Section
 							</p>
 							<ul
-								class="grid grid-cols-4 bg-gray-150 py-3 mt-5 gap-y-6 rounded-lg"
+								class="grid grid-cols-4 bg-gray-150 py-3 mt-5 gap-y-6 rounded-lg max-xs:grid-cols-2"
 							>
 								<li
 									class="flex items-center justify-center text-sm font-medium"
@@ -505,13 +505,13 @@
 							<div class="flex items-center justify-end gap-3">
 								<button
 									type="button"
-									class="btn btn-border-default px-4 font-normal"
+									class="btn btn-border-default px-4 font-normal max-xs:flex-shrink-0 max-xs:w-[9.125rem]"
 								>
 									Copy Codes
 								</button>
 								<button
 									type="button"
-									class="btn btn-primary-default min-w-24.5 px-4 font-semibold"
+									class="btn btn-primary-default min-w-24.5 px-4 font-semibold max-xs:flex-grow-1"
 								>
 									Finish
 								</button>
@@ -547,13 +547,13 @@
 							<div class="flex items-center justify-end gap-3">
 								<button
 									type="button"
-									class="btn btn-border-default px-4 font-normal"
+									class="btn btn-border-default px-4 font-normal max-xs:flex-shrink-0 max-xs:w-[9.125rem]"
 								>
 									Cancel
 								</button>
 								<button
 									type="button"
-									class="btn btn-primary-default min-w-24.5 px-4 font-semibold"
+									class="btn btn-primary-default min-w-24.5 px-4 font-semibold max-xs:flex-grow-1"
 								>
 									Continue
 								</button>
@@ -580,7 +580,7 @@
 							</h4>
 						</div>
 						<div class="modal-body scrollbar-hide">
-							<p class="text-sm mb-8">
+							<p class="text-sm mb-8 max-xs:mb-6">
 								Please enter the 6-digit code sent to your email address
 								rob****gmail.com
 							</p>
@@ -594,7 +594,7 @@
 									placeholder="Enter Confirmation Code"
 								/>
 							</div>
-							<p class="text-sm mt-6">
+							<p class="text-sm mt-6 max-xs:mt-4">
 								Didn’t receive it?
 								<a
 									href="#"
@@ -607,13 +607,13 @@
 							<div class="flex items-center justify-end gap-3">
 								<button
 									type="button"
-									class="btn btn-border-default px-4 font-normal"
+									class="btn btn-border-default px-4 font-normal max-xs:flex-shrink-0 max-xs:w-[9.125rem]"
 								>
 									Back
 								</button>
 								<button
 									type="button"
-									class="btn btn-primary-default min-w-24.5 px-4 font-semibold"
+									class="btn btn-primary-default min-w-24.5 px-4 font-semibold max-xs:flex-grow-1"
 								>
 									Verify
 								</button>
@@ -640,7 +640,7 @@
 							</h4>
 						</div>
 						<div class="modal-body scrollbar-hide">
-							<p class="text-sm mb-8">
+							<p class="text-sm mb-8 max-xs:mb-6">
 								Enter your phone number to enable the 2FA Security each time you
 								login to your device
 							</p>
@@ -700,7 +700,7 @@
 									<input
 										type="text"
 										class="text-sm"
-										placeholder="Enter Confirmation Code"
+										placeholder="Enter phone number"
 									/>
 								</div>
 							</div>
@@ -709,13 +709,13 @@
 							<div class="flex items-center justify-end gap-3">
 								<button
 									type="button"
-									class="btn btn-border-default px-4 font-normal"
+									class="btn btn-border-default px-4 font-normal max-xs:flex-shrink-0 max-xs:w-[9.125rem]"
 								>
 									Cancel
 								</button>
 								<button
 									type="button"
-									class="btn btn-primary-default min-w-24.5 px-4 font-semibold"
+									class="btn btn-primary-default min-w-24.5 px-4 font-semibold max-xs:flex-grow-1"
 								>
 									Send Code
 								</button>
@@ -742,7 +742,7 @@
 							</h4>
 						</div>
 						<div class="modal-body scrollbar-hide">
-							<p class="text-sm mb-8">
+							<p class="text-sm mb-8 max-xs:mb-6">
 								Please enter the 6-digit code sent to your phone number ending
 								with ***456
 							</p>
@@ -756,7 +756,7 @@
 									placeholder="Enter Confirmation Code"
 								/>
 							</div>
-							<p class="text-sm mt-6">
+							<p class="text-sm mt-6 max-xs:mt-4">
 								Didn’t receive it?
 								<a
 									href="#"
@@ -769,13 +769,13 @@
 							<div class="flex items-center justify-end gap-3">
 								<button
 									type="button"
-									class="btn btn-border-default px-4 font-normal"
+									class="btn btn-border-default px-4 font-normal max-xs:flex-shrink-0 max-xs:w-[9.125rem]"
 								>
 									Back
 								</button>
 								<button
 									type="button"
-									class="btn btn-primary-default min-w-24.5 px-4 font-semibold"
+									class="btn btn-primary-default min-w-24.5 px-4 font-semibold max-xs:flex-grow-1"
 								>
 									Verify
 								</button>
@@ -802,7 +802,7 @@
 							</h4>
 						</div>
 						<div class="modal-body scrollbar-hide">
-							<p class="text-sm mb-4">
+							<p class="text-sm">
 								You’ll need to verify your account by entering the 2FA Sent to
 								your mobile number for verification each time you login
 							</p>
@@ -811,7 +811,7 @@
 							<div class="flex items-center justify-end gap-3">
 								<button
 									type="button"
-									class="btn btn-primary-default min-w-24.5 px-4 font-semibold"
+									class="btn btn-primary-default min-w-24.5 px-4 font-semibold max-xs:flex-grow-1"
 								>
 									Done
 								</button>

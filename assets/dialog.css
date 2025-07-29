@@ -168,6 +168,9 @@
 	.modal-dialog {
 		.modal-header {
 			@apply p-6 pb-4 flex-shrink-0;
+			h4 {
+				@apply pr-5;
+			}
 		}
 		.modal-footer {
 			@apply flex-shrink-0;
@@ -176,7 +179,7 @@
 			@apply overflow-hidden left-1/2 -translate-x-1/2 flex flex-col h-full;
 		}
 		.modal-body {
-			@apply px-6 flex-grow-1 overflow-y-auto static;
+			@apply px-6 flex-grow-1 overflow-y-auto static max-xs:py-0;
 		}
 	}
 
