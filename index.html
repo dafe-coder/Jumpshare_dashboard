@@ -707,7 +707,7 @@
 							</div>
 						</div>
 						<div class="modal-body pb-6 modal-embed">
-							<form class="modal-embedMedia">
+							<div class="modal-embedMedia">
 								<div class="enabled">
 									<div class="modal-share-options">
 										<div class="copy_embed_group">
@@ -952,6 +952,7 @@
 																fill="white"
 															/>
 														</svg>
+														<span class="sr-only">Play</span>
 													</a>
 												</div>
 												<img
@@ -963,7 +964,7 @@
 										</div>
 									</div>
 								</div>
-							</form>
+							</div>
 						</div>
 						<div
 							class="modal-body pb-6 max-lg:pt-4 modal-link-settings clearfix"
@@ -1009,11 +1010,15 @@
 													id="expire_after_number_control"
 												>
 													<a href="#" class="icon-wrapper pull-left"
-														><span class="ab-center icn-numberup-arrow"></span
-													></a>
+														><span class="ab-center icn-numberup-arrow"></span>
+														<span class="sr-only">Increase</span>
+													</a>
 													<a href="#" class="icon-wrapper pull-left"
-														><span class="ab-center icn-numberdown-arrow"></span
-													></a>
+														><span
+															class="ab-center icn-numberdown-arrow"
+														></span>
+														<span class="sr-only">Decrease</span>
+													</a>
 												</div>
 											</div>
 											<div class="options-dropdown pull-left">
@@ -1191,6 +1196,7 @@
 								<a href="#" class="max-sm:w-full">Delete Link</a>
 								<div class="flex items-center gap-3 max-sm:w-full">
 									<button
+										type="button"
 										class="btn btn-border-default max-xs:w-[9.125rem]"
 										id="qr-code-btn"
 									>
@@ -1199,19 +1205,19 @@
 										</svg>
 										<span class="font-normal">QR Code</span>
 									</button>
-									<button class="btn btn-primary-default max-xs:flex-grow-1">
+									<button
+										type="button"
+										class="btn btn-primary-default max-xs:flex-grow-1"
+									>
 										Save Changes
 									</button>
 								</div>
 							</div>
 							<div class="qrcode-modal hidden">
 								<div class="qrcode-modal-body">
-									<button
-										type="button"
-										class="qrcode-modal-close"
-										aria-hidden="true"
-									>
+									<button type="button" class="qrcode-modal-close">
 										<span class="icn-close"></span>
+										<span class="sr-only">Close</span>
 									</button>
 									<div class="qrcode-modal-header">
 										<h4 class="text-lg font-semibold">Scan QR Code</h4>
@@ -1235,7 +1241,10 @@
 									</div>
 									<div class="qrcode-modal-footer">
 										<div class="qrcode-modal-actions mt-4">
-											<button class="btn btn-primary-default !w-full">
+											<button
+												type="button"
+												class="btn btn-primary-default !w-full"
+											>
 												Upgrade Now
 											</button>
 										</div>
@@ -1282,44 +1291,54 @@
 				<div
 					class="flex flex-col max-lg:w-[318px] max-lg:max-w-[318px] max-xs:w-[85%]! w-full bg-gray-150 max-lg:rounded-r-2xl z-3 h-full"
 				>
-					<div class="dropdown-wrapper z-4 max-md:border-b border-gray-400">
+					<div class="flex items-center px-2.5 pt-6 pb-6">
+						<a href="/" class="flex items-center gap-2" aria-label="Home">
+							<svg class="icon h-5.5 w-38">
+								<use href="#icon-logo"></use>
+							</svg>
+						</a>
+						<button
+							type="button"
+							aria-label="Collapse Sidebar"
+							class="btn ml-auto p-0 h-auto"
+						>
+							<svg class="icon icon-md">
+								<use href="#icon-collapse-sidebar"></use>
+							</svg>
+						</button>
+					</div>
+					<div
+						class="dropdown-wrapper z-4 max-md:border-b border-gray-400 px-2"
+					>
 						<a
 							href="#"
 							data-id="dropdown-workspaces"
-							class="dropdown-button p-4 flex items-center justify-between relative [&.active]:bg-gray-300 transition-colors duration-300 max-lg:rounded-t-2xl"
+							class="dropdown-button p-2.5 flex items-center justify-between relative bg-white border border-gray-600 rounded-xl hover:bg-gray-200 [&.active]:bg-gray-200"
 						>
-							<div class="flex items-center">
-								<div class="flex items-center justify-between mr-3">
-									<div
-										class="flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white"
-									>
-										<span class="font-semibold text-base text-blue-500">S</span>
-									</div>
+							<div class="flex items-center justify-between mr-2 flex-shrink-0">
+								<div
+									class="flex items-center justify-center size-8 bg-blue-500/10 rounded-md"
+								>
+									<span class="font-semibold text-base text-blue-500">S</span>
 								</div>
-								<div class="mr-1.5">
-									<h3 class="text-sm font-semibold text-black">Startup Co</h3>
-									<ul
-										class="flex items-center text-xs text-dark-800/70 gap-3 text-nowrap"
-									>
-										<li class="relative">
-											Enterprise
-											<span
-												class="absolute top-1/2 -translate-y-1/2 -right-[7.5px] size-[2px] rounded-full bg-blue-900/70"
-											></span>
-										</li>
-										<li class="relative">
-											<span>23</span>
-											Members
-										</li>
-									</ul>
-								</div>
+							</div>
+							<div class="mr-1.5 flex-grow-1 truncate">
+								<h3 class="text-sm font-semibold text-black mb-0.5 truncate">
+									Ghaus’s Workspace
+								</h3>
+								<ul class="list-with-dots">
+									<li class="relative">
+										<span>23</span>
+										Members
+									</li>
+								</ul>
 							</div>
 							<svg class="icon icon-xs flex-shrink-0">
 								<use href="#icon-check-bottom"></use>
 							</svg>
 						</a>
 						<div
-							class="js-dropdown hidden w-[16.875rem] top-full left-3"
+							class="js-dropdown hidden w-[18.75rem] top-[calc(100%+10px)] left-3 rounded-2xl"
 							data-dropdown-id="dropdown-workspaces"
 							data-sheet-modal
 						>
@@ -1328,26 +1347,50 @@
 								<div class="js-dropdown-trigger">
 									<span></span>
 								</div>
-								<div
-									class="js-dropdown-content lg:px-2 pb-4 lg:pt-4 max-lg:px-4"
-								>
-									<div class="flex items-center justify-between px-1.5">
-										<p class="text-sm text-dark-800 font-normal">Workspaces</p>
-										<span
-											class="text-sm text-blue-500 font-medium hover:underline underline-offset-1 cursor-pointer"
-											>+ Add Workspace</span
+								<div class="js-dropdown-content px-4 pb-4 lg:pt-4 max-lg:px-4">
+									<div class="flex items-center gap-2">
+										<div
+											class="size-10.5 flex items-center justify-center rounded-md bg-blue-500/10 font-semibold text-xl text-blue-500"
 										>
+											G
+										</div>
+										<div class="flex flex-col">
+											<p class="text-sm text-dark-800 font-medium">
+												Ghaus’s Workspace
+											</p>
+											<ul class="list-with-dots">
+												<li class="relative">Enterprise</li>
+												<li class="relative">23 Members</li>
+											</ul>
+										</div>
 									</div>
-									<div class="flex flex-col gap-y-1 mt-3">
+									<div class="flex gap-2 mt-4 mb-1">
+										<button type="button" class="btn btn-border-default h-8">
+											<svg class="icon icon-sm">
+												<use href="#icon-cog-medium"></use>
+											</svg>
+											<span>Settings</span>
+										</button>
+										<button
+											type="button"
+											class="btn btn-border-default h-8 flex-grow-1"
+										>
+											<svg class="icon icon-sm">
+												<use href="#icon-members-medium"></use>
+											</svg>
+											<span>Invite members</span>
+										</button>
+									</div>
+									<hr class="border-gray-600 my-4" />
+									<p class="text-xs mb-2">Switch Workspace</p>
+									<div class="flex flex-col">
 										<div
 											class="active-workspace flex items-center gap-x-3 cursor-pointer rounded-md hover:bg-gray-150 [&.active-workspace]:bg-gray-150 px-2 py-2.5"
 										>
 											<div
-												class="flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white"
+												class="flex items-center justify-center size-9 bg-[#FF4B8B]/20 rounded-md font-semibold text-base text-[#FF4B8B]"
 											>
-												<span class="font-semibold text-base text-blue-500"
-													>S</span
-												>
+												S
 											</div>
 											<div class="flex flex-col">
 												<p class="text-sm text-dark-800 font-medium">
@@ -1377,11 +1420,9 @@
 											class="flex items-center gap-x-3 cursor-pointer rounded-md hover:bg-gray-150 [&.active-workspace]:bg-gray-150 px-2 py-2.5"
 										>
 											<div
-												class="flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white"
+												class="flex items-center justify-center size-9 bg-blue-500/20 rounded-md font-semibold text-base text-blue-500"
 											>
-												<span class="font-semibold text-base text-blue-500"
-													>N</span
-												>
+												N
 											</div>
 											<div class="flex flex-col">
 												<p class="text-sm text-dark-800 font-medium">
@@ -1407,72 +1448,52 @@
 												</svg>
 											</span>
 										</div>
-									</div>
-									<div class="mt-3 flex flex-col gap-y-2 px-1.5">
-										<button
-											type="button"
-											class="btn btn-primary-default rounded-lg"
+										<div
+											class="group flex items-center px-2 py-1 rounded-md gap-3 cursor-pointer"
 										>
-											<svg class="icon icon-sm">
-												<use href="#icon-members-medium"></use>
-											</svg>
-											<span> Invite Teammates </span>
-										</button>
-										<button
-											class="btn btn-border-default rounded-lg font-normal"
-										>
-											Set Default Workspace
-										</button>
+											<div
+												class="flex items-center justify-center size-7.5 bg-gray-150 rounded-md group-hover:text-blue-500"
+											>
+												<svg class="icon icon-s">
+													<use href="#icon-plus"></use>
+												</svg>
+											</div>
+											<p class="text-sm group-hover:text-blue-500">
+												Add Workspace
+											</p>
+										</div>
 									</div>
+									<hr class="border-gray-600 mb-4 mt-3" />
+									<button
+										type="button"
+										class="btn btn-border-default rounded-lg font-normal w-full h-8"
+									>
+										Set Default Workspace
+									</button>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="flex flex-col h-full overflow-y-auto px-4 pb-4">
+					<div class="flex flex-col h-full overflow-y-auto px-3 pb-4">
 						<nav class="flex flex-col mt-5 mb-5">
-							<p class="text-s text-dark-800/60 font-medium">Libraries</p>
 							<ul class="flex flex-col mt-2">
 								<li>
 									<a
 										href="./index.html"
-										class="active flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500"
+										class="active flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500"
 									>
-										<svg class="icon icon-sm">
+										<svg class="icon icon-md">
 											<use href="#icon-home-medium"></use>
 										</svg>
-										Personal
+										My Library
 									</a>
 								</li>
-								<li>
-									<a
-										href="./shared.html"
-										class="flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500"
-									>
-										<svg class="icon icon-sm">
-											<use href="#icon-members-medium"></use>
-										</svg>
-										Shared
-									</a>
-								</li>
-								<li>
-									<a
-										href="./team.html"
-										class="flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500"
-									>
-										<svg class="icon icon-sm">
-											<use href="#icon-team-medium"></use>
-										</svg>
-										Team
-									</a>
-								</li>
-							</ul>
-							<ul class="flex flex-col mt-5">
 								<li>
 									<a
 										href="./favorites.html"
-										class="flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500"
+										class="flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500"
 									>
-										<svg class="icon icon-sm" stroke-width="6">
+										<svg class="icon icon-md" stroke-width="6">
 											<use href="#icon-star-medium"></use>
 										</svg>
 										Favorites
@@ -1481,9 +1502,9 @@
 								<li>
 									<a
 										href="./analytics.html"
-										class="flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500"
+										class="flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500"
 									>
-										<svg class="icon icon-sm">
+										<svg class="icon icon-md">
 											<use href="#icon-analytics-medium"></use>
 										</svg>
 										Analytics
@@ -1491,10 +1512,21 @@
 								</li>
 								<li>
 									<a
-										href="./inbox.html"
-										class="flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500"
+										href="./shared.html"
+										class="flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500"
 									>
-										<svg class="icon icon-sm">
+										<svg class="icon icon-md">
+											<use href="#icon-history"></use>
+										</svg>
+										History
+									</a>
+								</li>
+								<li>
+									<a
+										href="./inbox.html"
+										class="flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500"
+									>
+										<svg class="icon icon-md">
 											<use href="#icon-inbox-medium"></use>
 										</svg>
 										Inbox
@@ -1503,9 +1535,9 @@
 								<li>
 									<a
 										href="./trash.html"
-										class="flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500"
+										class="flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500"
 									>
-										<svg class="icon icon-sm">
+										<svg class="icon icon-md">
 											<use href="#icon-trash-medium"></use>
 										</svg>
 										Trash
@@ -1514,32 +1546,226 @@
 								<li>
 									<a
 										href="./settings.html"
-										class="flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500"
+										class="flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500"
 									>
-										<svg class="icon icon-sm">
+										<svg class="icon icon-md">
 											<use href="#icon-cog-medium"></use>
 										</svg>
 										Settings
 									</a>
 								</li>
 							</ul>
+							<hr class="mt-5 mb-3.5 border-gray-600" />
+							<div class="flex items-center justify-between pl-2">
+								<p class="text-sm font-medium text-dark-800/60">Spaces</p>
+								<button
+									type="button"
+									aria-label="Add Space"
+									class="btn p-0 size-10 text-dark-800 rounded-md hover:bg-gray-300 -mr-2"
+								>
+									<svg class="icon icon-s">
+										<use href="#icon-plus"></use>
+									</svg>
+								</button>
+							</div>
+							<ul class="flex flex-col">
+								<li>
+									<a
+										href="#"
+										class="flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500"
+									>
+										<svg class="icon icon-md">
+											<use href="#icon-spaces"></use>
+										</svg>
+										<span class="truncate">Browse Spaces</span>
+									</a>
+								</li>
+								<li>
+									<a
+										href="#"
+										class="flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500"
+									>
+										<span
+											class="flex items-center justify-center rounded-md bg-blue-500 size-6 text-white text-xs font-semibold uppercase"
+										>
+											<svg class="icon icon-s">
+												<use href="#icon-members-medium"></use>
+											</svg>
+										</span>
+										<span class="truncate">Team Space</span>
+									</a>
+								</li>
+								<li>
+									<a
+										href="#"
+										class="flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500"
+									>
+										<span
+											class="flex items-center justify-center rounded-md bg-[#5839F3] size-6 text-white text-xs font-semibold uppercase"
+										>
+											H
+										</span>
+										<span class="truncate">HR Team</span>
+									</a>
+								</li>
+								<li>
+									<a
+										href="#"
+										class="flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500"
+									>
+										<div
+											class="size-6 flex items-center justify-center flex-shrink-0"
+										>
+											<img
+												src="./assets/images/smileys/smile-1.png"
+												alt="Smiley"
+												class="size-5 object-contain"
+											/>
+										</div>
+										<span class="truncate">My Private Workspace</span>
+									</a>
+								</li>
+								<li>
+									<a
+										href="#"
+										class="flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500"
+									>
+										<div
+											class="size-6 flex items-center justify-center flex-shrink-0"
+										>
+											<img
+												src="./assets/images/smileys/smile-2.png"
+												alt="Smiley"
+												class="size-5 object-contain"
+											/>
+										</div>
+										<span class="truncate">Jumpcamp Meetups Recording</span>
+									</a>
+								</li>
+							</ul>
 						</nav>
-						<div
-							class="mt-auto bg-white border-gray-400 border rounded-lg px-5 py-3.5"
-						>
-							<p
-								class="text-center text-sm font-normal text-dark-800/60 mb-2.5 max-w-[12.125rem] mx-auto"
-							>
-								Teams that communicate better, grow faster
-							</p>
-							<button
-								class="btn btn-border-default m-0 w-full text-sm justify-center text-center text-dark-800/80 h-8"
-							>
-								<svg class="icon icon-sm">
-									<use href="#icon-members-semibold"></use>
-								</svg>
-								Invite members
-							</button>
+						<div class="mt-auto">
+							<hr class="mb-6 border-gray-600" />
+							<ul class="flex flex-col gap-y-1">
+								<li>
+									<a
+										href="./activity-center.html"
+										class="flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500"
+									>
+										<svg class="icon icon-md">
+											<use href="#icon-bell"></use>
+										</svg>
+										Notifications
+										<span
+											class="bg-red-500 rounded-full flex justify-center items-center h-4 min-w-4 text-[11px]/[10px] text-white text-center font-medium text-nowrap"
+											>5</span
+										>
+									</a>
+								</li>
+								<li class="dropdown-wrapper">
+									<a
+										href="#"
+										class="dropdown-button flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500"
+										data-id="dropdown-avatar"
+									>
+										<div class="avatar size-6 flex-shrink-0">
+											<img src="./assets/images/avatar.png" alt="Avatar" />
+										</div>
+										<span class="truncate">John Doe</span>
+										<svg class="icon icon-xs ml-auto flex-shrink-0">
+											<use href="#icon-check-bottom"></use>
+										</svg>
+									</a>
+									<div
+										class="js-dropdown w-[15.75rem] left-0 hidden"
+										data-dropdown-id="dropdown-avatar"
+										data-sheet-modal
+										data-overflow-visible
+									>
+										<div class="js-dropdown-overlay"></div>
+										<div class="js-dropdown-body">
+											<div class="js-dropdown-trigger">
+												<span></span>
+											</div>
+											<div class="js-dropdown-content">
+												<ul>
+													<li class="flex items-center gap-3 p-3.5 pt-1">
+														<div
+															class="size-[42px] rounded-full overflow-hidden"
+														>
+															<img
+																class="size-full object-cover"
+																src="./assets/images/avatar.png"
+																alt="Avatar"
+															/>
+														</div>
+														<div>
+															<span
+																class="text-sm font-semibold text-dark-800 mb-1"
+																>John Doe</span
+															>
+															<p class="text-dark-800/50 text-xs">
+																johndoe252@cironex.com
+															</p>
+														</div>
+													</li>
+													<li class="border-b border-gray-500 mt-0 mb-2"></li>
+													<li
+														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+													>
+														<svg class="icon icon-md">
+															<use href="#icon-workspace"></use>
+														</svg>
+														<span>Workspace Settings</span>
+													</li>
+													<li
+														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+													>
+														<svg class="icon icon-md">
+															<use href="#icon-user"></use>
+														</svg>
+														<span>Profile Settings</span>
+													</li>
+													<li class="border-b border-gray-500 my-2"></li>
+													<li
+														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+													>
+														<svg class="icon icon-md">
+															<use href="#icon-download"></use>
+														</svg>
+														<span>Install Jumpshare</span>
+													</li>
+													<li
+														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+													>
+														<svg class="icon icon-md">
+															<use href="#icon-help"></use>
+														</svg>
+														<span>Help Center</span>
+													</li>
+													<li
+														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+													>
+														<svg class="icon icon-md">
+															<use href="#icon-message-alert"></use>
+														</svg>
+														<span>Send Feedback</span>
+													</li>
+													<li class="border-b border-gray-500 my-2"></li>
+													<li
+														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+													>
+														<svg class="icon icon-md">
+															<use href="#icon-sign-out"></use>
+														</svg>
+														<span>Sign Out</span>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
@@ -1557,6 +1783,7 @@
 								class="max-w-[44.75rem] h-[2.5625rem] w-full bg-gray-150 rounded-lg relative max-md:h-12"
 							>
 								<button
+									aria-label="Toggle navigation"
 									class="hamburger hamburger--squeeze flex lg:hidden! absolute left-0 top-1/2 -translate-y-1/2"
 									type="button"
 								>
@@ -1565,6 +1792,7 @@
 									</span>
 								</button>
 								<button
+									aria-label="Search"
 									type="submit"
 									class="hidden lg:block absolute left-3.5 top-1/2 -translate-y-1/2 cursor-pointer transition-transform transform-gpu hover:scale-105 origin-center text-dark-800"
 								>
@@ -1573,6 +1801,7 @@
 									</svg>
 								</button>
 								<input
+									aria-label="Search"
 									required
 									type="text"
 									class="size-full rounded-lg pl-10 pr-4 text-sm max-lg:pl-13"
@@ -1921,7 +2150,7 @@
 															</p>
 														</div>
 													</li>
-													<hr class="border-gray-500 mt-0 mb-2" />
+													<li class="border-b border-gray-500 mt-0 mb-2"></li>
 													<li
 														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
 													>
@@ -1938,7 +2167,7 @@
 														</svg>
 														<span>Profile Settings</span>
 													</li>
-													<hr class="border-gray-500 my-2" />
+													<li class="border-b border-gray-500 my-2"></li>
 													<li
 														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
 													>
@@ -1963,7 +2192,7 @@
 														</svg>
 														<span>Send Feedback</span>
 													</li>
-													<hr class="border-gray-500 my-2" />
+													<li class="border-b border-gray-500 my-2"></li>
 													<li
 														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
 													>
@@ -1995,6 +2224,7 @@
 							class="@container/selected-wrapper w-full selected-wrapper gap-3 hidden pl-5 justify-end"
 						>
 							<button
+								type="button"
 								class="btn btn-border-default btn-sm text-sm h-9 @max-[37.5rem]/selected-wrapper:px-2"
 							>
 								<svg class="icon icon-md">
@@ -2005,6 +2235,7 @@
 								>
 							</button>
 							<button
+								type="button"
 								class="btn btn-border-default btn-sm text-sm h-9 @max-[37.5rem]/selected-wrapper:px-2 max-sm:hidden"
 							>
 								<svg class="icon icon-md">
@@ -2015,6 +2246,7 @@
 								>
 							</button>
 							<button
+								type="button"
 								class="btn btn-border-default btn-sm text-sm h-9 @max-[37.5rem]/selected-wrapper:px-2"
 							>
 								<svg class="icon icon-md">
@@ -2025,6 +2257,7 @@
 								>
 							</button>
 							<button
+								type="button"
 								class="btn btn-border-default btn-sm text-sm h-9 @max-[37.5rem]/selected-wrapper:px-2"
 							>
 								<svg class="icon icon-md">
@@ -2035,11 +2268,14 @@
 								>
 							</button>
 							<button
+								type="button"
 								class="close-selected-wrapper btn btn-border-default btn-sm text-sm h-9 max-lg:hidden"
 							>
 								<span>Cancel</span>
 							</button>
 							<button
+								aria-label="Folder settings"
+								type="button"
 								class="btn btn-border-default btn-sm text-sm h-9 px-2 hidden max-lg:flex"
 							>
 								<svg class="icon icon-md">
@@ -2050,6 +2286,8 @@
 						<div class="flex gap-3">
 							<div class="dropdown-wrapper">
 								<button
+									aria-label="Folder settings"
+									type="button"
 									class="dropdown-button btn btn-border-default btn-sm text-sm h-9 px-[7px]"
 									data-id="dropdown-folder-settings"
 								>
@@ -2136,6 +2374,8 @@
 								</div>
 							</div>
 							<button
+								type="button"
+								aria-label="Select"
 								class="hidden is-select-btn btn btn-border-default btn-sm text-sm max-lg:flex size-8 p-0 align-top relative [&.active-select]:bg-gray-300"
 							>
 								<span
@@ -2159,6 +2399,8 @@
 							</button>
 							<div class="dropdown-wrapper">
 								<button
+									aria-label="Grid settings"
+									type="button"
 									data-id="dropdown-grid"
 									class="dropdown-button relative z-1 btn p-0 border border-gray-600 size-9"
 								>
@@ -2212,6 +2454,8 @@
 							</div>
 							<div class="dropdown-wrapper">
 								<button
+									type="button"
+									aria-label="Add new"
 									data-id="dropdown-add-new"
 									class="dropdown-button btn btn-primary-default rounded-lg px-4 max-lg:fixed max-lg:bottom-4 max-lg:right-4 max-lg:size-14 max-lg:rounded-full max-lg:p-0 max-lg:shadow-[0px_6px_17.7px_rgba(51,_53,_57,_0.3)] h-9"
 								>
@@ -2337,11 +2581,15 @@
 									<input
 										data-select-item
 										class="peer"
-										hidden=""
+										hidden
 										type="checkbox"
 										id="select-file-2"
 									/>
-									<label class="card-select-box" for="select-file-2">
+									<label
+										class="card-select-box"
+										for="select-file-2"
+										aria-label="Select file"
+									>
 										<svg class="icon">
 											<use href="#icon-check-bold"></use>
 										</svg>
@@ -2400,14 +2648,16 @@
 									<div
 										class="dropdown-wrapper absolute right-2.5 top-1/2 -mt-[14px] max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:mt-0 [.list-type_&]:top-auto [.list-type_&]:mt-0 [.list-type_&]:static"
 									>
-										<button
+										<span
+											type="button"
 											data-id="dropdown-settings"
 											class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer flex justify-center items-center transition-transform size-7 hover:bg-gray-400 rounded-full shrink-0"
 										>
 											<svg class="icon icon-md">
 												<use href="#icon-dots-horizontal"></use>
 											</svg>
-										</button>
+											<span class="sr-only">Settings</span>
+										</span>
 										<div
 											class="js-dropdown hidden left-full right-auto top-2.5"
 											data-dropdown-id="dropdown-settings"
@@ -2435,7 +2685,7 @@
 															</svg>
 															<span>Share</span>
 														</li>
-														<hr class="border-gray-500 my-2" />
+														<li class="border-b border-gray-500 my-2"></li>
 														<li class="js-dropdown-list-item">
 															<svg class="icon icon-md">
 																<use href="#icon-lock"></use>
@@ -2520,7 +2770,7 @@
 																</li>
 															</ul>
 														</li>
-														<hr class="border-gray-500 my-2" />
+														<li class="border-b border-gray-500 my-2"></li>
 														<li class="js-dropdown-list-item">
 															<svg class="icon icon-md">
 																<use href="#icon-trash"></use>
@@ -2538,7 +2788,7 @@
 															</svg>
 															<span>Version History</span>
 														</li>
-														<hr class="border-gray-500 mb-2" />
+														<li class="border-b border-gray-500 mb-2"></li>
 														<li class="js-dropdown-list-item">
 															<svg class="icon icon-md">
 																<use href="#icon-upload"></use>
@@ -2565,11 +2815,15 @@
 									<input
 										data-select-item
 										class="peer"
-										hidden=""
+										hidden
 										type="checkbox"
 										id="select-file-1"
 									/>
-									<label class="card-select-box" for="select-file-1">
+									<label
+										class="card-select-box"
+										for="select-file-1"
+										aria-label="Select file"
+									>
 										<svg class="icon">
 											<use href="#icon-check-bold"></use>
 										</svg>
@@ -2625,14 +2879,16 @@
 									<div
 										class="dropdown-wrapper absolute right-2.5 top-1/2 -mt-[14px] max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:mt-0 [.list-type_&]:top-auto [.list-type_&]:mt-0 [.list-type_&]:static"
 									>
-										<button
+										<span
+											type="button"
 											data-id="dropdown-settings"
 											class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer flex justify-center items-center transition-transform size-7 hover:bg-gray-400 rounded-full shrink-0"
 										>
 											<svg class="icon icon-md">
 												<use href="#icon-dots-horizontal"></use>
 											</svg>
-										</button>
+											<span class="sr-only">Settings</span>
+										</span>
 										<div
 											class="js-dropdown hidden left-full right-auto top-2.5"
 											data-dropdown-id="dropdown-settings"
@@ -2660,7 +2916,7 @@
 															</svg>
 															<span>Share</span>
 														</li>
-														<hr class="border-gray-500 my-2" />
+														<li class="border-b border-gray-500 my-2"></li>
 														<li class="js-dropdown-list-item">
 															<svg class="icon icon-md">
 																<use href="#icon-lock"></use>
@@ -2745,7 +3001,7 @@
 																</li>
 															</ul>
 														</li>
-														<hr class="border-gray-500 my-2" />
+														<li class="border-b border-gray-500 my-2"></li>
 														<li class="js-dropdown-list-item">
 															<svg class="icon icon-md">
 																<use href="#icon-trash"></use>
@@ -2763,7 +3019,7 @@
 															</svg>
 															<span>Version History</span>
 														</li>
-														<hr class="border-gray-500 mb-2" />
+														<li class="border-b border-gray-500 mb-2"></li>
 														<li class="js-dropdown-list-item">
 															<svg class="icon icon-md">
 																<use href="#icon-upload"></use>
@@ -2790,11 +3046,15 @@
 									<input
 										data-select-item
 										class="peer"
-										hidden=""
+										hidden
 										type="checkbox"
 										id="select-file-3"
 									/>
-									<label class="card-select-box" for="select-file-3">
+									<label
+										class="card-select-box"
+										for="select-file-3"
+										aria-label="Select file"
+									>
 										<svg class="icon">
 											<use href="#icon-check-bold"></use>
 										</svg>
@@ -2850,14 +3110,16 @@
 									<div
 										class="dropdown-wrapper absolute right-2.5 top-1/2 -mt-[14px] max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:mt-0 [.list-type_&]:top-auto [.list-type_&]:mt-0 [.list-type_&]:static"
 									>
-										<button
+										<span
+											type="button"
 											data-id="dropdown-settings"
 											class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer flex justify-center items-center transition-transform size-7 hover:bg-gray-400 rounded-full shrink-0"
 										>
 											<svg class="icon icon-md">
 												<use href="#icon-dots-horizontal"></use>
 											</svg>
-										</button>
+											<span class="sr-only">Settings</span>
+										</span>
 										<div
 											class="js-dropdown hidden left-full right-auto top-2.5"
 											data-dropdown-id="dropdown-settings"
@@ -2885,7 +3147,7 @@
 															</svg>
 															<span>Share</span>
 														</li>
-														<hr class="border-gray-500 my-2" />
+														<li class="border-b border-gray-500 my-2"></li>
 														<li class="js-dropdown-list-item">
 															<svg class="icon icon-md">
 																<use href="#icon-lock"></use>
@@ -2970,7 +3232,7 @@
 																</li>
 															</ul>
 														</li>
-														<hr class="border-gray-500 my-2" />
+														<li class="border-b border-gray-500 my-2"></li>
 														<li class="js-dropdown-list-item">
 															<svg class="icon icon-md">
 																<use href="#icon-trash"></use>
@@ -2988,7 +3250,7 @@
 															</svg>
 															<span>Version History</span>
 														</li>
-														<hr class="border-gray-500 mb-2" />
+														<li class="border-b border-gray-500 mb-2"></li>
 														<li class="js-dropdown-list-item">
 															<svg class="icon icon-md">
 																<use href="#icon-upload"></use>
@@ -3015,11 +3277,15 @@
 									<input
 										data-select-item
 										class="peer"
-										hidden=""
+										hidden
 										type="checkbox"
 										id="select-file-4"
 									/>
-									<label class="card-select-box" for="select-file-4">
+									<label
+										class="card-select-box"
+										for="select-file-4"
+										aria-label="Select file"
+									>
 										<svg class="icon">
 											<use href="#icon-check-bold"></use>
 										</svg>
@@ -3074,14 +3340,16 @@
 									<div
 										class="dropdown-wrapper absolute right-2.5 top-1/2 -mt-[14px] max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:mt-0 [.list-type_&]:top-auto [.list-type_&]:mt-0 [.list-type_&]:static"
 									>
-										<button
+										<span
+											type="button"
 											data-id="dropdown-settings"
 											class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer flex justify-center items-center transition-transform size-7 hover:bg-gray-400 rounded-full shrink-0"
 										>
 											<svg class="icon icon-md">
 												<use href="#icon-dots-horizontal"></use>
 											</svg>
-										</button>
+											<span class="sr-only">Settings</span>
+										</span>
 										<div
 											class="js-dropdown hidden left-full right-auto top-2.5"
 											data-dropdown-id="dropdown-settings"
@@ -3109,7 +3377,7 @@
 															</svg>
 															<span>Share</span>
 														</li>
-														<hr class="border-gray-500 my-2" />
+														<li class="border-b border-gray-500 my-2"></li>
 														<li class="js-dropdown-list-item">
 															<svg class="icon icon-md">
 																<use href="#icon-lock"></use>
@@ -3194,7 +3462,7 @@
 																</li>
 															</ul>
 														</li>
-														<hr class="border-gray-500 my-2" />
+														<li class="border-b border-gray-500 my-2"></li>
 														<li class="js-dropdown-list-item">
 															<svg class="icon icon-md">
 																<use href="#icon-trash"></use>
@@ -3212,7 +3480,7 @@
 															</svg>
 															<span>Version History</span>
 														</li>
-														<hr class="border-gray-500 mb-2" />
+														<li class="border-b border-gray-500 mb-2"></li>
 														<li class="js-dropdown-list-item">
 															<svg class="icon icon-md">
 																<use href="#icon-upload"></use>
@@ -3431,20 +3699,26 @@
 										data-select-item
 										id="select-file-212"
 									/>
-									<label for="select-file-212" class="card-select-box">
+									<label
+										for="select-file-212"
+										class="card-select-box"
+										aria-label="Select file"
+									>
 										<svg class="icon">
 											<use href="#icon-check-bold"></use>
 										</svg>
 									</label>
 									<div class="file-item-nav dropdown-wrapper">
-										<button
+										<span
+											type="button"
 											data-id="dropdown-settings"
 											class="dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 hover:bg-gray-300 [.list-type_&]:hover:bg-gray-400 group-hover:opacity-100 not-[.list-type_&]:opacity-0"
 										>
 											<svg class="icon icon-md">
 												<use href="#icon-dots-horizontal"></use>
 											</svg>
-										</button>
+											<span class="sr-only">Settings</span>
+										</span>
 										<div
 											class="js-dropdown hidden left-full right-auto top-2.5"
 											data-dropdown-id="dropdown-settings"
@@ -3472,7 +3746,7 @@
 															</svg>
 															<span>Share</span>
 														</li>
-														<hr class="border-gray-500 my-2" />
+														<li class="border-b border-gray-500 my-2"></li>
 														<li class="js-dropdown-list-item">
 															<svg class="icon icon-md">
 																<use href="#icon-lock"></use>
@@ -3557,7 +3831,7 @@
 																</li>
 															</ul>
 														</li>
-														<hr class="border-gray-500 my-2" />
+														<li class="border-b border-gray-500 my-2"></li>
 														<li class="js-dropdown-list-item">
 															<svg class="icon icon-md">
 																<use href="#icon-trash"></use>
@@ -3575,7 +3849,7 @@
 															</svg>
 															<span>Version History</span>
 														</li>
-														<hr class="border-gray-500 mb-2" />
+														<li class="border-b border-gray-500 mb-2"></li>
 														<li class="js-dropdown-list-item">
 															<svg class="icon icon-md">
 																<use href="#icon-upload"></use>
@@ -3666,14 +3940,16 @@
 										</svg>
 									</label>
 									<div class="file-item-nav dropdown-wrapper">
-										<button
+										<span
+											type="button"
 											data-id="dropdown-settings"
 											class="dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 hover:bg-gray-300 [.list-type_&]:hover:bg-gray-400 group-hover:opacity-100 not-[.list-type_&]:opacity-0"
 										>
 											<svg class="icon icon-md">
 												<use href="#icon-dots-horizontal"></use>
 											</svg>
-										</button>
+											<span class="sr-only">Settings</span>
+										</span>
 										<div
 											class="js-dropdown hidden left-full right-auto top-2.5"
 											data-dropdown-id="dropdown-settings"
@@ -3701,7 +3977,7 @@
 															</svg>
 															<span>Share</span>
 														</li>
-														<hr class="border-gray-500 my-2" />
+														<li class="border-b border-gray-500 my-2"></li>
 														<li class="js-dropdown-list-item">
 															<svg class="icon icon-md">
 																<use href="#icon-lock"></use>
@@ -3786,7 +4062,7 @@
 																</li>
 															</ul>
 														</li>
-														<hr class="border-gray-500 my-2" />
+														<li class="border-b border-gray-500 my-2"></li>
 														<li class="js-dropdown-list-item">
 															<svg class="icon icon-md">
 																<use href="#icon-trash"></use>
@@ -3804,7 +4080,7 @@
 															</svg>
 															<span>Version History</span>
 														</li>
-														<hr class="border-gray-500 mb-2" />
+														<li class="border-b border-gray-500 mb-2"></li>
 														<li class="js-dropdown-list-item">
 															<svg class="icon icon-md">
 																<use href="#icon-upload"></use>
@@ -3921,7 +4197,7 @@
 															</svg>
 															<span>Share</span>
 														</li>
-														<hr class="border-gray-500 my-2" />
+														<li class="border-b border-gray-500 my-2"></li>
 														<li class="js-dropdown-list-item">
 															<svg class="icon icon-md">
 																<use href="#icon-lock"></use>
@@ -4006,7 +4282,7 @@
 																</li>
 															</ul>
 														</li>
-														<hr class="border-gray-500 my-2" />
+														<li class="border-b border-gray-500 my-2"></li>
 														<li class="js-dropdown-list-item">
 															<svg class="icon icon-md">
 																<use href="#icon-trash"></use>
@@ -4024,7 +4300,7 @@
 															</svg>
 															<span>Version History</span>
 														</li>
-														<hr class="border-gray-500 mb-2" />
+														<li class="border-b border-gray-500 mb-2"></li>
 														<li class="js-dropdown-list-item">
 															<svg class="icon icon-md">
 																<use href="#icon-upload"></use>
@@ -4106,7 +4382,7 @@
 										</svg>
 									</label>
 									<div class="file-item-nav dropdown-wrapper">
-										<button
+										<span
 											type="button"
 											data-id="dropdown-settings"
 											class="dropdown-button cursor-pointer size-6 rounded-full bg-white flex items-center justify-center [.list-type_&]:bg-transparent max-lg:not-[.list-type_&]:border border-gray-400 hover:bg-gray-300 [.list-type_&]:hover:bg-gray-400 group-hover:opacity-100 not-[.list-type_&]:opacity-0"
@@ -4114,8 +4390,8 @@
 											<svg class="icon icon-md">
 												<use href="#icon-dots-horizontal"></use>
 											</svg>
-											<span class="sr-only">Open settings</span>
-										</button>
+											<span class="sr-only">Settings</span>
+										</span>
 										<div
 											class="js-dropdown hidden left-full right-auto top-2.5"
 											data-dropdown-id="dropdown-settings"
@@ -4421,7 +4697,12 @@
 		<!-- Dialog boxes -->
 		<div class="dialog hidden" data-dialog-type="delete-inbox">
 			<div class="dialog-card">
-				<button class="dialog-close" data-dialog-close>
+				<button
+					aria-label="Close"
+					type="button"
+					class="dialog-close"
+					data-dialog-close
+				>
 					<svg
 						width="12"
 						height="12"
@@ -4462,7 +4743,12 @@
 
 		<div class="dialog hidden" data-dialog-type="remove-file">
 			<div class="dialog-card">
-				<button class="dialog-close" data-dialog-close>
+				<button
+					aria-label="Close"
+					type="button"
+					class="dialog-close"
+					data-dialog-close
+				>
 					<svg
 						width="12"
 						height="12"
@@ -4494,14 +4780,21 @@
 					>
 						Cancel
 					</button>
-					<button v class="btn btn-danger font-semibold">Delete</button>
+					<button type="button" class="btn btn-danger font-semibold">
+						Delete
+					</button>
 				</div>
 			</div>
 		</div>
 
 		<div class="dialog hidden" data-dialog-type="delete-one-file">
 			<div class="dialog-card">
-				<button class="dialog-close" data-dialog-close>
+				<button
+					aria-label="Close"
+					type="button"
+					class="dialog-close"
+					data-dialog-close
+				>
 					<svg
 						width="12"
 						height="12"
@@ -4541,7 +4834,12 @@
 
 		<div class="dialog hidden" data-dialog-type="too-many-sub-folders">
 			<div class="dialog-card">
-				<button type="button" class="dialog-close" data-dialog-close>
+				<button
+					aria-label="Close"
+					type="button"
+					class="dialog-close"
+					data-dialog-close
+				>
 					<svg
 						width="12"
 						height="12"
@@ -4579,7 +4877,12 @@
 
 		<div class="dialog hidden" data-dialog-type="sharing-disabled">
 			<div class="dialog-card">
-				<button class="dialog-close" data-dialog-close>
+				<button
+					aria-label="Close"
+					type="button"
+					class="dialog-close"
+					data-dialog-close
+				>
 					<svg
 						width="12"
 						height="12"
@@ -4619,7 +4922,12 @@
 
 		<div class="dialog hidden" data-dialog-type="enable-folder-upload">
 			<div class="dialog-card">
-				<button class="dialog-close" data-dialog-close>
+				<button
+					aria-label="Close"
+					type="button"
+					class="dialog-close"
+					data-dialog-close
+				>
 					<svg
 						width="12"
 						height="12"
@@ -4660,7 +4968,12 @@
 
 		<div class="dialog hidden" data-dialog-type="folder-is-full">
 			<div class="dialog-card">
-				<button type="button" class="dialog-close" data-dialog-close>
+				<button
+					aria-label="Close"
+					type="button"
+					class="dialog-close"
+					data-dialog-close
+				>
 					<svg
 						width="12"
 						height="12"
@@ -4701,7 +5014,12 @@
 
 		<div class="dialog hidden" data-dialog-type="delete-account">
 			<div class="dialog-card">
-				<button type="button" class="dialog-close" data-dialog-close>
+				<button
+					aria-label="Close"
+					type="button"
+					class="dialog-close"
+					data-dialog-close
+				>
 					<svg
 						width="12"
 						height="12"
@@ -4753,7 +5071,12 @@
 
 		<div class="dialog hidden" data-dialog-type="permanently-delete">
 			<div class="dialog-card">
-				<button type="button" class="dialog-close" data-dialog-close>
+				<button
+					aria-label="Close"
+					type="button"
+					class="dialog-close"
+					data-dialog-close
+				>
 					<svg
 						width="12"
 						height="12"
@@ -4793,7 +5116,12 @@
 
 		<div class="dialog hidden" data-dialog-type="restore-confirmation">
 			<div class="dialog-card">
-				<button type="button" class="dialog-close" data-dialog-close>
+				<button
+					aria-label="Close"
+					type="button"
+					class="dialog-close"
+					data-dialog-close
+				>
 					<svg
 						width="12"
 						height="12"
@@ -4830,7 +5158,12 @@
 
 		<div class="dialog hidden" data-dialog-type="self-destruct">
 			<div class="dialog-card">
-				<button type="button" class="dialog-close" data-dialog-close>
+				<button
+					aria-label="Close"
+					type="button"
+					class="dialog-close"
+					data-dialog-close
+				>
 					<svg
 						width="12"
 						height="12"
@@ -4922,7 +5255,12 @@
 
 		<div class="dialog hidden" data-dialog-type="delete-one-file">
 			<div class="dialog-card">
-				<button type="button" class="dialog-close" data-dialog-close>
+				<button
+					aria-label="Close"
+					type="button"
+					class="dialog-close"
+					data-dialog-close
+				>
 					<svg
 						width="12"
 						height="12"
@@ -4960,7 +5298,12 @@
 
 		<div class="dialog hidden" data-dialog-type="new-workspace">
 			<div class="dialog-card">
-				<button type="button" class="dialog-close" data-dialog-close>
+				<button
+					aria-label="Close"
+					type="button"
+					class="dialog-close"
+					data-dialog-close
+				>
 					<svg
 						width="12"
 						height="12"
@@ -5005,7 +5348,12 @@
 
 		<div class="dialog hidden" data-dialog-type="copy-move-item">
 			<div class="dialog-card">
-				<button type="button" class="dialog-close" data-dialog-close>
+				<button
+					aria-label="Close"
+					type="button"
+					class="dialog-close"
+					data-dialog-close
+				>
 					<svg
 						width="12"
 						height="12"
