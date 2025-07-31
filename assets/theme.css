@@ -1,10 +1,13 @@
 @theme {
 	/* Fonts */
 	--font-*: initial;
-	--font-sans: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-	--font-sans-semi: GeneralSans-semibold, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--font-sans-semi: GeneralSans-semibold, ui-sans-serif, system-ui, sans-serif,
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 	--font-sans-variable: GeneralSans-Variable,
-	--font-sans-medium: GeneralSans-medium, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+		--font-sans-medium: GeneralSans-medium, ui-sans-serif, system-ui, sans-serif,
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
 	/* Container */
 	--container-*: initial;
@@ -16,25 +19,45 @@
 	--breakpoint-xs: 480px;
 
 	/* Drop Shadows */
-	--drop-shadow-3xl: drop-shadow(0px 0.876389px 7.01111px rgba(13, 34, 71, 0.08)) drop-shadow(0px -1.85479px 19.4753px rgba(0, 0, 0, 0.05));
-
+	--drop-shadow-3xl: drop-shadow(
+			0px 0.876389px 7.01111px rgba(13, 34, 71, 0.08)
+		)
+		drop-shadow(0px -1.85479px 19.4753px rgba(0, 0, 0, 0.05));
 
 	/* Box Shadows */
 	--inset-shadow-3xl: inset 0px -0.876389px 0.876389px 0.876389px rgba(17, 34, 69, 0.12);
-	--shadow-card: 0 2px 8px -1px #130c3e0a, 0 0 0 1px #130c3e1c, 0 4px 4px -5px #130c3e40;
-	--shadow-violet: 0 1px 2px 0 rgba(31, 18, 69, 0.08), 0 0 0 1px rgba(58, 22, 202, 0.75), 0 2px 4.3px -1px rgba(58, 22, 202, 0.4);
+	--shadow-card: 0 2px 8px -1px #130c3e0a, 0 0 0 1px #130c3e1c,
+		0 4px 4px -5px #130c3e40;
+	--shadow-violet: 0 1px 2px 0 rgba(31, 18, 69, 0.08),
+		0 0 0 1px rgba(58, 22, 202, 0.75), 0 2px 4.3px -1px rgba(58, 22, 202, 0.4);
 	--shadow-card-use-cases: 0px 5px 30.9px -4px rgba(58, 68, 89, 0.27);
 	--shadow-card-dark: 0px 1px 7px rgba(15, 28, 53, 0.04);
-	--shadow-card-dark-contact: 0px 2.85px 18.335px 3.8px rgba(0, 0, 0, 0.1), inset 0px 0px 0px 1.02317px rgba(255, 255, 255, 0.04);
-	--shadow-card-dark-menu: 0px 11.4701px 23.7768px -5.01619px rgba(255, 255, 255, 0.07), 0px 2px 7px -1px rgba(255, 255, 255, 0.04), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.12);
-	--shadow-card-orange: 0px 4px 4px -5px rgba(30, 12, 4, 0.25), 0px 0px 0px 1px rgba(34, 14, 5, 0.08), 0px 1px 7px rgba(30, 12, 4, 0.04);
-	--shadow-card-white: 0px 1px 6.3px -1px rgba(18, 35, 69, 0.1), 0px 0px 0px 1px rgba(18, 35, 69, 0.075);
-	--shadow-img: 0 23.8px 30.3px 0 #0f1c3511, 0 0 0 0.8px #12234513, 0 0.8px 5px -0.8px #12234519, 0 3.2px 3.2px -4px #12234540, 0 0.8px 1.6px 0 #1223450f, 0 -2px 20.6px 0 #0000000c;
-	--shadow-banner: 0px 1px 3px rgba(18, 35, 69, 0.1), 0px 1px 2px rgba(18, 35, 69, 0.06), inset 0px 0px 0px 1px rgba(18, 35, 69, 0.1);
-	--shadow-social: 0px 6px 4px -2px rgba(18, 35, 69, 0.03), 0px 5.01227px 40.0982px -1px rgba(100, 109, 134, 0.06), 0px 1px 2px rgba(18, 35, 69, 0.05), 0px 0px 0px 1px rgba(217, 222, 231, 0.4);
-	--shadow-menu-item: 0px 2px 7px -1px rgba(15, 28, 53, 0.04),inset 0px 3px 0px -1px rgba(255, 255, 255, 0.46),inset 0px 0px 0px 1px rgba(18, 35, 69, 0.1),0px 11.47px 23.78px -5.02px rgba(18, 35, 69, 0.07);
-	--shadow-video: 0px 11.4701px 23.7768px -5.01619px rgba(18, 35, 69, 0.07), inset 0px -0.866597px 0.866597px 0.866597px rgba(17, 34, 69, 0.12);
-	--shadow-avatar: 0 7.3px 12.2px -3.8px rgba(18, 35, 69, 0.2), 0 16.4px 35.9px -4.9px rgba(18, 35, 69, 0.09);
+	--shadow-card-dark-contact: 0px 2.85px 18.335px 3.8px rgba(0, 0, 0, 0.1),
+		inset 0px 0px 0px 1.02317px rgba(255, 255, 255, 0.04);
+	--shadow-card-dark-menu: 0px 11.4701px 23.7768px -5.01619px rgba(255, 255, 255, 0.07),
+		0px 2px 7px -1px rgba(255, 255, 255, 0.04),
+		inset 0px 0px 0px 1px rgba(255, 255, 255, 0.12);
+	--shadow-card-orange: 0px 4px 4px -5px rgba(30, 12, 4, 0.25),
+		0px 0px 0px 1px rgba(34, 14, 5, 0.08), 0px 1px 7px rgba(30, 12, 4, 0.04);
+	--shadow-card-white: 0px 1px 6.3px -1px rgba(18, 35, 69, 0.1),
+		0px 0px 0px 1px rgba(18, 35, 69, 0.075);
+	--shadow-img: 0 23.8px 30.3px 0 #0f1c3511, 0 0 0 0.8px #12234513,
+		0 0.8px 5px -0.8px #12234519, 0 3.2px 3.2px -4px #12234540,
+		0 0.8px 1.6px 0 #1223450f, 0 -2px 20.6px 0 #0000000c;
+	--shadow-banner: 0px 1px 3px rgba(18, 35, 69, 0.1),
+		0px 1px 2px rgba(18, 35, 69, 0.06),
+		inset 0px 0px 0px 1px rgba(18, 35, 69, 0.1);
+	--shadow-social: 0px 6px 4px -2px rgba(18, 35, 69, 0.03),
+		0px 5.01227px 40.0982px -1px rgba(100, 109, 134, 0.06),
+		0px 1px 2px rgba(18, 35, 69, 0.05), 0px 0px 0px 1px rgba(217, 222, 231, 0.4);
+	--shadow-menu-item: 0px 2px 7px -1px rgba(15, 28, 53, 0.04),
+		inset 0px 3px 0px -1px rgba(255, 255, 255, 0.46),
+		inset 0px 0px 0px 1px rgba(18, 35, 69, 0.1),
+		0px 11.47px 23.78px -5.02px rgba(18, 35, 69, 0.07);
+	--shadow-video: 0px 11.4701px 23.7768px -5.01619px rgba(18, 35, 69, 0.07),
+		inset 0px -0.866597px 0.866597px 0.866597px rgba(17, 34, 69, 0.12);
+	--shadow-avatar: 0 7.3px 12.2px -3.8px rgba(18, 35, 69, 0.2),
+		0 16.4px 35.9px -4.9px rgba(18, 35, 69, 0.09);
 	--shadow-dropdown: 0px 3px 35px rgba(0, 0, 0, 0.04);
 
 	/* Opacity */
@@ -65,7 +88,6 @@
 	--spacing-4_5: 1.125rem;
 	--spacing-5_5: 1.42rem;
 	--spacing-5_8: 1.5rem;
-	--spacing-6: 1.575rem;
 	--spacing-6_5: 1.6875rem;
 	--spacing-7_5: 1.875rem;
 	--spacing-8_5: 2.125rem;
@@ -95,92 +117,119 @@
 	--color-*: initial;
 	--color-white: #ffffff;
 	--color-black: #101010;
-	--color-gray-100: #FBFBFD;
-	--color-gray-150: #F9F9F9;
-	--color-gray-200: #F8F9FC;
+	--color-gray-100: #fbfbfd;
+	--color-gray-150: #f9f9f9;
+	--color-gray-hovered-150: #eeefef;
+	--color-gray-pressed-150: #e8e9e9;
+	--color-gray-200: #f8f9fc;
 	--color-gray-300: #f1f2f5;
-	--color-gray-400: #E8E9ED;
-	--color-gray-500: #D9DEE7;
-	--color-gray-600: #D3D6DC;
+	--color-gray-400: #e8e9ed;
+	--color-gray-500: #d9dee7;
+	--color-gray-600: #d3d6dc;
 	--color-gray-700: #999cb2;
-	--color-gray-800: #59657E;
+	--color-gray-800: #59657e;
 	--color-gray-900: #707070;
 
 	--color-orange-100: #faf6f3;
-	--color-orange-500: #FE6E2B;
+	--color-orange-500: #fe6e2b;
 	--color-orange-950: #1e0c04;
 
-	--color-red-500: #E61320;
+	--color-red-500: #e61320;
 
-	--color-blue-50: #E9F1F6;
-	--color-blue-75: #F5F9FA;
+	--color-blue-50: #e9f1f6;
+	--color-blue-75: #f5f9fa;
 	--color-blue-100: #f2f6ff;
-	--color-blue-200: #DAE6FC;
-	--color-blue-400: #09B4DC;
-	--color-blue-500: #2F76FF;
-	--color-blue-600: #4C78EA;
+	--color-blue-200: #dae6fc;
+	--color-blue-400: #09b4dc;
+	--color-blue-500: #2f76ff;
+	--color-blue-600: #4c78ea;
 	--color-blue-700: #1c5ddf;
-	--color-blue-800: #082A35;
+	--color-blue-800: #082a35;
 	--color-blue-900: #122345;
 	--color-blue-950: #130c3e;
 	--color-blue-1000: #091329;
 
-	--color-dark-800: #0A0A0B;
+	--color-dark-800: #0a0a0b;
 
-	--color-violet-300: #9489B6;
-	--color-violet-400: #9F99B2;
-	--color-violet-450: #5D37F5;
-	--color-violet-500: #6259EB;
-	--color-violet-600: #9452FF;
-	--color-violet-700: #27293D;
-	--color-violet-800: #1E1D33;
+	--color-violet-300: #9489b6;
+	--color-violet-400: #9f99b2;
+	--color-violet-450: #5d37f5;
+	--color-violet-500: #6259eb;
+	--color-violet-600: #9452ff;
+	--color-violet-700: #27293d;
+	--color-violet-800: #1e1d33;
 	--color-violet-850: #181729;
 	--color-violet-900: #060515;
 
-	--color-green-20: #EBFFEE;
-	--color-green-25: #D1FAE5;
-	--color-green-300: #04A25A;
-	--color-green-400: #429D17;
+	--color-green-20: #ebffee;
+	--color-green-25: #d1fae5;
+	--color-green-300: #04a25a;
+	--color-green-400: #429d17;
 	--color-green-500: #047857;
 
-	--color-yellow-400: #DDB51E;
-	--color-yellow-500: #FBC045;
-	--color-yellow-600: #FFBC03;
-	--color-yellow-700: #C88E10;
+	--color-yellow-400: #ddb51e;
+	--color-yellow-500: #fbc045;
+	--color-yellow-600: #ffbc03;
+	--color-yellow-700: #c88e10;
 
-	--color-purple-400: #9452FF;
-	--color-purple-500: #6259EB;
-	--color-purple-600: #9452FF;
-	--color-purple-700: #27293D;
-	--color-purple-800: #1E1D33;
-
+	--color-purple-400: #9452ff;
+	--color-purple-500: #6259eb;
+	--color-purple-600: #9452ff;
+	--color-purple-700: #27293d;
+	--color-purple-800: #1e1d33;
 
 	/* Animate */
-	--animate-fade: fadeIn .3s ease forwards;
-	--animate-fadeOut: fadeOut .3s ease-in-out forwards;
-	--animate-fadeScaleIn: fadeScaleIn .8s ease-in-out forwards;
-	--animate-rotateUp: rotateUp .5s ease forwards;
-	--animate-slideUp: slideUp .9s ease forwards;
+	--animate-fade: fadeIn 0.3s ease forwards;
+	--animate-fadeOut: fadeOut 0.3s ease-in-out forwards;
+	--animate-fadeScaleIn: fadeScaleIn 0.8s ease-in-out forwards;
+	--animate-rotateUp: rotateUp 0.5s ease forwards;
+	--animate-slideUp: slideUp 0.9s ease forwards;
 
 	@keyframes fadeIn {
-		from { opacity: 0 }
-		to { opacity: 1 }
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
 	}
 	@keyframes fadeOut {
-		from { opacity: 1 }
-		to { opacity: 0 }
+		from {
+			opacity: 1;
+		}
+		to {
+			opacity: 0;
+		}
 	}
 	@keyframes fadeScaleIn {
-		from { opacity: 0, transform: scale(1.05) }
-		to { opacity: 1, transform: scale(1) }
+		from {
+			opacity: 0;
+			transform: scale(1.05);
+		}
+		to {
+			opacity: 1;
+			transform: scale(1);
+		}
 	}
 	@keyframes rotateUp {
-		from { marginBottom: -80px; transform: rotate(5deg) }
-		to { marginBottom: 0px; transform: rotate(0deg) }
+		from {
+			marginbottom: -80px;
+			transform: rotate(5deg);
+		}
+		to {
+			marginbottom: 0px;
+			transform: rotate(0deg);
+		}
 	}
 	@keyframes slideUp {
-		from { opacity: 0, transform: translateY(20px) }
-		to { opacity: 1, transform: translateY(0) }
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	}
 }
 
@@ -191,10 +240,31 @@
 	vertical-align: middle;
 }
 
-.icon-xs { width: 14px; height: 14px; }
-.icon-s { width: 16px; height: 16px; }
-.icon-sm { width: 18px; height: 18px; }
-.icon-m { width: 20px; height: 20px; }
-.icon-md { width: 24px; height: 24px; }
-.icon-lg { width: 32px; height: 32px; }
-.icon-xl { width: 48px; height: 48px; }
+.icon-xs {
+	width: 14px;
+	height: 14px;
+}
+.icon-s {
+	width: 16px;
+	height: 16px;
+}
+.icon-sm {
+	width: 18px;
+	height: 18px;
+}
+.icon-m {
+	width: 20px;
+	height: 20px;
+}
+.icon-md {
+	width: 24px;
+	height: 24px;
+}
+.icon-lg {
+	width: 32px;
+	height: 32px;
+}
+.icon-xl {
+	width: 48px;
+	height: 48px;
+}

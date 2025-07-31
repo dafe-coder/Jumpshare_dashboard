@@ -5,8 +5,11 @@
 	.dropdown-content {
 		z-index: 1000 !important;
 	}
+	.aside-nav {
+		@apply flex flex-col mt-2;
+	}
 	.aside-nav-item {
-		@apply flex items-center gap-3 text-sm px-2 h-10 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500;
+		@apply flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-hovered-150 active:bg-gray-pressed-150 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500 truncate;
 		svg {
 			@apply flex-shrink-0;
 		}
@@ -63,7 +66,7 @@
 			}
 		}
 		.file-item-tag {
-			@apply p-[2px_12px] h-[22px] flex items-center justify-center rounded-md text-xs absolute text-white bg-black/80 absolute right-2 bottom-2 z-1 [.list-type_&]:hidden;
+			@apply p-[2px_12px] h-6 flex items-center justify-center rounded-md text-xs absolute text-white bg-dark-800/80 absolute right-2 bottom-2 z-1 [.list-type_&]:hidden;
 		}
 		.file-item-nav {
 			@apply absolute top-3 right-3 flex flex-col gap-3 duration-150 ease-in-out [.list-type_&]:relative [.list-type_&]:right-0 [.list-type_&]:top-0;
@@ -78,7 +81,7 @@
 			}
 		}
 		.file-author {
-			@apply flex items-center gap-2 mt-2 [.list-type_&]:hidden truncate;
+			@apply flex items-center gap-2 mt-2 [.list-type_&]:hidden truncate pr-12;
 			.file-author-avatar {
 				@apply size-6 rounded-full bg-blue-950/10 flex items-center justify-center flex-shrink-0;
 				img {
@@ -88,10 +91,10 @@
 			.file-author-info {
 				@apply truncate;
 				p {
-					@apply text-xs text-dark-800 font-semibold [.list-type_&]:mt-0 [.list-type_&]:text-sm [.list-type_&]:font-normal truncate w-[110px] block;
+					@apply text-xs text-dark-800 font-medium [.list-type_&]:mt-0 [.list-type_&]:text-sm [.list-type_&]:font-normal truncate w-[110px] max-w-full block mb-0.5;
 				}
 				span {
-					@apply block -mt-px text-xs text-dark-800/70 [.list-type_&]:hidden;
+					@apply block -mt-px text-xs text-dark-800/70 [.list-type_&]:hidden truncate max-w-full;
 				}
 			}
 		}
@@ -230,7 +233,7 @@
 					@apply text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 active:bg-gray-150 rounded-md transition-colors cursor-pointer py-2;
 				}
 				.js-dropdown-overlay {
-					@apply bg-[#090B13]/50 absolute top-0 left-0 size-full z-0 opacity-0 [.show-sheet_&]:opacity-100 transition-opacity duration-500 ease-in-out;
+					@apply bg-dark-800/50 absolute top-0 left-0 size-full z-0 opacity-0 [.show-sheet_&]:opacity-100 transition-opacity duration-500 ease-in-out;
 				}
 				.js-dropdown-body {
 					@apply h-auto w-full max-w-[34.375rem] relative text-sm bg-white rounded-t-2xl z-3 transition-all duration-500 ease-in-out [&.not-selectable]:transition-none! max-h-[80svh] overflow-hidden flex flex-col;

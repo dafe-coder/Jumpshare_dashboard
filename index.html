@@ -132,7 +132,7 @@
 		<link rel="stylesheet" href="./dist/output.css" />
 	</head>
 	<body class="drag-and-drop">
-		<a href="#" data-dialog-open-id="share">Open Share Modal</a>
+		<!-- <a href="#" data-dialog-open-id="share">Open Share Modal</a> -->
 		<div id="lightbox" class="hidden">
 			<div class="modal" id="modal">
 				<div class="modal-dialog modal-bs modal-email-share">
@@ -1286,21 +1286,26 @@
 				class="w-[240px] fixed left-0 top-0 bottom-0 flex flex-col h-[calc(100vh-var(--browser-ui-height,0px))] z-101 max-lg:-left-full max-lg:top-0 max-lg:w-full transition-all duration-500 ease-in-out [&.active]:left-0"
 			>
 				<div
-					class="mobile-menu-overlay absolute bg-[#090B13]/50 z-0 opacity-0 w-0 h-[calc(100vh-var(--browser-ui-height,0px))] lg:hidden [.active_&]:opacity-100 [.active_&]:w-screen transition-all duration-500 ease-in-out delay-75"
+					class="mobile-menu-overlay absolute bg-dark-800/50 z-0 opacity-0 w-0 h-[calc(100vh-var(--browser-ui-height,0px))] lg:hidden [.active_&]:opacity-100 [.active_&]:w-screen transition-all duration-500 ease-in-out delay-75"
 				></div>
 				<div
 					class="flex flex-col max-lg:w-[318px] max-lg:max-w-[318px] max-xs:w-[85%]! w-full bg-gray-150 max-lg:rounded-r-2xl z-3 h-full"
 				>
-					<div class="flex items-center px-2.5 pt-6 pb-6">
+					<div
+						class="flex items-center justify-center px-2.5 pt-6 pb-6 flex-wrap gap-3"
+					>
 						<a href="/" class="flex items-center gap-2" aria-label="Home">
-							<svg class="icon h-5.5 w-38">
+							<svg
+								class="icon h-5.5 w-38 [.active-sidebar_&]:w-8 transition-all duration-300 ease-in-out"
+							>
 								<use href="#icon-logo"></use>
 							</svg>
 						</a>
 						<button
 							type="button"
 							aria-label="Collapse Sidebar"
-							class="btn ml-auto p-0 h-auto"
+							class="btn ml-auto p-0 h-auto [.active-sidebar_&]:ml-0 flex-shrink-0"
+							id="collapse-sidebar-btn"
 						>
 							<svg class="icon icon-md">
 								<use href="#icon-collapse-sidebar"></use>
@@ -1313,11 +1318,11 @@
 						<a
 							href="#"
 							data-id="dropdown-workspaces"
-							class="dropdown-button p-2.5 flex items-center justify-between relative bg-white border border-gray-600 rounded-xl hover:bg-gray-200 [&.active]:bg-gray-200"
+							class="dropdown-button p-2.5 flex items-center justify-between relative bg-white border border-gray-600 rounded-xl hover:bg-gray-200 [&.active]:bg-gray-200 [.active-sidebar_&]:rounded-lg [.active-sidebar_&]:p-0 [.active-sidebar_&]:border-0 [.active-sidebar_&]:bg-transparent transition-all duration-300 ease-in-out overflow-hidden"
 						>
 							<div class="flex items-center justify-between mr-2 flex-shrink-0">
 								<div
-									class="flex items-center justify-center size-8 bg-blue-500/10 rounded-md"
+									class="flex items-center justify-center size-8 bg-blue-500/10 rounded-md [.active-sidebar_&]:size-11 transition-all duration-500 ease-in-out"
 								>
 									<span class="font-semibold text-base text-blue-500">S</span>
 								</div>
@@ -1476,12 +1481,9 @@
 					</div>
 					<div class="flex flex-col h-full overflow-y-auto px-3 pb-4">
 						<nav class="flex flex-col mt-5 mb-5">
-							<ul class="flex flex-col mt-2">
+							<ul class="aside-nav">
 								<li>
-									<a
-										href="./index.html"
-										class="active flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500"
-									>
+									<a href="./index.html" class="active aside-nav-item">
 										<svg class="icon icon-md">
 											<use href="#icon-home-medium"></use>
 										</svg>
@@ -1489,10 +1491,7 @@
 									</a>
 								</li>
 								<li>
-									<a
-										href="./favorites.html"
-										class="flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500"
-									>
+									<a href="./favorites.html" class="aside-nav-item">
 										<svg class="icon icon-md" stroke-width="6">
 											<use href="#icon-star-medium"></use>
 										</svg>
@@ -1500,10 +1499,7 @@
 									</a>
 								</li>
 								<li>
-									<a
-										href="./analytics.html"
-										class="flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500"
-									>
+									<a href="./analytics.html" class="aside-nav-item">
 										<svg class="icon icon-md">
 											<use href="#icon-analytics-medium"></use>
 										</svg>
@@ -1511,10 +1507,7 @@
 									</a>
 								</li>
 								<li>
-									<a
-										href="./shared.html"
-										class="flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500"
-									>
+									<a href="./shared.html" class="aside-nav-item">
 										<svg class="icon icon-md">
 											<use href="#icon-history"></use>
 										</svg>
@@ -1522,10 +1515,7 @@
 									</a>
 								</li>
 								<li>
-									<a
-										href="./inbox.html"
-										class="flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500"
-									>
+									<a href="./inbox.html" class="aside-nav-item">
 										<svg class="icon icon-md">
 											<use href="#icon-inbox-medium"></use>
 										</svg>
@@ -1533,10 +1523,7 @@
 									</a>
 								</li>
 								<li>
-									<a
-										href="./trash.html"
-										class="flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500"
-									>
+									<a href="./trash.html" class="aside-nav-item">
 										<svg class="icon icon-md">
 											<use href="#icon-trash-medium"></use>
 										</svg>
@@ -1544,10 +1531,7 @@
 									</a>
 								</li>
 								<li>
-									<a
-										href="./settings.html"
-										class="flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500"
-									>
+									<a href="./settings.html" class="aside-nav-item">
 										<svg class="icon icon-md">
 											<use href="#icon-cog-medium"></use>
 										</svg>
@@ -1556,12 +1540,16 @@
 								</li>
 							</ul>
 							<hr class="mt-5 mb-3.5 border-gray-600" />
-							<div class="flex items-center justify-between pl-2">
-								<p class="text-sm font-medium text-dark-800/60">Spaces</p>
+							<div
+								class="flex items-center justify-between pl-2 [.active-sidebar_&]:pl-0"
+							>
+								<p class="text-sm font-medium text-dark-800/60 truncate">
+									Spaces
+								</p>
 								<button
 									type="button"
 									aria-label="Add Space"
-									class="btn p-0 size-10 text-dark-800 rounded-md hover:bg-gray-300 -mr-2"
+									class="btn p-0 size-10 text-dark-800 rounded-md hover:bg-gray-300 -mr-2 flex-shrink-0 [.active-sidebar_&]:-mr-0"
 								>
 									<svg class="icon icon-s">
 										<use href="#icon-plus"></use>
@@ -1570,49 +1558,64 @@
 							</div>
 							<ul class="flex flex-col">
 								<li>
-									<a
-										href="#"
-										class="flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500"
-									>
+									<a href="#" class="group aside-nav-item">
 										<svg class="icon icon-md">
 											<use href="#icon-spaces"></use>
 										</svg>
 										<span class="truncate">Browse Spaces</span>
+										<span
+											type="button"
+											class="btn p-0 size-6 ml-auto flex-shrink-0 hover:bg-white rounded-md hidden group-hover:flex"
+										>
+											<svg class="icon icon-m">
+												<use href="#icon-dots-horizontal"></use>
+											</svg>
+											<span class="sr-only">Space Settings</span>
+										</span>
 									</a>
 								</li>
 								<li>
-									<a
-										href="#"
-										class="flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500"
-									>
+									<a href="#" class="group aside-nav-item">
 										<span
-											class="flex items-center justify-center rounded-md bg-blue-500 size-6 text-white text-xs font-semibold uppercase"
+											class="flex items-center justify-center rounded-md bg-blue-500 size-6 text-white text-xs font-semibold uppercase flex-shrink-0"
 										>
 											<svg class="icon icon-s">
 												<use href="#icon-members-medium"></use>
 											</svg>
 										</span>
 										<span class="truncate">Team Space</span>
+										<span
+											type="button"
+											class="btn p-0 size-6 ml-auto flex-shrink-0 hover:bg-white rounded-md hidden group-hover:flex"
+										>
+											<svg class="icon icon-m">
+												<use href="#icon-dots-horizontal"></use>
+											</svg>
+											<span class="sr-only">Space Settings</span>
+										</span>
 									</a>
 								</li>
 								<li>
-									<a
-										href="#"
-										class="flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500"
-									>
+									<a href="#" class="group aside-nav-item">
 										<span
-											class="flex items-center justify-center rounded-md bg-[#5839F3] size-6 text-white text-xs font-semibold uppercase"
+											class="flex items-center justify-center rounded-md bg-[#5839F3] size-6 text-white text-xs font-semibold uppercase flex-shrink-0"
 										>
 											H
 										</span>
 										<span class="truncate">HR Team</span>
+										<span
+											type="button"
+											class="btn p-0 size-6 ml-auto flex-shrink-0 hover:bg-white rounded-md hidden group-hover:flex"
+										>
+											<svg class="icon icon-m">
+												<use href="#icon-dots-horizontal"></use>
+											</svg>
+											<span class="sr-only">Space Settings</span>
+										</span>
 									</a>
 								</li>
 								<li>
-									<a
-										href="#"
-										class="flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500"
-									>
+									<a href="#" class="group aside-nav-item">
 										<div
 											class="size-6 flex items-center justify-center flex-shrink-0"
 										>
@@ -1623,13 +1626,19 @@
 											/>
 										</div>
 										<span class="truncate">My Private Workspace</span>
+										<span
+											type="button"
+											class="btn p-0 size-6 ml-auto flex-shrink-0 hover:bg-white rounded-md hidden group-hover:flex"
+										>
+											<svg class="icon icon-m">
+												<use href="#icon-dots-horizontal"></use>
+											</svg>
+											<span class="sr-only">Space Settings</span>
+										</span>
 									</a>
 								</li>
 								<li>
-									<a
-										href="#"
-										class="flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500"
-									>
+									<a href="#" class="group aside-nav-item">
 										<div
 											class="size-6 flex items-center justify-center flex-shrink-0"
 										>
@@ -1640,6 +1649,15 @@
 											/>
 										</div>
 										<span class="truncate">Jumpcamp Meetups Recording</span>
+										<span
+											type="button"
+											class="btn p-0 size-6 ml-auto flex-shrink-0 hover:bg-white rounded-md hidden group-hover:flex"
+										>
+											<svg class="icon icon-m">
+												<use href="#icon-dots-horizontal"></use>
+											</svg>
+											<span class="sr-only">Space Settings</span>
+										</span>
 									</a>
 								</li>
 							</ul>
@@ -1648,10 +1666,7 @@
 							<hr class="mb-6 border-gray-600" />
 							<ul class="flex flex-col gap-y-1">
 								<li>
-									<a
-										href="./activity-center.html"
-										class="flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500"
-									>
+									<a href="./activity-center.html" class="aside-nav-item">
 										<svg class="icon icon-md">
 											<use href="#icon-bell"></use>
 										</svg>
@@ -1665,7 +1680,7 @@
 								<li class="dropdown-wrapper">
 									<a
 										href="#"
-										class="dropdown-button flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500"
+										class="dropdown-button aside-nav-item [&.active]:text-dark-800 [&.active]:bg-gray-pressed-150"
 										data-id="dropdown-avatar"
 									>
 										<div class="avatar size-6 flex-shrink-0">
@@ -3659,10 +3674,20 @@
 								<div class="file-item-bottom">
 									<div class="flex flex-col gap-1">
 										<h4>Troubleshooting Password Validation</h4>
-										<ul class="list-with-dots">
-											<li>MP4</li>
-											<li>0 views</li>
-										</ul>
+										<div class="flex items-center gap-4">
+											<span class="flex items-center gap-1.5">
+												<svg class="icon icon-s">
+													<use href="#icon-eye-stroke"></use>
+												</svg>
+												<span class="text-xs text-dark-800/80">4</span>
+											</span>
+											<span class="flex items-center gap-1.5">
+												<svg class="icon icon-s">
+													<use href="#icon-comment"></use>
+												</svg>
+												<span class="text-xs text-dark-800/80">2</span>
+											</span>
+										</div>
 									</div>
 									<div class="file-author">
 										<div class="file-author-avatar">
@@ -3675,9 +3700,13 @@
 									</div>
 								</div>
 								<div
-									class="hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden"
+									class="flex items-center [.list-type_&]:static absolute right-3 bottom-4.5 bg-dark-800/5 rounded-md px-2 h-6 w-auto [.list-type_&]:h-auto [.list-type_&]:bg-transparent [.list-type_&]:px-0 [.list-type_&]:py-0 max-md:[.list-type_&]:hidden"
 								>
-									<p class="text-sm text-dark-800">MP4</p>
+									<p
+										class="text-xs font-medium text-dark-800/80 [.list-type_&]:text-sm [.list-type_&]:text-dark-800 [.list-type_&]:font-normal"
+									>
+										MP4
+									</p>
 								</div>
 								<div
 									class="hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden"
@@ -3894,10 +3923,20 @@
 								<div class="file-item-bottom">
 									<div class="flex flex-col gap-1">
 										<h4>Guidelines for the tour</h4>
-										<ul class="list-with-dots">
-											<li>MP4</li>
-											<li>432 views</li>
-										</ul>
+										<div class="flex items-center gap-4">
+											<span class="flex items-center gap-1.5">
+												<svg class="icon icon-s">
+													<use href="#icon-eye-stroke"></use>
+												</svg>
+												<span class="text-xs text-dark-800/80">214</span>
+											</span>
+											<span class="flex items-center gap-1.5">
+												<svg class="icon icon-s">
+													<use href="#icon-comment"></use>
+												</svg>
+												<span class="text-xs text-dark-800/80">12</span>
+											</span>
+										</div>
 									</div>
 									<div class="file-author">
 										<div class="file-author-avatar">
@@ -3910,9 +3949,13 @@
 									</div>
 								</div>
 								<div
-									class="hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden"
+									class="flex items-center [.list-type_&]:static absolute right-3 bottom-4.5 bg-dark-800/5 rounded-md px-2 h-6 w-auto [.list-type_&]:h-auto [.list-type_&]:bg-transparent [.list-type_&]:px-0 [.list-type_&]:py-0 max-md:[.list-type_&]:hidden"
 								>
-									<p class="text-sm text-dark-800">MP4</p>
+									<p
+										class="text-xs font-medium text-dark-800/80 [.list-type_&]:text-sm [.list-type_&]:text-dark-800 [.list-type_&]:font-normal"
+									>
+										MP4
+									</p>
 								</div>
 								<div
 									class="hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden"
@@ -4116,10 +4159,20 @@
 								<div class="file-item-bottom">
 									<div class="flex flex-col gap-1">
 										<h4>Customer Relation Management</h4>
-										<ul class="list-with-dots">
-											<li>MP4</li>
-											<li>21 views</li>
-										</ul>
+										<div class="flex items-center gap-4">
+											<span class="flex items-center gap-1.5">
+												<svg class="icon icon-s">
+													<use href="#icon-eye-stroke"></use>
+												</svg>
+												<span class="text-xs text-dark-800/80">41</span>
+											</span>
+											<span class="flex items-center gap-1.5">
+												<svg class="icon icon-s">
+													<use href="#icon-comment"></use>
+												</svg>
+												<span class="text-xs text-dark-800/80">0</span>
+											</span>
+										</div>
 									</div>
 									<div class="file-author">
 										<div class="file-author-avatar">
@@ -4132,9 +4185,13 @@
 									</div>
 								</div>
 								<div
-									class="hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden"
+									class="flex items-center [.list-type_&]:static absolute right-3 bottom-4.5 bg-dark-800/5 rounded-md px-2 h-6 w-auto [.list-type_&]:h-auto [.list-type_&]:bg-transparent [.list-type_&]:px-0 [.list-type_&]:py-0 max-md:[.list-type_&]:hidden"
 								>
-									<p class="text-sm text-dark-800">PDF</p>
+									<p
+										class="text-xs font-medium text-dark-800/80 [.list-type_&]:text-sm [.list-type_&]:text-dark-800 [.list-type_&]:font-normal"
+									>
+										PDF
+									</p>
 								</div>
 								<div
 									class="hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden"
@@ -4336,10 +4393,20 @@
 								<div class="file-item-bottom">
 									<div class="flex flex-col gap-1">
 										<h4>Guidelines for the tour of 2024 session</h4>
-										<ul class="list-with-dots">
-											<li>XLSX</li>
-											<li>12 views</li>
-										</ul>
+										<div class="flex items-center gap-4">
+											<span class="flex items-center gap-1.5">
+												<svg class="icon icon-s">
+													<use href="#icon-eye-stroke"></use>
+												</svg>
+												<span class="text-xs text-dark-800/80">2414</span>
+											</span>
+											<span class="flex items-center gap-1.5">
+												<svg class="icon icon-s">
+													<use href="#icon-comment"></use>
+												</svg>
+												<span class="text-xs text-dark-800/80">2</span>
+											</span>
+										</div>
 									</div>
 									<div class="file-author">
 										<div class="file-author-avatar">
@@ -4352,9 +4419,13 @@
 									</div>
 								</div>
 								<div
-									class="hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden"
+									class="flex items-center [.list-type_&]:static absolute right-3 bottom-4.5 bg-dark-800/5 rounded-md px-2 h-6 w-auto [.list-type_&]:h-auto [.list-type_&]:bg-transparent [.list-type_&]:px-0 [.list-type_&]:py-0 max-md:[.list-type_&]:hidden"
 								>
-									<p class="text-sm text-dark-800">DOCX</p>
+									<p
+										class="text-xs font-medium text-dark-800/80 [.list-type_&]:text-sm [.list-type_&]:text-dark-800 [.list-type_&]:font-normal"
+									>
+										DOCX
+									</p>
 								</div>
 								<div
 									class="hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden"

@@ -25,19 +25,32 @@ const Dialog = {
 				$dialog.addClass("hidden");
 			}
 		});
-		$("[data-dialog-open-id]").on("click", (e) => {
+		$("[data-dialog-open-id]").on("click", function (e) {
 			e.preventDefault();
 			e.stopPropagation();
 			if (BottomSheet.isMobile) {
-				BottomSheet.open({
-					event: e,
-					modal: $dialog,
-					body: $dialog.find(".filter-by-members"),
-					content: $dialog.find(".modal-content"),
-					overlaySelector: ".modal",
-					scrollBlockSelector: ".modal-body",
-					closeButtonSelector: "[data-dialog-close]",
-				});
+				const dialogId = $(this).attr("data-dialog-open-id");
+				if (dialogId === "share") {
+					BottomSheet.open({
+						event: e,
+						modal: $dialog,
+						body: $dialog.find(".modal-dialog"),
+						content: $dialog.find(".modal-content"),
+						overlaySelector: ".modal",
+						scrollBlockSelector: ".modal-body",
+						closeButtonSelector: "[data-dialog-close]",
+					});
+				} else {
+					BottomSheet.open({
+						event: e,
+						modal: $dialog,
+						body: $dialog.find(".filter-by-members"),
+						content: $dialog.find(".modal-content"),
+						overlaySelector: ".modal",
+						scrollBlockSelector: ".modal-body",
+						closeButtonSelector: "[data-dialog-close]",
+					});
+				}
 			} else {
 				$dialog.removeClass("hidden");
 			}

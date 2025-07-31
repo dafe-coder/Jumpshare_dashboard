@@ -46,6 +46,19 @@ $(document).ready(function () {
 			img.classList.remove("lazy-image");
 		});
 	}
+
+	// Collapse sidebar
+	const collapseSidebarBtn = $("#collapse-sidebar-btn");
+	collapseSidebarBtn.on("click", function (e) {
+		e.preventDefault();
+		const sidebar = $("aside");
+		sidebar.toggleClass("active-sidebar");
+		collapseSidebarBtn.toggleClass("active-collapse-sidebar-btn");
+		console.log(sidebar.width());
+
+		sidebar.width(sidebar.width() === 240 ? 64 : 240);
+	});
+
 	// Tabs
 	const tabs = $("[data-tab-id]");
 	tabs.on("click", function (e) {
