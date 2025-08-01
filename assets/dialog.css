@@ -151,6 +151,7 @@
 		right: 8px;
 		top: 8px;
 		opacity: 1;
+		z-index: 10;
 	}
 
 	.tabs_share_ui {
@@ -176,7 +177,7 @@
 			@apply flex-shrink-0;
 		}
 		.modal-content {
-			@apply overflow-hidden left-1/2 -translate-x-1/2 flex flex-col h-full;
+			@apply overflow-hidden flex flex-col h-full;
 		}
 		.modal-body {
 			@apply px-6 flex-grow-1 overflow-y-auto static max-xs:py-0;
@@ -635,29 +636,5 @@ ul.who-can-access {
 		.btn {
 			@apply h-8 px-2 bg-[transparent] hover:bg-gray-400 text-dark-800 cursor-pointer gap-1.5 text-[14px] font-normal transition-none;
 		}
-	}
-}
-
-.privacy-settings-wrapper {
-	@apply relative;
-
-	.privacy-settings-item {
-		@apply flex justify-start items-center gap-2 px-4 py-2 bg-gray-150 w-full rounded-md cursor-pointer;
-	}
-
-	.privacy-settings-item__info {
-		@apply flex flex-col gap-1;
-
-		.privacy-settings-item__title {
-			@apply text-[14px] font-medium text-dark-800;
-		}
-
-		.privacy-settings-item__description {
-			@apply text-xs text-dark-800/70;
-		}
-	}
-
-	.privacy-settings-menu__item {
-		@apply flex justify-start gap-3 p-3 items-center hover:bg-gray-150 rounded-md cursor-pointer;
 	}
 }

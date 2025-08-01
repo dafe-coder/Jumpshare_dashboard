@@ -210,4 +210,8 @@ const Lightbox = {
 $(document).ready(() => {
 	Dialog.init();
 	Lightbox.tabsInit();
+	// setTimeout(() => {
+	// 	const $dialog = $("#lightbox");
+	// 	$dialog.removeClass("hidden");
+	// }, 400);
 });

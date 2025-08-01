@@ -1,0 +1,38 @@
+@layer components {
+	.colors-list {
+		@apply grid grid-cols-[repeat(auto-fill,24px)] gap-2 mt-6 pb-6;
+		li {
+			@apply relative size-6 rounded-full bg-current cursor-pointer transition-all duration-300 ease-in-out;
+			&::after {
+				@apply content-[''] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[calc(100%-3px)] border-white rounded-full bg-current border-0 transition-all duration-150 ease-in-out;
+			}
+			&:hover {
+				@apply scale-115 bg-current/15;
+				&::after {
+					@apply border-2;
+				}
+			}
+			&.active {
+				@apply scale-115;
+				&::after {
+					@apply border-2;
+				}
+			}
+			&:last-of-type {
+				@apply flex items-center justify-center border border-gray-700 border-dashed size-6 rounded-lg bg-transparent;
+				&::after {
+					@apply hidden;
+				}
+				&:hover {
+					@apply bg-transparent scale-105;
+				}
+			}
+		}
+	}
+	.record-icon {
+		@apply relative size-4 rounded-full bg-current cursor-pointer transition-all duration-300 ease-in-out text-red-400;
+		&::after {
+			@apply content-[''] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[calc(100%-2px)] border-white rounded-full bg-current border-[1.5px] transition-all duration-150 ease-in-out;
+		}
+	}
+}

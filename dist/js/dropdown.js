@@ -232,7 +232,26 @@ const Dropdown = {
 			});
 		}
 
-		this.checkViewportBounds($element);
+		const rect = $element[0].getBoundingClientRect();
+		const viewportHeight = $(window).height();
+		const viewportWidth = $(window).width();
+
+		if (rect.bottom > viewportHeight) {
+			const overflowBottom = rect.bottom - viewportHeight;
+			const newTop = parseInt($element.css("top")) - overflowBottom - 20;
+			$element.css("top", newTop + "px");
+		}
+
+		if (
+			rect.right > viewportWidth &&
+			($element.attr("data-dropdown-id") === "dropdown-settings" ||
+				hasSubContent)
+		) {
+			$element.addClass("adjust-position-right").css({
+				left: "auto",
+				right: "100%",
+			});
+		}
 	},
 
 	isInsideOverflowHidden($element) {
@@ -284,32 +303,6 @@ const Dropdown = {
 			left: left,
 			right: right,
 		});
-	},
-
-	checkViewportBounds($element) {
-		const rect = $element[0].getBoundingClientRect();
-		const viewportHeight = $(window).height();
-		const viewportWidth = $(window).width();
-
-		if (rect.bottom > viewportHeight) {
-			const overflowBottom = rect.bottom - viewportHeight;
-			const newTop = parseInt($element.css("top")) - overflowBottom - 20;
-			$element.css("top", newTop + "px");
-		}
-
-		const hasSubContent =
-			$element.closest(".sub-menu-item").children(".js-dropdown-sub-list")
-				.length > 0;
-		if (
-			rect.right > viewportWidth &&
-			($element.attr("data-dropdown-id") === "dropdown-settings" ||
-				hasSubContent)
-		) {
-			$element.addClass("adjust-position-right").css({
-				left: "auto",
-				right: "100%",
-			});
-		}
 	},
 
 	adjustElementPositionOnResize() {
