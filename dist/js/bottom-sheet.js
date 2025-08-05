@@ -100,6 +100,8 @@ const BottomSheet = {
 			scrollBlockSelector = null,
 		} = options;
 
+		body.removeClass("hidden");
+
 		$(document).off("click.bottomSheet");
 
 		this.heightTrigger = triggerHeight;

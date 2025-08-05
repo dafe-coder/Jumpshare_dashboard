@@ -12,29 +12,42 @@ const Dialog = {
 		$dialog.on("click", (e) => {
 			if (e.target === $dialog[0] && !BottomSheet.isMobile) {
 				$dialog.addClass("hidden");
+				$dialog.find(".modal-dialog").addClass("hidden");
 			}
 		});
 
 		$closeBtn.on("click", () => {
 			if (!BottomSheet.isMobile) {
 				$dialog.addClass("hidden");
+				$dialog.find(".modal-dialog").addClass("hidden");
 			}
 		});
 		$(".modal").on("click", function (e) {
 			if (e.target === this && !BottomSheet.isMobile) {
 				$dialog.addClass("hidden");
+				$dialog.find(".modal-dialog").addClass("hidden");
 			}
 		});
 		$("[data-dialog-open-id]").on("click", function (e) {
 			e.preventDefault();
 			e.stopPropagation();
+			const dialogId = $(this).attr("data-dialog-open-id");
 			if (BottomSheet.isMobile) {
-				const dialogId = $(this).attr("data-dialog-open-id");
 				if (dialogId === "share") {
 					BottomSheet.open({
 						event: e,
 						modal: $dialog,
-						body: $dialog.find(".modal-dialog"),
+						body: $dialog.find(".modal-email-share"),
+						content: $dialog.find(".modal-content"),
+						overlaySelector: ".modal",
+						scrollBlockSelector: ".modal-body",
+						closeButtonSelector: "[data-dialog-close]",
+					});
+				} else if (dialogId === "create-space") {
+					BottomSheet.open({
+						event: e,
+						modal: $dialog,
+						body: $dialog.find(".modal-create-space"),
 						content: $dialog.find(".modal-content"),
 						overlaySelector: ".modal",
 						scrollBlockSelector: ".modal-body",
@@ -53,6 +66,7 @@ const Dialog = {
 				}
 			} else {
 				$dialog.removeClass("hidden");
+				$dialog.find(`.modal-${dialogId}`).removeClass("hidden");
 			}
 		});
 	},
