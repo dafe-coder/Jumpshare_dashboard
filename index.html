@@ -1280,10 +1280,12 @@
 									>
 										<div class="dropdown-wrapper">
 											<div
-												class="group dropdown-button flex items-center justify-center size-9 border border-gray-600 rounded-lg font-semibold text-sm text-dark-800/60 cursor-pointer"
+												class="group dropdown-button flex items-center justify-center size-9 border border-gray-600 rounded-lg font-semibold text-sm text-dark-800/60 cursor-pointer [&.space-icon-active]:border-[#5839F3] [&.space-icon-active]:bg-[#5839F3] [&.space-icon-active]:text-white"
 												data-id="emoji-color-menu"
+												id="space-icon"
 											>
-												<span class="group-hover:hidden [.active_&]:hidden"
+												<span
+													class="group-hover:hidden [.active_&]:hidden uppercase"
 													>S</span
 												>
 												<svg
@@ -1314,7 +1316,7 @@
 																>Colors</span
 															>
 														</div>
-														<ul class="colors-list mt-6">
+														<ul id="pick-color-icons" class="colors-list mt-6">
 															<li class="group text-[#5839F3] active"></li>
 															<li class="group text-[#1E66F0]"></li>
 															<li class="group text-[#FF4B8B]"></li>
@@ -1340,6 +1342,7 @@
 											type="text"
 											class="form-control-settings h-11"
 											placeholder="e.g. Marketing Space"
+											id="space-name"
 										/>
 									</div>
 								</div>
@@ -1452,7 +1455,7 @@
 					class="flex flex-col items-center justify-center gap-6 rounded-[14px] size-full"
 				>
 					<img
-						class="w-[15rem]"
+						class="w-60"
 						src="./assets/images/drop-files.png"
 						alt="drop files image"
 					/>
@@ -1462,7 +1465,7 @@
 		</div>
 		<div class="w-full min-h-screen">
 			<aside
-				class="group w-[240px] fixed left-0 top-0 bottom-0 flex flex-col h-[calc(100vh-var(--browser-ui-height,0px))] z-101 max-lg:-left-full max-lg:top-0 max-lg:w-full transition-all duration-500 ease-in-out [&.active]:left-0"
+				class="w-60 fixed left-0 top-0 bottom-0 flex flex-col h-[calc(100vh-var(--browser-ui-height,0px))] z-101 max-lg:-left-full max-lg:top-0 max-lg:w-full! transition-all duration-500 ease-in-out [&.active]:left-0"
 			>
 				<div
 					class="mobile-menu-overlay absolute bg-dark-800/50 z-0 opacity-0 w-0 h-[calc(100vh-var(--browser-ui-height,0px))] lg:hidden [.active_&]:opacity-100 [.active_&]:w-screen transition-all duration-500 ease-in-out delay-75"
@@ -1471,13 +1474,9 @@
 					class="flex flex-col max-lg:w-[318px] max-lg:max-w-[318px] max-xs:w-[85%]! w-full bg-gray-150 max-lg:rounded-r-2xl z-3 h-full"
 				>
 					<div
-						class="flex items-center justify-center px-2.5 pt-6 pb-6 gap-2 overflow-hidden"
+						class="flex items-center justify-center px-2.5 pt-6 pb-6 gap-2 overflow-hidden max-lg:justify-start"
 					>
-						<a
-							href="/"
-							class="flex items-center gap-2 h-6 [.active-sidebar_&]:group-hover:hidden"
-							aria-label="Home"
-						>
+						<a href="/" class="aside-logo" aria-label="Home">
 							<svg
 								class="icon h-5.5 w-38 [.active-sidebar_&]:w-8 transition-all duration-300 ease-in-out"
 							>
@@ -1487,7 +1486,7 @@
 						<button
 							type="button"
 							aria-label="Collapse Sidebar"
-							class="btn ml-auto p-0 h-auto [.active-sidebar_&]:ml-0 [.active-sidebar_&]:hidden flex-shrink-0 [.active-sidebar_&]:group-hover:block"
+							class="aside-collapse-btn"
 							id="collapse-sidebar-btn"
 						>
 							<svg class="icon icon-md">
@@ -1501,7 +1500,7 @@
 						<a
 							href="#"
 							data-id="dropdown-workspaces"
-							class="dropdown-button p-2.5 flex items-center justify-between relative bg-white border border-gray-600 rounded-xl hover:bg-gray-200 [&.active]:bg-gray-200 [.active-sidebar_&]:rounded-lg [.active-sidebar_&]:p-0 [.active-sidebar_&]:border-0 [.active-sidebar_&]:bg-transparent transition-all duration-300 ease-in-out overflow-hidden"
+							class="dropdown-button p-2.5 flex items-center justify-between relative bg-white border border-gray-600 rounded-xl hover:bg-gray-200 [&.active]:bg-gray-200 [.active-sidebar_&]:rounded-lg [.active-sidebar_&]:p-0 [.active-sidebar_&]:border-0 [.active-sidebar_&]:bg-transparent transition-all duration-300 ease-in-out overflow-hidden mb-5 [.active-sidebar_&]:mb-7 [.active-sidebar_&]:mt-2"
 						>
 							<div class="flex items-center justify-between mr-2 flex-shrink-0">
 								<div
@@ -1661,7 +1660,7 @@
 						</div>
 					</div>
 					<div class="flex flex-col h-full overflow-y-auto px-3 pb-4">
-						<nav class="flex flex-col mt-5 mb-5">
+						<nav class="flex flex-col mb-5">
 							<ul class="aside-nav">
 								<li>
 									<a href="./index.html" class="active aside-nav-item">
@@ -1743,108 +1742,393 @@
 								</div>
 							</div>
 							<ul class="flex flex-col">
-								<li>
-									<a href="#" class="group aside-nav-item">
-										<svg class="icon icon-md">
-											<use href="#icon-spaces"></use>
+								<li class="group aside-nav-item">
+									<svg class="icon icon-md">
+										<use href="#icon-spaces"></use>
+									</svg>
+									<span class="truncate">Browse Spaces</span>
+									<div class="dropdown-wrapper ml-auto flex-shrink-0">
+										<span
+											data-id="dropdown-spaces-item"
+											type="button"
+											class="dropdown-button hidden group-hover:flex btn p-0 size-6 hover:bg-white rounded-md"
+										>
+											<svg class="icon icon-m">
+												<use href="#icon-dots-horizontal"></use>
+											</svg>
+											<span class="sr-only">Space Settings</span>
+										</span>
+										<div
+											class="js-dropdown hidden w-[15.625rem]"
+											data-dropdown-id="dropdown-spaces-item"
+											data-sheet-modal
+											data-overflow-visible
+										>
+											<div class="js-dropdown-overlay"></div>
+											<div class="js-dropdown-body">
+												<div class="js-dropdown-trigger">
+													<span></span>
+												</div>
+												<div class="js-dropdown-content">
+													<a
+														href="#"
+														data-link-type="large-grid"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800"
+													>
+														<svg class="icon icon-md">
+															<use href="#icon-cog-medium"></use>
+														</svg>
+														Space Settings
+													</a>
+													<a
+														href="#"
+														data-link-type="grid"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800"
+													>
+														<svg class="icon icon-md">
+															<use href="#icon-members-medium"></use>
+														</svg>
+														View members
+													</a>
+													<hr class="my-2 border-gray-400" />
+													<a
+														href="#"
+														data-link-type="list"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150"
+													>
+														<svg class="icon icon-md">
+															<use href="#icon-archive"></use>
+														</svg>
+														Archive
+													</a>
+													<a
+														href="#"
+														data-link-type="grid"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150"
+													>
+														<svg class="icon icon-md">
+															<use href="#icon-trash"></use>
+														</svg>
+														Delete
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="group aside-nav-item">
+									<span
+										class="flex items-center justify-center rounded-md bg-blue-500 size-6 text-white text-xs font-semibold uppercase flex-shrink-0"
+									>
+										<svg class="icon icon-s">
+											<use href="#icon-members-medium"></use>
 										</svg>
-										<span class="truncate">Browse Spaces</span>
+									</span>
+									<span class="truncate">Team Space</span>
+									<div class="dropdown-wrapper ml-auto flex-shrink-0">
 										<span
+											data-id="dropdown-spaces-item"
 											type="button"
-											class="btn p-0 size-6 ml-auto flex-shrink-0 hover:bg-white rounded-md hidden group-hover:flex"
+											class="dropdown-button hidden group-hover:flex btn p-0 size-6 hover:bg-white rounded-md"
 										>
 											<svg class="icon icon-m">
 												<use href="#icon-dots-horizontal"></use>
 											</svg>
 											<span class="sr-only">Space Settings</span>
 										</span>
-									</a>
-								</li>
-								<li>
-									<a href="#" class="group aside-nav-item">
-										<span
-											class="flex items-center justify-center rounded-md bg-blue-500 size-6 text-white text-xs font-semibold uppercase flex-shrink-0"
-										>
-											<svg class="icon icon-s">
-												<use href="#icon-members-medium"></use>
-											</svg>
-										</span>
-										<span class="truncate">Team Space</span>
-										<span
-											type="button"
-											class="btn p-0 size-6 ml-auto flex-shrink-0 hover:bg-white rounded-md hidden group-hover:flex"
-										>
-											<svg class="icon icon-m">
-												<use href="#icon-dots-horizontal"></use>
-											</svg>
-											<span class="sr-only">Space Settings</span>
-										</span>
-									</a>
-								</li>
-								<li>
-									<a href="#" class="group aside-nav-item">
-										<span
-											class="flex items-center justify-center rounded-md bg-[#5839F3] size-6 text-white text-xs font-semibold uppercase flex-shrink-0"
-										>
-											H
-										</span>
-										<span class="truncate">HR Team</span>
-										<span
-											type="button"
-											class="btn p-0 size-6 ml-auto flex-shrink-0 hover:bg-white rounded-md hidden group-hover:flex"
-										>
-											<svg class="icon icon-m">
-												<use href="#icon-dots-horizontal"></use>
-											</svg>
-											<span class="sr-only">Space Settings</span>
-										</span>
-									</a>
-								</li>
-								<li>
-									<a href="#" class="group aside-nav-item">
 										<div
-											class="size-6 flex items-center justify-center flex-shrink-0"
+											class="js-dropdown hidden w-[15.625rem]"
+											data-dropdown-id="dropdown-spaces-item"
+											data-sheet-modal
+											data-overflow-visible
 										>
-											<img
-												src="./assets/images/smileys/smile-1.png"
-												alt="Smiley"
-												class="size-5 object-contain"
-											/>
+											<div class="js-dropdown-overlay"></div>
+											<div class="js-dropdown-body">
+												<div class="js-dropdown-trigger">
+													<span></span>
+												</div>
+												<div class="js-dropdown-content">
+													<a
+														href="#"
+														data-link-type="large-grid"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800"
+													>
+														<svg class="icon icon-m">
+															<use href="#icon-cog-medium"></use>
+														</svg>
+														Space Settings
+													</a>
+													<a
+														href="#"
+														data-link-type="grid"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800"
+													>
+														<svg class="icon icon-s">
+															<use href="#icon-members-medium"></use>
+														</svg>
+														View members
+													</a>
+													<hr class="my-2 border-gray-400" />
+													<a
+														href="#"
+														data-link-type="list"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150"
+													>
+														<svg class="icon icon-md">
+															<use href="#icon-archive"></use>
+														</svg>
+														Archive
+													</a>
+													<a
+														href="#"
+														data-link-type="grid"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150"
+													>
+														<svg class="icon icon-md">
+															<use href="#icon-trash"></use>
+														</svg>
+														Delete
+													</a>
+												</div>
+											</div>
 										</div>
-										<span class="truncate">My Private Workspace</span>
-										<span
-											type="button"
-											class="btn p-0 size-6 ml-auto flex-shrink-0 hover:bg-white rounded-md hidden group-hover:flex"
-										>
-											<svg class="icon icon-m">
-												<use href="#icon-dots-horizontal"></use>
-											</svg>
-											<span class="sr-only">Space Settings</span>
-										</span>
-									</a>
+									</div>
 								</li>
-								<li>
-									<a href="#" class="group aside-nav-item">
-										<div
-											class="size-6 flex items-center justify-center flex-shrink-0"
-										>
-											<img
-												src="./assets/images/smileys/smile-2.png"
-												alt="Smiley"
-												class="size-5 object-contain"
-											/>
-										</div>
-										<span class="truncate">Jumpcamp Meetups Recording</span>
+								<li class="group aside-nav-item">
+									<span
+										class="flex items-center justify-center rounded-md bg-[#5839F3] size-6 text-white text-xs font-semibold uppercase flex-shrink-0"
+									>
+										H
+									</span>
+									<span class="truncate">HR Team</span>
+									<div class="dropdown-wrapper ml-auto flex-shrink-0">
 										<span
+											data-id="dropdown-spaces-item"
 											type="button"
-											class="btn p-0 size-6 ml-auto flex-shrink-0 hover:bg-white rounded-md hidden group-hover:flex"
+											class="dropdown-button hidden group-hover:flex btn p-0 size-6 hover:bg-white rounded-md"
 										>
 											<svg class="icon icon-m">
 												<use href="#icon-dots-horizontal"></use>
 											</svg>
 											<span class="sr-only">Space Settings</span>
 										</span>
-									</a>
+										<div
+											class="js-dropdown hidden w-[15.625rem]"
+											data-dropdown-id="dropdown-spaces-item"
+											data-sheet-modal
+											data-overflow-visible
+										>
+											<div class="js-dropdown-overlay"></div>
+											<div class="js-dropdown-body">
+												<div class="js-dropdown-trigger">
+													<span></span>
+												</div>
+												<div class="js-dropdown-content">
+													<a
+														href="#"
+														data-link-type="large-grid"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800"
+													>
+														<svg class="icon icon-m">
+															<use href="#icon-cog-medium"></use>
+														</svg>
+														Space Settings
+													</a>
+													<a
+														href="#"
+														data-link-type="grid"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800"
+													>
+														<svg class="icon icon-s">
+															<use href="#icon-members-medium"></use>
+														</svg>
+														View members
+													</a>
+													<hr class="my-2 border-gray-400" />
+													<a
+														href="#"
+														data-link-type="list"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150"
+													>
+														<svg class="icon icon-md">
+															<use href="#icon-archive"></use>
+														</svg>
+														Archive
+													</a>
+													<a
+														href="#"
+														data-link-type="grid"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150"
+													>
+														<svg class="icon icon-md">
+															<use href="#icon-trash"></use>
+														</svg>
+														Delete
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="group aside-nav-item">
+									<div
+										class="size-6 flex items-center justify-center flex-shrink-0"
+									>
+										<img
+											src="./assets/images/smileys/smile-1.png"
+											alt="Smiley"
+											class="size-5 object-contain"
+										/>
+									</div>
+									<span class="truncate">My Private Workspace</span>
+									<div class="dropdown-wrapper ml-auto flex-shrink-0">
+										<span
+											data-id="dropdown-spaces-item"
+											type="button"
+											class="dropdown-button hidden group-hover:flex btn p-0 size-6 hover:bg-white rounded-md"
+										>
+											<svg class="icon icon-m">
+												<use href="#icon-dots-horizontal"></use>
+											</svg>
+											<span class="sr-only">Space Settings</span>
+										</span>
+										<div
+											class="js-dropdown hidden w-[15.625rem]"
+											data-dropdown-id="dropdown-spaces-item"
+											data-sheet-modal
+											data-overflow-visible
+										>
+											<div class="js-dropdown-overlay"></div>
+											<div class="js-dropdown-body">
+												<div class="js-dropdown-trigger">
+													<span></span>
+												</div>
+												<div class="js-dropdown-content">
+													<a
+														href="#"
+														data-link-type="large-grid"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800"
+													>
+														<svg class="icon icon-m">
+															<use href="#icon-cog-medium"></use>
+														</svg>
+														Space Settings
+													</a>
+													<a
+														href="#"
+														data-link-type="grid"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800"
+													>
+														<svg class="icon icon-s">
+															<use href="#icon-members-medium"></use>
+														</svg>
+														View members
+													</a>
+													<hr class="my-2 border-gray-400" />
+													<a
+														href="#"
+														data-link-type="list"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150"
+													>
+														<svg class="icon icon-md">
+															<use href="#icon-archive"></use>
+														</svg>
+														Archive
+													</a>
+													<a
+														href="#"
+														data-link-type="grid"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150"
+													>
+														<svg class="icon icon-md">
+															<use href="#icon-trash"></use>
+														</svg>
+														Delete
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="group aside-nav-item">
+									<div
+										class="size-6 flex items-center justify-center flex-shrink-0"
+									>
+										<img
+											src="./assets/images/smileys/smile-2.png"
+											alt="Smiley"
+											class="size-5 object-contain"
+										/>
+									</div>
+									<span class="truncate">Jumpcamp Meetups Recording</span>
+									<div class="dropdown-wrapper ml-auto flex-shrink-0">
+										<span
+											data-id="dropdown-spaces-item"
+											type="button"
+											class="dropdown-button hidden group-hover:flex btn p-0 size-6 hover:bg-white rounded-md"
+										>
+											<svg class="icon icon-m">
+												<use href="#icon-dots-horizontal"></use>
+											</svg>
+											<span class="sr-only">Space Settings</span>
+										</span>
+										<div
+											class="js-dropdown hidden w-[15.625rem]"
+											data-dropdown-id="dropdown-spaces-item"
+											data-sheet-modal
+											data-overflow-visible
+										>
+											<div class="js-dropdown-overlay"></div>
+											<div class="js-dropdown-body">
+												<div class="js-dropdown-trigger">
+													<span></span>
+												</div>
+												<div class="js-dropdown-content">
+													<a
+														href="#"
+														data-link-type="large-grid"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800"
+													>
+														<svg class="icon icon-m">
+															<use href="#icon-cog-medium"></use>
+														</svg>
+														Space Settings
+													</a>
+													<a
+														href="#"
+														data-link-type="grid"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800"
+													>
+														<svg class="icon icon-s">
+															<use href="#icon-members-medium"></use>
+														</svg>
+														View members
+													</a>
+													<hr class="my-2 border-gray-400" />
+													<a
+														href="#"
+														data-link-type="list"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150"
+													>
+														<svg class="icon icon-md">
+															<use href="#icon-archive"></use>
+														</svg>
+														Archive
+													</a>
+													<a
+														href="#"
+														data-link-type="grid"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150"
+													>
+														<svg class="icon icon-md">
+															<use href="#icon-trash"></use>
+														</svg>
+														Delete
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
 								</li>
 							</ul>
 						</nav>
@@ -1854,16 +2138,13 @@
 								<li class="dropdown-wrapper">
 									<a
 										data-id="dropdown-notifications"
-										class="dropdown-button aside-nav-item cursor-pointer [&.active]:bg-gray-pressed-150 [&.active]:text-dark-800"
+										class="dropdown-button aside-nav-item cursor-pointer [&.active]:bg-gray-pressed-150 [&.active]:text-dark-800 relative"
 									>
 										<svg class="icon icon-md">
 											<use href="#icon-bell"></use>
 										</svg>
 										Notifications
-										<span
-											class="bg-red-500 rounded-full flex justify-center items-center h-4 min-w-4 text-[11px]/[10px] text-white text-center font-medium text-nowrap"
-											>5</span
-										>
+										<span class="aside-notification-badge">5</span>
 									</a>
 									<div
 										class="js-dropdown hidden w-[28.125rem]"
@@ -2253,7 +2534,7 @@
 					</div>
 				</div>
 			</aside>
-			<main class="relative max-lg:w-full lg:ml-[240px]">
+			<main class="relative max-lg:w-full lg:ml-60">
 				<header
 					class="pt-4 sticky top-0 z-51 bg-white transition-all duration-300"
 				>
@@ -3703,7 +3984,7 @@
 												alt="file"
 											/>
 											<svg
-												class="icon size-12 max-md:size-10 [.list-type_&]:size-4"
+												class="icon size-12 max-md:size-10 [.list-type_&]:size-4 [.grid-type_&]:size-10"
 											>
 												<use href="#icon-play"></use>
 											</svg>
@@ -3950,7 +4231,7 @@
 												alt="file"
 											/>
 											<svg
-												class="icon size-12 max-md:size-10 [.list-type_&]:size-4"
+												class="icon size-12 max-md:size-10 [.list-type_&]:size-4 [.grid-type_&]:size-10"
 											>
 												<use href="#icon-play"></use>
 											</svg>
@@ -4188,7 +4469,7 @@
 											<img
 												src="./assets/images/pdf-default.png"
 												alt="file"
-												class="h-13 w-auto [.list-type_&]:h-7.5"
+												class="h-13 w-auto [.list-type_&]:h-7.5 [.grid-type_&]:h-11.5"
 											/>
 										</div>
 									</div>
@@ -4420,7 +4701,7 @@
 											<img
 												src="./assets/images/exel-default.png"
 												alt="file"
-												class="h-13 w-auto [.list-type_&]:h-7.5"
+												class="h-13 w-auto [.list-type_&]:h-7.5 [.grid-type_&]:h-11.5"
 											/>
 										</div>
 									</div>
@@ -5660,6 +5941,7 @@
 			integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
 			crossorigin="anonymous"
 		></script>
+		<script src="./dist/js/space.js"></script>
 		<script src="./dist/js/bottom-sheet.js"></script>
 		<script src="./dist/js/mobile-menu.js"></script>
 		<script src="./dist/js/dialog.js"></script>

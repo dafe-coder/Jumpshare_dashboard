@@ -49,14 +49,26 @@ $(document).ready(function () {
 
 	// Collapse sidebar
 	const collapseSidebarBtn = $("#collapse-sidebar-btn");
+	let collapseSidebarId = null;
+	const collapseSidebarTimeout = 500;
+
 	collapseSidebarBtn.on("click", function (e) {
 		e.preventDefault();
 		const sidebar = $("aside");
 		sidebar.toggleClass("active-sidebar");
 		collapseSidebarBtn.toggleClass("active-collapse-sidebar-btn");
-		console.log(sidebar.width());
 
-		sidebar.width(sidebar.width() === 240 ? 64 : 240);
+		if (sidebar.width() === 240) {
+			sidebar.width(64);
+			collapseSidebarId = setTimeout(() => {
+				sidebar.addClass("sidebar-collapsed");
+				clearTimeout(collapseSidebarId);
+			}, collapseSidebarTimeout);
+		} else {
+			sidebar.width(240);
+			sidebar.removeClass("sidebar-collapsed");
+			clearTimeout(collapseSidebarId);
+		}
 	});
 
 	// Tabs

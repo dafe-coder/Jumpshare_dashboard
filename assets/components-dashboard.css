@@ -5,11 +5,38 @@
 	.dropdown-content {
 		z-index: 1000 !important;
 	}
+	.aside-logo {
+		@apply flex items-center gap-2 h-6;
+	}
+	.aside-collapse-btn {
+		@apply ml-auto p-0 h-auto [.active-sidebar_&]:ml-0 [.active-sidebar_&]:hidden flex-shrink-0 cursor-pointer max-lg:hidden;
+	}
+	.aside-notification-badge {
+		@apply bg-red-500 rounded-full flex justify-center items-center h-4 px-1 min-w-4 text-[11px]/[10px] text-white text-center font-medium text-nowrap transition-all duration-200 ease-in-out;
+	}
+	.active-sidebar {
+		.aside-notification-badge {
+			@apply scale-0 opacity-0;
+		}
+	}
+	.sidebar-collapsed {
+		.aside-notification-badge {
+			@apply absolute top-0.5 right-[5px] ring-1 ring-white scale-100 opacity-100;
+		}
+	}
+	.sidebar-collapsed:hover {
+		.aside-logo {
+			@apply hidden!;
+		}
+		.aside-collapse-btn {
+			@apply flex!;
+		}
+	}
 	.aside-nav {
 		@apply flex flex-col mt-2;
 	}
 	.aside-nav-item {
-		@apply flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-hovered-150 active:bg-gray-pressed-150 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500 truncate;
+		@apply flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-hovered-150 active:bg-gray-pressed-150 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500 truncate cursor-pointer;
 		svg {
 			@apply flex-shrink-0;
 		}
