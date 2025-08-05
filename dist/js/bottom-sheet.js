@@ -365,7 +365,7 @@ $(document).ready(() => {
 	$('[data-dialog="change-plan"]').on("click", (e) => {
 		if (BottomSheet.isMobile) {
 			const modal = $("#lightbox");
-			const modalBody = modal.find(".edit-billing-details");
+			const modalBody = modal.find(".modal-change-plan");
 			const modalContent = modal.find(".modal-content");
 
 			BottomSheet.open({

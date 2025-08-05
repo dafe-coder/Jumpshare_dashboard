@@ -135,6 +135,188 @@
 		<!-- <a href="#" data-dialog-open-id="share">Open Share Modal</a> -->
 		<div id="lightbox" class="hidden">
 			<div class="modal" id="modal">
+				<div class="modal-dialog modal-bs modal-create-space hidden">
+					<button
+						type="button"
+						class="close pull-right"
+						data-dismiss="modal"
+						data-dialog-close
+					>
+						<span class="icn-close"></span>
+						<span class="sr-only">Close modal</span>
+					</button>
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="text-lg font-semibold">Create a Space</h4>
+							<p class="text-sm text-gray-900 mt-1">
+								A Space represents teams, departments, or groups.
+							</p>
+						</div>
+						<div class="modal-body">
+							<div class="modal-body-content">
+								<div class="flex flex-col">
+									<strong class="text-sm font-medium">Icon &amp; Name</strong>
+									<div
+										class="grid grid-cols-[2.25rem_1fr] gap-2.5 items-center mt-4"
+									>
+										<div class="dropdown-wrapper">
+											<div
+												class="group dropdown-button flex items-center justify-center size-9 border border-gray-600 rounded-lg font-semibold text-sm text-dark-800/60 cursor-pointer [&.space-icon-active]:border-[#5839F3] [&.space-icon-active]:bg-[#5839F3] [&.space-icon-active]:text-white"
+												data-id="emoji-color-menu"
+												id="space-icon"
+											>
+												<span
+													class="group-hover:hidden [.active_&]:hidden uppercase"
+													>S</span
+												>
+												<svg
+													class="icon icon-sm hidden group-hover:block [.active_&]:block"
+												>
+													<use href="#icon-pencil"></use>
+												</svg>
+											</div>
+											<div
+												class="js-dropdown w-[17.7rem] active dropdown-fixed"
+												data-dropdown-id="emoji-color-menu"
+												data-sheet-modal
+												data-overflow-visible
+											>
+												<div class="js-dropdown-overlay"></div>
+												<div class="js-dropdown-body">
+													<div class="js-dropdown-trigger"></div>
+													<div class="js-dropdown-content px-4 pt-3 pb-0">
+														<div
+															class="flex items-center gap-5 w-full border-b border-gray-600 pb-3"
+														>
+															<span
+																class="relative text-sm text-gray-900 [&.active]:text-blue-500 [&.active]:font-medium cursor-pointer after:content-[''] after:absolute after:-bottom-[13.5px] after:left-0 after:h-0.5 after:bg-blue-500 after:w-0 [&.active]:after:w-full after:rounded-xs hover:text-blue-500"
+																>Emoji</span
+															>
+															<span
+																class="active relative text-sm text-gray-900 [&.active]:text-blue-500 [&.active]:font-medium cursor-pointer after:content-[''] after:absolute after:-bottom-[13.5px] after:left-0 after:h-0.5 after:bg-blue-500 after:w-0 [&.active]:after:w-full after:rounded-xs hover:text-blue-500"
+																>Colors</span
+															>
+														</div>
+														<ul id="pick-color-icons" class="colors-list mt-6">
+															<li class="group text-[#5839F3] active"></li>
+															<li class="group text-[#1E66F0]"></li>
+															<li class="group text-[#FF4B8B]"></li>
+															<li class="group text-[#F339F0]"></li>
+															<li class="group text-[#26A7FC]"></li>
+															<li class="group text-[#7CC91D]"></li>
+															<li class="group text-[#2F9F95]"></li>
+															<li class="group text-[#E56814]"></li>
+															<li class="group text-[#9A7B6E]"></li>
+															<li class="group text-[#AD7322]"></li>
+															<li class="group text-[#0A0A0B]"></li>
+															<li class="group">
+																<svg class="icon icon-s">
+																	<use href="#icon-plus"></use>
+																</svg>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+										<input
+											type="text"
+											class="form-control-settings h-11"
+											placeholder="e.g. Marketing Space"
+											id="space-name"
+										/>
+									</div>
+								</div>
+								<div class="flex flex-col mt-6">
+									<strong class="text-sm font-medium">Members</strong>
+									<p class="text-sm text-gray-900 mt-1">
+										Members can invite others and manage Space settings.
+									</p>
+									<div class="grid grid-cols-1 gap-2.5 items-center mt-4">
+										<input
+											type="text"
+											class="form-control-settings h-11"
+											placeholder="Add members"
+										/>
+									</div>
+								</div>
+								<div
+									class="privacy-settings-wrapper dropdown-wrapper active mt-6"
+								>
+									<strong class="text-sm font-medium">Privacy</strong>
+									<div
+										data-id="privacy-settings-menu"
+										class="privacy-settings-item dropdown-button mt-3 border border-gray-600 rounded-lg bg-white"
+									>
+										<svg class="icon icon-md">
+											<use href="#icon-team"></use>
+										</svg>
+										<div class="privacy-settings-item__info gap-0">
+											<div class="privacy-settings-item__title">Open Space</div>
+											<div class="privacy-settings-item__description">
+												Anyone at Startup Co can join this space
+											</div>
+										</div>
+										<svg class="icon icon-sm ml-auto">
+											<use href="#icon-chevron-down"></use>
+										</svg>
+									</div>
+									<div
+										class="js-dropdown w-[490px] hidden"
+										data-dropdown-id="privacy-settings-menu"
+										data-sheet-modal
+										data-overflow-visible
+									>
+										<div class="js-dropdown-overlay"></div>
+										<div class="js-dropdown-body">
+											<div class="js-dropdown-trigger"></div>
+											<div class="js-dropdown-content">
+												<div class="privacy-settings-menu__item">
+													<svg class="icon icon-md">
+														<use href="#icon-team"></use>
+													</svg>
+													<div class="flex flex-col gap-1">
+														<div class="font-medium text-dark-800 text-sm">
+															Open Space
+														</div>
+														<div class="text-xs text-dark-800/70">
+															Anyone at Startup Co can join this space
+														</div>
+													</div>
+												</div>
+												<div class="privacy-settings-menu__item">
+													<svg class="icon icon-md">
+														<use href="#icon-lock"></use>
+													</svg>
+													<div class="flex flex-col gap-1">
+														<div
+															class="font-medium text-dark-800 text-sm flex items-center"
+														>
+															Closed Space
+														</div>
+														<div class="text-xs text-dark-800/70">
+															Only people invited can join
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<div class="flex items-center justify-end gap-3">
+								<button type="button" class="btn btn-border-default">
+									Cancel
+								</button>
+								<button type="button" class="btn btn-primary-default" disabled>
+									Create Space
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
 				<div class="modal-dialog modal-bs modal-email-share hidden">
 					<div class="modal-content modal-share">
 						<button
@@ -1250,188 +1432,6 @@
 										</div>
 									</div>
 								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="modal-dialog modal-bs modal-create-space hidden">
-					<button
-						type="button"
-						class="close pull-right"
-						data-dismiss="modal"
-						data-dialog-close
-					>
-						<span class="icn-close"></span>
-						<span class="sr-only">Close modal</span>
-					</button>
-					<div class="modal-content">
-						<div class="modal-header">
-							<h4 class="text-lg font-semibold">Create a Space</h4>
-							<p class="text-sm text-gray-900 mt-1">
-								A Space represents teams, departments, or groups.
-							</p>
-						</div>
-						<div class="modal-body">
-							<div class="modal-body-content">
-								<div class="flex flex-col">
-									<strong class="text-sm font-medium">Icon &amp; Name</strong>
-									<div
-										class="grid grid-cols-[2.25rem_1fr] gap-2.5 items-center mt-4"
-									>
-										<div class="dropdown-wrapper">
-											<div
-												class="group dropdown-button flex items-center justify-center size-9 border border-gray-600 rounded-lg font-semibold text-sm text-dark-800/60 cursor-pointer [&.space-icon-active]:border-[#5839F3] [&.space-icon-active]:bg-[#5839F3] [&.space-icon-active]:text-white"
-												data-id="emoji-color-menu"
-												id="space-icon"
-											>
-												<span
-													class="group-hover:hidden [.active_&]:hidden uppercase"
-													>S</span
-												>
-												<svg
-													class="icon icon-sm hidden group-hover:block [.active_&]:block"
-												>
-													<use href="#icon-pencil"></use>
-												</svg>
-											</div>
-											<div
-												class="js-dropdown w-[17.7rem] active dropdown-fixed"
-												data-dropdown-id="emoji-color-menu"
-												data-sheet-modal
-												data-overflow-visible
-											>
-												<div class="js-dropdown-overlay"></div>
-												<div class="js-dropdown-body">
-													<div class="js-dropdown-trigger"></div>
-													<div class="js-dropdown-content px-4 pt-3 pb-0">
-														<div
-															class="flex items-center gap-5 w-full border-b border-gray-600 pb-3"
-														>
-															<span
-																class="relative text-sm text-gray-900 [&.active]:text-blue-500 [&.active]:font-medium cursor-pointer after:content-[''] after:absolute after:-bottom-[13.5px] after:left-0 after:h-0.5 after:bg-blue-500 after:w-0 [&.active]:after:w-full after:rounded-xs hover:text-blue-500"
-																>Emoji</span
-															>
-															<span
-																class="active relative text-sm text-gray-900 [&.active]:text-blue-500 [&.active]:font-medium cursor-pointer after:content-[''] after:absolute after:-bottom-[13.5px] after:left-0 after:h-0.5 after:bg-blue-500 after:w-0 [&.active]:after:w-full after:rounded-xs hover:text-blue-500"
-																>Colors</span
-															>
-														</div>
-														<ul id="pick-color-icons" class="colors-list mt-6">
-															<li class="group text-[#5839F3] active"></li>
-															<li class="group text-[#1E66F0]"></li>
-															<li class="group text-[#FF4B8B]"></li>
-															<li class="group text-[#F339F0]"></li>
-															<li class="group text-[#26A7FC]"></li>
-															<li class="group text-[#7CC91D]"></li>
-															<li class="group text-[#2F9F95]"></li>
-															<li class="group text-[#E56814]"></li>
-															<li class="group text-[#9A7B6E]"></li>
-															<li class="group text-[#AD7322]"></li>
-															<li class="group text-[#0A0A0B]"></li>
-															<li class="group">
-																<svg class="icon icon-s">
-																	<use href="#icon-plus"></use>
-																</svg>
-															</li>
-														</ul>
-													</div>
-												</div>
-											</div>
-										</div>
-										<input
-											type="text"
-											class="form-control-settings h-11"
-											placeholder="e.g. Marketing Space"
-											id="space-name"
-										/>
-									</div>
-								</div>
-								<div class="flex flex-col mt-6">
-									<strong class="text-sm font-medium">Members</strong>
-									<p class="text-sm text-gray-900 mt-1">
-										Members can invite others and manage Space settings.
-									</p>
-									<div class="grid grid-cols-1 gap-2.5 items-center mt-4">
-										<input
-											type="text"
-											class="form-control-settings h-11"
-											placeholder="Add members"
-										/>
-									</div>
-								</div>
-								<div
-									class="privacy-settings-wrapper dropdown-wrapper active mt-6"
-								>
-									<strong class="text-sm font-medium">Privacy</strong>
-									<div
-										data-id="privacy-settings-menu"
-										class="privacy-settings-item dropdown-button mt-3 border border-gray-600 rounded-lg bg-white"
-									>
-										<svg class="icon icon-md">
-											<use href="#icon-team"></use>
-										</svg>
-										<div class="privacy-settings-item__info gap-0">
-											<div class="privacy-settings-item__title">Open Space</div>
-											<div class="privacy-settings-item__description">
-												Anyone at Startup Co can join this space
-											</div>
-										</div>
-										<svg class="icon icon-sm ml-auto">
-											<use href="#icon-chevron-down"></use>
-										</svg>
-									</div>
-									<div
-										class="js-dropdown w-[490px] hidden"
-										data-dropdown-id="privacy-settings-menu"
-										data-sheet-modal
-										data-overflow-visible
-									>
-										<div class="js-dropdown-overlay"></div>
-										<div class="js-dropdown-body">
-											<div class="js-dropdown-trigger"></div>
-											<div class="js-dropdown-content">
-												<div class="privacy-settings-menu__item">
-													<svg class="icon icon-md">
-														<use href="#icon-team"></use>
-													</svg>
-													<div class="flex flex-col gap-1">
-														<div class="font-medium text-dark-800 text-sm">
-															Open Space
-														</div>
-														<div class="text-xs text-dark-800/70">
-															Anyone at Startup Co can join this space
-														</div>
-													</div>
-												</div>
-												<div class="privacy-settings-menu__item">
-													<svg class="icon icon-md">
-														<use href="#icon-lock"></use>
-													</svg>
-													<div class="flex flex-col gap-1">
-														<div
-															class="font-medium text-dark-800 text-sm flex items-center"
-														>
-															Closed Space
-														</div>
-														<div class="text-xs text-dark-800/70">
-															Only people invited can join
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="modal-footer">
-							<div class="flex items-center justify-end gap-3">
-								<button type="button" class="btn btn-border-default">
-									Cancel
-								</button>
-								<button type="button" class="btn btn-primary-default" disabled>
-									Create Space
-								</button>
 							</div>
 						</div>
 					</div>

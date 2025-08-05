@@ -1,9 +1,6 @@
 const Dialog = {
 	init: function () {
-		this.dialogs = $("#lightbox");
-		this.dialogs.each((_, dialog) => {
-			this.initDialog($(dialog));
-		});
+		this.initDialog($("#lightbox"));
 	},
 
 	initDialog: function ($dialog) {
@@ -44,6 +41,7 @@ const Dialog = {
 						closeButtonSelector: "[data-dialog-close]",
 					});
 				} else if (dialogId === "create-space") {
+					const $dialog = $("#lightbox");
 					BottomSheet.open({
 						event: e,
 						modal: $dialog,
