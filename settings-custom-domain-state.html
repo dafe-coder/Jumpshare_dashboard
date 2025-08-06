@@ -798,9 +798,11 @@
 							>
 								Learn how to set up custom domain →
 							</a>
-							<div class="max-w-[33.875rem] mt-4 flex items-center gap-3">
+							<div
+								class="max-w-[33.875rem] mt-4 flex items-center gap-3 max-sm:flex-col max-sm:items-start max-sm:gap-4"
+							>
 								<div
-									class="flex items-center h-10 rounded-lg bg-gray-150 flex-grow-1 relative"
+									class="flex items-center h-10 rounded-lg bg-gray-150 flex-grow-1 relative max-sm:w-full"
 								>
 									<div
 										class="tag-filled gap-2 absolute right-1.5 font-sans bg-green-20"
@@ -831,7 +833,7 @@
 								</div>
 								<button
 									type="button"
-									class="btn btn-danger flex-shrink-0 px-5 h-10"
+									class="btn btn-danger flex-shrink-0 px-5 h-10 max-xs:w-full"
 								>
 									Remove Domain
 								</button>
@@ -858,7 +860,9 @@
 								Learn how to white label your emails →
 							</a>
 							<div class="max-w-[41rem] mt-4 flex flex-col gap-4 items-start">
-								<div class="grid grid-cols-2 w-full gap-4">
+								<div
+									class="grid grid-cols-2 w-full gap-4 max-sm:grid-cols-1 max-sm:gap-6"
+								>
 									<div class="flex flex-col gap-2.5">
 										<label class="text-sm" for="name">Name</label>
 										<input
@@ -885,7 +889,7 @@
 							</div>
 							<div class="mt-7.5">
 								<div
-									class="grid grid-cols-[minmax(100px,220px)_minmax(100px,337px)_minmax(100px,205px)_minmax(100px,254px)] border-b border-gray-400 pb-2 gap-4"
+									class="grid grid-cols-[minmax(100px,220px)_minmax(100px,337px)_minmax(100px,205px)_minmax(100px,254px)] border-b border-gray-400 pb-2 gap-4 max-sm:hidden"
 								>
 									<div class="flex items-center text-sm text-gray-900">
 										Type
@@ -897,216 +901,317 @@
 										Value
 									</div>
 									<div
-										class="flex items-center justify-end text-sm text-gray-900 pr-11.5"
+										class="flex items-center justify-end text-sm text-gray-900 pr-11.5 max-lg:pr-0"
 									>
 										Status
 									</div>
 								</div>
 								<div
-									class="grid grid-cols-[minmax(100px,220px)_minmax(100px,337px)_minmax(100px,205px)_minmax(100px,254px)] border-b border-gray-400 py-[15px] gap-4"
+									class="grid grid-cols-[minmax(100px,220px)_minmax(100px,337px)_minmax(100px,205px)_minmax(100px,254px)] border-b border-gray-400 py-[15px] gap-4 max-sm:grid-cols-1 max-sm:gap-0 max-sm:-mx-5 max-sm:pb-0 max-sm:border-b-0"
 								>
-									<div class="flex items-center text-sm text-dark-800">TXT</div>
-									<div class="flex items-center text-sm text-dark-800 gap-3">
-										<span class="truncate max-w-[177px]">your-domain.com</span>
-										<button
-											type="button"
-											class="cursor-pointer text-dark-800/70"
+									<div
+										class="flex items-center justify-between text-sm text-dark-800 max-sm:bg-gray-150 max-sm:p-5 border-gray-400 max-sm:border-t"
+									>
+										<span
+											class="hidden max-sm:block text-gray-900 flex-shrink-0"
+											>Type</span
 										>
-											<svg class="icon icon-sm">
-												<use href="#icon-copy" />
-											</svg>
-											<span class="sr-only">Copy</span>
-										</button>
+										<span class="uppercase">TXT</span>
 									</div>
 									<div
-										class="flex items-center justify-between text-sm text-dark-800"
+										class="flex items-center justify-between text-sm text-dark-800 max-sm:p-5 border-gray-400 max-sm:border-t"
 									>
-										<span class="truncate max-w-[177px]">
-											v=spf1 include:sparkpostmail.com
-										</span>
-										<button
-											type="button"
-											class="cursor-pointer text-dark-800/70"
+										<span
+											class="hidden max-sm:block text-gray-900 flex-shrink-0"
+											>Name</span
 										>
-											<svg class="icon icon-sm">
-												<use href="#icon-copy" />
-											</svg>
-											<span class="sr-only">Copy</span>
-										</button>
-									</div>
-									<div
-										class="flex items-center justify-end gap-2 text-sm text-dark-800 pr-11.5"
-									>
-										<div class="w-[90px] flex justify-center">
-											<span class="tag-filled bg-green-20 font-sans">
-												Valid
-											</span>
-										</div>
-										<div class="flex justify-center w-10">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 20 20"
-												fill="none"
-												xmlns="http://www.w3.org/2000/svg"
+										<div class="flex items-center gap-3 truncate">
+											<span class="truncate max-w-[177px] max-sm:max-w-[116px]"
+												>your-domain.com</span
 											>
-												<g clip-path="url(#clip0_12632_12375)">
-													<path
-														fill-rule="evenodd"
-														clip-rule="evenodd"
-														d="M0 10C0 7.34784 1.05357 4.8043 2.92893 2.92893C4.8043 1.05357 7.34784 0 10 0C12.6522 0 15.1957 1.05357 17.0711 2.92893C18.9464 4.8043 20 7.34784 20 10C20 12.6522 18.9464 15.1957 17.0711 17.0711C15.1957 18.9464 12.6522 20 10 20C7.34784 20 4.8043 18.9464 2.92893 17.0711C1.05357 15.1957 0 12.6522 0 10ZM9.42933 14.28L15.1867 7.08267L14.1467 6.25067L9.23733 12.3853L5.76 9.488L4.90667 10.512L9.42933 14.28Z"
-														fill="#429D17"
-													/>
-												</g>
-												<defs>
-													<clipPath id="clip0_12632_12375">
-														<rect width="20" height="20" fill="white" />
-													</clipPath>
-												</defs>
-											</svg>
+											<button
+												type="button"
+												class="cursor-pointer text-dark-800/70"
+											>
+												<svg class="icon icon-sm">
+													<use href="#icon-copy" />
+												</svg>
+												<span class="sr-only">Copy</span>
+											</button>
+										</div>
+									</div>
+									<div
+										class="flex items-center justify-between text-sm text-dark-800 max-sm:p-5 border-gray-400 max-sm:border-t"
+									>
+										<span
+											class="hidden max-sm:block text-gray-900 flex-shrink-0"
+											>Value</span
+										>
+										<div class="flex items-center gap-3 truncate">
+											<span class="truncate max-w-[177px] max-sm:max-w-[116px]">
+												v=spf1 include:sparkpostmail.com
+											</span>
+											<button
+												type="button"
+												class="cursor-pointer text-dark-800/70"
+											>
+												<svg class="icon icon-sm">
+													<use href="#icon-copy" />
+												</svg>
+												<span class="sr-only">Copy</span>
+											</button>
+										</div>
+									</div>
+									<div
+										class="flex items-center justify-end text-sm text-dark-800 pr-11.5 max-lg:pr-0 max-sm:p-5 border-gray-400 max-sm:border-t max-sm:justify-between"
+									>
+										<span
+											class="hidden max-sm:block text-gray-900 flex-shrink-0"
+										>
+											Status
+										</span>
+										<div class="flex items-center gap-2 justify-end">
+											<div
+												class="w-[90px] flex justify-center max-sm:justify-end"
+											>
+												<span class="tag-filled bg-green-20 font-sans">
+													Valid
+												</span>
+											</div>
+											<div class="flex justify-center w-10 max-sm:hidden">
+												<svg
+													width="20"
+													height="20"
+													viewBox="0 0 20 20"
+													fill="none"
+													xmlns="http://www.w3.org/2000/svg"
+												>
+													<g clip-path="url(#clip0_12632_12375)">
+														<path
+															fill-rule="evenodd"
+															clip-rule="evenodd"
+															d="M0 10C0 7.34784 1.05357 4.8043 2.92893 2.92893C4.8043 1.05357 7.34784 0 10 0C12.6522 0 15.1957 1.05357 17.0711 2.92893C18.9464 4.8043 20 7.34784 20 10C20 12.6522 18.9464 15.1957 17.0711 17.0711C15.1957 18.9464 12.6522 20 10 20C7.34784 20 4.8043 18.9464 2.92893 17.0711C1.05357 15.1957 0 12.6522 0 10ZM9.42933 14.28L15.1867 7.08267L14.1467 6.25067L9.23733 12.3853L5.76 9.488L4.90667 10.512L9.42933 14.28Z"
+															fill="#429D17"
+														/>
+													</g>
+													<defs>
+														<clipPath id="clip0_12632_12375">
+															<rect width="20" height="20" fill="white" />
+														</clipPath>
+													</defs>
+												</svg>
+											</div>
 										</div>
 									</div>
 								</div>
 								<div
-									class="grid grid-cols-[minmax(100px,220px)_minmax(100px,337px)_minmax(100px,205px)_minmax(100px,254px)] border-b border-gray-400 py-[15px] gap-4"
+									class="grid grid-cols-[minmax(100px,220px)_minmax(100px,337px)_minmax(100px,205px)_minmax(100px,254px)] border-b border-gray-400 py-[15px] gap-4 max-sm:grid-cols-1 max-sm:gap-0 max-sm:-mx-5 max-sm:pb-0 max-sm:border-b-0"
 								>
-									<div class="flex items-center text-sm text-dark-800">TXT</div>
-									<div class="flex items-center text-sm text-dark-800 gap-3">
-										<span class="truncate max-w-[177px]">
-											scph123._domainkey.your-domain.com
-										</span>
-										<button
-											type="button"
-											class="cursor-pointer text-dark-800/70"
+									<div
+										class="flex items-center justify-between text-sm text-dark-800 max-sm:bg-gray-150 max-sm:p-5 border-gray-400 max-sm:border-t"
+									>
+										<span
+											class="hidden max-sm:block text-gray-900 flex-shrink-0"
+											>Type</span
 										>
-											<svg class="icon icon-sm">
-												<use href="#icon-copy" />
-											</svg>
-											<span class="sr-only">Copy</span>
-										</button>
+										<span class="uppercase">TXT</span>
 									</div>
 									<div
-										class="flex items-center justify-between text-sm text-dark-800"
+										class="flex items-center justify-between text-sm text-dark-800 max-sm:p-5 border-gray-400 max-sm:border-t"
 									>
-										<span class="truncate max-w-[177px]">
-											v=Dkim1; k=rsa; h=sha256; p=MIGhNB0FC
-										</span>
-										<button
-											type="button"
-											class="cursor-pointer text-dark-800/70"
+										<span
+											class="hidden max-sm:block text-gray-900 flex-shrink-0"
+											>Name</span
 										>
-											<svg class="icon icon-sm">
-												<use href="#icon-copy" />
-											</svg>
-											<span class="sr-only">Copy</span>
-										</button>
-									</div>
-									<div
-										class="flex items-center justify-end gap-2 text-sm text-dark-800 pr-11.5"
-									>
-										<div class="w-[90px] flex justify-center">
-											<span
-												class="tag-filled bg-orange-500/15 text-orange-500 font-sans"
-											>
-												Unverified
+										<div class="flex items-center gap-3 truncate">
+											<span class="truncate max-w-[177px] max-sm:max-w-[116px]">
+												scph123._domainkey.your-domain.com
 											</span>
-										</div>
-										<div class="flex justify-center w-10">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 20 20"
-												fill="none"
-												xmlns="http://www.w3.org/2000/svg"
+											<button
+												type="button"
+												class="cursor-pointer text-dark-800/70"
 											>
-												<g clip-path="url(#clip0_12632_12341)">
-													<path
-														d="M10 0C4.42857 0 0 4.42857 0 10C0 15.5714 4.42857 20 10 20C15.5714 20 20 15.5714 20 10C20 4.42857 15.5714 0 10 0ZM13.8571 15L10 11.1429L6.14286 15L5 13.8571L8.85714 10L5 6.14286L6.14286 5L10 8.85714L13.8571 5L15 6.14286L11.1429 10L15 13.8571L13.8571 15Z"
-														fill="#E61320"
-													/>
-												</g>
-												<defs>
-													<clipPath id="clip0_12632_12341">
-														<rect width="20" height="20" fill="white" />
-													</clipPath>
-												</defs>
-											</svg>
+												<svg class="icon icon-sm">
+													<use href="#icon-copy" />
+												</svg>
+												<span class="sr-only">Copy</span>
+											</button>
+										</div>
+									</div>
+									<div
+										class="flex items-center justify-between text-sm text-dark-800 max-sm:p-5 border-gray-400 max-sm:border-t"
+									>
+										<span
+											class="hidden max-sm:block text-gray-900 flex-shrink-0"
+											>Value</span
+										>
+										<div class="flex items-center gap-3 truncate">
+											<span class="truncate max-w-[177px] max-sm:max-w-[116px]">
+												v=Dkim1; k=rsa; h=sha256; p=MIGhNB0FC
+											</span>
+											<button
+												type="button"
+												class="cursor-pointer text-dark-800/70"
+											>
+												<svg class="icon icon-sm">
+													<use href="#icon-copy" />
+												</svg>
+												<span class="sr-only">Copy</span>
+											</button>
+										</div>
+									</div>
+									<div
+										class="flex items-center justify-end text-sm text-dark-800 pr-11.5 max-lg:pr-0 max-sm:p-5 border-gray-400 max-sm:border-t max-sm:justify-between"
+									>
+										<span
+											class="hidden max-sm:block text-gray-900 flex-shrink-0"
+										>
+											Status
+										</span>
+										<div class="flex items-center gap-2 justify-end">
+											<div
+												class="w-[90px] flex justify-center max-sm:justify-end"
+											>
+												<span
+													class="tag-filled bg-orange-500/15 text-orange-500 font-sans"
+												>
+													Unverified
+												</span>
+											</div>
+											<div class="flex justify-center w-10 max-sm:hidden">
+												<svg
+													width="20"
+													height="20"
+													viewBox="0 0 20 20"
+													fill="none"
+													xmlns="http://www.w3.org/2000/svg"
+												>
+													<g clip-path="url(#clip0_12632_12341)">
+														<path
+															d="M10 0C4.42857 0 0 4.42857 0 10C0 15.5714 4.42857 20 10 20C15.5714 20 20 15.5714 20 10C20 4.42857 15.5714 0 10 0ZM13.8571 15L10 11.1429L6.14286 15L5 13.8571L8.85714 10L5 6.14286L6.14286 5L10 8.85714L13.8571 5L15 6.14286L11.1429 10L15 13.8571L13.8571 15Z"
+															fill="#E61320"
+														/>
+													</g>
+													<defs>
+														<clipPath id="clip0_12632_12341">
+															<rect width="20" height="20" fill="white" />
+														</clipPath>
+													</defs>
+												</svg>
+											</div>
 										</div>
 									</div>
 								</div>
 								<div
-									class="grid grid-cols-[minmax(100px,220px)_minmax(100px,337px)_minmax(100px,205px)_minmax(100px,254px)] border-b border-gray-400 py-[15px] gap-4"
+									class="grid grid-cols-[minmax(100px,220px)_minmax(100px,337px)_minmax(100px,205px)_minmax(100px,254px)] border-b border-gray-400 py-[15px] gap-4 max-sm:grid-cols-1 max-sm:gap-0 max-sm:-mx-5 max-sm:pb-0 max-sm:border-b-0"
 								>
-									<div class="flex items-center text-sm text-dark-800">TXT</div>
-									<div class="flex items-center text-sm text-dark-800 gap-3">
-										<span class="truncate max-w-[177px]">
-											scph123._domainkey.your-domain.com
-										</span>
-										<button
-											type="button"
-											class="cursor-pointer text-dark-800/70"
+									<div
+										class="flex items-center justify-between text-sm text-dark-800 max-sm:bg-gray-150 max-sm:p-5 border-gray-400 max-sm:border-t"
+									>
+										<span
+											class="hidden max-sm:block text-gray-900 flex-shrink-0"
+											>Type</span
 										>
-											<svg class="icon icon-sm">
-												<use href="#icon-copy" />
-											</svg>
-											<span class="sr-only">Copy</span>
-										</button>
+										<span class="uppercase">TXT</span>
 									</div>
 									<div
-										class="flex items-center justify-between text-sm text-dark-800"
+										class="flex items-center justify-between text-sm text-dark-800 max-sm:p-5 border-gray-400 max-sm:border-t"
 									>
-										<span class="truncate max-w-[177px]">
-											sparkpostmail.com
-										</span>
-										<button
-											type="button"
-											class="cursor-pointer text-dark-800/70"
+										<span
+											class="hidden max-sm:block text-gray-900 flex-shrink-0"
+											>Name</span
 										>
-											<svg class="icon icon-sm">
-												<use href="#icon-copy" />
-											</svg>
-											<span class="sr-only">Copy</span>
-										</button>
-									</div>
-									<div
-										class="flex items-center justify-end gap-2 text-sm text-dark-800 pr-11.5"
-									>
-										<div class="w-[90px] flex justify-center">
-											<span
-												class="tag-filled bg-orange-500/15 text-orange-500 font-sans"
-											>
-												Unverified
+										<div class="flex items-center gap-3 truncate">
+											<span class="truncate max-w-[177px] max-sm:max-w-[116px]">
+												scph123._domainkey.your-domain.com
 											</span>
-										</div>
-										<div class="flex justify-center w-10">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 20 20"
-												fill="none"
-												xmlns="http://www.w3.org/2000/svg"
+											<button
+												type="button"
+												class="cursor-pointer text-dark-800/70"
 											>
-												<g clip-path="url(#clip0_12632_12341)">
-													<path
-														d="M10 0C4.42857 0 0 4.42857 0 10C0 15.5714 4.42857 20 10 20C15.5714 20 20 15.5714 20 10C20 4.42857 15.5714 0 10 0ZM13.8571 15L10 11.1429L6.14286 15L5 13.8571L8.85714 10L5 6.14286L6.14286 5L10 8.85714L13.8571 5L15 6.14286L11.1429 10L15 13.8571L13.8571 15Z"
-														fill="#E61320"
-													/>
-												</g>
-												<defs>
-													<clipPath id="clip0_12632_12341">
-														<rect width="20" height="20" fill="white" />
-													</clipPath>
-												</defs>
-											</svg>
+												<svg class="icon icon-sm">
+													<use href="#icon-copy" />
+												</svg>
+												<span class="sr-only">Copy</span>
+											</button>
+										</div>
+									</div>
+									<div
+										class="flex items-center justify-between text-sm text-dark-800 max-sm:p-5 border-gray-400 max-sm:border-t"
+									>
+										<span
+											class="hidden max-sm:block text-gray-900 flex-shrink-0"
+											>Value</span
+										>
+										<div class="flex items-center gap-3 truncate">
+											<span class="truncate max-w-[177px] max-sm:max-w-[116px]">
+												v=Dkim1; k=rsa; h=sha256; p=MIGhNB0FC
+											</span>
+											<button
+												type="button"
+												class="cursor-pointer text-dark-800/70"
+											>
+												<svg class="icon icon-sm">
+													<use href="#icon-copy" />
+												</svg>
+												<span class="sr-only">Copy</span>
+											</button>
+										</div>
+									</div>
+									<div
+										class="flex items-center justify-end text-sm text-dark-800 pr-11.5 max-lg:pr-0 max-sm:p-5 border-gray-400 max-sm:border-t max-sm:justify-between"
+									>
+										<span
+											class="hidden max-sm:block text-gray-900 flex-shrink-0"
+										>
+											Status
+										</span>
+										<div class="flex items-center gap-2 justify-end">
+											<div
+												class="w-[90px] flex justify-center max-sm:justify-end"
+											>
+												<span
+													class="tag-filled bg-orange-500/15 text-orange-500 font-sans"
+												>
+													Unverified
+												</span>
+											</div>
+											<div class="flex justify-center w-10 max-sm:hidden">
+												<svg
+													width="20"
+													height="20"
+													viewBox="0 0 20 20"
+													fill="none"
+													xmlns="http://www.w3.org/2000/svg"
+												>
+													<g clip-path="url(#clip0_12632_12341)">
+														<path
+															d="M10 0C4.42857 0 0 4.42857 0 10C0 15.5714 4.42857 20 10 20C15.5714 20 20 15.5714 20 10C20 4.42857 15.5714 0 10 0ZM13.8571 15L10 11.1429L6.14286 15L5 13.8571L8.85714 10L5 6.14286L6.14286 5L10 8.85714L13.8571 5L15 6.14286L11.1429 10L15 13.8571L13.8571 15Z"
+															fill="#E61320"
+														/>
+													</g>
+													<defs>
+														<clipPath id="clip0_12632_12341">
+															<rect width="20" height="20" fill="white" />
+														</clipPath>
+													</defs>
+												</svg>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="flex gap-2.5 flex-shrink-0 mt-7.5">
-								<button type="button" class="btn btn-primary-default px-5 h-10">
+							<div class="flex gap-2.5 flex-shrink-0 mt-7.5 max-xs:mt-3">
+								<button
+									type="button"
+									class="btn btn-primary-default px-5 h-10 max-xs:min-w-[7.3125rem] max-xs:flex-shrink-0"
+								>
 									Refresh
 								</button>
-								<button type="button" class="btn btn-danger px-5 h-10">
+								<button
+									type="button"
+									class="btn btn-danger px-5 h-10 max-xs:flex-grow-1"
+								>
 									Remove Domain
 								</button>
 							</div>
