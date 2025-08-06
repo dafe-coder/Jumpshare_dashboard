@@ -1874,6 +1874,9 @@
   .pt-5 {
     padding-top: calc(var(--spacing) * 5);
   }
+  .pt-5\.5 {
+    padding-top: var(--spacing-5_5);
+  }
   .pt-6 {
     padding-top: calc(var(--spacing) * 6);
   }
@@ -3809,11 +3812,6 @@
       background-color: #5839F3;
     }
   }
-  .\[\&\.space-icon-active\]\:bg-\[\#5839F3\]\/10 {
-    &.space-icon-active {
-      background-color: color-mix(in oklab, #5839F3 10%, transparent);
-    }
-  }
   .\[\&\.space-icon-active\]\:text-white {
     &.space-icon-active {
       color: var(--color-white);
@@ -3832,21 +3830,6 @@
   .\[\.active_\&\]\:w-screen {
     .active & {
       width: 100vw;
-    }
-  }
-  .\[\.active_\&\]\:border-\[\#5839F3\] {
-    .active & {
-      border-color: #5839F3;
-    }
-  }
-  .\[\.active_\&\]\:border-current {
-    .active & {
-      border-color: currentcolor;
-    }
-  }
-  .\[\.active_\&\]\:bg-\[\#5839F3\] {
-    .active & {
-      background-color: #5839F3;
     }
   }
   .\[\.active_\&\]\:bg-gray-150 {
@@ -5111,6 +5094,16 @@
     border-radius: 8px;
     &:hover {
       background-color: var(--color-gray-200);
+    }
+  }
+  .btn-transparent-default {
+    background-color: transparent;
+    transition: all ease 0.2s;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    &:hover {
+      border: 1px solid var(--color-gray-600);
+      background-color: var(--color-white);
     }
   }
   .btn-gray-default {
