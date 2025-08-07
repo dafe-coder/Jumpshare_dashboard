@@ -155,6 +155,223 @@
 				</div>
 			</div>
 		</div>
+
+		<div id="lightbox" class="hidden">
+			<div class="modal" id="modal">
+				<div class="modal-dialog modal-bs modal-create-space hidden">
+					<button
+						type="button"
+						class="close pull-right"
+						data-dismiss="modal"
+						data-dialog-close
+					>
+						<span class="icn-close"></span>
+						<span class="sr-only">Close modal</span>
+					</button>
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="text-lg font-semibold">Create a Space</h4>
+							<p class="text-sm text-gray-900 mt-1">
+								A Space represents teams, departments, or groups.
+							</p>
+						</div>
+						<div class="modal-body">
+							<div class="modal-body-content">
+								<div class="flex flex-col">
+									<strong class="text-sm font-medium">Icon &amp; Name</strong>
+									<div
+										class="grid grid-cols-[2.25rem_1fr] gap-2.5 items-center mt-4"
+									>
+										<div class="dropdown-wrapper">
+											<div
+												class="group dropdown-button flex items-center justify-center size-9 border border-gray-600 rounded-lg font-semibold text-sm text-dark-800/60 cursor-pointer [&.space-icon-active]:border-[#5839F3] [&.space-icon-active]:bg-[#5839F3] [&.space-icon-active]:text-white"
+												data-id="emoji-color-menu"
+												id="space-icon"
+											>
+												<span
+													class="group-hover:hidden [.active_&]:hidden uppercase"
+													>S</span
+												>
+												<svg
+													class="icon icon-sm hidden group-hover:block [.active_&]:block"
+												>
+													<use href="#icon-pencil"></use>
+												</svg>
+											</div>
+											<div
+												class="js-dropdown w-[17.7rem] active dropdown-fixed"
+												data-dropdown-id="emoji-color-menu"
+												data-sheet-modal
+												data-overflow-visible
+											>
+												<div class="js-dropdown-overlay"></div>
+												<div class="js-dropdown-body">
+													<div class="js-dropdown-trigger"></div>
+													<div class="js-dropdown-content px-4 pt-3 pb-0">
+														<div
+															class="flex items-center gap-5 w-full border-b border-gray-600 pb-3"
+														>
+															<span
+																class="relative text-sm text-gray-900 [&.active]:text-blue-500 [&.active]:font-medium cursor-pointer after:content-[''] after:absolute after:-bottom-[13.5px] after:left-0 after:h-0.5 after:bg-blue-500 after:w-0 [&.active]:after:w-full after:rounded-xs hover:text-blue-500"
+																>Emoji</span
+															>
+															<span
+																class="active relative text-sm text-gray-900 [&.active]:text-blue-500 [&.active]:font-medium cursor-pointer after:content-[''] after:absolute after:-bottom-[13.5px] after:left-0 after:h-0.5 after:bg-blue-500 after:w-0 [&.active]:after:w-full after:rounded-xs hover:text-blue-500"
+																>Colors</span
+															>
+														</div>
+														<ul id="pick-color-icons" class="colors-list mt-6">
+															<li class="group text-[#5839F3] active"></li>
+															<li class="group text-[#1E66F0]"></li>
+															<li class="group text-[#FF4B8B]"></li>
+															<li class="group text-[#F339F0]"></li>
+															<li class="group text-[#26A7FC]"></li>
+															<li class="group text-[#7CC91D]"></li>
+															<li class="group text-[#2F9F95]"></li>
+															<li class="group text-[#E56814]"></li>
+															<li class="group text-[#9A7B6E]"></li>
+															<li class="group text-[#AD7322]"></li>
+															<li class="group text-[#0A0A0B]"></li>
+															<li class="group">
+																<svg class="icon icon-s">
+																	<use href="#icon-plus"></use>
+																</svg>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+										<input
+											type="text"
+											class="form-control-settings h-11"
+											placeholder="e.g. Marketing Space"
+											id="space-name"
+										/>
+									</div>
+								</div>
+								<div class="flex flex-col mt-6">
+									<strong class="text-sm font-medium">Members</strong>
+									<p class="text-sm text-gray-900 mt-1">
+										Members can invite others and manage Space settings.
+									</p>
+									<div class="grid grid-cols-1 gap-2.5 items-center mt-4">
+										<input
+											type="text"
+											class="form-control-settings h-11"
+											placeholder="Add members"
+										/>
+									</div>
+								</div>
+								<div
+									class="privacy-settings-wrapper dropdown-wrapper active mt-6"
+								>
+									<strong class="text-sm font-medium">Privacy</strong>
+									<div
+										data-id="privacy-settings-menu"
+										class="privacy-settings-item dropdown-button mt-3 border border-gray-600 rounded-lg bg-white"
+									>
+										<svg class="icon icon-md">
+											<use href="#icon-team"></use>
+										</svg>
+										<div class="privacy-settings-item__info gap-0">
+											<div class="privacy-settings-item__title">Open Space</div>
+											<div class="privacy-settings-item__description">
+												Anyone at Startup Co can join this space
+											</div>
+										</div>
+										<svg class="icon icon-sm ml-auto">
+											<use href="#icon-chevron-down"></use>
+										</svg>
+									</div>
+									<div
+										class="js-dropdown w-[490px] hidden"
+										data-dropdown-id="privacy-settings-menu"
+										data-sheet-modal
+										data-overflow-visible
+									>
+										<div class="js-dropdown-overlay"></div>
+										<div class="js-dropdown-body">
+											<div class="js-dropdown-trigger"></div>
+											<div class="js-dropdown-content">
+												<div class="privacy-settings-menu__item">
+													<svg class="icon icon-md">
+														<use href="#icon-team"></use>
+													</svg>
+													<div class="flex flex-col gap-1">
+														<div class="font-medium text-dark-800 text-sm">
+															Open Space
+														</div>
+														<div class="text-xs text-dark-800/70">
+															Anyone at Startup Co can join this space
+														</div>
+													</div>
+												</div>
+												<div class="privacy-settings-menu__item">
+													<svg class="icon icon-md">
+														<use href="#icon-lock"></use>
+													</svg>
+													<div class="flex flex-col gap-1">
+														<div
+															class="font-medium text-dark-800 text-sm flex items-center"
+														>
+															Closed Space
+														</div>
+														<div class="text-xs text-dark-800/70">
+															Only people invited can join
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<div class="flex items-center justify-end gap-3">
+								<button type="button" class="btn btn-border-default">
+									Cancel
+								</button>
+								<button type="button" class="btn btn-primary-default" disabled>
+									Create Space
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-dialog modal-bs modal-delete-space hidden">
+					<button
+						type="button"
+						class="close pull-right"
+						data-dismiss="modal"
+						data-dialog-close
+					>
+						<span class="icn-close"></span>
+						<span class="sr-only">Close modal</span>
+					</button>
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="text-lg font-semibold">Permanently delete?</h4>
+							<p class="text-sm text-gray-900 mt-1">
+								Are you sure you want to archive this space? All of this space’s
+								members will be notified.
+							</p>
+						</div>
+						<div class="modal-footer">
+							<div class="flex items-center justify-end gap-3">
+								<button type="button" class="btn btn-border-default">
+									Cancel
+								</button>
+								<button type="button" class="btn btn-danger">Delete</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-backdrop"></div>
+		</div>
+
 		<div class="w-full min-h-screen">
 			<aside
 				class="w-60 fixed left-0 top-0 bottom-0 flex flex-col h-[calc(100vh-var(--browser-ui-height,0px))] z-101 max-lg:-left-full max-lg:top-0 max-lg:w-full! transition-all duration-500 ease-in-out [&.active]:left-0"
@@ -387,7 +604,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="./inbox.html" class="aside-nav-item active">
+									<a href="./inbox.html" class="aside-nav-item">
 										<svg class="icon icon-md">
 											<use href="#icon-inbox-medium"></use>
 										</svg>
@@ -435,7 +652,7 @@
 							</div>
 							<ul class="flex flex-col">
 								<li
-									class="group aside-nav-item"
+									class="group aside-nav-item active"
 									onclick='window.location.href="./browse-spaces.html"'
 								>
 									<svg class="icon icon-md">
@@ -1311,7 +1528,7 @@
 					</div>
 				</header>
 				<div
-					class="subheader-nav transition-all pt-7.5 pb-6 sticky top-[63px] z-50 bg-white max-md:pt-5 duration-300 after:content-[&quot;&quot;] after:absolute after:bottom-1/2 after:left-0 after:right-0 after:w-full after:h-full after:bg-white after:-z-2"
+					class="subheader-nav transition-all pt-7.5 pb-9 sticky top-[63px] z-50 bg-white max-md:pt-5 duration-300 after:content-[&quot;&quot;] after:absolute after:bottom-1/2 after:left-0 after:right-0 after:w-full after:h-full after:bg-white after:-z-2"
 				>
 					<div class="dashboard-container">
 						<div class="flex justify-between items-center">
@@ -1319,32 +1536,43 @@
 								id="title-library"
 								class="text-2xl font-semibold text-dark-800 tracking-normal flex-shrink-0 font-sans-semi"
 							>
-								Inbox
+								Browse Spaces
 							</h2>
-							<div>
-								<button type="button" class="btn btn-primary-default gap-1.5">
+							<div class="dropdown-wrapper">
+								<button
+									type="button"
+									class="btn btn-primary-default gap-1.5"
+									data-dialog-open-id="create-space"
+								>
 									<svg class="icon icon-sm">
 										<use href="#icon-plus"></use>
 									</svg>
-									<span>Create New Inbox</span>
+									<span>New Space</span>
 								</button>
 							</div>
 						</div>
 						<div class="border-b border-gray-400 pb-3.5 mt-7">
 							<ul class="flex items-center gap-x-8.5">
 								<li
-									data-tab-id="active-inboxes"
-									class="active text-sm text-dark-800/60 font-medium cursor-pointer relative before:content-[&quot;&quot;] before:absolute before:-bottom-[15px] before:left-0 before:h-0.5 before:bg-blue-900 before:w-[90%] before:scale-x-0 before:transition-all before:duration-300 before:ease-in-out before:origin-left [&.active]:before:scale-x-100 after:content-[attr(data-text)] after:absolute after:inset-0 after:font-semibold after:opacity-0 after:transition-opacity after:duration-300 [&.active]:after:opacity-100 [&.active]:text-blue-900 text-nowrap after:text-blue-800! [&.active]:text-transparent transition-all duration-300"
-									data-text="Active Inboxes"
+									data-tab-id="open-spaces"
+									class="active text-sm text-dark-800/60 font-medium cursor-pointer relative before:content-[&quot;&quot;] before:absolute before:-bottom-[15px] before:left-0 before:h-0.5 before:bg-blue-900 before:w-[90%] before:scale-x-0 before:transition-all before:duration-300 before:ease-in-out before:origin-left [&.active]:before:scale-x-100 after:content-[attr(data-text)] after:absolute after:inset-0 after:font-semibold after:opacity-0 after:transition-opacity after:duration-300 [&.active]:after:opacity-100 text-nowrap after:text-blue-800! [&.active]:text-transparent transition-all duration-300"
+									data-text="Open"
 								>
-									Active Inboxes
+									Open
 								</li>
 								<li
-									data-tab-id="closed-inboxes"
-									class="text-sm text-dark-800/60 font-medium cursor-pointer relative before:content-[&quot;&quot;] before:absolute before:-bottom-[15px] before:left-0 before:h-0.5 before:bg-blue-900 before:w-[90%] before:scale-x-0 before:transition-all before:duration-300 before:ease-in-out before:origin-left [&.active]:before:scale-x-100 after:content-[attr(data-text)] after:absolute after:inset-0 after:font-semibold after:opacity-0 after:transition-opacity after:duration-300 [&.active]:after:opacity-100 [&.active]:text-blue-900 text-nowrap after:text-blue-800! [&.active]:text-transparent transition-all duration-300"
-									data-text="Closed Inboxes"
+									data-tab-id="closed-spaces"
+									class="text-sm text-dark-800/60 font-medium cursor-pointer relative before:content-[&quot;&quot;] before:absolute before:-bottom-[15px] before:left-0 before:h-0.5 before:bg-blue-900 before:w-[90%] before:scale-x-0 before:transition-all before:duration-300 before:ease-in-out before:origin-left [&.active]:before:scale-x-100 after:content-[attr(data-text)] after:absolute after:inset-0 after:font-semibold after:opacity-0 after:transition-opacity after:duration-300 [&.active]:after:opacity-100 text-nowrap after:text-blue-800! [&.active]:text-transparent transition-all duration-300"
+									data-text="Closed"
 								>
-									Closed Inboxes
+									Closed
+								</li>
+								<li
+									data-tab-id="archive-spaces"
+									class="text-sm text-dark-800/60 font-medium cursor-pointer relative before:content-[&quot;&quot;] before:absolute before:-bottom-[15px] before:left-0 before:h-0.5 before:bg-blue-900 before:w-[90%] before:scale-x-0 before:transition-all before:duration-300 before:ease-in-out before:origin-left [&.active]:before:scale-x-100 after:content-[attr(data-text)] after:absolute after:inset-0 after:font-semibold after:opacity-0 after:transition-opacity after:duration-300 [&.active]:after:opacity-100 text-nowrap after:text-blue-800! [&.active]:text-transparent transition-all duration-300"
+									data-text="Archive"
+								>
+									Archive
 								</li>
 							</ul>
 						</div>
@@ -1352,38 +1580,41 @@
 				</div>
 				<div class="dashboard-container pb-5">
 					<div
-						data-tab-content-id="active-inboxes"
+						data-tab-content-id="open-spaces"
 						class="active hidden [&.active]:block"
 					>
 						<div
-							class="grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 pb-2.5 pt-2 max-md:hidden gap-4"
+							class="grid grid-cols-[minmax(250px,1fr)_minmax(120px,220px)_minmax(90px,196px)_minmax(160px,275px)] border-b border-gray-400 pb-2.5 pt-2 max-md:hidden gap-4"
 						>
-							<div class="text-sm text-dark-800/60">Name</div>
-							<div class="text-sm text-dark-800/60">Created By</div>
-							<div class="text-sm text-dark-800/60">Location</div>
+							<div class="text-sm text-dark-800/60 pl-2.5">Name</div>
+							<div class="text-sm text-dark-800/60">Members</div>
+							<div class="text-sm text-dark-800/60">Files</div>
+							<div class="text-sm text-dark-800/60">Team Role</div>
 						</div>
 						<div class="flex flex-col">
 							<div
-								class="grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4"
+								class="grid grid-cols-[minmax(250px,1fr)_minmax(120px,220px)_minmax(90px,196px)_minmax(160px,275px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4 hover:bg-gray-150"
 							>
-								<div class="flex flex-col gap-1.5 pl-5 max-md:pl-4">
-									<p class="text-sm text-dark-800 font-medium">Testing UI</p>
-									<span class="text-xs text-dark-800/70">1 Submissions</span>
+								<div class="flex items-center gap-2 pl-2.5">
+									<span
+										class="flex items-center justify-center rounded-md bg-blue-500 size-6 text-white text-xs font-semibold uppercase flex-shrink-0"
+									>
+										<svg class="icon icon-s">
+											<use href="#icon-members-medium"></use>
+										</svg>
+									</span>
+									<span class="text-sm font-medium"> Team Space </span>
 								</div>
-								<div class="flex items-center gap-2.5 max-md:hidden">
-									<img
-										class="size-[22px] rounded-full object-cover"
-										src="./assets/images/avatar.png"
-										alt="Avatar"
-									/>
-									<p class="text-sm text-dark-800">John Doe</p>
+								<div class="flex items-center">
+									<span class="text-sm">12 members</span>
+								</div>
+								<div class="flex items-center">
+									<span class="text-sm">1 File</span>
 								</div>
 								<div
-									class="flex items-center justify-between max-md:justify-end pr-10 max-md:pr-4"
+									class="flex items-center justify-between max-md:justify-end pr-4"
 								>
-									<p class="text-sm text-dark-800 max-md:hidden">
-										Personal Library
-									</p>
+									<p class="text-sm max-md:hidden">Member</p>
 									<div class="dropdown-wrapper">
 										<button
 											type="button"
@@ -1407,23 +1638,11 @@
 												</div>
 												<div class="js-dropdown-content">
 													<ul>
-														<li class="js-dropdown-list-item">
-															<svg class="icon icon-md">
-																<use href="#icon-share"></use>
-															</svg>
-															<span>Share Inbox</span>
-														</li>
-														<li class="js-dropdown-list-item">
-															<svg class="icon icon-md">
-																<use href="#icon-crossed-eye"></use>
-															</svg>
-															<span>Close</span>
-														</li>
-														<li class="js-dropdown-list-item">
-															<svg class="icon icon-md">
-																<use href="#icon-trash"></use>
-															</svg>
-															<span>Delete</span>
+														<li
+															class="js-dropdown-list-item"
+															data-dialog-open-id="delete-space"
+														>
+															<span>Delete Space</span>
 														</li>
 													</ul>
 												</div>
@@ -1433,28 +1652,26 @@
 								</div>
 							</div>
 							<div
-								class="grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4"
+								class="grid grid-cols-[minmax(250px,1fr)_minmax(120px,220px)_minmax(90px,196px)_minmax(160px,275px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4 hover:bg-gray-150"
 							>
-								<div class="flex flex-col gap-1.5 pl-5 max-md:pl-4">
-									<p class="text-sm text-dark-800 font-medium">
-										Team Presentations
-									</p>
-									<span class="text-xs text-dark-800/70">4 Submissions</span>
+								<div class="flex items-center gap-2 pl-2.5">
+									<span
+										class="flex items-center justify-center rounded-md bg-[#5839F3] size-6 text-white text-xs font-semibold uppercase flex-shrink-0"
+									>
+										H
+									</span>
+									<span class="text-sm font-medium"> HR Docs </span>
 								</div>
-								<div class="flex items-center gap-2.5 max-md:hidden">
-									<img
-										class="size-[22px] rounded-full object-cover"
-										src="./assets/images/avatar-2.png"
-										alt="Avatar"
-									/>
-									<p class="text-sm text-dark-800">Ashley</p>
+								<div class="flex items-center">
+									<span class="text-sm">4 members</span>
+								</div>
+								<div class="flex items-center">
+									<span class="text-sm">51 Files</span>
 								</div>
 								<div
-									class="flex items-center justify-between max-md:justify-end pr-10 max-md:pr-4"
+									class="flex items-center justify-between max-md:justify-end pr-4"
 								>
-									<p class="text-sm text-dark-800 max-md:hidden">
-										Team Library
-									</p>
+									<p class="text-sm max-md:hidden">Admin</p>
 									<div class="dropdown-wrapper">
 										<button
 											type="button"
@@ -1478,23 +1695,11 @@
 												</div>
 												<div class="js-dropdown-content">
 													<ul>
-														<li class="js-dropdown-list-item">
-															<svg class="icon icon-md">
-																<use href="#icon-share"></use>
-															</svg>
-															<span>Share Inbox</span>
-														</li>
-														<li class="js-dropdown-list-item">
-															<svg class="icon icon-md">
-																<use href="#icon-crossed-eye"></use>
-															</svg>
-															<span>Close</span>
-														</li>
-														<li class="js-dropdown-list-item">
-															<svg class="icon icon-md">
-																<use href="#icon-trash"></use>
-															</svg>
-															<span>Delete</span>
+														<li
+															class="js-dropdown-list-item"
+															data-dialog-open-id="delete-space"
+														>
+															<span>Delete Space</span>
 														</li>
 													</ul>
 												</div>
@@ -1504,28 +1709,26 @@
 								</div>
 							</div>
 							<div
-								class="grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4"
+								class="grid grid-cols-[minmax(250px,1fr)_minmax(120px,220px)_minmax(90px,196px)_minmax(160px,275px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4 hover:bg-gray-150"
 							>
-								<div class="flex flex-col gap-1.5 pl-5 max-md:pl-4">
-									<p class="text-sm text-dark-800 font-medium">
-										Jumpshare team inbox
-									</p>
-									<span class="text-xs text-dark-800/70">1 Submissions</span>
+								<div class="flex items-center gap-2 pl-2.5">
+									<span
+										class="flex items-center justify-center rounded-md bg-[#FF4B8B] size-6 text-white text-xs font-semibold uppercase flex-shrink-0"
+									>
+										M
+									</span>
+									<span class="text-sm font-medium"> Marketing Only </span>
 								</div>
-								<div class="flex items-center gap-2.5 max-md:hidden">
-									<img
-										class="size-[22px] rounded-full object-cover"
-										src="./assets/images/avatar-3.png"
-										alt="Avatar"
-									/>
-									<p class="text-sm text-dark-800">John Doe</p>
+								<div class="flex items-center">
+									<span class="text-sm">8 members</span>
+								</div>
+								<div class="flex items-center">
+									<span class="text-sm">155 Files</span>
 								</div>
 								<div
-									class="flex items-center justify-between max-md:justify-end pr-10 max-md:pr-4"
+									class="flex items-center justify-between max-md:justify-end pr-4"
 								>
-									<p class="text-sm text-dark-800 max-md:hidden">
-										Personal Library
-									</p>
+									<p class="text-sm max-md:hidden">Member</p>
 									<div class="dropdown-wrapper">
 										<button
 											type="button"
@@ -1549,23 +1752,11 @@
 												</div>
 												<div class="js-dropdown-content">
 													<ul>
-														<li class="js-dropdown-list-item">
-															<svg class="icon icon-md">
-																<use href="#icon-share"></use>
-															</svg>
-															<span>Share Inbox</span>
-														</li>
-														<li class="js-dropdown-list-item">
-															<svg class="icon icon-md">
-																<use href="#icon-crossed-eye"></use>
-															</svg>
-															<span>Close</span>
-														</li>
-														<li class="js-dropdown-list-item">
-															<svg class="icon icon-md">
-																<use href="#icon-trash"></use>
-															</svg>
-															<span>Delete</span>
+														<li
+															class="js-dropdown-list-item"
+															data-dialog-open-id="delete-space"
+														>
+															<span>Delete Space</span>
 														</li>
 													</ul>
 												</div>
@@ -1575,29 +1766,26 @@
 								</div>
 							</div>
 							<div
-								class="grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4"
+								class="grid grid-cols-[minmax(250px,1fr)_minmax(120px,220px)_minmax(90px,196px)_minmax(160px,275px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4 hover:bg-gray-150"
 							>
-								<div class="flex flex-col gap-1.5 truncate pl-5 max-md:pl-4">
-									<p class="text-sm text-dark-800 font-medium truncate">
-										Jumpshare team inbox Jumpshare team inbox Jumpshare team
-										inbox Jumpshare team inbox Jumpshare team inbox
-									</p>
-									<span class="text-xs text-dark-800/70">1 Submissions</span>
+								<div class="flex items-center gap-2 pl-2.5">
+									<span
+										class="flex items-center justify-center rounded-md bg-[#2F9F95] size-6 text-white text-xs font-semibold uppercase flex-shrink-0"
+									>
+										E
+									</span>
+									<span class="text-sm font-medium"> Entertainments </span>
 								</div>
-								<div class="flex items-center gap-2.5 max-md:hidden">
-									<img
-										class="size-[22px] rounded-full object-cover"
-										src="./assets/images/avatar.png"
-										alt="Avatar"
-									/>
-									<p class="text-sm text-dark-800">John Doe</p>
+								<div class="flex items-center">
+									<span class="text-sm">1 members</span>
+								</div>
+								<div class="flex items-center">
+									<span class="text-sm">100 Files</span>
 								</div>
 								<div
-									class="flex items-center justify-between max-md:justify-end pr-10 max-md:pr-4"
+									class="flex items-center justify-between max-md:justify-end pr-4"
 								>
-									<p class="text-sm text-dark-800 max-md:hidden">
-										Personal Library
-									</p>
+									<p class="text-sm max-md:hidden">Member</p>
 									<div class="dropdown-wrapper">
 										<button
 											type="button"
@@ -1621,92 +1809,11 @@
 												</div>
 												<div class="js-dropdown-content">
 													<ul>
-														<li class="js-dropdown-list-item">
-															<svg class="icon icon-md">
-																<use href="#icon-share"></use>
-															</svg>
-															<span>Share Inbox</span>
-														</li>
-														<li class="js-dropdown-list-item">
-															<svg class="icon icon-md">
-																<use href="#icon-crossed-eye"></use>
-															</svg>
-															<span>Close</span>
-														</li>
-														<li class="js-dropdown-list-item">
-															<svg class="icon icon-md">
-																<use href="#icon-trash"></use>
-															</svg>
-															<span>Delete</span>
-														</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div
-								class="grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4"
-							>
-								<div class="flex flex-col gap-1.5 pl-5 max-md:pl-4">
-									<p class="text-sm text-dark-800 font-medium">Testing UI</p>
-									<span class="text-xs text-dark-800/70">1 Submissions</span>
-								</div>
-								<div class="flex items-center gap-2.5 max-md:hidden">
-									<img
-										class="size-[22px] rounded-full object-cover"
-										src="./assets/images/avatar.png"
-										alt="Avatar"
-									/>
-									<p class="text-sm text-dark-800">John Doe</p>
-								</div>
-								<div
-									class="flex items-center justify-between max-md:justify-end pr-10 max-md:pr-4"
-								>
-									<p class="text-sm text-dark-800 max-md:hidden">
-										Personal Library
-									</p>
-									<div class="dropdown-wrapper">
-										<button
-											type="button"
-											aria-label="Open menu"
-											data-id="dropdown-inbox"
-											class="dropdown-button rounded-full size-6 flex items-center justify-center hover:bg-gray-400 cursor-pointer [&.active]:bg-gray-400"
-										>
-											<svg class="icon icon-md">
-												<use href="#icon-dots-horizontal"></use>
-											</svg>
-										</button>
-										<div
-											class="js-dropdown hidden w-[12.625rem]"
-											data-dropdown-id="dropdown-inbox"
-											data-sheet-modal
-										>
-											<div class="js-dropdown-overlay"></div>
-											<div class="js-dropdown-body">
-												<div class="js-dropdown-trigger">
-													<span></span>
-												</div>
-												<div class="js-dropdown-content">
-													<ul>
-														<li class="js-dropdown-list-item">
-															<svg class="icon icon-md">
-																<use href="#icon-share"></use>
-															</svg>
-															<span>Share Inbox</span>
-														</li>
-														<li class="js-dropdown-list-item">
-															<svg class="icon icon-md">
-																<use href="#icon-crossed-eye"></use>
-															</svg>
-															<span>Close</span>
-														</li>
-														<li class="js-dropdown-list-item">
-															<svg class="icon icon-md">
-																<use href="#icon-trash"></use>
-															</svg>
-															<span>Delete</span>
+														<li
+															class="js-dropdown-list-item"
+															data-dialog-open-id="delete-space"
+														>
+															<span>Delete Space</span>
 														</li>
 													</ul>
 												</div>
@@ -1718,152 +1825,198 @@
 						</div>
 					</div>
 					<div
-						data-tab-content-id="closed-inboxes"
+						data-tab-content-id="closed-spaces"
 						class="hidden [&.active]:block"
 					>
 						<div
-							class="grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 pb-2.5 pt-2 max-md:hidden gap-4"
+							class="grid grid-cols-[minmax(250px,1fr)_minmax(120px,220px)_minmax(90px,196px)_minmax(160px,275px)] border-b border-gray-400 pb-2.5 pt-2 max-md:hidden gap-4"
 						>
-							<div class="text-sm text-dark-800/60">Name</div>
-							<div class="text-sm text-dark-800/60">Created By</div>
-							<div class="text-sm text-dark-800/60">Location</div>
+							<div class="text-sm text-dark-800/60 pl-2.5">Name</div>
+							<div class="text-sm text-dark-800/60">Members</div>
+							<div class="text-sm text-dark-800/60">Files</div>
+							<div class="text-sm text-dark-800/60">Team Role</div>
 						</div>
-						<div class="flex flex-col">
-							<div
-								class="grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4"
-							>
-								<div class="flex flex-col gap-1.5 truncate pl-5 max-md:pl-4">
-									<p class="text-sm text-dark-800 font-medium truncate">
-										Jumpshare team inbox
-									</p>
-									<span class="text-xs text-dark-800/70">1 Submissions</span>
-								</div>
-								<div class="flex items-center gap-2.5 max-md:hidden">
-									<img
-										class="size-[22px] rounded-full object-cover"
-										src="./assets/images/avatar.png"
-										alt="Avatar"
-									/>
-									<p class="text-sm text-dark-800">John Doe</p>
-								</div>
-								<div
-									class="flex items-center justify-between max-md:justify-end pr-10 max-md:pr-4"
+						<div
+							class="grid grid-cols-[minmax(250px,1fr)_minmax(120px,220px)_minmax(90px,196px)_minmax(160px,275px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4 hover:bg-gray-150"
+						>
+							<div class="flex items-center gap-2 pl-2.5">
+								<span
+									class="flex items-center justify-center rounded-md bg-[#7c831e] size-6 text-white text-xs font-semibold uppercase flex-shrink-0"
 								>
-									<p class="text-sm text-dark-800 max-md:hidden">
-										Personal Library
-									</p>
-									<div class="dropdown-wrapper">
-										<button
-											type="button"
-											aria-label="Open menu"
-											data-id="dropdown-inbox"
-											class="dropdown-button rounded-full size-6 flex items-center justify-center hover:bg-gray-400 cursor-pointer [&.active]:bg-gray-400"
-										>
-											<svg class="icon icon-md">
-												<use href="#icon-dots-horizontal"></use>
-											</svg>
-										</button>
-										<div
-											class="js-dropdown hidden w-[12.625rem]"
-											data-dropdown-id="dropdown-inbox"
-											data-sheet-modal
-										>
-											<div class="js-dropdown-overlay"></div>
-											<div class="js-dropdown-body">
-												<div class="js-dropdown-trigger">
-													<span></span>
-												</div>
-												<div class="js-dropdown-content">
-													<ul>
-														<li class="js-dropdown-list-item">
-															<svg class="icon icon-md">
-																<use href="#icon-share"></use>
-															</svg>
-															<span>Share Inbox</span>
-														</li>
-														<li class="js-dropdown-list-item">
-															<svg class="icon icon-md">
-																<use href="#icon-crossed-eye"></use>
-															</svg>
-															<span>Close</span>
-														</li>
-														<li class="js-dropdown-list-item">
-															<svg class="icon icon-md">
-																<use href="#icon-trash"></use>
-															</svg>
-															<span>Delete</span>
-														</li>
-													</ul>
-												</div>
+									M
+								</span>
+								<span class="text-sm font-medium"> Dev Only </span>
+							</div>
+							<div class="flex items-center">
+								<span class="text-sm">8 members</span>
+							</div>
+							<div class="flex items-center">
+								<span class="text-sm">155 Files</span>
+							</div>
+							<div
+								class="flex items-center justify-between max-md:justify-end pr-4"
+							>
+								<p class="text-sm max-md:hidden">Member</p>
+								<div class="dropdown-wrapper">
+									<button
+										type="button"
+										aria-label="Open menu"
+										data-id="dropdown-inbox"
+										class="dropdown-button rounded-full size-6 flex items-center justify-center hover:bg-gray-400 cursor-pointer [&.active]:bg-gray-400"
+									>
+										<svg class="icon icon-md">
+											<use href="#icon-dots-horizontal"></use>
+										</svg>
+									</button>
+									<div
+										class="js-dropdown hidden w-[12.625rem]"
+										data-dropdown-id="dropdown-inbox"
+										data-sheet-modal
+									>
+										<div class="js-dropdown-overlay"></div>
+										<div class="js-dropdown-body">
+											<div class="js-dropdown-trigger">
+												<span></span>
+											</div>
+											<div class="js-dropdown-content">
+												<ul>
+													<li
+														class="js-dropdown-list-item"
+														data-dialog-open-id="delete-space"
+													>
+														<span>Delete Space</span>
+													</li>
+												</ul>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div
-								class="grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4"
-							>
-								<div class="flex flex-col gap-1.5 pl-5 max-md:pl-4">
-									<p class="text-sm text-dark-800 font-medium">Testing UI</p>
-									<span class="text-xs text-dark-800/70">1 Submissions</span>
-								</div>
-								<div class="flex items-center gap-2.5 max-md:hidden">
-									<img
-										class="size-[22px] rounded-full object-cover"
-										src="./assets/images/avatar.png"
-										alt="Avatar"
-									/>
-									<p class="text-sm text-dark-800">John Doe</p>
-								</div>
-								<div
-									class="flex items-center justify-between max-md:justify-end pr-10 max-md:pr-4"
+						</div>
+						<div
+							class="grid grid-cols-[minmax(250px,1fr)_minmax(120px,220px)_minmax(90px,196px)_minmax(160px,275px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4 hover:bg-gray-150"
+						>
+							<div class="flex items-center gap-2 pl-2.5">
+								<span
+									class="flex items-center justify-center rounded-md bg-[#1f5550] size-6 text-white text-xs font-semibold uppercase flex-shrink-0"
 								>
-									<p class="text-sm text-dark-800 max-md:hidden">
-										Personal Library
-									</p>
-									<div class="dropdown-wrapper">
-										<button
-											type="button"
-											aria-label="Open menu"
-											data-id="dropdown-inbox"
-											class="dropdown-button rounded-full size-6 flex items-center justify-center hover:bg-gray-400 cursor-pointer [&.active]:bg-gray-400"
-										>
-											<svg class="icon icon-md">
-												<use href="#icon-dots-horizontal"></use>
-											</svg>
-										</button>
-										<div
-											class="js-dropdown hidden w-[12.625rem]"
-											data-dropdown-id="dropdown-inbox"
-											data-sheet-modal
-										>
-											<div class="js-dropdown-overlay"></div>
-											<div class="js-dropdown-body">
-												<div class="js-dropdown-trigger">
-													<span></span>
-												</div>
-												<div class="js-dropdown-content">
-													<ul>
-														<li class="js-dropdown-list-item">
-															<svg class="icon icon-md">
-																<use href="#icon-share"></use>
-															</svg>
-															<span>Share Inbox</span>
-														</li>
-														<li class="js-dropdown-list-item">
-															<svg class="icon icon-md">
-																<use href="#icon-crossed-eye"></use>
-															</svg>
-															<span>Close</span>
-														</li>
-														<li class="js-dropdown-list-item">
-															<svg class="icon icon-md">
-																<use href="#icon-trash"></use>
-															</svg>
-															<span>Delete</span>
-														</li>
-													</ul>
-												</div>
+									T
+								</span>
+								<span class="text-sm font-medium"> Table Activities </span>
+							</div>
+							<div class="flex items-center">
+								<span class="text-sm">1 members</span>
+							</div>
+							<div class="flex items-center">
+								<span class="text-sm">100 Files</span>
+							</div>
+							<div
+								class="flex items-center justify-between max-md:justify-end pr-4"
+							>
+								<p class="text-sm max-md:hidden">Member</p>
+								<div class="dropdown-wrapper">
+									<button
+										type="button"
+										aria-label="Open menu"
+										data-id="dropdown-inbox"
+										class="dropdown-button rounded-full size-6 flex items-center justify-center hover:bg-gray-400 cursor-pointer [&.active]:bg-gray-400"
+									>
+										<svg class="icon icon-md">
+											<use href="#icon-dots-horizontal"></use>
+										</svg>
+									</button>
+									<div
+										class="js-dropdown hidden w-[12.625rem]"
+										data-dropdown-id="dropdown-inbox"
+										data-sheet-modal
+									>
+										<div class="js-dropdown-overlay"></div>
+										<div class="js-dropdown-body">
+											<div class="js-dropdown-trigger">
+												<span></span>
+											</div>
+											<div class="js-dropdown-content">
+												<ul>
+													<li
+														class="js-dropdown-list-item"
+														data-dialog-open-id="delete-space"
+													>
+														<span>Delete Space</span>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div
+						data-tab-content-id="archive-spaces"
+						class="hidden [&.active]:block"
+					>
+						<div
+							class="grid grid-cols-[minmax(250px,1fr)_minmax(120px,220px)_minmax(90px,196px)_minmax(160px,275px)] border-b border-gray-400 pb-2.5 pt-2 max-md:hidden gap-4"
+						>
+							<div class="text-sm text-dark-800/60 pl-2.5">Name</div>
+							<div class="text-sm text-dark-800/60">Members</div>
+							<div class="text-sm text-dark-800/60">Files</div>
+							<div class="text-sm text-dark-800/60">Team Role</div>
+						</div>
+						<div
+							class="grid grid-cols-[minmax(250px,1fr)_minmax(120px,220px)_minmax(90px,196px)_minmax(160px,275px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4 hover:bg-gray-150"
+						>
+							<div class="flex items-center gap-2 pl-2.5">
+								<span
+									class="flex items-center justify-center rounded-md bg-[#05af9e] size-6 text-white text-xs font-semibold uppercase flex-shrink-0"
+								>
+									V
+								</span>
+								<span class="text-sm font-medium"> Video Player </span>
+							</div>
+							<div class="flex items-center">
+								<span class="text-sm">1 members</span>
+							</div>
+							<div class="flex items-center">
+								<span class="text-sm">12 Files</span>
+							</div>
+							<div
+								class="flex items-center justify-between max-md:justify-end pr-4"
+							>
+								<p class="text-sm max-md:hidden">Member</p>
+								<div class="dropdown-wrapper">
+									<button
+										type="button"
+										aria-label="Open menu"
+										data-id="dropdown-inbox"
+										class="dropdown-button rounded-full size-6 flex items-center justify-center hover:bg-gray-400 cursor-pointer [&.active]:bg-gray-400"
+									>
+										<svg class="icon icon-md">
+											<use href="#icon-dots-horizontal"></use>
+										</svg>
+									</button>
+									<div
+										class="js-dropdown hidden w-[12.625rem]"
+										data-dropdown-id="dropdown-inbox"
+										data-sheet-modal
+									>
+										<div class="js-dropdown-overlay"></div>
+										<div class="js-dropdown-body">
+											<div class="js-dropdown-trigger">
+												<span></span>
+											</div>
+											<div class="js-dropdown-content">
+												<ul>
+													<li class="js-dropdown-list-item">
+														<span>Unarchive</span>
+													</li>
+													<li
+														class="js-dropdown-list-item"
+														data-dialog-open-id="delete-space"
+													>
+														<span>Delete Space</span>
+													</li>
+												</ul>
 											</div>
 										</div>
 									</div>

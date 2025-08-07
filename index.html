@@ -276,7 +276,7 @@
 														<use href="#icon-team"></use>
 													</svg>
 													<div class="flex flex-col gap-1">
-														<div class="font-medium text-dark-800 text-sm">
+														<div class="font-medium text-dark-800 text-sm fle">
 															Open Space
 														</div>
 														<div class="text-xs text-dark-800/70">
@@ -290,7 +290,7 @@
 													</svg>
 													<div class="flex flex-col gap-1">
 														<div
-															class="font-medium text-dark-800 text-sm flex items-center"
+															class="font-medium text-dark-800 text-sm flex items-center gap-2 mb-1"
 														>
 															Closed Space
 														</div>
@@ -338,11 +338,11 @@
 								<a href="" id="share_modal_tab" class="modal-share-icon active">
 									Share
 								</a>
-								<a href="" id="collaborate_tab" class="modal-share-icon">
-									Invite
-								</a>
 								<a href="" id="embed_modal_tab" class="modal-share-icon">
 									Embed
+								</a>
+								<a href="" id="collaborate_tab" class="modal-share-icon">
+									Social
 								</a>
 								<a href="" id="link-settings" class="modal-share-icon">
 									Link Settings
@@ -712,7 +712,9 @@
 														<use href="#icon-world"></use>
 													</svg>
 													<div>
-														<div class="font-medium text-dark-800 text-sm">
+														<div
+															class="font-medium text-dark-800 text-sm flex items-center gap-2 mb-1"
+														>
 															Anyone with a link
 														</div>
 														<div class="text-xs text-dark-800/70">
@@ -727,12 +729,15 @@
 													</svg>
 													<div>
 														<div
-															class="font-medium text-dark-800 text-sm flex items-center"
+															class="font-medium text-dark-800 text-sm flex items-center gap-2 mb-1"
 														>
-															Restricted<span
-																class="bg-blue-500 text-white text-[10px] font-medium px-1.5 h-5 flex items-center rounded-md ml-1.5"
-																>Plus</span
-															>
+															Restricted
+															<span class="tag-filled tag-sm bg-blue-500 gap-1">
+																<svg class="icon icon-sm">
+																	<use href="#icon-subscription-filled"></use>
+																</svg>
+																<span>Plus</span>
+															</span>
 														</div>
 														<div class="text-xs text-dark-800/70">
 															Only people added can access.
@@ -745,12 +750,17 @@
 													</svg>
 													<div>
 														<div
-															class="font-medium text-dark-800 text-sm flex items-center"
+															class="font-medium text-dark-800 text-sm flex items-center gap-2 mb-1"
 														>
-															Members of Jumpshare Enterprise<span
-																class="bg-violet-600 text-white text-[10px] font-medium px-1.5 h-5 flex items-center rounded-md ml-1.5"
-																>Business</span
+															Members of Jumpshare Enterprise
+															<span
+																class="tag-filled tag-sm bg-violet-600 gap-1"
 															>
+																<svg class="icon icon-sm">
+																	<use href="#icon-subscription-filled"></use>
+																</svg>
+																<span>Business</span>
+															</span>
 														</div>
 														<div class="text-xs text-dark-800/70">
 															Only Workspace members can access.
@@ -763,12 +773,15 @@
 													</svg>
 													<div>
 														<div
-															class="font-medium text-dark-800 text-sm flex items-center"
+															class="font-medium text-dark-800 text-sm flex items-center gap-2 mb-1"
 														>
-															Only Me<span
-																class="bg-blue-500 text-white text-[10px] font-medium px-1.5 h-5 flex items-center rounded-md ml-1.5"
-																>Plus</span
-															>
+															Only Me
+															<span class="tag-filled tag-sm bg-blue-500 gap-1">
+																<svg class="icon icon-sm">
+																	<use href="#icon-subscription-filled"></use>
+																</svg>
+																<span>Plus</span>
+															</span>
 														</div>
 														<div class="text-xs text-dark-800/70">
 															Only you can access this file.
@@ -817,75 +830,219 @@
 							</form>
 						</div>
 						<div class="modal-body pb-6 modal-collaborate">
-							<label class="text-sm"
-								>Once you invite a team member from your workspace, this item
-								can be found in your Shared library.<a
-									style="
-										color: #2f76ff;
-										padding-left: 5px;
-										text-decoration: none;
-									"
-									href="settings/workspace/members"
-									>View members</a
-								></label
+							<strong class="text-sm font-semibold"
+								>Share to Social Platforms</strong
 							>
-							<div class="modal-frm-collaborate">
-								<form
-									action="#"
-									method="post"
-									id="popup_collaborate_invite_form"
-									autocomplete="off"
-								>
-									<div class="modal-collaborate-invite">
-										<button
-											type="submit"
-											class="btn btn-submit btn-primary-default invite_to_collaborate"
-											id="invite_to_collaborate"
-										>
-											Invite
-										</button>
-										<ul class="modal-email-wrapper clearfix acjs-team-holder">
-											<li class="open">
-												<input
-													type="email"
-													name="email_to_collaborate"
-													id="email_to_collaborate"
-													placeholder="Type names of team members"
-													class="form-control input-slim pull-left acjs-input ac_input"
-													style="width: 270px"
-													autocomplete="off"
-												/>
-											</li>
-										</ul>
+							<p class="text-sm mt-2">
+								Embed your file on various social platforms
+							</p>
+							<div class="mt-6 grid grid-cols-5 gap-3">
+								<div class="flex flex-col items-center">
+									<div
+										class="h-[91px] flex items-center justify-center border border-gray-600 rounded-2xl w-full"
+									>
+										<img
+											src="./assets/images/social-icons/linkedin.svg"
+											alt="LinkedIn"
+										/>
 									</div>
-									<div class="enabled">
-										<div class="modal-share-options">
-											<div class="clearfix"></div>
-											<input
-												type="hidden"
-												name="item_type"
-												id="item_type"
-												value="file"
-											/>
-											<input
-												type="hidden"
-												name="file_type"
-												id="file_type"
-												value="image"
-											/>
-											<input
-												type="hidden"
-												name="item_id"
-												id="item_id"
-												value="y40vjOQeoW3ykjafsfCH"
-											/>
+									<span class="text-sm mt-3 text-center">LinkedIn</span>
+								</div>
+								<div class="flex flex-col items-center">
+									<div
+										class="h-[91px] flex items-center justify-center border border-gray-600 rounded-2xl w-full"
+									>
+										<img
+											src="./assets/images/social-icons/facebook.svg"
+											alt="Facebook"
+										/>
+									</div>
+									<span class="text-sm mt-3 text-center">Facebook</span>
+								</div>
+								<div class="flex flex-col items-center">
+									<div
+										class="h-[91px] flex items-center justify-center border border-gray-600 rounded-2xl w-full"
+									>
+										<img
+											src="./assets/images/social-icons/outlook.svg"
+											alt="Outlook"
+										/>
+									</div>
+									<span class="text-sm mt-3 text-center">Outlook</span>
+								</div>
+								<div class="flex flex-col items-center">
+									<div
+										class="h-[91px] flex items-center justify-center border border-gray-600 rounded-2xl w-full"
+									>
+										<img
+											src="./assets/images/social-icons/gmail.svg"
+											alt="Gmail"
+										/>
+									</div>
+									<span class="text-sm mt-3 text-center">Gmail</span>
+								</div>
+								<div class="flex flex-col items-center">
+									<div
+										class="h-[91px] flex items-center justify-center border border-gray-600 rounded-2xl w-full"
+									>
+										<img
+											src="./assets/images/social-icons/twitter.svg"
+											alt="Twitter"
+										/>
+									</div>
+									<span class="text-sm mt-3 text-center">Twitter</span>
+								</div>
+							</div>
+							<h4
+								class="block mt-9 text-sm font-semibold text-dark-800 mb-4 text-left"
+							>
+								General access
+							</h4>
+							<div class="privacy-settings-wrapper dropdown-wrapper">
+								<div
+									data-id="privacy-settings-menu"
+									class="privacy-settings-item dropdown-button"
+								>
+									<svg class="icon icon-md">
+										<use href="#icon-world"></use>
+									</svg>
+									<div class="privacy-settings-item__info">
+										<div class="privacy-settings-item__title">
+											Anyone with a link
+										</div>
+										<div class="privacy-settings-item__description">
+											Anyone with a link can access. Hidden from search engines.
 										</div>
 									</div>
-									<div class="invite-members-wrapper">
-										<ul class="invite_member_list"></ul>
-										<div class="empty-team-text">No team members invited</div>
+									<svg class="icon icon-md ml-auto">
+										<use href="#icon-chevron-down"></use>
+									</svg>
+								</div>
+								<div
+									class="js-dropdown hidden w-[490px]"
+									data-dropdown-id="privacy-settings-menu"
+									data-sheet-modal=""
+									data-overflow-visible=""
+								>
+									<div class="js-dropdown-overlay"></div>
+									<div class="js-dropdown-body">
+										<div class="js-dropdown-trigger"></div>
+										<div class="js-dropdown-content">
+											<div class="privacy-settings-menu__item">
+												<svg class="icon icon-md">
+													<use href="#icon-world"></use>
+												</svg>
+												<div>
+													<div
+														class="font-medium text-dark-800 text-sm flex items-center gap-2 mb-1"
+													>
+														Anyone with a link
+													</div>
+													<div class="text-xs text-dark-800/70">
+														Anyone with a link can access. Hidden from search
+														engines.
+													</div>
+												</div>
+											</div>
+											<div class="privacy-settings-menu__item">
+												<svg class="icon icon-md">
+													<use href="#icon-user"></use>
+												</svg>
+												<div>
+													<div
+														class="font-medium text-dark-800 text-sm flex items-center gap-2 mb-1"
+													>
+														Restricted
+														<span class="tag-filled tag-sm bg-blue-500 gap-1">
+															<svg class="icon icon-sm">
+																<use href="#icon-subscription-filled"></use>
+															</svg>
+															<span>Plus</span>
+														</span>
+													</div>
+													<div class="text-xs text-dark-800/70">
+														Only people added can access.
+													</div>
+												</div>
+											</div>
+											<div class="privacy-settings-menu__item">
+												<svg class="icon icon-md">
+													<use href="#icon-team"></use>
+												</svg>
+												<div>
+													<div
+														class="font-medium text-dark-800 text-sm flex items-center gap-2 mb-1"
+													>
+														Members of Jumpshare Enterprise
+														<span class="tag-filled tag-sm bg-violet-600 gap-1">
+															<svg class="icon icon-sm">
+																<use href="#icon-subscription-filled"></use>
+															</svg>
+															<span>Business</span>
+														</span>
+													</div>
+													<div class="text-xs text-dark-800/70">
+														Only Workspace members can access.
+													</div>
+												</div>
+											</div>
+											<div class="privacy-settings-menu__item">
+												<svg class="icon icon-md">
+													<use href="#icon-disable-outline"></use>
+												</svg>
+												<div>
+													<div
+														class="font-medium text-dark-800 text-sm flex items-center gap-2 mb-1"
+													>
+														Only Me
+														<span class="tag-filled tag-sm bg-blue-500 gap-1">
+															<svg class="icon icon-sm">
+																<use href="#icon-subscription-filled"></use>
+															</svg>
+															<span>Plus</span>
+														</span>
+													</div>
+													<div class="text-xs text-dark-800/70">
+														Only you can access this file.
+													</div>
+												</div>
+											</div>
+										</div>
 									</div>
-								</form>
+								</div>
+							</div>
+							<div class="share-footer flex items-center justify-between mt-6">
+								<div
+									class="flex items-center gap-3.5 max-sm:flex-wrap w-full max-sm:gap-y-5"
+								>
+									<button
+										id="copy_advLink"
+										data-type="file"
+										data-link="http://jmp.jsa.de/v/y40vjOQeoW3ykjafsfCH"
+										type="button"
+										class="btn btn-border-default h-9 gap-1.5 pl-4 pr-5 font-normal max-sm:order-2 max-xs:flex-grow-1"
+									>
+										<svg class="icon icon-sm">
+											<use href="#icon-link"></use>
+										</svg>
+										<span class="text-sm text-dark-800">Copy link</span>
+									</button>
+									<label
+										class="custom-controls checkbox max-sm:order-1 max-sm:w-full"
+									>
+										<input type="checkbox" class="custom-control-input" />
+										<span class="custom-control-indicator"></span>
+										<span class="text-sm text-dark-800"
+											>Share video at 0:00</span
+										>
+									</label>
+									<button
+										type="submit"
+										class="btn btn-primary-default h-9 w-[7.5rem] max-sm:order-3 sm:ml-auto max-xs:flex-grow-1"
+									>
+										Done
+									</button>
+								</div>
 							</div>
 						</div>
 						<div class="modal-body pb-6 modal-embed">
@@ -1149,18 +1306,21 @@
 							</div>
 						</div>
 						<div
-							class="modal-body pb-6 max-lg:pt-4 modal-link-settings clearfix"
+							class="modal-body pb-6 max-lg:pt-4 modal-link-settings clearfix pt-4"
 						>
 							<div class="link-settings-list">
 								<div class="link-settings-item">
 									<div class="link-settings-item__header">
 										<div class="link-settings-item__info">
 											<strong
-												>Set Expiration<span
-													class="tag-filled tag-sm bg-blue-500"
-													>Plus</span
-												></strong
-											>
+												>Set Expiration
+												<span class="tag-filled tag-sm bg-blue-500 gap-1">
+													<svg class="icon icon-sm">
+														<use href="#icon-subscription-filled"></use>
+													</svg>
+													<span>Plus</span>
+												</span>
+											</strong>
 											<p>Disable this link after specific period</p>
 										</div>
 										<label class="custom-controls switcher">
@@ -1312,11 +1472,14 @@
 									<div class="link-settings-item__header">
 										<div class="link-settings-item__info">
 											<strong
-												>Disable Downloads<span
-													class="tag-filled tag-sm bg-blue-500"
-													>Plus</span
-												></strong
-											>
+												>Disable Downloads
+												<span class="tag-filled tag-sm bg-blue-500 gap-1">
+													<svg class="icon icon-sm">
+														<use href="#icon-subscription-filled"></use>
+													</svg>
+													<span>Plus</span>
+												</span>
+											</strong>
 											<p>Disallow people with this link to download the file</p>
 										</div>
 										<label class="custom-controls switcher">
@@ -1335,11 +1498,14 @@
 									<div class="link-settings-item__header">
 										<div class="link-settings-item__info">
 											<strong
-												>Custom Slug<span
-													class="tag-filled tag-sm bg-violet-600"
-													>Business</span
-												></strong
-											>
+												>Custom Slug
+												<span class="tag-filled tag-sm bg-violet-600 gap-1">
+													<svg class="icon icon-sm">
+														<use href="#icon-subscription-filled"></use>
+													</svg>
+													<span>Business</span>
+												</span>
+											</strong>
 											<p>Choose a custom URL slug to personalize it</p>
 										</div>
 										<label class="custom-controls switcher">
@@ -1742,7 +1908,10 @@
 								</div>
 							</div>
 							<ul class="flex flex-col">
-								<li class="group aside-nav-item">
+								<li
+									class="group aside-nav-item"
+									onclick='window.location.href="./browse-spaces.html"'
+								>
 									<svg class="icon icon-md">
 										<use href="#icon-spaces"></use>
 									</svg>

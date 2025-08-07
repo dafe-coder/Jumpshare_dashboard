@@ -11,6 +11,9 @@
 				}
 			}
 		}
+		.tag-sm {
+			@apply text-white text-xs px-2 h-6 font-normal;
+		}
 	}
 	#modal {
 		position: fixed;
@@ -348,9 +351,6 @@
 					@apply text-[14px] text-dark-800/60;
 				}
 			}
-		}
-		.tag-sm {
-			@apply text-white text-[10px] px-1.5 h-5 font-normal;
 		}
 		.link-settings-item__alert {
 			@apply flex items-center gap-2.5 px-3 py-2.5 bg-gray-150 rounded-lg;
