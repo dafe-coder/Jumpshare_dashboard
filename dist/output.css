@@ -1309,6 +1309,9 @@
   .grid-cols-\[minmax\(100px\,220px\)_minmax\(100px\,337px\)_minmax\(100px\,205px\)_minmax\(100px\,254px\)\] {
     grid-template-columns: minmax(100px,220px) minmax(100px,337px) minmax(100px,205px) minmax(100px,254px);
   }
+  .grid-cols-\[minmax\(150px\,255px\)_minmax\(200px\,1fr\)_minmax\(100px\,160px\)\] {
+    grid-template-columns: minmax(150px,255px) minmax(200px,1fr) minmax(100px,160px);
+  }
   .grid-cols-\[minmax\(250px\,1fr\)_minmax\(120px\,220px\)_minmax\(90px\,196px\)_minmax\(160px\,275px\)\] {
     grid-template-columns: minmax(250px,1fr) minmax(120px,220px) minmax(90px,196px) minmax(160px,275px);
   }
@@ -1455,6 +1458,9 @@
   }
   .gap-y-\[4rem\] {
     row-gap: 4rem;
+  }
+  .self-start {
+    align-self: flex-start;
   }
   .truncate {
     overflow: hidden;
@@ -1934,6 +1940,9 @@
   .pr-11\.5 {
     padding-right: calc(var(--spacing) * 11.5);
   }
+  .pr-14 {
+    padding-right: calc(var(--spacing) * 14);
+  }
   .pr-25 {
     padding-right: var(--spacing-25);
   }
@@ -1984,6 +1993,9 @@
   }
   .pl-2\.5 {
     padding-left: calc(var(--spacing) * 2.5);
+  }
+  .pl-3 {
+    padding-left: calc(var(--spacing) * 3);
   }
   .pl-4 {
     padding-left: calc(var(--spacing) * 4);
@@ -7599,6 +7611,29 @@
       }
     }
   }
+  .pagination {
+    display: flex;
+    align-items: center;
+    .pagination-item {
+      display: flex;
+      width: calc(var(--spacing) * 8);
+      height: calc(var(--spacing) * 8);
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-md);
+      border-color: var(--color-dark-800);
+      &:hover {
+        @media (hover: hover) {
+          background-color: var(--color-gray-150);
+        }
+      }
+      &.active {
+        border-style: var(--tw-border-style);
+        border-width: 1px;
+      }
+    }
+  }
 }
 @layer components {
   .colors-list {
@@ -7740,7 +7775,13 @@
 }
 @layer components {
   #lightbox {
+    z-index: 999999;
     @media screen and (max-width: 1024px) {
+      .modal {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+      }
       .modal-backdrop {
         transition: all ease-in-out 0.5s;
         opacity: 0;
@@ -7785,10 +7826,7 @@
       right: 0;
     }
     @media screen and (max-width: 1024px) {
-      position: absolute;
       bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
       margin: 0;
     }
   }
@@ -8511,7 +8549,7 @@
         transition-property: none;
         &:hover {
           @media (hover: hover) {
-            background-color: var(--color-gray-400);
+            background-color: var(--color-gray-400) !important;
           }
         }
       }

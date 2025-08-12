@@ -4,7 +4,8 @@ const Dialog = {
 	},
 
 	initDialog: function ($dialog) {
-		const $closeBtn = $("[data-dialog-close]");
+		const $closeBtn = $("#lightbox [data-dialog-close]");
+		console.log("[Dialog] initDialog", { closeBtns: $closeBtn.length });
 
 		$dialog.on("click", (e) => {
 			if (e.target === $dialog[0] && !BottomSheet.isMobile) {
@@ -14,12 +15,13 @@ const Dialog = {
 		});
 
 		$closeBtn.on("click", () => {
+			console.log("[Dialog] closeBtn click (desktop)");
 			if (!BottomSheet.isMobile) {
 				$dialog.addClass("hidden");
 				$dialog.find(".modal-dialog").addClass("hidden");
 			}
 		});
-		$(".modal").on("click", function (e) {
+		$("#lightbox .modal").on("click", function (e) {
 			if (e.target === this && !BottomSheet.isMobile) {
 				$dialog.addClass("hidden");
 				$dialog.find(".modal-dialog").addClass("hidden");
@@ -29,40 +31,42 @@ const Dialog = {
 			e.preventDefault();
 			e.stopPropagation();
 			const dialogId = $(this).attr("data-dialog-open-id");
+			console.log("[Dialog] open click", {
+				dialogId,
+				isMobile: BottomSheet.isMobile,
+			});
+
 			if (BottomSheet.isMobile) {
-				if (dialogId === "share") {
+				const body = $dialog.find(`.modal-${dialogId}`);
+				const content = body.find(".modal-content");
+
+				if (dialogId === "email-share-dialog") {
 					BottomSheet.open({
 						event: e,
 						modal: $dialog,
-						body: $dialog.find(".modal-email-share"),
-						content: $dialog.find(".modal-content"),
-						overlaySelector: ".modal",
-						scrollBlockSelector: ".modal-body",
-						closeButtonSelector: "[data-dialog-close]",
-					});
-				} else if (dialogId === "create-space") {
-					const $dialog = $("#lightbox");
-					BottomSheet.open({
-						event: e,
-						modal: $dialog,
-						body: $dialog.find(".modal-create-space"),
-						content: $dialog.find(".modal-content"),
-						overlaySelector: ".modal",
-						scrollBlockSelector: ".modal-body",
-						closeButtonSelector: "[data-dialog-close]",
+						body,
+						content,
+						overlayElement: $dialog.find(".modal"),
+						scrollBlockElement: body.find(".modal-body"),
+						closeButtonElement: body.find("[data-dialog-close]"),
+						type: "dialog",
+						maxHeight: 90,
+						defaultHeight: 90,
 					});
 				} else {
 					BottomSheet.open({
 						event: e,
 						modal: $dialog,
-						body: $dialog.find(".filter-by-members"),
-						content: $dialog.find(".modal-content"),
-						overlaySelector: ".modal",
-						scrollBlockSelector: ".modal-body",
-						closeButtonSelector: "[data-dialog-close]",
+						body,
+						content,
+						overlayElement: $dialog.find(".modal"),
+						scrollBlockElement: body.find(".modal-body"),
+						closeButtonElement: body.find("[data-dialog-close]"),
+						type: "dialog",
 					});
 				}
 			} else {
+				Dropdown.closeAllDropdowns();
 				$dialog.removeClass("hidden");
 				$dialog.find(`.modal-${dialogId}`).removeClass("hidden");
 			}
@@ -78,10 +82,10 @@ const Lightbox = {
 	tabsInit: function () {
 		$("#share_modal_tab").on("click", function (e) {
 			e.preventDefault();
-			$(".modal-dialog").removeClass(
+			$(".modal-email-share-dialog").removeClass(
 				"modal-collaborate-share modal-embed-media modal-link-settings-share",
 			);
-			$(".modal-dialog").addClass("modal-email-share");
+			$(".modal-email-share-dialog").addClass("modal-email-share");
 			$(".modal-share-icon").each(function () {
 				$(this).removeClass("active");
 			});
@@ -89,10 +93,10 @@ const Lightbox = {
 		});
 		$("#collaborate_tab").on("click", function (e) {
 			e.preventDefault();
-			$(".modal-dialog").removeClass(
+			$(".modal-email-share-dialog").removeClass(
 				"modal-email-share modal-embed-media modal-link-settings-share",
 			);
-			$(".modal-dialog").addClass("modal-collaborate-share");
+			$(".modal-email-share-dialog").addClass("modal-collaborate-share");
 			$(".modal-share-icon").each(function () {
 				$(this).removeClass("active");
 			});
@@ -100,10 +104,10 @@ const Lightbox = {
 		});
 		$("#embed_modal_tab").on("click", function (e) {
 			e.preventDefault();
-			$(".modal-dialog").removeClass(
+			$(".modal-email-share-dialog").removeClass(
 				"modal-email-share modal-collaborate-share modal-link-settings-share",
 			);
-			$(".modal-dialog").addClass("modal-embed-media");
+			$(".modal-email-share-dialog").addClass("modal-embed-media");
 			$(".modal-share-icon").each(function () {
 				$(this).removeClass("active");
 			});
@@ -111,10 +115,10 @@ const Lightbox = {
 		});
 		$("#link-settings").on("click", function (e) {
 			e.preventDefault();
-			$(".modal-dialog").removeClass(
+			$(".modal-email-share-dialog").removeClass(
 				"modal-email-share modal-collaborate-share modal-embed-media",
 			);
-			$(".modal-dialog").addClass("modal-link-settings-share");
+			$(".modal-email-share-dialog").addClass("modal-link-settings-share");
 			$(".modal-share-icon").each(function () {
 				$(this).removeClass("active");
 			});

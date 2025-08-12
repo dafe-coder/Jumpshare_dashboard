@@ -1,6 +1,12 @@
 @layer components {
 	#lightbox {
+		@apply z-999999;
 		@media screen and (max-width: 1024px) {
+			.modal {
+				display: flex;
+				justify-content: center;
+				align-items: flex-end;
+			}
 			.modal-backdrop {
 				transition: all ease-in-out 0.5s;
 				opacity: 0;
@@ -40,10 +46,7 @@
 			right: 0;
 		}
 		@media screen and (max-width: 1024px) {
-			position: absolute;
 			bottom: 0;
-			left: 50%;
-			transform: translateX(-50%);
 			margin: 0;
 		}
 	}
@@ -465,7 +468,7 @@
 			}
 
 			.btn-close {
-				@apply size-8 hover:bg-gray-400 bg-transparent rounded-md cursor-pointer p-0 flex items-center justify-center transition-none relative z-1;
+				@apply size-8 hover:bg-gray-400! bg-transparent rounded-md cursor-pointer p-0 flex items-center justify-center transition-none relative z-1;
 			}
 		}
 	}

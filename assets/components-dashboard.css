@@ -441,4 +441,11 @@
 	.privacy-settings-menu__item {
 		@apply flex justify-start gap-3 p-3 items-center hover:bg-gray-150 rounded-md cursor-pointer;
 	}
+
+	.pagination {
+		@apply flex items-center;
+		.pagination-item {
+			@apply flex items-center justify-center size-8 cursor-pointer hover:bg-gray-150 rounded-md [&.active]:border border-dark-800;
+		}
+	}
 }

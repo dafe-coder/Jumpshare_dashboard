@@ -57,6 +57,12 @@ const Dropdown = {
 					event: e,
 					modal: $sheetModal,
 					triggerHeight: 25,
+					overlayElement: $sheetModal.find(".js-dropdown-overlay"),
+					closeButtonElement: $sheetModal.find(".js-sheet-close"),
+					body: $sheetModal.find(".js-dropdown-body"),
+					content: $sheetModal.find(".js-dropdown-content"),
+					scrollBlockElement: $sheetModal.find(".js-dropdown-content"),
+					type: "dropdown",
 				});
 			} else {
 				this.handleDropdownClick(e);
@@ -94,7 +100,9 @@ const Dropdown = {
 
 	bindDocumentEvents() {
 		$(document).on("click", (e) => {
-			this.handleDocumentClick(e);
+			if (!BottomSheet.isMobile) {
+				this.handleDocumentClick(e);
+			}
 		});
 
 		$(window).on("resize", () => {
@@ -103,9 +111,11 @@ const Dropdown = {
 	},
 
 	bindMobileEvents() {
-		$(".js-dropdown-overlay").on("click", () => {
-			BottomSheet.close();
-		});
+		if (BottomSheet.isMobile) {
+			$(".js-dropdown-overlay").on("click", () => {
+				BottomSheet.close();
+			});
+		}
 	},
 
 	handleDropdownClick(e) {
@@ -208,7 +218,7 @@ const Dropdown = {
 		const needsFixedPosition =
 			hasOverflowVisible && this.isInsideOverflowHidden($element);
 
-		if (needsFixedPosition) {
+		if (needsFixedPosition && !BottomSheet.isMobile) {
 			$element.addClass("dropdown-fixed");
 			this.attachScrollListeners($element);
 			this.calculateFixedPosition($element);

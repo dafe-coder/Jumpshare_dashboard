@@ -178,7 +178,10 @@
 						</a>
 					</div>
 					<div class="flex flex-col h-full overflow-y-auto px-4 pb-4">
-						<nav class="flex flex-col mt-5 mb-5">
+						<nav
+							class="flex flex-col mt-5 mb-5"
+							aria-label="Workspace Settings"
+						>
 							<p class="text-s text-dark-800/60 font-medium px-2.5">
 								Workspace Settings
 							</p>
@@ -866,10 +869,16 @@
 														</div>
 													</div>
 													<div class="grid grid-cols-2 gap-3">
-														<button class="btn btn-border-default font-normal">
+														<button
+															type="button"
+															class="btn btn-border-default font-normal"
+														>
 															Make Admin
 														</button>
-														<button class="btn btn-border-default font-normal">
+														<button
+															type="button"
+															class="btn btn-border-default font-normal"
+														>
 															Reset Password
 														</button>
 													</div>
@@ -979,10 +988,16 @@
 														</div>
 													</div>
 													<div class="grid grid-cols-2 gap-3">
-														<button class="btn btn-border-default font-normal">
+														<button
+															type="button"
+															class="btn btn-border-default font-normal"
+														>
 															Make Admin
 														</button>
-														<button class="btn btn-border-default font-normal">
+														<button
+															type="button"
+															class="btn btn-border-default font-normal"
+														>
 															Reset Password
 														</button>
 													</div>
@@ -1092,10 +1107,16 @@
 														</div>
 													</div>
 													<div class="grid grid-cols-2 gap-3">
-														<button class="btn btn-border-default font-normal">
+														<button
+															type="button"
+															class="btn btn-border-default font-normal"
+														>
 															Make Admin
 														</button>
-														<button class="btn btn-border-default font-normal">
+														<button
+															type="button"
+															class="btn btn-border-default font-normal"
+														>
 															Reset Password
 														</button>
 													</div>
@@ -1205,10 +1226,16 @@
 														</div>
 													</div>
 													<div class="grid grid-cols-2 gap-3">
-														<button class="btn btn-border-default font-normal">
+														<button
+															type="button"
+															class="btn btn-border-default font-normal"
+														>
 															Make Admin
 														</button>
-														<button class="btn btn-border-default font-normal">
+														<button
+															type="button"
+															class="btn btn-border-default font-normal"
+														>
 															Reset Password
 														</button>
 													</div>
@@ -1316,10 +1343,16 @@
 														</div>
 													</div>
 													<div class="grid grid-cols-2 gap-3">
-														<button class="btn btn-border-default font-normal">
+														<button
+															type="button"
+															class="btn btn-border-default font-normal"
+														>
 															Make Admin
 														</button>
-														<button class="btn btn-border-default font-normal">
+														<button
+															type="button"
+															class="btn btn-border-default font-normal"
+														>
 															Reset Password
 														</button>
 													</div>
@@ -1427,10 +1460,16 @@
 														</div>
 													</div>
 													<div class="grid grid-cols-2 gap-3">
-														<button class="btn btn-border-default font-normal">
+														<button
+															type="button"
+															class="btn btn-border-default font-normal"
+														>
 															Make Admin
 														</button>
-														<button class="btn btn-border-default font-normal">
+														<button
+															type="button"
+															class="btn btn-border-default font-normal"
+														>
 															Reset Password
 														</button>
 													</div>
@@ -1538,10 +1577,16 @@
 														</div>
 													</div>
 													<div class="grid grid-cols-2 gap-3">
-														<button class="btn btn-border-default font-normal">
+														<button
+															type="button"
+															class="btn btn-border-default font-normal"
+														>
 															Make Admin
 														</button>
-														<button class="btn btn-border-default font-normal">
+														<button
+															type="button"
+															class="btn btn-border-default font-normal"
+														>
 															Reset Password
 														</button>
 													</div>
@@ -1595,59 +1640,29 @@
 									</svg>
 								</button>
 							</div>
-							<ul class="flex">
-								<li
-									class="flex items-center justify-center size-8 cursor-pointer"
-								>
+							<nav class="pagination" aria-label="Pagination">
+								<div class="pagination-item">
 									<svg class="icon icon-sm">
 										<use href="#icon-chevron-left" />
 									</svg>
-								</li>
-								<li
-									class="active flex items-center justify-center size-8 cursor-pointer [&.active]:border border-dark-800 rounded-md"
-								>
-									1
-								</li>
-								<li
-									class="flex items-center justify-center size-8 cursor-pointer [&.active]:border border-dark-800 rounded-md"
-								>
-									2
-								</li>
-								<li
-									class="flex items-center justify-center size-8 cursor-pointer [&.active]:border border-dark-800 rounded-md max-md:hidden"
-								>
-									3
-								</li>
-								<li
-									class="flex items-center justify-center size-8 cursor-pointer [&.active]:border border-dark-800 rounded-md max-md:hidden"
-								>
-									4
-								</li>
-								<li
-									class="flex items-center justify-center size-8 cursor-pointer [&.active]:border border-dark-800 rounded-md"
-								>
-									5
-								</li>
-								<li
-									class="flex items-end justify-center size-8 cursor-pointer [&.active]:border border-dark-800 rounded-md text-gray-900"
-								>
+								</div>
+								<div class="active pagination-item">1</div>
+								<div class="pagination-item">2</div>
+								<div class="pagination-item">3</div>
+								<div class="pagination-item">4</div>
+								<div class="pagination-item">5</div>
+								<div class="text-gray-900 pagination-item">
 									<svg class="icon icon-md">
 										<use href="#icon-dots-horizontal" />
 									</svg>
-								</li>
-								<li
-									class="flex items-center justify-center size-8 cursor-pointer [&.active]:border border-dark-800 rounded-md"
-								>
-									24
-								</li>
-								<li
-									class="flex items-center justify-center size-8 cursor-pointer"
-								>
+								</div>
+								<div class="pagination-item">24</div>
+								<div class="pagination-item">
 									<svg class="icon icon-sm">
 										<use href="#icon-chevron-right" />
 									</svg>
-								</li>
-							</ul>
+								</div>
+							</nav>
 						</div>
 					</div>
 					<div class="mt-10">
