@@ -7037,7 +7037,7 @@
     top: calc(100% + 8px);
     right: calc(var(--spacing) * 0);
     left: auto;
-    z-index: 1000;
+    z-index: 997;
     width: 14rem;
     border-radius: var(--radius-lg);
     border-style: var(--tw-border-style);
@@ -7108,13 +7108,15 @@
       width: 100% !important;
     }
     @media (max-width: 1024px) {
+      &.show-sheet > .js-dropdown-overlay {
+        opacity: 100% !important;
+      }
       &[data-sheet-modal] {
         position: fixed;
         top: calc(var(--spacing) * 0) !important;
         right: calc(var(--spacing) * 0) !important;
         bottom: calc(var(--spacing) * 0) !important;
         left: calc(var(--spacing) * 0) !important;
-        z-index: 10000 !important;
         display: flex;
         width: 100% !important;
         height: 100% !important;
@@ -7177,9 +7179,6 @@
           transition-duration: 500ms;
           --tw-ease: var(--ease-in-out);
           transition-timing-function: var(--ease-in-out);
-          .show-sheet & {
-            opacity: 100%;
-          }
         }
         .js-dropdown-body {
           position: relative;
@@ -7775,7 +7774,7 @@
 }
 @layer components {
   #lightbox {
-    z-index: 999999;
+    z-index: 998;
     @media screen and (max-width: 1024px) {
       .modal {
         display: flex;
@@ -7788,7 +7787,7 @@
       }
       &.show-sheet {
         .modal-backdrop {
-          opacity: 1;
+          opacity: 1 !important;
         }
       }
     }

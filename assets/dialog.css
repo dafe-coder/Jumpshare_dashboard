@@ -1,6 +1,6 @@
 @layer components {
 	#lightbox {
-		@apply z-999999;
+		@apply z-998;
 		@media screen and (max-width: 1024px) {
 			.modal {
 				display: flex;
@@ -13,7 +13,7 @@
 			}
 			&.show-sheet {
 				.modal-backdrop {
-					opacity: 1;
+					opacity: 1 !important;
 				}
 			}
 		}

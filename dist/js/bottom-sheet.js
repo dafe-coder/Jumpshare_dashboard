@@ -8,6 +8,7 @@ const BottomSheet = {
 	heightTrigger: 0,
 	scrollbarWidth: 0,
 	instanceCounter: 0,
+	nextZIndex: 10001,
 	state: {
 		dropdownStack: [],
 		dialogStack: [],
@@ -43,6 +44,9 @@ const BottomSheet = {
 	getInstanceById(type, instanceId) {
 		const s = this.getStack(type);
 		return s.find((i) => i.id === instanceId) || null;
+	},
+	getNextZIndex() {
+		return this.nextZIndex++;
 	},
 	lockPageScroll() {
 		if (!this.lockCount) {
@@ -226,13 +230,11 @@ const BottomSheet = {
 			hasScrollBlock: !!scrollBlockElement,
 			type,
 		});
-		// STACK: do not close previous of same type, we will stack
 
 		if (typeof MobileMenu !== "undefined" && MobileMenu.isMobileMenuActive) {
 			MobileMenu.closeMobileMenu();
 		}
 
-		// push into stack
 		const instance = {
 			id: this.instanceCounter,
 			modal: $sheetModal,
@@ -245,6 +247,7 @@ const BottomSheet = {
 			heightTrigger: triggerHeight || 0,
 			defaultHeightOverride: defaultHeight,
 			maxHeight: maxHeight != null ? maxHeight : this.config.maxHeight,
+			zIndex: this.getNextZIndex(),
 		};
 		const stack = this.getStack(type);
 		stack.push(instance);
@@ -254,9 +257,12 @@ const BottomSheet = {
 		$sheetModal.removeClass("hidden");
 		if (instance.showTimeout) clearTimeout(instance.showTimeout);
 
+		$sheetModal.css("z-index", instance.zIndex);
+
 		$sheetBody.css("height", "auto");
 		this.calculateContentHeight($sheetModal, $sheetContent[0]);
 		$sheetBody.css("height", "0");
+		$sheetModal.addClass("show-sheet");
 
 		instance.showTimeout = setTimeout(() => {
 			this.setSheetHeight(
@@ -268,7 +274,6 @@ const BottomSheet = {
 				instance.heightTrigger,
 				instance.maxHeight,
 			);
-			$sheetModal.addClass("show-sheet");
 			this.log("openSheet:show", {
 				defaultHeight:
 					instance.defaultHeightOverride ?? $sheetModal.data("default-height"),
@@ -296,7 +301,6 @@ const BottomSheet = {
 		const instance = stack[idx];
 		this.log("closeActiveSheet", { type, instanceId: instance.id });
 
-		// remove handlers for this instance
 		$(window)
 			.off(`mousemove.touchDrag-${type} touchmove.touchDrag-${type}`)
 			.off(`mouseup.touchDrag-${type} touchend.touchDrag-${type}`);
@@ -316,11 +320,10 @@ const BottomSheet = {
 
 		setTimeout(() => {
 			instance.modal.addClass("hidden");
+			instance.body.addClass("hidden");
 			stack.splice(idx, 1);
 		}, this.config.animationDuration);
 	},
-
-	// lock/unlock overridden by ref-count above
 
 	setSheetHeight(
 		$sheetModal,
@@ -408,7 +411,6 @@ const BottomSheet = {
 	handleDragMove(event, type, instanceId) {
 		if (!this.isDragging || !this.activeDragInstance) return;
 
-		// Проверяем, что drag происходит на том же instance, на котором начался
 		if (
 			this.activeDragInstance.type !== type ||
 			this.activeDragInstance.instanceId !== instanceId
@@ -454,7 +456,6 @@ const BottomSheet = {
 	handleDragEnd(type, instanceId) {
 		if (!this.isDragging || !this.activeDragInstance) return;
 
-		// Проверяем, что drag заканчивается на том же instance, на котором начался
 		if (
 			this.activeDragInstance.type !== type ||
 			this.activeDragInstance.instanceId !== instanceId

@@ -233,7 +233,7 @@
 		@apply max-lg:!py-2.5;
 	}
 	.js-dropdown {
-		@apply bg-white shadow-dropdown border border-gray-400 rounded-lg w-[14rem] absolute top-[calc(100%_+_8px)] right-0 left-auto z-1000 [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto;
+		@apply bg-white shadow-dropdown border border-gray-400 rounded-lg w-[14rem] absolute top-[calc(100%_+_8px)] right-0 left-auto [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto z-997;
 		.js-dropdown-content {
 			@apply lg:pt-0 lg:max-h-[580px] lg:overflow-y-auto px-0 pb-0;
 		}
@@ -253,8 +253,11 @@
 			@apply w-full!;
 		}
 		@media (max-width: 1024px) {
+			&.show-sheet > .js-dropdown-overlay {
+				@apply opacity-100!;
+			}
 			&[data-sheet-modal] {
-				@apply fixed bottom-0! left-0! right-0! top-0! z-10000! size-full! flex items-end! justify-center! transition-all duration-500 ease-in-out p-0 bg-transparent border-none;
+				@apply fixed bottom-0! left-0! right-0! top-0! size-full! flex items-end! justify-center! transition-all duration-500 ease-in-out p-0 bg-transparent border-none;
 
 				.js-dropdown-list {
 					@apply w-full h-auto;
@@ -263,7 +266,7 @@
 					@apply text-dark-800 font-medium flex items-center gap-2 p-1 hover:bg-gray-150 active:bg-gray-150 rounded-md transition-colors cursor-pointer py-2;
 				}
 				.js-dropdown-overlay {
-					@apply bg-dark-800/50 absolute top-0 left-0 size-full z-0 opacity-0 [.show-sheet_&]:opacity-100 transition-opacity duration-500 ease-in-out;
+					@apply bg-dark-800/50 absolute top-0 left-0 size-full z-0 opacity-0  transition-opacity duration-500 ease-in-out;
 				}
 				.js-dropdown-body {
 					@apply h-auto w-full max-w-[34.375rem] relative text-sm bg-white rounded-t-2xl z-3 transition-all duration-500 ease-in-out [&.not-selectable]:transition-none! max-h-[80svh] overflow-hidden flex flex-col;
