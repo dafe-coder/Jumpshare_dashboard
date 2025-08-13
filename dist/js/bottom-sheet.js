@@ -13,7 +13,6 @@ const BottomSheet = {
 		dropdownStack: [],
 		dialogStack: [],
 	},
-	lockCount: 0,
 	DEBUG: true,
 	log(...args) {
 		if (this.DEBUG) console.log("[BottomSheet]", ...args);
@@ -48,19 +47,66 @@ const BottomSheet = {
 	getNextZIndex() {
 		return this.nextZIndex++;
 	},
-	lockPageScroll() {
-		if (!this.lockCount) {
-			$("html").css("padding-right", `${this.scrollbarWidth}px`);
-			$("html").addClass("overflow-hidden");
+
+	getTotalOpenSheets() {
+		return this.state.dropdownStack.length + this.state.dialogStack.length;
+	},
+
+	findDragTarget(element) {
+		let $element = $(element);
+
+		for (const type of ["dropdown", "dialog"]) {
+			const stack = this.getStack(type);
+			for (const instance of stack) {
+				if (instance.body && instance.body.find(element).length > 0) {
+					if (this.isDragTarget($element, instance)) {
+						return {
+							type: type,
+							instanceId: instance.id,
+							instance: instance,
+						};
+					}
+				}
+			}
 		}
-		this.lockCount += 1;
+
+		return null;
+	},
+
+	isDragTarget($element, instance) {
+		if (
+			$element.hasClass("js-drag-handle") ||
+			$element.hasClass("drag-handle")
+		) {
+			return true;
+		}
+
+		if (
+			instance.body &&
+			instance.body.find(".js-dropdown-header, .modal-header").find($element)
+				.length > 0
+		) {
+			return true;
+		}
+
+		if (
+			instance.body &&
+			instance.body.find("[data-drag-area]").find($element).length > 0
+		) {
+			return true;
+		}
+		return true;
+	},
+
+	lockPageScroll() {
+		$("html").css("padding-right", `${this.scrollbarWidth}px`);
+		$("html").addClass("overflow-hidden");
+		this.log("lockPageScroll: initial lock applied");
 	},
 	unlockPageScroll() {
-		this.lockCount = Math.max(0, this.lockCount - 1);
-		if (!this.lockCount) {
-			$("html").css("padding-right", "0");
-			$("html").removeClass("overflow-hidden");
-		}
+		$("html").css("padding-right", "0");
+		$("html").removeClass("overflow-hidden");
+		this.log("unlockPageScroll: page scroll unlocked");
 	},
 
 	init() {
@@ -252,6 +298,12 @@ const BottomSheet = {
 		const stack = this.getStack(type);
 		stack.push(instance);
 
+		this.log("openSheet: sheet added to stack", {
+			type,
+			instanceId: instance.id,
+			totalSheets: this.getTotalOpenSheets(),
+		});
+
 		this.lockPageScroll();
 
 		$sheetModal.removeClass("hidden");
@@ -316,12 +368,20 @@ const BottomSheet = {
 		);
 		instance.modal.removeClass("show-sheet");
 
-		this.unlockPageScroll();
+		stack.splice(idx, 1);
+
+		const totalSheets = this.getTotalOpenSheets();
+		this.log("closeActiveSheet: remaining sheets", { totalSheets });
+		console.log(totalSheets);
+
+		if (totalSheets === 0) {
+			this.log("closeActiveSheet: unlocking page scroll - no more sheets");
+			this.unlockPageScroll();
+		}
 
 		setTimeout(() => {
 			instance.modal.addClass("hidden");
 			instance.body.addClass("hidden");
-			stack.splice(idx, 1);
 		}, this.config.animationDuration);
 	},
 
@@ -361,7 +421,20 @@ const BottomSheet = {
 			.on(
 				`mousedown.touchDrag-${type}-${instanceId} touchstart.touchDrag-${type}-${instanceId}`,
 				(e) => {
-					this.handleDragStart(e, type, instanceId);
+					const realTarget = this.findDragTarget(e.target);
+					if (
+						realTarget &&
+						realTarget.type === type &&
+						realTarget.instanceId === instanceId
+					) {
+						this.handleDragStart(e, type, instanceId);
+					} else {
+						this.log("setupDragHandlers: drag target mismatch, ignoring", {
+							handlerType: type,
+							handlerInstanceId: instanceId,
+							realTarget: realTarget,
+						});
+					}
 				},
 			);
 
@@ -390,6 +463,11 @@ const BottomSheet = {
 
 	handleDragStart(event, type, instanceId) {
 		const inst = this.getInstanceById(type, instanceId) || this.getTop(type);
+		this.log("handleDragStart", {
+			type,
+			instanceId,
+			inst: inst ? inst.id : null,
+		});
 		if (!inst) return;
 
 		const $scrollBlock = inst.scrollBlock;
@@ -410,7 +488,11 @@ const BottomSheet = {
 
 	handleDragMove(event, type, instanceId) {
 		if (!this.isDragging || !this.activeDragInstance) return;
-
+		this.log("handleDragMove", {
+			type,
+			instanceId,
+			activeDragInstance: this.activeDragInstance,
+		});
 		if (
 			this.activeDragInstance.type !== type ||
 			this.activeDragInstance.instanceId !== instanceId
@@ -482,7 +564,9 @@ const BottomSheet = {
 			this.setSheetHeight(
 				$sheetModal,
 				inst.body,
-				$sheetModal.data("default-height") || this.config.defaultHeight,
+				inst.defaultHeightOverride !== null
+					? inst.defaultHeightOverride
+					: $sheetModal.data("default-height"),
 				inst.heightTrigger || 0,
 			);
 		}
