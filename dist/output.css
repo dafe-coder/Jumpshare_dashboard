@@ -7033,6 +7033,7 @@
     }
   }
   .js-dropdown {
+    transition: opacity 150ms ease,	scale 150ms ease;
     position: absolute;
     top: calc(100% + 8px);
     right: calc(var(--spacing) * 0);
@@ -7046,6 +7047,15 @@
     background-color: var(--color-white);
     --tw-shadow: 0px 3px 35px var(--tw-shadow-color, rgba(0, 0, 0, 0.04));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    @media (width >= 64rem) {
+      --tw-scale-x: 95%;
+      --tw-scale-y: 95%;
+      --tw-scale-z: 95%;
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+    @media (width >= 64rem) {
+      opacity: 0%;
+    }
     &.active {
       display: flex;
     }
@@ -7055,14 +7065,25 @@
     .list-type & {
       left: auto;
     }
+    &.dropdown-animate {
+      @media (width >= 64rem) {
+        --tw-scale-x: 100%;
+        --tw-scale-y: 100%;
+        --tw-scale-z: 100%;
+        scale: var(--tw-scale-x) var(--tw-scale-y);
+      }
+      @media (width >= 64rem) {
+        opacity: 100%;
+      }
+    }
     .js-dropdown-content {
       padding-inline: calc(var(--spacing) * 0);
       padding-bottom: calc(var(--spacing) * 0);
-      @media (width >= 64rem) {
-        max-height: 580px;
+      @media (width < 64rem) {
+        overflow-y: auto;
       }
       @media (width >= 64rem) {
-        overflow-y: auto;
+        max-height: 580px;
       }
       @media (width >= 64rem) {
         padding-top: calc(var(--spacing) * 0);
@@ -7632,6 +7653,33 @@
         border-width: 1px;
       }
     }
+  }
+  [data-transform-origin="top left"] {
+    transform-origin: top left;
+  }
+  [data-transform-origin="top center"] {
+    transform-origin: top center;
+  }
+  [data-transform-origin="top right"] {
+    transform-origin: top right;
+  }
+  [data-transform-origin="center left"] {
+    transform-origin: center left;
+  }
+  [data-transform-origin="center center"] {
+    transform-origin: center center;
+  }
+  [data-transform-origin="center right"] {
+    transform-origin: center right;
+  }
+  [data-transform-origin="bottom left"] {
+    transform-origin: bottom left;
+  }
+  [data-transform-origin="bottom center"] {
+    transform-origin: bottom center;
+  }
+  [data-transform-origin="bottom right"] {
+    transform-origin: bottom right;
   }
 }
 @layer components {

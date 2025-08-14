@@ -240,62 +240,66 @@
 										/>
 									</div>
 								</div>
-								<div
-									class="privacy-settings-wrapper dropdown-wrapper active mt-6"
-								>
+								<div class="mt-6">
 									<strong class="text-sm font-medium">Privacy</strong>
-									<div
-										data-id="privacy-settings-menu"
-										class="privacy-settings-item dropdown-button mt-3 border border-gray-600 rounded-lg bg-white"
-									>
-										<svg class="icon icon-md">
-											<use href="#icon-team"></use>
-										</svg>
-										<div class="privacy-settings-item__info gap-0">
-											<div class="privacy-settings-item__title">Open Space</div>
-											<div class="privacy-settings-item__description">
-												Anyone at Startup Co can join this space
+									<div class="privacy-settings-wrapper dropdown-wrapper">
+										<div
+											data-id="privacy-settings-menu"
+											class="privacy-settings-item dropdown-button mt-3 border border-gray-600 rounded-lg bg-white"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-team"></use>
+											</svg>
+											<div class="privacy-settings-item__info gap-0">
+												<div class="privacy-settings-item__title">
+													Open Space
+												</div>
+												<div class="privacy-settings-item__description">
+													Anyone at Startup Co can join this space
+												</div>
 											</div>
+											<svg class="icon icon-sm ml-auto">
+												<use href="#icon-chevron-down"></use>
+											</svg>
 										</div>
-										<svg class="icon icon-sm ml-auto">
-											<use href="#icon-chevron-down"></use>
-										</svg>
-									</div>
-									<div
-										class="js-dropdown w-[490px] hidden"
-										data-dropdown-id="privacy-settings-menu"
-										data-sheet-modal
-										data-overflow-visible
-									>
-										<div class="js-dropdown-overlay"></div>
-										<div class="js-dropdown-body">
-											<div class="js-dropdown-trigger"></div>
-											<div class="js-dropdown-content">
-												<div class="privacy-settings-menu__item">
-													<svg class="icon icon-md">
-														<use href="#icon-team"></use>
-													</svg>
-													<div class="flex flex-col gap-1">
-														<div class="font-medium text-dark-800 text-sm fle">
-															Open Space
-														</div>
-														<div class="text-xs text-dark-800/70">
-															Anyone at Startup Co can join this space
+										<div
+											class="js-dropdown w-[490px] hidden"
+											data-dropdown-id="privacy-settings-menu"
+											data-sheet-modal
+											data-overflow-visible
+										>
+											<div class="js-dropdown-overlay"></div>
+											<div class="js-dropdown-body">
+												<div class="js-dropdown-trigger"></div>
+												<div class="js-dropdown-content">
+													<div class="privacy-settings-menu__item">
+														<svg class="icon icon-md">
+															<use href="#icon-team"></use>
+														</svg>
+														<div class="flex flex-col gap-1">
+															<div
+																class="font-medium text-dark-800 text-sm fle"
+															>
+																Open Space
+															</div>
+															<div class="text-xs text-dark-800/70">
+																Anyone at Startup Co can join this space
+															</div>
 														</div>
 													</div>
-												</div>
-												<div class="privacy-settings-menu__item">
-													<svg class="icon icon-md">
-														<use href="#icon-lock"></use>
-													</svg>
-													<div class="flex flex-col gap-1">
-														<div
-															class="font-medium text-dark-800 text-sm flex items-center gap-2 mb-1"
-														>
-															Closed Space
-														</div>
-														<div class="text-xs text-dark-800/70">
-															Only people invited can join
+													<div class="privacy-settings-menu__item">
+														<svg class="icon icon-md">
+															<use href="#icon-lock"></use>
+														</svg>
+														<div class="flex flex-col gap-1">
+															<div
+																class="font-medium text-dark-800 text-sm flex items-center gap-2 mb-1"
+															>
+																Closed Space
+															</div>
+															<div class="text-xs text-dark-800/70">
+																Only people invited can join
+															</div>
 														</div>
 													</div>
 												</div>
@@ -1663,12 +1667,12 @@
 						</button>
 					</div>
 					<div
-						class="dropdown-wrapper z-4 max-md:border-b border-gray-400 px-2"
+						class="dropdown-wrapper z-4 max-md:border-b border-gray-400 px-2 mb-5 [.active-sidebar_&]:mb-7"
 					>
 						<a
 							href="#"
 							data-id="dropdown-workspaces"
-							class="dropdown-button p-2.5 flex items-center justify-between relative bg-white border border-gray-600 rounded-xl hover:bg-gray-200 [&.active]:bg-gray-200 [.active-sidebar_&]:rounded-lg [.active-sidebar_&]:p-0 [.active-sidebar_&]:border-0 [.active-sidebar_&]:bg-transparent transition-all duration-300 ease-in-out overflow-hidden mb-5 [.active-sidebar_&]:mb-7 [.active-sidebar_&]:mt-2"
+							class="dropdown-button p-2.5 flex items-center justify-between relative bg-white border border-gray-600 rounded-xl hover:bg-gray-200 [&.active]:bg-gray-200 [.active-sidebar_&]:rounded-lg [.active-sidebar_&]:p-0 [.active-sidebar_&]:border-0 [.active-sidebar_&]:bg-transparent transition-all duration-300 ease-in-out overflow-hidden [.active-sidebar_&]:mt-2"
 						>
 							<div class="flex items-center justify-between mr-2 flex-shrink-0">
 								<div
@@ -2298,7 +2302,7 @@
 										<span class="aside-notification-badge">5</span>
 									</a>
 									<div
-										class="js-dropdown hidden w-[28.125rem]"
+										class="js-dropdown w-[28.125rem] hidden"
 										data-dropdown-id="dropdown-notifications"
 										data-sheet-modal
 										data-overflow-visible

@@ -118,6 +118,42 @@ const Dropdown = {
 		}
 	},
 
+	setTransformOrigin($content) {
+		const $wrapper = $content.closest(".dropdown-wrapper");
+		const contentRect = $content[0].getBoundingClientRect();
+		const wrapperRect = $wrapper[0].getBoundingClientRect();
+
+		const relativeLeft = contentRect.left - wrapperRect.left;
+		const relativeTop = contentRect.top - wrapperRect.top;
+		const relativeRight = wrapperRect.right - contentRect.right;
+		const relativeBottom = wrapperRect.bottom - contentRect.bottom;
+		console.log({
+			relativeLeft,
+			relativeTop,
+			relativeRight,
+			relativeBottom,
+		});
+
+		let horizontalOrigin = "center";
+		if (relativeLeft >= 0) {
+			horizontalOrigin = "left";
+		} else if (relativeRight >= 0) {
+			horizontalOrigin = "right";
+		}
+
+		let verticalOrigin = "center";
+		if (relativeTop >= 0) {
+			verticalOrigin = "top";
+		} else if (relativeBottom >= 0) {
+			verticalOrigin = "bottom";
+		}
+
+		$content.attr(
+			"data-transform-origin",
+			`${verticalOrigin} ${horizontalOrigin}`,
+		);
+	},
+
 	handleDropdownClick(e) {
 		e.preventDefault();
 		const $button = $(e.currentTarget);
@@ -137,9 +173,11 @@ const Dropdown = {
 
 			clearTimeout(this.dropdownIdTimer);
 			this.dropdownIdTimer = setTimeout(() => {
+				this.setTransformOrigin($content);
 				$content.addClass("active");
+				$content.addClass("dropdown-animate");
 				this.adjustElementPosition($content);
-			}, 10);
+			}, 1);
 		} else {
 			this.closeDropdown($button, $wrapper, $content);
 		}
@@ -185,17 +223,18 @@ const Dropdown = {
 	},
 
 	closeAllDropdowns() {
-		this.dropdownContents.removeClass("active").addClass("hidden");
+		this.dropdownContents.removeClass("active dropdown-animate");
 		this.dropdownButtons.removeClass("active");
 		this.dropdownWrappers.removeClass("active");
 		this.subMenuItems.removeClass("active");
 		$(".js-dropdown-sub-list").removeClass("active").addClass("hidden");
 
-		this.dropdownContents.removeClass("dropdown-fixed");
 		this.detachScrollListeners();
 
 		clearTimeout(this.dropdownIdTimer);
+
 		this.dropdownIdTimer = setTimeout(() => {
+			this.dropdownContents.removeClass("dropdown-fixed");
 			this.dropdownContents.addClass("hidden");
 		}, this.config.animationDelay);
 	},
@@ -203,9 +242,15 @@ const Dropdown = {
 	closeDropdown($button, $wrapper, $content) {
 		$button.removeClass("active");
 		$wrapper.removeClass("active");
-		$content.removeClass("active").addClass("hidden");
-		$content.removeClass("dropdown-fixed");
 		this.detachScrollListeners();
+		$content.removeClass("dropdown-animate");
+
+		clearTimeout(this.dropdownIdTimer);
+		this.dropdownIdTimer = setTimeout(() => {
+			$content.removeClass("dropdown-fixed");
+			$content.removeAttr("data-transform-origin");
+			$content.removeClass("active").addClass("hidden");
+		}, this.config.animationDelay);
 	},
 
 	adjustElementPosition($element) {
