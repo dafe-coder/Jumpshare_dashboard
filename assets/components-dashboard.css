@@ -236,9 +236,9 @@
 		transition:
 			opacity 150ms ease,
 			scale 150ms ease;
-		@apply bg-white shadow-dropdown border border-gray-400 rounded-lg w-[14rem] absolute top-[calc(100%_+_8px)] right-0 left-auto [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto z-997 lg:opacity-0 lg:scale-95;
+		@apply bg-white shadow-dropdown border border-gray-400 rounded-lg w-[14rem] absolute top-[calc(100%_+_8px)] right-0 left-auto [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto z-997 lg:opacity-0;
 		&.dropdown-animate {
-			@apply lg:scale-100 lg:opacity-100;
+			@apply lg:scale-100! lg:opacity-100!;
 		}
 		.js-dropdown-content {
 			@apply lg:pt-0 lg:max-h-[580px] max-lg:overflow-y-auto px-0 pb-0;
@@ -322,7 +322,7 @@
 		@apply px-2.5 py-1.5 absolute bottom-16.5 left-1/2 -translate-x-1/2 rounded-lg flex;
 	}
 	.caption-outline {
-		@apply absolute left-1/2 top-1/2 -translate-1/2 z-2 z-1 text-lg font-bold text-nowrap;
+		@apply absolute left-1/2 top-1/2 -translate-1/2 z-1 text-lg font-bold text-nowrap;
 		color: #fff;
 		text-shadow:
 			0 0 2px #b3f976,

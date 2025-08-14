@@ -7048,12 +7048,6 @@
     --tw-shadow: 0px 3px 35px var(--tw-shadow-color, rgba(0, 0, 0, 0.04));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     @media (width >= 64rem) {
-      --tw-scale-x: 95%;
-      --tw-scale-y: 95%;
-      --tw-scale-z: 95%;
-      scale: var(--tw-scale-x) var(--tw-scale-y);
-    }
-    @media (width >= 64rem) {
       opacity: 0%;
     }
     &.active {
@@ -7067,13 +7061,13 @@
     }
     &.dropdown-animate {
       @media (width >= 64rem) {
-        --tw-scale-x: 100%;
-        --tw-scale-y: 100%;
-        --tw-scale-z: 100%;
-        scale: var(--tw-scale-x) var(--tw-scale-y);
+        --tw-scale-x: 100% !important;
+        --tw-scale-y: 100% !important;
+        --tw-scale-z: 100% !important;
+        scale: var(--tw-scale-x) var(--tw-scale-y) !important;
       }
       @media (width >= 64rem) {
-        opacity: 100%;
+        opacity: 100% !important;
       }
     }
     .js-dropdown-content {
@@ -7375,7 +7369,6 @@
     top: calc(1/2 * 100%);
     left: calc(1/2 * 100%);
     z-index: 1;
-    z-index: 2;
     --tw-translate-x: calc(calc(1/2 * 100%) * -1);
     --tw-translate-y: calc(calc(1/2 * 100%) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);

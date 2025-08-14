@@ -171,12 +171,14 @@ const Dropdown = {
 			$wrapper.addClass("active");
 			$content.removeClass("hidden");
 
+			$content.css("scale", "1");
+			this.adjustElementPosition($content);
+			$content.css("scale", "0.95");
 			clearTimeout(this.dropdownIdTimer);
 			this.dropdownIdTimer = setTimeout(() => {
-				this.setTransformOrigin($content);
 				$content.addClass("active");
+				this.setTransformOrigin($content);
 				$content.addClass("dropdown-animate");
-				this.adjustElementPosition($content);
 			}, 1);
 		} else {
 			this.closeDropdown($button, $wrapper, $content);
