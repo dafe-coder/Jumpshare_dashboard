@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard with Profile Dropdown</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Only keep dropdown scale/fade animation */
+    .card-menu {
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0.98) translateY(8px);
+      transition: opacity 0.18s, transform 0.18s;
+    }
+    .card-menu.open {
+      opacity: 1;
+      pointer-events: auto;
+      transform: scale(1) translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-white min-h-screen">
+  <div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <aside class="w-64" style="background:#F9F7F9">
+      <div class="mb-10 flex items-center space-x-2">
+        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
+        <span class="text-2xl font-bold text-gray-800">Dashboard</span>
+      </div>
+      <nav class="flex flex-col space-y-2">
+        <a href="#" class="flex items-center px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-100 font-medium">
+          <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7v4a1 1 0 001 1h3m10-5h3a1 1 0 011 1v4a1 1 0 01-1 1h-3m-4 4v4m0 0H7a2 2 0 01-2-2v-5a2 2 0 012-2h10a2 2 0 012 2v5a2 2 0 01-2 2h-5z" /></svg>
+          Home
+        </a>
+        <a href="#" class="flex items-center px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-100 font-medium">
+          <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 15c2.485 0 4.847.607 6.879 1.804M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+          Profile
+        </a>
+        <a href="#" class="flex items-center px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-100 font-medium">
+          <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
+          Apps
+        </a>
+        <a href="#" class="flex items-center px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-100 font-medium">
+          <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8s-9-3.582-9-8a9 9 0 1118 0z" /></svg>
+          Help
+        </a>
+      </nav>
+    </aside>
+    <!-- Main Content Area -->
+    <div class="flex-1 flex flex-col">
+      <!-- Header Bar -->
+      <header class="flex items-center justify-between bg-white shadow px-8 py-4">
+        <div class="text-xl font-semibold text-gray-700">Welcome back, John!</div>
+        <div class="flex items-center space-x-6">
+          <!-- Notification Bell -->
+          <div class="relative">
+            <button id="notificationBtn" class="relative focus:outline-none">
+              <svg class="w-7 h-7 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+              </svg>
+              <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full px-1.5 py-0.5">9+</span>
+            </button>
+            <!-- Notification Dropdown -->
+            <div id="notificationDropdown" class="origin-top-right absolute right-0 mt-2 w-[420px] bg-white rounded-xl shadow-lg ring-1 ring-black ring-opacity-5 p-0 opacity-0 scale-95 pointer-events-none transition-all duration-300 z-50">
+              <!-- Header -->
+              <div class="flex items-center justify-between px-6 py-4 border-b">
+                <span class="text-lg font-semibold text-gray-900">Notifications</span>
+                <a href="#" class="text-blue-600 text-sm font-medium hover:underline-none focus:underline-none no-underline hover:no-underline">View All &rarr;</a>
+              </div>
+              <!-- Notification List -->
+              <div class="divide-y">
+                <!-- Notification Item 1 -->
+                <div class="flex items-start px-6 py-4 bg-white hover:bg-gray-100 transition duration-75 cursor-pointer">
+                  <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-10 h-10 rounded-full mr-3 mt-1" alt="Avatar">
+                  <div class="flex-1">
+                    <div class="text-sm text-gray-700">Someone viewed <span class="font-semibold">Speaker Notes Hover Effect.mp4</span> for the first time</div>
+                    <div class="text-xs text-gray-400 mt-1">Feb 6, 2025 &bull; 11:41 pm</div>
+                  </div>
+                </div>
+                <!-- Notification Item 2 (unread) -->
+                <div class="flex items-start px-6 py-4 bg-white hover:bg-gray-100 transition duration-75 cursor-pointer">
+                  <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-10 h-10 rounded-full mr-3 mt-1" alt="Avatar">
+                  <div class="flex-1">
+                    <div class="text-sm text-gray-700">Team Member moved Feb 3 - Technical Development Updates and Feature Planning.mp4 and 1 more items from folder Team Meetings to folder 2025</div>
+                    <div class="text-xs text-gray-400 mt-1">Feb 6, 2025 &bull; 11:41 pm</div>
+                  </div>
+                  <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 ml-2"></span>
+                </div>
+                <!-- Notification Item 3 -->
+                <div class="flex items-start px-6 py-4 bg-white hover:bg-gray-100 transition duration-75 cursor-pointer">
+                  <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-10 h-10 rounded-full mr-3 mt-1" alt="Avatar">
+                  <div class="flex-1">
+                    <div class="text-sm text-gray-700">You received _+8= +3 -5 +10 (1) HW.pdf in your Team Inbox test-zapeir-update from qweqw eqw (eqwe@asd.we)</div>
+                    <div class="text-xs text-gray-400 mt-1">Feb 6, 2025</div>
+                  </div>
+                </div>
+                <!-- Notification Item 4 -->
+                <div class="flex items-start px-6 py-4 bg-white hover:bg-gray-100 transition duration-75 cursor-pointer">
+                  <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-10 h-10 rounded-full mr-3 mt-1" alt="Avatar">
+                  <div class="flex-1">
+                    <div class="text-sm text-gray-700">Someone viewed <span class="font-semibold">Speaker Notes Hover Effect.mp4</span> for the first time</div>
+                    <div class="text-xs text-gray-400 mt-1">Feb 6, 2025 &bull; 11:41 pm</div>
+                  </div>
+                </div>
+                <!-- Notification Item 5 (unread) -->
+                <div class="flex items-start px-6 py-4 bg-white hover:bg-gray-100 transition duration-75 cursor-pointer">
+                  <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-10 h-10 rounded-full mr-3 mt-1" alt="Avatar">
+                  <div class="flex-1">
+                    <div class="text-sm text-gray-700">Team Member moved Feb 3 - Technical Development Updates and Feature Planning.mp4 and 1 more items from folder Team Meetings to folder 2025</div>
+                    <div class="text-xs text-gray-400 mt-1">Feb 6, 2025 &bull; 11:41 pm</div>
+                  </div>
+                  <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 ml-2"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Profile Avatar & Dropdown -->
+          <div class="relative">
+            <button id="profileBtn" class="focus:outline-none flex items-center">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Avatar" class="w-10 h-10 rounded-full border-2 border-gray-300">
+              <svg class="w-5 h-5 ml-2 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <!-- Dropdown Menu -->
+            <div id="dropdownMenu" class="origin-top-right absolute right-0 mt-2 w-80 bg-white rounded-xl shadow-lg ring-1 ring-black ring-opacity-5 p-0 opacity-0 scale-95 pointer-events-none transition-all duration-300 z-50">
+              <!-- User Info -->
+              <div class="flex items-center p-4 border-b">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Avatar" class="w-12 h-12 rounded-full mr-3">
+                <div>
+                  <div class="font-semibold text-gray-900">John Doe</div>
+                  <div class="text-sm text-gray-500">johndoe252@cironex.com</div>
+                </div>
+              </div>
+              <!-- Menu Items -->
+              <div class="flex flex-col py-2">
+                <a href="#" class="flex items-center px-4 py-3 bg-white hover:bg-gray-100 transition duration-75 rounded-lg text-gray-700 no-underline hover:no-underline focus:no-underline">
+                  <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7v4a1 1 0 001 1h3m10-5h3a1 1 0 011 1v4a1 1 0 01-1 1h-3m-4 4v4m0 0H7a2 2 0 01-2-2v-5a2 2 0 012-2h10a2 2 0 012 2v5a2 2 0 01-2 2h-5z" /></svg>
+                  Workspace Settings
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 bg-white hover:bg-gray-100 transition duration-75 rounded-lg text-gray-700 no-underline hover:no-underline focus:no-underline">
+                  <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 15c2.485 0 4.847.607 6.879 1.804M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                  Profile Settings
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 bg-white hover:bg-gray-100 transition duration-75 rounded-lg text-gray-700 no-underline hover:no-underline focus:no-underline">
+                  <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
+                  Install Application
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 bg-white hover:bg-gray-100 transition duration-75 rounded-lg text-gray-700 no-underline hover:no-underline focus:no-underline">
+                  <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8s-9-3.582-9-8a9 9 0 1118 0z" /></svg>
+                  Help Center
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 bg-white hover:bg-gray-100 transition duration-75 rounded-lg text-gray-700 no-underline hover:no-underline focus:no-underline">
+                  <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8h2a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V10a2 2 0 012-2h2m10-4H7a2 2 0 00-2 2v0a2 2 0 002 2h10a2 2 0 002-2v0a2 2 0 00-2-2z" /></svg>
+                  Send Feedback
+                </a>
+                <div class="border-t my-2"></div>
+                <a href="#" class="flex items-center px-4 py-3 bg-white hover:bg-gray-100 transition duration-75 rounded-lg text-red-600 no-underline hover:no-underline focus:no-underline">
+                  <svg class="w-5 h-5 mr-3 text-red-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7" /></svg>
+                  Sign Out
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- Main Content Placeholder -->
+      <main class="flex-1 p-10">
+        <div class="max-w-6xl mx-auto w-full">
+          <!-- Folders Section -->
+          <h2 class="text-xl font-bold text-gray-800 mb-4">Folders</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 mb-10">
+            <!-- Folder Card 1 -->
+            <div class="bg-white rounded-xl shadow flex flex-col p-5 min-w-0">
+              <div class="flex items-center mb-2">
+                <svg class="w-6 h-6 text-gray-400 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7a2 2 0 012-2h3.172a2 2 0 011.414.586l1.828 1.828A2 2 0 0012.828 8H19a2 2 0 012 2v7a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" /></svg>
+                <span class="font-medium text-gray-800 truncate">Team Meetings Tea...</span>
+              </div>
+              <div class="text-xs text-gray-500">2 items &bull; 22 hrs ago</div>
+            </div>
+            <!-- Folder Card 2 -->
+            <div class="bg-white rounded-xl shadow flex flex-col p-5 min-w-0">
+              <div class="flex items-center mb-2">
+                <svg class="w-6 h-6 text-gray-400 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7a2 2 0 012-2h3.172a2 2 0 011.414.586l1.828 1.828A2 2 0 0012.828 8H19a2 2 0 012 2v7a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" /></svg>
+                <span class="font-medium text-gray-800 truncate">Untitled</span>
+              </div>
+              <div class="text-xs text-gray-500">41 Items &bull; Jan 10, 2024</div>
+            </div>
+            <!-- Folder Card 3 -->
+            <div class="bg-white rounded-xl shadow flex flex-col p-5 min-w-0">
+              <div class="flex items-center mb-2">
+                <svg class="w-6 h-6 text-gray-400 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7a2 2 0 012-2h3.172a2 2 0 011.414.586l1.828 1.828A2 2 0 0012.828 8H19a2 2 0 012 2v7a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" /></svg>
+                <span class="font-medium text-gray-800 truncate">New Folder 2.0</span>
+              </div>
+              <div class="text-xs text-gray-500">1 Items &bull; Jan 10, 2024</div>
+            </div>
+            <!-- Folder Card 4 -->
+            <div class="bg-white rounded-xl shadow flex flex-col p-5 min-w-0">
+              <div class="flex items-center mb-2">
+                <svg class="w-6 h-6 text-gray-400 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7a2 2 0 012-2h3.172a2 2 0 011.414.586l1.828 1.828A2 2 0 0012.828 8H19a2 2 0 012 2v7a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" /></svg>
+                <span class="font-medium text-gray-800 truncate">Untitled</span>
+              </div>
+              <div class="text-xs text-gray-500">0 Items &bull; Jan 10, 2024</div>
+            </div>
+          </div>
+          <!-- Files Section -->
+          <h2 class="text-xl font-bold text-gray-800 mb-4 mt-8">Files</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
+            <!-- File Card 1 (Video) -->
+            <div class="bg-white rounded-xl shadow flex flex-col p-0 overflow-hidden group relative">
+              <div class="relative">
+                <img src="https://placehold.co/320x180?text=Video+Thumb" class="w-full h-36 object-cover" alt="Video Thumb">
+                <button class="absolute inset-0 flex items-center justify-center">
+                  <svg class="w-12 h-12 text-white bg-black bg-opacity-50 rounded-full p-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="9.75,7.5 16.5,12 9.75,16.5" fill="currentColor" /></svg>
+                </button>
+                <span class="absolute bottom-2 right-2 bg-black bg-opacity-80 text-white text-xs rounded px-2 py-0.5">4 min</span>
+                <!-- Three Dots Button -->
+                <button class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-100 bg-white rounded-full p-1 shadow hover:bg-gray-100 z-10" onclick="toggleCardMenu(event, 0)">
+                  <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></svg>
+                </button>
+                <!-- Card Menu -->
+                <div id="cardMenu0" class="card-menu absolute top-10 right-2 w-64 bg-white rounded-xl shadow-xl border border-gray-100 z-20 py-2">
+                  <button class="flex items-center w-full px-4 py-2 hover:bg-gray-50 text-left">
+                    <svg class="w-5 h-5 mr-3 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8.25V6a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 6v2.25"/><path d="M3 8.25v9A2.25 2.25 0 005.25 19.5h13.5A2.25 2.25 0 0021 17.25v-9"/><path d="M9.75 12h4.5"/></svg>
+                    Copy Link
+                  </button>
+                  <button class="flex items-center w-full px-4 py-2 hover:bg-gray-50 text-left">
+                    <svg class="w-5 h-5 mr-3 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 12h.01"/><path d="M12 12h.01"/><path d="M9 12h.01"/><path d="M21 12c0 4.418-4.03 8-9 8s-9-3.582-9-8a9 9 0 1118 0z"/></svg>
+                    Share
+                  </button>
+                  <button class="flex items-center w-full px-4 py-2 hover:bg-gray-50 text-left">
+                    <svg class="w-5 h-5 mr-3 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15v2m0 0a2 2 0 100-4 2 2 0 000 4zm0 0V9m0 0a2 2 0 100-4 2 2 0 000 4zm0 0v2"/></svg>
+                    Lock
+                  </button>
+                  <button class="flex items-center w-full px-4 py-2 hover:bg-gray-50 text-left">
+                    <svg class="w-5 h-5 mr-3 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+                    Self-Destruct
+                  </button>
+                  <button class="flex items-center w-full px-4 py-2 hover:bg-gray-50 text-left">
+                    <svg class="w-5 h-5 mr-3 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+                    View Stats
+                  </button>
+                  <button class="flex items-center w-full px-4 py-2 hover:bg-gray-50 text-left">
+                    <svg class="w-5 h-5 mr-3 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19.5 3 21l1.5-4L16.5 3.5z"/></svg>
+                    Rename
+                  </button>
+                  <button class="flex items-center w-full px-4 py-2 hover:bg-gray-50 text-left">
+                    <svg class="w-5 h-5 mr-3 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                    Favorite
+                  </button>
+                  <button class="flex items-center w-full px-4 py-2 hover:bg-gray-50 text-left">
+                    <svg class="w-5 h-5 mr-3 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+                    Download
+                  </button>
+                  <button class="flex items-center w-full px-4 py-2 hover:bg-gray-50 text-left">
+                    <svg class="w-5 h-5 mr-3 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 17l4 4 4-4m-4-5v9"/></svg>
+                    Copy / Move
+                  </button>
+                  <div class="relative group/version">
+                    <button class="flex items-center w-full px-4 py-2 hover:bg-gray-50 text-left">
+                      <svg class="w-5 h-5 mr-3 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+                      Version History
+                      <svg class="w-4 h-4 ml-auto text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+                    </button>
+                    <!-- Submenu -->
+                    <div class="absolute left-full top-0 mt-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 z-30 py-2 hidden group-hover/version:block">
+                      <button class="flex items-center w-full px-4 py-2 hover:bg-gray-50 text-left">View All Versions</button>
+                      <button class="flex items-center w-full px-4 py-2 hover:bg-gray-50 text-left">Restore Version</button>
+                    </div>
+                  </div>
+                  <div class="border-t my-2"></div>
+                  <button class="flex items-center w-full px-4 py-2 hover:bg-gray-50 text-left text-red-600">
+                    <svg class="w-5 h-5 mr-3 text-red-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+                    Delete
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- File Card 2 (Video) -->
+            <div class="bg-white rounded-xl shadow flex flex-col p-0 overflow-hidden">
+              <div class="relative">
+                <img src="https://placehold.co/320x180?text=Video+Thumb" class="w-full h-36 object-cover" alt="Video Thumb">
+                <button class="absolute inset-0 flex items-center justify-center">
+                  <svg class="w-12 h-12 text-white bg-black bg-opacity-50 rounded-full p-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="9.75,7.5 16.5,12 9.75,16.5" fill="currentColor" /></svg>
+                </button>
+                <span class="absolute bottom-2 right-2 bg-black bg-opacity-80 text-white text-xs rounded px-2 py-0.5">22 min</span>
+              </div>
+              <div class="p-4 flex-1 flex flex-col">
+                <div class="font-medium text-gray-800 truncate">Guidelines for the tour</div>
+                <div class="text-xs text-gray-500 mb-2">MP4 &bull; 432 views</div>
+                <div class="flex items-center mt-auto">
+                  <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-6 h-6 rounded-full mr-2" alt="Avatar">
+                  <div>
+                    <div class="text-xs font-medium text-gray-700 leading-tight">Robert Michael</div>
+                    <div class="text-xs text-gray-400">3 months ago</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- File Card 3 (PDF) -->
+            <div class="bg-white rounded-xl shadow flex flex-col p-0 overflow-hidden">
+              <div class="relative flex items-center justify-center h-36 bg-gray-50">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" class="w-12 h-12" alt="PDF Icon">
+              </div>
+              <div class="p-4 flex-1 flex flex-col">
+                <div class="font-medium text-gray-800 truncate">Customer Relation Managem...</div>
+                <div class="text-xs text-gray-500 mb-2">MP4 &bull; 21 views</div>
+                <div class="flex items-center mt-auto">
+                  <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-6 h-6 rounded-full mr-2" alt="Avatar">
+                  <div>
+                    <div class="text-xs font-medium text-gray-700 leading-tight">Robert Michael</div>
+                    <div class="text-xs text-gray-400">3 months ago</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- File Card 4 (Excel) -->
+            <div class="bg-white rounded-xl shadow flex flex-col p-0 overflow-hidden">
+              <div class="relative flex items-center justify-center h-36 bg-gray-50">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Excel_icon_%282019%29.svg" class="w-12 h-12" alt="Excel Icon">
+              </div>
+              <div class="p-4 flex-1 flex flex-col">
+                <div class="font-medium text-gray-800 truncate">Guidelines for the tour of 202...</div>
+                <div class="text-xs text-gray-500 mb-2">XLSX &bull; 12 views</div>
+                <div class="flex items-center mt-auto">
+                  <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-6 h-6 rounded-full mr-2" alt="Avatar">
+                  <div>
+                    <div class="text-xs font-medium text-gray-700 leading-tight">Robert Michael R...</div>
+                    <div class="text-xs text-gray-400">3 months ago</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script>
+    // Dropdown toggle logic with animation
+    const profileBtn = document.getElementById('profileBtn');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+    let open = false;
+
+    profileBtn.addEventListener('click', () => {
+      open = !open;
+      if (open) {
+        dropdownMenu.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+        dropdownMenu.classList.add('opacity-100', 'scale-100');
+        // Close notification dropdown if open
+        notificationDropdown.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+        notificationDropdown.classList.remove('opacity-100', 'scale-100');
+        notificationOpen = false;
+      } else {
+        dropdownMenu.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+        dropdownMenu.classList.remove('opacity-100', 'scale-100');
+      }
+    });
+    // Notification dropdown logic
+    const notificationBtn = document.getElementById('notificationBtn');
+    const notificationDropdown = document.getElementById('notificationDropdown');
+    let notificationOpen = false;
+
+    notificationBtn.addEventListener('click', () => {
+      notificationOpen = !notificationOpen;
+      if (notificationOpen) {
+        notificationDropdown.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+        notificationDropdown.classList.add('opacity-100', 'scale-100');
+        // Close profile dropdown if open
+        dropdownMenu.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+        dropdownMenu.classList.remove('opacity-100', 'scale-100');
+        open = false;
+      } else {
+        notificationDropdown.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+        notificationDropdown.classList.remove('opacity-100', 'scale-100');
+      }
+    });
+    // Close dropdown when clicking outside
+    document.addEventListener('mousedown', (e) => {
+      if (open && !dropdownMenu.contains(e.target) && !profileBtn.contains(e.target)) {
+        open = false;
+        dropdownMenu.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+        dropdownMenu.classList.remove('opacity-100', 'scale-100');
+      }
+      if (notificationOpen && !notificationDropdown.contains(e.target) && !notificationBtn.contains(e.target)) {
+        notificationOpen = false;
+        notificationDropdown.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+        notificationDropdown.classList.remove('opacity-100', 'scale-100');
+      }
+    });
+    // Card menu logic
+    let openCardMenu = null;
+    function toggleCardMenu(e, idx) {
+      e.stopPropagation();
+      // Close any open menu
+      if (openCardMenu !== null && openCardMenu !== idx) {
+        document.getElementById('cardMenu' + openCardMenu).classList.remove('open');
+      }
+      const menu = document.getElementById('cardMenu' + idx);
+      if (menu.classList.contains('open')) {
+        menu.classList.remove('open');
+        openCardMenu = null;
+      } else {
+        menu.classList.add('open');
+        openCardMenu = idx;
+      }
+    }
+    // Close card menu on click outside
+    document.addEventListener('mousedown', (e) => {
+      if (openCardMenu !== null) {
+        const menu = document.getElementById('cardMenu' + openCardMenu);
+        if (menu && !menu.contains(e.target)) {
+          menu.classList.remove('open');
+          openCardMenu = null;
+        }
+      }
+    });
+  </script>
+</body>
+</html> 
