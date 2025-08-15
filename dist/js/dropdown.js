@@ -9,7 +9,7 @@ const Dropdown = {
 	subMenuItems: null,
 
 	config: {
-		animationDelay: 150,
+		animationDelay: 300,
 		resizeDelay: 50,
 	},
 
