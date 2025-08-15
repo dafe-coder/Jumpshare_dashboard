@@ -19,6 +19,8 @@ const Dropdown = {
 		this.adjustElementPositionOnResize();
 		this.initGridDropdown();
 		this.initMobileGridDropdown();
+
+		this.cleanupActiveDropdowns();
 	},
 
 	initElements() {
@@ -165,20 +167,20 @@ const Dropdown = {
 		);
 
 		if (!$button.hasClass("active")) {
+			clearTimeout(this.dropdownIdCloseAllTimer);
+			clearTimeout(this.dropdownIdCloseTimer);
+
 			this.closeAllDropdowns();
 
 			$button.addClass("active");
 			$wrapper.addClass("active");
 			$content.removeClass("hidden");
-
-			$content.css("scale", "1");
 			this.adjustElementPosition($content);
-			$content.css("scale", "0.95");
-			clearTimeout(this.dropdownIdTimer);
+
 			this.dropdownIdTimer = setTimeout(() => {
 				$content.addClass("active");
+				$content.addClass("dropdown-animate-show");
 				this.setTransformOrigin($content);
-				$content.addClass("dropdown-animate");
 			}, 1);
 		} else {
 			this.closeDropdown($button, $wrapper, $content);
@@ -224,34 +226,78 @@ const Dropdown = {
 		}
 	},
 
+	cleanupActiveDropdowns() {
+		clearTimeout(this.dropdownIdCloseAllTimer);
+		clearTimeout(this.dropdownIdCloseTimer);
+
+		const $activeDropdown = this.dropdownContents.filter(".active");
+		const $activeButton = this.dropdownButtons.filter(".active");
+		const $activeWrapper = this.dropdownWrappers.filter(".active");
+		const $activeSubMenu = this.subMenuItems.filter(".active");
+		const $activeSubList = $(".js-dropdown-sub-list.active");
+
+		if ($activeDropdown.length > 0) {
+			console.log(
+				"Cleaning up active dropdowns on init:",
+				$activeDropdown.length,
+			);
+
+			$activeDropdown
+				.removeClass("active dropdown-animate-show dropdown-animate-hide")
+				.addClass("hidden");
+			$activeButton.removeClass("active");
+			$activeWrapper.removeClass("active");
+			$activeSubMenu.removeClass("active");
+			$activeSubList.removeClass("active").addClass("hidden");
+		}
+	},
+
 	closeAllDropdowns() {
-		this.dropdownContents.removeClass("active dropdown-animate");
-		this.dropdownButtons.removeClass("active");
-		this.dropdownWrappers.removeClass("active");
-		this.subMenuItems.removeClass("active");
-		$(".js-dropdown-sub-list").removeClass("active").addClass("hidden");
+		clearTimeout(this.dropdownIdCloseAllTimer);
+		clearTimeout(this.dropdownIdCloseTimer);
+
+		const $activeDropdown = this.dropdownContents.filter(".active");
+		const $activeButton = this.dropdownButtons.filter(".active");
+		const $activeWrapper = this.dropdownWrappers.filter(".active");
+		const $activeSubMenu = this.subMenuItems.filter(".active");
+		const $activeSubList = $(".js-dropdown-sub-list.active");
+
+		if ($activeDropdown.length === 0) {
+			return;
+		}
+
+		console.log("Closing dropdowns:", $activeDropdown.length, $activeDropdown);
+
+		$activeDropdown.removeClass("active dropdown-animate-show");
+		$activeButton.removeClass("active");
+		$activeWrapper.removeClass("active");
+		$activeSubMenu.removeClass("active");
+		$activeSubList.removeClass("active").addClass("hidden");
+
+		$activeDropdown.addClass("dropdown-animate-hide");
 
 		this.detachScrollListeners();
 
-		clearTimeout(this.dropdownIdTimer);
-
-		this.dropdownIdTimer = setTimeout(() => {
-			this.dropdownContents.removeClass("dropdown-fixed");
-			this.dropdownContents.addClass("hidden");
+		this.dropdownIdCloseAllTimer = setTimeout(() => {
+			$activeDropdown.removeClass("dropdown-animate-hide");
+			$activeDropdown.addClass("hidden");
 		}, this.config.animationDelay);
 	},
 
 	closeDropdown($button, $wrapper, $content) {
+		clearTimeout(this.dropdownIdCloseAllTimer);
+		clearTimeout(this.dropdownIdCloseTimer);
+
 		$button.removeClass("active");
 		$wrapper.removeClass("active");
 		this.detachScrollListeners();
-		$content.removeClass("dropdown-animate");
+		$content.removeClass("dropdown-animate-show");
+		$content.addClass("dropdown-animate-hide");
 
-		clearTimeout(this.dropdownIdTimer);
-		this.dropdownIdTimer = setTimeout(() => {
+		this.dropdownIdCloseTimer = setTimeout(() => {
 			$content.removeClass("dropdown-fixed");
 			$content.removeAttr("data-transform-origin");
-			$content.removeClass("active").addClass("hidden");
+			$content.removeClass("active dropdown-animate-hide").addClass("hidden");
 		}, this.config.animationDelay);
 	},
 

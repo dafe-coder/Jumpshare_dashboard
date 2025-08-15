@@ -232,14 +232,15 @@
 	.js-dropdown-list .js-dropdown-list-item {
 		@apply max-lg:!py-2.5;
 	}
+	.dropdown-animate-show {
+		animation: dropdownShow 150ms ease forwards !important;
+	}
+	.dropdown-animate-hide {
+		animation: dropdownHide 150ms ease forwards !important;
+	}
 	.js-dropdown {
-		transition:
-			opacity 150ms ease,
-			scale 150ms ease;
-		@apply bg-white shadow-dropdown border border-gray-400 rounded-lg w-[14rem] absolute top-[calc(100%_+_8px)] right-0 left-auto [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto z-997 lg:opacity-0;
-		&.dropdown-animate {
-			@apply lg:scale-100! lg:opacity-100!;
-		}
+		opacity: 0;
+		@apply bg-white shadow-dropdown border border-gray-400 rounded-lg w-[14rem] absolute top-[calc(100%_+_8px)] right-0 left-auto [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto z-997;
 		.js-dropdown-content {
 			@apply lg:pt-0 lg:max-h-[580px] max-lg:overflow-y-auto px-0 pb-0;
 		}
@@ -493,5 +494,26 @@
 
 	[data-transform-origin="bottom right"] {
 		transform-origin: bottom right;
+	}
+}
+
+@keyframes dropdownShow {
+	from {
+		opacity: 0;
+		scale: 0.95;
+	}
+	to {
+		opacity: 1;
+		scale: 1;
+	}
+}
+@keyframes dropdownHide {
+	from {
+		opacity: 1;
+		scale: 1;
+	}
+	to {
+		opacity: 0;
+		scale: 0.95;
 	}
 }
