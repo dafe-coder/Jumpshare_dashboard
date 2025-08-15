@@ -5,7 +5,9 @@
 		<meta name="robots" content="noindex, nofollow" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Jumpshare: Screen Recording, Screenshots & GIFs. Together.</title>
+		<title>
+			Jumpshare: Screen Recording, Screenshots &amp; GIFs. Together.
+		</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -300,6 +302,7 @@
 											<span> Invite Teammates </span>
 										</button>
 										<button
+											type="button"
 											class="btn btn-border-default rounded-lg font-normal"
 										>
 											Set Default Workspace
@@ -414,6 +417,7 @@
 								Teams that communicate better, grow faster
 							</p>
 							<button
+								type="button"
 								class="btn btn-border-default m-0 w-full text-sm justify-center text-center text-dark-800/80 h-8"
 							>
 								<svg class="icon icon-sm">
@@ -440,6 +444,7 @@
 								<button
 									class="hamburger hamburger--squeeze flex lg:hidden! absolute left-0 top-1/2 -translate-y-1/2"
 									type="button"
+									aria-label="Open menu"
 								>
 									<span class="hamburger-box">
 										<span class="hamburger-inner"></span>
@@ -448,6 +453,7 @@
 								<button
 									type="submit"
 									class="hidden lg:block absolute left-3.5 top-1/2 -translate-y-1/2 cursor-pointer transition-transform transform-gpu hover:scale-105 origin-center text-dark-800"
+									aria-label="Search"
 								>
 									<svg class="icon icon-xs">
 										<use href="#icon-search"></use>
@@ -802,7 +808,7 @@
 															</p>
 														</div>
 													</li>
-													<hr class="border-gray-500 mt-0 mb-2" />
+													<li class="border-b border-gray-500 mt-0 mb-2"></li>
 													<li
 														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
 													>
@@ -819,7 +825,7 @@
 														</svg>
 														<span>Profile Settings</span>
 													</li>
-													<hr class="border-gray-500 my-2" />
+													<li class="border-b border-gray-500 my-2"></li>
 													<li
 														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
 													>
@@ -844,7 +850,7 @@
 														</svg>
 														<span>Send Feedback</span>
 													</li>
-													<hr class="border-gray-500 my-2" />
+													<li class="border-b border-gray-500 my-2"></li>
 													<li
 														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
 													>
@@ -875,7 +881,7 @@
 									Analytics
 								</h2>
 								<div class="flex items-center gap-1 max-md:hidden">
-									<button class="btn btn-gray-default">
+									<button type="button" class="btn btn-gray-default">
 										Guidelines for the tour.mp4
 										<svg class="icon icon-xs">
 											<use href="#icon-close"></use>
@@ -885,6 +891,7 @@
 							</div>
 							<div class="dropdown-wrapper">
 								<button
+									type="button"
 									data-id="dropdown-date"
 									class="dropdown-button btn btn-border-default gap-1.5 font-normal"
 								>
@@ -1914,15 +1921,15 @@
 				</div>
 			</main>
 		</div>
+		<script
+			src="https://code.jquery.com/jquery-3.7.1.min.js"
+			integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+			crossorigin="anonymous"
+		></script>
+		<script src="./dist/js/mobile-menu.js"></script>
+		<script src="./dist/js/dialog.js"></script>
+		<script src="./dist/js/menu-tree.js"></script>
+		<script src="./dist/js/dropdown.js"></script>
+		<script src="./dist/js/main.js"></script>
 	</body>
-	<script
-		src="https://code.jquery.com/jquery-3.7.1.min.js"
-		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-		crossorigin="anonymous"
-	></script>
-	<script src="./dist/js/mobile-menu.js"></script>
-	<script src="./dist/js/dialog.js"></script>
-	<script src="./dist/js/menu-tree.js"></script>
-	<script src="./dist/js/dropdown.js"></script>
-	<script src="./dist/js/main.js"></script>
 </html>

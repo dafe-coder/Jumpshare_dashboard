@@ -5,10 +5,15 @@
 		<meta name="robots" content="noindex, nofollow" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Jumpshare: Screen Recording, Screenshots & GIFs. Together.</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+		<title>
+			Jumpshare: Screen Recording, Screenshots &amp; GIFs. Together.
+		</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+			rel="stylesheet"
+		/>
 		<meta
 			name="description"
 			content="Jumpshare helps you and your team communicate better with screen recordings, screenshots, GIFs, file sharing, and more - all in one software."
@@ -126,192 +131,297 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="stylesheet" href="./dist/output.css" />
 	</head>
-	<body class='drag-and-drop'>
-		<div id="progress-bar" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-blue-500/10 transform scale-x-0 origin-left transition-transform duration-300 ease-out z-99999"></div>
-		<div id='upload-files-modal' class='hidden fixed inset-0 bg-blue-1000/70 z-999 justify-center items-center [&.active]:flex backdrop-blur-xs'>
-			<div class='upload-files-drop-zone flex items-center justify-center w-[523px] h-[325px]'>
-				<div class='flex flex-col items-center justify-center gap-6 rounded-[14px] size-full'>
-					<img class='w-[15rem]' src="./assets/images/drop-files.png" alt="drop files image">
-					<p class='text-3xl text-white font-medium'>Drop Files to Upload</p>
+	<body class="drag-and-drop">
+		<div
+			id="progress-bar"
+			class="fixed top-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-blue-500/10 transform scale-x-0 origin-left transition-transform duration-300 ease-out z-99999"
+		></div>
+		<div
+			id="upload-files-modal"
+			class="hidden fixed inset-0 bg-blue-1000/70 z-999 justify-center items-center [&.active]:flex backdrop-blur-xs"
+		>
+			<div
+				class="upload-files-drop-zone flex items-center justify-center w-[523px] h-[325px]"
+			>
+				<div
+					class="flex flex-col items-center justify-center gap-6 rounded-[14px] size-full"
+				>
+					<img
+						class="w-[15rem]"
+						src="./assets/images/drop-files.png"
+						alt="drop files image"
+					/>
+					<p class="text-3xl text-white font-medium">Drop Files to Upload</p>
 				</div>
 			</div>
 		</div>
 		<div class="w-full min-h-screen">
-			<aside class="w-[240px] fixed left-0 top-0 bottom-0 flex flex-col h-[calc(100vh-var(--browser-ui-height,0px))] z-101 max-lg:-left-full max-lg:top-0 max-lg:w-full transition-all duration-500 ease-in-out [&.active]:left-0">
-				<div class="mobile-menu-overlay absolute bg-dark-800/50 z-0 opacity-0 w-0 h-[calc(100vh-var(--browser-ui-height,0px))] lg:hidden [.active_&]:opacity-100 [.active_&]:w-screen transition-all duration-500 ease-in-out delay-75"></div>
-				<div class='flex flex-col max-lg:w-[318px] max-lg:max-w-[318px] max-xs:w-[85%]! w-full bg-gray-150 max-lg:rounded-r-2xl z-3 h-full'>
-					<div class='dropdown-wrapper z-4 max-md:border-b border-gray-400'>
-						<a href='#' data-id='dropdown-workspaces' class='dropdown-button p-4 flex items-center justify-between relative [&.active]:bg-gray-300 transition-colors duration-300 max-lg:rounded-t-2xl'>
-							<div class='flex items-center'>
+			<aside
+				class="w-[240px] fixed left-0 top-0 bottom-0 flex flex-col h-[calc(100vh-var(--browser-ui-height,0px))] z-101 max-lg:-left-full max-lg:top-0 max-lg:w-full transition-all duration-500 ease-in-out [&.active]:left-0"
+			>
+				<div
+					class="mobile-menu-overlay absolute bg-dark-800/50 z-0 opacity-0 w-0 h-[calc(100vh-var(--browser-ui-height,0px))] lg:hidden [.active_&]:opacity-100 [.active_&]:w-screen transition-all duration-500 ease-in-out delay-75"
+				></div>
+				<div
+					class="flex flex-col max-lg:w-[318px] max-lg:max-w-[318px] max-xs:w-[85%]! w-full bg-gray-150 max-lg:rounded-r-2xl z-3 h-full"
+				>
+					<div class="dropdown-wrapper z-4 max-md:border-b border-gray-400">
+						<a
+							href="#"
+							data-id="dropdown-workspaces"
+							class="dropdown-button p-4 flex items-center justify-between relative [&.active]:bg-gray-300 transition-colors duration-300 max-lg:rounded-t-2xl"
+						>
+							<div class="flex items-center">
 								<div class="flex items-center justify-between mr-3">
-									<div class='flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white'>
-										<span class='font-semibold text-base text-blue-500'>S</span>
+									<div
+										class="flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white"
+									>
+										<span class="font-semibold text-base text-blue-500">S</span>
 									</div>
 								</div>
-								<div class='mr-1.5'>
-									<h3 class='text-sm font-semibold text-black'>Startup Co</h3>
-									<ul class='flex items-center text-xs text-dark-800/70 gap-3 text-nowrap'>
-										<li class='relative'>
+								<div class="mr-1.5">
+									<h3 class="text-sm font-semibold text-black">Startup Co</h3>
+									<ul
+										class="flex items-center text-xs text-dark-800/70 gap-3 text-nowrap"
+									>
+										<li class="relative">
 											Enterprise
-											<span class='absolute top-1/2 -translate-y-1/2 -right-[7.5px]  size-[2px] rounded-full bg-blue-900/70'></span>
+											<span
+												class="absolute top-1/2 -translate-y-1/2 -right-[7.5px] size-[2px] rounded-full bg-blue-900/70"
+											></span>
 										</li>
-										<li class='relative'>
+										<li class="relative">
 											<span>23</span>
 											Members
 										</li>
 									</ul>
 								</div>
 							</div>
-							<svg class='icon icon-xs flex-shrink-0'>
-								<use href='#icon-check-bottom'></use>
+							<svg class="icon icon-xs flex-shrink-0">
+								<use href="#icon-check-bottom"></use>
 							</svg>
 						</a>
-						<div class='js-dropdown hidden w-[16.875rem] top-full left-3' data-dropdown-id='dropdown-workspaces' data-sheet-modal>
-							<div class='js-dropdown-overlay'></div>
-							<div class='js-dropdown-body'>
-								<div class='js-dropdown-trigger'>
+						<div
+							class="js-dropdown hidden w-[16.875rem] top-full left-3"
+							data-dropdown-id="dropdown-workspaces"
+							data-sheet-modal
+						>
+							<div class="js-dropdown-overlay"></div>
+							<div class="js-dropdown-body">
+								<div class="js-dropdown-trigger">
 									<span></span>
 								</div>
-								<div class='js-dropdown-content lg:px-2 pb-4 lg:pt-4 max-lg:px-4'>
-									<div class='flex items-center justify-between px-1.5'>
-										<p class='text-sm text-dark-800 font-normal'>Workspaces</p>
-										<span class='text-sm text-blue-500 font-medium hover:underline underline-offset-1 cursor-pointer'>+ Add Workspace</span>
+								<div
+									class="js-dropdown-content lg:px-2 pb-4 lg:pt-4 max-lg:px-4"
+								>
+									<div class="flex items-center justify-between px-1.5">
+										<p class="text-sm text-dark-800 font-normal">Workspaces</p>
+										<span
+											class="text-sm text-blue-500 font-medium hover:underline underline-offset-1 cursor-pointer"
+											>+ Add Workspace</span
+										>
 									</div>
-									<div class='flex flex-col gap-y-1 mt-3'>
-										<div class='active-workspace flex items-center gap-x-3 cursor-pointer rounded-md hover:bg-gray-150 [&.active-workspace]:bg-gray-150 px-2 py-2.5'>
-											<div class='flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white'>
-												<span class='font-semibold text-base text-blue-500'>S</span>
+									<div class="flex flex-col gap-y-1 mt-3">
+										<div
+											class="active-workspace flex items-center gap-x-3 cursor-pointer rounded-md hover:bg-gray-150 [&.active-workspace]:bg-gray-150 px-2 py-2.5"
+										>
+											<div
+												class="flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white"
+											>
+												<span class="font-semibold text-base text-blue-500"
+													>S</span
+												>
 											</div>
-											<div class='flex flex-col'>
-												<p class='text-sm text-dark-800 font-medium'>Startup Co</p>
-												<ul class='flex items-center text-xs text-dark-800/70 gap-3 text-nowrap'>
-													<li class='relative'>Enterprise
-														<span class='absolute top-1/2 -translate-y-1/2 -right-[7.5px]  size-[2px] rounded-full bg-blue-900/70'></span>
+											<div class="flex flex-col">
+												<p class="text-sm text-dark-800 font-medium">
+													Startup Co
+												</p>
+												<ul
+													class="flex items-center text-xs text-dark-800/70 gap-3 text-nowrap"
+												>
+													<li class="relative">
+														Enterprise
+														<span
+															class="absolute top-1/2 -translate-y-1/2 -right-[7.5px] size-[2px] rounded-full bg-blue-900/70"
+														></span>
 													</li>
-													<li class='relative'>23 Members</li>
+													<li class="relative">23 Members</li>
 												</ul>
 											</div>
-											<span class='hidden text-blue-500 shrink-0 ml-auto [.active-workspace_&]:block'>
-												<svg class='icon icon-md'>
-													<use href='#icon-check'></use>
+											<span
+												class="hidden text-blue-500 shrink-0 ml-auto [.active-workspace_&]:block"
+											>
+												<svg class="icon icon-md">
+													<use href="#icon-check"></use>
 												</svg>
 											</span>
 										</div>
-										<div class='flex items-center gap-x-3 cursor-pointer rounded-md hover:bg-gray-150 [&.active-workspace]:bg-gray-150 px-2 py-2.5'>
-											<div class='flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white '>
-												<span class='font-semibold text-base text-blue-500'>N</span>
+										<div
+											class="flex items-center gap-x-3 cursor-pointer rounded-md hover:bg-gray-150 [&.active-workspace]:bg-gray-150 px-2 py-2.5"
+										>
+											<div
+												class="flex items-center justify-center size-9 border border-blue-500/20 rounded-md bg-white"
+											>
+												<span class="font-semibold text-base text-blue-500"
+													>N</span
+												>
 											</div>
-											<div class='flex flex-col'>
-												<p class='text-sm text-dark-800 font-medium'>Neo Tools</p>
-												<ul class='flex items-center text-xs text-dark-800/70 gap-3 text-nowrap'>
-													<li class='relative'>Free
-														<span class='absolute top-1/2 -translate-y-1/2 -right-[7.5px]  size-[2px] rounded-full bg-blue-900/70'></span>
+											<div class="flex flex-col">
+												<p class="text-sm text-dark-800 font-medium">
+													Neo Tools
+												</p>
+												<ul
+													class="flex items-center text-xs text-dark-800/70 gap-3 text-nowrap"
+												>
+													<li class="relative">
+														Free
+														<span
+															class="absolute top-1/2 -translate-y-1/2 -right-[7.5px] size-[2px] rounded-full bg-blue-900/70"
+														></span>
 													</li>
-													<li class='relative'>1 Member</li>
+													<li class="relative">1 Member</li>
 												</ul>
 											</div>
-											<span class='hidden text-blue-500 shrink-0 ml-auto [.active-workspace_&]:block'>
-												<svg class='icon icon-md'>
-													<use href='#icon-check'></use>
+											<span
+												class="hidden text-blue-500 shrink-0 ml-auto [.active-workspace_&]:block"
+											>
+												<svg class="icon icon-md">
+													<use href="#icon-check"></use>
 												</svg>
 											</span>
 										</div>
 									</div>
-									<div class='mt-3 flex flex-col gap-y-2 px-1.5'>
+									<div class="mt-3 flex flex-col gap-y-2 px-1.5">
 										<button
 											type="button"
 											class="btn btn-primary-default rounded-lg"
 										>
-											<svg class='icon icon-sm'>
-												<use href='#icon-members-medium'></use>
+											<svg class="icon icon-sm">
+												<use href="#icon-members-medium"></use>
 											</svg>
-											<span>
-												Invite Teammates
-											</span>
+											<span> Invite Teammates </span>
 										</button>
-										<button class='btn btn-border-default rounded-lg font-normal'>Set Default Workspace</button>
+										<button
+											type="button"
+											class="btn btn-border-default rounded-lg font-normal"
+										>
+											Set Default Workspace
+										</button>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="flex flex-col h-full overflow-y-auto px-4 pb-4">
-						<nav class='flex flex-col mt-5 mb-5'>
-							<p class='text-s text-dark-800/60 font-medium'>Libraries</p>
-							<ul class='flex flex-col mt-2'>
+						<nav class="flex flex-col mt-5 mb-5">
+							<p class="text-s text-dark-800/60 font-medium">Libraries</p>
+							<ul class="flex flex-col mt-2">
 								<li>
-									<a href='./index.html' class='flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500'>
-										<svg class='icon icon-sm'>
-											<use href='#icon-home-medium'></use>
+									<a
+										href="./index.html"
+										class="flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500"
+									>
+										<svg class="icon icon-sm">
+											<use href="#icon-home-medium"></use>
 										</svg>
 										Personal
 									</a>
 								</li>
 								<li>
-									<a href='./shared.html' class='active flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500'>
-										<svg class='icon icon-sm'>
-											<use href='#icon-members-medium'></use>
+									<a
+										href="./shared.html"
+										class="active flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500"
+									>
+										<svg class="icon icon-sm">
+											<use href="#icon-members-medium"></use>
 										</svg>
 										Shared
 									</a>
 								</li>
 								<li>
-									<a href='./team.html' class='flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500'>
-										<svg class='icon icon-sm'>
-											<use href='#icon-team-medium'></use>
+									<a
+										href="./team.html"
+										class="flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500"
+									>
+										<svg class="icon icon-sm">
+											<use href="#icon-team-medium"></use>
 										</svg>
 										Team
 									</a>
 								</li>
 							</ul>
-							<ul class='flex flex-col mt-5'>
+							<ul class="flex flex-col mt-5">
 								<li>
-									<a href='./favorites.html' class='flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500'>
-										<svg class='icon icon-sm' stroke-width='6'>
-											<use href='#icon-star-medium'></use>
+									<a
+										href="./favorites.html"
+										class="flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500"
+									>
+										<svg class="icon icon-sm" stroke-width="6">
+											<use href="#icon-star-medium"></use>
 										</svg>
 										Favorites
 									</a>
 								</li>
 								<li>
-									<a href='./analytics.html' class='flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500'>
-										<svg class='icon icon-sm'>
-											<use href='#icon-analytics-medium'></use>
+									<a
+										href="./analytics.html"
+										class="flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500"
+									>
+										<svg class="icon icon-sm">
+											<use href="#icon-analytics-medium"></use>
 										</svg>
 										Analytics
 									</a>
 								</li>
 								<li>
-									<a href='./inbox.html' class='flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500'>
-										<svg class='icon icon-sm'>
-											<use href='#icon-inbox-medium'></use>
+									<a
+										href="./inbox.html"
+										class="flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500"
+									>
+										<svg class="icon icon-sm">
+											<use href="#icon-inbox-medium"></use>
 										</svg>
 										Inbox
 									</a>
 								</li>
 								<li>
-									<a href='./trash.html' class='flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500'>
-										<svg class='icon icon-sm'>
-											<use href='#icon-trash-medium'></use>
+									<a
+										href="./trash.html"
+										class="flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500"
+									>
+										<svg class="icon icon-sm">
+											<use href="#icon-trash-medium"></use>
 										</svg>
 										Trash
 									</a>
 								</li>
 								<li>
-									<a href='./settings.html' class='flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500'>
-										<svg class='icon icon-sm'>
-											<use href='#icon-cog-medium'></use>
+									<a
+										href="./settings.html"
+										class="flex items-center gap-2 text-sm p-2 rounded-md hover:bg-gray-300 active:bg-blue-500/15 active:text-blue-500 active:font-medium [&.active]:bg-blue-500/15 [&.active]:font-medium [&.active]:text-blue-500"
+									>
+										<svg class="icon icon-sm">
+											<use href="#icon-cog-medium"></use>
 										</svg>
 										Settings
 									</a>
 								</li>
 							</ul>
 						</nav>
-						<div class='mt-auto bg-white border-gray-400 border rounded-lg px-5 py-3.5'>
-							<p class='text-center text-sm font-normal text-dark-800/60 mb-2.5 max-w-[12.125rem] mx-auto'>Teams that communicate better, grow faster</p>
-							<button class='btn btn-border-default m-0 w-full text-sm justify-center text-center text-dark-800/80 h-8'>
-								<svg class='icon icon-sm'>
-									<use href='#icon-members-semibold'></use>
+						<div
+							class="mt-auto bg-white border-gray-400 border rounded-lg px-5 py-3.5"
+						>
+							<p
+								class="text-center text-sm font-normal text-dark-800/60 mb-2.5 max-w-[12.125rem] mx-auto"
+							>
+								Teams that communicate better, grow faster
+							</p>
+							<button
+								type="button"
+								class="btn btn-border-default m-0 w-full text-sm justify-center text-center text-dark-800/80 h-8"
+							>
+								<svg class="icon icon-sm">
+									<use href="#icon-members-semibold"></use>
 								</svg>
 								Invite members
 							</button>
@@ -319,164 +429,328 @@
 					</div>
 				</div>
 			</aside>
-			<main class='relative max-lg:w-full lg:ml-[240px]'>
-				<header class='pt-2.5 sticky top-0 z-51 bg-white transition-all duration-300'>
+			<main class="relative max-lg:w-full lg:ml-[240px]">
+				<header
+					class="pt-2.5 sticky top-0 z-51 bg-white transition-all duration-300"
+				>
 					<div class="dashboard-container">
-						<div class='w-full flex items-center justify-between max-md:bg-gray-150 max-md:rounded-lg'>
-							<form action='#' class='max-w-[44.75rem] h-[2.5625rem] w-full bg-gray-150 rounded-lg relative max-md:h-12'>
-								<button class="hamburger hamburger--squeeze flex lg:hidden! absolute left-0 top-1/2 -translate-y-1/2" type="button">
+						<div
+							class="w-full flex items-center justify-between max-md:bg-gray-150 max-md:rounded-lg"
+						>
+							<form
+								action="#"
+								class="max-w-[44.75rem] h-[2.5625rem] w-full bg-gray-150 rounded-lg relative max-md:h-12"
+							>
+								<button
+									class="hamburger hamburger--squeeze flex lg:hidden! absolute left-0 top-1/2 -translate-y-1/2"
+									type="button"
+									aria-label="Open menu"
+								>
 									<span class="hamburger-box">
-									  <span class="hamburger-inner"></span>
+										<span class="hamburger-inner"></span>
 									</span>
-								  </button>
-								<button type='submit' class='hidden lg:block absolute left-3.5 top-1/2 -translate-y-1/2 cursor-pointer transition-transform transform-gpu hover:scale-105 origin-center text-dark-800'>
-									<svg class='icon icon-xs'>
-										<use href='#icon-search'></use>
+								</button>
+								<button
+									type="submit"
+									class="hidden lg:block absolute left-3.5 top-1/2 -translate-y-1/2 cursor-pointer transition-transform transform-gpu hover:scale-105 origin-center text-dark-800"
+									aria-label="Search"
+								>
+									<svg class="icon icon-xs">
+										<use href="#icon-search"></use>
 									</svg>
 								</button>
-								<input required type="text" class='size-full rounded-lg pl-10 pr-4 text-sm max-lg:pl-13' 
-								data-mobile-placeholder='Search for files...' placeholder='Search for people, Files, folder & spaces'>
+								<input
+									required
+									type="text"
+									class="size-full rounded-lg pl-10 pr-4 text-sm max-lg:pl-13"
+									data-mobile-placeholder="Search for files..."
+									placeholder="Search for people, Files, folder & spaces"
+								/>
 							</form>
-							<div class='flex items-center gap-4'>
-								<div class='dropdown-wrapper'>
-									<a data-id="dropdown-notifications"  href="#" class='dropdown-button size-12 flex justify-center items-center transition-colors hover:bg-gray-150 rounded-lg relative [&.active]:bg-gray-150 cursor-pointer'>
-										<svg class='icon w-[1.125rem] h-5'>
-											<use href='#icon-bell'></use>
+							<div class="flex items-center gap-4">
+								<div class="dropdown-wrapper">
+									<a
+										data-id="dropdown-notifications"
+										href="#"
+										class="dropdown-button size-12 flex justify-center items-center transition-colors hover:bg-gray-150 rounded-lg relative [&.active]:bg-gray-150 cursor-pointer"
+									>
+										<svg class="icon w-[1.125rem] h-5">
+											<use href="#icon-bell"></use>
 										</svg>
-										<span class='absolute top-[7px] left-[1.39rem] z-1 bg-red-500 rounded-full border-1 border-white flex justify-center items-center h-4.5 min-w-4.5 px-1 text-[11px] text-white text-center font-medium text-nowrap'>9+</span>
+										<span
+											class="absolute top-[7px] left-[1.39rem] z-1 bg-red-500 rounded-full border-1 border-white flex justify-center items-center h-4.5 min-w-4.5 px-1 text-[11px] text-white text-center font-medium text-nowrap"
+											>9+</span
+										>
 									</a>
-									<div class='js-dropdown hidden w-[28.125rem]' data-dropdown-id='dropdown-notifications' data-sheet-modal>
-										<div class='js-dropdown-overlay'></div>
-										<div class='js-dropdown-body'>
-											<div class='js-dropdown-trigger'>
+									<div
+										class="js-dropdown hidden w-[28.125rem]"
+										data-dropdown-id="dropdown-notifications"
+										data-sheet-modal
+									>
+										<div class="js-dropdown-overlay"></div>
+										<div class="js-dropdown-body">
+											<div class="js-dropdown-trigger">
 												<span></span>
 											</div>
-											<div class='js-dropdown-content lg:pt-0 lg:max-h-[580px] lg:overflow-y-auto px-0 pb-0 lg:h-[85vh]'>
-												<div class='flex justify-between items-center px-6 sticky top-0 -mt-1 bg-white lg:rounded-t-lg z-1 lg:pt-4 pb-3 border-b border-gray-400'>
-													<p class='text-base font-semibold text-dark-800'>Notifications</p>
-													<a href='./activity-center.html' class='text-sm text-blue-500 font-medium'>View All →</a>
+											<div
+												class="js-dropdown-content lg:pt-0 lg:max-h-[580px] lg:overflow-y-auto px-0 pb-0 lg:h-[85vh]"
+											>
+												<div
+													class="flex justify-between items-center px-6 sticky top-0 -mt-1 bg-white lg:rounded-t-lg z-1 lg:pt-4 pb-3 border-b border-gray-400"
+												>
+													<p class="text-base font-semibold text-dark-800">
+														Notifications
+													</p>
+													<a
+														href="./activity-center.html"
+														class="text-sm text-blue-500 font-medium"
+														>View All →</a
+													>
 												</div>
 												<ul>
 													<li>
-														<a href="#" class='flex gap-3 items-start px-6 py-4 hover:bg-gray-150'>
-															<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
-																<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+														<a
+															href="#"
+															class="flex gap-3 items-start px-6 py-4 hover:bg-gray-150"
+														>
+															<div
+																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
+															>
+																<img
+																	class="rounded-full object-cover size-full"
+																	src="./assets/images/avatar.png"
+																	alt="Avatar"
+																/>
 															</div>
 															<div>
-																<p class='text-sm'>
-																	Someone viewed <strong> Speaker Notes Hover Effect.mp4 </strong> for the first time
+																<p class="text-sm">
+																	Someone viewed
+																	<strong>
+																		Speaker Notes Hover Effect.mp4
+																	</strong>
+																	for the first time
 																</p>
-																<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
+																<div
+																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
+																>
 																	<span>Feb 6, 2025</span>
-																	<span 		class='relative after:content-[""] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5 '>11:41 pm</span>
+																	<span
+																		class="relative after:content-[&quot;&quot;] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5"
+																		>11:41 pm</span
+																	>
 																</div>
 															</div>
 														</a>
 													</li>
-													<li class='unread'>
-														<a href="#" class='flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150'>
-															<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
-																<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+													<li class="unread">
+														<a
+															href="#"
+															class="flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150"
+														>
+															<div
+																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
+															>
+																<img
+																	class="rounded-full object-cover size-full"
+																	src="./assets/images/avatar.png"
+																	alt="Avatar"
+																/>
 															</div>
 															<div>
-																<p class='text-sm'>
-																	Team Member moved Feb 3 - Technical Development Updates and Feature Planning.mp4 and 1 more items from folder Team Meetings to folder 2025
+																<p class="text-sm">
+																	Team Member moved Feb 3 - Technical
+																	Development Updates and Feature Planning.mp4
+																	and 1 more items from folder Team Meetings to
+																	folder 2025
 																</p>
-																<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
+																<div
+																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
+																>
 																	<span>Feb 6, 2025</span>
-																	<span class='relative after:content-[""] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5 '>11:41 pm</span>
-																</div>
-															</div>
-														</a>
-													</li>
-													<li>
-														<a href="#" class='flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150'>
-															<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
-																<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
-															</div>
-															<div>
-																<p class='text-sm'>
-																	You received _+8= +3 -5 +10 (1) HW.pdf in your Team Inbox test-zapeir-update from qweqw eqw (eqwe@asd.we)
-																</p>
-																<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
-																	<span>Feb 6, 2025</span>
-																</div>
-															</div>
-														</a>
-													</li>
-													<li>
-														<a href="#" class='flex gap-3 items-start px-6 py-4 hover:bg-gray-150'>
-															<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
-																<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
-															</div>
-															<div>
-																<p class='text-sm'>
-																	Someone viewed <strong> Speaker Notes Hover Effect.mp4 </strong> for the first time
-																</p>
-																<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
-																	<span>Feb 6, 2025</span>
-																	<span 		class='relative after:content-[""] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5 '>11:41 pm</span>
-																</div>
-															</div>
-														</a>
-													</li>
-													<li class='unread'>
-														<a href="#" class='flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150'>
-															<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
-																<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
-															</div>
-															<div>
-																<p class='text-sm'>
-																	Team Member moved Feb 3 - Technical Development Updates and Feature Planning.mp4 and 1 more items from folder Team Meetings to folder 2025
-																</p>
-																<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
-																	<span>Feb 6, 2025</span>
-																	<span class='relative after:content-[""] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5 '>11:41 pm</span>
+																	<span
+																		class="relative after:content-[&quot;&quot;] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5"
+																		>11:41 pm</span
+																	>
 																</div>
 															</div>
 														</a>
 													</li>
 													<li>
-														<a href="#" class='flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150'>
-															<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
-																<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+														<a
+															href="#"
+															class="flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150"
+														>
+															<div
+																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
+															>
+																<img
+																	class="rounded-full object-cover size-full"
+																	src="./assets/images/avatar.png"
+																	alt="Avatar"
+																/>
 															</div>
 															<div>
-																<p class='text-sm'>
-																	You received _+8= +3 -5 +10 (1) HW.pdf in your Team Inbox test-zapeir-update from qweqw eqw (eqwe@asd.we)
+																<p class="text-sm">
+																	You received _+8= +3 -5 +10 (1) HW.pdf in your
+																	Team Inbox test-zapeir-update from qweqw eqw
+																	(eqwe@asd.we)
 																</p>
-																<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
+																<div
+																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
+																>
 																	<span>Feb 6, 2025</span>
 																</div>
 															</div>
 														</a>
 													</li>
 													<li>
-														<a href="#" class='flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150'>
-															<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
-																<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+														<a
+															href="#"
+															class="flex gap-3 items-start px-6 py-4 hover:bg-gray-150"
+														>
+															<div
+																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
+															>
+																<img
+																	class="rounded-full object-cover size-full"
+																	src="./assets/images/avatar.png"
+																	alt="Avatar"
+																/>
 															</div>
 															<div>
-																<p class='text-sm'>
-																	John Dalton added JumpshareInstaller 3.4.5 - 3.exe  to folder 3.4.5
+																<p class="text-sm">
+																	Someone viewed
+																	<strong>
+																		Speaker Notes Hover Effect.mp4
+																	</strong>
+																	for the first time
 																</p>
-																<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
+																<div
+																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
+																>
+																	<span>Feb 6, 2025</span>
+																	<span
+																		class="relative after:content-[&quot;&quot;] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5"
+																		>11:41 pm</span
+																	>
+																</div>
+															</div>
+														</a>
+													</li>
+													<li class="unread">
+														<a
+															href="#"
+															class="flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150"
+														>
+															<div
+																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
+															>
+																<img
+																	class="rounded-full object-cover size-full"
+																	src="./assets/images/avatar.png"
+																	alt="Avatar"
+																/>
+															</div>
+															<div>
+																<p class="text-sm">
+																	Team Member moved Feb 3 - Technical
+																	Development Updates and Feature Planning.mp4
+																	and 1 more items from folder Team Meetings to
+																	folder 2025
+																</p>
+																<div
+																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
+																>
+																	<span>Feb 6, 2025</span>
+																	<span
+																		class="relative after:content-[&quot;&quot;] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5"
+																		>11:41 pm</span
+																	>
+																</div>
+															</div>
+														</a>
+													</li>
+													<li>
+														<a
+															href="#"
+															class="flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150"
+														>
+															<div
+																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
+															>
+																<img
+																	class="rounded-full object-cover size-full"
+																	src="./assets/images/avatar.png"
+																	alt="Avatar"
+																/>
+															</div>
+															<div>
+																<p class="text-sm">
+																	You received _+8= +3 -5 +10 (1) HW.pdf in your
+																	Team Inbox test-zapeir-update from qweqw eqw
+																	(eqwe@asd.we)
+																</p>
+																<div
+																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
+																>
+																	<span>Feb 6, 2025</span>
+																</div>
+															</div>
+														</a>
+													</li>
+													<li>
+														<a
+															href="#"
+															class="flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150"
+														>
+															<div
+																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
+															>
+																<img
+																	class="rounded-full object-cover size-full"
+																	src="./assets/images/avatar.png"
+																	alt="Avatar"
+																/>
+															</div>
+															<div>
+																<p class="text-sm">
+																	John Dalton added JumpshareInstaller 3.4.5 -
+																	3.exe to folder 3.4.5
+																</p>
+																<div
+																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
+																>
 																	<span>Jue 6, 2024</span>
 																</div>
 															</div>
 														</a>
 													</li>
 													<li>
-														<a href="#" class='flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150'>
-															<div class='mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[""] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block'>
-																<img class='rounded-full object-cover size-full' src="./assets/images/avatar.png" alt="Avatar">
+														<a
+															href="#"
+															class="flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150"
+														>
+															<div
+																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
+															>
+																<img
+																	class="rounded-full object-cover size-full"
+																	src="./assets/images/avatar.png"
+																	alt="Avatar"
+																/>
 															</div>
 															<div>
-																<p class='text-sm'>
-																	Someone viewed Screen Recording 2025-01-23 at 10.0... PM.mp4 for the first time
+																<p class="text-sm">
+																	Someone viewed Screen Recording 2025-01-23 at
+																	10.0... PM.mp4 for the first time
 																</p>
-																<div class='flex text-xs gap-4 text-dark-800/70 mt-1.5'>
-																	<span class='relative after:content-[""] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-right-2.5 '>Feb 6</span>
+																<div
+																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
+																>
+																	<span
+																		class="relative after:content-[&quot;&quot;] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-right-2.5"
+																		>Feb 6</span
+																	>
 																	<span>11:41 pm</span>
 																</div>
 															</div>
@@ -488,67 +762,100 @@
 									</div>
 								</div>
 								<div class="dropdown-wrapper">
-									<a href='#' data-id="dropdown-avatar" class='dropdown-button flex gap-1.5 items-center cursor-pointer max-md:pr-3 [&.active]:bg-gray-150 px-2 h-12 rounded-lg'>
-										<div class='size-7.5 rounded-full overflow-hidden bg-gray-200 inset-ring-2 inset-ring-gray-100'>
-											<img src="./assets/images/avatar.png" alt="Avatar">
+									<a
+										href="#"
+										data-id="dropdown-avatar"
+										class="dropdown-button flex gap-1.5 items-center cursor-pointer max-md:pr-3 [&.active]:bg-gray-150 px-2 h-12 rounded-lg"
+									>
+										<div
+											class="size-7.5 rounded-full overflow-hidden bg-gray-200 inset-ring-2 inset-ring-gray-100"
+										>
+											<img src="./assets/images/avatar.png" alt="Avatar" />
 										</div>
-										<svg class='icon icon-xs flex-shrink-0'>
-											<use href='#icon-check-bottom'></use>
+										<svg class="icon icon-xs flex-shrink-0">
+											<use href="#icon-check-bottom"></use>
 										</svg>
 									</a>
-									<div class='js-dropdown hidden w-[15.75rem]' data-dropdown-id='dropdown-avatar' data-sheet-modal>
-										<div class='js-dropdown-overlay'></div>
-										<div class='js-dropdown-body'>
-											<div class='js-dropdown-trigger'>
+									<div
+										class="js-dropdown hidden w-[15.75rem]"
+										data-dropdown-id="dropdown-avatar"
+										data-sheet-modal
+									>
+										<div class="js-dropdown-overlay"></div>
+										<div class="js-dropdown-body">
+											<div class="js-dropdown-trigger">
 												<span></span>
 											</div>
-											<div class='js-dropdown-content'>
+											<div class="js-dropdown-content">
 												<ul>
-													<li class='flex items-center gap-3 p-3.5 pt-1'>
-														<div class="size-[42px] rounded-full overflow-hidden">
-															<img class='size-full object-cover' src="./assets/images/avatar.png" alt="Avatar">
+													<li class="flex items-center gap-3 p-3.5 pt-1">
+														<div
+															class="size-[42px] rounded-full overflow-hidden"
+														>
+															<img
+																class="size-full object-cover"
+																src="./assets/images/avatar.png"
+																alt="Avatar"
+															/>
 														</div>
 														<div>
-															<span class='text-sm font-semibold text-dark-800 mb-1'>John Doe</span>
-															<p class='text-dark-800/50 text-xs'>johndoe252@cironex.com</p>
+															<span
+																class="text-sm font-semibold text-dark-800 mb-1"
+																>John Doe</span
+															>
+															<p class="text-dark-800/50 text-xs">
+																johndoe252@cironex.com
+															</p>
 														</div>
 													</li>
-													<hr class='border-gray-500 mt-0 mb-2'>
-													<li class='flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800'>
-														<svg class='icon icon-md'>
-															<use href='#icon-workspace'></use>
+													<li class="border-b border-gray-500 mt-0 mb-2"></li>
+													<li
+														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+													>
+														<svg class="icon icon-md">
+															<use href="#icon-workspace"></use>
 														</svg>
 														<span>Workspace Settings</span>
 													</li>
-													<li class='flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800'>
-														<svg class='icon icon-md'>
-															<use href='#icon-user'></use>
+													<li
+														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+													>
+														<svg class="icon icon-md">
+															<use href="#icon-user"></use>
 														</svg>
 														<span>Profile Settings</span>
 													</li>
-													<hr class='border-gray-500 my-2'>
-													<li class='flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800'>
-														<svg class='icon icon-md'>
-															<use href='#icon-download'></use>
+													<li class="border-b border-gray-500 my-2"></li>
+													<li
+														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+													>
+														<svg class="icon icon-md">
+															<use href="#icon-download"></use>
 														</svg>
 														<span>Install Jumpshare</span>
 													</li>
-													<li class='flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800'>
-														<svg class='icon icon-md'>
-															<use href='#icon-help'></use>
+													<li
+														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+													>
+														<svg class="icon icon-md">
+															<use href="#icon-help"></use>
 														</svg>
 														<span>Help Center</span>
 													</li>
-													<li class='flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800'>
-														<svg class='icon icon-md'>
-															<use href='#icon-message-alert'></use>
+													<li
+														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+													>
+														<svg class="icon icon-md">
+															<use href="#icon-message-alert"></use>
 														</svg>
 														<span>Send Feedback</span>
 													</li>
-													<hr class='border-gray-500 my-2'>
-													<li class='flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800'>
-														<svg class='icon icon-md'>
-															<use href='#icon-sign-out'></use>
+													<li class="border-b border-gray-500 my-2"></li>
+													<li
+														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+													>
+														<svg class="icon icon-md">
+															<use href="#icon-sign-out"></use>
 														</svg>
 														<span>Sign Out</span>
 													</li>
@@ -561,466 +868,116 @@
 						</div>
 					</div>
 				</header>
-				<div class='subheader-nav transition-all pt-7.5 pb-6 sticky top-[63px] z-50 bg-white max-md:pt-5 duration-300 after:content-[""] after:absolute after:bottom-1/2 after:left-0 after:right-0 after:w-full after:h-full after:bg-white after:-z-2'>
+				<div
+					class="subheader-nav transition-all pt-7.5 pb-6 sticky top-[63px] z-50 bg-white max-md:pt-5 duration-300 after:content-[&quot;&quot;] after:absolute after:bottom-1/2 after:left-0 after:right-0 after:w-full after:h-full after:bg-white after:-z-2"
+				>
 					<div class="dashboard-container flex justify-between items-center">
-						<h2 id='title-library' class='text-2xl font-semibold text-dark-800 tracking-normal flex-shrink-0 font-sans-semi'>Shared Library</h2>
-						<div class='flex gap-3'>
-							<div class='dropdown-wrapper'>
-								<button data-id='dropdown-grid' class='dropdown-button relative z-1 btn p-0 border border-gray-600 size-9'>
-									<svg class='icon icon-md'>
-										<use href='#icon-large-grid'></use>
+						<h2
+							id="title-library"
+							class="text-2xl font-semibold text-dark-800 tracking-normal flex-shrink-0 font-sans-semi"
+						>
+							Shared Library
+						</h2>
+						<div class="flex gap-3">
+							<div class="dropdown-wrapper">
+								<button
+									type="button"
+									aria-label="Open menu"
+									data-id="dropdown-grid"
+									class="dropdown-button relative z-1 btn p-0 border border-gray-600 size-9"
+								>
+									<svg class="icon icon-md">
+										<use href="#icon-large-grid"></use>
 									</svg>
 								</button>
-								<div class='js-dropdown hidden max-lg:hidden! w-[10.625rem]' data-dropdown-id='dropdown-grid'>
-									<div class='js-dropdown-overlay'></div>
-									<div class='js-dropdown-body'>
-										<div class='js-dropdown-trigger'>
+								<div
+									class="js-dropdown hidden max-lg:hidden! w-[10.625rem]"
+									data-dropdown-id="dropdown-grid"
+								>
+									<div class="js-dropdown-overlay"></div>
+									<div class="js-dropdown-body">
+										<div class="js-dropdown-trigger">
 											<span></span>
 										</div>
-										<div class='js-dropdown-content'>
-											<a href='#' data-link-type='large-grid' class='flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150'>
-												<svg class='icon icon-md'>
+										<div class="js-dropdown-content">
+											<a
+												href="#"
+												data-link-type="large-grid"
+												class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150"
+											>
+												<svg class="icon icon-md">
 													<use href="#icon-large-grid"></use>
 												</svg>
 												Large Grid
 											</a>
-											<a href='#' data-link-type='grid' class='flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150'>
-												<svg class='icon icon-md'>
+											<a
+												href="#"
+												data-link-type="grid"
+												class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150"
+											>
+												<svg class="icon icon-md">
 													<use href="#icon-small-grid"></use>
 												</svg>
 												Grid
 											</a>
-											<a href='#' data-link-type='list' class='flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150'>
-												<svg class='icon icon-md text-blue-500'>
+											<a
+												href="#"
+												data-link-type="list"
+												class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150"
+											>
+												<svg class="icon icon-md text-blue-500">
 													<use href="#icon-list"></use>
 												</svg>
 												List
 											</a>
-										</div>	
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class='dashboard-container pb-5 pt-5'>
-					<div class='flex flex-col items-center justify-center mt-45 max-w-[390px] w-full mx-auto text-center'>
-						<svg class='mb-7' width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<div class="dashboard-container pb-5 pt-5">
+					<div
+						class="flex flex-col items-center justify-center mt-45 max-w-[390px] w-full mx-auto text-center"
+					>
+						<svg
+							class="mb-7"
+							width="40"
+							height="40"
+							viewBox="0 0 40 40"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
 							<g opacity="0.3">
-							<path d="M26.6673 35V31.6667C26.6673 29.8986 25.9649 28.2029 24.7147 26.9526C23.4645 25.7024 21.7688 25 20.0007 25H10.0007C8.23254 25 6.53685 25.7024 5.28661 26.9526C4.03636 28.2029 3.33398 29.8986 3.33398 31.6667V35M36.6673 35V31.6667C36.6662 30.1895 36.1746 28.7546 35.2696 27.5872C34.3646 26.4198 33.0975 25.5859 31.6673 25.2167M26.6673 5.21667C28.1013 5.58384 29.3724 6.41784 30.28 7.58718C31.1877 8.75653 31.6804 10.1947 31.6804 11.675C31.6804 13.1553 31.1877 14.5935 30.28 15.7628C29.3724 16.9322 28.1013 17.7662 26.6673 18.1333M21.6673 11.6667C21.6673 15.3486 18.6825 18.3333 15.0007 18.3333C11.3188 18.3333 8.33398 15.3486 8.33398 11.6667C8.33398 7.98477 11.3188 5 15.0007 5C18.6825 5 21.6673 7.98477 21.6673 11.6667Z" stroke="#0A0A0B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+								<path
+									d="M26.6673 35V31.6667C26.6673 29.8986 25.9649 28.2029 24.7147 26.9526C23.4645 25.7024 21.7688 25 20.0007 25H10.0007C8.23254 25 6.53685 25.7024 5.28661 26.9526C4.03636 28.2029 3.33398 29.8986 3.33398 31.6667V35M36.6673 35V31.6667C36.6662 30.1895 36.1746 28.7546 35.2696 27.5872C34.3646 26.4198 33.0975 25.5859 31.6673 25.2167M26.6673 5.21667C28.1013 5.58384 29.3724 6.41784 30.28 7.58718C31.1877 8.75653 31.6804 10.1947 31.6804 11.675C31.6804 13.1553 31.1877 14.5935 30.28 15.7628C29.3724 16.9322 28.1013 17.7662 26.6673 18.1333M21.6673 11.6667C21.6673 15.3486 18.6825 18.3333 15.0007 18.3333C11.3188 18.3333 8.33398 15.3486 8.33398 11.6667C8.33398 7.98477 11.3188 5 15.0007 5C18.6825 5 21.6673 7.98477 21.6673 11.6667Z"
+									stroke="#0A0A0B"
+									stroke-width="2.4"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
 							</g>
 						</svg>
-						<h3 class='text-lg font-bold mb-2'>Nobody invited yet</h3>
-						<p class='text-dark-800 text-sm'>Invite team members to your files to share and collaborate with them privately.</p>
+						<h3 class="text-lg font-bold mb-2">Nobody invited yet</h3>
+						<p class="text-dark-800 text-sm">
+							Invite team members to your files to share and collaborate with
+							them privately.
+						</p>
 					</div>
 				</div>
 			</main>
 		</div>
 
-		<!-- Dialog boxes -->
-		<div class="dialog hidden" data-dialog-type="delete-inbox">
-			<div class="dialog-card">
-				<button class="dialog-close" data-dialog-close>
-					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
-					</svg>
-				</button>
-				<div class="dialog-header">
-					<h4>Delete Inbox?</h4>
-				</div>
-				<div class="dialog-body">
-					<p>Are you sure you want to delete the inbox <strong>‘Untitled Entry’</strong>? Once deleted, it cannot be restored.</p>
-				</div>
-				<div class="dialog-footer">
-					<button class="btn btn-border-default" data-dialog-close>Cancel</button>
-					<button class="btn btn-danger font-semibold">Delete</button>
-				</div>
-			</div>
-		</div>
-
-		<div class="dialog hidden" data-dialog-type="remove-file">
-			<div class="dialog-card">
-				<button class="dialog-close" data-dialog-close>
-					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
-					</svg>
-				</button>
-				<div class="dialog-header">
-					<h4>Remove File?</h4>
-				</div>
-				<div class="dialog-body">
-					<p>Are you sure you want to remove the file <strong>‘Untitled Entry’</strong>? Once removed, it cannot be restored.</p>
-				</div>
-				<div class="dialog-footer">
-					<button class="btn btn-border-default" data-dialog-close>Cancel</button>
-					<button class="btn btn-danger font-semibold">Delete</button>
-				</div>
-			</div>
-		</div>
-
-		<div class="dialog hidden" data-dialog-type="delete-one-file">
-			<div class="dialog-card">
-				<button class="dialog-close" data-dialog-close>
-					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
-					</svg>
-				</button>
-				<div class="dialog-header">
-					<h4>Delete 1 file?</h4>
-				</div>
-				<div class="dialog-body">
-					<p>Are you sure you want to delete the file <strong>Items Hover Effect.mp4</strong>?.</p>
-				</div>
-				<div class="dialog-footer">
-					<button class="btn btn-border-default" data-dialog-close>Cancel</button>
-					<button class="btn btn-danger font-semibold">Delete</button>
-				</div>
-			</div>
-		</div>
-
-		<div class="dialog hidden" data-dialog-type="too-many-sub-folders">
-			<div class="dialog-card">
-				<button class="dialog-close" data-dialog-close>
-					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
-					</svg>
-				</button>
-				<div class="dialog-header">
-					<h4>Too many sub-folders</h4>
-				</div>
-				<div class="dialog-body">
-					<p>The folder you’re trying to upload contains 60 sub-folders, which exceeds the allowed limit. Please limit your uploads to a maximum of 50 sub-folders at a time.</p>
-				</div>
-				<div class="dialog-footer">
-					<button class="btn btn-border-default" data-dialog-close>Okay, Got It</button>
-				</div>
-			</div>
-		</div>
-
-		<div class="dialog hidden" data-dialog-type="sharing-disabled">
-			<div class="dialog-card">
-				<button class="dialog-close" data-dialog-close>
-					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
-					</svg>
-				</button>
-				<div class="dialog-header">
-					<h4>Sharing disabled</h4>
-				</div>
-				<div class="dialog-body">
-					<p>You’ve reached your storage limit. Please upgrade your plan or delete some files to re-enable sharing.</p>
-				</div>
-				<div class="dialog-footer justify-between">
-					<button class="btn btn-border-default" data-dialog-close>Maybe Later!</button>
-					<button class="btn btn-primary-default font-medium">Upgrade Now</button>
-				</div>
-			</div>
-		</div>
-
-		<div class="dialog hidden" data-dialog-type="enable-folder-upload">
-			<div class="dialog-card">
-				<button class="dialog-close" data-dialog-close>
-					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
-					</svg>
-				</button>
-				<div class="dialog-header">
-					<h4>Enable Folder Upload</h4>
-				</div>
-				<div class="dialog-body">
-					<p>Your browser doesn't support folder uploads. We recommend that you use the Jumpshare desktop app instead, which supports folder uploads. Alternatively, you can install Chrome browser.</p>
-				</div>
-				<div class="dialog-footer justify-between">
-					<button class="btn btn-border-default" data-dialog-close>Maybe Later!</button>
-					<button class="btn btn-primary-default font-medium">Upgrade Now</button>
-				</div>
-			</div>
-		</div>
-
-		<div class="dialog hidden" data-dialog-type="folder-is-full">
-			<div class="dialog-card">
-				<button class="dialog-close" data-dialog-close>
-					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
-					</svg>
-				</button>
-				<div class="dialog-header">
-					<h4>Folder is full</h4>
-				</div>
-				<div class="dialog-body">
-					<p>Oops! No more than 400 files per folder. The following files cannot be uploaded:</p>
-					<ul>
-						<li>Screenshot_3556.jpg</li>
-						<li>Video_rec_45-55-34.mp4</li>
-					</ul>
-				</div>
-				<div class="dialog-footer">
-					<button class="btn btn-border-default" data-dialog-close>OK</button>
-				</div>
-			</div>
-		</div>
-
-		<div class="dialog hidden" data-dialog-type="delete-account">
-			<div class="dialog-card">
-				<button class="dialog-close" data-dialog-close>
-					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
-					</svg>
-				</button>
-				<div class="dialog-header">
-					<h4>Delete Account</h4>
-				</div>
-				<div class="dialog-body">
-					<p>This action is permanent. If you delete your account:</p>
-					<ul>
-						<li>All your uploads, comments, and shareable links will be deleted permanently</li>
-						<li>You will be removed from any workspace that you joined</li>
-						<li>All members who joined your workspace will be removed and their uploads deleted</li>
-						<li>Your personal information and data will be completely removed from our servers.</li>
-					</ul>
-				</div>
-				<div class="dialog-footer">
-					<button class="btn btn-border-default" data-dialog-close>Cancel</button>
-					<button class="btn btn-danger font-semibold">Delete my account</button>
-				</div>
-			</div>
-		</div>
-
-		<div class="dialog hidden" data-dialog-type="permanently-delete">
-			<div class="dialog-card">
-				<button class="dialog-close" data-dialog-close>
-					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
-					</svg>
-				</button>
-				<div class="dialog-header">
-					<h4>Permanently delete?</h4>
-				</div>
-				<div class="dialog-body">
-					<p>Are you sure you want to permanently delete 1 item? This action will wipe 1 item from our server and make it unrecoverable.</p>
-				</div>
-				<div class="dialog-footer">
-					<button class="btn btn-border-default" data-dialog-close>Cancel</button>
-					<button class="btn btn-danger font-semibold">Delete</button>
-				</div>
-			</div>
-		</div>
-
-		<div class="dialog hidden" data-dialog-type="restore-confirmation">
-			<div class="dialog-card">
-				<button class="dialog-close" data-dialog-close>
-					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
-					</svg>
-				</button>
-				<div class="dialog-header">
-					<h4>Restore confirmation?</h4>
-				</div>
-				<div class="dialog-body">
-					<p>Are you sure you want to restore 1 item?</p>
-				</div>
-				<div class="dialog-footer">
-					<button class="btn btn-border-default" data-dialog-close>Cancel</button>
-					<button class="btn btn-danger font-semibold">Restore</button>
-				</div>
-			</div>
-		</div>
-
-		<div class="dialog hidden" data-dialog-type="self-destruct">
-			<div class="dialog-card">
-				<button class="dialog-close" data-dialog-close>
-					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
-					</svg>
-				</button>
-				<div class="dialog-header">
-					<h4>Self-Destruct</h4>
-				</div>
-				<div class="dialog-body">
-					<p>Select a time below for when this folder (and all items inside it) should automatically be deleted.</p>
-				</div>
-				<div class="dialog-footer justify-between">
-					<div class="relative dropdown-wrapper">
-						<button data-id='self-destruct' class="dropdown-button btn btn-border-default w-[8.5rem] px-4 justify-between">
-							24 Hours
-							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M9.52831 11.7783C9.38766 11.9189 9.19693 11.9979 8.99806 11.9979C8.79919 11.9979 8.60846 11.9189 8.46781 11.7783L4.22506 7.53556C4.15343 7.46637 4.09629 7.38362 4.05698 7.29211C4.01768 7.20061 3.99699 7.1022 3.99612 7.00261C3.99526 6.90303 4.01423 6.80427 4.05194 6.71209C4.08965 6.61992 4.14534 6.53618 4.21576 6.46576C4.28618 6.39534 4.36992 6.33965 4.46209 6.30194C4.55427 6.26423 4.65303 6.24526 4.75261 6.24612C4.8522 6.24699 4.95061 6.26768 5.04211 6.30698C5.13362 6.34629 5.21637 6.40343 5.28556 6.47506L8.99806 10.1876L12.7106 6.47506C12.852 6.33844 13.0415 6.26285 13.2381 6.26455C13.4348 6.26626 13.6229 6.34514 13.7619 6.4842C13.901 6.62325 13.9799 6.81136 13.9816 7.00801C13.9833 7.20466 13.9077 7.39411 13.7711 7.53556L9.52831 11.7783Z" fill="#0A0A0B"/>
-							</svg>
-						</button>
-						<ul class="dropdown-content bg-white shadow-card p-1 rounded-lg w-[8.5rem] hidden absolute flex-col left-0 top-full mt-0.5 z-1 [&.active]:flex" data-dropdown-id='self-destruct'>
-							<li class='h-9 flex items-center text-sm px-4 rounded-md hover:bg-gray-150 cursor-pointer'>24 Hours</li>
-							<li class='h-9 flex items-center text-sm px-4 rounded-md hover:bg-gray-150 cursor-pointer'>48 Hours</li>
-							<li class='h-9 flex items-center text-sm px-4 rounded-md hover:bg-gray-150 cursor-pointer'>7 Days</li>
-							<li class='h-9 flex items-center text-sm px-4 rounded-md hover:bg-gray-150 cursor-pointer'>14 Days</li>
-							<li class='h-9 flex items-center text-sm px-4 rounded-md hover:bg-gray-150 cursor-pointer'>30 Days</li>
-							<li class='h-9 flex items-center text-sm px-4 rounded-md hover:bg-gray-150 cursor-pointer'>Custom</li>
-						</ul>
-					</div>
-					<button class="btn btn-primary-default font-bold">Delete</button>
-				</div>
-			</div>
-		</div>
-
-		<div class="dialog hidden" data-dialog-type="delete-one-file">
-			<div class="dialog-card">
-				<button class="dialog-close" data-dialog-close>
-					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
-					</svg>
-				</button>
-				<div class="dialog-header">
-					<h4>Delete 1 file?</h4>
-				</div>
-				<div class="dialog-body">
-					<p>Are you sure you want to delete the file <strong>Items Hover Effect.mp4</strong>?</p>
-				</div>
-				<div class="dialog-footer">
-					<button class="btn btn-border-default" data-dialog-close>Cancel</button>
-					<button class="btn btn-danger font-bold">Delete</button>
-				</div>
-			</div>
-		</div>
-
-		<div class="dialog hidden" data-dialog-type="new-workspace">
-			<div class="dialog-card">
-				<button class="dialog-close" data-dialog-close>
-					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
-					</svg>
-				</button>
-				<div class="dialog-header">
-					<h4>New Workspace</h4>
-				</div>
-				<div class="dialog-body">
-					<p>Create a new workspace. This is the name of your company, team or organization.</p>
-					<input type="text" placeholder='Name of the Workspace' class='input-field mt-4'>
-				</div>
-				<div class="dialog-footer">
-					<button class="btn btn-border-default" data-dialog-close>Cancel</button>
-					<button class="btn btn-primary-default font-bold">Create</button>
-				</div>
-			</div>
-		</div>
-
-		<div class="dialog hidden" data-dialog-type="copy-move-item">
-			<div class="dialog-card">
-				<button class="dialog-close" data-dialog-close>
-					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#0A0A0B"/>
-					</svg>
-				</button>
-				<div class="dialog-header">
-					<h4>Copy/Move 1 Item</h4>
-					<div class='flex items-center gap-4 mt-4'>
-						Currently in:
-						<button class="btn btn-border-default px-3">
-							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M2.38934 6.8679C2.2975 7.06583 2.24995 7.28141 2.25 7.49961V14.2496C2.25 14.6474 2.40804 15.029 2.68934 15.3103C2.97064 15.5916 3.35218 15.7496 3.75 15.7496H6.75V9.74961C6.75 9.5507 6.82902 9.35993 6.96967 9.21928C7.11032 9.07863 7.30109 8.99961 7.5 8.99961H10.5C10.6989 8.99961 10.8897 9.07863 11.0303 9.21928C11.171 9.35993 11.25 9.5507 11.25 9.74961V15.7496H14.25C14.6478 15.7496 15.0294 15.5916 15.3107 15.3103C15.592 15.029 15.75 14.6474 15.75 14.2496V7.49961C15.7501 7.28141 15.7025 7.06583 15.6107 6.8679C15.5188 6.66997 15.3849 6.49446 15.2183 6.35361L9.96825 1.85436C9.69751 1.62554 9.35448 1.5 9 1.5C8.64552 1.5 8.30249 1.62554 8.03175 1.85436L2.78175 6.35361C2.6151 6.49446 2.48118 6.66997 2.38934 6.8679Z" stroke="#0A0A0B" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-							</svg>	
-							<span>Personal Library</span>
-							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M9.52831 11.7783C9.38766 11.9189 9.19693 11.9979 8.99806 11.9979C8.79919 11.9979 8.60846 11.9189 8.46781 11.7783L4.22506 7.53556C4.15343 7.46637 4.09629 7.38362 4.05698 7.29211C4.01768 7.20061 3.99699 7.1022 3.99612 7.00261C3.99526 6.90303 4.01423 6.80427 4.05194 6.71209C4.08965 6.61992 4.14534 6.53618 4.21576 6.46576C4.28618 6.39534 4.36992 6.33965 4.46209 6.30194C4.55427 6.26423 4.65303 6.24526 4.75261 6.24612C4.8522 6.24699 4.95061 6.26768 5.04211 6.30698C5.13362 6.34629 5.21637 6.40343 5.28556 6.47506L8.99806 10.1876L12.7106 6.47506C12.852 6.33844 13.0415 6.26285 13.2381 6.26455C13.4348 6.26626 13.6229 6.34514 13.7619 6.4842C13.901 6.62325 13.9799 6.81136 13.9816 7.00801C13.9833 7.20466 13.9077 7.39411 13.7711 7.53556L9.52831 11.7783Z" fill="#0A0A0B"/>
-							</svg>
-						</button>
-					</div>
-				</div>
-				<div class="dialog-body">
-					<div class="folder-menu-tree">
-						<div class="folder-menu-item" data-level="0">
-							<div class="folder-menu-header">
-								<span class="toggle-menu-icon -rotate-90">
-									<img src="./assets/images/check-down.svg" alt="check">
-								</span>
-								
-									<img class='w-[19px] flex items-center justify-center' src="./assets/images/folder.svg" alt="folder">
-								</span>
-								<span class="folder-menu-name">New Folder 2.0</span>
-							</div>
-							<div class="folder-menu-content hidden">
-								<div class="folder-menu-item" data-level="1">
-									<div class="folder-menu-header">
-										<span class="toggle-menu-icon -rotate-90"><img src="./assets/images/check-down.svg" alt="check"></span>
-										<img class='w-[19px] flex items-center justify-center' src="./assets/images/folder.svg" alt="folder">
-										<span class="folder-menu-name">Jump Camp Meeting</span>
-									</div>
-									<div class="folder-menu-content hidden">
-										<div class="folder-menu-item" data-level="2">
-											<div class="folder-menu-header">
-												<span class="toggle-menu-icon -rotate-90"><img src="./assets/images/check-down.svg" alt="check"></span>
-												<img class='size-6 flex w-[19px]enter justify-center' src="./assets/images/folder.svg" alt="folder">
-												<span class="folder-menu-name">Subfolders Level 3</span>
-											</div>
-											<div class="folder-menu-content hidden">
-												<div class="folder-menu-item" data-level="3">
-													<div class="folder-menu-header">
-														<span class="toggle-menu-icon -rotate-90"></span>
-														<img class='size-6 flex items-center w-[19px]enter' src="./assets/images/folder.svg" alt="folder">
-														<span class="folder-menu-name">Deep File 1</span>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="folder-menu-item" data-level="1">
-									<div class="folder-menu-header">
-										<span class="toggle-menu-icon -rotate-90"><img src="./assets/images/check-down.svg" alt="check"></span>
-										<img class='w-[19px] flex items-center justify-center' src="./assets/images/folder.svg" alt="folder">
-										<span class="folder-menu-name">New Folder</span>
-									</div>
-									<div class="folder-menu-content hidden">
-										<div class="folder-menu-item" data-level="2">
-											<div class="folder-menu-header">
-												<span class="toggle-menu-icon -rotate-90"></span>
-												<img class='size-6 flex w-[19px]enter justify-center' src="./assets/images/folder.svg" alt="folder">
-												<span class="folder-menu-name">Subfolder</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="folder-menu-item" data-level="0">
-							<div class="folder-menu-header">
-								<span class="toggle-menu-icon -rotate-90"><img src="./assets/images/check-down.svg" alt="check"></span>
-								<img class='w-[19px] flex items-center justify-center' src="./assets/images/folder.svg" alt="folder">
-								<span class="folder-menu-name">Testing Formats</span>
-							</div>
-							<div class="folder-menu-content hidden">
-								<div class="folder-menu-item" data-level="1">
-									<div class="folder-menu-header">
-										<span class="toggle-menu-icon -rotate-90"><img src="./assets/images/check-down.svg" alt="check"></span>
-										<img class='w-[19px] flex items-center justify-center' src="./assets/images/folder.svg" alt="folder">
-										<span class="folder-menu-name">New Folder</span>
-									</div>
-									<div class="folder-menu-content hidden">
-										<div class="folder-menu-item" data-level="2">
-											<div class="folder-menu-header">
-												<span class="toggle-menu-icon -rotate-90"></span>
-												<img class='size-6 flex w-[19px]enter justify-center' src="./assets/images/folder.svg" alt="folder">
-												<span class="folder-menu-name">Deep File 2</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="dialog-footer justify-between">
-					<button class="btn btn-border-default px-4"><span class="mb-0.5">+</span> Create New</button>
-					<div class="flex items-center gap-2">
-						<button class="btn btn-primary-default font-bold">Copy</button>
-						<button class="btn btn-primary-default font-bold">Move</button>
-					</div>
-				</div>
-			</div>
-		</div>
+		<script
+			src="https://code.jquery.com/jquery-3.7.1.min.js"
+			integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+			crossorigin="anonymous"
+		></script>
+		<script src="./dist/js/mobile-menu.js"></script>
+		<script src="./dist/js/dialog.js"></script>
+		<script src="./dist/js/menu-tree.js"></script>
+		<script src="./dist/js/dropdown.js"></script>
+		<script src="./dist/js/main.js"></script>
 	</body>
-	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-	<script src='./dist/js/mobile-menu.js'></script>
-	<script src='./dist/js/dialog.js'></script>
-	<script src='./dist/js/menu-tree.js'></script>
-	<script src='./dist/js/dropdown.js'></script>
-	<script src="./dist/js/main.js"></script>
 </html>
