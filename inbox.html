@@ -187,12 +187,12 @@
 						</button>
 					</div>
 					<div
-						class="dropdown-wrapper z-4 max-md:border-b border-gray-400 px-2"
+						class="dropdown-wrapper z-4 max-md:border-b border-gray-400 px-2 mb-5 [.active-sidebar_&]:mb-7"
 					>
 						<a
 							href="#"
 							data-id="dropdown-workspaces"
-							class="dropdown-button p-2.5 flex items-center justify-between relative bg-white border border-gray-600 rounded-xl hover:bg-gray-200 [&.active]:bg-gray-200 [.active-sidebar_&]:rounded-lg [.active-sidebar_&]:p-0 [.active-sidebar_&]:border-0 [.active-sidebar_&]:bg-transparent transition-all duration-300 ease-in-out overflow-hidden mb-5 [.active-sidebar_&]:mb-7 [.active-sidebar_&]:mt-2"
+							class="dropdown-button p-2.5 flex items-center justify-between relative bg-white border border-gray-600 rounded-xl hover:bg-gray-200 [&.active]:bg-gray-200 [.active-sidebar_&]:rounded-lg [.active-sidebar_&]:p-0 [.active-sidebar_&]:border-0 [.active-sidebar_&]:bg-transparent transition-all duration-300 ease-in-out overflow-hidden [.active-sidebar_&]:mt-2"
 						>
 							<div class="flex items-center justify-between mr-2 flex-shrink-0">
 								<div
@@ -244,7 +244,10 @@
 										</div>
 									</div>
 									<div class="flex gap-2 mt-4 mb-1">
-										<button type="button" class="btn btn-border-default h-8">
+										<button
+											type="button"
+											class="btn btn-border-default h-8 font-normal"
+										>
 											<svg class="icon icon-sm">
 												<use href="#icon-cog-medium"></use>
 											</svg>
@@ -252,7 +255,7 @@
 										</button>
 										<button
 											type="button"
-											class="btn btn-border-default h-8 flex-grow-1"
+											class="btn btn-border-default h-8 flex-grow-1 font-normal"
 										>
 											<svg class="icon icon-sm">
 												<use href="#icon-members-medium"></use>
@@ -387,7 +390,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="./inbox.html" class="aside-nav-item active">
+									<a href="./inbox.html" class="aside-nav-item">
 										<svg class="icon icon-md">
 											<use href="#icon-inbox-medium"></use>
 										</svg>
@@ -433,11 +436,8 @@
 									</button>
 								</div>
 							</div>
-							<ul class="flex flex-col">
-								<li
-									class="group aside-nav-item"
-									onclick='window.location.href="./browse-spaces.html"'
-								>
+							<div class="flex flex-col">
+								<a href="./browse-spaces.html" class="group aside-nav-item">
 									<svg class="icon icon-md">
 										<use href="#icon-spaces"></use>
 									</svg>
@@ -465,29 +465,26 @@
 													<span></span>
 												</div>
 												<div class="js-dropdown-content">
-													<a
-														href="#"
+													<div
 														data-link-type="large-grid"
-														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800 font-normal"
 													>
 														<svg class="icon icon-md">
 															<use href="#icon-cog-medium"></use>
 														</svg>
 														Space Settings
-													</a>
-													<a
-														href="#"
+													</div>
+													<div
 														data-link-type="grid"
-														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800 font-normal"
 													>
 														<svg class="icon icon-md">
 															<use href="#icon-members-medium"></use>
 														</svg>
 														View members
-													</a>
+													</div>
 													<hr class="my-2 border-gray-400" />
-													<a
-														href="#"
+													<div
 														data-link-type="list"
 														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150"
 													>
@@ -495,9 +492,8 @@
 															<use href="#icon-archive"></use>
 														</svg>
 														Archive
-													</a>
-													<a
-														href="#"
+													</div>
+													<div
 														data-link-type="grid"
 														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150"
 													>
@@ -505,17 +501,17 @@
 															<use href="#icon-trash"></use>
 														</svg>
 														Delete
-													</a>
+													</div>
 												</div>
 											</div>
 										</div>
 									</div>
-								</li>
-								<li class="group aside-nav-item">
+								</a>
+								<a href="./team-spaces.html" class="group aside-nav-item">
 									<span
 										class="flex items-center justify-center rounded-md bg-blue-500 size-6 text-white text-xs font-semibold uppercase flex-shrink-0"
 									>
-										<svg class="icon icon-s">
+										<svg class="icon icon-sm">
 											<use href="#icon-members-medium"></use>
 										</svg>
 									</span>
@@ -543,53 +539,49 @@
 													<span></span>
 												</div>
 												<div class="js-dropdown-content">
-													<a
-														href="#"
+													<div
 														data-link-type="large-grid"
-														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800 font-normal"
 													>
 														<svg class="icon icon-m">
 															<use href="#icon-cog-medium"></use>
 														</svg>
 														Space Settings
-													</a>
-													<a
-														href="#"
+													</div>
+													<div
 														data-link-type="grid"
-														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800 font-normal"
 													>
-														<svg class="icon icon-s">
+														<svg class="icon icon-md">
 															<use href="#icon-members-medium"></use>
 														</svg>
 														View members
-													</a>
+													</div>
 													<hr class="my-2 border-gray-400" />
-													<a
-														href="#"
+													<div
 														data-link-type="list"
-														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800 font-normal"
 													>
 														<svg class="icon icon-md">
 															<use href="#icon-archive"></use>
 														</svg>
 														Archive
-													</a>
-													<a
-														href="#"
+													</div>
+													<div
 														data-link-type="grid"
-														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800 font-normal"
 													>
 														<svg class="icon icon-md">
 															<use href="#icon-trash"></use>
 														</svg>
 														Delete
-													</a>
+													</div>
 												</div>
 											</div>
 										</div>
 									</div>
-								</li>
-								<li class="group aside-nav-item">
+								</a>
+								<a href="./team-spaces.html" class="group aside-nav-item">
 									<span
 										class="flex items-center justify-center rounded-md bg-[#5839F3] size-6 text-white text-xs font-semibold uppercase flex-shrink-0"
 									>
@@ -619,53 +611,49 @@
 													<span></span>
 												</div>
 												<div class="js-dropdown-content">
-													<a
-														href="#"
+													<div
 														data-link-type="large-grid"
-														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800 font-normal"
 													>
 														<svg class="icon icon-m">
 															<use href="#icon-cog-medium"></use>
 														</svg>
 														Space Settings
-													</a>
-													<a
-														href="#"
+													</div>
+													<div
 														data-link-type="grid"
-														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800 font-normal"
 													>
-														<svg class="icon icon-s">
+														<svg class="icon icon-md">
 															<use href="#icon-members-medium"></use>
 														</svg>
 														View members
-													</a>
+													</div>
 													<hr class="my-2 border-gray-400" />
-													<a
-														href="#"
+													<div
 														data-link-type="list"
-														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800 font-normal"
 													>
 														<svg class="icon icon-md">
 															<use href="#icon-archive"></use>
 														</svg>
 														Archive
-													</a>
-													<a
-														href="#"
+													</div>
+													<div
 														data-link-type="grid"
-														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800 font-normal"
 													>
 														<svg class="icon icon-md">
 															<use href="#icon-trash"></use>
 														</svg>
 														Delete
-													</a>
+													</div>
 												</div>
 											</div>
 										</div>
 									</div>
-								</li>
-								<li class="group aside-nav-item">
+								</a>
+								<a href="./team-spaces.html" class="group aside-nav-item">
 									<div
 										class="size-6 flex items-center justify-center flex-shrink-0"
 									>
@@ -699,53 +687,49 @@
 													<span></span>
 												</div>
 												<div class="js-dropdown-content">
-													<a
-														href="#"
+													<div
 														data-link-type="large-grid"
-														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800 font-normal"
 													>
 														<svg class="icon icon-m">
 															<use href="#icon-cog-medium"></use>
 														</svg>
 														Space Settings
-													</a>
-													<a
-														href="#"
+													</div>
+													<div
 														data-link-type="grid"
-														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800 font-normal"
 													>
-														<svg class="icon icon-s">
+														<svg class="icon icon-md">
 															<use href="#icon-members-medium"></use>
 														</svg>
 														View members
-													</a>
+													</div>
 													<hr class="my-2 border-gray-400" />
-													<a
-														href="#"
+													<div
 														data-link-type="list"
-														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800 font-normal"
 													>
 														<svg class="icon icon-md">
 															<use href="#icon-archive"></use>
 														</svg>
 														Archive
-													</a>
-													<a
-														href="#"
+													</div>
+													<div
 														data-link-type="grid"
-														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800 font-normal"
 													>
 														<svg class="icon icon-md">
 															<use href="#icon-trash"></use>
 														</svg>
 														Delete
-													</a>
+													</div>
 												</div>
 											</div>
 										</div>
 									</div>
-								</li>
-								<li class="group aside-nav-item">
+								</a>
+								<a href="./team-spaces.html" class="group aside-nav-item">
 									<div
 										class="size-6 flex items-center justify-center flex-shrink-0"
 									>
@@ -779,53 +763,49 @@
 													<span></span>
 												</div>
 												<div class="js-dropdown-content">
-													<a
-														href="#"
+													<div
 														data-link-type="large-grid"
-														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800 font-normal"
 													>
 														<svg class="icon icon-m">
 															<use href="#icon-cog-medium"></use>
 														</svg>
 														Space Settings
-													</a>
-													<a
-														href="#"
+													</div>
+													<div
 														data-link-type="grid"
-														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800 font-normal"
 													>
-														<svg class="icon icon-s">
+														<svg class="icon icon-md">
 															<use href="#icon-members-medium"></use>
 														</svg>
 														View members
-													</a>
+													</div>
 													<hr class="my-2 border-gray-400" />
-													<a
-														href="#"
+													<div
 														data-link-type="list"
-														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800 font-normal"
 													>
 														<svg class="icon icon-md">
 															<use href="#icon-archive"></use>
 														</svg>
 														Archive
-													</a>
-													<a
-														href="#"
+													</div>
+													<div
 														data-link-type="grid"
-														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150"
+														class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150 text-dark-800 font-normal"
 													>
 														<svg class="icon icon-md">
 															<use href="#icon-trash"></use>
 														</svg>
 														Delete
-													</a>
+													</div>
 												</div>
 											</div>
 										</div>
 									</div>
-								</li>
-							</ul>
+								</a>
+							</div>
 						</nav>
 						<div class="mt-auto">
 							<hr class="mb-6 border-gray-600" />
@@ -842,7 +822,7 @@
 										<span class="aside-notification-badge">5</span>
 									</a>
 									<div
-										class="js-dropdown hidden w-[28.125rem]"
+										class="js-dropdown w-[28.125rem] hidden"
 										data-dropdown-id="dropdown-notifications"
 										data-sheet-modal
 										data-overflow-visible
@@ -862,7 +842,8 @@
 														Notifications
 													</p>
 													<a
-														href="./activity-center.html"
+														href="#"
+														onclick="window.open('./activity-center.html')"
 														class="text-sm text-blue-500 font-medium"
 														>View All →</a
 													>
@@ -1334,14 +1315,14 @@
 							<ul class="flex items-center gap-x-8.5">
 								<li
 									data-tab-id="active-inboxes"
-									class="active text-sm text-dark-800/60 font-medium cursor-pointer relative before:content-[&quot;&quot;] before:absolute before:-bottom-[15px] before:left-0 before:h-0.5 before:bg-blue-900 before:w-[90%] before:scale-x-0 before:transition-all before:duration-300 before:ease-in-out before:origin-left [&.active]:before:scale-x-100 after:content-[attr(data-text)] after:absolute after:inset-0 after:font-semibold after:opacity-0 after:transition-opacity after:duration-300 [&.active]:after:opacity-100 [&.active]:text-blue-900 text-nowrap after:text-blue-800! [&.active]:text-transparent transition-all duration-300"
+									class="active text-sm text-dark-800/60 font-medium cursor-pointer relative before:content-[&quot;&quot;] before:absolute before:-bottom-[15px] before:left-0 before:h-0.5 before:bg-blue-900 before:w-[90%] before:scale-x-0 before:transition-all before:duration-300 before:ease-in-out before:origin-left [&.active]:before:scale-x-100 after:content-[attr(data-text)] after:absolute after:inset-0 after:font-semibold after:opacity-0 after:transition-opacity after:duration-300 [&.active]:after:opacity-100 text-nowrap after:text-blue-800! [&.active]:text-transparent transition-all duration-300"
 									data-text="Active Inboxes"
 								>
 									Active Inboxes
 								</li>
 								<li
 									data-tab-id="closed-inboxes"
-									class="text-sm text-dark-800/60 font-medium cursor-pointer relative before:content-[&quot;&quot;] before:absolute before:-bottom-[15px] before:left-0 before:h-0.5 before:bg-blue-900 before:w-[90%] before:scale-x-0 before:transition-all before:duration-300 before:ease-in-out before:origin-left [&.active]:before:scale-x-100 after:content-[attr(data-text)] after:absolute after:inset-0 after:font-semibold after:opacity-0 after:transition-opacity after:duration-300 [&.active]:after:opacity-100 [&.active]:text-blue-900 text-nowrap after:text-blue-800! [&.active]:text-transparent transition-all duration-300"
+									class="text-sm text-dark-800/60 font-medium cursor-pointer relative before:content-[&quot;&quot;] before:absolute before:-bottom-[15px] before:left-0 before:h-0.5 before:bg-blue-900 before:w-[90%] before:scale-x-0 before:transition-all before:duration-300 before:ease-in-out before:origin-left [&.active]:before:scale-x-100 after:content-[attr(data-text)] after:absolute after:inset-0 after:font-semibold after:opacity-0 after:transition-opacity after:duration-300 [&.active]:after:opacity-100 text-nowrap after:text-blue-800! [&.active]:text-transparent transition-all duration-300"
 									data-text="Closed Inboxes"
 								>
 									Closed Inboxes
@@ -1363,8 +1344,9 @@
 							<div class="text-sm text-dark-800/60">Location</div>
 						</div>
 						<div class="flex flex-col">
-							<div
-								class="grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4"
+							<a
+								href="./inbox-open.html"
+								class="grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4 hover:bg-gray-150"
 							>
 								<div class="flex flex-col gap-1.5 pl-5 max-md:pl-4">
 									<p class="text-sm text-dark-800 font-medium">Testing UI</p>
@@ -1431,9 +1413,10 @@
 										</div>
 									</div>
 								</div>
-							</div>
-							<div
-								class="grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4"
+							</a>
+							<a
+								href="./inbox-open.html"
+								class="grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4 hover:bg-gray-150"
 							>
 								<div class="flex flex-col gap-1.5 pl-5 max-md:pl-4">
 									<p class="text-sm text-dark-800 font-medium">
@@ -1502,9 +1485,10 @@
 										</div>
 									</div>
 								</div>
-							</div>
-							<div
-								class="grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4"
+							</a>
+							<a
+								href="./inbox-open.html"
+								class="grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4 hover:bg-gray-150"
 							>
 								<div class="flex flex-col gap-1.5 pl-5 max-md:pl-4">
 									<p class="text-sm text-dark-800 font-medium">
@@ -1573,9 +1557,10 @@
 										</div>
 									</div>
 								</div>
-							</div>
-							<div
-								class="grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4"
+							</a>
+							<a
+								href="./inbox-open.html"
+								class="grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4 hover:bg-gray-150"
 							>
 								<div class="flex flex-col gap-1.5 truncate pl-5 max-md:pl-4">
 									<p class="text-sm text-dark-800 font-medium truncate">
@@ -1645,9 +1630,10 @@
 										</div>
 									</div>
 								</div>
-							</div>
-							<div
-								class="grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4"
+							</a>
+							<a
+								href="./inbox-open.html"
+								class="grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4 hover:bg-gray-150"
 							>
 								<div class="flex flex-col gap-1.5 pl-5 max-md:pl-4">
 									<p class="text-sm text-dark-800 font-medium">Testing UI</p>
@@ -1714,7 +1700,7 @@
 										</div>
 									</div>
 								</div>
-							</div>
+							</a>
 						</div>
 					</div>
 					<div
@@ -1729,8 +1715,9 @@
 							<div class="text-sm text-dark-800/60">Location</div>
 						</div>
 						<div class="flex flex-col">
-							<div
-								class="grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4"
+							<a
+								href="./inbox-open.html"
+								class="grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4 hover:bg-gray-150"
 							>
 								<div class="flex flex-col gap-1.5 truncate pl-5 max-md:pl-4">
 									<p class="text-sm text-dark-800 font-medium truncate">
@@ -1799,9 +1786,10 @@
 										</div>
 									</div>
 								</div>
-							</div>
-							<div
-								class="grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4"
+							</a>
+							<a
+								href="./inbox-open.html"
+								class="grid grid-cols-[minmax(250px,1fr)_minmax(200px,250px)_minmax(250px,324px)] border-b border-gray-400 py-3.5 max-md:grid-cols-[1fr_100px] gap-4 hover:bg-gray-150"
 							>
 								<div class="flex flex-col gap-1.5 pl-5 max-md:pl-4">
 									<p class="text-sm text-dark-800 font-medium">Testing UI</p>
@@ -1868,7 +1856,7 @@
 										</div>
 									</div>
 								</div>
-							</div>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -1879,6 +1867,7 @@
 			integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
 			crossorigin="anonymous"
 		></script>
+		<script src="./dist/js/sidebar-active-links.js"></script>
 		<script src="./dist/js/mobile-menu.js"></script>
 		<script src="./dist/js/bottom-sheet.js"></script>
 		<script src="./dist/js/dialog.js"></script>
