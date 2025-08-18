@@ -11,6 +11,9 @@ const Sidebar = {
 
 			this.sidebarNavItems.forEach((item) => {
 				const itemPath = item.getAttribute("href");
+
+				if (!itemPath) return;
+
 				const baseFileName = itemPath.split("/").pop();
 
 				const isActive = [
