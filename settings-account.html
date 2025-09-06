@@ -851,29 +851,13 @@
 							<p class="text-s text-dark-800/60 font-medium px-2.5">
 								Workspace Settings
 							</p>
-							<ul class="flex flex-col mt-2">
+							<ul class="flex flex-col mt-2 space-y-0.5">
 								<li>
 									<a href="./settings.html" class="aside-nav-item">
 										<svg class="icon icon-md">
 											<use href="#icon-general-settings"></use>
 										</svg>
 										General
-									</a>
-								</li>
-								<li>
-									<a href="./settings-activity.html" class="aside-nav-item">
-										<svg class="icon icon-md">
-											<use href="#icon-activity"></use>
-										</svg>
-										Activity
-									</a>
-								</li>
-								<li>
-									<a href="./settings-members.html" class="aside-nav-item">
-										<svg class="icon icon-md">
-											<use href="#icon-members"></use>
-										</svg>
-										Members
 									</a>
 								</li>
 								<li>
@@ -912,11 +896,27 @@
 									</a>
 								</li>
 								<li>
+									<a href="./settings-members.html" class="aside-nav-item">
+										<svg class="icon icon-md">
+											<use href="#icon-members"></use>
+										</svg>
+										Members
+									</a>
+								</li>
+								<li>
 									<a href="./settings-billing.html" class="aside-nav-item">
 										<svg class="icon icon-md">
 											<use href="#icon-billing"></use>
 										</svg>
 										Billing
+									</a>
+								</li>
+								<li>
+									<a href="./settings-activity.html" class="aside-nav-item">
+										<svg class="icon icon-md">
+											<use href="#icon-activity"></use>
+										</svg>
+										Activity
 									</a>
 								</li>
 								<li>
@@ -930,9 +930,9 @@
 								<li>
 									<a href="./settings-data.html" class="aside-nav-item">
 										<svg class="icon icon-md">
-											<use href="#icon-data"></use>
+											<use href="#icon-geo"></use>
 										</svg>
-										Data
+										Geo Targeting
 									</a>
 								</li>
 								<li>
@@ -947,7 +947,7 @@
 							<p class="text-s text-dark-800/60 font-medium px-2.5 mt-6">
 								Personal Settings
 							</p>
-							<ul class="flex flex-col mt-2">
+							<ul class="flex flex-col mt-2 space-y-0.5">
 								<li>
 									<a href="./settings-account.html" class="aside-nav-item">
 										<svg class="icon icon-md">
@@ -1059,7 +1059,7 @@
 							Account Settings
 						</h3>
 						<div class="border border-gray-600 p-6 rounded-xl mt-3 max-sm:p-5">
-							<strong class="text-sm font-semibold mb-2 block">
+							<strong class="text-sm font-semibold block">
 								Upload your profile photo
 							</strong>
 							<p class="mt-1 text-sm text-gray-900">
@@ -1354,7 +1354,7 @@
 								<use href="#icon-security"></use>
 							</svg>
 							<div class="flex flex-col gap-1 mr-10">
-								<strong class="text-sm font-semibold">Setup 2FA</strong>
+								<strong class="text-sm font-medium">Setup 2FA</strong>
 								<p class="text-sm text-gray-900">
 									2-Step Verification can help protect your account from
 									unauthorized access by requiring you to enter an additional
@@ -1412,6 +1412,151 @@
 										class="btn btn-danger-outline px-6 h-10"
 									>
 										Remove
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mt-10">
+						<h3
+							class="text-lg text-dark-800 font-semibold flex items-center gap-x-3"
+						>
+							Account Login Activity
+						</h3>
+						<div
+							class="border border-gray-600 rounded-xl p-6 pb-0 mt-3 max-sm:p-5 max-sm:pb-0"
+						>
+							<strong class="text-sm font-medium block"> Web Browsers </strong>
+							<p class="mt-1 text-sm text-gray-900 mb-7.5">
+								These devices are currently signed in to your Jumpshare Account
+							</p>
+							<div
+								class="grid grid-cols-[minmax(110px,1fr)_minmax(150px,300px)_minmax(250px,320px)] gap-4 pb-3 max-md:hidden text-sm font-medium text-gray-900"
+							>
+								<div>Name</div>
+								<div>Location</div>
+								<div>Last Activity</div>
+							</div>
+							<div
+								class="grid grid-cols-[minmax(110px,1fr)_minmax(150px,300px)_minmax(250px,320px)] gap-4 py-4 px-6 -mx-6 border-t border-gray-400 text-sm lg:[&>div]:min-h-10 [&>div]:flex [&>div]:items-center relative max-lg:pr-30 max-sm:gap-1.5 max-lg:grid-cols-1"
+							>
+								<div>
+									<span class="truncate">Firefox, Windows</span>
+								</div>
+								<div>
+									<span class="truncate">New York, Empire Mall, U.S.A</span>
+								</div>
+								<div class="justify-between gap-x-4">
+									<span class="text-green-600">Current Session</span>
+								</div>
+							</div>
+							<div
+								class="grid grid-cols-[minmax(110px,1fr)_minmax(150px,300px)_minmax(250px,320px)] gap-4 py-4 px-6 -mx-6 border-t border-gray-400 text-sm lg:[&>div]:min-h-10 [&>div]:flex [&>div]:items-center relative max-lg:pr-30 max-sm:gap-1.5 max-lg:grid-cols-1"
+							>
+								<div>
+									<span class="truncate">Safari, Mac</span>
+								</div>
+								<div>
+									<span class="truncate">Washington DC</span>
+								</div>
+								<div class="justify-between gap-x-4">
+									<span class="max-lg:text-gray-900">Yesterday</span>
+									<button
+										type="button"
+										class="btn btn-border-default h-10 px-4 max-lg:absolute top-1/2 right-6 -translate-y-1/2"
+									>
+										Disconnect
+									</button>
+								</div>
+							</div>
+							<div
+								class="grid grid-cols-[minmax(110px,1fr)_minmax(150px,300px)_minmax(250px,320px)] gap-4 py-4 px-6 -mx-6 border-t border-gray-400 text-sm lg:[&>div]:min-h-10 [&>div]:flex [&>div]:items-center relative max-lg:pr-30 max-sm:gap-1.5 max-lg:grid-cols-1"
+							>
+								<div>
+									<span class="truncate">Huawei VOG-L29</span>
+								</div>
+								<div>
+									<span class="truncate">San Francisco</span>
+								</div>
+								<div class="justify-between gap-x-4">
+									<span class="max-lg:text-gray-900">25 Feb, 2025</span>
+									<button
+										type="button"
+										class="btn btn-border-default h-10 px-4 max-lg:absolute top-1/2 right-6 -translate-y-1/2"
+									>
+										Disconnect
+									</button>
+								</div>
+							</div>
+							<div
+								class="grid grid-cols-[minmax(110px,1fr)_minmax(150px,300px)_minmax(250px,320px)] gap-4 py-4 px-6 -mx-6 border-t border-gray-400 text-sm lg:[&>div]:min-h-10 [&>div]:flex [&>div]:items-center relative max-lg:pr-30 max-sm:gap-1.5 max-lg:grid-cols-1"
+							>
+								<div>
+									<span class="truncate">iPhone 17 Pro Max</span>
+								</div>
+								<div>
+									<span class="truncate">Islamabad, Punjab, Pakistan</span>
+								</div>
+								<div class="justify-between gap-x-4">
+									<span class="max-lg:text-gray-900">25 Feb, 2025</span>
+									<button
+										type="button"
+										class="btn btn-border-default h-10 px-4 max-lg:absolute top-1/2 right-6 -translate-y-1/2"
+									>
+										Disconnect
+									</button>
+								</div>
+							</div>
+						</div>
+						<div
+							class="border border-gray-600 rounded-xl p-6 pb-0 mt-6 max-sm:p-5 max-sm:pb-0"
+						>
+							<strong class="text-sm font-medium block"> Web Browsers </strong>
+							<p class="mt-1 text-sm text-gray-900 mb-7.5">
+								These devices are currently signed in to your Jumpshare Account
+							</p>
+							<div
+								class="grid grid-cols-[minmax(110px,1fr)_minmax(150px,300px)_minmax(250px,320px)] gap-4 pb-3 max-md:hidden text-sm font-medium text-gray-900"
+							>
+								<div>Name</div>
+								<div>Location</div>
+								<div>Last Activity</div>
+							</div>
+							<div
+								class="grid grid-cols-[minmax(110px,1fr)_minmax(150px,300px)_minmax(250px,320px)] gap-4 py-4 px-6 -mx-6 border-t border-gray-400 text-sm lg:[&>div]:min-h-10 [&>div]:flex [&>div]:items-center relative max-lg:pr-30 max-sm:gap-1.5 max-lg:grid-cols-1"
+							>
+								<div>
+									<span class="truncate">Firefox, Windows</span>
+								</div>
+								<div>
+									<span class="truncate">New York, Empire Mall, U.S.A</span>
+								</div>
+								<div class="justify-between gap-x-4">
+									<span class="max-lg:text-gray-900">23 mins ago</span>
+									<button
+										type="button"
+										class="btn btn-border-default h-10 px-4 max-lg:absolute top-1/2 right-6 -translate-y-1/2"
+									>
+										Disconnect
+									</button>
+								</div>
+							</div>
+							<div
+								class="grid grid-cols-[minmax(110px,1fr)_minmax(150px,300px)_minmax(250px,320px)] gap-4 py-4 px-6 -mx-6 border-t border-gray-400 text-sm lg:[&>div]:min-h-10 [&>div]:flex [&>div]:items-center relative max-lg:pr-30 max-sm:gap-1.5 max-lg:grid-cols-1"
+							>
+								<div>
+									<span class="truncate">Safari, Mac</span>
+								</div>
+								<div>
+									<span class="truncate">San Francisco</span>
+								</div>
+								<div class="justify-between gap-x-4">
+									<span class="max-lg:text-gray-900">25 Feb, 2025</span>
+									<button
+										type="button"
+										class="btn btn-border-default h-10 px-4 max-lg:absolute top-1/2 right-6 -translate-y-1/2"
+									>
+										Disconnect
 									</button>
 								</div>
 							</div>

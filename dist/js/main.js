@@ -222,7 +222,6 @@ $(document).ready(function () {
 			});
 
 			if (validFiles.length > 0) {
-				// Здесь можно добавить обработку загруженных файлов
 				console.log("Valid files dropped:", validFiles);
 			}
 		}

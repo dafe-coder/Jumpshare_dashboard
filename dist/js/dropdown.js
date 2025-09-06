@@ -456,15 +456,19 @@ const Dropdown = {
 
 	updateContentType(contentType) {
 		const $contentTypeElements = $(`[data-content-type]`);
+		const $dashboardContainer = $(".dashboard-container");
 		switch (contentType) {
 			case "list":
 				$contentTypeElements.addClass("list-type").removeClass("grid-type");
+				$dashboardContainer.addClass("list-type").removeClass("grid-type");
 				break;
 			case "grid":
 				$contentTypeElements.addClass("grid-type").removeClass("list-type");
+				$dashboardContainer.addClass("grid-type").removeClass("list-type");
 				break;
 			default:
 				$contentTypeElements.removeClass("list-type grid-type");
+				$dashboardContainer.removeClass("list-type grid-type");
 				break;
 		}
 	},
