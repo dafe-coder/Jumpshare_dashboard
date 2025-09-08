@@ -1,4 +1,12 @@
 @layer components {
+	.dashboard {
+		.btn {
+			@apply h-10 px-4 shadow-none;
+		}
+	}
+	[data-disabled] {
+		@apply opacity-60 pointer-events-none;
+	}
 	.dashboard-container {
 		@apply max-w-[71rem] px-5 mx-auto max-sm:px-4 lg:px-12;
 	}

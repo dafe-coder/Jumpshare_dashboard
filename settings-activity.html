@@ -128,7 +128,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="stylesheet" href="./dist/output.css" />
 	</head>
-	<body class="drag-and-drop">
+	<body class="drag-and-drop dashboard">
 		<div
 			id="progress-bar"
 			class="fixed top-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-blue-500/10 transform scale-x-0 origin-left transition-transform duration-300 ease-out z-99999"
@@ -386,23 +386,85 @@
 				<div class="dashboard-container pb-5 pt-5">
 					<div>
 						<div class="flex justify-between items-center">
-							<h3 class="text-lg text-dark-800 font-semibold">
-								Startup Co Details
+							<h3 class="text-2xl text-dark-800 font-semibold font-sans-semi">
+								Activity
+							</h3>
+						</div>
+						<div class="border-b border-gray-400 pb-3.5 mt-7 max-sm:mt-5">
+							<ul class="flex items-center gap-x-8.5">
+								<li
+									data-tab-id="activity-tab-general"
+									class="text-sm text-dark-800/60 font-medium cursor-pointer relative before:content-[&quot;&quot;] before:absolute before:-bottom-[15px] before:left-0 before:h-0.5 before:bg-blue-900 before:w-[90%] before:scale-x-0 before:transition-all before:duration-300 before:ease-in-out before:origin-left [&amp;.active]:before:scale-x-100 after:content-[attr(data-text)] after:absolute after:inset-0 after:font-semibold after:opacity-0 after:transition-opacity after:duration-300 [&amp;.active]:after:opacity-100 text-nowrap after:text-blue-800! [&amp;.active]:text-transparent transition-all duration-300 active"
+									data-text="Insights"
+								>
+									Insights
+								</li>
+								<li
+									data-tab-id="activity-tab-other"
+									class="text-sm text-dark-800/60 font-medium cursor-pointer relative before:content-[&quot;&quot;] before:absolute before:-bottom-[15px] before:left-0 before:h-0.5 before:bg-blue-900 before:w-[90%] before:scale-x-0 before:transition-all before:duration-300 before:ease-in-out before:origin-left [&amp;.active]:before:scale-x-100 after:content-[attr(data-text)] after:absolute after:inset-0 after:font-semibold after:opacity-0 after:transition-opacity after:duration-300 [&amp;.active]:after:opacity-100 text-nowrap after:text-blue-800! [&amp;.active]:text-transparent transition-all duration-300"
+									data-text="Activity Logs"
+								>
+									Activity Logs
+								</li>
+								<li
+									data-tab-id="activity-tab-all"
+									class="text-sm text-dark-800/60 font-medium cursor-pointer relative before:content-[&quot;&quot;] before:absolute before:-bottom-[15px] before:left-0 before:h-0.5 before:bg-blue-900 before:w-[90%] before:scale-x-0 before:transition-all before:duration-300 before:ease-in-out before:origin-left [&amp;.active]:before:scale-x-100 after:content-[attr(data-text)] after:absolute after:inset-0 after:font-semibold after:opacity-0 after:transition-opacity after:duration-300 [&amp;.active]:after:opacity-100 text-nowrap after:text-blue-800! [&amp;.active]:text-transparent transition-all duration-300"
+									data-text="Export Data"
+								>
+									Export Data
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="mt-8">
+						<div
+							class="grid grid-cols-3 mb-7.5 gap-4 max-md:grid-cols-2 max-xs:grid-cols-1 bg-gray-200 p-3 rounded-2.5xl"
+						>
+							<div
+								class="bg-white border border-gray-400 rounded-2xl py-6 flex flex-col items-start p-8 gap-2"
+							>
+								<span class="text-sm font-medium text-gray-900"
+									>Total Uploads</span
+								>
+								<p class="text-2xl font-medium text-dark-800">83,506</p>
+							</div>
+							<div
+								class="bg-white border border-gray-400 rounded-2xl py-6 flex flex-col items-start p-8 gap-2"
+							>
+								<span class="text-sm font-medium text-gray-900"
+									>Total Space Used</span
+								>
+								<p class="text-2xl font-medium text-dark-800">1.2 TB</p>
+							</div>
+							<div
+								class="bg-white border border-gray-400 rounded-2xl py-6 flex flex-col items-start p-8 gap-2"
+							>
+								<span class="text-sm font-medium text-gray-900"
+									>Total Bandwidth (Monthly)</span
+								>
+								<p class="text-2xl font-medium text-dark-800">68.7 GB</p>
+							</div>
+						</div>
+						<div class="flex items-center justify-between mt-7">
+							<h3
+								class="text-lg text-dark-800 font-semibold flex items-center gap-x-3"
+							>
+								Workspace Activity
 							</h3>
 							<div class="dropdown-wrapper">
 								<button
 									type="button"
-									class="dropdown-button btn btn-border-default rounded-lg px-3"
-									data-id="members-dropdown"
+									class="dropdown-button btn btn-border-default font-normal h-9 px-3"
+									data-id="dropdown-workspace-activity-time"
 								>
-									<span class="text-sm font-normal">All Members</span>
+									<span>All Time</span>
 									<svg class="icon icon-sm">
-										<use href="#icon-chevron-down" />
+										<use href="#icon-chevron-down"></use>
 									</svg>
 								</button>
 								<div
-									class="js-dropdown hidden w-[420px]"
-									data-dropdown-id="members-dropdown"
+									class="js-dropdown w-45 hidden"
+									data-dropdown-id="dropdown-workspace-activity-time"
 									data-sheet-modal
 								>
 									<div class="js-dropdown-overlay"></div>
@@ -410,431 +472,370 @@
 										<div class="js-dropdown-trigger">
 											<span></span>
 										</div>
-										<div class="js-dropdown-content px-3 pt-6 pb-3 max-lg:p-0">
-											<div class="flex flex-col px-3 max-lg:px-6 mb-4">
-												<h4
-													class="text-lg/[120%] font-semibold text-dark-800 font-sans-semi"
-												>
-													Filter by Members
-												</h4>
-												<div class="relative w-full mt-5">
-													<svg
-														class="icon icon-xs absolute left-3.5 top-1/2 -translate-y-1/2"
-													>
-														<use href="#icon-search" />
-													</svg>
-													<input
-														type="text"
-														class="form-control-settings w-full pl-10"
-														placeholder="Search for people, Files, folder & spaces"
-													/>
-												</div>
-											</div>
-											<div class="scrollbar-hide max-lg:px-3">
-												<div class="flex flex-col">
-													<div
-														class="flex justify-between py-2.5 hover:bg-gray-100 px-3 rounded-md"
-													>
-														<div class="flex items-center gap-3.5">
-															<label class="custom-controls checkbox">
-																<input
-																	type="checkbox"
-																	name="billing-updates"
-																	id="billing-updates"
-																	value="1"
-																	class=""
-																/>
-																<span class="custom-control-indicator"></span>
-															</label>
-															<div class="avatar size-7.5">J</div>
-															<div class="flex flex-col">
-																<p class="text-sm font-medium">John Doe</p>
-																<p class="text-xs text-gray-900">
-																	john.doe@example.com
-																</p>
-															</div>
-														</div>
-														<div class="flex items-center">
-															<span class="text-sm text-gray-900">Owner</span>
-														</div>
-													</div>
-													<div
-														class="flex justify-between py-2.5 hover:bg-gray-100 px-3 rounded-md"
-													>
-														<div class="flex items-center gap-3.5">
-															<label class="custom-controls checkbox">
-																<input
-																	type="checkbox"
-																	name="billing-updates2"
-																	id="billing-updates2"
-																	value="1"
-																	class=""
-																/>
-																<span class="custom-control-indicator"></span>
-															</label>
-															<div class="avatar size-7.5">
-																<img
-																	src="./assets/images/avatar-3.png"
-																	alt="avatar"
-																	class="size-full"
-																/>
-															</div>
-															<div class="flex flex-col">
-																<p class="text-sm font-medium">John Doe</p>
-																<p class="text-xs text-gray-900">
-																	john.doe@example.com
-																</p>
-															</div>
-														</div>
-														<div class="flex items-center">
-															<button
-																type="button"
-																aria-label="Open menu"
-																class="flex items-center justify-center size-6.5 rounded-full hover:bg-gray-300 cursor-pointer"
-															>
-																<svg class="icon icon-m">
-																	<use href="#icon-dots-horizontal" />
-																</svg>
-															</button>
-														</div>
-													</div>
-													<div
-														class="flex justify-between py-2.5 hover:bg-gray-100 px-3 rounded-md"
-													>
-														<div class="flex items-center gap-3.5">
-															<label class="custom-controls checkbox">
-																<input
-																	type="checkbox"
-																	name="billing-updates7"
-																	id="billing-updates7"
-																	value="1"
-																	class=""
-																/>
-																<span class="custom-control-indicator"></span>
-															</label>
-															<div class="avatar size-7.5">J</div>
-															<div class="flex flex-col">
-																<p class="text-sm font-medium">
-																	Richard Hanely
-																</p>
-																<p class="text-xs text-gray-900">
-																	hanrichard@gmail.com
-																</p>
-															</div>
-														</div>
-														<div class="flex items-center">
-															<button
-																type="button"
-																aria-label="Open menu"
-																class="flex items-center justify-center size-6.5 rounded-full hover:bg-gray-300 cursor-pointer"
-															>
-																<svg class="icon icon-m">
-																	<use href="#icon-dots-horizontal" />
-																</svg>
-															</button>
-														</div>
-													</div>
-													<div
-														class="flex justify-between py-2.5 hover:bg-gray-100 px-3 rounded-md"
-													>
-														<div class="flex items-center gap-3.5">
-															<label class="custom-controls checkbox">
-																<input
-																	type="checkbox"
-																	name="billing-updates6"
-																	id="billing-updates6"
-																	value="1"
-																	class=""
-																/>
-																<span class="custom-control-indicator"></span>
-															</label>
-															<div class="avatar size-7.5">
-																<img
-																	src="./assets/images/avatar-2.png"
-																	alt="avatar"
-																	class="size-full"
-																/>
-															</div>
-															<div class="flex flex-col">
-																<p class="text-sm font-medium">
-																	Howard Rutherford
-																</p>
-																<p class="text-xs text-gray-900">
-																	owroth@gmail.com
-																</p>
-															</div>
-														</div>
-														<div class="flex items-center">
-															<button
-																type="button"
-																aria-label="Open menu"
-																class="flex items-center justify-center size-6.5 rounded-full hover:bg-gray-300 cursor-pointer"
-															>
-																<svg class="icon icon-m">
-																	<use href="#icon-dots-horizontal" />
-																</svg>
-															</button>
-														</div>
-													</div>
-													<div
-														class="flex justify-between py-2.5 hover:bg-gray-100 px-3 rounded-md"
-													>
-														<div class="flex items-center gap-3.5">
-															<label class="custom-controls checkbox">
-																<input
-																	type="checkbox"
-																	name="billing-updates5"
-																	id="billing-updates5"
-																	value="1"
-																	class=""
-																/>
-																<span class="custom-control-indicator"></span>
-															</label>
-															<div class="avatar size-7.5">J</div>
-															<div class="flex flex-col">
-																<p class="text-sm font-medium">John Doe</p>
-																<p class="text-xs text-gray-900">
-																	john.doe@example.com
-																</p>
-															</div>
-														</div>
-														<div class="flex items-center">
-															<button
-																type="button"
-																aria-label="Open menu"
-																class="flex items-center justify-center size-6.5 rounded-full hover:bg-gray-300 cursor-pointer"
-															>
-																<svg class="icon icon-m">
-																	<use href="#icon-dots-horizontal" />
-																</svg>
-															</button>
-														</div>
-													</div>
-													<div
-														class="flex justify-between py-2.5 hover:bg-gray-100 px-3 rounded-md"
-													>
-														<div class="flex items-center gap-3.5">
-															<label class="custom-controls checkbox">
-																<input
-																	type="checkbox"
-																	name="billing-updates4"
-																	id="billing-updates4"
-																	value="1"
-																	class=""
-																/>
-																<span class="custom-control-indicator"></span>
-															</label>
-															<div class="avatar size-7.5">J</div>
-															<div class="flex flex-col">
-																<p class="text-sm font-medium">John Doe</p>
-																<p class="text-xs text-gray-900">
-																	john.doe@example.com
-																</p>
-															</div>
-														</div>
-														<div class="flex items-center">
-															<button
-																type="button"
-																aria-label="Open menu"
-																class="flex items-center justify-center size-6.5 rounded-full hover:bg-gray-300 cursor-pointer"
-															>
-																<svg class="icon icon-m">
-																	<use href="#icon-dots-horizontal" />
-																</svg>
-															</button>
-														</div>
-													</div>
-													<div
-														class="flex justify-between py-2.5 hover:bg-gray-100 px-3 rounded-md"
-													>
-														<div class="flex items-center gap-3.5">
-															<label class="custom-controls checkbox">
-																<input
-																	type="checkbox"
-																	name="billing-updates3"
-																	id="billing-updates3"
-																	value="1"
-																	class=""
-																/>
-																<span class="custom-control-indicator"></span>
-															</label>
-															<div class="avatar size-7.5">J</div>
-															<div class="flex flex-col">
-																<p class="text-sm font-medium">John Doe</p>
-																<p class="text-xs text-gray-900">
-																	john.doe@example.com
-																</p>
-															</div>
-														</div>
-														<div class="flex items-center">
-															<button
-																type="button"
-																aria-label="Open menu"
-																class="flex items-center justify-center size-6.5 rounded-full hover:bg-gray-300 cursor-pointer"
-															>
-																<svg class="icon icon-m">
-																	<use href="#icon-dots-horizontal" />
-																</svg>
-															</button>
-														</div>
-													</div>
-													<div
-														class="flex justify-between py-2.5 hover:bg-gray-100 px-3 rounded-md"
-													>
-														<div class="flex items-center gap-3.5">
-															<label class="custom-controls checkbox">
-																<input
-																	type="checkbox"
-																	name="billing-updates8"
-																	id="billing-updates8"
-																	value="1"
-																	class=""
-																/>
-																<span class="custom-control-indicator"></span>
-															</label>
-															<div class="avatar size-7.5">J</div>
-															<div class="flex flex-col">
-																<p class="text-sm font-medium">John Doe</p>
-																<p class="text-xs text-gray-900">
-																	john.doe@example.com
-																</p>
-															</div>
-														</div>
-														<div class="flex items-center">
-															<button
-																type="button"
-																aria-label="Open menu"
-																class="flex items-center justify-center size-6.5 rounded-full hover:bg-gray-300 cursor-pointer"
-															>
-																<svg class="icon icon-m">
-																	<use href="#icon-dots-horizontal" />
-																</svg>
-															</button>
-														</div>
-													</div>
-													<div
-														class="flex justify-between py-2.5 hover:bg-gray-100 px-3 rounded-md"
-													>
-														<div class="flex items-center gap-3.5">
-															<label class="custom-controls checkbox">
-																<input
-																	type="checkbox"
-																	name="billing-updates1"
-																	id="billing-updates1"
-																	value="1"
-																	class=""
-																/>
-																<span class="custom-control-indicator"></span>
-															</label>
-															<div class="avatar size-7.5">J</div>
-															<div class="flex flex-col">
-																<p class="text-sm font-medium">John Doe</p>
-																<p class="text-xs text-gray-900">
-																	john.doe@example.com
-																</p>
-															</div>
-														</div>
-														<div class="flex items-center">
-															<button
-																type="button"
-																aria-label="Open menu"
-																class="flex items-center justify-center size-6.5 rounded-full hover:bg-gray-300 cursor-pointer"
-															>
-																<svg class="icon icon-m">
-																	<use href="#icon-dots-horizontal" />
-																</svg>
-															</button>
-														</div>
-													</div>
-												</div>
-											</div>
+										<div class="js-dropdown-content">
+											<a
+												href="#"
+												class="js-dropdown-list-item [&.active]:bg-gray-300"
+											>
+												Last 3 months
+											</a>
+											<a
+												href="#"
+												class="js-dropdown-list-item [&.active]:bg-gray-300"
+											>
+												Last 6 months
+											</a>
+											<a
+												href="#"
+												class="js-dropdown-list-item [&.active]:bg-gray-300"
+											>
+												Last year
+											</a>
+											<a
+												href="#"
+												class="js-dropdown-list-item [&.active]:bg-gray-300 active"
+											>
+												All Time
+											</a>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div
-							class="grid grid-cols-3 mt-2.5 gap-4 max-md:grid-cols-2 max-xs:grid-cols-1"
-						>
+						<div class="mt-7.5">
+							<img src="./assets/images/settings/activity/1.png" alt="" />
+						</div>
+						<div class="mt-10">
+							<img src="./assets/images/settings/activity/2.png" alt="" />
+						</div>
+						<div class="mt-10">
 							<div
-								class="bg-gray-150 rounded-lg py-6 flex flex-col items-center gap-2"
+								class="border border-gray-500 rounded-2xl p-6 pb-4.5 max-sm:p-4"
 							>
-								<span class="text-2xl font-semibold text-dark-800">23</span>
-								<p class="text-sm text-gray-900">Uploads</p>
-							</div>
-							<div
-								class="bg-gray-150 rounded-lg py-6 flex flex-col items-center gap-2"
-							>
-								<span class="text-2xl font-semibold text-dark-800">
-									13.5 GB
-								</span>
-								<p class="text-sm text-gray-900">Space Used</p>
-							</div>
-							<div
-								class="bg-gray-150 rounded-lg py-6 flex flex-col items-center gap-2"
-							>
-								<span class="text-2xl font-semibold text-dark-800">0 KB</span>
-								<p class="text-sm text-gray-900">Bandwidth Used / MO</p>
+								<strong class="text-base font-semibold">Top Creators</strong>
+								<div class="mt-7.5 -mx-6">
+									<div
+										class="grid grid-cols-[1fr_minmax(110px,170px)_minmax(100px,140px)_minmax(100px,125px)] text-sm text-gray-900 pb-4 px-6"
+									>
+										<div>Name</div>
+										<div>Uploaded</div>
+										<div>Views</div>
+										<div>Comments</div>
+									</div>
+									<div
+										class="grid grid-cols-[1fr_minmax(110px,170px)_minmax(100px,140px)_minmax(100px,125px)] border-t border-t-gray-400 py-2 hover:bg-gray-150 px-6"
+									>
+										<div class="flex items-center gap-3">
+											<div class="size-7.5 avatar">J</div>
+											<div class="flex flex-col">
+												<span class="text-sm font-medium">John Doton</span>
+												<span class="text-xs text-gray-900"
+													>johndolton@gmail.com</span
+												>
+											</div>
+										</div>
+										<div class="flex items-center text-sm">
+											<span>497</span>
+										</div>
+										<div class="flex items-center text-sm">
+											<span>12</span>
+										</div>
+										<div class="flex items-center text-sm">
+											<span>65</span>
+										</div>
+									</div>
+									<div
+										class="grid grid-cols-[1fr_minmax(110px,170px)_minmax(100px,140px)_minmax(100px,125px)] border-t border-t-gray-400 py-2 hover:bg-gray-150 px-6"
+									>
+										<div class="flex items-center gap-3">
+											<div class="size-7.5 avatar">
+												<img src="./assets/images/avatar-2.png" alt="" />
+											</div>
+											<div class="flex flex-col">
+												<span class="text-sm font-medium">Richard Hanely</span>
+												<span class="text-xs text-gray-900"
+													>hanrichard@gmail.com</span
+												>
+											</div>
+										</div>
+										<div class="flex items-center text-sm">
+											<span>12</span>
+										</div>
+										<div class="flex items-center text-sm">
+											<span>--</span>
+										</div>
+										<div class="flex items-center text-sm">
+											<span>--</span>
+										</div>
+									</div>
+									<div
+										class="grid grid-cols-[1fr_minmax(110px,170px)_minmax(100px,140px)_minmax(100px,125px)] border-t border-t-gray-400 py-2 hover:bg-gray-150 px-6"
+									>
+										<div class="flex items-center gap-3">
+											<div class="size-7.5 avatar">
+												<img src="./assets/images/avatar-3.png" alt="" />
+											</div>
+											<div class="flex flex-col">
+												<span class="text-sm font-medium">Richard Hanely</span>
+												<span class="text-xs text-gray-900"
+													>hanrichard@gmail.com</span
+												>
+											</div>
+										</div>
+										<div class="flex items-center text-sm">
+											<span>12</span>
+										</div>
+										<div class="flex items-center text-sm">
+											<span>--</span>
+										</div>
+										<div class="flex items-center text-sm">
+											<span>--</span>
+										</div>
+									</div>
+									<div
+										class="grid grid-cols-[1fr_minmax(110px,170px)_minmax(100px,140px)_minmax(100px,125px)] border-t border-t-gray-400 py-2 hover:bg-gray-150 px-6"
+									>
+										<div class="flex items-center gap-3">
+											<div class="size-7.5 avatar">
+												<img src="./assets/images/avatar-2.png" alt="" />
+											</div>
+											<div class="flex flex-col">
+												<span class="text-sm font-medium">Richard Hanely</span>
+												<span class="text-xs text-gray-900"
+													>hanrichard@gmail.com</span
+												>
+											</div>
+										</div>
+										<div class="flex items-center text-sm">
+											<span>12</span>
+										</div>
+										<div class="flex items-center text-sm">
+											<span>--</span>
+										</div>
+										<div class="flex items-center text-sm">
+											<span>--</span>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div class="mt-10">
-						<h3
-							class="text-lg text-dark-800 font-semibold flex items-center gap-x-3"
+					<div class="mt-10 hidden">
+						<div class="not-first:mt-5">
+							<div class="flex items-center gap-6">
+								<span
+									class="h-px flex-grow-1 block bg-gray-400 rounded-sm"
+								></span>
+								<span class="text-xs text-gray-900">May 12, 2025</span>
+								<span
+									class="h-px flex-grow-1 block bg-gray-400 rounded-sm"
+								></span>
+							</div>
+							<ul class="mt-5">
+								<li class="flex items-start gap-3 px-3 py-3.5">
+									<div class="avatar size-7">
+										<img src="./assets/images/avatar-3.png" alt="avatar" />
+									</div>
+									<div class="flex flex-col gap-1 [&_strong]:font-semibold">
+										<span class="text-sm"
+											>Brian Thomas invited robert@gmail.com</span
+										>
+										<span class="text-xs text-gray-900">06:47 AM</span>
+									</div>
+								</li>
+								<li class="flex items-start gap-3 px-3 py-3.5">
+									<div class="avatar size-7">
+										<img src="./assets/images/avatar.png" alt="avatar" />
+									</div>
+									<div class="flex flex-col gap-1 [&_strong]:font-semibold">
+										<span class="text-sm">
+											Account Upgraded to Startup Co Enterprise
+										</span>
+										<span class="text-xs text-gray-900">06:47 AM</span>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="not-first:mt-5">
+							<div class="flex items-center gap-6">
+								<span
+									class="h-px flex-grow-1 block bg-gray-400 rounded-sm"
+								></span>
+								<span class="text-xs text-gray-900">May 12, 2025</span>
+								<span
+									class="h-px flex-grow-1 block bg-gray-400 rounded-sm"
+								></span>
+							</div>
+							<ul class="mt-5">
+								<li class="flex items-start gap-3 px-3 py-3.5">
+									<div class="avatar size-7">
+										<img src="./assets/images/avatar-3.png" alt="avatar" />
+									</div>
+									<div class="flex flex-col gap-1 [&_strong]:font-semibold">
+										<span class="text-sm"
+											>Brian Thomas invited robert@gmail.com</span
+										>
+										<span class="text-xs text-gray-900">06:47 AM</span>
+									</div>
+								</li>
+								<li class="flex items-start gap-3 px-3 py-3.5">
+									<div class="avatar size-7">
+										<img src="./assets/images/avatar.png" alt="avatar" />
+									</div>
+									<div class="flex flex-col gap-1 [&_strong]:font-semibold">
+										<span class="text-sm">
+											Account Upgraded to Startup Co Enterprise
+										</span>
+										<span class="text-xs text-gray-900">06:47 AM</span>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="not-first:mt-5">
+							<div class="flex items-center gap-6">
+								<span
+									class="h-px flex-grow-1 block bg-gray-400 rounded-sm"
+								></span>
+								<span class="text-xs text-gray-900">May 12, 2025</span>
+								<span
+									class="h-px flex-grow-1 block bg-gray-400 rounded-sm"
+								></span>
+							</div>
+							<ul class="mt-5">
+								<li class="flex items-start gap-3 px-3 py-3.5">
+									<div class="avatar size-7">
+										<img src="./assets/images/avatar-3.png" alt="avatar" />
+									</div>
+									<div class="flex flex-col gap-1 [&_strong]:font-semibold">
+										<span class="text-sm"
+											>Brian Thomas invited robert@gmail.com</span
+										>
+										<span class="text-xs text-gray-900">06:47 AM</span>
+									</div>
+								</li>
+								<li class="flex items-start gap-3 px-3 py-3.5">
+									<div class="avatar size-7">
+										<img src="./assets/images/avatar.png" alt="avatar" />
+									</div>
+									<div class="flex flex-col gap-1 [&_strong]:font-semibold">
+										<span class="text-sm">
+											Sophia added 4 files to
+											<strong>All Teams Meetings</strong> in
+											<strong>Team Library</strong>
+										</span>
+										<span class="text-xs text-gray-900">06:47 AM</span>
+									</div>
+								</li>
+								<li class="flex items-start gap-3 px-3 py-3.5">
+									<div class="avatar size-7">
+										<img src="./assets/images/avatar.png" alt="avatar" />
+									</div>
+									<div class="flex flex-col gap-1 [&_strong]:font-semibold">
+										<span class="text-sm">
+											Brian moved 4 items from
+											<strong> Marketing Space </strong> to
+											<strong>All Team Space</strong>
+										</span>
+										<span class="text-xs text-gray-900">06:47 AM</span>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="not-first:mt-5">
+							<div class="flex items-center gap-6">
+								<span
+									class="h-px flex-grow-1 block bg-gray-400 rounded-sm"
+								></span>
+								<span class="text-xs text-gray-900">May 12, 2025</span>
+								<span
+									class="h-px flex-grow-1 block bg-gray-400 rounded-sm"
+								></span>
+							</div>
+							<ul class="mt-5">
+								<li class="flex items-start gap-3 px-3 py-3.5">
+									<div class="avatar size-7">
+										<img src="./assets/images/avatar-3.png" alt="avatar" />
+									</div>
+									<div class="flex flex-col gap-1 [&_strong]:font-semibold">
+										<span class="text-sm"
+											>Brian Thomas invited robert@gmail.com</span
+										>
+										<span class="text-xs text-gray-900">06:47 AM</span>
+									</div>
+								</li>
+								<li class="flex items-start gap-3 px-3 py-3.5">
+									<div class="avatar size-7">
+										<img src="./assets/images/avatar.png" alt="avatar" />
+									</div>
+									<div class="flex flex-col gap-1 [&_strong]:font-semibold">
+										<span class="text-sm">
+											Account Upgraded to Startup Co Enterprise
+										</span>
+										<span class="text-xs text-gray-900">06:47 AM</span>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="mt-10 hidden">
+						<div
+							class="flex items-center bg-white border-gray-600 border rounded-xl p-6 max-md:flex-col max-md:justify-start max-md:items-start max-sm:p-5"
 						>
-							Workspace Activity
-						</h3>
-						<div class="mt-3">
-							<div class="px-3 py-3.5 flex gap-x-4">
-								<div class="avatar size-7">B</div>
-								<div class="flex flex-col gap-1">
-									<p class="text-sm">
-										Brian Thomas added file invited robert@gmail.com
-									</p>
-									<span class="text-xs text-dark-800/70">May 2, 06:47 AM</span>
-								</div>
+							<div
+								class="flex items-center justify-center border border-gray-400 bg-gray-150 rounded-xl size-13.5 mr-4 flex-shrink-0 max-md:mb-6"
+							>
+								<svg class="icon w-4.5 h-5.5">
+									<use href="#icon-data"></use>
+								</svg>
 							</div>
-							<div class="px-3 py-3.5 flex gap-x-4">
-								<div class="avatar size-7">
-									<img src="./assets/images/avatar-2.png" alt="Cris" />
-								</div>
-								<div class="flex flex-col gap-1">
-									<p class="text-sm">
-										Account Upgraded to Startup Co Enterprise
-									</p>
-									<span class="text-xs text-dark-800/70">
-										April 21, 03:34 PM
-									</span>
-								</div>
+							<div class="flex flex-col gap-1 mr-10 max-md:mr-0">
+								<strong class="text-sm font-semibold">
+									Export Workspace Data
+								</strong>
+								<p class="text-sm text-gray-900">
+									You can export all data of your workspace activity, including
+									team members activity.
+								</p>
 							</div>
-							<div class="px-3 py-3.5 flex gap-x-4">
-								<div class="avatar size-7">
-									<img src="./assets/images/avatar.png" alt="Cris" />
-								</div>
-								<div class="flex flex-col gap-1">
-									<p class="text-sm">
-										Sophia joined your team on Diana’s Invitation
-									</p>
-									<span class="text-xs text-dark-800/70">Mar 12, 04:54 PM</span>
-								</div>
+							<div
+								class="ml-auto flex-shrink-0 max-md:ml-0 max-xs:w-full max-md:mt-5"
+							>
+								<button
+									type="button"
+									class="btn btn-primary-default px-5 max-xs:w-full"
+								>
+									<svg class="icon icon-md">
+										<use href="#icon-download"></use>
+									</svg>
+									<span>Download CSV</span>
+								</button>
 							</div>
-							<div class="px-3 py-3.5 flex gap-x-4">
-								<div class="avatar size-7">
-									<img src="./assets/images/avatar-3.png" alt="Cris" />
-								</div>
-								<div class="flex flex-col gap-1">
-									<p class="text-sm">David Successfully reset password</p>
-									<span class="text-xs text-dark-800/70">May 2, 06:47 AM</span>
-								</div>
+						</div>
+						<div
+							class="flex items-center bg-white border-gray-600 border rounded-xl p-6 max-md:flex-col max-md:justify-start max-md:items-start max-sm:p-5 mt-10"
+						>
+							<div
+								class="flex items-center justify-center border border-gray-400 bg-gray-150 rounded-xl size-13.5 mr-4 flex-shrink-0 max-md:mb-6"
+							>
+								<svg class="icon w-4.5 h-5.5">
+									<use href="#icon-data"></use>
+								</svg>
 							</div>
-							<div class="px-3 py-3.5 flex gap-x-4">
-								<div class="avatar size-7">A</div>
-								<div class="flex flex-col gap-1">
-									<p class="text-sm">
-										Adrian Thomas added file invited robert@gmail.com
-									</p>
-									<span class="text-xs text-dark-800/70">May 2, 06:47 AM</span>
-								</div>
+							<div class="flex flex-col gap-1 mr-10 max-md:mr-0">
+								<strong class="text-sm font-semibold">
+									Export Workspace Data
+								</strong>
+								<p class="text-sm text-gray-900">
+									You can export all data of your workspace activity, including
+									team members activity.
+								</p>
+							</div>
+							<div
+								class="ml-auto flex-shrink-0 max-md:ml-0 max-xs:w-full max-md:mt-5"
+							>
+								<button type="button" class="btn btn-yellow max-xs:w-full">
+									<span>Contact Sales</span>
+								</button>
 							</div>
 						</div>
 					</div>
