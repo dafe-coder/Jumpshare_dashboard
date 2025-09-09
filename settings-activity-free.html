@@ -128,7 +128,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="stylesheet" href="./dist/output.css" />
 	</head>
-	<body class="drag-and-drop dashboard">
+	<body class="drag-and-drop dashboard dashboard-settings">
 		<div
 			id="progress-bar"
 			class="fixed top-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-blue-500/10 transform scale-x-0 origin-left transition-transform duration-300 ease-out z-99999"
@@ -181,29 +181,13 @@
 							<p class="text-s text-dark-800/60 font-medium px-2.5">
 								Workspace Settings
 							</p>
-							<ul class="flex flex-col mt-2">
+							<ul class="flex flex-col mt-2 space-y-0.5">
 								<li>
 									<a href="./settings.html" class="aside-nav-item">
 										<svg class="icon icon-md">
 											<use href="#icon-general-settings"></use>
 										</svg>
 										General
-									</a>
-								</li>
-								<li>
-									<a href="./settings-activity.html" class="aside-nav-item">
-										<svg class="icon icon-md">
-											<use href="#icon-activity"></use>
-										</svg>
-										Activity
-									</a>
-								</li>
-								<li>
-									<a href="./settings-members.html" class="aside-nav-item">
-										<svg class="icon icon-md">
-											<use href="#icon-members"></use>
-										</svg>
-										Members
 									</a>
 								</li>
 								<li>
@@ -242,11 +226,27 @@
 									</a>
 								</li>
 								<li>
+									<a href="./settings-members.html" class="aside-nav-item">
+										<svg class="icon icon-md">
+											<use href="#icon-members"></use>
+										</svg>
+										Members
+									</a>
+								</li>
+								<li>
 									<a href="./settings-billing.html" class="aside-nav-item">
 										<svg class="icon icon-md">
 											<use href="#icon-billing"></use>
 										</svg>
 										Billing
+									</a>
+								</li>
+								<li>
+									<a href="./settings-activity.html" class="aside-nav-item">
+										<svg class="icon icon-md">
+											<use href="#icon-activity"></use>
+										</svg>
+										Activity
 									</a>
 								</li>
 								<li>
@@ -258,11 +258,14 @@
 									</a>
 								</li>
 								<li>
-									<a href="./settings-data.html" class="aside-nav-item">
+									<a
+										href="./settings-geo-targeting.html"
+										class="aside-nav-item"
+									>
 										<svg class="icon icon-md">
-											<use href="#icon-data"></use>
+											<use href="#icon-geo"></use>
 										</svg>
-										Data
+										Geo Targeting
 									</a>
 								</li>
 								<li>
@@ -277,7 +280,7 @@
 							<p class="text-s text-dark-800/60 font-medium px-2.5 mt-6">
 								Personal Settings
 							</p>
-							<ul class="flex flex-col mt-2">
+							<ul class="flex flex-col mt-2 space-y-0.5">
 								<li>
 									<a href="./settings-account.html" class="aside-nav-item">
 										<svg class="icon icon-md">
@@ -390,62 +393,69 @@
 								Activity
 							</h3>
 						</div>
-						<div class="border-b border-gray-400 pb-3.5 mt-7 max-sm:mt-5">
-							<ul class="flex items-center gap-x-8.5">
-								<li
-									data-tab-id="activity-tab-general"
-									class="text-sm text-dark-800/60 font-medium cursor-pointer relative before:content-[&quot;&quot;] before:absolute before:-bottom-[15px] before:left-0 before:h-0.5 before:bg-blue-900 before:w-[90%] before:scale-x-0 before:transition-all before:duration-300 before:ease-in-out before:origin-left [&amp;.active]:before:scale-x-100 after:content-[attr(data-text)] after:absolute after:inset-0 after:font-semibold after:opacity-0 after:transition-opacity after:duration-300 [&amp;.active]:after:opacity-100 text-nowrap after:text-blue-800! [&amp;.active]:text-transparent transition-all duration-300 active"
-									data-text="Insights"
-								>
-									Insights
-								</li>
-								<li
-									data-tab-id="activity-tab-other"
-									class="text-sm text-dark-800/60 font-medium cursor-pointer relative before:content-[&quot;&quot;] before:absolute before:-bottom-[15px] before:left-0 before:h-0.5 before:bg-blue-900 before:w-[90%] before:scale-x-0 before:transition-all before:duration-300 before:ease-in-out before:origin-left [&amp;.active]:before:scale-x-100 after:content-[attr(data-text)] after:absolute after:inset-0 after:font-semibold after:opacity-0 after:transition-opacity after:duration-300 [&amp;.active]:after:opacity-100 text-nowrap after:text-blue-800! [&amp;.active]:text-transparent transition-all duration-300"
-									data-text="Activity Logs"
-								>
-									Activity Logs
-								</li>
-								<li
-									data-tab-id="activity-tab-all"
-									class="text-sm text-dark-800/60 font-medium cursor-pointer relative before:content-[&quot;&quot;] before:absolute before:-bottom-[15px] before:left-0 before:h-0.5 before:bg-blue-900 before:w-[90%] before:scale-x-0 before:transition-all before:duration-300 before:ease-in-out before:origin-left [&amp;.active]:before:scale-x-100 after:content-[attr(data-text)] after:absolute after:inset-0 after:font-semibold after:opacity-0 after:transition-opacity after:duration-300 [&amp;.active]:after:opacity-100 text-nowrap after:text-blue-800! [&amp;.active]:text-transparent transition-all duration-300"
-									data-text="Export Data"
-								>
-									Export Data
-								</li>
-							</ul>
-						</div>
+						<ul class="tabs-nav">
+							<li
+								data-tab-id="activity-tab-insights"
+								class="active"
+								data-text="Insights"
+							>
+								Insights
+							</li>
+							<li
+								data-tab-id="activity-tab-logs"
+								class=""
+								data-text="Activity Logs"
+							>
+								Activity Logs
+							</li>
+							<li
+								data-tab-id="activity-tab-data"
+								class=""
+								data-text="Export Data"
+							>
+								Export Data
+							</li>
+						</ul>
 					</div>
-					<div class="mt-8 hidden">
+					<div
+						class="mt-8 hidden [&.active]:block active"
+						data-tab-content-id="activity-tab-insights"
+					>
 						<div
 							class="grid grid-cols-3 mb-7.5 gap-4 max-md:grid-cols-2 max-xs:grid-cols-1 bg-gray-200 p-3 rounded-2.5xl"
 						>
 							<div
 								class="bg-white border border-gray-400 rounded-2xl py-6 flex flex-col items-start p-8 gap-2"
 							>
-								<span class="text-sm font-medium text-gray-900"
+								<span data-disabled class="text-sm font-medium text-gray-900"
 									>Total Uploads</span
 								>
-								<p class="text-2xl font-medium text-dark-800">83,506</p>
+								<p data-disabled class="text-2xl font-medium text-dark-800">
+									--
+								</p>
 							</div>
 							<div
 								class="bg-white border border-gray-400 rounded-2xl py-6 flex flex-col items-start p-8 gap-2"
 							>
-								<span class="text-sm font-medium text-gray-900"
+								<span data-disabled class="text-sm font-medium text-gray-900"
 									>Total Space Used</span
 								>
-								<p class="text-2xl font-medium text-dark-800">1.2 TB</p>
+								<p data-disabled class="text-2xl font-medium text-dark-800">
+									--
+								</p>
 							</div>
 							<div
 								class="bg-white border border-gray-400 rounded-2xl py-6 flex flex-col items-start p-8 gap-2"
 							>
-								<span class="text-sm font-medium text-gray-900"
+								<span data-disabled class="text-sm font-medium text-gray-900"
 									>Total Bandwidth (Monthly)</span
 								>
-								<p class="text-2xl font-medium text-dark-800">68.7 GB</p>
+								<p data-disabled class="text-2xl font-medium text-dark-800">
+									--
+								</p>
 							</div>
 						</div>
-						<div class="flex items-center justify-between mt-7">
+						<div data-disabled class="flex items-center justify-between mt-7">
 							<h3
 								class="text-lg text-dark-800 font-semibold flex items-center gap-x-3"
 							>
@@ -502,13 +512,38 @@
 								</div>
 							</div>
 						</div>
-						<div class="mt-7.5">
-							<img src="./assets/images/settings/activity/1.png" alt="" />
+						<div class="mt-7.5 relative">
+							<div class="disabled-modal max-w-[35.0625rem] w-full">
+								<div class="flex flex-col items-center text-center">
+									<strong>Access your Workspace’s activity</strong>
+									<p
+										class="text-sm text-dark-800/70 max-w-[21.6875rem] w-full mt-3"
+									>
+										Upgrade to the Enterprise plan to get insight into your
+										Team’s Workspace activity.
+									</p>
+									<button type="button" class="btn btn-yellow px-4 h-9 mt-5">
+										Contact Sales
+									</button>
+								</div>
+							</div>
+							<img
+								data-disabled
+								class="[&[data-disabled]]:grayscale-100"
+								src="./assets/images/settings/activity/1.png"
+								alt=""
+							/>
 						</div>
 						<div class="mt-10">
-							<img src="./assets/images/settings/activity/2.png" alt="" />
+							<img
+								data-disabled
+								class="[&[data-disabled]]:grayscale-100"
+								src="./assets/images/settings/activity/2.png"
+								alt=""
+							/>
 						</div>
-						<div class="mt-10">
+						<div data-disabled class="mt-10 relative">
+							<div class="disabled-gradient"></div>
 							<div
 								class="border border-gray-500 rounded-2xl p-6 pb-4.5 max-sm:p-4"
 							>
@@ -620,7 +655,10 @@
 							</div>
 						</div>
 					</div>
-					<div class="mt-10">
+					<div
+						class="mt-10 hidden [&.active]:block"
+						data-tab-content-id="activity-tab-logs"
+					>
 						<div
 							class="border-gray-600 border rounded-xl px-6 pb-14.5 pt-11 max-sm:px-4 flex flex-col justify-center items-center"
 						>
@@ -645,7 +683,10 @@
 							</div>
 						</div>
 					</div>
-					<div class="mt-10 hidden">
+					<div
+						class="mt-10 hidden [&.active]:block"
+						data-tab-content-id="activity-tab-data"
+					>
 						<div
 							class="flex items-center bg-white border-gray-600 border rounded-xl p-6 max-md:flex-col max-md:justify-start max-md:items-start max-sm:p-5"
 						>
@@ -670,7 +711,7 @@
 							>
 								<button
 									type="button"
-									class="btn btn-primary-default px-5 max-xs:w-full"
+									class="btn btn-primary px-5 max-xs:w-full"
 								>
 									<svg class="icon icon-md">
 										<use href="#icon-download"></use>

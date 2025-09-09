@@ -128,7 +128,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="stylesheet" href="./dist/output.css" />
 	</head>
-	<body class="drag-and-drop">
+	<body class="drag-and-drop dashboard dashboard-settings">
 		<div
 			id="progress-bar"
 			class="fixed top-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-blue-500/10 transform scale-x-0 origin-left transition-transform duration-300 ease-out z-99999"
@@ -239,7 +239,7 @@
 								</button>
 								<button
 									type="button"
-									class="btn btn-primary-default min-w-24.5 font-semibold px-4 max-xs:flex-grow-1"
+									class="btn btn-primary min-w-24.5 font-semibold px-4 max-xs:flex-grow-1"
 								>
 									Save Changes
 								</button>
@@ -291,7 +291,7 @@
 								</button>
 								<button
 									type="button"
-									class="btn btn-primary-default min-w-24.5 font-semibold px-4 max-xs:flex-grow-1"
+									class="btn btn-primary min-w-24.5 font-semibold px-4 max-xs:flex-grow-1"
 								>
 									Save Changes
 								</button>
@@ -517,7 +517,7 @@
 								</button>
 								<button
 									type="button"
-									class="btn btn-primary-default min-w-24.5 font-semibold px-4 max-xs:flex-grow-1"
+									class="btn btn-primary min-w-24.5 font-semibold px-4 max-xs:flex-grow-1"
 								>
 									Save Changes
 								</button>
@@ -556,29 +556,13 @@
 							<p class="text-s text-dark-800/60 font-medium px-2.5">
 								Workspace Settings
 							</p>
-							<ul class="flex flex-col mt-2">
+							<ul class="flex flex-col mt-2 space-y-0.5">
 								<li>
 									<a href="./settings.html" class="aside-nav-item">
 										<svg class="icon icon-md">
 											<use href="#icon-general-settings"></use>
 										</svg>
 										General
-									</a>
-								</li>
-								<li>
-									<a href="./settings-activity.html" class="aside-nav-item">
-										<svg class="icon icon-md">
-											<use href="#icon-activity"></use>
-										</svg>
-										Activity
-									</a>
-								</li>
-								<li>
-									<a href="./settings-members.html" class="aside-nav-item">
-										<svg class="icon icon-md">
-											<use href="#icon-members"></use>
-										</svg>
-										Members
 									</a>
 								</li>
 								<li>
@@ -617,11 +601,27 @@
 									</a>
 								</li>
 								<li>
+									<a href="./settings-members.html" class="aside-nav-item">
+										<svg class="icon icon-md">
+											<use href="#icon-members"></use>
+										</svg>
+										Members
+									</a>
+								</li>
+								<li>
 									<a href="./settings-billing.html" class="aside-nav-item">
 										<svg class="icon icon-md">
 											<use href="#icon-billing"></use>
 										</svg>
 										Billing
+									</a>
+								</li>
+								<li>
+									<a href="./settings-activity.html" class="aside-nav-item">
+										<svg class="icon icon-md">
+											<use href="#icon-activity"></use>
+										</svg>
+										Activity
 									</a>
 								</li>
 								<li>
@@ -633,11 +633,14 @@
 									</a>
 								</li>
 								<li>
-									<a href="./settings-data.html" class="aside-nav-item">
+									<a
+										href="./settings-geo-targeting.html"
+										class="aside-nav-item"
+									>
 										<svg class="icon icon-md">
-											<use href="#icon-data"></use>
+											<use href="#icon-geo"></use>
 										</svg>
-										Data
+										Geo Targeting
 									</a>
 								</li>
 								<li>
@@ -652,7 +655,7 @@
 							<p class="text-s text-dark-800/60 font-medium px-2.5 mt-6">
 								Personal Settings
 							</p>
-							<ul class="flex flex-col mt-2">
+							<ul class="flex flex-col mt-2 space-y-0.5">
 								<li>
 									<a href="./settings-account.html" class="aside-nav-item">
 										<svg class="icon icon-md">
@@ -854,7 +857,7 @@
 							</ul>
 							<button
 								type="button"
-								class="btn btn-border-default w-full h-10 mt-4.5"
+								class="btn btn-border-default w-full mt-4.5"
 							>
 								Update Details
 							</button>
@@ -885,7 +888,7 @@
 								<p class="text-xs text-gray-900">Expires 09/28</p>
 							</div>
 							<div class="ml-auto flex-shrink-0">
-								<button type="button" class="btn btn-border-default px-5 h-10">
+								<button type="button" class="btn btn-border-default px-5">
 									Edit
 								</button>
 							</div>
@@ -950,7 +953,7 @@
 								<div class="flex items-center max-md:w-full">
 									<button
 										type="button"
-										class="btn btn-border-default px-5 h-10 min-w-27.5 max-md:w-full"
+										class="btn btn-border-default px-5 min-w-27.5 max-md:w-full"
 									>
 										Download
 									</button>
@@ -991,7 +994,7 @@
 								<div class="flex items-center max-md:w-full">
 									<button
 										type="button"
-										class="btn btn-border-default px-5 h-10 min-w-27.5 max-md:w-full"
+										class="btn btn-border-default px-5 min-w-27.5 max-md:w-full"
 									>
 										Download
 									</button>
@@ -1042,7 +1045,7 @@
 								<div class="flex items-center max-md:w-full">
 									<button
 										type="button"
-										class="btn btn-border-default px-5 h-10 min-w-27.5 max-md:w-full"
+										class="btn btn-border-default px-5 min-w-27.5 max-md:w-full"
 									>
 										Pay Now
 									</button>
@@ -1083,7 +1086,7 @@
 								<div class="flex items-center max-md:w-full">
 									<button
 										type="button"
-										class="btn btn-border-default px-5 h-10 min-w-27.5 max-md:w-full"
+										class="btn btn-border-default px-5 min-w-27.5 max-md:w-full"
 									>
 										Download
 									</button>

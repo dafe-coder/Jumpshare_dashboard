@@ -131,7 +131,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="stylesheet" href="./dist/output.css" />
 	</head>
-	<body class="drag-and-drop">
+	<body class="drag-and-drop dashboard">
 		<div
 			id="progress-bar"
 			class="fixed top-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-blue-500/10 transform scale-x-0 origin-left transition-transform duration-300 ease-out z-99999"
@@ -333,7 +333,7 @@
 								<button type="button" class="btn btn-border-default">
 									Cancel
 								</button>
-								<button type="button" class="btn btn-primary-default" disabled>
+								<button type="button" class="btn btn-primary" disabled>
 									Create Space
 								</button>
 							</div>
@@ -1524,7 +1524,7 @@
 							<div class="dropdown-wrapper">
 								<button
 									type="button"
-									class="btn btn-primary-default gap-1.5"
+									class="btn btn-primary gap-1.5"
 									data-dialog-open-id="create-space"
 								>
 									<svg class="icon icon-sm">
@@ -1534,31 +1534,29 @@
 								</button>
 							</div>
 						</div>
-						<div class="border-b border-gray-400 pb-3.5 mt-7">
-							<ul class="flex items-center gap-x-8.5">
-								<li
-									data-tab-id="open-spaces"
-									class="active text-sm text-dark-800/60 font-medium cursor-pointer relative before:content-[&quot;&quot;] before:absolute before:-bottom-[15px] before:left-0 before:h-0.5 before:bg-blue-900 before:w-[90%] before:scale-x-0 before:transition-all before:duration-300 before:ease-in-out before:origin-left [&.active]:before:scale-x-100 after:content-[attr(data-text)] after:absolute after:inset-0 after:font-semibold after:opacity-0 after:transition-opacity after:duration-300 [&.active]:after:opacity-100 text-nowrap after:text-blue-800! [&.active]:text-transparent transition-all duration-300"
-									data-text="Open"
-								>
-									Open
-								</li>
-								<li
-									data-tab-id="closed-spaces"
-									class="text-sm text-dark-800/60 font-medium cursor-pointer relative before:content-[&quot;&quot;] before:absolute before:-bottom-[15px] before:left-0 before:h-0.5 before:bg-blue-900 before:w-[90%] before:scale-x-0 before:transition-all before:duration-300 before:ease-in-out before:origin-left [&.active]:before:scale-x-100 after:content-[attr(data-text)] after:absolute after:inset-0 after:font-semibold after:opacity-0 after:transition-opacity after:duration-300 [&.active]:after:opacity-100 text-nowrap after:text-blue-800! [&.active]:text-transparent transition-all duration-300"
-									data-text="Closed"
-								>
-									Closed
-								</li>
-								<li
-									data-tab-id="archive-spaces"
-									class="text-sm text-dark-800/60 font-medium cursor-pointer relative before:content-[&quot;&quot;] before:absolute before:-bottom-[15px] before:left-0 before:h-0.5 before:bg-blue-900 before:w-[90%] before:scale-x-0 before:transition-all before:duration-300 before:ease-in-out before:origin-left [&.active]:before:scale-x-100 after:content-[attr(data-text)] after:absolute after:inset-0 after:font-semibold after:opacity-0 after:transition-opacity after:duration-300 [&.active]:after:opacity-100 text-nowrap after:text-blue-800! [&.active]:text-transparent transition-all duration-300"
-									data-text="Archive"
-								>
-									Archive
-								</li>
-							</ul>
-						</div>
+						<ul class="tabs-nav">
+							<li
+								data-tab-id="open-spaces"
+								class="active before:bg-blue-900 after:text-blue-800"
+								data-text="Open"
+							>
+								Open
+							</li>
+							<li
+								data-tab-id="closed-spaces"
+								class="before:bg-blue-900 after:text-blue-800"
+								data-text="Closed"
+							>
+								Closed
+							</li>
+							<li
+								data-tab-id="archive-spaces"
+								class="before:bg-blue-900 after:text-blue-800"
+								data-text="Archive"
+							>
+								Archive
+							</li>
+						</ul>
 					</div>
 				</div>
 				<div class="dashboard-container pb-5">

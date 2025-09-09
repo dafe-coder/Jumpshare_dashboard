@@ -130,7 +130,7 @@
 		<link rel="stylesheet" href="./dist/output.css" />
 	</head>
 
-	<body class="drag-and-drop">
+	<body class="drag-and-drop dashboard dashboard-settings">
 		<div
 			id="progress-bar"
 			class="fixed top-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-blue-500/10 transform scale-x-0 origin-left transition-transform duration-300 ease-out z-99999"
@@ -182,29 +182,13 @@
 							<p class="text-s text-dark-800/60 font-medium px-2.5">
 								Workspace Settings
 							</p>
-							<ul class="flex flex-col mt-2">
+							<ul class="flex flex-col mt-2 space-y-0.5">
 								<li>
 									<a href="./settings.html" class="aside-nav-item">
 										<svg class="icon icon-md">
 											<use href="#icon-general-settings"></use>
 										</svg>
 										General
-									</a>
-								</li>
-								<li>
-									<a href="./settings-activity.html" class="aside-nav-item">
-										<svg class="icon icon-md">
-											<use href="#icon-activity"></use>
-										</svg>
-										Activity
-									</a>
-								</li>
-								<li>
-									<a href="./settings-members.html" class="aside-nav-item">
-										<svg class="icon icon-md">
-											<use href="#icon-members"></use>
-										</svg>
-										Members
 									</a>
 								</li>
 								<li>
@@ -243,11 +227,27 @@
 									</a>
 								</li>
 								<li>
+									<a href="./settings-members.html" class="aside-nav-item">
+										<svg class="icon icon-md">
+											<use href="#icon-members"></use>
+										</svg>
+										Members
+									</a>
+								</li>
+								<li>
 									<a href="./settings-billing.html" class="aside-nav-item">
 										<svg class="icon icon-md">
 											<use href="#icon-billing"></use>
 										</svg>
 										Billing
+									</a>
+								</li>
+								<li>
+									<a href="./settings-activity.html" class="aside-nav-item">
+										<svg class="icon icon-md">
+											<use href="#icon-activity"></use>
+										</svg>
+										Activity
 									</a>
 								</li>
 								<li>
@@ -259,11 +259,14 @@
 									</a>
 								</li>
 								<li>
-									<a href="./settings-data.html" class="aside-nav-item">
+									<a
+										href="./settings-geo-targeting.html"
+										class="aside-nav-item"
+									>
 										<svg class="icon icon-md">
-											<use href="#icon-data"></use>
+											<use href="#icon-geo"></use>
 										</svg>
-										Data
+										Geo Targeting
 									</a>
 								</li>
 								<li>
@@ -278,7 +281,7 @@
 							<p class="text-s text-dark-800/60 font-medium px-2.5 mt-6">
 								Personal Settings
 							</p>
-							<ul class="flex flex-col mt-2">
+							<ul class="flex flex-col mt-2 space-y-0.5">
 								<li>
 									<a href="./settings-account.html" class="aside-nav-item">
 										<svg class="icon icon-md">
@@ -400,13 +403,13 @@
 							<div class="flex gap-3 flex-shrink-0 max-xs:w-full">
 								<button
 									type="button"
-									class="btn btn-border-default h-10 px-6 font-normal max-xs:w-full"
+									class="btn btn-border-default px-6 font-normal max-xs:w-full"
 								>
 									Leave workspace
 								</button>
 								<button
 									type="button"
-									class="btn btn-primary-default h-10 px-5 font-semibold max-xs:w-full"
+									class="btn btn-primary px-5 font-semibold max-xs:w-full"
 								>
 									<svg class="icon icon-s">
 										<use href="#icon-members-semibold-2"></use>
@@ -768,7 +771,7 @@
 								/>
 								<button
 									type="button"
-									class="btn btn-primary-default h-10 px-5 max-xs:w-full"
+									class="btn btn-primary px-5 max-xs:w-full"
 								>
 									Update
 								</button>

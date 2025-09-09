@@ -81,7 +81,7 @@
 			background-color: var(--color-gray-200);
 		}
 	}
-	.btn-transparent-default {
+	.btn-transparent {
 		background-color: transparent;
 		transition: all ease 0.2s;
 		border-radius: 8px;
@@ -138,7 +138,7 @@
 			);
 		}
 	}
-	.btn-primary-default {
+	.btn-primary {
 		background-color: var(--color-blue-500);
 		color: var(--color-white);
 		transition: all ease 0.2s;
@@ -174,19 +174,6 @@
 			0 1px 2px 0 rgba(18, 35, 69, 0.08),
 			0 0 0 1px rgba(107, 29, 210, 0.8),
 			0 2px 4.3px -1px rgba(106, 26, 211, 0.4);
-		background-color: var(--color-violet-600);
-		color: var(--color-white);
-		transition: all ease 0.2s;
-		&:hover {
-			background-color: color-mix(
-				in srgb,
-				var(--color-violet-600) 90%,
-				transparent
-			);
-		}
-	}
-
-	.btn-violet-default {
 		background-color: var(--color-violet-600);
 		color: var(--color-white);
 		transition: all ease 0.2s;

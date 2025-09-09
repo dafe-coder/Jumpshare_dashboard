@@ -129,7 +129,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="stylesheet" href="./dist/output.css" />
 	</head>
-	<body class="drag-and-drop">
+	<body class="drag-and-drop dashboard dashboard dashboard-settings">
 		<div
 			id="progress-bar"
 			class="fixed top-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-blue-500/10 transform scale-x-0 origin-left transition-transform duration-300 ease-out z-99999"
@@ -181,29 +181,13 @@
 							<p class="text-s text-dark-800/60 font-medium px-2.5">
 								Workspace Settings
 							</p>
-							<ul class="flex flex-col mt-2">
+							<ul class="flex flex-col mt-2 space-y-0.5">
 								<li>
 									<a href="./settings.html" class="aside-nav-item">
 										<svg class="icon icon-md">
 											<use href="#icon-general-settings"></use>
 										</svg>
 										General
-									</a>
-								</li>
-								<li>
-									<a href="./settings-activity.html" class="aside-nav-item">
-										<svg class="icon icon-md">
-											<use href="#icon-activity"></use>
-										</svg>
-										Activity
-									</a>
-								</li>
-								<li>
-									<a href="./settings-members.html" class="aside-nav-item">
-										<svg class="icon icon-md">
-											<use href="#icon-members"></use>
-										</svg>
-										Members
 									</a>
 								</li>
 								<li>
@@ -242,11 +226,27 @@
 									</a>
 								</li>
 								<li>
+									<a href="./settings-members.html" class="aside-nav-item">
+										<svg class="icon icon-md">
+											<use href="#icon-members"></use>
+										</svg>
+										Members
+									</a>
+								</li>
+								<li>
 									<a href="./settings-billing.html" class="aside-nav-item">
 										<svg class="icon icon-md">
 											<use href="#icon-billing"></use>
 										</svg>
 										Billing
+									</a>
+								</li>
+								<li>
+									<a href="./settings-activity.html" class="aside-nav-item">
+										<svg class="icon icon-md">
+											<use href="#icon-activity"></use>
+										</svg>
+										Activity
 									</a>
 								</li>
 								<li>
@@ -258,11 +258,14 @@
 									</a>
 								</li>
 								<li>
-									<a href="./settings-data.html" class="aside-nav-item">
+									<a
+										href="./settings-geo-targeting.html"
+										class="aside-nav-item"
+									>
 										<svg class="icon icon-md">
-											<use href="#icon-data"></use>
+											<use href="#icon-geo"></use>
 										</svg>
-										Data
+										Geo Targeting
 									</a>
 								</li>
 								<li>
@@ -277,7 +280,7 @@
 							<p class="text-s text-dark-800/60 font-medium px-2.5 mt-6">
 								Personal Settings
 							</p>
-							<ul class="flex flex-col mt-2">
+							<ul class="flex flex-col mt-2 space-y-0.5">
 								<li>
 									<a href="./settings-account.html" class="aside-nav-item">
 										<svg class="icon icon-md">
@@ -409,7 +412,7 @@
 								/>
 								<button
 									type="button"
-									class="btn btn-border-default flex-shrink-0 px-5 h-10 max-xs:w-full"
+									class="btn btn-border-default flex-shrink-0 px-5 max-xs:w-full"
 								>
 									Edit
 								</button>
@@ -428,7 +431,7 @@
 								</div>
 								<button
 									type="button"
-									class="btn btn-border-default h-10 text-dark-800"
+									class="btn btn-border-default text-dark-800"
 								>
 									<svg class="icon icon-sm">
 										<use href="#icon-upload-medium" />
@@ -477,14 +480,11 @@
 							<div class="flex items-center gap-1.5 mt-4">
 								<button
 									type="button"
-									class="btn btn-primary-default px-5 h-10 max-xs:w-full"
+									class="btn btn-primary px-5 max-xs:w-full"
 								>
 									Save
 								</button>
-								<button
-									type="button"
-									class="btn btn-transparent-default px-5 h-10"
-								>
+								<button type="button" class="btn btn-transparent px-5">
 									Cancel
 								</button>
 							</div>
@@ -559,7 +559,7 @@
 								<div class="dropdown-wrapper max-sm:w-full">
 									<button
 										type="button"
-										class="btn btn-border-default w-[246px] justify-between px-4 h-10 font-normal max-xs:w-full"
+										class="btn btn-border-default w-[246px] justify-between font-normal max-xs:w-full"
 									>
 										Keep Forever
 										<svg class="icon icon-sm flex-shrink-0">
@@ -584,7 +584,7 @@
 								<div class="dropdown-wrapper max-sm:w-full">
 									<button
 										type="button"
-										class="btn btn-border-default w-[246px] justify-between px-4 h-10 font-normal max-xs:w-full"
+										class="btn btn-border-default w-[246px] justify-between font-normal max-xs:w-full"
 									>
 										Anyone with a link
 										<svg class="icon icon-sm">
@@ -597,15 +597,11 @@
 								<button
 									disabled
 									type="button"
-									class="btn btn-primary-default px-5 h-10 max-xs:w-full"
+									class="btn btn-primary px-5 max-xs:w-full"
 								>
 									Save
 								</button>
-								<button
-									disabled
-									type="button"
-									class="btn btn-transparent-default px-5 h-10"
-								>
+								<button disabled type="button" class="btn btn-transparent px-5">
 									Cancel
 								</button>
 							</div>
@@ -633,7 +629,7 @@
 								/>
 								<button
 									type="button"
-									class="btn btn-primary-default h-10 px-5 max-xs:w-full"
+									class="btn btn-primary px-5 max-xs:w-full"
 									disabled
 								>
 									Update

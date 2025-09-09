@@ -130,7 +130,7 @@
 		<link rel="stylesheet" href="./dist/output.css" />
 	</head>
 
-	<body class="drag-and-drop">
+	<body class="drag-and-drop dashboard dashboard-settings">
 		<div
 			id="progress-bar"
 			class="fixed top-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-blue-500/10 transform scale-x-0 origin-left transition-transform duration-300 ease-out z-99999"
@@ -182,29 +182,13 @@
 							<p class="text-s text-dark-800/60 font-medium px-2.5">
 								Workspace Settings
 							</p>
-							<ul class="flex flex-col mt-2">
+							<ul class="flex flex-col mt-2 space-y-0.5">
 								<li>
 									<a href="./settings.html" class="aside-nav-item">
 										<svg class="icon icon-md">
 											<use href="#icon-general-settings"></use>
 										</svg>
 										General
-									</a>
-								</li>
-								<li>
-									<a href="./settings-activity.html" class="aside-nav-item">
-										<svg class="icon icon-md">
-											<use href="#icon-activity"></use>
-										</svg>
-										Activity
-									</a>
-								</li>
-								<li>
-									<a href="./settings-members.html" class="aside-nav-item">
-										<svg class="icon icon-md">
-											<use href="#icon-members"></use>
-										</svg>
-										Members
 									</a>
 								</li>
 								<li>
@@ -243,11 +227,27 @@
 									</a>
 								</li>
 								<li>
+									<a href="./settings-members.html" class="aside-nav-item">
+										<svg class="icon icon-md">
+											<use href="#icon-members"></use>
+										</svg>
+										Members
+									</a>
+								</li>
+								<li>
 									<a href="./settings-billing.html" class="aside-nav-item">
 										<svg class="icon icon-md">
 											<use href="#icon-billing"></use>
 										</svg>
 										Billing
+									</a>
+								</li>
+								<li>
+									<a href="./settings-activity.html" class="aside-nav-item">
+										<svg class="icon icon-md">
+											<use href="#icon-activity"></use>
+										</svg>
+										Activity
 									</a>
 								</li>
 								<li>
@@ -259,11 +259,14 @@
 									</a>
 								</li>
 								<li>
-									<a href="./settings-data.html" class="aside-nav-item">
+									<a
+										href="./settings-geo-targeting.html"
+										class="aside-nav-item"
+									>
 										<svg class="icon icon-md">
-											<use href="#icon-data"></use>
+											<use href="#icon-geo"></use>
 										</svg>
-										Data
+										Geo Targeting
 									</a>
 								</li>
 								<li>
@@ -278,7 +281,7 @@
 							<p class="text-s text-dark-800/60 font-medium px-2.5 mt-6">
 								Personal Settings
 							</p>
-							<ul class="flex flex-col mt-2">
+							<ul class="flex flex-col mt-2 space-y-0.5">
 								<li>
 									<a href="./settings-account.html" class="aside-nav-item">
 										<svg class="icon icon-md">
@@ -300,6 +303,9 @@
 								</li>
 							</ul>
 						</nav>
+					</div>
+				</div>
+			</aside>>
 					</div>
 				</div>
 			</aside>
@@ -438,7 +444,7 @@
 								</div>
 								<button
 									type="button"
-									class="btn btn-danger flex-shrink-0 px-5 h-10 max-xs:w-full"
+									class="btn btn-danger flex-shrink-0 px-5 max-xs:w-full"
 								>
 									Remove Domain
 								</button>
@@ -809,13 +815,13 @@
 							<div class="flex gap-2.5 flex-shrink-0 mt-7.5 max-xs:mt-3">
 								<button
 									type="button"
-									class="btn btn-primary-default px-5 h-10 max-xs:min-w-[7.3125rem] max-xs:flex-shrink-0"
+									class="btn btn-primary px-5 max-xs:min-w-[7.3125rem] max-xs:flex-shrink-0"
 								>
 									Refresh
 								</button>
 								<button
 									type="button"
-									class="btn btn-danger px-5 h-10 max-xs:flex-grow-1"
+									class="btn btn-danger px-5 max-xs:flex-grow-1"
 								>
 									Remove Domain
 								</button>
