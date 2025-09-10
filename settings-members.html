@@ -421,14 +421,15 @@
 					</div>
 					<div class="mt-10">
 						<div
-							class="grid grid-cols-[1fr_162px_211px] gap-4 py-[0.9375rem] max-md:hidden"
+							class="grid grid-cols-[1fr_minmax(100px,162px)_minmax(110px,211px)_116px] gap-4 py-[0.9375rem] max-md:hidden"
 						>
 							<div class="text-sm text-gray-900">Name</div>
 							<div class="text-sm text-gray-900">Team Role</div>
 							<div class="text-sm text-gray-900">Last Active</div>
+							<div class="text-sm text-gray-900">2FA</div>
 						</div>
 						<div
-							class="grid grid-cols-[1fr_162px_211px] gap-4 border-t border-gray-400 py-2 hover:bg-gray-150 max-md:grid-cols-[1fr_auto_50px]"
+							class="grid grid-cols-[1fr_minmax(100px,162px)_minmax(110px,211px)_116px] gap-4 border-t border-gray-400 py-2 hover:bg-gray-150 max-md:grid-cols-[1fr_50px]"
 						>
 							<div class="flex items-center gap-3 pl-2.5">
 								<div class="avatar size-7.5">J</div>
@@ -440,15 +441,17 @@
 								</div>
 							</div>
 							<div
-								class="flex items-center text-sm max-md:justify-end max-xs:text-gray-900"
+								class="flex items-center text-sm max-md:hidden max-xs:text-gray-900"
 							>
 								<span>Owner</span>
 							</div>
-							<div
-								class="text-sm flex items-center justify-between pr-4 max-md:justify-end"
-							>
+							<div class="text-sm flex items-center max-md:hidden">
 								<span class="max-md:hidden">5 hours ago</span>
-								<div class="dropdown-wrapper">
+							</div>
+							<div
+								class="flex items-center justify-between pr-4 max-md:justify-end"
+							>
+								<div class="dropdown-wrapper ml-auto">
 									<button
 										type="button"
 										class="dropdown-button size-6 rounded-full hover:bg-gray-400 cursor-pointer flex items-center justify-center"
@@ -545,7 +548,7 @@
 							</div>
 						</div>
 						<div
-							class="grid grid-cols-[1fr_162px_211px] gap-4 border-t border-gray-400 py-2 hover:bg-gray-150 max-md:grid-cols-[1fr_auto_50px]"
+							class="grid grid-cols-[1fr_minmax(100px,162px)_minmax(110px,211px)_116px] gap-4 border-t border-gray-400 py-2 hover:bg-gray-150 max-md:grid-cols-[1fr_50px]"
 						>
 							<div class="flex items-center gap-3 pl-2.5">
 								<div class="avatar size-7.5">
@@ -559,15 +562,17 @@
 								</div>
 							</div>
 							<div
-								class="flex items-center text-sm max-md:justify-end max-xs:text-gray-900"
+								class="flex items-center text-sm max-md:hidden max-xs:text-gray-900"
 							>
 								<span>Member</span>
 							</div>
-							<div
-								class="text-sm flex items-center justify-between pr-4 max-md:justify-end"
-							>
+							<div class="text-sm flex items-center max-md:hidden">
 								<span class="max-md:hidden">5 hours ago</span>
-								<div class="dropdown-wrapper">
+							</div>
+							<div
+								class="flex items-center justify-between pr-4 max-md:justify-end"
+							>
+								<div class="dropdown-wrapper ml-auto">
 									<button
 										type="button"
 										class="dropdown-button size-6 rounded-full hover:bg-gray-400 cursor-pointer flex items-center justify-center"
@@ -664,7 +669,7 @@
 							</div>
 						</div>
 						<div
-							class="grid grid-cols-[1fr_162px_211px] gap-4 border-t border-gray-400 py-2 hover:bg-gray-150 max-md:grid-cols-[1fr_auto_50px]"
+							class="grid grid-cols-[1fr_minmax(100px,162px)_minmax(110px,211px)_116px] gap-4 border-t border-gray-400 py-2 hover:bg-gray-150 max-md:grid-cols-[1fr_50px]"
 						>
 							<div class="flex items-center gap-3 pl-2.5">
 								<div class="avatar size-7.5">
@@ -678,15 +683,20 @@
 								</div>
 							</div>
 							<div
-								class="flex items-center text-sm max-md:justify-end max-xs:text-gray-900"
+								class="flex items-center text-sm max-md:hidden max-xs:text-gray-900"
 							>
 								<span>Member</span>
 							</div>
-							<div
-								class="text-sm flex items-center justify-between pr-4 max-md:justify-end"
-							>
+							<div class="text-sm flex items-center max-md:hidden">
 								<span class="max-md:hidden">5 hours ago</span>
-								<div class="dropdown-wrapper">
+							</div>
+							<div
+								class="flex items-center justify-between pr-4 max-md:justify-end"
+							>
+								<svg class="icon icon-m flex-shrink-0 max-md:hidden">
+									<use href="#icon-security"></use>
+								</svg>
+								<div class="dropdown-wrapper ml-auto">
 									<button
 										type="button"
 										class="dropdown-button size-6 rounded-full hover:bg-gray-400 cursor-pointer flex items-center justify-center"
@@ -783,7 +793,7 @@
 							</div>
 						</div>
 						<div
-							class="grid grid-cols-[1fr_162px_211px] gap-4 border-t border-gray-400 py-2 hover:bg-gray-150 max-md:grid-cols-[1fr_auto_50px]"
+							class="grid grid-cols-[1fr_minmax(100px,162px)_minmax(110px,211px)_116px] gap-4 border-t border-gray-400 py-2 hover:bg-gray-150 max-md:grid-cols-[1fr_50px]"
 						>
 							<div class="flex items-center gap-3 pl-2.5">
 								<div class="avatar size-7.5">
@@ -797,15 +807,20 @@
 								</div>
 							</div>
 							<div
-								class="flex items-center text-sm max-md:justify-end max-xs:text-gray-900"
+								class="flex items-center text-sm max-md:hidden max-xs:text-gray-900"
 							>
 								<span>Owner</span>
 							</div>
-							<div
-								class="text-sm flex items-center justify-between pr-4 max-md:justify-end"
-							>
+							<div class="text-sm flex items-center max-md:hidden">
 								<span class="max-md:hidden">5 hours ago</span>
-								<div class="dropdown-wrapper">
+							</div>
+							<div
+								class="flex items-center justify-between pr-4 max-md:justify-end"
+							>
+								<svg class="icon icon-m flex-shrink-0 max-md:hidden">
+									<use href="#icon-security"></use>
+								</svg>
+								<div class="dropdown-wrapper ml-auto">
 									<button
 										type="button"
 										class="dropdown-button size-6 rounded-full hover:bg-gray-400 cursor-pointer flex items-center justify-center"
@@ -902,7 +917,7 @@
 							</div>
 						</div>
 						<div
-							class="grid grid-cols-[1fr_162px_211px] gap-4 border-t border-gray-400 py-2 hover:bg-gray-150 max-md:grid-cols-[1fr_auto_50px]"
+							class="grid grid-cols-[1fr_minmax(100px,162px)_minmax(110px,211px)_116px] gap-4 border-t border-gray-400 py-2 hover:bg-gray-150 max-md:grid-cols-[1fr_50px]"
 						>
 							<div class="flex items-center gap-3 pl-2.5">
 								<div class="avatar size-7.5">J</div>
@@ -914,15 +929,17 @@
 								</div>
 							</div>
 							<div
-								class="flex items-center text-sm max-md:justify-end max-xs:text-gray-900"
+								class="flex items-center text-sm max-md:hidden max-xs:text-gray-900"
 							>
 								<span>Owner</span>
 							</div>
-							<div
-								class="text-sm flex items-center justify-between pr-4 max-md:justify-end"
-							>
+							<div class="text-sm flex items-center max-md:hidden">
 								<span class="max-md:hidden">5 hours ago</span>
-								<div class="dropdown-wrapper">
+							</div>
+							<div
+								class="flex items-center justify-between pr-4 max-md:justify-end"
+							>
+								<div class="dropdown-wrapper ml-auto">
 									<button
 										type="button"
 										class="dropdown-button size-6 rounded-full hover:bg-gray-400 cursor-pointer flex items-center justify-center"
@@ -1019,7 +1036,7 @@
 							</div>
 						</div>
 						<div
-							class="grid grid-cols-[1fr_162px_211px] gap-4 border-t border-gray-400 py-2 hover:bg-gray-150 max-md:grid-cols-[1fr_auto_50px]"
+							class="grid grid-cols-[1fr_minmax(100px,162px)_minmax(110px,211px)_116px] gap-4 border-t border-gray-400 py-2 hover:bg-gray-150 max-md:grid-cols-[1fr_50px]"
 						>
 							<div class="flex items-center gap-3 pl-2.5">
 								<div class="avatar size-7.5">J</div>
@@ -1031,15 +1048,17 @@
 								</div>
 							</div>
 							<div
-								class="flex items-center text-sm max-md:justify-end max-xs:text-gray-900"
+								class="flex items-center text-sm max-md:hidden max-xs:text-gray-900"
 							>
 								<span>Admin</span>
 							</div>
-							<div
-								class="text-sm flex items-center justify-between pr-4 max-md:justify-end"
-							>
+							<div class="text-sm flex items-center max-md:hidden">
 								<span class="max-md:hidden">5 hours ago</span>
-								<div class="dropdown-wrapper">
+							</div>
+							<div
+								class="flex items-center justify-between pr-4 max-md:justify-end"
+							>
+								<div class="dropdown-wrapper ml-auto">
 									<button
 										type="button"
 										class="dropdown-button size-6 rounded-full hover:bg-gray-400 cursor-pointer flex items-center justify-center"
@@ -1136,7 +1155,7 @@
 							</div>
 						</div>
 						<div
-							class="grid grid-cols-[1fr_162px_211px] gap-4 border-t border-gray-400 py-2 hover:bg-gray-150 max-md:grid-cols-[1fr_auto_50px]"
+							class="grid grid-cols-[1fr_minmax(100px,162px)_minmax(110px,211px)_116px] gap-4 border-t border-gray-400 py-2 hover:bg-gray-150 max-md:grid-cols-[1fr_50px]"
 						>
 							<div class="flex items-center gap-3 pl-2.5">
 								<div class="avatar size-7.5">J</div>
@@ -1148,15 +1167,17 @@
 								</div>
 							</div>
 							<div
-								class="flex items-center text-sm max-md:justify-end max-xs:text-gray-900"
+								class="flex items-center text-sm max-md:hidden max-xs:text-gray-900"
 							>
 								<span>Owner</span>
 							</div>
-							<div
-								class="text-sm flex items-center justify-between pr-4 max-md:justify-end"
-							>
+							<div class="text-sm flex items-center max-md:hidden">
 								<span class="max-md:hidden">5 hours ago</span>
-								<div class="dropdown-wrapper">
+							</div>
+							<div
+								class="flex items-center justify-between pr-4 max-md:justify-end"
+							>
+								<div class="dropdown-wrapper ml-auto">
 									<button
 										type="button"
 										class="dropdown-button size-6 rounded-full hover:bg-gray-400 cursor-pointer flex items-center justify-center"

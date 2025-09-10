@@ -425,28 +425,34 @@
 							class="grid grid-cols-3 mb-7.5 gap-4 max-md:grid-cols-2 max-xs:grid-cols-1 bg-gray-200 p-3 rounded-2.5xl"
 						>
 							<div
-								class="bg-white border border-gray-400 rounded-2xl py-6 flex flex-col items-start p-8 gap-2"
+								class="bg-white border border-gray-400 rounded-2xl py-6 flex flex-col items-start p-8 gap-2 max-sm:p-6"
 							>
 								<span class="text-sm font-medium text-gray-900"
 									>Total Uploads</span
 								>
-								<p class="text-2xl font-medium text-dark-800">83,506</p>
+								<p class="text-2xl font-medium text-dark-800 max-sm:text-xl">
+									83,506
+								</p>
 							</div>
 							<div
-								class="bg-white border border-gray-400 rounded-2xl py-6 flex flex-col items-start p-8 gap-2"
+								class="bg-white border border-gray-400 rounded-2xl py-6 flex flex-col items-start p-8 gap-2 max-sm:p-6"
 							>
 								<span class="text-sm font-medium text-gray-900"
 									>Total Space Used</span
 								>
-								<p class="text-2xl font-medium text-dark-800">1.2 TB</p>
+								<p class="text-2xl font-medium text-dark-800 max-sm:text-xl">
+									1.2 TB
+								</p>
 							</div>
 							<div
-								class="bg-white border border-gray-400 rounded-2xl py-6 flex flex-col items-start p-8 gap-2"
+								class="bg-white border border-gray-400 rounded-2xl py-6 flex flex-col items-start p-8 gap-2 max-sm:p-6"
 							>
 								<span class="text-sm font-medium text-gray-900"
 									>Total Bandwidth (Monthly)</span
 								>
-								<p class="text-2xl font-medium text-dark-800">68.7 GB</p>
+								<p class="text-2xl font-medium text-dark-800 max-sm:text-xl">
+									68.7 GB
+								</p>
 							</div>
 						</div>
 						<div class="flex items-center justify-between mt-7">
@@ -479,25 +485,25 @@
 										<div class="js-dropdown-content">
 											<a
 												href="#"
-												class="js-dropdown-list-item [&.active]:bg-gray-300"
+												class="js-dropdown-list-item [&.active]:bg-gray-300 px-2 py-1.5"
 											>
 												Last 3 months
 											</a>
 											<a
 												href="#"
-												class="js-dropdown-list-item [&.active]:bg-gray-300"
+												class="js-dropdown-list-item [&.active]:bg-gray-300 px-2 py-1.5"
 											>
 												Last 6 months
 											</a>
 											<a
 												href="#"
-												class="js-dropdown-list-item [&.active]:bg-gray-300"
+												class="js-dropdown-list-item [&.active]:bg-gray-300 px-2 py-1.5"
 											>
 												Last year
 											</a>
 											<a
 												href="#"
-												class="js-dropdown-list-item [&.active]:bg-gray-300 active"
+												class="js-dropdown-list-item [&.active]:bg-gray-300 px-2 py-1.5 active"
 											>
 												All Time
 											</a>
@@ -514,20 +520,20 @@
 						</div>
 						<div class="mt-10">
 							<div
-								class="border border-gray-500 rounded-2xl p-6 pb-4.5 max-sm:p-4"
+								class="border border-gray-500 rounded-2xl p-6 pb-4.5 max-sm:p-5 max-sm:pb-2.5"
 							>
 								<strong class="text-base font-semibold">Top Creators</strong>
-								<div class="mt-7.5 -mx-6">
+								<div class="mt-7.5 -mx-6 max-sm:-mx-5">
 									<div
-										class="grid grid-cols-[1fr_minmax(110px,170px)_minmax(100px,140px)_minmax(100px,125px)] text-sm text-gray-900 pb-4 px-6"
+										class="grid grid-cols-[1fr_minmax(110px,170px)_minmax(100px,140px)_minmax(100px,125px)] text-sm text-gray-900 pb-4 px-6 max-md:grid-cols-1"
 									>
 										<div>Name</div>
-										<div>Uploaded</div>
-										<div>Views</div>
-										<div>Comments</div>
+										<div class="max-md:hidden">Uploaded</div>
+										<div class="max-md:hidden">Views</div>
+										<div class="max-md:hidden">Comments</div>
 									</div>
 									<div
-										class="grid grid-cols-[1fr_minmax(110px,170px)_minmax(100px,140px)_minmax(100px,125px)] border-t border-t-gray-400 py-2 hover:bg-gray-150 px-6"
+										class="grid grid-cols-[1fr_minmax(110px,170px)_minmax(100px,140px)_minmax(100px,125px)] border-t border-t-gray-400 py-2 hover:bg-gray-150 px-6 max-md:grid-cols-1 max-sm:px-5"
 									>
 										<div class="flex items-center gap-3">
 											<div class="size-7.5 avatar">J</div>
@@ -537,19 +543,81 @@
 													>johndolton@gmail.com</span
 												>
 											</div>
+											<div class="dropdown-wrapper ml-auto md:hidden">
+												<span
+													type="button"
+													data-id="dropdown-top-creators"
+													class="dropdown-button cursor-pointer flex justify-center items-center size-6.5 hover:bg-gray-400 rounded-full shrink-0"
+												>
+													<svg class="icon icon-md">
+														<use href="#icon-dots-horizontal"></use>
+													</svg>
+												</span>
+												<div
+													class="js-dropdown hidden"
+													data-dropdown-id="dropdown-top-creators"
+													data-sheet-modal
+												>
+													<div class="js-dropdown-overlay"></div>
+													<div class="js-dropdown-body">
+														<div class="js-dropdown-trigger">
+															<span></span>
+														</div>
+														<div class="js-dropdown-content px-4">
+															<div class="flex items-center gap-3 px-2 mt-4">
+																<div class="size-7.5 avatar">J</div>
+																<div class="flex flex-col">
+																	<span class="text-sm font-medium"
+																		>John Doton</span
+																	>
+																	<span class="text-xs text-gray-900"
+																		>johndolton@gmail.com</span
+																	>
+																</div>
+															</div>
+															<ul class="mt-5">
+																<li
+																	class="flex items-center justify-between not-last-of-type:border-b border-b-gray-400 px-2 py-4.5"
+																>
+																	<span class="text-sm text-gray-900"
+																		>Uploaded</span
+																	>
+																	<span class="text-sm">497</span>
+																</li>
+																<li
+																	class="flex items-center justify-between not-last-of-type:border-b border-b-gray-400 px-2 py-4.5"
+																>
+																	<span class="text-sm text-gray-900"
+																		>Views</span
+																	>
+																	<span class="text-sm">12,095</span>
+																</li>
+																<li
+																	class="flex items-center justify-between not-last-of-type:border-b border-b-gray-400 px-2 py-4.5"
+																>
+																	<span class="text-sm text-gray-900"
+																		>Comments</span
+																	>
+																	<span class="text-sm">544</span>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
 										</div>
-										<div class="flex items-center text-sm">
+										<div class="flex items-center text-sm max-md:hidden">
 											<span>497</span>
 										</div>
-										<div class="flex items-center text-sm">
+										<div class="flex items-center text-sm max-md:hidden">
 											<span>12</span>
 										</div>
-										<div class="flex items-center text-sm">
+										<div class="flex items-center text-sm max-md:hidden">
 											<span>65</span>
 										</div>
 									</div>
 									<div
-										class="grid grid-cols-[1fr_minmax(110px,170px)_minmax(100px,140px)_minmax(100px,125px)] border-t border-t-gray-400 py-2 hover:bg-gray-150 px-6"
+										class="grid grid-cols-[1fr_minmax(110px,170px)_minmax(100px,140px)_minmax(100px,125px)] border-t border-t-gray-400 py-2 hover:bg-gray-150 px-6 max-md:grid-cols-1 max-sm:px-5"
 									>
 										<div class="flex items-center gap-3">
 											<div class="size-7.5 avatar">
@@ -561,19 +629,81 @@
 													>hanrichard@gmail.com</span
 												>
 											</div>
+											<div class="dropdown-wrapper ml-auto md:hidden">
+												<span
+													type="button"
+													data-id="dropdown-top-creators"
+													class="dropdown-button cursor-pointer flex justify-center items-center size-6.5 hover:bg-gray-400 rounded-full shrink-0"
+												>
+													<svg class="icon icon-md">
+														<use href="#icon-dots-horizontal"></use>
+													</svg>
+												</span>
+												<div
+													class="js-dropdown hidden"
+													data-dropdown-id="dropdown-top-creators"
+													data-sheet-modal
+												>
+													<div class="js-dropdown-overlay"></div>
+													<div class="js-dropdown-body">
+														<div class="js-dropdown-trigger">
+															<span></span>
+														</div>
+														<div class="js-dropdown-content px-4">
+															<div class="flex items-center gap-3 px-2 mt-4">
+																<div class="size-7.5 avatar">J</div>
+																<div class="flex flex-col">
+																	<span class="text-sm font-medium"
+																		>John Doton</span
+																	>
+																	<span class="text-xs text-gray-900"
+																		>johndolton@gmail.com</span
+																	>
+																</div>
+															</div>
+															<ul class="mt-5">
+																<li
+																	class="flex items-center justify-between not-last-of-type:border-b border-b-gray-400 px-2 py-4.5"
+																>
+																	<span class="text-sm text-gray-900"
+																		>Uploaded</span
+																	>
+																	<span class="text-sm">497</span>
+																</li>
+																<li
+																	class="flex items-center justify-between not-last-of-type:border-b border-b-gray-400 px-2 py-4.5"
+																>
+																	<span class="text-sm text-gray-900"
+																		>Views</span
+																	>
+																	<span class="text-sm">12,095</span>
+																</li>
+																<li
+																	class="flex items-center justify-between not-last-of-type:border-b border-b-gray-400 px-2 py-4.5"
+																>
+																	<span class="text-sm text-gray-900"
+																		>Comments</span
+																	>
+																	<span class="text-sm">544</span>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
 										</div>
-										<div class="flex items-center text-sm">
+										<div class="flex items-center text-sm max-md:hidden">
 											<span>12</span>
 										</div>
-										<div class="flex items-center text-sm">
+										<div class="flex items-center text-sm max-md:hidden">
 											<span>--</span>
 										</div>
-										<div class="flex items-center text-sm">
+										<div class="flex items-center text-sm max-md:hidden">
 											<span>--</span>
 										</div>
 									</div>
 									<div
-										class="grid grid-cols-[1fr_minmax(110px,170px)_minmax(100px,140px)_minmax(100px,125px)] border-t border-t-gray-400 py-2 hover:bg-gray-150 px-6"
+										class="grid grid-cols-[1fr_minmax(110px,170px)_minmax(100px,140px)_minmax(100px,125px)] border-t border-t-gray-400 py-2 hover:bg-gray-150 px-6 max-md:grid-cols-1 max-sm:px-5"
 									>
 										<div class="flex items-center gap-3">
 											<div class="size-7.5 avatar">
@@ -585,19 +715,81 @@
 													>hanrichard@gmail.com</span
 												>
 											</div>
+											<div class="dropdown-wrapper ml-auto md:hidden">
+												<span
+													type="button"
+													data-id="dropdown-top-creators"
+													class="dropdown-button cursor-pointer flex justify-center items-center size-6.5 hover:bg-gray-400 rounded-full shrink-0"
+												>
+													<svg class="icon icon-md">
+														<use href="#icon-dots-horizontal"></use>
+													</svg>
+												</span>
+												<div
+													class="js-dropdown hidden"
+													data-dropdown-id="dropdown-top-creators"
+													data-sheet-modal
+												>
+													<div class="js-dropdown-overlay"></div>
+													<div class="js-dropdown-body">
+														<div class="js-dropdown-trigger">
+															<span></span>
+														</div>
+														<div class="js-dropdown-content px-4">
+															<div class="flex items-center gap-3 px-2 mt-4">
+																<div class="size-7.5 avatar">J</div>
+																<div class="flex flex-col">
+																	<span class="text-sm font-medium"
+																		>John Doton</span
+																	>
+																	<span class="text-xs text-gray-900"
+																		>johndolton@gmail.com</span
+																	>
+																</div>
+															</div>
+															<ul class="mt-5">
+																<li
+																	class="flex items-center justify-between not-last-of-type:border-b border-b-gray-400 px-2 py-4.5"
+																>
+																	<span class="text-sm text-gray-900"
+																		>Uploaded</span
+																	>
+																	<span class="text-sm">497</span>
+																</li>
+																<li
+																	class="flex items-center justify-between not-last-of-type:border-b border-b-gray-400 px-2 py-4.5"
+																>
+																	<span class="text-sm text-gray-900"
+																		>Views</span
+																	>
+																	<span class="text-sm">12,095</span>
+																</li>
+																<li
+																	class="flex items-center justify-between not-last-of-type:border-b border-b-gray-400 px-2 py-4.5"
+																>
+																	<span class="text-sm text-gray-900"
+																		>Comments</span
+																	>
+																	<span class="text-sm">544</span>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
 										</div>
-										<div class="flex items-center text-sm">
+										<div class="flex items-center text-sm max-md:hidden">
 											<span>12</span>
 										</div>
-										<div class="flex items-center text-sm">
+										<div class="flex items-center text-sm max-md:hidden">
 											<span>--</span>
 										</div>
-										<div class="flex items-center text-sm">
+										<div class="flex items-center text-sm max-md:hidden">
 											<span>--</span>
 										</div>
 									</div>
 									<div
-										class="grid grid-cols-[1fr_minmax(110px,170px)_minmax(100px,140px)_minmax(100px,125px)] border-t border-t-gray-400 py-2 hover:bg-gray-150 px-6"
+										class="grid grid-cols-[1fr_minmax(110px,170px)_minmax(100px,140px)_minmax(100px,125px)] border-t border-t-gray-400 py-2 hover:bg-gray-150 px-6 max-md:grid-cols-1 max-sm:px-5"
 									>
 										<div class="flex items-center gap-3">
 											<div class="size-7.5 avatar">
@@ -609,14 +801,76 @@
 													>hanrichard@gmail.com</span
 												>
 											</div>
+											<div class="dropdown-wrapper ml-auto md:hidden">
+												<span
+													type="button"
+													data-id="dropdown-top-creators"
+													class="dropdown-button cursor-pointer flex justify-center items-center size-6.5 hover:bg-gray-400 rounded-full shrink-0"
+												>
+													<svg class="icon icon-md">
+														<use href="#icon-dots-horizontal"></use>
+													</svg>
+												</span>
+												<div
+													class="js-dropdown hidden"
+													data-dropdown-id="dropdown-top-creators"
+													data-sheet-modal
+												>
+													<div class="js-dropdown-overlay"></div>
+													<div class="js-dropdown-body">
+														<div class="js-dropdown-trigger">
+															<span></span>
+														</div>
+														<div class="js-dropdown-content px-4">
+															<div class="flex items-center gap-3 px-2 mt-4">
+																<div class="size-7.5 avatar">J</div>
+																<div class="flex flex-col">
+																	<span class="text-sm font-medium"
+																		>John Doton</span
+																	>
+																	<span class="text-xs text-gray-900"
+																		>johndolton@gmail.com</span
+																	>
+																</div>
+															</div>
+															<ul class="mt-5">
+																<li
+																	class="flex items-center justify-between not-last-of-type:border-b border-b-gray-400 px-2 py-4.5"
+																>
+																	<span class="text-sm text-gray-900"
+																		>Uploaded</span
+																	>
+																	<span class="text-sm">497</span>
+																</li>
+																<li
+																	class="flex items-center justify-between not-last-of-type:border-b border-b-gray-400 px-2 py-4.5"
+																>
+																	<span class="text-sm text-gray-900"
+																		>Views</span
+																	>
+																	<span class="text-sm">12,095</span>
+																</li>
+																<li
+																	class="flex items-center justify-between not-last-of-type:border-b border-b-gray-400 px-2 py-4.5"
+																>
+																	<span class="text-sm text-gray-900"
+																		>Comments</span
+																	>
+																	<span class="text-sm">544</span>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
 										</div>
-										<div class="flex items-center text-sm">
+										<div class="flex items-center text-sm max-md:hidden">
 											<span>12</span>
 										</div>
-										<div class="flex items-center text-sm">
+										<div class="flex items-center text-sm max-md:hidden">
 											<span>--</span>
 										</div>
-										<div class="flex items-center text-sm">
+										<div class="flex items-center text-sm max-md:hidden">
 											<span>--</span>
 										</div>
 									</div>

@@ -399,9 +399,14 @@
 						<p class="text-gray-900 text-sm">
 							Define your target audience and choose who can view your content.
 						</p>
-						<div class="flex items-center gap-4 mt-5 mb-10">
+						<div
+							class="flex items-center gap-4 mt-5 mb-10 max-sm:flex-wrap max-xs:gap-3"
+						>
 							<div class="dropdown-wrapper">
-								<button type="button" class="btn btn-border-default">
+								<button
+									type="button"
+									class="btn btn-border-default max-xs:pr-3"
+								>
 									<span>Include</span>
 									<svg class="icon icon-sm">
 										<use href="#icon-chevron-down"></use>
@@ -409,30 +414,35 @@
 								</button>
 							</div>
 							<div
-								class="dropdown-wrapper max-w-[15.375rem] flex-grow-1 min-w-[10.625rem]"
+								class="dropdown-wrapper max-w-[15.375rem] flex-grow-1 max-xs:max-w-full"
 							>
 								<button
 									type="button"
-									class="btn btn-border-default w-full justify-between text-gray-900"
+									class="btn btn-border-default w-full justify-between text-gray-900 max-xs:gap-1! font-normal"
 								>
-									<span>Select Location</span>
-									<svg class="icon icon-sm">
+									<span class="truncate flex-shrink-1">Select Location</span>
+									<svg class="icon icon-sm flex-shrink-0">
 										<use href="#icon-chevron-down"></use>
 									</svg>
 								</button>
 							</div>
-							<button type="button" class="btn btn-primary w-22.5">Add</button>
-						</div>
-						<div
-							class="grid grid-cols-[minmax(210px,1fr)_minmax(120px,220px)_minmax(150px,290px)] gap-4 pb-3 max-md:hidden text-sm font-medium text-gray-900"
-						>
-							<div>Location</div>
-							<div>Status</div>
-							<div>Date Added</div>
+							<button
+								type="button"
+								class="btn btn-primary w-22.5 max-xs:w-full"
+							>
+								Add
+							</button>
 						</div>
 						<div class="flex flex-col">
 							<div
-								class="grid grid-cols-[minmax(210px,1fr)_minmax(120px,220px)_minmax(150px,290px)] gap-4 py-3.5 px-6 -mx-6 border-t border-gray-400 text-sm lg:[&>div]:min-h-8 [&>div]:flex [&>div]:items-center relative max-lg:pr-30 max-sm:gap-1.5 max-lg:grid-cols-1"
+								class="grid grid-cols-[minmax(210px,1fr)_minmax(120px,220px)_minmax(150px,290px)] gap-4 pb-3 text-sm font-medium text-gray-900 max-md:grid-cols-[minmax(100px,1fr)_minmax(70px,120px)_32px]"
+							>
+								<div>Location</div>
+								<div class="max-md:hidden">Status</div>
+								<div>Date Added</div>
+							</div>
+							<div
+								class="grid grid-cols-[minmax(210px,1fr)_minmax(120px,220px)_minmax(150px,290px)] gap-4 py-3.5 px-6 -mx-6 max-sm:-mx-5 border-t border-gray-400 text-sm lg:[&>div]:min-h-8 [&>div]:flex [&>div]:items-center relative max-md:grid-cols-[minmax(100px,1fr)_minmax(70px,120px)_32px] max-xs:px-5"
 							>
 								<div>
 									<span class="truncate">New York</span>
@@ -440,8 +450,8 @@
 								<div>
 									<span class="truncate">Included</span>
 								</div>
-								<div class="justify-between gap-x-4">
-									<span>30 August, 2025</span>
+								<div class="justify-between gap-x-4 max-md:justify-end">
+									<span class="max-md:hidden">30 August, 2025</span>
 									<button
 										aria-label="Delete Item"
 										type="button"
@@ -454,16 +464,19 @@
 								</div>
 							</div>
 							<div
-								class="grid grid-cols-[minmax(210px,1fr)_minmax(120px,220px)_minmax(150px,290px)] gap-4 py-3.5 px-6 -mx-6 border-t border-gray-400 text-sm lg:[&>div]:min-h-8 [&>div]:flex [&>div]:items-center relative max-lg:pr-30 max-sm:gap-1.5 max-lg:grid-cols-1"
+								class="grid grid-cols-[minmax(210px,1fr)_minmax(120px,220px)_minmax(150px,290px)] gap-4 py-3.5 px-6 -mx-6 max-sm:-mx-5 border-t border-gray-400 text-sm lg:[&>div]:min-h-8 [&>div]:flex [&>div]:items-center relative max-md:grid-cols-[minmax(100px,1fr)_minmax(70px,120px)_32px] max-xs:px-5"
 							>
 								<div>
-									<span class="truncate">Hong Kong</span>
+									<span class="truncate"
+										>Hong KongHong KongHong KongHong KongHong KongHong KongHong
+										KongHong Kong</span
+									>
 								</div>
 								<div>
 									<span class="truncate">Included</span>
 								</div>
-								<div class="justify-between gap-x-4">
-									<span>29 August, 2025</span>
+								<div class="justify-between gap-x-4 max-md:justify-end">
+									<span class="max-md:hidden">29 August, 2025</span>
 									<button
 										aria-label="Delete Item"
 										type="button"
