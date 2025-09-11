@@ -8100,32 +8100,11 @@
     --tw-shadow: 0px 3px 35px var(--tw-shadow-color, rgba(0, 0, 0, 0.04));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
-  [data-transform-origin="top left"] {
-    transform-origin: top left;
-  }
   [data-transform-origin="top center"] {
     transform-origin: top center;
   }
-  [data-transform-origin="top right"] {
-    transform-origin: top right;
-  }
-  [data-transform-origin="center left"] {
-    transform-origin: center left;
-  }
-  [data-transform-origin="center center"] {
-    transform-origin: center center;
-  }
-  [data-transform-origin="center right"] {
-    transform-origin: center right;
-  }
-  [data-transform-origin="bottom left"] {
-    transform-origin: bottom left;
-  }
   [data-transform-origin="bottom center"] {
     transform-origin: bottom center;
-  }
-  [data-transform-origin="bottom right"] {
-    transform-origin: bottom right;
   }
 }
 @keyframes dropdownShow {

@@ -125,23 +125,12 @@ const Dropdown = {
 		const contentRect = $content[0].getBoundingClientRect();
 		const wrapperRect = $wrapper[0].getBoundingClientRect();
 
-		const relativeLeft = contentRect.left - wrapperRect.left;
 		const relativeTop = contentRect.top - wrapperRect.top;
-		const relativeRight = wrapperRect.right - contentRect.right;
 		const relativeBottom = wrapperRect.bottom - contentRect.bottom;
 		console.log({
-			relativeLeft,
 			relativeTop,
-			relativeRight,
 			relativeBottom,
 		});
-
-		let horizontalOrigin = "center";
-		if (relativeLeft >= 0) {
-			horizontalOrigin = "left";
-		} else if (relativeRight >= 0) {
-			horizontalOrigin = "right";
-		}
 
 		let verticalOrigin = "center";
 		if (relativeTop >= 0) {
@@ -150,10 +139,7 @@ const Dropdown = {
 			verticalOrigin = "bottom";
 		}
 
-		$content.attr(
-			"data-transform-origin",
-			`${verticalOrigin} ${horizontalOrigin}`,
-		);
+		$content.attr("data-transform-origin", `${verticalOrigin} center`);
 	},
 
 	handleDropdownClick(e) {
@@ -301,7 +287,6 @@ const Dropdown = {
 
 		this.dropdownIdCloseTimer = setTimeout(() => {
 			$content.removeClass("dropdown-fixed");
-			$content.removeAttr("data-transform-origin");
 			if ($content.hasClass("dropdown-animate-hide")) {
 				$content.removeClass("active dropdown-animate-hide").addClass("hidden");
 			}
