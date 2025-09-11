@@ -403,6 +403,7 @@
 										<div class="grid grid-cols-2 gap-3 mt-4 max-xs:grid-cols-1">
 											<button
 												type="button"
+												id="theme-light-link"
 												class="active btn btn-border-default [&.active]:border-blue-500 [&.active]:bg-gray-100"
 											>
 												<svg class="icon icon-md">
@@ -411,6 +412,7 @@
 												<span>Light Theme</span>
 											</button>
 											<button
+												id="theme-dark-link"
 												type="button"
 												class="btn btn-border-default [&.active]:border-blue-500 [&.active]:bg-gray-100"
 											>
@@ -462,9 +464,16 @@
 									class="text-lg text-dark-800 font-semibold flex items-center gap-x-3"
 								>
 									Add your logo
-									<svg class="icon icon-sm cursor-pointer">
-										<use href="#icon-alert"></use>
-									</svg>
+									<span class="tooltip-btn">
+										<svg class="icon icon-sm">
+											<use href="#icon-alert"></use>
+										</svg>
+										<span class="tooltip-body w-[20.5rem]">
+											Upload your logo to promote your brand. Instead of the
+											Jumpshare logo, visitors will see your custom logo on
+											public share links.
+										</span>
+									</span>
 								</h3>
 								<div
 									class="border border-gray-600 rounded-xl p-6 mt-3 max-sm:p-5"
@@ -677,33 +686,60 @@
 								class="w-full h-9.5 bg-gray-150 rounded-lg mt-3.5 grid grid-cols-3 p-1 relative"
 							>
 								<div
-									class="w-1/3 h-[calc(100%-0.5rem)] top-1 left-1 bg-white rounded-sm absolute z-0"
+									class="settings-tab-slider w-1/3 h-[calc(100%-0.5rem)] top-1 left-1 bg-white rounded-sm absolute z-0"
 								></div>
 								<span
 									class="flex items-center justify-center cursor-pointer relative z-1 text-sm font-medium"
+									data-settings-tab-id="tab-file"
 								>
 									File Viewer
 								</span>
 								<span
 									class="flex items-center justify-center cursor-pointer relative z-1 text-sm"
+									data-settings-tab-id="tab-folder"
 								>
 									Folder
 								</span>
 								<span
 									class="flex items-center justify-center cursor-pointer relative z-1 text-sm"
+									data-settings-tab-id="tab-email"
 								>
 									Email
 								</span>
 							</div>
 							<div
-								class="w-full pb-[64%] border border-gray-150 mt-4 rounded-xl bg-white relative overflow-hidden"
+								data-settings-tab-content="tab-file"
+								class="w-full border border-gray-150 mt-4 rounded-xl bg-white relative overflow-hidden"
 							>
 								<img
+									data-theme-light
 									src="./assets/images/settings/preview-file-viewer.png"
-									class="lazy-image h-full w-full object-cover absolute right-0 top-0"
+									class="lazy-image w-full"
 									data-src="./assets/images/settings/preview-file-viewer.png"
 									loading="lazy"
 									data-srcset="./assets/images/settings/preview-file-viewer.png 1x, ./assets/images/settings/preview-file-viewer-2x.png 2x"
+									alt="File viewer"
+								/>
+								<img
+									data-theme-dark
+									src="./assets/images/settings/preview-file-viewer-dark.png"
+									class="lazy-image w-full hidden"
+									data-src="./assets/images/settings/preview-file-viewer-dark.png"
+									loading="lazy"
+									data-srcset="./assets/images/settings/preview-file-viewer-dark.png 1x, ./assets/images/settings/preview-file-viewer-dark-2x.png 2x"
+									alt="File viewer"
+								/>
+							</div>
+							<div
+								data-settings-tab-content="tab-email"
+								class="w-full border border-gray-150 mt-4 rounded-xl bg-white relative overflow-hidden hidden"
+							>
+								<img
+									src="./assets/images/settings/branding-email.png"
+									class="lazy-image w-full"
+									data-src="./assets/images/settings/branding-email.png"
+									loading="lazy"
+									data-srcset="./assets/images/settings/branding-email.png 1x, ./assets/images/settings/branding-email-2x.png 2x"
 									alt="File viewer"
 								/>
 							</div>
@@ -717,8 +753,38 @@
 			integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
 			crossorigin="anonymous"
 		></script>
+		<script>
+			// TODO: rewrite the logic
+			const themeLightLink = $("#theme-light-link");
+			const themeDarkLink = $("#theme-dark-link");
+
+			themeLightLink.on("click", () => {
+				themeDarkLink.removeClass("active");
+				themeLightLink.addClass("active");
+				setTheme("light");
+			});
+			themeDarkLink.on("click", () => {
+				themeLightLink.removeClass("active");
+				themeDarkLink.addClass("active");
+				setTheme("dark");
+			});
+
+			function setTheme(theme) {
+				const dataThemeLight = $("[data-theme-light]");
+				const dataThemeDark = $("[data-theme-dark]");
+
+				if (theme === "light") {
+					dataThemeDark.addClass("hidden");
+					dataThemeLight.removeClass("hidden");
+				} else {
+					dataThemeDark.removeClass("hidden");
+					dataThemeLight.addClass("hidden");
+				}
+			}
+		</script>
 		<script src="./dist/js/sidebar-active-links.js"></script>
 		<script src="./dist/js/mobile-menu.js"></script>
+		<script src="./dist/js/tooltip.js"></script>
 		<script src="./dist/js/bottom-sheet.js"></script>
 		<script src="./dist/js/dialog.js"></script>
 		<script src="./dist/js/menu-tree.js"></script>

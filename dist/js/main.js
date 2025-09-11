@@ -359,9 +359,12 @@ $(document).ready(function () {
 	const tabContents = document.querySelectorAll("[data-settings-tab-content]");
 	const slider = tabNav.querySelector(".settings-tab-slider");
 
-	function activateTab(idx) {
+	function activateTab(idx, type) {
 		tabContents.forEach((el, i) => {
-			el.classList.toggle("hidden", i !== idx);
+			el.classList.toggle(
+				"hidden",
+				type !== el.getAttribute("data-settings-tab-content"),
+			);
 		});
 		tabButtons.forEach((btn, i) => {
 			btn.classList.toggle("text-dark-800", i === idx);
@@ -384,8 +387,10 @@ $(document).ready(function () {
 	}
 
 	tabButtons.forEach((btn, idx) => {
-		btn.addEventListener("click", () => activateTab(idx));
+		btn.addEventListener("click", () =>
+			activateTab(idx, btn.getAttribute("data-settings-tab-id")),
+		);
 	});
 
-	activateTab(0);
+	activateTab(0, tabButtons[0].getAttribute("data-settings-tab-id"));
 });

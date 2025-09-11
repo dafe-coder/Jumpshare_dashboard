@@ -260,7 +260,7 @@
 		animation: dropdownHide 300ms ease forwards !important;
 	}
 	.js-dropdown {
-		@apply bg-white shadow-dropdown border border-gray-400 rounded-lg w-[14rem] absolute top-[calc(100%_+_8px)] right-0 left-auto [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto z-997;
+		@apply bg-white shadow-dropdown border border-gray-400 rounded-lg w-[14rem] absolute top-[calc(100%_+_8px)] right-0 left-auto [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto z-997 lg:opacity-0;
 		.js-dropdown-content {
 			@apply lg:pt-0 lg:max-h-[580px] max-lg:overflow-y-auto px-0 pb-0;
 		}
@@ -484,6 +484,13 @@
 		li {
 			@apply text-sm text-dark-800/60 font-medium cursor-pointer relative before:content-[""] before:absolute before:-bottom-[15px] before:left-0 before:h-0.5 before:bg-blue-500 before:w-[90%] before:scale-x-0 before:transition-all before:duration-300 before:ease-in-out before:origin-left [&.active]:before:scale-x-100 after:content-[attr(data-text)] after:absolute after:inset-0 after:font-semibold after:opacity-0 after:transition-opacity after:duration-300 [&.active]:after:opacity-100 text-nowrap after:text-blue-500 [&.active]:text-transparent  transition-all duration-300;
 		}
+	}
+
+	.tooltip-btn {
+		@apply cursor-pointer relative;
+	}
+	.tooltip-body {
+		@apply bg-white absolute left-0 top-[calc(100%+2px)] z-10 text-sm font-normal p-4 border border-gray-400 rounded-lg shadow-dropdown cursor-default hidden max-w-[calc(100vw-32px)];
 	}
 
 	/* Specific transform-origin for different positions */

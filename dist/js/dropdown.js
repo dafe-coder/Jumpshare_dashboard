@@ -158,6 +158,7 @@ const Dropdown = {
 
 	handleDropdownClick(e) {
 		e.preventDefault();
+		clearTimeout(this.dropdownIdTimer);
 		const $button = $(e.currentTarget);
 		const dropdownId = $button.attr("data-id");
 
@@ -174,7 +175,9 @@ const Dropdown = {
 
 			$button.addClass("active");
 			$wrapper.addClass("active");
-			$content.removeClass("hidden");
+			$content.removeClass(
+				"hidden dropdown-animate-hide dropdown-animate-show",
+			);
 			this.adjustElementPosition($content);
 
 			this.dropdownIdTimer = setTimeout(() => {
@@ -279,8 +282,10 @@ const Dropdown = {
 		this.detachScrollListeners();
 
 		this.dropdownIdCloseAllTimer = setTimeout(() => {
-			$activeDropdown.removeClass("dropdown-animate-hide");
-			$activeDropdown.addClass("hidden");
+			const $stillClosing = this.dropdownContents.filter(
+				".dropdown-animate-hide",
+			);
+			$stillClosing.removeClass("dropdown-animate-hide").addClass("hidden");
 		}, this.config.animationDelay);
 	},
 
@@ -297,7 +302,9 @@ const Dropdown = {
 		this.dropdownIdCloseTimer = setTimeout(() => {
 			$content.removeClass("dropdown-fixed");
 			$content.removeAttr("data-transform-origin");
-			$content.removeClass("active dropdown-animate-hide").addClass("hidden");
+			if ($content.hasClass("dropdown-animate-hide")) {
+				$content.removeClass("active dropdown-animate-hide").addClass("hidden");
+			}
 		}, this.config.animationDelay);
 	},
 
