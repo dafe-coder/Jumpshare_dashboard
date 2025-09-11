@@ -1411,6 +1411,12 @@
   .grid-cols-\[1fr_162px_211px\] {
     grid-template-columns: 1fr 162px 211px;
   }
+  .grid-cols-\[1fr_minmax\(100px\,162px\)_minmax\(110px\,165px\)_116px\] {
+    grid-template-columns: 1fr minmax(100px,162px) minmax(110px,165px) 116px;
+  }
+  .grid-cols-\[1fr_minmax\(100px\,162px\)_minmax\(110px\,170px\)_116px\] {
+    grid-template-columns: 1fr minmax(100px,162px) minmax(110px,170px) 116px;
+  }
   .grid-cols-\[1fr_minmax\(100px\,162px\)_minmax\(110px\,211px\)_116px\] {
     grid-template-columns: 1fr minmax(100px,162px) minmax(110px,211px) 116px;
   }
@@ -1527,6 +1533,9 @@
   }
   .gap-\[1\.125rem\] {
     gap: 1.125rem;
+  }
+  .gap-\[3px\] {
+    gap: 3px;
   }
   .gap-\[5px\] {
     gap: 5px;
@@ -2078,6 +2087,9 @@
   }
   .py-\[3px\] {
     padding-block: 3px;
+  }
+  .py-\[11px\] {
+    padding-block: 11px;
   }
   .py-\[15px\] {
     padding-block: 15px;
