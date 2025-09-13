@@ -1017,6 +1017,12 @@
   .w-64 {
     width: calc(var(--spacing) * 64);
   }
+  .w-75 {
+    width: calc(var(--spacing) * 75);
+  }
+  .w-76 {
+    width: calc(var(--spacing) * 76);
+  }
   .w-80 {
     width: calc(var(--spacing) * 80);
   }
@@ -1130,6 +1136,9 @@
   }
   .w-\[246px\] {
     width: 246px;
+  }
+  .w-\[300px\] {
+    width: 300px;
   }
   .w-\[385px\] {
     width: 385px;
