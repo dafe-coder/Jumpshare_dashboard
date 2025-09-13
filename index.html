@@ -382,8 +382,8 @@
 										<div
 											class="js-dropdown w-[8.75rem] right-0 hidden"
 											data-dropdown-id="who-can-access-menu"
-											data-sheet-modal=""
-											data-overflow-visible=""
+											data-sheet-modal
+											data-overflow-visible
 											data-dropdown-position="right"
 											style="top: 383.75px; left: auto; right: 621.5625px"
 										>
@@ -927,8 +927,8 @@
 								<div
 									class="js-dropdown hidden w-[490px]"
 									data-dropdown-id="privacy-settings-menu"
-									data-sheet-modal=""
-									data-overflow-visible=""
+									data-sheet-modal
+									data-overflow-visible
 								>
 									<div class="js-dropdown-overlay"></div>
 									<div class="js-dropdown-body">
@@ -1601,6 +1601,92 @@
 										</div>
 									</div>
 								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-dialog modal-bs modal-invite-members hidden">
+					<button
+						type="button"
+						class="close pull-right"
+						data-dismiss="modal"
+						data-dialog-close
+					>
+						<span class="icn-close"></span>
+						<span class="sr-only">Close modal</span>
+					</button>
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="text-lg font-semibold">
+								Invite Members to Jumpshare Enterprise
+							</h4>
+							<p class="text-sm text-gray-900 mt-1">
+								Invite teammates to give each one their own private library,
+								access to Spaces, and company-branded sharing. Your Workspace
+								will be billed for new members.
+							</p>
+						</div>
+						<div class="modal-body">
+							<div class="modal-body-content">
+								<div
+									class="flex items-center justify-between border border-gray-600 rounded-xl p-4"
+								>
+									<div class="flex flex-col gap-2">
+										<strong class="text-sm font-semibold">Invite Link</strong>
+										<p class="text-sm text-gray-900">
+											This link will expire after 7 days.
+										</p>
+									</div>
+									<div class="flex gap-3">
+										<button type="button" class="btn btn-primary px-4">
+											Create Link
+										</button>
+										<button
+											type="button"
+											class="btn btn-border-default px-5 hidden"
+										>
+											Delete
+										</button>
+										<button type="button" class="btn btn-primary px-4 hidden">
+											Copy Link
+										</button>
+										<button
+											type="button"
+											class="btn bg-green-400 text-white px-4 hover:bg-green-400/90 hidden"
+										>
+											Copied
+										</button>
+									</div>
+								</div>
+								<div class="flex flex-col mt-6 gap-3">
+									<strong class="text-sm font-semibold"
+										>Invite via Email</strong
+									>
+									<input
+										class="form-control-settings h-12 w-full rounded-lg"
+										type="text"
+										placeholder="Enter email addresses"
+									/>
+									<textarea
+										name="invite-text"
+										id="invite-member-text"
+										class="form-control-settings h-20 w-full rounded-lg"
+										placeholder="Type your message (optional)"
+									></textarea>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<div class="flex items-center justify-between gap-3">
+								<button type="button" class="btn p-0 font-normal">
+									<svg class="icon icon-m">
+										<use href="#icon-members-medium"></use>
+									</svg>
+									Manage members
+								</button>
+								<button type="button" class="btn btn-primary px-5" disabled>
+									Invite Now
+								</button>
 							</div>
 						</div>
 					</div>
@@ -2322,21 +2408,18 @@
 											<div class="js-dropdown-trigger">
 												<span></span>
 											</div>
-											<div class="js-dropdown-content">
+											<div class="js-dropdown-content pt-1.5">
 												<ul>
-													<li class="flex items-center gap-3 p-3.5 pt-1">
-														<div
-															class="size-[42px] rounded-full overflow-hidden"
-														>
+													<li class="flex items-center gap-3 px-3.5 py-3">
+														<div class="size-8 rounded-full overflow-hidden">
 															<img
 																class="size-full object-cover"
 																src="./assets/images/avatar.png"
 																alt="Avatar"
 															/>
 														</div>
-														<div>
-															<span
-																class="text-sm font-semibold text-dark-800 mb-1"
+														<div class="flex flex-col gap-0.5">
+															<span class="text-sm font-semibold text-dark-800"
 																>John Doe</span
 															>
 															<p class="text-dark-800/50 text-xs">
@@ -2344,7 +2427,7 @@
 															</p>
 														</div>
 													</li>
-													<li class="border-b border-gray-500 mt-0 mb-2"></li>
+													<li class="border-b border-gray-500 mb-2 mt-1.5"></li>
 													<li
 														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
 														onclick="window.open('./settings.html', '_self')"
@@ -2416,7 +2499,7 @@
 						>
 							<form
 								action="#"
-								class="h-[2.5625rem] w-full border border-gray-600 rounded-lg relative max-md:h-12"
+								class="h-9.5 w-full border border-gray-600 rounded-lg relative max-md:h-12"
 							>
 								<button
 									aria-label="Toggle navigation"
@@ -2445,28 +2528,143 @@
 									placeholder="Search for people, Files, folder & spaces"
 								/>
 							</form>
-							<div class="flex items-center gap-7">
-								<div class="flex items-center gap-3">
-									<button
-										class="btn min-w-[6.75rem] bg-blue-500/10 text-blue-500 max-md:min-w-auto hover:bg-blue-500/20"
-										type="button"
-									>
-										<svg class="icon icon-sm">
-											<use href="#icon-subscription-filled"></use>
-										</svg>
-										<span class="max-md:hidden">Upgrade</span>
-									</button>
-								</div>
-								<a
-									data-id="dropdown-notifications"
-									href="#"
-									class="dropdown-button size-10 flex justify-center items-center transition-colors hover:bg-gray-150 rounded-lg [&.active]:bg-gray-150 cursor-pointer"
+							<div class="flex items-center gap-3">
+								<button
+									class="btn min-w-[6.75rem] bg-blue-500/10 text-blue-500 max-md:min-w-auto hover:bg-blue-500/20"
+									type="button"
 								>
-									<svg class="icon size-5.5">
-										<use href="#icon-question-in-circle"></use>
+									<svg class="icon icon-sm">
+										<use href="#icon-subscription-filled"></use>
 									</svg>
-									<span class="sr-only">Help Center</span>
-								</a>
+									<span class="max-md:hidden">Upgrade</span>
+								</button>
+								<button
+									type="button"
+									class="btn btn-border-default min-w-[6.75rem]"
+									data-dialog-open-id="invite-members"
+								>
+									<svg class="icon icon-sm">
+										<use href="#icon-user-invite"></use>
+									</svg>
+									Invite
+								</button>
+								<div class="flex items-center gap-x-2">
+									<a
+										data-id="dropdown-notifications"
+										href="#"
+										class="dropdown-button size-10 flex justify-center items-center transition-colors hover:bg-gray-150 rounded-lg [&.active]:bg-gray-150 cursor-pointer"
+									>
+										<svg class="icon size-5.5">
+											<use href="#icon-question-in-circle"></use>
+										</svg>
+										<span class="sr-only">Help Center</span>
+									</a>
+									<div class="dropdown-wrapper">
+										<a
+											href="#"
+											data-id="dropdown-avatar"
+											class="dropdown-button flex gap-1.5 items-center cursor-pointer max-md:pr-3 [&.active]:bg-gray-150 px-2 h-10 rounded-lg"
+										>
+											<div
+												class="size-7.5 rounded-full overflow-hidden bg-gray-200 inset-ring-2 inset-ring-gray-100"
+											>
+												<img src="./assets/images/avatar.png" alt="Avatar" />
+											</div>
+											<svg class="icon icon-xs flex-shrink-0">
+												<use href="#icon-check-bottom"></use>
+											</svg>
+										</a>
+										<div
+											class="js-dropdown w-[15.75rem] right-0 hidden"
+											data-dropdown-id="dropdown-avatar"
+											data-sheet-modal
+											data-overflow-visible
+										>
+											<div class="js-dropdown-overlay"></div>
+											<div class="js-dropdown-body">
+												<div class="js-dropdown-trigger">
+													<span></span>
+												</div>
+												<div class="js-dropdown-content pt-1.5">
+													<ul>
+														<li class="flex items-center gap-3 px-3.5 py-3">
+															<div class="size-8 rounded-full overflow-hidden">
+																<img
+																	class="size-full object-cover"
+																	src="./assets/images/avatar.png"
+																	alt="Avatar"
+																/>
+															</div>
+															<div class="flex flex-col gap-0.5">
+																<span
+																	class="text-sm font-semibold text-dark-800"
+																	>John Doe</span
+																>
+																<p class="text-dark-800/50 text-xs">
+																	johndoe252@cironex.com
+																</p>
+															</div>
+														</li>
+														<li
+															class="border-b border-gray-500 mb-2 mt-1.5"
+														></li>
+														<li
+															class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+															onclick="window.open('./settings.html', '_self')"
+														>
+															<svg class="icon icon-md">
+																<use href="#icon-workspace"></use>
+															</svg>
+															<span>Workspace Settings</span>
+														</li>
+														<li
+															class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+														>
+															<svg class="icon icon-md">
+																<use href="#icon-user"></use>
+															</svg>
+															<span>Profile Settings</span>
+														</li>
+														<li class="border-b border-gray-500 my-2"></li>
+														<li
+															class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+														>
+															<svg class="icon icon-md">
+																<use href="#icon-download"></use>
+															</svg>
+															<span>Install Jumpshare</span>
+														</li>
+														<li
+															class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+														>
+															<svg class="icon icon-md">
+																<use href="#icon-help"></use>
+															</svg>
+															<span>Help Center</span>
+														</li>
+														<li
+															class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+														>
+															<svg class="icon icon-md">
+																<use href="#icon-message-alert"></use>
+															</svg>
+															<span>Send Feedback</span>
+														</li>
+														<li class="border-b border-gray-500 my-2"></li>
+														<li
+															class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+														>
+															<svg class="icon icon-md">
+																<use href="#icon-sign-out"></use>
+															</svg>
+															<span>Sign Out</span>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>

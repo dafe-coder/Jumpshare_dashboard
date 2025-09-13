@@ -96,6 +96,7 @@
     --color-green-20: #ebffee;
     --color-green-25: #d1fae5;
     --color-green-300: #04a25a;
+    --color-green-400: #429d17;
     --color-green-500: #047857;
     --color-green-600: #02741f;
     --color-yellow-500: #fbc045;
@@ -860,6 +861,9 @@
   .h-16 {
     height: calc(var(--spacing) * 16);
   }
+  .h-20 {
+    height: calc(var(--spacing) * 20);
+  }
   .h-21\.5 {
     height: calc(var(--spacing) * 21.5);
   }
@@ -1414,12 +1418,6 @@
   .grid-cols-\[1fr_minmax\(100px\,162px\)_minmax\(110px\,165px\)_116px\] {
     grid-template-columns: 1fr minmax(100px,162px) minmax(110px,165px) 116px;
   }
-  .grid-cols-\[1fr_minmax\(100px\,162px\)_minmax\(110px\,170px\)_116px\] {
-    grid-template-columns: 1fr minmax(100px,162px) minmax(110px,170px) 116px;
-  }
-  .grid-cols-\[1fr_minmax\(100px\,162px\)_minmax\(110px\,211px\)_116px\] {
-    grid-template-columns: 1fr minmax(100px,162px) minmax(110px,211px) 116px;
-  }
   .grid-cols-\[1fr_minmax\(110px\,170px\)_minmax\(100px\,140px\)_minmax\(100px\,125px\)\] {
     grid-template-columns: 1fr minmax(110px,170px) minmax(100px,140px) minmax(100px,125px);
   }
@@ -1911,6 +1909,9 @@
   .bg-green-20 {
     background-color: var(--color-green-20);
   }
+  .bg-green-400 {
+    background-color: var(--color-green-400);
+  }
   .bg-orange-500\/15 {
     background-color: color-mix(in srgb, #fe6e2b 15%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -2099,6 +2100,9 @@
   }
   .pt-1 {
     padding-top: calc(var(--spacing) * 1);
+  }
+  .pt-1\.5 {
+    padding-top: calc(var(--spacing) * 1.5);
   }
   .pt-2 {
     padding-top: calc(var(--spacing) * 2);
@@ -2941,6 +2945,16 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-gray-400);
+      }
+    }
+  }
+  .hover\:bg-green-400\/90 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: color-mix(in srgb, #429d17 90%, transparent);
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--color-green-400) 90%, transparent);
+        }
       }
     }
   }
@@ -7613,9 +7627,15 @@
     padding-inline: calc(var(--spacing) * 4);
     font-size: var(--text-sm);
     line-height: var(--tw-leading, var(--text-sm--line-height));
-    color: var(--color-dark-800);
+    color: var(--color-dark-800) !important;
     outline-style: var(--tw-outline-style);
     outline-width: 0px;
+    &::placeholder {
+      color: color-mix(in srgb, #0a0a0b 60%, transparent);
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, var(--color-dark-800) 60%, transparent);
+      }
+    }
     &:focus-visible {
       border-color: var(--color-blue-500);
     }
