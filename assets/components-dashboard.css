@@ -1,4 +1,7 @@
 @layer components {
+	.btn-white {
+		@apply bg-white;
+	}
 	.dashboard {
 		@apply tracking-base;
 		.btn {

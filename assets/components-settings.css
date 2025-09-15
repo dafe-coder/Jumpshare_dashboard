@@ -35,4 +35,28 @@
 			@apply content-[''] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[calc(100%-2px)] border-white rounded-full bg-current border-[1.5px] transition-all duration-150 ease-in-out;
 		}
 	}
+	.link-settings-list {
+		.link-settings-item {
+			@apply py-6 border-b last:border-b-0 border-gray-400 w-full first:pt-0;
+
+			.link-settings-item__header {
+				@apply flex justify-between items-start gap-3;
+			}
+
+			.link-settings-item__info {
+				@apply flex flex-col gap-0.5;
+
+				strong {
+					@apply text-[14px] flex items-center gap-2;
+				}
+
+				p {
+					@apply text-[14px] text-dark-800/60;
+				}
+			}
+			.link-settings-item__footer {
+				@apply overflow-hidden max-h-0 transition-all duration-150;
+			}
+		}
+	}
 }

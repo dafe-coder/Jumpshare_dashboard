@@ -1691,6 +1691,261 @@
 						</div>
 					</div>
 				</div>
+				<div
+					class="modal-dialog modal-bs modal-request-files1 w-[28.5rem] hidden"
+				>
+					<button
+						type="button"
+						class="close pull-right"
+						data-dismiss="modal"
+						data-dialog-close
+					>
+						<span class="icn-close"></span>
+						<span class="sr-only">Close modal</span>
+					</button>
+					<div class="modal-content">
+						<div class="modal-header pt-8 px-7.5">
+							<h4 class="text-lg font-semibold">Share Request Generated</h4>
+							<p class="text-sm text-gray-900 mt-1">
+								Give this link to people you want to receive videos from
+							</p>
+						</div>
+						<div class="modal-body px-7.5">
+							<div class="modal-body-content">
+								<div
+									class="flex items-center bg-gray-200 rounded-xl py-0.5 pr-1 pl-4 gap-1 mt-3"
+								>
+									<span class="flex-grow-1 truncate text-sm"
+										>https://files.ghaus.me/v/NL9bKllkhregewgdggwq</span
+									>
+									<button
+										type="button"
+										class="btn btn-white px-5 h-10 text-blue-500 flex-shrink-0 rounded-lg"
+									>
+										<svg class="icon icon-s">
+											<use href="#icon-link-medium"></use>
+										</svg>
+										<span>Copy Link</span>
+									</button>
+								</div>
+								<div class="mt-6">
+									<p class="text-sm mb-4">Embed inbox on your website:</p>
+									<div
+										class="flex items-center bg-gray-200 rounded-xl py-0.5 pr-1 pl-4 gap-1"
+									>
+										<span class="flex-grow-1 truncate text-sm"
+											>&lt;iframe name="Jumpshare" height="690"
+											width="100%</span
+										>
+										<button
+											type="button"
+											class="btn btn-white px-5 h-10 text-blue-500 flex-shrink-0 rounded-lg"
+										>
+											<svg class="icon icon-sm">
+												<use href="#icon-embed-code-medium"></use>
+											</svg>
+											<span>Copy Code</span>
+										</button>
+									</div>
+								</div>
+
+								<div class="flex flex-col mt-7.5 gap-4">
+									<strong class="text-sm font-semibold"
+										>Share link via email:</strong
+									>
+									<input
+										class="form-control-settings h-11 w-full rounded-lg"
+										type="text"
+										placeholder="Enter names or email addresses"
+									/>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer pt-4 pb-6 px-7.5">
+							<button
+								type="button"
+								class="btn btn-primary px-5 w-full h-10"
+								disabled
+							>
+								Done
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="modal-dialog modal-bs modal-request-files max-w-[33.75rem]">
+					<button
+						type="button"
+						class="close pull-right"
+						data-dismiss="modal"
+						data-dialog-close
+					>
+						<span class="icn-close"></span>
+						<span class="sr-only">Close modal</span>
+					</button>
+					<div class="modal-content">
+						<div class="modal-header pt-8 px-7.5">
+							<h4 class="text-lg font-semibold flex items-center gap-1.5">
+								<a href="#" aria-label="go back">
+									<svg class="icon icon-md">
+										<use href="#icon-chevron-left"></use>
+									</svg>
+								</a>
+								Advanced Settings
+							</h4>
+						</div>
+						<div class="modal-body px-7.5 pt-6">
+							<div class="modal-body-content">
+								<div class="link-settings-list">
+									<div class="link-settings-item">
+										<div class="link-settings-item__header">
+											<div class="link-settings-item__info">
+												<strong>Submission limit</strong>
+												<p>
+													Limit the number of videos that can be sent via this
+													link
+												</p>
+											</div>
+											<label class="custom-controls switcher">
+												<span
+													class="switcher-label"
+													data-switcher-label-on="On"
+													data-switcher-label-off="Off"
+													>Off</span
+												>
+												<input type="checkbox" name="" id="submission-limit" />
+												<span class="custom-control-indicator"></span>
+											</label>
+										</div>
+										<div class="link-settings-item__footer">
+											<div class="flex items-center mt-4">
+												<input
+													placeholder="0"
+													value="24"
+													type="text"
+													class="form-control-settings w-[11.625rem]"
+												/>
+											</div>
+										</div>
+									</div>
+									<div class="link-settings-item">
+										<div class="link-settings-item__header">
+											<div class="link-settings-item__info">
+												<strong>Submission notifications</strong>
+												<p>
+													Receive email updates when video is added via this
+													link
+												</p>
+											</div>
+											<label class="custom-controls switcher">
+												<span
+													class="switcher-label"
+													data-switcher-label-on="On"
+													data-switcher-label-off="Off"
+													>Off</span
+												>
+												<input
+													type="checkbox"
+													name=""
+													id="submission-notifications"
+												/>
+												<span class="custom-control-indicator"></span>
+											</label>
+										</div>
+									</div>
+									<div class="link-settings-item">
+										<div class="link-settings-item__header">
+											<div class="link-settings-item__info">
+												<strong>Maximum recording length (minutes)</strong>
+												<p>
+													Limit the length of your recipients' video recordings
+												</p>
+											</div>
+											<label class="custom-controls switcher">
+												<span
+													class="switcher-label"
+													data-switcher-label-on="On"
+													data-switcher-label-off="Off"
+													>Off</span
+												>
+												<input
+													type="checkbox"
+													name=""
+													id="maximum-recording-length"
+												/>
+												<span class="custom-control-indicator"></span>
+											</label>
+										</div>
+										<div class="link-settings-item__footer">
+											<div class="flex items-center mt-4">
+												<input
+													placeholder="0"
+													value="16 minutes"
+													type="text"
+													class="form-control-settings w-[11.625rem]"
+												/>
+											</div>
+										</div>
+									</div>
+									<div class="link-settings-item">
+										<div class="link-settings-item__header">
+											<div class="link-settings-item__info">
+												<strong>Disclaimer</strong>
+												<p>Show a disclaimer to people about privacy</p>
+											</div>
+											<label class="custom-controls switcher">
+												<span
+													class="switcher-label"
+													data-switcher-label-on="On"
+													data-switcher-label-off="Off"
+													>Off</span
+												>
+												<input type="checkbox" name="" id="disclaimer" />
+												<span class="custom-control-indicator"></span>
+											</label>
+										</div>
+										<div class="link-settings-item__footer">
+											<div class="flex items-center mt-4">
+												<textarea
+													placeholder="0"
+													value="I affirm that I have the rights to this content, that it complies with all applicable laws and platform guidelines, and that I grant the platform a license to host and distribute it."
+													type="text"
+													class="form-control-settings w-full min-h-24"
+												></textarea>
+											</div>
+										</div>
+									</div>
+									<div class="link-settings-item">
+										<div class="link-settings-item__header">
+											<div class="link-settings-item__info">
+												<strong>Set Expiration</strong>
+												<p>Disable this link after specific period</p>
+											</div>
+											<label class="custom-controls switcher">
+												<span
+													class="switcher-label"
+													data-switcher-label-on="On"
+													data-switcher-label-off="Off"
+													>Off</span
+												>
+												<input type="checkbox" name="" id="expiration" />
+												<span class="custom-control-indicator"></span>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer pt-0 pb-6 px-7.5">
+							<button
+								type="button"
+								class="btn btn-primary px-5 w-full h-10"
+								disabled
+							>
+								Save Settings
+							</button>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div class="modal-backdrop"></div>
 		</div>
@@ -2901,6 +3156,7 @@
 												href="#"
 												data-link-type="grid"
 												class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150"
+												data-dialog-open-id="request-files"
 											>
 												<svg class="icon icon-md">
 													<use href="#icon-request-file"></use>
