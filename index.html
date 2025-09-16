@@ -1692,7 +1692,197 @@
 					</div>
 				</div>
 				<div
-					class="modal-dialog modal-bs modal-request-files1 w-[28.5rem] hidden"
+					class="modal-dialog modal-bs modal-request-files w-[52.25rem] max-w-[52.25rem] hidden"
+				>
+					<button
+						type="button"
+						class="close pull-right"
+						data-dismiss="modal"
+						data-dialog-close
+					>
+						<span class="icn-close"></span>
+						<span class="sr-only">Close modal</span>
+					</button>
+					<div
+						class="modal-content grid grid-cols-[minmax(280px,380px)_minmax(380px,456px)]"
+					>
+						<div class="modal-left-side relative">
+							<img
+								class="absolute left-1/2 top-1/2 -translate-1/2 max-w-[79%]"
+								src="./assets/images/request-video.png"
+								alt="Video screen"
+							/>
+							<img
+								class="size-full object-cover"
+								src="./assets/images/request-file-radial-bg.png"
+								alt="radial bg"
+							/>
+						</div>
+						<div class="modal-right-side">
+							<div class="modal-header pt-8 px-7.5">
+								<h4 class="text-lg font-semibold">Request Video</h4>
+								<p class="text-sm text-gray-900 mt-1">
+									Generate a link for recipients to record videos for you
+									without requiring a Jumpshare account.
+								</p>
+							</div>
+							<div class="modal-body px-7.5">
+								<div class="modal-body-content">
+									<div class="flex flex-col text-sm mb-7.5 mt-3.5">
+										<span class="font-medium">Link Name</span>
+										<p class="text-gray-900 mt-2">
+											Give your link an internal name to keep it organized
+										</p>
+										<input
+											type="text"
+											class="form-control-settings w-full mt-3"
+											placeholder="Enter Name"
+										/>
+									</div>
+									<div class="flex flex-col text-sm mb-7.5">
+										<span class="font-medium">Destination Folder</span>
+										<p class="text-gray-900 mt-2">
+											Your recipient’s video will be saved to this folder
+										</p>
+										<button
+											type="button"
+											class="btn btn-border-default justify-start h-11.5 pl-4 pr-[5px] rounded-lg mt-3"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-folder"></use>
+											</svg>
+											<span class="text-sm"> Personal Library </span>
+											<span
+												class="flex items-center bg-gray-300 rounded-lg h-9 pl-4 pr-3 ml-auto"
+											>
+												<span class="text-[#474748] font-semibold">Change</span>
+												<svg class="icon w-3.5 h-4 ml-1 -rotate-90">
+													<use href="#icon-check-bottom"></use>
+												</svg>
+											</span>
+										</button>
+									</div>
+									<a
+										href="#"
+										class="flex items-center gap-2 text-dark-800"
+										data-dialog-open-id="request-files-settings"
+									>
+										<svg class="icon icon-md">
+											<use href="#icon-cog-medium"></use>
+										</svg>
+										<span class="text-sm font-medium">Advanced Settings</span>
+									</a>
+								</div>
+							</div>
+							<div class="modal-footer pt-7.5 pb-6 px-7.5">
+								<button
+									type="button"
+									class="btn btn-primary px-5 w-full h-10"
+									data-dialog-open-id="request-files-link"
+								>
+									Generate Link
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div
+					class="modal-dialog modal-bs modal-request-video w-[52.25rem] max-w-[52.25rem] hidden"
+				>
+					<button
+						type="button"
+						class="close pull-right"
+						data-dismiss="modal"
+						data-dialog-close
+					>
+						<span class="icn-close"></span>
+						<span class="sr-only">Close modal</span>
+					</button>
+					<div
+						class="modal-content grid grid-cols-[minmax(280px,380px)_minmax(380px,456px)]"
+					>
+						<div class="modal-left-side relative">
+							<img
+								class="absolute left-1/2 top-1/2 -translate-1/2 max-w-[79%]"
+								src="./assets/images/request-files.png"
+								alt="Video screen"
+							/>
+							<img
+								class="size-full object-cover"
+								src="./assets/images/request-file-radial-bg.png"
+								alt="radial bg"
+							/>
+						</div>
+						<div class="modal-right-side">
+							<div class="modal-header pt-8 px-7.5">
+								<h4 class="text-lg font-semibold">Request Files</h4>
+								<p class="text-sm text-gray-900 mt-1">
+									Generate a link for recipients to upload files for you without
+									requiring a Jumpshare account.
+								</p>
+							</div>
+							<div class="modal-body px-7.5">
+								<div class="modal-body-content">
+									<div class="flex flex-col text-sm mb-7.5 mt-3.5">
+										<span class="font-medium">Link Name</span>
+										<p class="text-gray-900 mt-2">
+											Give your link an internal name to keep it organized
+										</p>
+										<input
+											type="text"
+											class="form-control-settings w-full mt-3"
+											placeholder="Enter Name"
+										/>
+									</div>
+									<div class="flex flex-col text-sm mb-7.5">
+										<span class="font-medium">Destination Folder</span>
+										<p class="text-gray-900 mt-2">
+											Your recipient’s files will be saved to this folder
+										</p>
+										<button
+											type="button"
+											class="btn btn-border-default justify-start h-11.5 pl-4 pr-[5px] rounded-lg mt-3"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-folder"></use>
+											</svg>
+											<span class="text-sm"> Personal Library </span>
+											<span
+												class="flex items-center bg-gray-300 rounded-lg h-9 pl-4 pr-3 ml-auto"
+											>
+												<span class="text-[#474748] font-semibold">Change</span>
+												<svg class="icon w-3.5 h-4 ml-1 -rotate-90">
+													<use href="#icon-check-bottom"></use>
+												</svg>
+											</span>
+										</button>
+									</div>
+									<a
+										href="#"
+										class="flex items-center gap-2 text-dark-800"
+										data-dialog-open-id="request-files-settings"
+									>
+										<svg class="icon icon-md">
+											<use href="#icon-cog-medium"></use>
+										</svg>
+										<span class="text-sm font-medium">Advanced Settings</span>
+									</a>
+								</div>
+							</div>
+							<div class="modal-footer pt-7.5 pb-6 px-7.5">
+								<button
+									type="button"
+									class="btn btn-primary px-5 w-full h-10"
+									data-dialog-open-id="request-files-link"
+								>
+									Generate Link
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div
+					class="modal-dialog modal-bs modal-request-files-link w-[28.5rem] hidden"
 				>
 					<button
 						type="button"
@@ -1772,7 +1962,9 @@
 						</div>
 					</div>
 				</div>
-				<div class="modal-dialog modal-bs modal-request-files max-w-[33.75rem]">
+				<div
+					class="modal-dialog modal-bs modal-request-files-settings max-w-[33.75rem] hidden"
+				>
 					<button
 						type="button"
 						class="close pull-right"
@@ -1785,7 +1977,11 @@
 					<div class="modal-content">
 						<div class="modal-header pt-8 px-7.5">
 							<h4 class="text-lg font-semibold flex items-center gap-1.5">
-								<a href="#" aria-label="go back">
+								<a
+									href="#"
+									aria-label="go back"
+									data-dialog-open-id="request-files"
+								>
 									<svg class="icon icon-md">
 										<use href="#icon-chevron-left"></use>
 									</svg>
@@ -1906,7 +2102,7 @@
 										<div class="link-settings-item__footer">
 											<div class="flex items-center mt-4">
 												<textarea
-													placeholder="0"
+													placeholder="Disclaimer Text"
 													value="I affirm that I have the rights to this content, that it complies with all applicable laws and platform guidelines, and that I grant the platform a license to host and distribute it."
 													type="text"
 													class="form-control-settings w-full min-h-24"
@@ -3156,7 +3352,7 @@
 												href="#"
 												data-link-type="grid"
 												class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150"
-												data-dialog-open-id="request-files"
+												data-dialog-open-id="request-video"
 											>
 												<svg class="icon icon-md">
 													<use href="#icon-request-file"></use>
@@ -3167,6 +3363,7 @@
 												href="#"
 												data-link-type="grid"
 												class="flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:bg-gray-150"
+												data-dialog-open-id="request-files"
 											>
 												<svg class="icon icon-md">
 													<use href="#icon-record-video"></use>

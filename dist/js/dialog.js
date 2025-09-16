@@ -31,10 +31,6 @@ const Dialog = {
 			e.preventDefault();
 			e.stopPropagation();
 			const dialogId = $(this).attr("data-dialog-open-id");
-			console.log("[Dialog] open click", {
-				dialogId,
-				isMobile: BottomSheet.isMobile,
-			});
 
 			if (BottomSheet.isMobile) {
 				const body = $dialog.find(`.modal-${dialogId}`);
@@ -68,6 +64,8 @@ const Dialog = {
 			} else {
 				Dropdown.closeAllDropdowns();
 				$dialog.removeClass("hidden");
+				Dialog.closeDialogs();
+
 				$dialog.find(`.modal-${dialogId}`).removeClass("hidden");
 			}
 		});
@@ -75,6 +73,9 @@ const Dialog = {
 
 	openDialog: function ($dialog) {
 		$dialog.removeClass("hidden");
+	},
+	closeDialogs: function () {
+		$(".modal-dialog").addClass("hidden");
 	},
 };
 

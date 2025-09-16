@@ -138,20 +138,6 @@
 			);
 		}
 	}
-	.btn-primary {
-		background-color: var(--color-blue-500);
-		color: var(--color-white);
-		transition: all ease 0.2s;
-		box-shadow: none;
-		border-radius: 8px;
-		&:hover {
-			background-color: color-mix(
-				in srgb,
-				var(--color-blue-500) 90%,
-				transparent
-			);
-		}
-	}
 	.btn-dark {
 		box-shadow:
 			0 1px 2px 0 rgba(18, 35, 69, 0.08),
