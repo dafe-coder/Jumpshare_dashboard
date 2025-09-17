@@ -251,7 +251,7 @@
 		}
 	}
 	.js-dropdown-list-item {
-		@apply text-dark-800 text-sm font-normal flex items-center gap-2 p-2 hover:bg-gray-150 active:bg-gray-150 rounded-md cursor-pointer;
+		@apply text-dark-800 text-sm font-normal flex items-center gap-2 p-2 hover:bg-gray-hovered-150 active:bg-gray-150 rounded-md cursor-pointer;
 	}
 	.js-dropdown-list .js-dropdown-list-item {
 		@apply max-lg:!py-2.5;
@@ -493,7 +493,7 @@
 		@apply cursor-pointer relative;
 	}
 	.tooltip-body {
-		@apply bg-white absolute left-0 top-[calc(100%+2px)] z-10 text-sm font-normal p-4 border border-gray-400 rounded-lg shadow-dropdown cursor-default hidden max-w-[calc(100vw-32px)];
+		@apply bg-white absolute left-0 top-[calc(100%+2px)] z-10 text-sm font-normal p-4 border border-gray-400 rounded-lg shadow-dropdown cursor-default hidden max-w-[calc(100vw-32px)] h-max text-left;
 	}
 
 	.form-control-wrapper {
