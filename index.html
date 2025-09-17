@@ -1617,56 +1617,107 @@
 					</button>
 					<div class="modal-content">
 						<div class="modal-header">
-							<h4 class="text-lg font-semibold">
-								Invite Members to Jumpshare Enterprise
-							</h4>
+							<h4 class="text-lg font-semibold">Invite Members</h4>
 							<p class="text-sm text-gray-900 mt-1">
-								Invite teammates to give each one their own private library,
-								access to Spaces, and company-branded sharing. Your Workspace
-								will be billed for new members.
+								Invite teammates to give them their own library, access to
+								Spaces, and company-branded sharing. New members are billed to
+								your Workspace.
 							</p>
 						</div>
 						<div class="modal-body">
 							<div class="modal-body-content">
-								<div
-									class="flex items-center justify-between border border-gray-600 rounded-xl p-4"
-								>
-									<div class="flex flex-col gap-2">
-										<strong class="text-sm font-semibold">Invite Link</strong>
+								<div class="flex items-center justify-between mt-4">
+									<div class="flex flex-col gap-0.5">
+										<strong class="text-sm font-semibold flex items-center"
+											>Invite via Link
+											<span
+												class="font-normal cursor-pointer px-2 py-1 flex items-center gap-1"
+												>Viewer
+												<svg class="icon icon-sm">
+													<use href="#icon-chevron-down"></use></svg></span
+										></strong>
 										<p class="text-sm text-gray-900">
 											This link will expire after 7 days.
 										</p>
 									</div>
 									<div class="flex gap-3">
-										<button type="button" class="btn btn-primary px-4">
+										<button type="button" class="btn btn-border-default px-4">
 											Create Link
 										</button>
-										<button
-											type="button"
-											class="btn btn-border-default px-5 hidden"
-										>
+										<button type="button" class="btn px-5 hidden">
 											Delete
 										</button>
-										<button type="button" class="btn btn-primary px-4 hidden">
+										<button type="button" class="btn btn-primary px-3.5 hidden">
 											Copy Link
 										</button>
 										<button
 											type="button"
-											class="btn bg-green-400 text-white px-4 hover:bg-green-400/90 hidden"
+											class="btn bg-green-400 text-white px-3.5 hover:bg-green-400/90 hidden"
 										>
 											Copied
 										</button>
 									</div>
 								</div>
-								<div class="flex flex-col mt-6 gap-3">
+								<hr class="my-8 border-px border-gray-600" />
+								<div class="flex flex-col gap-3">
 									<strong class="text-sm font-semibold"
 										>Invite via Email</strong
 									>
-									<input
-										class="form-control-settings h-12 w-full rounded-lg"
-										type="text"
-										placeholder="Enter email addresses"
-									/>
+									<ul
+										class="modal-email-wrapper clearfix acjs-holder relative pr-25"
+									>
+										<li
+											id="share-select-role2"
+											class="absolute top-[5px] right-[5px] dropdown-wrapper"
+										>
+											<button
+												type="button"
+												class="dropdown-button h-8 px-2 text-sm flex items-center gap-1.5 cursor-pointer hover:bg-gray-400 rounded-md"
+												data-id="who-can-access-menu"
+											>
+												<span>Viewer</span>
+												<svg class="icon icon-sm">
+													<use href="#icon-chevron-down"></use>
+												</svg>
+											</button>
+											<div
+												class="js-dropdown w-[8.75rem] right-0 dropdown-fixed hidden"
+												data-dropdown-id="who-can-access-menu"
+												data-sheet-modal=""
+												data-overflow-visible=""
+												data-dropdown-position="right"
+												style="top: 216.602px; left: auto; right: 631.5px"
+												data-transform-origin="top center"
+											>
+												<div class="js-dropdown-overlay"></div>
+												<div class="js-dropdown-body">
+													<div class="js-dropdown-trigger"></div>
+													<div class="js-dropdown-content">
+														<ul class="js-dropdown-list lnk-privacy-menu">
+															<li class="js-dropdown-list-item">
+																<a href="#"> Editor </a>
+															</li>
+															<li class="js-dropdown-list-item">
+																<a href="#"> Viewer </a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="open">
+											<input
+												type="email"
+												name="email_to2"
+												id="email_to2"
+												placeholder="Type name or email address"
+												class="form-control input-slim pull-left acjs-input ac_input"
+												onclick="$('.info-tip').addClass('hide');"
+												style="width: 270px"
+												autocomplete="off"
+											/>
+										</li>
+									</ul>
 									<textarea
 										name="invite-text"
 										id="invite-member-text"
@@ -1676,7 +1727,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="modal-footer">
+						<div class="modal-footer pt-5">
 							<div class="flex items-center justify-between gap-3">
 								<button type="button" class="btn p-0 font-normal">
 									<svg class="icon icon-m">
