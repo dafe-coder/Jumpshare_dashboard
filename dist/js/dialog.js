@@ -35,6 +35,7 @@ const Dialog = {
 			if (BottomSheet.isMobile) {
 				const body = $dialog.find(`.modal-${dialogId}`);
 				const content = body.find(".modal-content");
+				BottomSheet.closeActiveSheet();
 
 				if (dialogId === "email-share-dialog") {
 					BottomSheet.open({
@@ -46,8 +47,8 @@ const Dialog = {
 						scrollBlockElement: body.find(".modal-body"),
 						closeButtonElement: body.find("[data-dialog-close]"),
 						type: "dialog",
-						maxHeight: 90,
-						defaultHeight: 90,
+						maxHeight: 95,
+						defaultHeight: 95,
 					});
 				} else {
 					BottomSheet.open({
