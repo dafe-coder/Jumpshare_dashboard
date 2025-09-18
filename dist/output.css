@@ -340,9 +340,6 @@
   .top-\[calc\(100\%\+10px\)\] {
     top: calc(100% + 10px);
   }
-  .top-\[calc\(100\%\+Npx\)\] {
-    top: calc(100% + Npx);
-  }
   .top-\[calc\(100\%_\+_8px\)\] {
     top: calc(100% + 8px);
   }
@@ -423,9 +420,6 @@
   }
   .bottom-\[calc\(100\%\+10px\)\] {
     bottom: calc(100% + 10px);
-  }
-  .bottom-auto {
-    bottom: auto;
   }
   .-left-6 {
     left: calc(var(--spacing) * -6);
@@ -2390,6 +2384,14 @@
     font-size: var(--text-sm);
     line-height: var(--tw-leading, var(--text-sm--line-height));
   }
+  .text-sm\/\[16px\] {
+    font-size: var(--text-sm);
+    line-height: 16px;
+  }
+  .text-sm\/\[16px\]\! {
+    font-size: var(--text-sm) !important;
+    line-height: 16px !important;
+  }
   .text-sm\/\[20px\] {
     font-size: var(--text-sm);
     line-height: 20px;
@@ -2635,6 +2637,13 @@
   }
   .inset-ring-gray-100 {
     --tw-inset-ring-color: var(--color-gray-100);
+  }
+  .outline-0 {
+    outline-style: var(--tw-outline-style);
+    outline-width: 0px;
+  }
+  .outline-offset-0 {
+    outline-offset: 0px;
   }
   .blur {
     --tw-blur: blur(8px);
@@ -3360,6 +3369,12 @@
       border-bottom-width: 1px;
     }
   }
+  .max-md\:border-none {
+    @media (width < 790px) {
+      --tw-border-style: none;
+      border-style: none;
+    }
+  }
   .max-md\:bg-gray-150 {
     @media (width < 790px) {
       background-color: var(--color-gray-150);
@@ -3862,6 +3877,11 @@
       display: none;
     }
   }
+  .max-sm\:h-19 {
+    @media (width < 40rem) {
+      height: calc(var(--spacing) * 19);
+    }
+  }
   .max-sm\:w-full {
     @media (width < 40rem) {
       width: 100%;
@@ -3880,6 +3900,11 @@
   .max-sm\:grid-cols-2 {
     @media (width < 40rem) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .max-sm\:grid-cols-4 {
+    @media (width < 40rem) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }
   .max-sm\:flex-col {
@@ -3940,6 +3965,11 @@
   .max-sm\:gap-y-5 {
     @media (width < 40rem) {
       row-gap: calc(var(--spacing) * 5);
+    }
+  }
+  .max-sm\:gap-y-6 {
+    @media (width < 40rem) {
+      row-gap: calc(var(--spacing) * 6);
     }
   }
   .max-sm\:gap-y-10 {
@@ -6714,6 +6744,49 @@
       }
       .list-type & {
         right: calc(var(--spacing) * 0);
+      }
+    }
+    .file-item-nav-btn {
+      display: flex;
+      width: calc(var(--spacing) * 6);
+      height: calc(var(--spacing) * 6);
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      border-radius: calc(infinity * 1px);
+      border-color: var(--color-gray-400);
+      background-color: var(--color-white);
+      &:not(.list-type *) {
+        opacity: 0%;
+      }
+      &:is(:where(.group):hover *) {
+        @media (hover: hover) {
+          opacity: 100%;
+        }
+      }
+      &:hover {
+        @media (hover: hover) {
+          background-color: var(--color-gray-300);
+        }
+      }
+      @media (width < 64rem) {
+        opacity: 100% !important;
+      }
+      @media (width < 64rem) {
+        &:not(.list-type *) {
+          border-style: var(--tw-border-style);
+          border-width: 1px;
+        }
+      }
+      .list-type & {
+        background-color: transparent;
+      }
+      .list-type & {
+        &:hover {
+          @media (hover: hover) {
+            background-color: var(--color-gray-400);
+          }
+        }
       }
     }
     .file-item-bottom {
@@ -9907,6 +9980,11 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   inherits: false;
   initial-value: 0 0 #0000;
 }
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @property --tw-blur {
   syntax: "*";
   inherits: false;
@@ -10009,11 +10087,6 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   initial-value: "";
   inherits: false;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @keyframes pulse {
   50% {
     opacity: 0.5;
@@ -10071,6 +10144,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-outline-style: solid;
       --tw-blur: initial;
       --tw-brightness: initial;
       --tw-contrast: initial;
@@ -10096,7 +10170,6 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
       --tw-duration: initial;
       --tw-ease: initial;
       --tw-content: "";
-      --tw-outline-style: solid;
     }
   }
 }

@@ -43,11 +43,14 @@ const Dropdown = {
 		});
 
 		this.dropdownButtons.on("click", (e) => {
+			const $button = $(e.currentTarget);
+			const dropdownId = $button.attr("data-id");
+			if (window.innerWidth < 1024 && dropdownId === "dropdown-grid") {
+				return;
+			}
 			e.preventDefault();
 			e.stopPropagation();
 			e.stopImmediatePropagation();
-			const $button = $(e.currentTarget);
-			const dropdownId = $button.attr("data-id");
 			const $wrapper = $button.closest(".dropdown-wrapper");
 
 			const $sheetModal = $wrapper.find(
@@ -428,6 +431,7 @@ const Dropdown = {
 	initGridDropdown() {
 		$("[data-dropdown-id='dropdown-grid'] a").on("click", (e) => {
 			e.preventDefault();
+			e.stopPropagation();
 			const $button = $(e.currentTarget)
 				.closest(".dropdown-wrapper")
 				.find(".dropdown-button");
@@ -466,12 +470,13 @@ const Dropdown = {
 	},
 
 	initMobileGridDropdown() {
-		$('[data-id="dropdown-grid"]').on("click", (e) => {
-			e.preventDefault();
-			e.stopPropagation();
-			e.stopImmediatePropagation();
+		console.log("=========", $('[data-id="dropdown-grid"]'));
 
+		$('[data-id="dropdown-grid"]').on("click", (e) => {
 			if (window.innerWidth < 1024) {
+				e.preventDefault();
+				e.stopPropagation();
+				e.stopImmediatePropagation();
 				const $button = $(e.currentTarget)
 					.closest(".dropdown-wrapper")
 					.find(".dropdown-button");
