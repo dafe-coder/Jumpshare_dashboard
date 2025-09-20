@@ -90,7 +90,7 @@ $(document).ready(function () {
 
 	selectItem.on("change", function (e) {
 		const selectedItems = selectItem.filter(":checked");
-		$(this).closest("a").toggleClass("active-select");
+		$(this).closest(".folder-item").toggleClass("active-select");
 
 		if (selectedItems.length > 0) {
 			selectWrapper.css("display", "flex");
@@ -104,6 +104,7 @@ $(document).ready(function () {
 			selectWrapper.siblings("div").css("display", "flex");
 			titleLibrary.text(titleLibraryTextDefault);
 			$("[data-content-type]").removeClass("list-select-active");
+			$(".is-select-btn").removeClass("active-select");
 		}
 	});
 
@@ -244,45 +245,32 @@ $(document).ready(function () {
 
 	// Header scroll hide
 	let lastScrollTop = 0;
+	const navTopContainer = $(".nav-top-container");
 	let header = $("header");
-	let headerHeight = header.outerHeight();
-	let isScrolling = false;
-	let documentHeight = $(document).height() - $(window).height();
+	let headerHeight = header[0].offsetHeight;
 
 	$(window).scroll(function () {
-		if (!isScrolling && window.innerWidth < 1024) {
-			window.requestAnimationFrame(function () {
-				let currentScroll = $(window).scrollTop();
+		if (window.innerWidth < 1024) {
+			let currentScroll = $(window).scrollTop();
+			const scrollThreshold = 30;
 
-				if (currentScroll < 0 || currentScroll > documentHeight) {
-					isScrolling = false;
-					return;
-				}
+			if (Math.abs(currentScroll - lastScrollTop) < scrollThreshold) {
+				return;
+			}
 
-				if (Math.abs(currentScroll - lastScrollTop) < 5) {
-					isScrolling = false;
-					return;
-				}
-
-				if (currentScroll > lastScrollTop && currentScroll > headerHeight) {
-					header.css({
-						top: "-100%",
-						transition: "top 0.3s ease",
-					});
-					$(".subheader-nav").addClass("top-0!");
-				} else {
-					header.css({
-						top: "0",
-						transition: "top 0.3s ease",
-					});
-					$(".subheader-nav").removeClass("top-0!");
-				}
-
-				lastScrollTop = currentScroll;
-				isScrolling = false;
-			});
+			if (currentScroll > lastScrollTop && currentScroll > headerHeight) {
+				navTopContainer.css({
+					top: `-${headerHeight}px`,
+					transition: "top 0.3s ease",
+				});
+			} else {
+				navTopContainer.css({
+					top: "0",
+					transition: "top 0.3s ease",
+				});
+			}
+			lastScrollTop = currentScroll;
 		}
-		isScrolling = true;
 	});
 
 	$(window).resize(function () {

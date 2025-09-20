@@ -478,6 +478,9 @@
   .z-51 {
     z-index: 51;
   }
+  .z-52 {
+    z-index: 52;
+  }
   .z-101 {
     z-index: 101;
   }
@@ -814,6 +817,9 @@
   .size-full {
     width: 100%;
     height: 100%;
+  }
+  .h-0 {
+    height: calc(var(--spacing) * 0);
   }
   .h-1 {
     height: calc(var(--spacing) * 1);
@@ -2384,14 +2390,6 @@
     font-size: var(--text-sm);
     line-height: var(--tw-leading, var(--text-sm--line-height));
   }
-  .text-sm\/\[16px\] {
-    font-size: var(--text-sm);
-    line-height: 16px;
-  }
-  .text-sm\/\[16px\]\! {
-    font-size: var(--text-sm) !important;
-    line-height: 16px !important;
-  }
   .text-sm\/\[20px\] {
     font-size: var(--text-sm);
     line-height: 20px;
@@ -3637,6 +3635,11 @@
       left: -100%;
     }
   }
+  .max-lg\:z-100 {
+    @media (width < 64rem) {
+      z-index: 100;
+    }
+  }
   .max-lg\:col-span-2 {
     @media (width < 64rem) {
       grid-column: span 2 / span 2;
@@ -4318,6 +4321,11 @@
       }
     }
   }
+  .\[\&\.active-scroll\]\:pt-0 {
+    &.active-scroll {
+      padding-top: calc(var(--spacing) * 0);
+    }
+  }
   .\[\&\.active-select\]\:bg-gray-300 {
     &.active-select {
       background-color: var(--color-gray-300);
@@ -4331,6 +4339,16 @@
   .\[\&\.grid-type\]\:grid-cols-5 {
     &.grid-type {
       grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+  }
+  .\[\&\.header-scroll\]\:h-0 {
+    &.header-scroll {
+      height: calc(var(--spacing) * 0);
+    }
+  }
+  .\[\&\.header-scroll\]\:pt-0 {
+    &.header-scroll {
+      padding-top: calc(var(--spacing) * 0);
     }
   }
   .\[\&\.list-type\]\:flex {
@@ -7148,6 +7166,7 @@
   }
   .folder-item {
     position: relative;
+    cursor: pointer;
     grid-template-columns: 1fr 7rem 9rem 7.94rem;
     gap: calc(var(--spacing) * 2);
     border-radius: var(--radius-xl);

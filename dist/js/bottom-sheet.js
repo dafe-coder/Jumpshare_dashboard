@@ -99,7 +99,10 @@ const BottomSheet = {
 	},
 
 	lockPageScroll() {
-		$("html").css("padding-right", `${this.scrollbarWidth}px`);
+		const hasVScroll = this.pageHasVerticalScrollbar();
+		if (this.scrollbarWidth > 0 && hasVScroll) {
+			$("html").css("padding-right", `${this.scrollbarWidth}px`);
+		}
 		$("html").addClass("overflow-hidden");
 		this.log("lockPageScroll: initial lock applied");
 	},
@@ -117,6 +120,18 @@ const BottomSheet = {
 			isMobile: this.isMobile,
 			scrollbarWidth: this.scrollbarWidth,
 		});
+	},
+
+	pageHasVerticalScrollbar() {
+		const doc = document.documentElement;
+		const body = document.body;
+		const scrollHeight = Math.max(
+			doc.scrollHeight,
+			doc.offsetHeight,
+			body ? body.scrollHeight : 0,
+			body ? body.offsetHeight : 0,
+		);
+		return scrollHeight > window.innerHeight;
 	},
 
 	bindGlobalEvents() {
