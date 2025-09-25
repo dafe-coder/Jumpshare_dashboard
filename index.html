@@ -2271,7 +2271,7 @@
 					class="flex flex-col max-lg:w-[318px] max-lg:max-w-[318px] max-xs:w-[85%]! w-full bg-gray-150 max-lg:rounded-r-2xl z-3 h-full"
 				>
 					<div
-						class="flex items-center justify-center px-2.5 pt-6 pb-6 gap-2 overflow-hidden max-lg:justify-start"
+						class="flex items-center justify-between px-2.5 pt-6 pb-6 gap-2 overflow-hidden max-lg:justify-start [.active-sidebar_&]:justify-center"
 					>
 						<a href="/" class="aside-logo" aria-label="Home">
 							<svg class="icon h-5.5 w-38 [.active-sidebar_&]:hidden">
@@ -2304,11 +2304,13 @@
 							</svg>
 						</button>
 					</div>
-					<div class="dropdown-wrapper z-4 px-2 mb-5 [.active-sidebar_&]:mb-7">
+					<div
+						class="dropdown-wrapper h-15 w-full flex items-center flex-shrink-0 z-4 px-2 mb-5"
+					>
 						<a
 							href="#"
 							data-id="dropdown-workspaces"
-							class="dropdown-button p-2.5 flex items-center justify-between relative bg-white border border-gray-600 rounded-xl hover:bg-gray-200 [&.active]:bg-gray-200 [.active-sidebar_&]:rounded-lg [.active-sidebar_&]:p-0 [.active-sidebar_&]:border-0 [.active-sidebar_&]:bg-transparent transition-all duration-300 ease-in-out overflow-hidden [.active-sidebar_&]:mt-2"
+							class="dropdown-button p-2.5 flex items-center justify-between relative bg-white border border-gray-600 rounded-xl hover:bg-gray-200 [&.active]:bg-gray-200 [.active-sidebar_&]:rounded-lg [.active-sidebar_&]:p-0 [.active-sidebar_&]:border-0 [.active-sidebar_&]:bg-transparent transition-all duration-300 ease-in-out overflow-hidden w-full"
 						>
 							<div class="flex items-center justify-between mr-2 flex-shrink-0">
 								<div
@@ -2519,10 +2521,8 @@
 								</li>
 							</ul>
 							<hr class="mt-5 mb-3.5 border-gray-600" />
-							<div
-								class="flex items-center justify-between pl-2 [.active-sidebar_&]:pl-0"
-							>
-								<p class="text-sm font-medium text-dark-800/60 truncate">
+							<div class="flex items-center justify-between">
+								<p class="text-sm font-medium text-dark-800/60 truncate pl-2">
 									Spaces
 								</p>
 								<div
@@ -2531,7 +2531,7 @@
 									<button
 										type="button"
 										aria-label="Add Space"
-										class="btn p-0 size-6 text-dark-800 rounded-md hover:bg-gray-300 -mr-2 [.active-sidebar_&]:-mr-0 [.active-sidebar_&]:size-full transition-all duration-150"
+										class="btn p-0 size-6 text-dark-800 rounded-md hover:bg-gray-300 -mr-2 [.active-sidebar_&]:mr-0 [.active-sidebar_&]:-ml-4 flex-shrink-0 [.active-sidebar_&]:size-full transition-[margin,size] duration-150"
 										data-dialog-open-id="create-space"
 									>
 										<svg class="icon icon-s">
@@ -3094,7 +3094,7 @@
 										<a
 											data-id="dropdown-notifications"
 											href="#"
-											class="dropdown-button size-10 flex justify-center items-center transition-colors hover:bg-gray-150 rounded-lg [&.active]:bg-gray-150 cursor-pointer"
+											class="dropdown-button size-10 flex justify-center items-center transition-colors hover:bg-gray-150 rounded-lg [&.active]:bg-gray-150 cursor-pointer max-md:hidden"
 										>
 											<svg class="icon size-5.5">
 												<use href="#icon-question-in-circle"></use>

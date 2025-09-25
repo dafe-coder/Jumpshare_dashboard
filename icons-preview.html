@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>SVG Icons Preview</title>
+		<style>
+			:root {
+				color-scheme: light dark;
+			}
+			body {
+				font-family:
+					ui-sans-serif,
+					system-ui,
+					-apple-system,
+					Segoe UI,
+					Roboto,
+					Helvetica,
+					Arial,
+					"Apple Color Emoji",
+					"Segoe UI Emoji";
+				margin: 0;
+				padding: 24px;
+				color: white;
+			}
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+			.header {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 12px;
+				margin-bottom: 24px;
+			}
+			.grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+				gap: 16px;
+			}
+			.card {
+				border: 1px solid #e5e7eb;
+				border-radius: 8px;
+				padding: 12px;
+				background: #fff;
+				color: #111827;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 10px;
+			}
+			@media (prefers-color-scheme: dark) {
+				body {
+					background: #0b0b0c;
+					color: #f3f4f6;
+				}
+				.card {
+					background: #111214;
+					border-color: #26272b;
+					color: #f3f4f6;
+				}
+				input,
+				select,
+				button {
+					background: #1a1b1e;
+					color: #f3f4f6;
+					border-color: #2a2b30;
+				}
+			}
+			.icon-wrap {
+				width: 48px;
+				height: 48px;
+				display: grid;
+				place-items: center;
+			}
+			.icon-wrap svg {
+				width: 36px;
+				height: 36px;
+			}
+			.label {
+				font-size: 12px;
+				text-align: center;
+				word-break: break-all;
+				line-height: 1.2;
+			}
+			.controls {
+				display: flex;
+				gap: 8px;
+				align-items: center;
+			}
+			.search {
+				padding: 8px 10px;
+				border: 1px solid #e5e7eb;
+				border-radius: 6px;
+				min-width: 260px;
+			}
+			.select {
+				padding: 8px 10px;
+				border: 1px solid #e5e7eb;
+				border-radius: 6px;
+			}
+			.btn {
+				padding: 8px 12px;
+				border: 1px solid #e5e7eb;
+				border-radius: 6px;
+				background: #f9fafb;
+				cursor: pointer;
+				color: black;
+			}
+			.btn:hover {
+				background: #f3f4f6;
+			}
+			.muted {
+				opacity: 0.6;
+				font-size: 12px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<h1>SVG Icons Preview</h1>
+				<div class="controls">
+					<input
+						type="text"
+						id="search"
+						class="search"
+						placeholder="Поиск по id..."
+					/>
+					<select id="size" class="select">
+						<option value="24">24</option>
+						<option value="32">32</option>
+						<option value="40" selected>40</option>
+						<option value="48">48</option>
+						<option value="64">64</option>
+					</select>
+					<button type="button" id="copyAll" class="btn">Скопировать id</button>
+				</div>
+			</div>
+			<div id="status" class="muted">Загрузка спрайта...</div>
+			<div id="grid" class="grid" style="margin-top: 8px"></div>
+		</div>
+
+		<script>
+			const SPRITE_PATH = "assets/icons-sprite.svg";
+			const grid = document.getElementById("grid");
+			const status = document.getElementById("status");
+			const search = document.getElementById("search");
+			const sizeSelect = document.getElementById("size");
+			const copyAllBtn = document.getElementById("copyAll");
+
+			let symbolIds = [];
+
+			async function loadSprite() {
+				try {
+					const res = await fetch(SPRITE_PATH, { cache: "no-store" });
+					if (!res.ok) throw new Error("HTTP " + res.status);
+					const text = await res.text();
+					const parser = new DOMParser();
+					const doc = parser.parseFromString(text, "image/svg+xml");
+					// Вставляем спрайт в DOM, чтобы <use href="#id"> корректно работал
+					let wrapper = document.getElementById("__sprite_wrapper__");
+					if (!wrapper) {
+						wrapper = document.createElement("div");
+						wrapper.id = "__sprite_wrapper__";
+						wrapper.style.display = "none";
+						document.body.prepend(wrapper);
+					}
+					wrapper.innerHTML = "";
+					const spriteEl = doc.documentElement;
+					wrapper.appendChild(spriteEl);
+
+					const symbols = Array.from(spriteEl.querySelectorAll("symbol"));
+					symbolIds = symbols.map((s) => s.id).filter(Boolean);
+					render(symbolIds);
+					status.textContent = `Найдено иконок: ${symbolIds.length}`;
+				} catch (e) {
+					status.textContent =
+						"Ошибка загрузки спрайта. Запустите через локальный сервер.";
+					console.error(e);
+				}
+			}
+
+			function render(ids) {
+				grid.innerHTML = "";
+				const size = Number(sizeSelect.value) || 40;
+				ids.forEach((id) => {
+					const card = document.createElement("div");
+					card.className = "card";
+
+					const wrap = document.createElement("div");
+					wrap.className = "icon-wrap";
+
+					const svg = document.createElementNS(
+						"http://www.w3.org/2000/svg",
+						"svg",
+					);
+					svg.setAttribute("width", size);
+					svg.setAttribute("height", size);
+					svg.setAttribute("class", "icon");
+
+					const use = document.createElementNS(
+						"http://www.w3.org/2000/svg",
+						"use",
+					);
+					use.setAttribute("href", `#${id}`);
+					svg.appendChild(use);
+					wrap.appendChild(svg);
+
+					const label = document.createElement("div");
+					label.className = "label";
+					label.textContent = id;
+
+					const btn = document.createElement("button");
+					btn.className = "btn";
+					btn.textContent = "copy";
+					btn.addEventListener("click", async () => {
+						try {
+							await navigator.clipboard.writeText(id);
+							btn.textContent = "copied";
+							setTimeout(() => (btn.textContent = "copy"), 800);
+						} catch {}
+					});
+
+					card.appendChild(wrap);
+					card.appendChild(label);
+					card.appendChild(btn);
+					grid.appendChild(card);
+				});
+			}
+
+			search.addEventListener("input", () => {
+				const q = search.value.trim().toLowerCase();
+				const filtered = q
+					? symbolIds.filter((id) => id.toLowerCase().includes(q))
+					: symbolIds;
+				render(filtered);
+				status.textContent = `Найдено иконок: ${filtered.length}`;
+			});
+
+			sizeSelect.addEventListener("change", () => {
+				const q = search.value.trim().toLowerCase();
+				const filtered = q
+					? symbolIds.filter((id) => id.toLowerCase().includes(q))
+					: symbolIds;
+				render(filtered);
+			});
+
+			copyAllBtn.addEventListener("click", async () => {
+				const q = search.value.trim().toLowerCase();
+				const filtered = q
+					? symbolIds.filter((id) => id.toLowerCase().includes(q))
+					: symbolIds;
+				try {
+					await navigator.clipboard.writeText(filtered.join("\n"));
+					copyAllBtn.textContent = "скопировано";
+					setTimeout(() => (copyAllBtn.textContent = "Скопировать id"), 1000);
+				} catch {}
+			});
+
+			loadSprite();
+		</script>
+	</body>
+</html>

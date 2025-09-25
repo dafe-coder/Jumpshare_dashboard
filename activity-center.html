@@ -166,13 +166,26 @@
 					class="flex flex-col max-lg:w-[318px] max-lg:max-w-[318px] max-xs:w-[85%]! w-full bg-gray-150 max-lg:rounded-r-2xl z-3 h-full"
 				>
 					<div
-						class="flex items-center justify-center px-2.5 pt-6 pb-6 gap-2 overflow-hidden max-lg:justify-start"
+						class="flex items-center justify-between px-2.5 pt-6 pb-6 gap-2 overflow-hidden max-lg:justify-start [.active-sidebar_&]:justify-center"
 					>
 						<a href="/" class="aside-logo" aria-label="Home">
-							<svg
-								class="icon h-5.5 w-38 [.active-sidebar_&]:w-8 transition-all duration-300 ease-in-out"
-							>
+							<svg class="icon h-5.5 w-38 [.active-sidebar_&]:hidden">
 								<use href="#icon-logo"></use>
+							</svg>
+							<svg
+								class="hidden [.active-sidebar_&]:block"
+								width="34"
+								height="22"
+								viewBox="0 0 34 22"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									fill-rule="evenodd"
+									clip-rule="evenodd"
+									d="M31.0825 3.61846L30.4335 2.76046C30.3486 2.64796 30.2307 2.56531 30.0966 2.52423C29.7837 2.4292 28.948 2.30465 28.5246 2.28355C28.4501 2.27894 28.3779 2.25653 28.3136 2.21817C28.2494 2.17981 28.1953 2.1266 28.1555 2.06293C27.751 1.43439 26.3274 -0.0624484 25.9957 0.00201829C25.6213 0.0748447 25.7542 0.262748 25.8233 0.625473C26.0211 1.66818 26.9273 3.04513 26.9273 3.04513C26.9273 3.04513 26.3413 4.79825 25.3582 4.98936C23.648 5.322 22.0385 2.01524 17.3568 1.98293C5.50112 1.98293 7.29143 18.576 0.576716 18.576C0.0637947 18.576 0.000723159 18.8587 0.000723159 18.9182C0.000723159 19.0389 -0.0595191 19.3202 0.919673 19.3202C8.40387 19.3202 9.47823 9.70147 11.5514 9.70147C12.3104 9.70147 12.2424 11.9953 12.2424 12.7465C12.2424 16.7593 10.607 17.6527 10.607 18.8069C10.607 19.2455 10.8637 19.5519 11.4669 19.8373C13.0132 20.5684 17.3715 22 18.5168 22C19.6621 22 16.6494 19.6627 15.818 19.6627C14.9866 19.6627 13.1509 19.4028 13.1509 18.21C13.1509 16.8774 18.7556 14.4227 18.7556 11.5428C20.1826 11.5428 21.4102 11.3749 22.4762 11.0878C22.6884 11.6085 23.0535 12.5345 23.1236 12.9049C23.1805 13.2049 23.0063 13.6976 22.538 13.7886C22.0697 13.8796 21.1855 14.5197 21.2391 14.8039C21.2927 15.0881 21.9922 15.33 22.4605 15.239C22.9288 15.1481 24.0663 14.7847 24.2176 13.7067C24.2904 13.1886 24.6322 11.1302 25.0304 10.0297C26.9532 8.90295 28.128 7.33255 29.0604 5.97827C29.0973 5.92431 29.1448 5.87853 29.1999 5.8438C29.255 5.80907 29.3166 5.78611 29.3808 5.77635C29.7434 5.67386 30.1181 5.62159 30.4948 5.62096C31.1146 5.62096 31.6723 5.8659 32.0335 5.8659C32.4471 5.8659 32.6806 5.35709 32.6806 5.12171C32.6809 4.43762 31.0825 3.61846 31.0825 3.61846Z"
+									fill="#2F76FF"
+								/>
 							</svg>
 						</a>
 						<button
@@ -187,12 +200,12 @@
 						</button>
 					</div>
 					<div
-						class="dropdown-wrapper z-4 max-md:border-b border-gray-400 px-2 mb-5 [.active-sidebar_&]:mb-7"
+						class="dropdown-wrapper h-15 w-full flex items-center flex-shrink-0 z-4 px-2 mb-5"
 					>
 						<a
 							href="#"
 							data-id="dropdown-workspaces"
-							class="dropdown-button p-2.5 flex items-center justify-between relative bg-white border border-gray-600 rounded-xl hover:bg-gray-200 [&.active]:bg-gray-200 [.active-sidebar_&]:rounded-lg [.active-sidebar_&]:p-0 [.active-sidebar_&]:border-0 [.active-sidebar_&]:bg-transparent transition-all duration-300 ease-in-out overflow-hidden [.active-sidebar_&]:mt-2"
+							class="dropdown-button p-2.5 flex items-center justify-between relative bg-white border border-gray-600 rounded-xl hover:bg-gray-200 [&.active]:bg-gray-200 [.active-sidebar_&]:rounded-lg [.active-sidebar_&]:p-0 [.active-sidebar_&]:border-0 [.active-sidebar_&]:bg-transparent transition-all duration-300 ease-in-out overflow-hidden w-full"
 						>
 							<div class="flex items-center justify-between mr-2 flex-shrink-0">
 								<div
@@ -202,9 +215,11 @@
 								</div>
 							</div>
 							<div class="mr-1.5 flex-grow-1 truncate">
-								<h3 class="text-sm font-semibold text-black mb-0.5 truncate">
+								<strong
+									class="text-sm font-semibold text-black mb-0.5 truncate"
+								>
 									Ghaus’s Workspace
-								</h3>
+								</strong>
 								<ul class="list-with-dots">
 									<li class="relative">
 										<span>23</span>
@@ -217,7 +232,7 @@
 							</svg>
 						</a>
 						<div
-							class="js-dropdown hidden w-[18.75rem] top-[calc(100%+10px)] left-3 rounded-2xl"
+							class="js-dropdown w-76 top-[calc(100%+10px)] left-3 rounded-2xl hidden"
 							data-dropdown-id="dropdown-workspaces"
 							data-sheet-modal
 						>
@@ -290,13 +305,6 @@
 													<li class="relative">23 Members</li>
 												</ul>
 											</div>
-											<span
-												class="hidden text-blue-500 shrink-0 ml-auto [.active-workspace_&]:block"
-											>
-												<svg class="icon icon-md">
-													<use href="#icon-check"></use>
-												</svg>
-											</span>
 										</div>
 										<div
 											class="flex items-center gap-x-3 cursor-pointer rounded-md hover:bg-gray-150 [&.active-workspace]:bg-gray-150 px-2 py-2.5"
@@ -322,13 +330,6 @@
 													<li class="relative">1 Member</li>
 												</ul>
 											</div>
-											<span
-												class="hidden text-blue-500 shrink-0 ml-auto [.active-workspace_&]:block"
-											>
-												<svg class="icon icon-md">
-													<use href="#icon-check"></use>
-												</svg>
-											</span>
 										</div>
 										<div
 											class="group flex items-center px-2 py-1 rounded-md gap-3 cursor-pointer hover:bg-gray-150"
@@ -366,6 +367,14 @@
 									</a>
 								</li>
 								<li>
+									<a href="./activity-center.html" class="aside-nav-item">
+										<svg class="icon icon-md" stroke-width="6">
+											<use href="#icon-bell"></use>
+										</svg>
+										Notification
+									</a>
+								</li>
+								<li>
 									<a href="./favorites.html" class="aside-nav-item">
 										<svg class="icon icon-md" stroke-width="6">
 											<use href="#icon-star-medium"></use>
@@ -382,7 +391,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="./shared.html" class="aside-nav-item">
+									<a href="./history.html" class="aside-nav-item">
 										<svg class="icon icon-md">
 											<use href="#icon-history"></use>
 										</svg>
@@ -405,20 +414,10 @@
 										Trash
 									</a>
 								</li>
-								<li>
-									<a href="./settings.html" class="aside-nav-item">
-										<svg class="icon icon-md">
-											<use href="#icon-cog-medium"></use>
-										</svg>
-										Settings
-									</a>
-								</li>
 							</ul>
 							<hr class="mt-5 mb-3.5 border-gray-600" />
-							<div
-								class="flex items-center justify-between pl-2 [.active-sidebar_&]:pl-0"
-							>
-								<p class="text-sm font-medium text-dark-800/60 truncate">
+							<div class="flex items-center justify-between">
+								<p class="text-sm font-medium text-dark-800/60 truncate pl-2">
 									Spaces
 								</p>
 								<div
@@ -427,7 +426,7 @@
 									<button
 										type="button"
 										aria-label="Add Space"
-										class="btn p-0 size-6 text-dark-800 rounded-md hover:bg-gray-300 -mr-2 [.active-sidebar_&]:-mr-0 [.active-sidebar_&]:size-full transition-all duration-150"
+										class="btn p-0 size-6 text-dark-800 rounded-md hover:bg-gray-300 -mr-2 [.active-sidebar_&]:mr-0 [.active-sidebar_&]:-ml-4 flex-shrink-0 [.active-sidebar_&]:size-full transition-[margin,size] duration-150"
 										data-dialog-open-id="create-space"
 									>
 										<svg class="icon icon-s">
@@ -810,297 +809,15 @@
 						<div class="mt-auto">
 							<hr class="mb-6 border-gray-600" />
 							<ul class="flex flex-col gap-y-1">
-								<li class="dropdown-wrapper">
+								<li>
 									<a
-										data-id="dropdown-notifications"
-										class="dropdown-button aside-nav-item cursor-pointer [&.active]:bg-gray-pressed-150 [&.active]:text-dark-800 relative"
+										class="aside-nav-item cursor-pointer [&.active]:bg-gray-pressed-150 [&.active]:text-dark-800 relative"
 									>
 										<svg class="icon icon-md">
-											<use href="#icon-bell"></use>
+											<use href="#icon-user-invite"></use>
 										</svg>
-										Notifications
-										<span class="aside-notification-badge">5</span>
+										Invite teammates
 									</a>
-									<div
-										class="js-dropdown w-[28.125rem] hidden"
-										data-dropdown-id="dropdown-notifications"
-										data-sheet-modal
-										data-overflow-visible
-									>
-										<div class="js-dropdown-overlay"></div>
-										<div class="js-dropdown-body">
-											<div class="js-dropdown-trigger">
-												<span></span>
-											</div>
-											<div
-												class="js-dropdown-content lg:pt-0 lg:max-h-[580px] lg:overflow-y-auto px-0 pb-0 lg:h-[85vh]"
-											>
-												<div
-													class="flex justify-between items-center px-6 sticky top-0 -mt-1 bg-white lg:rounded-t-lg z-1 lg:pt-4 pb-3 border-b border-gray-400"
-												>
-													<p class="text-base font-semibold text-dark-800">
-														Notifications
-													</p>
-													<a
-														href="#"
-														onclick="window.open('./activity-center.html')"
-														class="text-sm text-blue-500 font-medium"
-														>View All →</a
-													>
-												</div>
-												<ul>
-													<li>
-														<a
-															href="#"
-															class="flex gap-3 items-start px-6 py-4 hover:bg-gray-150"
-														>
-															<div
-																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
-															>
-																<img
-																	class="rounded-full object-cover size-full"
-																	src="./assets/images/avatar.png"
-																	alt="Avatar"
-																/>
-															</div>
-															<div>
-																<p class="text-sm">
-																	Someone viewed
-																	<strong>
-																		Speaker Notes Hover Effect.mp4
-																	</strong>
-																	for the first time
-																</p>
-																<div
-																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
-																>
-																	<span>Feb 6, 2025</span>
-																	<span
-																		class="relative after:content-[&quot;&quot;] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5"
-																		>11:41 pm</span
-																	>
-																</div>
-															</div>
-														</a>
-													</li>
-													<li class="unread">
-														<a
-															href="#"
-															class="flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150"
-														>
-															<div
-																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
-															>
-																<img
-																	class="rounded-full object-cover size-full"
-																	src="./assets/images/avatar.png"
-																	alt="Avatar"
-																/>
-															</div>
-															<div>
-																<p class="text-sm">
-																	Team Member moved Feb 3 - Technical
-																	Development Updates and Feature Planning.mp4
-																	and 1 more items from folder Team Meetings to
-																	folder 2025
-																</p>
-																<div
-																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
-																>
-																	<span>Feb 6, 2025</span>
-																	<span
-																		class="relative after:content-[&quot;&quot;] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5"
-																		>11:41 pm</span
-																	>
-																</div>
-															</div>
-														</a>
-													</li>
-													<li>
-														<a
-															href="#"
-															class="flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150"
-														>
-															<div
-																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
-															>
-																<img
-																	class="rounded-full object-cover size-full"
-																	src="./assets/images/avatar.png"
-																	alt="Avatar"
-																/>
-															</div>
-															<div>
-																<p class="text-sm">
-																	You received _+8= +3 -5 +10 (1) HW.pdf in your
-																	Team Inbox test-zapeir-update from qweqw eqw
-																	(eqwe@asd.we)
-																</p>
-																<div
-																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
-																>
-																	<span>Feb 6, 2025</span>
-																</div>
-															</div>
-														</a>
-													</li>
-													<li>
-														<a
-															href="#"
-															class="flex gap-3 items-start px-6 py-4 hover:bg-gray-150"
-														>
-															<div
-																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
-															>
-																<img
-																	class="rounded-full object-cover size-full"
-																	src="./assets/images/avatar.png"
-																	alt="Avatar"
-																/>
-															</div>
-															<div>
-																<p class="text-sm">
-																	Someone viewed
-																	<strong>
-																		Speaker Notes Hover Effect.mp4
-																	</strong>
-																	for the first time
-																</p>
-																<div
-																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
-																>
-																	<span>Feb 6, 2025</span>
-																	<span
-																		class="relative after:content-[&quot;&quot;] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5"
-																		>11:41 pm</span
-																	>
-																</div>
-															</div>
-														</a>
-													</li>
-													<li class="unread">
-														<a
-															href="#"
-															class="flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150"
-														>
-															<div
-																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
-															>
-																<img
-																	class="rounded-full object-cover size-full"
-																	src="./assets/images/avatar.png"
-																	alt="Avatar"
-																/>
-															</div>
-															<div>
-																<p class="text-sm">
-																	Team Member moved Feb 3 - Technical
-																	Development Updates and Feature Planning.mp4
-																	and 1 more items from folder Team Meetings to
-																	folder 2025
-																</p>
-																<div
-																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
-																>
-																	<span>Feb 6, 2025</span>
-																	<span
-																		class="relative after:content-[&quot;&quot;] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5"
-																		>11:41 pm</span
-																	>
-																</div>
-															</div>
-														</a>
-													</li>
-													<li>
-														<a
-															href="#"
-															class="flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150"
-														>
-															<div
-																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
-															>
-																<img
-																	class="rounded-full object-cover size-full"
-																	src="./assets/images/avatar.png"
-																	alt="Avatar"
-																/>
-															</div>
-															<div>
-																<p class="text-sm">
-																	You received _+8= +3 -5 +10 (1) HW.pdf in your
-																	Team Inbox test-zapeir-update from qweqw eqw
-																	(eqwe@asd.we)
-																</p>
-																<div
-																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
-																>
-																	<span>Feb 6, 2025</span>
-																</div>
-															</div>
-														</a>
-													</li>
-													<li>
-														<a
-															href="#"
-															class="flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150"
-														>
-															<div
-																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
-															>
-																<img
-																	class="rounded-full object-cover size-full"
-																	src="./assets/images/avatar.png"
-																	alt="Avatar"
-																/>
-															</div>
-															<div>
-																<p class="text-sm">
-																	John Dalton added JumpshareInstaller 3.4.5 -
-																	3.exe to folder 3.4.5
-																</p>
-																<div
-																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
-																>
-																	<span>Jue 6, 2024</span>
-																</div>
-															</div>
-														</a>
-													</li>
-													<li>
-														<a
-															href="#"
-															class="flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150"
-														>
-															<div
-																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
-															>
-																<img
-																	class="rounded-full object-cover size-full"
-																	src="./assets/images/avatar.png"
-																	alt="Avatar"
-																/>
-															</div>
-															<div>
-																<p class="text-sm">
-																	Someone viewed Screen Recording 2025-01-23 at
-																	10.0... PM.mp4 for the first time
-																</p>
-																<div
-																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
-																>
-																	<span
-																		class="relative after:content-[&quot;&quot;] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-right-2.5"
-																		>Feb 6</span
-																	>
-																	<span>11:41 pm</span>
-																</div>
-															</div>
-														</a>
-													</li>
-												</ul>
-											</div>
-										</div>
-									</div>
 								</li>
 								<li class="dropdown-wrapper">
 									<a
@@ -1127,21 +844,18 @@
 											<div class="js-dropdown-trigger">
 												<span></span>
 											</div>
-											<div class="js-dropdown-content">
+											<div class="js-dropdown-content pt-1.5">
 												<ul>
-													<li class="flex items-center gap-3 p-3.5 pt-1">
-														<div
-															class="size-[42px] rounded-full overflow-hidden"
-														>
+													<li class="flex items-center gap-3 px-3.5 py-3">
+														<div class="size-8 rounded-full overflow-hidden">
 															<img
 																class="size-full object-cover"
 																src="./assets/images/avatar.png"
 																alt="Avatar"
 															/>
 														</div>
-														<div>
-															<span
-																class="text-sm font-semibold text-dark-800 mb-1"
+														<div class="flex flex-col gap-0.5">
+															<span class="text-sm font-semibold text-dark-800"
 																>John Doe</span
 															>
 															<p class="text-dark-800/50 text-xs">
@@ -1149,9 +863,10 @@
 															</p>
 														</div>
 													</li>
-													<li class="border-b border-gray-500 mt-0 mb-2"></li>
+													<li class="border-b border-gray-500 mb-2 mt-1.5"></li>
 													<li
 														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+														onclick="window.open('./settings.html', '_self')"
 													>
 														<svg class="icon icon-md">
 															<use href="#icon-workspace"></use>
@@ -1211,67 +926,48 @@
 				</div>
 			</aside>
 			<main class="relative max-lg:w-full lg:ml-[240px]">
-				<header
-					class="pt-4 sticky top-0 z-51 bg-white transition-all duration-300"
+				<div
+					class="nav-top-container sticky top-0 z-51 transition-all duration-300 bg-white"
 				>
-					<div class="dashboard-container">
-						<div
-							class="w-full flex items-center justify-between max-md:bg-gray-150 max-md:rounded-lg gap-x-4"
-						>
-							<form
-								action="#"
-								class="max-w-[44.75rem] h-[2.5625rem] w-full bg-gray-150 rounded-lg relative max-md:h-12"
+					<header class="relative pt-4 bg-white">
+						<div class="dashboard-container">
+							<div
+								class="w-full flex items-center justify-between max-md:bg-gray-150 max-md:rounded-lg gap-x-5"
 							>
-								<button
-									aria-label="Toggle navigation"
-									class="hamburger hamburger--squeeze flex lg:hidden! absolute left-0 top-1/2 -translate-y-1/2"
-									type="button"
+								<form
+									action="#"
+									class="h-9.5 w-full border border-gray-600 rounded-lg relative max-md:h-12 max-md:border-none"
 								>
-									<span class="hamburger-box">
-										<span class="hamburger-inner"></span>
-									</span>
-								</button>
-								<button
-									aria-label="Search"
-									type="submit"
-									class="hidden lg:block absolute left-3.5 top-1/2 -translate-y-1/2 cursor-pointer transition-transform transform-gpu hover:scale-105 origin-center text-dark-800"
-								>
-									<svg class="icon icon-xs">
-										<use href="#icon-search"></use>
-									</svg>
-								</button>
-								<input
-									aria-label="Search"
-									required
-									type="text"
-									class="size-full rounded-lg pl-10 pr-4 text-sm max-lg:pl-13"
-									data-mobile-placeholder="Search for files..."
-									placeholder="Search for people, Files, folder & spaces"
-								/>
-							</form>
-							<div class="flex items-center gap-4">
-								<a
-									data-id="dropdown-notifications"
-									href="#"
-									class="dropdown-button size-10 flex justify-center items-center transition-colors hover:bg-gray-150 rounded-lg [&.active]:bg-gray-150 cursor-pointer"
-								>
-									<svg class="icon size-5.5">
-										<use href="#icon-question-in-circle"></use>
-									</svg>
-									<span class="sr-only">Help Center</span>
-								</a>
-								<div class="flex items-center gap-3">
 									<button
-										class="btn btn-border-default min-w-[6.75rem] max-md:min-w-auto"
+										aria-label="Toggle navigation"
+										class="hamburger hamburger--squeeze flex lg:hidden! absolute left-0 top-1/2 -translate-y-1/2"
 										type="button"
 									>
-										<svg class="icon icon-sm">
-											<use href="#icon-user-invite"></use>
-										</svg>
-										<span class="max-md:hidden">Invite</span>
+										<span class="hamburger-box">
+											<span class="hamburger-inner"></span>
+										</span>
 									</button>
 									<button
-										class="btn btn-border-default min-w-[6.75rem] border-blue-500 text-blue-500 max-md:min-w-auto hover:bg-blue-500/5"
+										aria-label="Search"
+										type="submit"
+										class="hidden lg:block absolute left-3.5 top-1/2 -translate-y-1/2 cursor-pointer transition-transform transform-gpu hover:scale-105 origin-center text-dark-800"
+									>
+										<svg class="icon icon-xs">
+											<use href="#icon-search"></use>
+										</svg>
+									</button>
+									<input
+										aria-label="Search"
+										required
+										type="text"
+										class="size-full rounded-lg pl-10 pr-4 text-sm max-lg:pl-13 placeholder:text-dark-800/60 outline-0 outline-offset-0"
+										data-mobile-placeholder="Search for files..."
+										placeholder="Search for people, Files, folder & spaces"
+									/>
+								</form>
+								<div class="flex items-center gap-3">
+									<button
+										class="btn min-w-[6.75rem] bg-blue-500/10 text-blue-500 max-md:min-w-auto hover:bg-blue-500/20 max-md:hidden"
 										type="button"
 									>
 										<svg class="icon icon-sm">
@@ -1280,52 +976,162 @@
 										<span class="max-md:hidden">Upgrade</span>
 									</button>
 									<button
-										class="btn btn-border-default min-w-[6.75rem] border-red-400 text-red-400 max-md:min-w-auto hover:bg-red-400/5"
 										type="button"
+										class="btn btn-border-default min-w-[6.75rem] max-md:hidden"
+										data-dialog-open-id="invite-members"
 									>
-										<span class="record-icon"></span>
-										<span class="max-md:hidden">Record </span>
+										<svg class="icon icon-sm">
+											<use href="#icon-user-invite"></use>
+										</svg>
+										Invite
 									</button>
+									<div class="flex items-center gap-x-2">
+										<a
+											data-id="dropdown-notifications"
+											href="#"
+											class="dropdown-button size-10 flex justify-center items-center transition-colors hover:bg-gray-150 rounded-lg [&.active]:bg-gray-150 cursor-pointer max-md:hidden"
+										>
+											<svg class="icon size-5.5">
+												<use href="#icon-question-in-circle"></use>
+											</svg>
+											<span class="sr-only">Help Center</span>
+										</a>
+										<div class="dropdown-wrapper">
+											<a
+												href="#"
+												data-id="dropdown-avatar"
+												class="dropdown-button flex gap-1.5 items-center cursor-pointer max-md:pr-3 [&.active]:bg-gray-150 px-2 h-10 rounded-lg"
+											>
+												<div
+													class="size-7.5 rounded-full overflow-hidden bg-gray-200 inset-ring-2 inset-ring-gray-100"
+												>
+													<img src="./assets/images/avatar.png" alt="Avatar" />
+												</div>
+												<svg class="icon icon-xs flex-shrink-0">
+													<use href="#icon-check-bottom"></use>
+												</svg>
+											</a>
+											<div
+												class="js-dropdown w-[15.75rem] right-0 hidden"
+												data-dropdown-id="dropdown-avatar"
+												data-sheet-modal
+												data-overflow-visible
+											>
+												<div class="js-dropdown-overlay"></div>
+												<div class="js-dropdown-body">
+													<div class="js-dropdown-trigger">
+														<span></span>
+													</div>
+													<div class="js-dropdown-content pt-1.5">
+														<ul>
+															<li class="flex items-center gap-3 px-3.5 py-3">
+																<div
+																	class="size-8 rounded-full overflow-hidden"
+																>
+																	<img
+																		class="size-full object-cover"
+																		src="./assets/images/avatar.png"
+																		alt="Avatar"
+																	/>
+																</div>
+																<div class="flex flex-col gap-0.5">
+																	<span
+																		class="text-sm font-semibold text-dark-800"
+																		>John Doe</span
+																	>
+																	<p class="text-dark-800/50 text-xs">
+																		johndoe252@cironex.com
+																	</p>
+																</div>
+															</li>
+															<li
+																class="border-b border-gray-500 mb-2 mt-1.5"
+															></li>
+															<li
+																class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+																onclick="window.open('./settings.html', '_self')"
+															>
+																<svg class="icon icon-md">
+																	<use href="#icon-workspace"></use>
+																</svg>
+																<span>Workspace Settings</span>
+															</li>
+															<li
+																class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+															>
+																<svg class="icon icon-md">
+																	<use href="#icon-user"></use>
+																</svg>
+																<span>Profile Settings</span>
+															</li>
+															<li class="border-b border-gray-500 my-2"></li>
+															<li
+																class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+															>
+																<svg class="icon icon-md">
+																	<use href="#icon-download"></use>
+																</svg>
+																<span>Install Jumpshare</span>
+															</li>
+															<li
+																class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+															>
+																<svg class="icon icon-md">
+																	<use href="#icon-help"></use>
+																</svg>
+																<span>Help Center</span>
+															</li>
+															<li
+																class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+															>
+																<svg class="icon icon-md">
+																	<use href="#icon-message-alert"></use>
+																</svg>
+																<span>Send Feedback</span>
+															</li>
+															<li class="border-b border-gray-500 my-2"></li>
+															<li
+																class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+															>
+																<svg class="icon icon-md">
+																	<use href="#icon-sign-out"></use>
+																</svg>
+																<span>Sign Out</span>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-				</header>
-				<div
-					class="subheader-nav transition-all pt-7.5 pb-6 sticky top-[63px] z-50 bg-white max-md:pt-5 duration-300 after:content-[&quot;&quot;] after:absolute after:bottom-1/2 after:left-0 after:right-0 after:w-full after:h-full after:bg-white after:-z-2"
-				>
-					<div class="dashboard-container">
-						<div class="flex justify-between items-center">
+					</header>
+					<div class="subheader-nav pt-10 pb-6 bg-white max-md:pt-5">
+						<div class="dashboard-container">
 							<h2
 								id="title-library"
-								class="text-2xl font-semibold text-dark-800 tracking-normal flex-shrink-0 font-sans-semi"
+								class="text-2xl text-left font-semibold text-dark-800 tracking-normal flex-shrink-0 font-sans-semi"
 							>
-								Activity Center
+								Notifications
 							</h2>
+							<ul class="tabs-nav max-sm:mt-5">
+								<li
+									data-tab-id="activity-tab-general"
+									class="active"
+									data-text="General"
+								>
+									General
+								</li>
+								<li data-tab-id="activity-tab-other" data-text="Shared with me">
+									Shared with me
+								</li>
+								<li data-tab-id="activity-tab-all" data-text="Comments">
+									Comments
+								</li>
+							</ul>
 						</div>
-						<ul class="tabs-nav max-sm:mt-5">
-							<li
-								data-tab-id="activity-tab-general"
-								class="active before:bg-blue-900 after:text-blue-800"
-								data-text="General Activity"
-							>
-								General Activity
-							</li>
-							<li
-								data-tab-id="activity-tab-other"
-								class="before:bg-blue-900 after:text-blue-800"
-								data-text="Other Activity"
-							>
-								Other Activity
-							</li>
-							<li
-								data-tab-id="activity-tab-all"
-								class="before:bg-blue-900 after:text-blue-800"
-								data-text="All"
-							>
-								All
-							</li>
-						</ul>
 					</div>
 				</div>
 				<div class="dashboard-container pb-5">
@@ -1333,167 +1139,750 @@
 						data-tab-content-id="activity-tab-general"
 						class="active hidden [&.active]:block"
 					>
-						<ul class="flex flex-col">
-							<li class="flex items-start gap-4 py-4 px-3">
-								<img
-									class="flex-shrink-0 size-7 rounded-full object-cover"
-									src="./assets/images/avatar.png"
-									alt="Avatar"
-								/>
-								<div class="flex flex-col gap-1">
-									<div
-										class="[&_strong]:font-semibold [&_p]:text-sm! text-dark-800"
-									>
-										<p>
-											Brian Thomas added file
-											<strong>JumpshareInstaller-3.4.5 - 21.exe</strong> to
-											folder 3.4.5
-										</p>
-									</div>
-									<p class="text-xs text-dark-800/70">Mar 23 06:47 AM</p>
+						<div class="flex flex-col">
+							<strong class="text-lg font-semibold mb-10">Today</strong>
+							<div class="flex mb-12 gap-3 w-full">
+								<div
+									class="avatar size-8 bg-[#2FFF66]/15 text-[#02A72E] text-sm font-semibold"
+								>
+									<span>R</span>
 								</div>
-							</li>
-							<li class="flex items-start gap-4 py-4 px-3">
-								<img
-									class="flex-shrink-0 size-7 rounded-full object-cover"
-									src="./assets/images/avatar-2.png"
-									alt="Avatar"
-								/>
-								<div class="flex flex-col gap-1">
-									<div class="[&_strong]:font-semibold text-sm text-dark-800">
-										<p>
-											You received
-											<strong
-												>Screen Recording 2022-12-07 at 12.11.44 PM.mp4</strong
+								<div class="flex flex-col w-[calc(100%-2.73rem)]">
+									<div class="flex items-start justify-between">
+										<div class="flex flex-col max-md:gap-1.5">
+											<p class="text-sm [&>strong]:font-semibold">
+												<strong>Robert Johnson</strong> sent
+												<strong>15 files</strong> to you via
+												<strong>Normal Email System request link</strong>
+											</p>
+											<span class="text-xs text-gray-900"
+												>robert@johnson.com</span
 											>
-											in your Team Inbox
-											<strong>jumpshare-team-inbox</strong> from Peter Steven
-											(petersteven@gmail.com)
-										</p>
+										</div>
+										<span class="text-xs text-gray-900 flex-shrink-0 ml-5"
+											>09:45 AM</span
+										>
 									</div>
-									<p class="text-xs text-dark-800/70">Mar 23 06:47 AM</p>
+									<ul
+										class="flex items-center justify-start gap-2.5 mt-4 flex-wrap"
+									>
+										<li
+											class="btn btn-border-default h-11 px-3 rounded-xl max-w-[20rem] min-w-0 font-normal"
+										>
+											<img
+												class="w-5 flex-shrink-0"
+												src="./assets/images/pdf-default.png"
+												alt="pdf"
+											/>
+											<span class="truncate">Company budget 2024</span>
+										</li>
+										<li
+											class="btn btn-border-default h-11 px-3 rounded-xl max-w-[20rem] min-w-0 font-normal"
+										>
+											<img
+												class="w-5 flex-shrink-0"
+												src="./assets/images/pdf-default.png"
+												alt="pdf"
+											/>
+											<span class="truncate"
+												>Pitch deck for award show and organizeeeee</span
+											>
+										</li>
+										<li
+											class="btn btn-border-default h-11 px-3 rounded-xl max-w-[20rem] min-w-0 font-normal"
+										>
+											<span class="truncate">+13</span>
+										</li>
+									</ul>
 								</div>
-							</li>
-							<li class="flex items-start gap-4 py-4 px-3">
-								<img
-									class="flex-shrink-0 size-7 rounded-full object-cover"
-									src="./assets/images/avatar-3.png"
-									alt="Avatar"
-								/>
-								<div class="flex flex-col gap-1">
-									<div class="[&_strong]:font-semibold text-sm text-dark-800">
-										<p>
-											You renamed file from Copy Text Badge.mp4 to copy text
-											badge copy text badgecopy text badgecopy text badgecopy
-											text badgecopy text <strong>badge.mp4</strong>
-										</p>
+							</div>
+						</div>
+						<div class="flex flex-col">
+							<strong class="text-lg font-semibold mb-10">Yesterday</strong>
+							<div class="flex mb-12 gap-3 w-full">
+								<div
+									class="avatar size-8 bg-[#FF972F]/15 text-[#BC6005] text-sm font-semibold"
+								>
+									<span>S</span>
+								</div>
+								<div class="flex flex-col w-[calc(100%-2.73rem)]">
+									<div class="flex items-start justify-between">
+										<div class="flex flex-col max-md:gap-1.5">
+											<p class="text-sm [&>strong]:font-semibold">
+												<strong>Sam Curran</strong> sent 5 files to you via
+												<strong>Normal Email System</strong> request link
+											</p>
+											<span class="text-xs text-gray-900">sam@curran.com</span>
+										</div>
+										<span class="text-xs text-gray-900 flex-shrink-0 ml-5"
+											>09:45 AM</span
+										>
 									</div>
-									<p class="text-xs text-dark-800/70">Mar 23 06:47 AM</p>
+									<p class="text-sm mt-4">
+										I am sending you some files that you requested, please
+										review and let me know.
+									</p>
+									<ul
+										class="flex items-center justify-start gap-2.5 mt-4 flex-wrap"
+									>
+										<li
+											class="btn btn-border-default h-11 px-3 rounded-xl max-w-[20rem] min-w-0 font-normal"
+										>
+											<img
+												class="w-5 flex-shrink-0"
+												src="./assets/images/pdf-default.png"
+												alt="pdf"
+											/>
+											<span class="truncate"
+												>Screenshot-24042025-Ultra High</span
+											>
+										</li>
+										<li
+											class="btn btn-border-default h-11 px-3 rounded-xl max-w-[20rem] min-w-0 font-normal"
+										>
+											<img
+												class="w-5 flex-shrink-0"
+												src="./assets/images/pdf-default.png"
+												alt="pdf"
+											/>
+											<span class="truncate">3D map for france</span>
+										</li>
+										<li
+											class="btn btn-border-default h-11 px-3 rounded-xl max-w-[20rem] min-w-0 font-normal"
+										>
+											<span class="truncate">+13</span>
+										</li>
+									</ul>
 								</div>
-							</li>
-							<li class="flex items-start gap-4 py-4 px-3">
-								<img
-									class="flex-shrink-0 size-7 rounded-full object-cover"
-									src="./assets/images/avatar-3.png"
-									alt="Avatar"
-								/>
-								<div class="flex flex-col gap-1">
-									<div class="[&_strong]:font-semibold text-sm text-dark-800">
-										<p>
-											You renamed file from Copy Text Badge.mp4 to copy text
-											badge copy text badgecopy text badgecopy text badgecopy
-											text badgecopy text <strong>badge.mp4</strong>
-										</p>
+							</div>
+							<div class="flex mb-12 gap-3 w-full">
+								<div
+									class="avatar size-8 bg-[#2F40FF]/15 text-[#2F40FF] text-sm font-semibold"
+								>
+									<span>J</span>
+								</div>
+								<div class="flex flex-col w-[calc(100%-2.73rem)]">
+									<div class="flex items-start justify-between">
+										<div class="flex flex-col max-md:gap-1.5">
+											<p class="text-sm [&>strong]:font-semibold">
+												<strong>James Tonny</strong> sent a video to you via
+												<strong>New Technologies Receiving 2024</strong>
+											</p>
+											<span class="text-xs text-gray-900"
+												>james@telecomadvisory.com</span
+											>
+										</div>
+										<span class="text-xs text-gray-900 flex-shrink-0 ml-5"
+											>09:45 AM</span
+										>
 									</div>
-									<p class="text-xs text-dark-800/70">Mar 23 06:47 AM</p>
-								</div>
-							</li>
-							<li class="flex items-start gap-4 py-4 px-3">
-								<img
-									class="flex-shrink-0 size-7 rounded-full object-cover"
-									src="./assets/images/avatar-3.png"
-									alt="Avatar"
-								/>
-								<div class="flex flex-col gap-1">
-									<div class="[&_strong]:font-semibold text-sm text-dark-800">
-										<p>
-											You renamed file from Copy Text Badge.mp4 to copy text
-											badge copy text badgecopy text badgecopy text badgecopy
-											text badgecopy text <strong>badge.mp4</strong>
-										</p>
+									<div
+										class="w-55 h-35 rounded-xl overflow-hidden relative mt-4"
+									>
+										<svg
+											class="icon size-9 absolute left-1/2 top-1/2 -translate-1/2"
+										>
+											<use href="#icon-play"></use>
+										</svg>
+										<span
+											class="rounded-md bg-dark-800/80 text-white text-xs absolute bottom-2 right-2 px-2 py-1 font-medium"
+											>4 min</span
+										>
+										<img
+											class="size-full object-cover"
+											src="./assets/images/notifications/video-1.png"
+											alt="video 1"
+										/>
 									</div>
-									<p class="text-xs text-dark-800/70">Mar 23 06:47 AM</p>
 								</div>
-							</li>
-							<li class="flex items-start gap-4 py-4 px-3">
-								<img
-									class="flex-shrink-0 size-7 rounded-full object-cover"
-									src="./assets/images/avatar-3.png"
-									alt="Avatar"
-								/>
-								<div class="flex flex-col gap-1">
-									<div class="[&_strong]:font-semibold text-sm text-dark-800">
-										<p>
-											You renamed file from Copy Text Badge.mp4 to copy text
-											badge copy text badgecopy text badgecopy text badgecopy
-											text badgecopy text <strong>badge.mp4</strong>
-										</p>
+							</div>
+							<div class="flex mb-12 gap-3 w-full">
+								<div
+									class="avatar size-8 bg-[#FF2FBA]/15 text-[#E30C9C] text-sm font-semibold"
+								>
+									<span>S</span>
+								</div>
+								<div class="flex flex-col w-[calc(100%-2.73rem)]">
+									<div class="flex items-start justify-between">
+										<div class="flex flex-col max-md:gap-1.5">
+											<p class="text-sm [&>strong]:font-semibold">
+												<strong>Sophia Robertson</strong> sent a video to you
+												via
+												<strong>New Technologies Receiving 2024</strong> request
+												link
+											</p>
+											<span class="text-xs text-gray-900"
+												>sohpia@rosemarry.com</span
+											>
+										</div>
+										<span class="text-xs text-gray-900 flex-shrink-0 ml-5"
+											>10:15 AM</span
+										>
 									</div>
-									<p class="text-xs text-dark-800/70">Mar 23 06:47 AM</p>
-								</div>
-							</li>
-							<li class="flex items-start gap-4 py-4 px-3">
-								<img
-									class="flex-shrink-0 size-7 rounded-full object-cover"
-									src="./assets/images/avatar-3.png"
-									alt="Avatar"
-								/>
-								<div class="flex flex-col gap-1">
-									<div class="[&_strong]:font-semibold text-sm text-dark-800">
-										<p>
-											You renamed file from Copy Text Badge.mp4 to copy text
-											badge copy text badgecopy text badgecopy text badgecopy
-											text badgecopy text <strong>badge.mp4</strong>
-										</p>
+									<p class="text-sm mt-4">
+										Thanks for allowing me to share the video with you, I’ve
+										recorded a full 20 min session on demand so you can check
+										and watch it carefully.Thanks for allowing me to share te
+										video with you, I’ve recorded a full 20 min session on
+										demand so you can check and watch it carefully.
+									</p>
+									<div
+										class="w-55 h-35 rounded-xl overflow-hidden relative mt-4"
+									>
+										<svg
+											class="icon size-9 absolute left-1/2 top-1/2 -translate-1/2"
+										>
+											<use href="#icon-play"></use>
+										</svg>
+										<span
+											class="rounded-md bg-dark-800/80 text-white text-xs absolute bottom-2 right-2 px-2 py-1 font-medium"
+											>24 min</span
+										>
+										<img
+											class="size-full object-cover"
+											src="./assets/images/notifications/video-2.png"
+											alt="video 1"
+										/>
 									</div>
-									<p class="text-xs text-dark-800/70">Mar 23 06:47 AM</p>
 								</div>
-							</li>
-							<li class="flex items-start gap-4 py-4 px-3">
-								<img
-									class="flex-shrink-0 size-7 rounded-full object-cover"
-									src="./assets/images/avatar-3.png"
-									alt="Avatar"
-								/>
-								<div class="flex flex-col gap-1">
-									<div class="[&_strong]:font-semibold text-sm text-dark-800">
-										<p>
-											You renamed file from Copy Text Badge.mp4 to copy text
-											badge copy text badgecopy text badgecopy text badgecopy
-											text badgecopy text <strong>badge.mp4</strong>
-										</p>
+							</div>
+						</div>
+						<div class="flex flex-col">
+							<strong class="text-lg font-semibold mb-10">April 8, 2025</strong>
+							<div class="mb-12">
+								<div class="flex gap-3 w-full relative">
+									<span
+										class="absolute left-4 bottom-0 bg-gray-600 w-px h-[calc(100%-2.75rem)]"
+									></span>
+									<div
+										class="avatar size-8 bg-[#2F40FF]/15 text-[#2F40FF] text-sm font-semibold"
+									>
+										<span>J</span>
 									</div>
-									<p class="text-xs text-dark-800/70">Mar 23 06:47 AM</p>
-								</div>
-							</li>
-							<li class="flex items-start gap-4 py-4 px-3">
-								<img
-									class="flex-shrink-0 size-7 rounded-full object-cover"
-									src="./assets/images/avatar-3.png"
-									alt="Avatar"
-								/>
-								<div class="flex flex-col gap-1">
-									<div class="[&_strong]:font-semibold text-sm text-dark-800">
-										<p>
-											You renamed file from Copy Text Badge.mp4 to copy text
-											badge copy text badgecopy text badgecopy text badgecopy
-											text badgecopy text <strong>badge.mp4</strong>
-										</p>
+									<div class="flex flex-col w-[calc(100%-2.73rem)]">
+										<div class="flex items-start justify-between">
+											<div class="flex flex-col">
+												<p class="text-sm [&>strong]:font-semibold">
+													<strong>Alfred Whitaker</strong> commented on
+													<strong>All Team Meetings 2024</strong>
+												</p>
+											</div>
+											<span class="text-xs text-gray-900 flex-shrink-0 ml-5"
+												>09:45 AM</span
+											>
+										</div>
+										<div
+											class="w-55 h-35 rounded-xl overflow-hidden relative mt-4"
+										>
+											<svg
+												class="icon size-9 absolute left-1/2 top-1/2 -translate-1/2"
+											>
+												<use href="#icon-play"></use>
+											</svg>
+											<span
+												class="rounded-md bg-dark-800/80 text-white text-xs absolute bottom-2 right-2 px-2 py-1 font-medium"
+												>4 min</span
+											>
+											<img
+												class="size-full object-cover"
+												src="./assets/images/notifications/video-3.png"
+												alt="video 1"
+											/>
+										</div>
+										<ul
+											class="flex flex-col gap-4 mt-4 items-start pr-20 max-md:pr-0"
+										>
+											<li
+												class="border border-gray-600 py-[11px] px-5 text-sm rounded-lg"
+											>
+												I just wanted to let you know what happens at 04:24 in
+												this video, bcs its a bit blurry for me
+											</li>
+										</ul>
 									</div>
-									<p class="text-xs text-dark-800/70">Mar 23 06:47 AM</p>
 								</div>
-							</li>
-						</ul>
+								<div class="relative pl-11 mt-4">
+									<span
+										class="block w-5 h-20 pointer-events-none border-gray-600 border-l border-b rounded-bl-xl absolute left-4 -top-14.5"
+									></span>
+									<button type="button" class="btn btn-border-default px-6">
+										Reply
+									</button>
+								</div>
+							</div>
+							<div class="mb-12">
+								<div class="flex gap-3 w-full relative">
+									<span
+										class="absolute left-4 bottom-0 bg-gray-600 w-px h-[calc(100%-2.75rem)]"
+									></span>
+									<div
+										class="avatar size-8 bg-[#2F40FF]/15 text-[#2F40FF] text-sm font-semibold"
+									>
+										<span>J</span>
+									</div>
+									<div class="flex flex-col w-[calc(100%-2.73rem)]">
+										<div class="flex items-start justify-between">
+											<div class="flex flex-col">
+												<p class="text-sm [&>strong]:font-semibold">
+													<strong>Alfred Whitaker</strong> commented on
+													<strong>All Team Meetings 2024</strong>
+												</p>
+											</div>
+											<span class="text-xs text-gray-900 flex-shrink-0 ml-5"
+												>09:45 AM</span
+											>
+										</div>
+										<div
+											class="w-55 h-35 rounded-xl overflow-hidden relative mt-4"
+										>
+											<svg
+												class="icon size-9 absolute left-1/2 top-1/2 -translate-1/2"
+											>
+												<use href="#icon-play"></use>
+											</svg>
+											<span
+												class="rounded-md bg-dark-800/80 text-white text-xs absolute bottom-2 right-2 px-2 py-1 font-medium"
+												>4 min</span
+											>
+											<img
+												class="size-full object-cover"
+												src="./assets/images/notifications/video-3.png"
+												alt="video 1"
+											/>
+										</div>
+										<ul
+											class="flex flex-col gap-4 mt-4 items-start pr-20 max-md:pr-0"
+										>
+											<li
+												class="border border-gray-600 py-[11px] px-5 text-sm rounded-lg"
+											>
+												I just wanted to let you know what happens at 04:24 in
+												this video, bcs its a bit blurry for meI just wanted to
+												let you know what happens at 04:24 in this video, bcs
+												its a bit blurry for meI just wanted to let you know
+												what happens at 04:24 in this video, bcs its a bit
+												blurry for me
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="relative pl-11 mt-4">
+									<span
+										class="block w-5 h-20 pointer-events-none border-gray-600 border-l border-b rounded-bl-xl absolute left-4 -top-14.5"
+									></span>
+									<div
+										class="border border-blue-500 rounded-xl max-w-[34.375rem] w-full"
+									>
+										<textarea
+											type="text"
+											placeholder="Type text"
+											class="resize-none outline-0 px-3.5 py-3 w-full text-sm"
+											rows="1"
+										></textarea>
+										<div
+											class="flex items-center justify-between px-3 pb-3 pt-1.5"
+										>
+											<div class="flex items-center">
+												<button
+													aria-label="choose smile"
+													type="button"
+													class="btn hover:bg-gray-300 p-0 size-8"
+												>
+													<svg class="icon icon-s">
+														<use href="#icon-smile"></use>
+													</svg>
+												</button>
+												<button
+													aria-label="mention user"
+													type="button"
+													class="btn hover:bg-gray-300 p-0 size-8"
+												>
+													<svg class="icon icon-s">
+														<use href="#icon-mention"></use>
+													</svg>
+												</button>
+											</div>
+											<div class="flex items-center gap-1.5">
+												<button
+													type="button"
+													class="btn hover:bg-gray-300 px-2.5 h-7.5 min-w-[4.1875rem] rounded-lg font-normal"
+												>
+													Cancel
+												</button>
+												<button
+													type="button"
+													class="btn btn-primary h-7.5 min-w-[4.1875rem] rounded-lg"
+												>
+													Post
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="flex flex-col">
+							<strong class="text-lg font-semibold mb-10">May 12, 2025</strong>
+							<div class="flex mb-12 gap-3 w-full">
+								<div
+									class="avatar size-8 bg-[#2F40FF]/15 text-[#2F40FF] text-sm font-semibold"
+								>
+									<img src="./assets/images/avatar-default.png" alt="avatar" />
+								</div>
+								<div class="flex flex-col w-[calc(100%-2.73rem)]">
+									<div class="flex items-start justify-between">
+										<div class="flex flex-col max-md:gap-1.5">
+											<p class="text-sm [&>strong]:font-semibold">
+												<strong>George Cartwright</strong> shared
+												<strong>Assignment preparation</strong> with you from
+												another workspace
+											</p>
+											<span class="text-xs text-gray-900"
+												>george.cartwright@hotmail.com</span
+											>
+										</div>
+										<span class="text-xs text-gray-900 flex-shrink-0 ml-5"
+											>12:45 PM</span
+										>
+									</div>
+									<div
+										class="w-55 h-35 rounded-xl overflow-hidden relative mt-4 border border-gray-500 bg-gray-150 flex items-center justify-center"
+									>
+										<img
+											class="w-13"
+											src="./assets/images/word-default.png"
+											alt="word file"
+										/>
+									</div>
+								</div>
+							</div>
+							<div class="flex mb-12 gap-3 w-full">
+								<div
+									class="avatar size-8 bg-[#2F40FF]/15 text-[#2F40FF] text-sm font-semibold"
+								>
+									<img src="./assets/images/avatar-default.png" alt="avatar" />
+								</div>
+								<div class="flex flex-col w-[calc(100%-2.73rem)]">
+									<div class="flex items-start justify-between">
+										<div class="flex flex-col max-md:gap-1.5">
+											<p class="text-sm [&>strong]:font-semibold">
+												<strong>Oliver Bennett</strong> shared
+												<strong>shared Autocad_2024_24-2 </strong>with you
+											</p>
+											<span class="text-xs text-gray-900"
+												>oliver@jumpshare.com</span
+											>
+										</div>
+										<span class="text-xs text-gray-900 flex-shrink-0 ml-5"
+											>08:00 AM</span
+										>
+									</div>
+									<p class="mt-4 text-sm">
+										Hey David, pls check out the map I sent you, thanks
+									</p>
+									<div
+										class="w-55 h-35 rounded-xl overflow-hidden relative mt-4 border border-gray-500 bg-gray-150 flex items-center justify-center"
+									>
+										<img
+											class="w-13"
+											src="./assets/images/autocad-default.png"
+											alt="word file"
+										/>
+									</div>
+								</div>
+							</div>
+							<div class="flex mb-12 gap-3 w-full">
+								<div
+									class="avatar size-8 bg-[#2F40FF]/15 text-[#2F40FF] text-sm font-semibold"
+								>
+									<img src="./assets/images/avatar-2.png" alt="avatar" />
+								</div>
+								<div class="flex flex-col w-[calc(100%-2.73rem)]">
+									<div class="flex items-start justify-between">
+										<div class="flex flex-col max-md:gap-1.5">
+											<p class="text-sm [&>strong]:font-semibold">
+												<strong>Frederick Lawson</strong> is requesting access
+												to view the file
+												<strong>Budget Collaboration.pdf</strong>
+											</p>
+											<span class="text-xs text-gray-900"
+												>lawson@heritagebuild.co.uk</span
+											>
+										</div>
+										<span class="text-xs text-gray-900 flex-shrink-0 ml-5"
+											>03:15 PM</span
+										>
+									</div>
+									<div class="flex flex-col gap-4 items-start mt-4">
+										<button
+											type="button"
+											class="btn bg-green-400/10 hover:bg-green-400/15 text-green-400 rounded-xl h-10"
+										>
+											<span class="rounded-full size-4 bg-green-400 text-white"
+												><svg class="icon icon-s">
+													<use href="#icon-check"></use>
+												</svg>
+											</span>
+											<span>Request Granted</span>
+										</button>
+										<button
+											type="button"
+											class="btn bg-red-500/10 hover:bg-red-500/15 text-red-500 rounded-xl h-10"
+										>
+											<svg class="icon icon-s">
+												<use href="#icon-error-with-circle"></use>
+											</svg>
+											<span>Request Declined</span>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="flex mb-12 gap-3 w-full">
+								<div
+									class="avatar size-8 bg-[#2FFF66]/15 text-[#02A72E] text-sm font-semibold"
+								>
+									<span>R</span>
+								</div>
+								<div class="flex flex-col w-[calc(100%-2.73rem)]">
+									<div class="flex items-start justify-between">
+										<div class="flex flex-col max-md:gap-1.5">
+											<p class="text-sm [&>strong]:font-semibold">
+												<strong>6 Files</strong> were removed from your account
+												because our antivirus detected it as unsafe (infected)
+											</p>
+											<span class="text-xs text-gray-900"
+												>robert@johnson.com</span
+											>
+										</div>
+										<span class="text-xs text-gray-900 flex-shrink-0 ml-5"
+											>09:45 AM</span
+										>
+									</div>
+									<ul
+										class="flex items-center justify-start gap-2.5 mt-4 flex-wrap"
+										data-disabled
+									>
+										<li
+											class="btn btn-border-default h-11 px-3 rounded-xl max-w-[20rem] min-w-0 font-normal"
+										>
+											<img
+												class="w-5 flex-shrink-0"
+												src="./assets/images/pdf-default.png"
+												alt="pdf"
+											/>
+											<span class="truncate"
+												>Screenshot-24042025-Ultra High</span
+											>
+										</li>
+										<li
+											class="btn btn-border-default h-11 px-3 rounded-xl max-w-[20rem] min-w-0 font-normal"
+										>
+											<img
+												class="w-5 flex-shrink-0"
+												src="./assets/images/pdf-default.png"
+												alt="pdf"
+											/>
+											<span class="truncate"
+												>Pitch deck for award show and organizeeeee</span
+											>
+										</li>
+										<li
+											class="btn btn-border-default h-11 px-3 rounded-xl max-w-[20rem] min-w-0 font-normal"
+										>
+											<span class="truncate">+13</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="flex mb-12 gap-3 w-full">
+								<div
+									class="avatar size-8 bg-blue-500/15 text-blue-500 text-sm font-semibold"
+								>
+									<span>F</span>
+								</div>
+								<div class="flex flex-col w-[calc(100%-2.73rem)]">
+									<div class="flex items-start justify-between">
+										<div class="flex flex-col max-md:gap-1.5">
+											<p class="text-sm [&>strong]:font-semibold">
+												<strong>Frederick Lawson</strong> is requesting access
+												to view the file Budget Collaboration.pdf
+											</p>
+											<span class="text-xs text-gray-900"
+												>lawson@heritagebuild.co.uk</span
+											>
+										</div>
+										<span class="text-xs text-gray-900 flex-shrink-0 ml-5"
+											>09:45 AM</span
+										>
+									</div>
+									<ul
+										class="flex items-center justify-start gap-2.5 mt-4 flex-wrap"
+									>
+										<li
+											class="btn btn-border-default h-11 px-3 rounded-xl max-w-[20rem] min-w-0 font-normal"
+										>
+											<img
+												class="w-5 flex-shrink-0"
+												src="./assets/images/pdf-default.png"
+												alt="pdf"
+											/>
+											<span class="truncate">Company budget 2024</span>
+										</li>
+									</ul>
+									<div class="flex items-center gap-3 mt-4">
+										<button
+											type="button"
+											class="btn btn-border-default px-5 rounded-lg"
+										>
+											Decline
+										</button>
+										<button
+											type="button"
+											class="btn btn-primary px-6 rounded-lg"
+										>
+											Accept
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="flex flex-col">
+							<strong class="text-lg font-semibold mb-10">April 8, 2025</strong>
+							<div class="mb-12">
+								<div class="flex gap-3 w-full relative">
+									<span
+										class="absolute left-4 bottom-0 bg-gray-600 w-px h-[calc(100%-2.75rem)]"
+									></span>
+									<div
+										class="avatar size-8 bg-[#2F40FF]/15 text-[#2F40FF] text-sm font-semibold"
+									>
+										<span>J</span>
+									</div>
+									<div class="flex flex-col w-[calc(100%-2.73rem)]">
+										<div class="flex items-start justify-between">
+											<div class="flex flex-col">
+												<p class="text-sm [&>strong]:font-semibold">
+													<strong>Alfred Whitaker</strong> commented on
+													<strong>All Team Meetings 2024</strong>
+												</p>
+											</div>
+											<span class="text-xs text-gray-900 flex-shrink-0 ml-5"
+												>09:45 AM</span
+											>
+										</div>
+										<div
+											class="w-55 h-35 rounded-xl overflow-hidden relative mt-4"
+										>
+											<svg
+												class="icon size-9 absolute left-1/2 top-1/2 -translate-1/2"
+											>
+												<use href="#icon-play"></use>
+											</svg>
+											<span
+												class="rounded-md bg-dark-800/80 text-white text-xs absolute bottom-2 right-2 px-2 py-1 font-medium"
+												>4 min</span
+											>
+											<img
+												class="size-full object-cover"
+												src="./assets/images/notifications/video-3.png"
+												alt="video 1"
+											/>
+										</div>
+										<ul
+											class="flex flex-col gap-4 mt-4 items-start pr-20 max-md:pr-0"
+										>
+											<li
+												class="border border-gray-600 py-[11px] px-5 text-sm rounded-lg"
+											>
+												I just wanted to let you know what happens at 04:24 in
+												this video, bcs its a bit blurry for me
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="relative pl-11 mt-4">
+									<span
+										class="block w-5 h-20 pointer-events-none border-gray-600 border-l border-b rounded-bl-xl absolute left-4 -top-14.5"
+									></span>
+									<button type="button" class="btn btn-border-default px-6">
+										Reply
+									</button>
+								</div>
+							</div>
+							<div class="mb-12">
+								<div class="flex gap-3 w-full relative">
+									<span
+										class="absolute left-4 bottom-0 bg-gray-600 w-px h-[calc(100%-2.75rem)]"
+									></span>
+									<div
+										class="avatar size-8 bg-[#2F40FF]/15 text-[#2F40FF] text-sm font-semibold"
+									>
+										<span>J</span>
+									</div>
+									<div class="flex flex-col w-[calc(100%-2.73rem)]">
+										<div class="flex items-start justify-between">
+											<div class="flex flex-col">
+												<p class="text-sm [&>strong]:font-semibold">
+													<strong>Alfred Whitaker</strong> commented on
+													<strong>All Team Meetings 2024</strong>
+												</p>
+											</div>
+											<span class="text-xs text-gray-900 flex-shrink-0 ml-5"
+												>09:45 AM</span
+											>
+										</div>
+										<div
+											class="w-55 h-35 rounded-xl overflow-hidden relative mt-4"
+										>
+											<svg
+												class="icon size-9 absolute left-1/2 top-1/2 -translate-1/2"
+											>
+												<use href="#icon-play"></use>
+											</svg>
+											<span
+												class="rounded-md bg-dark-800/80 text-white text-xs absolute bottom-2 right-2 px-2 py-1 font-medium"
+												>4 min</span
+											>
+											<img
+												class="size-full object-cover"
+												src="./assets/images/notifications/video-3.png"
+												alt="video 1"
+											/>
+										</div>
+										<ul
+											class="flex flex-col gap-4 mt-4 items-start pr-20 max-md:pr-0"
+										>
+											<li
+												class="border border-gray-600 py-[11px] px-5 text-sm rounded-lg"
+											>
+												I just wanted to let you know what happens at 04:24 in
+												this video, bcs its a bit blurry for me|
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="relative pl-11 mt-7.5">
+									<span
+										class="block w-5 h-20 pointer-events-none border-gray-600 border-l border-b rounded-bl-xl absolute left-4 -top-14.5"
+									></span>
+									<div class="flex gap-3">
+										<div class="avatar">
+											<img src="./assets/images/avatar-3.png" alt="Avatar" />
+										</div>
+										<div class="flex flex-col gap-1.5 pt-1">
+											<strong class="font-semibold text-sm"
+												>James Falkon</strong
+											>
+											<p class="text-sm">
+												Thanks for letting me know. I wasn’t aware that my
+												recording was blurry. I will get this fixed and reshare
+												it with you.
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 					<div
 						data-tab-content-id="activity-tab-other"
