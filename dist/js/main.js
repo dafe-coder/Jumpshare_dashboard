@@ -55,7 +55,7 @@ $(document).ready(function () {
 	collapseSidebarBtn.on("click", function (e) {
 		e.preventDefault();
 		const sidebar = $("aside");
-		sidebar.toggleClass("active-sidebar");
+		$("body").toggleClass("active-sidebar");
 		collapseSidebarBtn.toggleClass("active-collapse-sidebar-btn");
 
 		if (sidebar.width() === 240) {

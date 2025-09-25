@@ -925,7 +925,9 @@
 					</div>
 				</div>
 			</aside>
-			<main class="relative max-lg:w-full lg:ml-[240px]">
+			<main
+				class="relative max-lg:w-full lg:ml-60 lg:[.active-sidebar_&]:ml-16 transition-all duration-500"
+			>
 				<div
 					class="nav-top-container sticky top-0 z-51 transition-all duration-300 bg-white"
 				>
@@ -1155,7 +1157,7 @@
 												<strong>15 files</strong> to you via
 												<strong>Normal Email System request link</strong>
 											</p>
-											<span class="text-xs text-gray-900"
+											<span class="text-[13px] text-gray-900"
 												>robert@johnson.com</span
 											>
 										</div>
@@ -1212,7 +1214,9 @@
 												<strong>Sam Curran</strong> sent 5 files to you via
 												<strong>Normal Email System</strong> request link
 											</p>
-											<span class="text-xs text-gray-900">sam@curran.com</span>
+											<span class="text-[13px] text-gray-900"
+												>sam@curran.com</span
+											>
 										</div>
 										<span class="text-xs text-gray-900 flex-shrink-0 ml-5"
 											>09:45 AM</span
@@ -1268,7 +1272,7 @@
 												<strong>James Tonny</strong> sent a video to you via
 												<strong>New Technologies Receiving 2024</strong>
 											</p>
-											<span class="text-xs text-gray-900"
+											<span class="text-[13px] text-gray-900"
 												>james@telecomadvisory.com</span
 											>
 										</div>
@@ -1311,7 +1315,7 @@
 												<strong>New Technologies Receiving 2024</strong> request
 												link
 											</p>
-											<span class="text-xs text-gray-900"
+											<span class="text-[13px] text-gray-900"
 												>sohpia@rosemarry.com</span
 											>
 										</div>
@@ -1396,67 +1400,6 @@
 												class="border border-gray-600 py-[11px] px-5 text-sm rounded-lg"
 											>
 												I just wanted to let you know what happens at 04:24 in
-												this video, bcs its a bit blurry for me
-											</li>
-										</ul>
-									</div>
-								</div>
-								<div class="relative pl-11 mt-4">
-									<span
-										class="block w-5 h-20 pointer-events-none border-gray-600 border-l border-b rounded-bl-xl absolute left-4 -top-14.5"
-									></span>
-									<button type="button" class="btn btn-border-default px-6">
-										Reply
-									</button>
-								</div>
-							</div>
-							<div class="mb-12">
-								<div class="flex gap-3 w-full relative">
-									<span
-										class="absolute left-4 bottom-0 bg-gray-600 w-px h-[calc(100%-2.75rem)]"
-									></span>
-									<div
-										class="avatar size-8 bg-[#2F40FF]/15 text-[#2F40FF] text-sm font-semibold"
-									>
-										<span>J</span>
-									</div>
-									<div class="flex flex-col w-[calc(100%-2.73rem)]">
-										<div class="flex items-start justify-between">
-											<div class="flex flex-col">
-												<p class="text-sm [&>strong]:font-semibold">
-													<strong>Alfred Whitaker</strong> commented on
-													<strong>All Team Meetings 2024</strong>
-												</p>
-											</div>
-											<span class="text-xs text-gray-900 flex-shrink-0 ml-5"
-												>09:45 AM</span
-											>
-										</div>
-										<div
-											class="w-55 h-35 rounded-xl overflow-hidden relative mt-4"
-										>
-											<svg
-												class="icon size-9 absolute left-1/2 top-1/2 -translate-1/2"
-											>
-												<use href="#icon-play"></use>
-											</svg>
-											<span
-												class="rounded-md bg-dark-800/80 text-white text-xs absolute bottom-2 right-2 px-2 py-1 font-medium"
-												>4 min</span
-											>
-											<img
-												class="size-full object-cover"
-												src="./assets/images/notifications/video-3.png"
-												alt="video 1"
-											/>
-										</div>
-										<ul
-											class="flex flex-col gap-4 mt-4 items-start pr-20 max-md:pr-0"
-										>
-											<li
-												class="border border-gray-600 py-[11px] px-5 text-sm rounded-lg"
-											>
-												I just wanted to let you know what happens at 04:24 in
 												this video, bcs its a bit blurry for meI just wanted to
 												let you know what happens at 04:24 in this video, bcs
 												its a bit blurry for meI just wanted to let you know
@@ -1470,8 +1413,16 @@
 									<span
 										class="block w-5 h-20 pointer-events-none border-gray-600 border-l border-b rounded-bl-xl absolute left-4 -top-14.5"
 									></span>
+									<button
+										type="button"
+										class="btn btn-border-default px-6"
+										id="activity-reply-button"
+									>
+										Reply
+									</button>
 									<div
-										class="border border-blue-500 rounded-xl max-w-[34.375rem] w-full"
+										id="activity-reply-textarea"
+										class="border border-blue-500 rounded-xl max-w-[34.375rem] w-full hidden"
 									>
 										<textarea
 											type="text"
@@ -1506,6 +1457,7 @@
 												<button
 													type="button"
 													class="btn hover:bg-gray-300 px-2.5 h-7.5 min-w-[4.1875rem] rounded-lg font-normal"
+													id="activity-cancel-button"
 												>
 													Cancel
 												</button>
@@ -1537,7 +1489,7 @@
 												<strong>Assignment preparation</strong> with you from
 												another workspace
 											</p>
-											<span class="text-xs text-gray-900"
+											<span class="text-[13px] text-gray-900"
 												>george.cartwright@hotmail.com</span
 											>
 										</div>
@@ -1569,7 +1521,7 @@
 												<strong>Oliver Bennett</strong> shared
 												<strong>shared Autocad_2024_24-2 </strong>with you
 											</p>
-											<span class="text-xs text-gray-900"
+											<span class="text-[13px] text-gray-900"
 												>oliver@jumpshare.com</span
 											>
 										</div>
@@ -1605,7 +1557,7 @@
 												to view the file
 												<strong>Budget Collaboration.pdf</strong>
 											</p>
-											<span class="text-xs text-gray-900"
+											<span class="text-[13px] text-gray-900"
 												>lawson@heritagebuild.co.uk</span
 											>
 										</div>
@@ -1613,10 +1565,11 @@
 											>03:15 PM</span
 										>
 									</div>
-									<div class="flex flex-col gap-4 items-start mt-4">
+									<div class="flex gap-3 items-center mt-4">
 										<button
 											type="button"
-											class="btn bg-green-400/10 hover:bg-green-400/15 text-green-400 rounded-xl h-10"
+											class="btn bg-green-400/10 hover:bg-green-400/15 text-green-400 rounded-xl h-10 pointer-events-none hidden"
+											id="activity-request-granted"
 										>
 											<span class="rounded-full size-4 bg-green-400 text-white"
 												><svg class="icon icon-s">
@@ -1627,12 +1580,27 @@
 										</button>
 										<button
 											type="button"
-											class="btn bg-red-500/10 hover:bg-red-500/15 text-red-500 rounded-xl h-10"
+											class="btn bg-red-500/10 hover:bg-red-500/15 text-red-500 rounded-xl h-10 pointer-events-none hidden"
+											id="activity-request-declined"
 										>
 											<svg class="icon icon-s">
 												<use href="#icon-error-with-circle"></use>
 											</svg>
 											<span>Request Declined</span>
+										</button>
+										<button
+											type="button"
+											class="btn btn-border-default px-5 rounded-lg"
+											id="activity-request-declined-btn"
+										>
+											Decline
+										</button>
+										<button
+											type="button"
+											class="btn btn-primary px-6 rounded-lg"
+											id="activity-request-granted-btn"
+										>
+											Accept
 										</button>
 									</div>
 								</div>
@@ -1650,7 +1618,7 @@
 												<strong>6 Files</strong> were removed from your account
 												because our antivirus detected it as unsafe (infected)
 											</p>
-											<span class="text-xs text-gray-900"
+											<span class="text-[13px] text-gray-900"
 												>robert@johnson.com</span
 											>
 										</div>
@@ -1694,121 +1662,9 @@
 									</ul>
 								</div>
 							</div>
-							<div class="flex mb-12 gap-3 w-full">
-								<div
-									class="avatar size-8 bg-blue-500/15 text-blue-500 text-sm font-semibold"
-								>
-									<span>F</span>
-								</div>
-								<div class="flex flex-col w-[calc(100%-2.73rem)]">
-									<div class="flex items-start justify-between">
-										<div class="flex flex-col max-md:gap-1.5">
-											<p class="text-sm [&>strong]:font-semibold">
-												<strong>Frederick Lawson</strong> is requesting access
-												to view the file Budget Collaboration.pdf
-											</p>
-											<span class="text-xs text-gray-900"
-												>lawson@heritagebuild.co.uk</span
-											>
-										</div>
-										<span class="text-xs text-gray-900 flex-shrink-0 ml-5"
-											>09:45 AM</span
-										>
-									</div>
-									<ul
-										class="flex items-center justify-start gap-2.5 mt-4 flex-wrap"
-									>
-										<li
-											class="btn btn-border-default h-11 px-3 rounded-xl max-w-[20rem] min-w-0 font-normal"
-										>
-											<img
-												class="w-5 flex-shrink-0"
-												src="./assets/images/pdf-default.png"
-												alt="pdf"
-											/>
-											<span class="truncate">Company budget 2024</span>
-										</li>
-									</ul>
-									<div class="flex items-center gap-3 mt-4">
-										<button
-											type="button"
-											class="btn btn-border-default px-5 rounded-lg"
-										>
-											Decline
-										</button>
-										<button
-											type="button"
-											class="btn btn-primary px-6 rounded-lg"
-										>
-											Accept
-										</button>
-									</div>
-								</div>
-							</div>
 						</div>
 						<div class="flex flex-col">
 							<strong class="text-lg font-semibold mb-10">April 8, 2025</strong>
-							<div class="mb-12">
-								<div class="flex gap-3 w-full relative">
-									<span
-										class="absolute left-4 bottom-0 bg-gray-600 w-px h-[calc(100%-2.75rem)]"
-									></span>
-									<div
-										class="avatar size-8 bg-[#2F40FF]/15 text-[#2F40FF] text-sm font-semibold"
-									>
-										<span>J</span>
-									</div>
-									<div class="flex flex-col w-[calc(100%-2.73rem)]">
-										<div class="flex items-start justify-between">
-											<div class="flex flex-col">
-												<p class="text-sm [&>strong]:font-semibold">
-													<strong>Alfred Whitaker</strong> commented on
-													<strong>All Team Meetings 2024</strong>
-												</p>
-											</div>
-											<span class="text-xs text-gray-900 flex-shrink-0 ml-5"
-												>09:45 AM</span
-											>
-										</div>
-										<div
-											class="w-55 h-35 rounded-xl overflow-hidden relative mt-4"
-										>
-											<svg
-												class="icon size-9 absolute left-1/2 top-1/2 -translate-1/2"
-											>
-												<use href="#icon-play"></use>
-											</svg>
-											<span
-												class="rounded-md bg-dark-800/80 text-white text-xs absolute bottom-2 right-2 px-2 py-1 font-medium"
-												>4 min</span
-											>
-											<img
-												class="size-full object-cover"
-												src="./assets/images/notifications/video-3.png"
-												alt="video 1"
-											/>
-										</div>
-										<ul
-											class="flex flex-col gap-4 mt-4 items-start pr-20 max-md:pr-0"
-										>
-											<li
-												class="border border-gray-600 py-[11px] px-5 text-sm rounded-lg"
-											>
-												I just wanted to let you know what happens at 04:24 in
-												this video, bcs its a bit blurry for me
-											</li>
-										</ul>
-									</div>
-								</div>
-								<div class="relative pl-11 mt-4">
-									<span
-										class="block w-5 h-20 pointer-events-none border-gray-600 border-l border-b rounded-bl-xl absolute left-4 -top-14.5"
-									></span>
-									<button type="button" class="btn btn-border-default px-6">
-										Reply
-									</button>
-								</div>
-							</div>
 							<div class="mb-12">
 								<div class="flex gap-3 w-full relative">
 									<span
@@ -2279,11 +2135,41 @@
 				</div>
 			</main>
 		</div>
+
+		<!-- TODO: We need to add this script for "Activity" where necessary -->
 		<script
 			src="https://code.jquery.com/jquery-3.7.1.min.js"
 			integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
 			crossorigin="anonymous"
 		></script>
+		<script>
+			const replyBtn = $("#activity-reply-button");
+			const cancelBtn = $("#activity-cancel-button");
+
+			replyBtn.on("click", function () {
+				$("#activity-reply-textarea").removeClass("hidden");
+				$(this).addClass("hidden");
+			});
+			cancelBtn.on("click", function () {
+				$("#activity-reply-textarea").addClass("hidden");
+				replyBtn.removeClass("hidden");
+			});
+
+			const activityRequestDeclinedBtn = $("#activity-request-declined-btn");
+			const activityRequestGrantedBtn = $("#activity-request-granted-btn");
+
+			activityRequestDeclinedBtn.on("click", function () {
+				$("#activity-request-declined").removeClass("hidden");
+				$(this).addClass("hidden");
+				activityRequestGrantedBtn.addClass("hidden");
+			});
+			activityRequestGrantedBtn.on("click", function () {
+				$("#activity-request-granted").removeClass("hidden");
+				$(this).addClass("hidden");
+				activityRequestDeclinedBtn.addClass("hidden");
+			});
+		</script>
+
 		<script src="./dist/js/sidebar-active-links.js"></script>
 		<script src="./dist/js/bottom-sheet.js"></script>
 		<script src="./dist/js/mobile-menu.js"></script>

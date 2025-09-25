@@ -845,9 +845,9 @@
 							<div
 								class="mt-6 grid grid-cols-5 gap-3 max-sm:grid-cols-4 max-sm:gap-y-6"
 							>
-								<div class="flex flex-col items-center">
+								<div class="flex flex-col items-center cursor-pointer group">
 									<div
-										class="h-[91px] flex items-center justify-center border border-gray-600 rounded-2xl w-full max-sm:h-19"
+										class="h-[91px] flex items-center justify-center border border-gray-600 rounded-2xl w-full max-sm:h-19 group-hover:bg-gray-200"
 									>
 										<img
 											src="./assets/images/social-icons/linkedin.svg"
@@ -856,9 +856,9 @@
 									</div>
 									<span class="text-sm mt-3 text-center">LinkedIn</span>
 								</div>
-								<div class="flex flex-col items-center">
+								<div class="flex flex-col items-center cursor-pointer group">
 									<div
-										class="h-[91px] flex items-center justify-center border border-gray-600 rounded-2xl w-full max-sm:h-19"
+										class="h-[91px] flex items-center justify-center border border-gray-600 rounded-2xl w-full max-sm:h-19 group-hover:bg-gray-200"
 									>
 										<img
 											src="./assets/images/social-icons/facebook.svg"
@@ -867,9 +867,9 @@
 									</div>
 									<span class="text-sm mt-3 text-center">Facebook</span>
 								</div>
-								<div class="flex flex-col items-center">
+								<div class="flex flex-col items-center cursor-pointer group">
 									<div
-										class="h-[91px] flex items-center justify-center border border-gray-600 rounded-2xl w-full max-sm:h-19"
+										class="h-[91px] flex items-center justify-center border border-gray-600 rounded-2xl w-full max-sm:h-19 group-hover:bg-gray-200"
 									>
 										<img
 											src="./assets/images/social-icons/outlook.svg"
@@ -878,9 +878,9 @@
 									</div>
 									<span class="text-sm mt-3 text-center">Outlook</span>
 								</div>
-								<div class="flex flex-col items-center">
+								<div class="flex flex-col items-center cursor-pointer group">
 									<div
-										class="h-[91px] flex items-center justify-center border border-gray-600 rounded-2xl w-full max-sm:h-19"
+										class="h-[91px] flex items-center justify-center border border-gray-600 rounded-2xl w-full max-sm:h-19 group-hover:bg-gray-200"
 									>
 										<img
 											src="./assets/images/social-icons/gmail.svg"
@@ -889,9 +889,9 @@
 									</div>
 									<span class="text-sm mt-3 text-center">Gmail</span>
 								</div>
-								<div class="flex flex-col items-center">
+								<div class="flex flex-col items-center cursor-pointer group">
 									<div
-										class="h-[91px] flex items-center justify-center border border-gray-600 rounded-2xl w-full max-sm:h-19"
+										class="h-[91px] flex items-center justify-center border border-gray-600 rounded-2xl w-full max-sm:h-19 group-hover:bg-gray-200"
 									>
 										<img
 											src="./assets/images/social-icons/twitter.svg"
@@ -2367,6 +2367,7 @@
 										<button
 											type="button"
 											class="btn btn-border-default h-8 font-normal"
+											onclick='window.open("./settings.html","_self")'
 										>
 											<svg class="icon icon-sm">
 												<use href="#icon-cog-medium"></use>
@@ -2376,6 +2377,7 @@
 										<button
 											type="button"
 											class="btn btn-border-default h-8 flex-grow-1 font-normal"
+											data-dialog-open-id="invite-members"
 										>
 											<svg class="icon icon-sm">
 												<use href="#icon-members-medium"></use>
@@ -3030,7 +3032,9 @@
 					</div>
 				</div>
 			</aside>
-			<main class="relative max-lg:w-full lg:ml-60">
+			<main
+				class="relative max-lg:w-full lg:ml-60 lg:[.active-sidebar_&]:ml-16 transition-all duration-500"
+			>
 				<div
 					class="nav-top-container sticky top-0 z-51 transition-all duration-300 bg-white"
 				>
