@@ -126,19 +126,12 @@
 						type="text"
 						id="search"
 						class="search"
-						placeholder="Поиск по id..."
+						placeholder="Search by id..."
 					/>
-					<select id="size" class="select">
-						<option value="24">24</option>
-						<option value="32">32</option>
-						<option value="40" selected>40</option>
-						<option value="48">48</option>
-						<option value="64">64</option>
-					</select>
-					<button type="button" id="copyAll" class="btn">Скопировать id</button>
+					<button type="button" id="copyAll" class="btn">Copy id</button>
 				</div>
 			</div>
-			<div id="status" class="muted">Загрузка спрайта...</div>
+			<div id="status" class="muted">Loading Icons...</div>
 			<div id="grid" class="grid" style="margin-top: 8px"></div>
 		</div>
 
@@ -147,7 +140,6 @@
 			const grid = document.getElementById("grid");
 			const status = document.getElementById("status");
 			const search = document.getElementById("search");
-			const sizeSelect = document.getElementById("size");
 			const copyAllBtn = document.getElementById("copyAll");
 
 			let symbolIds = [];
@@ -159,7 +151,6 @@
 					const text = await res.text();
 					const parser = new DOMParser();
 					const doc = parser.parseFromString(text, "image/svg+xml");
-					// Вставляем спрайт в DOM, чтобы <use href="#id"> корректно работал
 					let wrapper = document.getElementById("__sprite_wrapper__");
 					if (!wrapper) {
 						wrapper = document.createElement("div");
@@ -174,17 +165,15 @@
 					const symbols = Array.from(spriteEl.querySelectorAll("symbol"));
 					symbolIds = symbols.map((s) => s.id).filter(Boolean);
 					render(symbolIds);
-					status.textContent = `Найдено иконок: ${symbolIds.length}`;
+					status.textContent = `Icons found: ${symbolIds.length}`;
 				} catch (e) {
-					status.textContent =
-						"Ошибка загрузки спрайта. Запустите через локальный сервер.";
+					status.textContent = "Sprite loading error. Run via local server.";
 					console.error(e);
 				}
 			}
 
 			function render(ids) {
 				grid.innerHTML = "";
-				const size = Number(sizeSelect.value) || 40;
 				ids.forEach((id) => {
 					const card = document.createElement("div");
 					card.className = "card";
@@ -196,8 +185,6 @@
 						"http://www.w3.org/2000/svg",
 						"svg",
 					);
-					svg.setAttribute("width", size);
-					svg.setAttribute("height", size);
 					svg.setAttribute("class", "icon");
 
 					const use = document.createElementNS(
@@ -236,15 +223,7 @@
 					? symbolIds.filter((id) => id.toLowerCase().includes(q))
 					: symbolIds;
 				render(filtered);
-				status.textContent = `Найдено иконок: ${filtered.length}`;
-			});
-
-			sizeSelect.addEventListener("change", () => {
-				const q = search.value.trim().toLowerCase();
-				const filtered = q
-					? symbolIds.filter((id) => id.toLowerCase().includes(q))
-					: symbolIds;
-				render(filtered);
+				status.textContent = `Icons found: ${filtered.length}`;
 			});
 
 			copyAllBtn.addEventListener("click", async () => {
@@ -254,8 +233,8 @@
 					: symbolIds;
 				try {
 					await navigator.clipboard.writeText(filtered.join("\n"));
-					copyAllBtn.textContent = "скопировано";
-					setTimeout(() => (copyAllBtn.textContent = "Скопировать id"), 1000);
+					copyAllBtn.textContent = "copied";
+					setTimeout(() => (copyAllBtn.textContent = "Copy id"), 1000);
 				} catch {}
 			});
 
