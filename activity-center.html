@@ -157,7 +157,7 @@
 		</div>
 		<div class="w-full min-h-screen">
 			<aside
-				class="w-60 fixed left-0 top-0 bottom-0 flex flex-col h-[calc(100vh-var(--browser-ui-height,0px))] z-101 max-lg:-left-full max-lg:top-0 max-lg:w-full! transition-all duration-500 ease-in-out [&.active]:left-0"
+				class="w-60 fixed left-0 top-0 bottom-0 flex flex-col h-[calc(100vh-var(--browser-ui-height,0px))] z-101 max-lg:-left-full max-lg:top-0 max-lg:w-full! transition-all duration-300 ease-in-out [&.active]:left-0"
 			>
 				<div
 					class="mobile-menu-overlay absolute bg-dark-800/50 z-0 opacity-0 w-0 h-[calc(100vh-var(--browser-ui-height,0px))] lg:hidden [.active_&]:opacity-100 [.active_&]:w-screen transition-all duration-500 ease-in-out delay-75"
@@ -166,32 +166,24 @@
 					class="flex flex-col max-lg:w-[318px] max-lg:max-w-[318px] max-xs:w-[85%]! w-full bg-gray-150 max-lg:rounded-r-2xl z-3 h-full"
 				>
 					<div
-						class="flex items-center justify-between px-2.5 pt-6 pb-6 gap-2 overflow-hidden max-lg:justify-start [.active-sidebar_&]:justify-center"
+						class="flex items-center justify-between px-2.5 pt-6 pb-6 gap-2 overflow-hidden max-lg:justify-start"
 					>
-						<a href="/" class="aside-logo" aria-label="Home">
+						<a
+							href="/"
+							class="aside-logo [.active-sidebar_&]:ml-1.5 transition-all duration-300"
+							aria-label="Home"
+						>
 							<svg class="icon h-5.5 w-38 [.active-sidebar_&]:hidden">
 								<use href="#icon-logo"></use>
 							</svg>
-							<svg
-								class="hidden [.active-sidebar_&]:block"
-								width="34"
-								height="22"
-								viewBox="0 0 34 22"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<path
-									fill-rule="evenodd"
-									clip-rule="evenodd"
-									d="M31.0825 3.61846L30.4335 2.76046C30.3486 2.64796 30.2307 2.56531 30.0966 2.52423C29.7837 2.4292 28.948 2.30465 28.5246 2.28355C28.4501 2.27894 28.3779 2.25653 28.3136 2.21817C28.2494 2.17981 28.1953 2.1266 28.1555 2.06293C27.751 1.43439 26.3274 -0.0624484 25.9957 0.00201829C25.6213 0.0748447 25.7542 0.262748 25.8233 0.625473C26.0211 1.66818 26.9273 3.04513 26.9273 3.04513C26.9273 3.04513 26.3413 4.79825 25.3582 4.98936C23.648 5.322 22.0385 2.01524 17.3568 1.98293C5.50112 1.98293 7.29143 18.576 0.576716 18.576C0.0637947 18.576 0.000723159 18.8587 0.000723159 18.9182C0.000723159 19.0389 -0.0595191 19.3202 0.919673 19.3202C8.40387 19.3202 9.47823 9.70147 11.5514 9.70147C12.3104 9.70147 12.2424 11.9953 12.2424 12.7465C12.2424 16.7593 10.607 17.6527 10.607 18.8069C10.607 19.2455 10.8637 19.5519 11.4669 19.8373C13.0132 20.5684 17.3715 22 18.5168 22C19.6621 22 16.6494 19.6627 15.818 19.6627C14.9866 19.6627 13.1509 19.4028 13.1509 18.21C13.1509 16.8774 18.7556 14.4227 18.7556 11.5428C20.1826 11.5428 21.4102 11.3749 22.4762 11.0878C22.6884 11.6085 23.0535 12.5345 23.1236 12.9049C23.1805 13.2049 23.0063 13.6976 22.538 13.7886C22.0697 13.8796 21.1855 14.5197 21.2391 14.8039C21.2927 15.0881 21.9922 15.33 22.4605 15.239C22.9288 15.1481 24.0663 14.7847 24.2176 13.7067C24.2904 13.1886 24.6322 11.1302 25.0304 10.0297C26.9532 8.90295 28.128 7.33255 29.0604 5.97827C29.0973 5.92431 29.1448 5.87853 29.1999 5.8438C29.255 5.80907 29.3166 5.78611 29.3808 5.77635C29.7434 5.67386 30.1181 5.62159 30.4948 5.62096C31.1146 5.62096 31.6723 5.8659 32.0335 5.8659C32.4471 5.8659 32.6806 5.35709 32.6806 5.12171C32.6809 4.43762 31.0825 3.61846 31.0825 3.61846Z"
-									fill="#2F76FF"
-								/>
+							<svg class="icon w-8 h-5.5 hidden [.active-sidebar_&]:block">
+								<use href="#icon-logo-small"></use>
 							</svg>
 						</a>
 						<button
 							type="button"
 							aria-label="Collapse Sidebar"
-							class="aside-collapse-btn"
+							class="aside-collapse-btn ml-2.5"
 							id="collapse-sidebar-btn"
 						>
 							<svg class="icon icon-md">
@@ -209,7 +201,7 @@
 						>
 							<div class="flex items-center justify-between mr-2 flex-shrink-0">
 								<div
-									class="flex items-center justify-center size-8 bg-blue-500/10 rounded-md [.active-sidebar_&]:size-11 transition-all duration-500 ease-in-out"
+									class="flex items-center justify-center size-8 bg-blue-500/10 rounded-md [.active-sidebar_&]:size-11 transition-all duration-300 ease-in-out"
 								>
 									<span class="font-semibold text-base text-blue-500">S</span>
 								</div>
@@ -262,6 +254,7 @@
 										<button
 											type="button"
 											class="btn btn-border-default h-8 font-normal"
+											onclick='window.open("./settings.html","_self")'
 										>
 											<svg class="icon icon-sm">
 												<use href="#icon-cog-medium"></use>
@@ -271,6 +264,7 @@
 										<button
 											type="button"
 											class="btn btn-border-default h-8 flex-grow-1 font-normal"
+											data-dialog-open-id="invite-members"
 										>
 											<svg class="icon icon-sm">
 												<use href="#icon-members-medium"></use>

@@ -662,8 +662,20 @@
   .mr-4 {
     margin-right: calc(var(--spacing) * 4);
   }
+  .mr-7 {
+    margin-right: calc(var(--spacing) * 7);
+  }
   .mr-10 {
     margin-right: calc(var(--spacing) * 10);
+  }
+  .mr-10\.5 {
+    margin-right: calc(var(--spacing) * 10.5);
+  }
+  .mr-\[1\.6875rem\] {
+    margin-right: 1.6875rem;
+  }
+  .mr-\[27px\] {
+    margin-right: 27px;
   }
   .-mb-\[24px\] {
     margin-bottom: calc(24px * -1);
@@ -727,6 +739,9 @@
   }
   .ml-2 {
     margin-left: calc(var(--spacing) * 2);
+  }
+  .ml-2\.5 {
+    margin-left: calc(var(--spacing) * 2.5);
   }
   .ml-4 {
     margin-left: calc(var(--spacing) * 4);
@@ -1150,6 +1165,12 @@
   .w-\[8\.75rem\] {
     width: 8.75rem;
   }
+  .w-\[8\.375rem\] {
+    width: 8.375rem;
+  }
+  .w-\[8\.0625rem\] {
+    width: 8.0625rem;
+  }
   .w-\[10\.8rem\] {
     width: 10.8rem;
   }
@@ -1242,6 +1263,12 @@
   }
   .w-\[97px\] {
     width: 97px;
+  }
+  .w-\[129px\] {
+    width: 129px;
+  }
+  .w-\[134px\] {
+    width: 134px;
   }
   .w-\[191px\] {
     width: 191px;
@@ -4754,6 +4781,16 @@
   .\[\.active-sidebar_\&\]\:-ml-4 {
     .active-sidebar & {
       margin-left: calc(var(--spacing) * -4);
+    }
+  }
+  .\[\.active-sidebar_\&\]\:ml-1\.5 {
+    .active-sidebar & {
+      margin-left: calc(var(--spacing) * 1.5);
+    }
+  }
+  .\[\.active-sidebar_\&\]\:ml-2 {
+    .active-sidebar & {
+      margin-left: calc(var(--spacing) * 2);
     }
   }
   .\[\.active-sidebar_\&\]\:block {
