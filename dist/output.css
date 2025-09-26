@@ -4789,6 +4789,11 @@
       margin-left: calc(var(--spacing) * -4);
     }
   }
+  .\[\.active-sidebar_\&\]\:ml-0\.5 {
+    .active-sidebar & {
+      margin-left: calc(var(--spacing) * 0.5);
+    }
+  }
   .\[\.active-sidebar_\&\]\:ml-1\.5 {
     .active-sidebar & {
       margin-left: calc(var(--spacing) * 1.5);
