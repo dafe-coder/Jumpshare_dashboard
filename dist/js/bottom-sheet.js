@@ -98,17 +98,47 @@ const BottomSheet = {
 		return true;
 	},
 
+	// Find closest scrollable ancestor inside sheet content
+	findScrollableAncestor(startEl, rootEl) {
+		let el =
+			startEl instanceof HTMLElement
+				? startEl
+				: startEl && startEl.nodeType
+					? startEl
+					: null;
+		const root = rootEl instanceof HTMLElement ? rootEl : null;
+		while (
+			el &&
+			el !== root &&
+			el !== document.body &&
+			el !== document.documentElement
+		) {
+			try {
+				const style = window.getComputedStyle(el);
+				const canScrollY =
+					style.overflowY === "auto" || style.overflowY === "scroll";
+				if (canScrollY && el.scrollHeight > el.clientHeight) {
+					return el;
+				}
+			} catch (e) {}
+			el = el.parentElement;
+		}
+		return null;
+	},
+
 	lockPageScroll() {
 		const hasVScroll = this.pageHasVerticalScrollbar();
 		if (this.scrollbarWidth > 0 && hasVScroll) {
 			$("html").css("padding-right", `${this.scrollbarWidth}px`);
 		}
 		$("html").addClass("overflow-hidden");
+		$("body").addClass("overflow-hidden");
 		this.log("lockPageScroll: initial lock applied");
 	},
 	unlockPageScroll() {
 		$("html").css("padding-right", "0");
 		$("html").removeClass("overflow-hidden");
+		$("body").removeClass("overflow-hidden");
 		this.log("unlockPageScroll: page scroll unlocked");
 	},
 
@@ -486,13 +516,19 @@ const BottomSheet = {
 		if (!inst) return;
 
 		const $scrollBlock = inst.scrollBlock;
-		const contentScrollTop = $scrollBlock.scrollTop();
-
-		if (contentScrollTop > 0) {
-			return;
-		}
+		// Cache closest scrollable container for this drag (supports nested scrolls)
+		const contentRoot = inst.content && inst.content[0];
+		const startTarget =
+			event.target ||
+			(event.touches && event.touches[0] && event.touches[0].target);
+		this.dragScrollable =
+			this.findScrollableAncestor(startTarget, contentRoot) ||
+			($scrollBlock && $scrollBlock[0]) ||
+			null;
 
 		this.isDragging = true;
+		// Do not reset dragReadyToClose here: it must persist to the next gesture
+		this.dragArmUntilLift = false;
 		this.activeDragInstance = { type, instanceId };
 		this.dragStartY = event.touches ? event.touches[0].pageY : event.pageY;
 
@@ -503,11 +539,6 @@ const BottomSheet = {
 
 	handleDragMove(event, type, instanceId) {
 		if (!this.isDragging || !this.activeDragInstance) return;
-		this.log("handleDragMove", {
-			type,
-			instanceId,
-			activeDragInstance: this.activeDragInstance,
-		});
 		if (
 			this.activeDragInstance.type !== type ||
 			this.activeDragInstance.instanceId !== instanceId
@@ -523,22 +554,72 @@ const BottomSheet = {
 
 		const $scrollBlock = inst.scrollBlock;
 		const currentY = event.touches ? event.touches[0].pageY : event.pageY;
-		const deltaY = this.dragStartY - currentY;
+		let deltaY = this.dragStartY - currentY; // >0 up, <0 down
 
-		if (deltaY < 0 && $scrollBlock.scrollTop() === 0) {
-			this.hideContentScroll(type, instanceId);
+		// If we armed closing and finger is still down, ignore further down moves until lift
+		if (this.dragArmUntilLift && deltaY < 0) {
+			this.dragStartY = currentY;
+			return;
+		}
+		// Moving up cancels arm and readiness
+		if (deltaY > 0) {
+			this.dragArmUntilLift = false;
+			this.dragReadyToClose = false;
 		}
 
-		if (deltaY < 0 && $scrollBlock.scrollTop() > 0) {
+		const scrollEl = this.dragScrollable || ($scrollBlock && $scrollBlock[0]);
+		if (scrollEl) {
+			const scrollTop = scrollEl.scrollTop;
+			const maxScrollTop = scrollEl.scrollHeight - scrollEl.clientHeight;
+			if (deltaY > 0) {
+				// up -> scroll down content first
+				const availableDown = Math.max(0, maxScrollTop - scrollTop);
+				const consume = Math.min(availableDown, deltaY);
+				if (consume > 0) {
+					scrollEl.scrollTop = scrollTop + consume;
+					deltaY -= consume;
+				}
+				// any upward gesture cancels closing readiness
+				this.dragReadyToClose = false;
+				this.dragArmUntilLift = false;
+			} else if (deltaY < 0) {
+				// down -> scroll up content first
+				const availableUp = Math.max(0, scrollTop);
+				const consume = Math.min(availableUp, -deltaY);
+				if (consume > 0) {
+					scrollEl.scrollTop = scrollTop - consume;
+					deltaY += consume;
+				}
+			}
+		}
+
+		if (deltaY === 0) {
+			this.dragStartY = currentY;
 			return;
+		}
+
+		// Only when dragging down and scroll is at top, we consider closing the sheet
+		if (deltaY < 0) {
+			const isAtTop = scrollEl
+				? scrollEl.scrollTop <= 0
+				: $scrollBlock.scrollTop() <= 0;
+			if (isAtTop) {
+				if (!this.dragReadyToClose) {
+					// Arm closing but require finger lift before applying
+					this.dragReadyToClose = true;
+					this.dragArmUntilLift = true;
+					this.dragStartY = currentY;
+					return;
+				}
+				this.hideContentScroll(type, instanceId);
+			}
 		}
 
 		const viewportHeight = window.innerHeight;
 		const deltaHeight = (deltaY / viewportHeight) * 100;
-
 		const newHeight = Math.min(
 			this.config.maxHeight,
-			inst.modal.data("height") + deltaHeight,
+			Math.max(0, inst.modal.data("height") + deltaHeight),
 		);
 		this.setSheetHeight(
 			inst.modal,
@@ -572,6 +653,8 @@ const BottomSheet = {
 
 		$("body").css("cursor", "");
 		this.showContentScroll(type, instanceId);
+		// Permit closing on next gesture only (require lift)
+		this.dragArmUntilLift = false;
 
 		if ($sheetModal.data("height") < this.sheetClosePercent) {
 			this.close(type, inst.id);
@@ -673,4 +756,60 @@ $(document).ready(() => {
 			});
 		}
 	});
+	(function () {
+		function isScrollable(el) {
+			if (!el) return false;
+			var cs = getComputedStyle(el);
+			return (
+				(cs.overflowY === "auto" || cs.overflowY === "scroll") &&
+				el.scrollHeight > el.clientHeight
+			);
+		}
+
+		function findScrollable(root, target) {
+			var el = target;
+			while (
+				el &&
+				el !== root &&
+				el !== document.body &&
+				el !== document.documentElement
+			) {
+				if (isScrollable(el)) return el;
+				el = el.parentElement;
+			}
+			return isScrollable(root) ? root : null;
+		}
+
+		function attach(root) {
+			if (!root) return;
+			var startY = 0;
+			root.addEventListener(
+				"touchstart",
+				function (e) {
+					if (e.touches.length !== 1) return;
+					startY = e.touches[0].clientY;
+				},
+				{ passive: true },
+			);
+
+			root.addEventListener(
+				"touchmove",
+				function (e) {
+					if (e.touches.length !== 1) return;
+					var dy = e.touches[0].clientY - startY;
+					var sc = findScrollable(root, e.target) || root;
+					var atTop = sc.scrollTop <= 0 && dy > 0;
+					var atBottom =
+						sc.scrollTop + sc.clientHeight >= sc.scrollHeight && dy < 0;
+					if (atTop || atBottom) e.preventDefault();
+				},
+				{ passive: false },
+			);
+		}
+
+		Array.prototype.forEach.call(
+			document.querySelectorAll(".modal-content, .modal-body"),
+			attach,
+		);
+	})();
 });

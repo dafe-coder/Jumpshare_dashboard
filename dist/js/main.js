@@ -51,20 +51,41 @@ $(document).ready(function () {
 	const collapseSidebarBtn = $("#collapse-sidebar-btn");
 	let collapseSidebarId = null;
 	const collapseSidebarTimeout = 500;
+	const sidebar = $("aside");
+
+	function initSidebar() {
+		const isCollapsed = localStorage.getItem("sidebar-collapsed");
+
+		if (isCollapsed !== "false") {
+			sidebar.removeClass("duration-300");
+			sidebar.addClass("duration-0");
+			$("body").addClass("active-sidebar");
+			collapseSidebarBtn.addClass("active-collapse-sidebar-btn");
+			sidebar.width(64);
+			sidebar.addClass("sidebar-collapsed");
+			setTimeout(() => {
+				sidebar.addClass("duration-300");
+				sidebar.removeClass("duration-0");
+			}, 10);
+		}
+	}
+
+	initSidebar();
 
 	collapseSidebarBtn.on("click", function (e) {
 		e.preventDefault();
-		const sidebar = $("aside");
 		$("body").toggleClass("active-sidebar");
 		collapseSidebarBtn.toggleClass("active-collapse-sidebar-btn");
 
 		if (sidebar.width() === 240) {
+			localStorage.setItem("sidebar-collapsed", true);
 			sidebar.width(64);
 			collapseSidebarId = setTimeout(() => {
 				sidebar.addClass("sidebar-collapsed");
 				clearTimeout(collapseSidebarId);
 			}, collapseSidebarTimeout);
 		} else {
+			localStorage.setItem("sidebar-collapsed", false);
 			sidebar.width(240);
 			sidebar.removeClass("sidebar-collapsed");
 			clearTimeout(collapseSidebarId);
