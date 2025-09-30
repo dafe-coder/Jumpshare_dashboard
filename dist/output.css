@@ -48,6 +48,7 @@
     --font-sans-medium: "GeneralSans-medium", ui-sans-serif, system-ui, sans-serif,
 		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --container-xl: 1200px;
+    --container-4xl: 2588px;
     --radius-2_5xl: 20px;
     --text-s: 0.8125rem;
     --spacing-4_5: 1.125rem;
@@ -503,6 +504,9 @@
     }
     @media (width >= 1360px) {
       max-width: 1360px;
+    }
+    @media (width >= 1800px) {
+      max-width: 1800px;
     }
     @media (width >= 40rem) {
       max-width: 40rem;
@@ -4203,6 +4207,31 @@
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }
+  .\34 xl\:container-4xl {
+    @media (min-width: 1800px) {
+      width: 100%;
+      max-width: var(--container-4xl);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+  .\34 xl\:container-full {
+    @media (min-width: 1800px) {
+      width: 100%;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+  .\34 xl\:grid-cols-6 {
+    @media (min-width: 1800px) {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+  }
   .sm\:ml-auto {
     @media (width >= 40rem) {
       margin-left: auto;
@@ -7875,8 +7904,8 @@
         transition-property: all;
         transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
         transition-duration: var(--tw-duration, var(--default-transition-duration));
-        --tw-duration: 500ms;
-        transition-duration: 500ms;
+        --tw-duration: 100ms;
+        transition-duration: 100ms;
         --tw-ease: var(--ease-in-out);
         transition-timing-function: var(--ease-in-out);
         .js-dropdown-list {
@@ -7944,10 +7973,10 @@
           transition-property: all;
           transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
           transition-duration: var(--tw-duration, var(--default-transition-duration));
-          --tw-duration: 500ms;
-          transition-duration: 500ms;
-          --tw-ease: var(--ease-in-out);
-          transition-timing-function: var(--ease-in-out);
+          --tw-duration: 400ms;
+          transition-duration: 400ms;
+          --tw-ease: cubic-bezier(.2,.8,.2,1);
+          transition-timing-function: cubic-bezier(.2,.8,.2,1);
           &.not-selectable {
             transition-property: none !important;
           }
@@ -7955,7 +7984,6 @@
         .js-dropdown-trigger {
           position: relative;
           z-index: 0;
-          z-index: 3;
           display: flex;
           height: calc(var(--spacing) * 7);
           width: 100%;
@@ -9995,11 +10023,6 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   position: fixed !important;
   z-index: 9999 !important;
   transform: none !important;
-}
-.modal-content, .modal-body {
-  overscroll-behavior: contain;
-  overscroll-behavior-y: contain;
-  -webkit-overflow-scrolling: touch;
 }
 @property --tw-translate-x {
   syntax: "*";

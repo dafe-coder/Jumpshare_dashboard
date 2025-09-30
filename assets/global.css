@@ -315,9 +315,3 @@ input:-webkit-autofill:active {
 	z-index: 9999 !important;
 	transform: none !important;
 }
-.modal-content,
-.modal-body {
-	overscroll-behavior: contain;
-	overscroll-behavior-y: contain;
-	-webkit-overflow-scrolling: touch;
-}

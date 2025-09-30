@@ -9,6 +9,7 @@ const BottomSheet = {
 	scrollbarWidth: 0,
 	instanceCounter: 0,
 	nextZIndex: 10001,
+	isDismissAllowed: true,
 	state: {
 		dropdownStack: [],
 		dialogStack: [],
@@ -339,6 +340,7 @@ const BottomSheet = {
 			defaultHeightOverride: defaultHeight,
 			maxHeight: maxHeight != null ? maxHeight : this.config.maxHeight,
 			zIndex: this.getNextZIndex(),
+			isDismissAllowed: true,
 		};
 		const stack = this.getStack(type);
 		stack.push(instance);
@@ -375,6 +377,14 @@ const BottomSheet = {
 				defaultHeight:
 					instance.defaultHeightOverride ?? $sheetModal.data("default-height"),
 			});
+
+			// Инициализируем состояние разрешения закрытия на основании текущего скролла
+			try {
+				const scEl = instance.scrollBlock && instance.scrollBlock[0];
+				if (scEl) {
+					instance.isDismissAllowed = scEl.scrollTop <= 0;
+				}
+			} catch (e) {}
 		}, this.config.showDelay);
 
 		this.setupDragHandlers($sheetBody, type, instanceId);
@@ -532,6 +542,15 @@ const BottomSheet = {
 		this.activeDragInstance = { type, instanceId };
 		this.dragStartY = event.touches ? event.touches[0].pageY : event.pageY;
 
+		try {
+			const scEl = this.dragScrollable || ($scrollBlock && $scrollBlock[0]);
+			if (scEl) {
+				inst.isDismissAllowed = scEl.scrollTop <= 0;
+			} else {
+				inst.isDismissAllowed = true;
+			}
+		} catch (e) {}
+
 		inst.body.css("transition", "none");
 		inst.body.addClass("not-selectable");
 		$("body").css("cursor", "grabbing");
@@ -549,9 +568,6 @@ const BottomSheet = {
 		const inst = this.getInstanceById(type, instanceId);
 		if (!inst) return;
 
-		event.preventDefault();
-		event.stopPropagation();
-
 		const $scrollBlock = inst.scrollBlock;
 		const currentY = event.touches ? event.touches[0].pageY : event.pageY;
 		let deltaY = this.dragStartY - currentY; // >0 up, <0 down
@@ -561,35 +577,22 @@ const BottomSheet = {
 			this.dragStartY = currentY;
 			return;
 		}
-		// Moving up cancels arm and readiness
+		// Moving up does not cancel readiness once armed; only clear arm-until-lift
 		if (deltaY > 0) {
 			this.dragArmUntilLift = false;
-			this.dragReadyToClose = false;
 		}
 
 		const scrollEl = this.dragScrollable || ($scrollBlock && $scrollBlock[0]);
 		if (scrollEl) {
 			const scrollTop = scrollEl.scrollTop;
 			const maxScrollTop = scrollEl.scrollHeight - scrollEl.clientHeight;
-			if (deltaY > 0) {
-				// up -> scroll down content first
-				const availableDown = Math.max(0, maxScrollTop - scrollTop);
-				const consume = Math.min(availableDown, deltaY);
-				if (consume > 0) {
-					scrollEl.scrollTop = scrollTop + consume;
-					deltaY -= consume;
-				}
-				// any upward gesture cancels closing readiness
-				this.dragReadyToClose = false;
-				this.dragArmUntilLift = false;
-			} else if (deltaY < 0) {
-				// down -> scroll up content first
-				const availableUp = Math.max(0, scrollTop);
-				const consume = Math.min(availableUp, -deltaY);
-				if (consume > 0) {
-					scrollEl.scrollTop = scrollTop - consume;
-					deltaY += consume;
-				}
+			const canScrollDown = deltaY > 0 && maxScrollTop - scrollTop > 0;
+			const canScrollUp = deltaY < 0 && scrollTop > 0;
+			// Если контент может скроллиться в сторону жеста — отдаём нативному скроллу (инерция сохранится)
+			// но только пока закрытие ещё не заармлено
+			if (!this.dragReadyToClose && (canScrollDown || canScrollUp)) {
+				this.dragStartY = currentY;
+				return;
 			}
 		}
 
@@ -598,8 +601,27 @@ const BottomSheet = {
 			return;
 		}
 
-		// Only when dragging down and scroll is at top, we consider closing the sheet
-		if (deltaY < 0) {
+		// Обновляем разрешение закрытия в процессе жеста, завязано на вершину скролла
+		try {
+			const atTopNow = scrollEl
+				? scrollEl.scrollTop <= 0
+				: $scrollBlock.scrollTop() <= 0;
+			inst.isDismissAllowed = !!atTopNow;
+		} catch (e) {}
+
+		// Только при жесте вниз и если разрешено закрытие — армим закрытие
+		if (deltaY < 0 && inst.isDismissAllowed) {
+			// Перехватываем только когда начинаем двигать шит, чтобы отключить нативную прокрутку
+			if (event.cancelable) {
+				try {
+					event.preventDefault();
+				} catch (e) {}
+			}
+			if (event.stopPropagation) {
+				try {
+					event.stopPropagation();
+				} catch (e) {}
+			}
 			const isAtTop = scrollEl
 				? scrollEl.scrollTop <= 0
 				: $scrollBlock.scrollTop() <= 0;
@@ -615,11 +637,40 @@ const BottomSheet = {
 			}
 		}
 
+		// Если ещё не заармлено закрытие — не двигаем шит, отдаём жест контенту
+		if (!this.dragReadyToClose) {
+			this.dragStartY = currentY;
+			return;
+		}
+
+		// Перехватываем жест и двигаем шит в обе стороны пока заармлено
+		if (event.cancelable) {
+			try {
+				event.preventDefault();
+			} catch (e) {}
+		}
+		if (event.stopPropagation) {
+			try {
+				event.stopPropagation();
+			} catch (e) {}
+		}
+		this.hideContentScroll(type, instanceId);
+
 		const viewportHeight = window.innerHeight;
 		const deltaHeight = (deltaY / viewportHeight) * 100;
+		const defaultHeight =
+			inst.defaultHeightOverride !== null
+				? inst.defaultHeightOverride
+				: inst.modal.data("default-height") || this.config.defaultHeight;
 		const newHeight = Math.min(
 			this.config.maxHeight,
-			Math.max(0, inst.modal.data("height") + deltaHeight),
+			// вверх — не выше defaultHeight; вниз — вплоть до 0
+			Math.max(
+				0,
+				deltaY > 0
+					? Math.min(defaultHeight, inst.modal.data("height") + deltaHeight)
+					: inst.modal.data("height") + deltaHeight,
+			),
 		);
 		this.setSheetHeight(
 			inst.modal,
@@ -657,7 +708,10 @@ const BottomSheet = {
 		this.dragArmUntilLift = false;
 
 		if ($sheetModal.data("height") < this.sheetClosePercent) {
-			this.close(type, inst.id);
+			// Закрываем только если разрешено
+			if (inst.isDismissAllowed) {
+				this.close(type, inst.id);
+			}
 		} else {
 			this.setSheetHeight(
 				$sheetModal,

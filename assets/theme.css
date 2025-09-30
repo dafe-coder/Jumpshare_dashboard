@@ -14,8 +14,10 @@
 	/* Container */
 	--container-*: initial;
 	--container-xl: 1200px;
+	--container-4xl: 2588px;
 
 	/* Screens */
+	--breakpoint-4xl: 1800px;
 	--breakpoint-xxl: 1360px;
 	--breakpoint-md: 790px;
 	--breakpoint-xs: 480px;
@@ -238,6 +240,28 @@
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+/* Responsive variant for 4xl breakpoint */
+@custom-variant 4xl (@media (min-width: 1800px));
+
+/* Container utility for very wide layouts */
+@utility container-4xl {
+	width: 100%;
+	max-width: var(--container-4xl);
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+@utility container-full {
+	width: 100%;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
 
 .icon {
 	color: var(--icon-primary);

@@ -2910,7 +2910,7 @@
 					class="nav-top-container sticky top-0 z-51 transition-all duration-300 bg-white"
 				>
 					<header class="relative pt-4 bg-white">
-						<div class="dashboard-container">
+						<div class="dashboard-container 4xl:container-full">
 							<div
 								class="w-full flex items-center justify-between max-md:bg-gray-150 max-md:rounded-lg gap-x-5"
 							>
@@ -3089,7 +3089,9 @@
 						</div>
 					</header>
 					<div class="subheader-nav pt-10 pb-6 bg-white max-md:pt-5">
-						<div class="dashboard-container flex justify-between items-center">
+						<div
+							class="dashboard-container flex justify-between items-center 4xl:container-4xl"
+						>
 							<h2
 								id="title-library"
 								class="text-2xl font-semibold text-dark-800 tracking-normal flex-shrink-0 font-sans-semi"
@@ -3358,7 +3360,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="dashboard-container pb-5 pt-5">
+				<div class="dashboard-container pb-5 pt-5 4xl:container-4xl">
 					<div>
 						<div class="flex justify-between items-center">
 							<h3
@@ -3373,7 +3375,7 @@
 							</div>
 						</div>
 						<div
-							class="grid grid-cols-4 gap-4 mt-5 [&.list-type]:flex flex-col [&.list-type]:gap-0 [&.grid-type]:grid-cols-5 max-sm:gap-2.5 max-sm:grid-cols-2 fake-loading-content"
+							class="grid grid-cols-4 4xl:grid-cols-6 gap-4 mt-5 [&.list-type]:flex flex-col [&.list-type]:gap-0 [&.grid-type]:grid-cols-5 max-sm:gap-2.5 max-sm:grid-cols-2 fake-loading-content"
 							data-content-type
 						>
 							<div
@@ -3384,6 +3386,717 @@
 								<div>Format</div>
 								<div>Modified</div>
 								<div>Views</div>
+							</div>
+							<div
+								onclick="window.open('./folder-open.html', '_self')"
+								class="group folder-item"
+							>
+								<div
+									class="flex items-center gap-3 [.list-type_&]:ml-2.5 max-lg:gap-5 max-lg:[.list-select-active.list-type_&]:pl-9! max-lg:[.list-type_&]:duration-300 max-lg:[.list-type_&]:transition-[padding-left] max-xl:not-[.list-type_&]:flex-col max-xl:not-[.list-type_&]:items-start max-lg:[.list-type_&]:items-center truncate"
+								>
+									<input
+										data-select-item
+										class="peer"
+										hidden
+										type="checkbox"
+										id="select-file-2"
+									/>
+									<label
+										class="card-select-box"
+										for="select-file-2"
+										aria-label="Select file"
+									>
+										<svg class="icon">
+											<use href="#icon-check-bold"></use>
+										</svg>
+									</label>
+									<div
+										class="flex items-center justify-center [.list-type_&]:w-10 [.list-type_&]:h-7.5 [.list-type_&]:flex-shrink-0"
+									>
+										<svg
+											class="icon icon-md lg:group-hover:not-[.list-type_&]:opacity-0 not-[.list-type_&]:[.list-select-active_&]:opacity-0 flex-shrink-0 max-lg:[.list-select-active_&]:not-[.list-type_&]:opacity-0"
+										>
+											<use href="#icon-folder"></use>
+										</svg>
+									</div>
+									<div class="flex flex-col gap-1 truncate">
+										<h4
+											class="text-sm text-dark-800 font-medium [.list-type_&]:mt-0 truncate"
+										>
+											Team Meetings Team Meetings Team Meetings Team Meetings
+											Team Meetings Team Meetings Team Meetings
+										</h4>
+										<ul class="list-with-dots lg:[.list-type_&]:hidden">
+											<li>2 Items</li>
+											<li>22 hrs ago</li>
+										</ul>
+									</div>
+								</div>
+								<div
+									class="hidden [.team-page_&]:[.list-type_&]:flex gap-2.5 items-center max-md:hidden!"
+								>
+									<img
+										class="size-6 object-cover"
+										src="./assets/images/avatar.png"
+										alt="Cris"
+									/>
+									<span class="truncate text-sm font-normal"
+										>Anthony Crissage Anthony Crissage</span
+									>
+								</div>
+								<div
+									class="hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden"
+								>
+									<p class="text-sm text-dark-800">3 Items</p>
+								</div>
+								<div
+									class="hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden"
+								>
+									<p class="text-sm text-dark-800">22 hrs ago</p>
+								</div>
+								<div
+									class="[.list-type_&]:flex items-center gap-2 justify-between max-md:justify-end pr-3 max-lg:not-[.list-type_&]:flex"
+								>
+									<span
+										class="hidden text-sm text-dark-800 md:[.list-type_&]:flex w-10 justify-center items-center"
+										>12</span
+									>
+									<div
+										class="dropdown-wrapper absolute right-2.5 top-1/2 -mt-[14px] max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:mt-0 [.list-type_&]:top-auto [.list-type_&]:mt-0 [.list-type_&]:static"
+									>
+										<span
+											type="button"
+											data-id="dropdown-settings"
+											class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer flex justify-center items-center transition-transform size-7 hover:bg-gray-400 rounded-full shrink-0"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-dots-horizontal"></use>
+											</svg>
+											<span class="sr-only">Settings</span>
+										</span>
+										<div
+											class="js-dropdown hidden left-full right-auto top-2.5"
+											data-dropdown-id="dropdown-settings"
+											data-sheet-modal
+										>
+											<div class="js-dropdown-overlay"></div>
+											<div class="js-dropdown-body">
+												<div class="js-dropdown-trigger">
+													<span></span>
+												</div>
+												<div class="js-dropdown-content">
+													<ul class="js-dropdown-list js-dropdown-primary-list">
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-link"></use>
+															</svg>
+															<span>Copy Link</span>
+														</li>
+														<li
+															class="js-dropdown-list-item"
+															data-dialog-open-id="email-share-dialog"
+														>
+															<svg class="icon icon-md">
+																<use href="#icon-share"></use>
+															</svg>
+															<span>Share</span>
+														</li>
+														<li class="border-b border-gray-500 my-2"></li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-lock"></use>
+															</svg>
+															<span>Lock</span>
+															<span class="text-sm text-blue-500 font-medium"
+																>Plus</span
+															>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-trash-with-clock"></use>
+															</svg>
+															<span>Self-Destruct</span>
+															<span class="text-sm text-blue-500 font-medium"
+																>Plus</span
+															>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-stats"></use>
+															</svg>
+															<span>View Stats</span>
+															<span class="text-sm text-blue-500 font-medium"
+																>Plus</span
+															>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-pencil"></use>
+															</svg>
+															<span>Rename</span>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-star"></use>
+															</svg>
+															<span>Favorite</span>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-download"></use>
+															</svg>
+															<span>Download</span>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-copy"></use>
+															</svg>
+															<span>Copy / Move</span>
+														</li>
+														<li
+															data-dropdown-sub-id="version-history"
+															class="js-dropdown-list-item relative sub-menu-item"
+														>
+															<svg class="icon icon-md">
+																<use href="#icon-clock"></use>
+															</svg>
+															<span>Version History</span>
+															<span class="text-sm text-blue-500 font-medium"
+																>Plus</span
+															>
+															<svg
+																class="icon icon-md absolute top-1/2 -translate-y-1/2 right-1"
+															>
+																<use href="#icon-check-right"></use>
+															</svg>
+															<ul
+																class="dropdown-content js-dropdown-sub-list hidden"
+															>
+																<li class="sub-menu-item js-dropdown-list-item">
+																	<svg class="icon icon-md">
+																		<use href="#icon-upload"></use>
+																	</svg>
+																	<span>Upload New Version</span>
+																</li>
+																<li class="sub-menu-item js-dropdown-list-item">
+																	<svg class="icon icon-md">
+																		<use href="#icon-clock"></use>
+																	</svg>
+																	<span>View Version History</span>
+																</li>
+															</ul>
+														</li>
+														<li class="border-b border-gray-500 my-2"></li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-trash"></use>
+															</svg>
+															<span>Delete</span>
+														</li>
+													</ul>
+													<ul
+														class="js-dropdown-list js-dropdown-sub-list hidden"
+														data-dropdown-sub="version-history"
+													>
+														<li class="go-back js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-arrow-left"></use>
+															</svg>
+															<span>Version History</span>
+														</li>
+														<li class="border-b border-gray-500 mb-2"></li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-upload"></use>
+															</svg>
+															<span>Upload New Version</span>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-clock"></use>
+															</svg>
+															<span>View Version History</span>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div
+								onclick="window.open('./folder-open.html', '_self')"
+								class="group folder-item"
+							>
+								<div
+									class="flex items-center gap-3 [.list-type_&]:ml-2.5 max-lg:gap-5 max-lg:[.list-select-active.list-type_&]:pl-9! max-lg:[.list-type_&]:duration-300 max-lg:[.list-type_&]:transition-[padding-left] max-xl:not-[.list-type_&]:flex-col max-xl:not-[.list-type_&]:items-start max-lg:[.list-type_&]:items-center truncate"
+								>
+									<input
+										data-select-item
+										class="peer"
+										hidden
+										type="checkbox"
+										id="select-file-2"
+									/>
+									<label
+										class="card-select-box"
+										for="select-file-2"
+										aria-label="Select file"
+									>
+										<svg class="icon">
+											<use href="#icon-check-bold"></use>
+										</svg>
+									</label>
+									<div
+										class="flex items-center justify-center [.list-type_&]:w-10 [.list-type_&]:h-7.5 [.list-type_&]:flex-shrink-0"
+									>
+										<svg
+											class="icon icon-md lg:group-hover:not-[.list-type_&]:opacity-0 not-[.list-type_&]:[.list-select-active_&]:opacity-0 flex-shrink-0 max-lg:[.list-select-active_&]:not-[.list-type_&]:opacity-0"
+										>
+											<use href="#icon-folder"></use>
+										</svg>
+									</div>
+									<div class="flex flex-col gap-1 truncate">
+										<h4
+											class="text-sm text-dark-800 font-medium [.list-type_&]:mt-0 truncate"
+										>
+											Team Meetings Team Meetings Team Meetings Team Meetings
+											Team Meetings Team Meetings Team Meetings
+										</h4>
+										<ul class="list-with-dots lg:[.list-type_&]:hidden">
+											<li>2 Items</li>
+											<li>22 hrs ago</li>
+										</ul>
+									</div>
+								</div>
+								<div
+									class="hidden [.team-page_&]:[.list-type_&]:flex gap-2.5 items-center max-md:hidden!"
+								>
+									<img
+										class="size-6 object-cover"
+										src="./assets/images/avatar.png"
+										alt="Cris"
+									/>
+									<span class="truncate text-sm font-normal"
+										>Anthony Crissage Anthony Crissage</span
+									>
+								</div>
+								<div
+									class="hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden"
+								>
+									<p class="text-sm text-dark-800">3 Items</p>
+								</div>
+								<div
+									class="hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden"
+								>
+									<p class="text-sm text-dark-800">22 hrs ago</p>
+								</div>
+								<div
+									class="[.list-type_&]:flex items-center gap-2 justify-between max-md:justify-end pr-3 max-lg:not-[.list-type_&]:flex"
+								>
+									<span
+										class="hidden text-sm text-dark-800 md:[.list-type_&]:flex w-10 justify-center items-center"
+										>12</span
+									>
+									<div
+										class="dropdown-wrapper absolute right-2.5 top-1/2 -mt-[14px] max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:mt-0 [.list-type_&]:top-auto [.list-type_&]:mt-0 [.list-type_&]:static"
+									>
+										<span
+											type="button"
+											data-id="dropdown-settings"
+											class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer flex justify-center items-center transition-transform size-7 hover:bg-gray-400 rounded-full shrink-0"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-dots-horizontal"></use>
+											</svg>
+											<span class="sr-only">Settings</span>
+										</span>
+										<div
+											class="js-dropdown hidden left-full right-auto top-2.5"
+											data-dropdown-id="dropdown-settings"
+											data-sheet-modal
+										>
+											<div class="js-dropdown-overlay"></div>
+											<div class="js-dropdown-body">
+												<div class="js-dropdown-trigger">
+													<span></span>
+												</div>
+												<div class="js-dropdown-content">
+													<ul class="js-dropdown-list js-dropdown-primary-list">
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-link"></use>
+															</svg>
+															<span>Copy Link</span>
+														</li>
+														<li
+															class="js-dropdown-list-item"
+															data-dialog-open-id="email-share-dialog"
+														>
+															<svg class="icon icon-md">
+																<use href="#icon-share"></use>
+															</svg>
+															<span>Share</span>
+														</li>
+														<li class="border-b border-gray-500 my-2"></li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-lock"></use>
+															</svg>
+															<span>Lock</span>
+															<span class="text-sm text-blue-500 font-medium"
+																>Plus</span
+															>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-trash-with-clock"></use>
+															</svg>
+															<span>Self-Destruct</span>
+															<span class="text-sm text-blue-500 font-medium"
+																>Plus</span
+															>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-stats"></use>
+															</svg>
+															<span>View Stats</span>
+															<span class="text-sm text-blue-500 font-medium"
+																>Plus</span
+															>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-pencil"></use>
+															</svg>
+															<span>Rename</span>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-star"></use>
+															</svg>
+															<span>Favorite</span>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-download"></use>
+															</svg>
+															<span>Download</span>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-copy"></use>
+															</svg>
+															<span>Copy / Move</span>
+														</li>
+														<li
+															data-dropdown-sub-id="version-history"
+															class="js-dropdown-list-item relative sub-menu-item"
+														>
+															<svg class="icon icon-md">
+																<use href="#icon-clock"></use>
+															</svg>
+															<span>Version History</span>
+															<span class="text-sm text-blue-500 font-medium"
+																>Plus</span
+															>
+															<svg
+																class="icon icon-md absolute top-1/2 -translate-y-1/2 right-1"
+															>
+																<use href="#icon-check-right"></use>
+															</svg>
+															<ul
+																class="dropdown-content js-dropdown-sub-list hidden"
+															>
+																<li class="sub-menu-item js-dropdown-list-item">
+																	<svg class="icon icon-md">
+																		<use href="#icon-upload"></use>
+																	</svg>
+																	<span>Upload New Version</span>
+																</li>
+																<li class="sub-menu-item js-dropdown-list-item">
+																	<svg class="icon icon-md">
+																		<use href="#icon-clock"></use>
+																	</svg>
+																	<span>View Version History</span>
+																</li>
+															</ul>
+														</li>
+														<li class="border-b border-gray-500 my-2"></li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-trash"></use>
+															</svg>
+															<span>Delete</span>
+														</li>
+													</ul>
+													<ul
+														class="js-dropdown-list js-dropdown-sub-list hidden"
+														data-dropdown-sub="version-history"
+													>
+														<li class="go-back js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-arrow-left"></use>
+															</svg>
+															<span>Version History</span>
+														</li>
+														<li class="border-b border-gray-500 mb-2"></li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-upload"></use>
+															</svg>
+															<span>Upload New Version</span>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-clock"></use>
+															</svg>
+															<span>View Version History</span>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div
+								onclick="window.open('./folder-open.html', '_self')"
+								class="group folder-item"
+							>
+								<div
+									class="flex items-center gap-3 [.list-type_&]:ml-2.5 max-lg:gap-5 max-lg:[.list-select-active.list-type_&]:pl-9! max-lg:[.list-type_&]:duration-300 max-lg:[.list-type_&]:transition-[padding-left] max-xl:not-[.list-type_&]:flex-col max-xl:not-[.list-type_&]:items-start max-lg:[.list-type_&]:items-center truncate"
+								>
+									<input
+										data-select-item
+										class="peer"
+										hidden
+										type="checkbox"
+										id="select-file-2"
+									/>
+									<label
+										class="card-select-box"
+										for="select-file-2"
+										aria-label="Select file"
+									>
+										<svg class="icon">
+											<use href="#icon-check-bold"></use>
+										</svg>
+									</label>
+									<div
+										class="flex items-center justify-center [.list-type_&]:w-10 [.list-type_&]:h-7.5 [.list-type_&]:flex-shrink-0"
+									>
+										<svg
+											class="icon icon-md lg:group-hover:not-[.list-type_&]:opacity-0 not-[.list-type_&]:[.list-select-active_&]:opacity-0 flex-shrink-0 max-lg:[.list-select-active_&]:not-[.list-type_&]:opacity-0"
+										>
+											<use href="#icon-folder"></use>
+										</svg>
+									</div>
+									<div class="flex flex-col gap-1 truncate">
+										<h4
+											class="text-sm text-dark-800 font-medium [.list-type_&]:mt-0 truncate"
+										>
+											Team Meetings Team Meetings Team Meetings Team Meetings
+											Team Meetings Team Meetings Team Meetings
+										</h4>
+										<ul class="list-with-dots lg:[.list-type_&]:hidden">
+											<li>2 Items</li>
+											<li>22 hrs ago</li>
+										</ul>
+									</div>
+								</div>
+								<div
+									class="hidden [.team-page_&]:[.list-type_&]:flex gap-2.5 items-center max-md:hidden!"
+								>
+									<img
+										class="size-6 object-cover"
+										src="./assets/images/avatar.png"
+										alt="Cris"
+									/>
+									<span class="truncate text-sm font-normal"
+										>Anthony Crissage Anthony Crissage</span
+									>
+								</div>
+								<div
+									class="hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden"
+								>
+									<p class="text-sm text-dark-800">3 Items</p>
+								</div>
+								<div
+									class="hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden"
+								>
+									<p class="text-sm text-dark-800">22 hrs ago</p>
+								</div>
+								<div
+									class="[.list-type_&]:flex items-center gap-2 justify-between max-md:justify-end pr-3 max-lg:not-[.list-type_&]:flex"
+								>
+									<span
+										class="hidden text-sm text-dark-800 md:[.list-type_&]:flex w-10 justify-center items-center"
+										>12</span
+									>
+									<div
+										class="dropdown-wrapper absolute right-2.5 top-1/2 -mt-[14px] max-xl:not-[.list-type_&]:top-4 max-xl:not-[.list-type_&]:mt-0 [.list-type_&]:top-auto [.list-type_&]:mt-0 [.list-type_&]:static"
+									>
+										<span
+											type="button"
+											data-id="dropdown-settings"
+											class="dropdown-button xl:not-[.list-type_&]:opacity-0 group-hover:not-[.list-type_&]:opacity-100 cursor-pointer flex justify-center items-center transition-transform size-7 hover:bg-gray-400 rounded-full shrink-0"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-dots-horizontal"></use>
+											</svg>
+											<span class="sr-only">Settings</span>
+										</span>
+										<div
+											class="js-dropdown hidden left-full right-auto top-2.5"
+											data-dropdown-id="dropdown-settings"
+											data-sheet-modal
+										>
+											<div class="js-dropdown-overlay"></div>
+											<div class="js-dropdown-body">
+												<div class="js-dropdown-trigger">
+													<span></span>
+												</div>
+												<div class="js-dropdown-content">
+													<ul class="js-dropdown-list js-dropdown-primary-list">
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-link"></use>
+															</svg>
+															<span>Copy Link</span>
+														</li>
+														<li
+															class="js-dropdown-list-item"
+															data-dialog-open-id="email-share-dialog"
+														>
+															<svg class="icon icon-md">
+																<use href="#icon-share"></use>
+															</svg>
+															<span>Share</span>
+														</li>
+														<li class="border-b border-gray-500 my-2"></li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-lock"></use>
+															</svg>
+															<span>Lock</span>
+															<span class="text-sm text-blue-500 font-medium"
+																>Plus</span
+															>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-trash-with-clock"></use>
+															</svg>
+															<span>Self-Destruct</span>
+															<span class="text-sm text-blue-500 font-medium"
+																>Plus</span
+															>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-stats"></use>
+															</svg>
+															<span>View Stats</span>
+															<span class="text-sm text-blue-500 font-medium"
+																>Plus</span
+															>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-pencil"></use>
+															</svg>
+															<span>Rename</span>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-star"></use>
+															</svg>
+															<span>Favorite</span>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-download"></use>
+															</svg>
+															<span>Download</span>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-copy"></use>
+															</svg>
+															<span>Copy / Move</span>
+														</li>
+														<li
+															data-dropdown-sub-id="version-history"
+															class="js-dropdown-list-item relative sub-menu-item"
+														>
+															<svg class="icon icon-md">
+																<use href="#icon-clock"></use>
+															</svg>
+															<span>Version History</span>
+															<span class="text-sm text-blue-500 font-medium"
+																>Plus</span
+															>
+															<svg
+																class="icon icon-md absolute top-1/2 -translate-y-1/2 right-1"
+															>
+																<use href="#icon-check-right"></use>
+															</svg>
+															<ul
+																class="dropdown-content js-dropdown-sub-list hidden"
+															>
+																<li class="sub-menu-item js-dropdown-list-item">
+																	<svg class="icon icon-md">
+																		<use href="#icon-upload"></use>
+																	</svg>
+																	<span>Upload New Version</span>
+																</li>
+																<li class="sub-menu-item js-dropdown-list-item">
+																	<svg class="icon icon-md">
+																		<use href="#icon-clock"></use>
+																	</svg>
+																	<span>View Version History</span>
+																</li>
+															</ul>
+														</li>
+														<li class="border-b border-gray-500 my-2"></li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-trash"></use>
+															</svg>
+															<span>Delete</span>
+														</li>
+													</ul>
+													<ul
+														class="js-dropdown-list js-dropdown-sub-list hidden"
+														data-dropdown-sub="version-history"
+													>
+														<li class="go-back js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-arrow-left"></use>
+															</svg>
+															<span>Version History</span>
+														</li>
+														<li class="border-b border-gray-500 mb-2"></li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-upload"></use>
+															</svg>
+															<span>Upload New Version</span>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-clock"></use>
+															</svg>
+															<span>View Version History</span>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 							<div
 								onclick="window.open('./folder-open.html', '_self')"
@@ -4323,7 +5036,7 @@
 							</div>
 						</div>
 						<div
-							class="grid grid-cols-4 gap-5 mt-5 [&.list-type]:hidden max-sm:gap-2.5 max-sm:grid-cols-2 fake-loading"
+							class="grid grid-cols-4 4xl:grid-cols-6 gap-5 mt-5 [&.list-type]:hidden max-sm:gap-2.5 max-sm:grid-cols-2 fake-loading"
 							data-content-type
 						>
 							<div
@@ -4443,7 +5156,7 @@
 							<span class="h-[20px] w-10 rounded bg-gray-300"></span>
 						</div>
 						<div
-							class="grid grid-cols-4 gap-[1.125rem] mt-5 [&.list-type]:flex flex-col [&.list-type]:gap-0 [&.grid-type]:grid-cols-5 max-md:grid-cols-3 max-sm:grid-cols-2 max-sm:gap-2.5 fake-loading-content"
+							class="grid grid-cols-4 4xl:grid-cols-6 gap-[1.125rem] mt-5 [&.list-type]:flex flex-col [&.list-type]:gap-0 [&.grid-type]:grid-cols-5 max-md:grid-cols-3 max-sm:grid-cols-2 max-sm:gap-2.5 fake-loading-content"
 							data-content-type
 						>
 							<div
@@ -5411,9 +6124,965 @@
 									</div>
 								</div>
 							</a>
+							<a href="#" class="file-item group dropdown-wrapper">
+								<div class="file-item-top">
+									<div class="file-item-top-wrapper">
+										<!-- If Video -->
+										<div class="file-item-tag">4 min</div>
+										<div class="file-item-image-box">
+											<!-- If Image or Video -->
+											<img
+												class="video-poster"
+												src="./assets/images/video-1.png"
+												alt="file"
+											/>
+											<svg
+												class="icon size-12 max-md:size-10 [.list-type_&]:size-4 [.grid-type_&]:size-10"
+											>
+												<use href="#icon-play"></use>
+											</svg>
+											<!-- Document Image -->
+											<!-- <img src="./assets/images/pdf-default.png" alt="file" class='h-13 w-auto'> -->
+										</div>
+									</div>
+								</div>
+								<div class="file-item-bottom">
+									<div class="flex flex-col gap-1.5">
+										<h4>Troubleshooting Password Validation</h4>
+										<div class="flex items-center gap-4">
+											<span class="flex items-center gap-1.5">
+												<svg class="icon icon-s">
+													<use href="#icon-eye-stroke"></use>
+												</svg>
+												<span class="text-xs text-dark-800/80">4</span>
+											</span>
+											<span class="flex items-center gap-1.5">
+												<svg class="icon icon-s">
+													<use href="#icon-comment"></use>
+												</svg>
+												<span class="text-xs text-dark-800/80">2</span>
+											</span>
+										</div>
+									</div>
+									<div class="file-author">
+										<div class="file-author-avatar">
+											<img src="./assets/images/avatar.png" alt="avatar" />
+										</div>
+										<div class="file-author-info">
+											<p>Robert Michael</p>
+											<span>3 months ago</span>
+										</div>
+									</div>
+								</div>
+								<!-- <div class="file-item-type">
+									<p
+										class="text-xs font-medium text-dark-800/80 [.list-type_&]:text-sm [.list-type_&]:text-dark-800 [.list-type_&]:font-normal"
+									>
+										MP4
+									</p>
+								</div> -->
+								<div
+									class="hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden"
+								>
+									<p class="text-sm text-dark-800">3 months ago</p>
+								</div>
+								<div
+									class="flex items-center justify-between [.list-type_&]:pr-3 max-md:[.list-type_&]:justify-end"
+								>
+									<p
+										class="text-sm text-dark-800 hidden [.list-type_&]:block max-md:[.list-type_&]:hidden w-10 text-center"
+									>
+										12
+									</p>
+									<input
+										class="peer"
+										hidden
+										type="checkbox"
+										data-select-item
+										id="select-file-212"
+									/>
+									<label
+										for="select-file-212"
+										class="card-select-box"
+										aria-label="Select file"
+									>
+										<svg class="icon">
+											<use href="#icon-check-bold"></use>
+										</svg>
+									</label>
+									<div class="file-item-nav dropdown-wrapper">
+										<span
+											type="button"
+											data-id="dropdown-settings"
+											class="dropdown-button file-item-nav-btn"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-dots-horizontal"></use>
+											</svg>
+											<span class="sr-only">Settings</span>
+										</span>
+										<div
+											class="js-dropdown hidden left-full right-auto top-2.5"
+											data-dropdown-id="dropdown-settings"
+											data-sheet-modal
+										>
+											<div class="js-dropdown-overlay"></div>
+											<div class="js-dropdown-body">
+												<div class="js-dropdown-trigger">
+													<span></span>
+												</div>
+												<div class="js-dropdown-content">
+													<ul class="js-dropdown-list js-dropdown-primary-list">
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-link"></use>
+															</svg>
+															<span>Copy Link</span>
+														</li>
+														<li
+															class="js-dropdown-list-item"
+															data-dialog-open-id="email-share-dialog"
+														>
+															<svg class="icon icon-md">
+																<use href="#icon-share"></use>
+															</svg>
+															<span>Share</span>
+														</li>
+														<li class="border-b border-gray-500 my-2"></li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-lock"></use>
+															</svg>
+															<span>Lock</span>
+															<span class="text-sm text-blue-500 font-medium"
+																>Plus</span
+															>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-trash-with-clock"></use>
+															</svg>
+															<span>Self-Destruct</span>
+															<span class="text-sm text-blue-500 font-medium"
+																>Plus</span
+															>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-stats"></use>
+															</svg>
+															<span>View Stats</span>
+															<span class="text-sm text-blue-500 font-medium"
+																>Plus</span
+															>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-pencil"></use>
+															</svg>
+															<span>Rename</span>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-star"></use>
+															</svg>
+															<span>Favorite</span>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-download"></use>
+															</svg>
+															<span>Download</span>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-copy"></use>
+															</svg>
+															<span>Copy / Move</span>
+														</li>
+														<li
+															data-dropdown-sub-id="version-history"
+															class="js-dropdown-list-item relative sub-menu-item"
+														>
+															<svg class="icon icon-md">
+																<use href="#icon-clock"></use>
+															</svg>
+															<span>Version History</span>
+															<span class="text-sm text-blue-500 font-medium"
+																>Plus</span
+															>
+															<svg
+																class="icon icon-md absolute top-1/2 -translate-y-1/2 right-1"
+															>
+																<use href="#icon-check-right"></use>
+															</svg>
+															<ul
+																class="dropdown-content js-dropdown-sub-list hidden"
+															>
+																<li class="sub-menu-item js-dropdown-list-item">
+																	<svg class="icon icon-md">
+																		<use href="#icon-upload"></use>
+																	</svg>
+																	<span>Upload New Version</span>
+																</li>
+																<li class="sub-menu-item js-dropdown-list-item">
+																	<svg class="icon icon-md">
+																		<use href="#icon-clock"></use>
+																	</svg>
+																	<span>View Version History</span>
+																</li>
+															</ul>
+														</li>
+														<li class="border-b border-gray-500 my-2"></li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-trash"></use>
+															</svg>
+															<span>Delete</span>
+														</li>
+													</ul>
+													<ul
+														class="js-dropdown-list js-dropdown-sub-list hidden"
+														data-dropdown-sub="version-history"
+													>
+														<li class="go-back js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-arrow-left"></use>
+															</svg>
+															<span>Version History</span>
+														</li>
+														<li class="border-b border-gray-500 mb-2"></li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-upload"></use>
+															</svg>
+															<span>Upload New Version</span>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-clock"></use>
+															</svg>
+															<span>View Version History</span>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</a>
+							<a href="#" class="file-item group dropdown-wrapper">
+								<div class="file-item-top">
+									<div class="file-item-top-wrapper">
+										<!-- If Video -->
+										<div class="file-item-tag">22 min</div>
+										<div class="file-item-image-box">
+											<!-- If Image or Video -->
+											<img
+												class="video-poster"
+												src="./assets/images/video-2.png"
+												alt="file"
+											/>
+											<svg
+												class="icon size-12 max-md:size-10 [.list-type_&]:size-4 [.grid-type_&]:size-10"
+											>
+												<use href="#icon-play"></use>
+											</svg>
+											<!-- Document Image -->
+											<!-- <img src="./assets/images/pdf-default.png" alt="file" class='h-13 w-auto'> -->
+										</div>
+									</div>
+								</div>
+								<div class="file-item-bottom">
+									<div class="flex flex-col gap-1.5">
+										<h4>Guidelines for the tour</h4>
+										<div class="flex items-center gap-4">
+											<span class="flex items-center gap-1.5">
+												<svg class="icon icon-s">
+													<use href="#icon-eye-stroke"></use>
+												</svg>
+												<span class="text-xs text-dark-800/80">214</span>
+											</span>
+											<span class="flex items-center gap-1.5">
+												<svg class="icon icon-s">
+													<use href="#icon-comment"></use>
+												</svg>
+												<span class="text-xs text-dark-800/80">12</span>
+											</span>
+										</div>
+									</div>
+									<div class="file-author">
+										<div class="file-author-avatar">
+											<img src="./assets/images/avatar.png" alt="avatar" />
+										</div>
+										<div class="file-author-info">
+											<p>Robert Michael</p>
+											<span>3 months ago</span>
+										</div>
+									</div>
+								</div>
+								<!-- <div class="file-item-type">
+									<p
+										class="text-xs font-medium text-dark-800/80 [.list-type_&]:text-sm [.list-type_&]:text-dark-800 [.list-type_&]:font-normal"
+									>
+										MP4
+									</p>
+								</div> -->
+								<div
+									class="hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden"
+								>
+									<p class="text-sm text-dark-800">3 months ago</p>
+								</div>
+								<div
+									class="flex items-center justify-between [.list-type_&]:pr-3 max-md:[.list-type_&]:justify-end"
+								>
+									<p
+										class="text-sm text-dark-800 hidden [.list-type_&]:block max-md:[.list-type_&]:hidden w-10 text-center"
+									>
+										37
+									</p>
+									<input
+										class="peer"
+										hidden
+										type="checkbox"
+										data-select-item
+										id="select-file-244"
+									/>
+									<label class="card-select-box" for="select-file-244">
+										<svg class="icon">
+											<use href="#icon-check-bold"></use>
+										</svg>
+									</label>
+									<div class="file-item-nav dropdown-wrapper">
+										<span
+											type="button"
+											data-id="dropdown-settings"
+											class="dropdown-button file-item-nav-btn"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-dots-horizontal"></use>
+											</svg>
+											<span class="sr-only">Settings</span>
+										</span>
+										<div
+											class="js-dropdown hidden left-full right-auto top-2.5"
+											data-dropdown-id="dropdown-settings"
+											data-sheet-modal
+										>
+											<div class="js-dropdown-overlay"></div>
+											<div class="js-dropdown-body">
+												<div class="js-dropdown-trigger">
+													<span></span>
+												</div>
+												<div class="js-dropdown-content">
+													<ul class="js-dropdown-list js-dropdown-primary-list">
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-link"></use>
+															</svg>
+															<span>Copy Link</span>
+														</li>
+														<li
+															class="js-dropdown-list-item"
+															data-dialog-open-id="email-share-dialog"
+														>
+															<svg class="icon icon-md">
+																<use href="#icon-share"></use>
+															</svg>
+															<span>Share</span>
+														</li>
+														<li class="border-b border-gray-500 my-2"></li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-lock"></use>
+															</svg>
+															<span>Lock</span>
+															<span class="text-sm text-blue-500 font-medium"
+																>Plus</span
+															>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-trash-with-clock"></use>
+															</svg>
+															<span>Self-Destruct</span>
+															<span class="text-sm text-blue-500 font-medium"
+																>Plus</span
+															>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-stats"></use>
+															</svg>
+															<span>View Stats</span>
+															<span class="text-sm text-blue-500 font-medium"
+																>Plus</span
+															>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-pencil"></use>
+															</svg>
+															<span>Rename</span>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-star"></use>
+															</svg>
+															<span>Favorite</span>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-download"></use>
+															</svg>
+															<span>Download</span>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-copy"></use>
+															</svg>
+															<span>Copy / Move</span>
+														</li>
+														<li
+															data-dropdown-sub-id="version-history"
+															class="js-dropdown-list-item relative sub-menu-item"
+														>
+															<svg class="icon icon-md">
+																<use href="#icon-clock"></use>
+															</svg>
+															<span>Version History</span>
+															<span class="text-sm text-blue-500 font-medium"
+																>Plus</span
+															>
+															<svg
+																class="icon icon-md absolute top-1/2 -translate-y-1/2 right-1"
+															>
+																<use href="#icon-check-right"></use>
+															</svg>
+															<ul
+																class="dropdown-content js-dropdown-sub-list hidden"
+															>
+																<li class="sub-menu-item js-dropdown-list-item">
+																	<svg class="icon icon-md">
+																		<use href="#icon-upload"></use>
+																	</svg>
+																	<span>Upload New Version</span>
+																</li>
+																<li class="sub-menu-item js-dropdown-list-item">
+																	<svg class="icon icon-md">
+																		<use href="#icon-clock"></use>
+																	</svg>
+																	<span>View Version History</span>
+																</li>
+															</ul>
+														</li>
+														<li class="border-b border-gray-500 my-2"></li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-trash"></use>
+															</svg>
+															<span>Delete</span>
+														</li>
+													</ul>
+													<ul
+														class="js-dropdown-list js-dropdown-sub-list hidden"
+														data-dropdown-sub="version-history"
+													>
+														<li class="go-back js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-arrow-left"></use>
+															</svg>
+															<span>Version History</span>
+														</li>
+														<li class="border-b border-gray-500 mb-2"></li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-upload"></use>
+															</svg>
+															<span>Upload New Version</span>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-clock"></use>
+															</svg>
+															<span>View Version History</span>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</a>
+							<a href="#" class="file-item group dropdown-wrapper">
+								<div class="file-item-top">
+									<div class="file-item-top-wrapper">
+										<div class="file-item-image-box">
+											<!-- Document Image -->
+											<img
+												src="./assets/images/pdf-default.png"
+												alt="file"
+												class="h-13 w-auto [.list-type_&]:h-7.5 [.grid-type_&]:h-11.5"
+											/>
+										</div>
+									</div>
+								</div>
+								<div class="file-item-bottom">
+									<div class="flex flex-col gap-1.5">
+										<h4>Customer Relation Management</h4>
+										<div class="flex items-center gap-4">
+											<span class="flex items-center gap-1.5">
+												<svg class="icon icon-s">
+													<use href="#icon-eye-stroke"></use>
+												</svg>
+												<span class="text-xs text-dark-800/80">41</span>
+											</span>
+											<span class="flex items-center gap-1.5">
+												<svg class="icon icon-s">
+													<use href="#icon-comment"></use>
+												</svg>
+												<span class="text-xs text-dark-800/80">0</span>
+											</span>
+										</div>
+									</div>
+									<div class="file-author">
+										<div class="file-author-avatar">
+											<img src="./assets/images/avatar.png" alt="avatar" />
+										</div>
+										<div class="file-author-info">
+											<p>Robert Michael</p>
+											<span>3 months ago</span>
+										</div>
+									</div>
+								</div>
+								<!-- <div class="file-item-type">
+									<p
+										class="text-xs font-medium text-dark-800/80 [.list-type_&]:text-sm [.list-type_&]:text-dark-800 [.list-type_&]:font-normal"
+									>
+										PDF
+									</p>
+								</div> -->
+								<div
+									class="hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden"
+								>
+									<p class="text-sm text-dark-800">3 months ago</p>
+								</div>
+								<div
+									class="flex items-center justify-between [.list-type_&]:pr-3 max-md:[.list-type_&]:justify-end"
+								>
+									<p
+										class="text-sm text-dark-800 hidden [.list-type_&]:block max-md:[.list-type_&]:hidden w-10 text-center"
+									>
+										76
+									</p>
+									<input
+										class="peer"
+										hidden
+										type="checkbox"
+										data-select-item
+										id="select-file-241"
+									/>
+									<label class="card-select-box" for="select-file-241">
+										<svg class="icon">
+											<use href="#icon-check-bold"></use>
+										</svg>
+									</label>
+									<div class="file-item-nav dropdown-wrapper">
+										<button
+											data-id="dropdown-settings"
+											class="dropdown-button file-item-nav-btn"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-dots-horizontal"></use>
+											</svg>
+										</button>
+										<div
+											class="js-dropdown hidden left-full right-auto top-2.5"
+											data-dropdown-id="dropdown-settings"
+											data-sheet-modal
+										>
+											<div class="js-dropdown-overlay"></div>
+											<div class="js-dropdown-body">
+												<div class="js-dropdown-trigger">
+													<span></span>
+												</div>
+												<div class="js-dropdown-content">
+													<ul class="js-dropdown-list js-dropdown-primary-list">
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-link"></use>
+															</svg>
+															<span>Copy Link</span>
+														</li>
+														<li
+															class="js-dropdown-list-item"
+															data-dialog-open-id="email-share-dialog"
+														>
+															<svg class="icon icon-md">
+																<use href="#icon-share"></use>
+															</svg>
+															<span>Share</span>
+														</li>
+														<li class="border-b border-gray-500 my-2"></li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-lock"></use>
+															</svg>
+															<span>Lock</span>
+															<span class="text-sm text-blue-500 font-medium"
+																>Plus</span
+															>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-trash-with-clock"></use>
+															</svg>
+															<span>Self-Destruct</span>
+															<span class="text-sm text-blue-500 font-medium"
+																>Plus</span
+															>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-stats"></use>
+															</svg>
+															<span>View Stats</span>
+															<span class="text-sm text-blue-500 font-medium"
+																>Plus</span
+															>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-pencil"></use>
+															</svg>
+															<span>Rename</span>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-star"></use>
+															</svg>
+															<span>Favorite</span>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-download"></use>
+															</svg>
+															<span>Download</span>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-copy"></use>
+															</svg>
+															<span>Copy / Move</span>
+														</li>
+														<li
+															data-dropdown-sub-id="version-history"
+															class="js-dropdown-list-item relative sub-menu-item"
+														>
+															<svg class="icon icon-md">
+																<use href="#icon-clock"></use>
+															</svg>
+															<span>Version History</span>
+															<span class="text-sm text-blue-500 font-medium"
+																>Plus</span
+															>
+															<svg
+																class="icon icon-md absolute top-1/2 -translate-y-1/2 right-1"
+															>
+																<use href="#icon-check-right"></use>
+															</svg>
+															<ul
+																class="dropdown-content js-dropdown-sub-list hidden"
+															>
+																<li class="sub-menu-item js-dropdown-list-item">
+																	<svg class="icon icon-md">
+																		<use href="#icon-upload"></use>
+																	</svg>
+																	<span>Upload New Version</span>
+																</li>
+																<li class="sub-menu-item js-dropdown-list-item">
+																	<svg class="icon icon-md">
+																		<use href="#icon-clock"></use>
+																	</svg>
+																	<span>View Version History</span>
+																</li>
+															</ul>
+														</li>
+														<li class="border-b border-gray-500 my-2"></li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-trash"></use>
+															</svg>
+															<span>Delete</span>
+														</li>
+													</ul>
+													<ul
+														class="js-dropdown-list js-dropdown-sub-list hidden"
+														data-dropdown-sub="version-history"
+													>
+														<li class="go-back js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-arrow-left"></use>
+															</svg>
+															<span>Version History</span>
+														</li>
+														<li class="border-b border-gray-500 mb-2"></li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-upload"></use>
+															</svg>
+															<span>Upload New Version</span>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-clock"></use>
+															</svg>
+															<span>View Version History</span>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</a>
+							<a href="#" class="file-item group dropdown-wrapper">
+								<div class="file-item-top">
+									<div class="file-item-top-wrapper">
+										<div class="file-item-image-box">
+											<!-- Document Image -->
+											<img
+												src="./assets/images/exel-default.png"
+												alt="file"
+												class="h-13 w-auto [.list-type_&]:h-7.5 [.grid-type_&]:h-11.5"
+											/>
+										</div>
+									</div>
+								</div>
+								<div class="file-item-bottom">
+									<div class="flex flex-col gap-1.5">
+										<h4>Guidelines for the tour of 2024 session</h4>
+										<div class="flex items-center gap-4">
+											<span class="flex items-center gap-1.5">
+												<svg class="icon icon-s">
+													<use href="#icon-eye-stroke"></use>
+												</svg>
+												<span class="text-xs text-dark-800/80">2414</span>
+											</span>
+											<span class="flex items-center gap-1.5">
+												<svg class="icon icon-s">
+													<use href="#icon-comment"></use>
+												</svg>
+												<span class="text-xs text-dark-800/80">2</span>
+											</span>
+										</div>
+									</div>
+									<div class="file-author">
+										<div class="file-author-avatar">
+											<img src="./assets/images/avatar.png" alt="avatar" />
+										</div>
+										<div class="file-author-info">
+											<p>Robert Michael Robert Michael Robert Michael</p>
+											<span>3 months ago</span>
+										</div>
+									</div>
+								</div>
+								<!-- <div class="file-item-type">
+									<p
+										class="text-xs font-medium text-dark-800/80 [.list-type_&]:text-sm [.list-type_&]:text-dark-800 [.list-type_&]:font-normal"
+									>
+										DOCX
+									</p>
+								</div> -->
+								<div
+									class="hidden [.list-type_&]:flex items-center max-md:[.list-type_&]:hidden"
+								>
+									<p class="text-sm text-dark-800">3 months ago</p>
+								</div>
+								<div
+									class="flex items-center justify-between [.list-type_&]:pr-3 max-md:[.list-type_&]:justify-end"
+								>
+									<p
+										class="text-sm text-dark-800 hidden [.list-type_&]:block max-md:[.list-type_&]:hidden w-10 text-center"
+									>
+										76
+									</p>
+									<input
+										class="peer"
+										hidden
+										type="checkbox"
+										data-select-item
+										id="select-file-532"
+									/>
+									<label class="card-select-box" for="select-file-532">
+										<svg class="icon">
+											<use href="#icon-check-bold"></use>
+										</svg>
+									</label>
+									<div class="file-item-nav dropdown-wrapper">
+										<span
+											type="button"
+											data-id="dropdown-settings"
+											class="dropdown-button file-item-nav-btn"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-dots-horizontal"></use>
+											</svg>
+											<span class="sr-only">Settings</span>
+										</span>
+										<div
+											class="js-dropdown hidden left-full right-auto top-2.5"
+											data-dropdown-id="dropdown-settings"
+											data-sheet-modal
+										>
+											<div class="js-dropdown-overlay"></div>
+											<div class="js-dropdown-body">
+												<div class="js-dropdown-trigger">
+													<span></span>
+												</div>
+												<div class="js-dropdown-content">
+													<ul class="js-dropdown-list js-dropdown-primary-list">
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-link"></use>
+															</svg>
+															<span>Copy Link</span>
+														</li>
+														<li
+															class="js-dropdown-list-item"
+															data-dialog-open-id="email-share-dialog"
+														>
+															<svg class="icon icon-md">
+																<use href="#icon-share"></use>
+															</svg>
+															<span>Share</span>
+														</li>
+														<li class="border-top border-gray-500 my-2"></li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-lock"></use>
+															</svg>
+															<span>Lock</span>
+															<span class="text-sm text-blue-500 font-medium"
+																>Plus</span
+															>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-trash-with-clock"></use>
+															</svg>
+															<span>Self-Destruct</span>
+															<span class="text-sm text-blue-500 font-medium"
+																>Plus</span
+															>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-stats"></use>
+															</svg>
+															<span>View Stats</span>
+															<span class="text-sm text-blue-500 font-medium"
+																>Plus</span
+															>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-pencil"></use>
+															</svg>
+															<span>Rename</span>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-star"></use>
+															</svg>
+															<span>Favorite</span>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-download"></use>
+															</svg>
+															<span>Download</span>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-copy"></use>
+															</svg>
+															<span>Copy / Move</span>
+														</li>
+														<li
+															data-dropdown-sub-id="version-history"
+															class="js-dropdown-list-item relative sub-menu-item"
+														>
+															<svg class="icon icon-md">
+																<use href="#icon-clock"></use>
+															</svg>
+															<span>Version History</span>
+															<span class="text-sm text-blue-500 font-medium"
+																>Plus</span
+															>
+															<svg
+																class="icon icon-md absolute top-1/2 -translate-y-1/2 right-1"
+															>
+																<use href="#icon-check-right"></use>
+															</svg>
+															<ul
+																class="dropdown-content js-dropdown-sub-list hidden"
+															>
+																<li class="sub-menu-item js-dropdown-list-item">
+																	<svg class="icon icon-md">
+																		<use href="#icon-upload"></use>
+																	</svg>
+																	<span>Upload New Version</span>
+																</li>
+																<li class="sub-menu-item js-dropdown-list-item">
+																	<svg class="icon icon-md">
+																		<use href="#icon-clock"></use>
+																	</svg>
+																	<span>View Version History</span>
+																</li>
+															</ul>
+														</li>
+														<li class="border-top border-gray-500 my-2"></li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-trash"></use>
+															</svg>
+															<span>Delete</span>
+														</li>
+													</ul>
+													<ul
+														class="js-dropdown-list js-dropdown-sub-list hidden"
+														data-dropdown-sub="version-history"
+													>
+														<li class="go-back js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-arrow-left"></use>
+															</svg>
+															<span>Version History</span>
+														</li>
+														<li class="border-top border-gray-500 mb-2"></li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-upload"></use>
+															</svg>
+															<span>Upload New Version</span>
+														</li>
+														<li class="js-dropdown-list-item">
+															<svg class="icon icon-md">
+																<use href="#icon-clock"></use>
+															</svg>
+															<span>View Version History</span>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</a>
 						</div>
 						<div
-							class="grid grid-cols-4 gap-[1.125rem] mt-5 [&.list-type]:hidden max-md:grid-cols-3 max-sm:grid-cols-2 max-sm:gap-2.5 fake-loading"
+							class="grid grid-cols-4 4xl:grid-cols-6 gap-[1.125rem] mt-5 [&.list-type]:hidden max-md:grid-cols-3 max-sm:grid-cols-2 max-sm:gap-2.5 fake-loading"
 							data-content-type
 						>
 							<div
