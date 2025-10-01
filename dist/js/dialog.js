@@ -35,10 +35,10 @@ const Dialog = {
 			if (BottomSheet.isMobile) {
 				const body = $dialog.find(`.modal-${dialogId}`);
 				const content = body.find(".modal-content");
-				BottomSheet.closeActiveSheet();
+				// BottomSheet.closeActiveSheet();
 
 				if (dialogId === "email-share-dialog") {
-					BottomSheet.open({
+					BottomSheetLite.open({
 						event: e,
 						modal: $dialog,
 						body,
@@ -51,7 +51,7 @@ const Dialog = {
 						defaultHeight: 95,
 					});
 				} else {
-					BottomSheet.open({
+					BottomSheetLite.open({
 						event: e,
 						modal: $dialog,
 						body,

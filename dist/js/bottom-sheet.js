@@ -577,9 +577,10 @@ const BottomSheet = {
 			this.dragStartY = currentY;
 			return;
 		}
-		// Moving up does not cancel readiness once armed; only clear arm-until-lift
+		// Moving up cancels arm and readiness
 		if (deltaY > 0) {
 			this.dragArmUntilLift = false;
+			this.dragReadyToClose = false;
 		}
 
 		const scrollEl = this.dragScrollable || ($scrollBlock && $scrollBlock[0]);
@@ -589,8 +590,7 @@ const BottomSheet = {
 			const canScrollDown = deltaY > 0 && maxScrollTop - scrollTop > 0;
 			const canScrollUp = deltaY < 0 && scrollTop > 0;
 			// Если контент может скроллиться в сторону жеста — отдаём нативному скроллу (инерция сохранится)
-			// но только пока закрытие ещё не заармлено
-			if (!this.dragReadyToClose && (canScrollDown || canScrollUp)) {
+			if (canScrollDown || canScrollUp) {
 				this.dragStartY = currentY;
 				return;
 			}
@@ -637,8 +637,8 @@ const BottomSheet = {
 			}
 		}
 
-		// Если ещё не заармлено закрытие — не двигаем шит, отдаём жест контенту
-		if (!this.dragReadyToClose) {
+		// Если мы не перехватили шит — ничего не двигаем
+		if (!(deltaY < 0 && inst.isDismissAllowed)) {
 			this.dragStartY = currentY;
 			return;
 		}
@@ -658,19 +658,9 @@ const BottomSheet = {
 
 		const viewportHeight = window.innerHeight;
 		const deltaHeight = (deltaY / viewportHeight) * 100;
-		const defaultHeight =
-			inst.defaultHeightOverride !== null
-				? inst.defaultHeightOverride
-				: inst.modal.data("default-height") || this.config.defaultHeight;
 		const newHeight = Math.min(
 			this.config.maxHeight,
-			// вверх — не выше defaultHeight; вниз — вплоть до 0
-			Math.max(
-				0,
-				deltaY > 0
-					? Math.min(defaultHeight, inst.modal.data("height") + deltaHeight)
-					: inst.modal.data("height") + deltaHeight,
-			),
+			Math.max(0, inst.modal.data("height") + deltaHeight),
 		);
 		this.setSheetHeight(
 			inst.modal,

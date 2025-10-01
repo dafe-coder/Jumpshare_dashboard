@@ -56,7 +56,7 @@ $(document).ready(function () {
 	function initSidebar() {
 		const isCollapsed = localStorage.getItem("sidebar-collapsed");
 
-		if (isCollapsed !== "false") {
+		if (isCollapsed !== "false" && !BottomSheet.isMobile) {
 			sidebar.removeClass("duration-300");
 			sidebar.addClass("duration-0");
 			$("body").addClass("active-sidebar");
@@ -185,7 +185,7 @@ $(document).ready(function () {
 	setTimeout(() => {
 		fakeLoading.addClass("hidden!");
 		fakeLoadingContent.removeClass("hidden!");
-	}, 2000);
+	}, 20);
 
 	// Drag and drop
 	const dragAndDrop = $(".drag-and-drop");

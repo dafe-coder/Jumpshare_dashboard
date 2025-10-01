@@ -58,7 +58,7 @@ const Dropdown = {
 			);
 			const hasSheetModal = $sheetModal.length > 0;
 			if (this.isMobile && hasSheetModal) {
-				BottomSheet.open({
+				BottomSheetLite.open({
 					event: e,
 					modal: $sheetModal,
 					triggerHeight: 25,

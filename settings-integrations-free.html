@@ -304,21 +304,16 @@
 						</nav>
 					</div>
 				</div>
-			</aside>>
-					</div>
-				</div>
 			</aside>
 			<main class="relative max-lg:w-full lg:ml-[15rem]">
-				<header
-					class="pt-4 sticky top-0 z-51 bg-white transition-all duration-300 pb-4"
-				>
+				<header class="pt-4 bg-white sticky top-0 z-51 pb-4">
 					<div class="dashboard-container">
 						<div
-							class="w-full flex items-center justify-between max-md:bg-gray-150 max-md:rounded-lg gap-x-4"
+							class="w-full flex items-center justify-between max-md:bg-gray-150 max-md:rounded-lg gap-x-5"
 						>
 							<form
 								action="#"
-								class="max-w-[44.75rem] h-[2.5625rem] w-full bg-gray-150 rounded-lg relative max-md:h-12"
+								class="h-9.5 w-full border border-gray-600 rounded-lg relative max-md:h-12 max-md:border-none"
 							>
 								<button
 									aria-label="Toggle navigation"
@@ -342,54 +337,153 @@
 									aria-label="Search"
 									required
 									type="text"
-									class="size-full rounded-lg pl-10 pr-4 text-sm max-lg:pl-13"
+									class="size-full rounded-lg pl-10 pr-4 text-sm max-lg:pl-13 placeholder:text-dark-800/60 outline-0 outline-offset-0"
 									data-mobile-placeholder="Search for files..."
 									placeholder="Search for people, Files, folder & spaces"
 								/>
 							</form>
-							<div class="flex items-center gap-4">
-								<a
-									data-id="dropdown-notifications"
-									href="#"
-									class="dropdown-button size-10 flex justify-center items-center transition-colors hover:bg-gray-150 rounded-lg [&.active]:bg-gray-150 cursor-pointer"
+							<div class="flex items-center gap-3">
+								<button
+									class="btn min-w-[6.75rem] bg-blue-500/10 text-blue-500 max-md:min-w-auto hover:bg-blue-500/20 max-md:hidden h-9 px-3"
+									type="button"
 								>
-									<svg class="icon size-5.5">
-										<use href="#icon-question-in-circle"></use>
+									<svg class="icon icon-sm">
+										<use href="#icon-subscription-filled"></use>
 									</svg>
-									<span class="sr-only">Help Center</span>
-								</a>
-								<div class="flex items-center gap-3">
-									<button
-										class="btn btn-border-default min-w-[6.75rem] max-md:min-w-auto"
-										type="button"
+									<span class="max-md:hidden">Upgrade</span>
+								</button>
+								<button
+									type="button"
+									class="btn btn-border-default min-w-[6.75rem] max-md:hidden h-9 px-3"
+									data-dialog-open-id="invite-members"
+								>
+									<svg class="icon icon-sm">
+										<use href="#icon-user-invite"></use>
+									</svg>
+									Invite
+								</button>
+								<div class="flex items-center gap-x-2">
+									<a
+										data-id="dropdown-notifications"
+										href="#"
+										class="dropdown-button size-10 flex justify-center items-center transition-colors hover:bg-gray-150 rounded-lg [&.active]:bg-gray-150 cursor-pointer max-md:hidden"
 									>
-										<svg class="icon icon-sm">
-											<use href="#icon-user-invite"></use>
+										<svg class="icon size-5.5">
+											<use href="#icon-question-in-circle"></use>
 										</svg>
-										<span class="max-md:hidden">Invite</span>
-									</button>
-									<button
-										class="btn btn-border-default min-w-[6.75rem] border-blue-500 text-blue-500 max-md:min-w-auto hover:bg-blue-500/5"
-										type="button"
-									>
-										<svg class="icon icon-sm">
-											<use href="#icon-subscription-filled"></use>
-										</svg>
-										<span class="max-md:hidden">Upgrade</span>
-									</button>
-									<button
-										class="btn btn-border-default min-w-[6.75rem] border-red-400 text-red-400 max-md:min-w-auto hover:bg-red-400/5"
-										type="button"
-									>
-										<span class="record-icon"></span>
-										<span class="max-md:hidden">Record </span>
-									</button>
+										<span class="sr-only">Help Center</span>
+									</a>
+									<div class="dropdown-wrapper">
+										<a
+											href="#"
+											data-id="dropdown-avatar"
+											class="dropdown-button flex gap-1.5 items-center cursor-pointer max-md:pr-3 [&.active]:bg-gray-150 px-2 h-10 rounded-lg"
+										>
+											<div
+												class="size-7.5 rounded-full overflow-hidden bg-gray-200 inset-ring-2 inset-ring-gray-100"
+											>
+												<img src="./assets/images/avatar.png" alt="Avatar" />
+											</div>
+											<svg class="icon icon-xs flex-shrink-0">
+												<use href="#icon-check-bottom"></use>
+											</svg>
+										</a>
+										<div
+											class="js-dropdown w-[15.75rem] right-0 hidden"
+											data-dropdown-id="dropdown-avatar"
+											data-sheet-modal
+											data-overflow-visible
+										>
+											<div class="js-dropdown-overlay"></div>
+											<div class="js-dropdown-body">
+												<div class="js-dropdown-trigger">
+													<span></span>
+												</div>
+												<div class="js-dropdown-content pt-1.5">
+													<ul>
+														<li class="flex items-center gap-3 px-3.5 py-3">
+															<div class="size-8 rounded-full overflow-hidden">
+																<img
+																	class="size-full object-cover"
+																	src="./assets/images/avatar.png"
+																	alt="Avatar"
+																/>
+															</div>
+															<div class="flex flex-col gap-0.5">
+																<span
+																	class="text-sm font-semibold text-dark-800"
+																	>John Doe</span
+																>
+																<p class="text-dark-800/50 text-xs">
+																	johndoe252@cironex.com
+																</p>
+															</div>
+														</li>
+														<li
+															class="border-b border-gray-500 mb-2 mt-1.5"
+														></li>
+														<li
+															class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+															onclick="window.open('./settings.html', '_self')"
+														>
+															<svg class="icon icon-md">
+																<use href="#icon-workspace"></use>
+															</svg>
+															<span>Workspace Settings</span>
+														</li>
+														<li
+															class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+														>
+															<svg class="icon icon-md">
+																<use href="#icon-user"></use>
+															</svg>
+															<span>Profile Settings</span>
+														</li>
+														<li class="border-b border-gray-500 my-2"></li>
+														<li
+															class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+														>
+															<svg class="icon icon-md">
+																<use href="#icon-download"></use>
+															</svg>
+															<span>Install Jumpshare</span>
+														</li>
+														<li
+															class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+														>
+															<svg class="icon icon-md">
+																<use href="#icon-help"></use>
+															</svg>
+															<span>Help Center</span>
+														</li>
+														<li
+															class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+														>
+															<svg class="icon icon-md">
+																<use href="#icon-message-alert"></use>
+															</svg>
+															<span>Send Feedback</span>
+														</li>
+														<li class="border-b border-gray-500 my-2"></li>
+														<li
+															class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+														>
+															<svg class="icon icon-md">
+																<use href="#icon-sign-out"></use>
+															</svg>
+															<span>Sign Out</span>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</header>
-				<div class="dashboard-container pb-5 pt-5">
+				<div class="dashboard-container pb-5 pt-1">
 					<h3 class="text-lg text-dark-800 font-semibold">Integrations</h3>
 					<div
 						class="flex items-center bg-white border-gray-600 border rounded-xl p-6 mt-3 max-sm:p-5 max-md:flex-col max-md:items-start max-md:gap-5"
