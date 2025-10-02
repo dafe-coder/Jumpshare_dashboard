@@ -394,12 +394,15 @@ $(document).ready(function () {
 			}
 		}
 	}
+	console.log(tabButtons, tabButtons);
 
-	tabButtons.forEach((btn, idx) => {
-		btn.addEventListener("click", () =>
-			activateTab(idx, btn.getAttribute("data-settings-tab-id")),
-		);
-	});
+	if (tabButtons.length && tabContents.length) {
+		tabButtons.forEach((btn, idx) => {
+			btn.addEventListener("click", () =>
+				activateTab(idx, btn.getAttribute("data-settings-tab-id")),
+			);
+		});
 
-	activateTab(0, tabButtons[0].getAttribute("data-settings-tab-id"));
+		activateTab(0, tabButtons[0].getAttribute("data-settings-tab-id"));
+	}
 });

@@ -35,7 +35,7 @@ const Dialog = {
 			if (BottomSheet.isMobile) {
 				const body = $dialog.find(`.modal-${dialogId}`);
 				const content = body.find(".modal-content");
-				// BottomSheet.closeActiveSheet();
+				BottomSheetLite.closeAll();
 
 				if (dialogId === "email-share-dialog") {
 					BottomSheetLite.open({
