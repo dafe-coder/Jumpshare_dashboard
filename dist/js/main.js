@@ -67,10 +67,18 @@ $(document).ready(function () {
 				sidebar.addClass("duration-300");
 				sidebar.removeClass("duration-0");
 			}, 10);
+		} else {
+			$("body").removeClass("active-sidebar");
+			collapseSidebarBtn.removeClass("active-collapse-sidebar-btn");
+			sidebar.removeClass("sidebar-collapsed");
+			sidebar.removeClass("duration-300");
+			sidebar.removeClass("duration-0");
 		}
 	}
-
 	initSidebar();
+	$(window).on("resize", function () {
+		initSidebar();
+	});
 
 	collapseSidebarBtn.on("click", function (e) {
 		e.preventDefault();
@@ -110,6 +118,9 @@ $(document).ready(function () {
 	const titleLibraryTextDefault = titleLibrary.text();
 
 	selectItem.on("change", function (e) {
+		e.preventDefault();
+		e.stopPropagation();
+		e.stopImmediatePropagation();
 		const selectedItems = selectItem.filter(":checked");
 		$(this).closest(".folder-item").toggleClass("active-select");
 
@@ -394,7 +405,6 @@ $(document).ready(function () {
 			}
 		}
 	}
-	console.log(tabButtons, tabButtons);
 
 	if (tabButtons.length && tabContents.length) {
 		tabButtons.forEach((btn, idx) => {

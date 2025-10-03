@@ -31,7 +31,6 @@ const BottomSheetLite = {
 	},
 	init() {
 		$(window).on("resize.bottomSheetLite", () => {
-			Helpers.isMobile = window.innerWidth < 1024;
 			["dropdown", "dialog"].forEach((t) => {
 				const top = this.getTop(t);
 				if (!top) return;
@@ -48,7 +47,24 @@ const BottomSheetLite = {
 			if (e.key === "Escape") this.close();
 		});
 	},
+	detachSheetEvents(type, inst) {
+		$(window)
+			.off(
+				`mousemove.touchDrag-${type}-${inst.id} touchmove.touchDrag-${type}-${inst.id}`,
+			)
+			.off(
+				`mouseup.touchDrag-${type}-${inst.id} touchend.touchDrag-${type}-${inst.id}`,
+			);
+		inst.body.off(
+			`mousedown.touchDrag-${type}-${inst.id} touchstart.touchDrag-${type}-${inst.id}`,
+		);
+		inst.overlay.off(`click.bottomSheet-${type}-${inst.id}`);
+		inst.closeBtn.off(`click.bottomSheet-${type}-${inst.id}`);
+	},
 	open(opts) {
+		if (!Helpers.isMobile) {
+			return;
+		}
 		const {
 			event,
 			modal,
@@ -97,6 +113,7 @@ const BottomSheetLite = {
 		body.css("height", "0");
 		Helpers.lockPageScroll();
 		setTimeout(() => {
+			modal.addClass("anim-sheet");
 			this.setSheetHeight(
 				modal,
 				body,
@@ -112,7 +129,7 @@ const BottomSheetLite = {
 		}, this.config.showDelay);
 		this.bindSheetEvents(type, inst);
 	},
-	close(type = "dropdown", instanceId = null) {
+	close(type = "dropdown", instanceId = null, immediate = false) {
 		const stack = this.getStack(type);
 		if (!stack.length) return;
 		let idx = stack.length - 1;
@@ -129,20 +146,10 @@ const BottomSheetLite = {
 		) {
 			this.state.activeDrag = null;
 		}
-		$(window)
-			.off(
-				`mousemove.touchDrag-${type}-${inst.id} touchmove.touchDrag-${type}-${inst.id}`,
-			)
-			.off(
-				`mouseup.touchDrag-${type}-${inst.id} touchend.touchDrag-${type}-${inst.id}`,
-			);
-		inst.body.off(
-			`mousedown.touchDrag-${type}-${inst.id} touchstart.touchDrag-${type}-${inst.id}`,
-		);
-		inst.overlay.off(`click.bottomSheet-${type}-${inst.id}`);
-		inst.closeBtn.off(`click.bottomSheet-${type}-${inst.id}`);
+		this.detachSheetEvents(type, inst);
 		this.setSheetHeight(inst.modal, inst.body, 0, inst.heightTrigger);
 		inst.modal.removeClass("show-sheet");
+		inst.modal.removeClass("anim-sheet");
 		stack.splice(idx, 1);
 		if (
 			this.state.dropdownStack.length === 0 &&
@@ -150,17 +157,25 @@ const BottomSheetLite = {
 		) {
 			Helpers.unlockPageScroll();
 		}
-		setTimeout(() => {
+
+		if (immediate) {
 			inst.modal.addClass("hidden");
-			inst.body.addClass("hidden");
-		}, this.config.animationDuration);
+			inst.body.removeClass("hidden");
+			inst.body.css("height", "auto");
+		} else {
+			setTimeout(() => {
+				inst.modal.addClass("hidden");
+				inst.body.addClass("hidden");
+			}, this.config.animationDuration);
+		}
 	},
-	closeAll() {
+	closeAll(immediate) {
 		["dropdown", "dialog"].forEach((type) => {
 			const stack = this.getStack(type);
 			while (stack.length) {
 				const top = stack[stack.length - 1];
-				this.close(type, top.id);
+				this.close(type, top.id, immediate);
+				this.detachSheetEvents(type, top);
 			}
 		});
 	},

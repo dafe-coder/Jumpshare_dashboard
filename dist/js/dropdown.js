@@ -1,8 +1,6 @@
 const Dropdown = {
 	dropdownIdTimer: null,
 	resizeTimer: null,
-	isMobile: window.innerWidth < 1024,
-
 	dropdownWrappers: null,
 	dropdownButtons: null,
 	dropdownContents: null,
@@ -42,7 +40,7 @@ const Dropdown = {
 			e.preventDefault();
 		});
 
-		this.dropdownButtons.on("click", (e) => {
+		this.dropdownButtons.on("click.dropdown-buttons", (e) => {
 			const $button = $(e.currentTarget);
 			const dropdownId = $button.attr("data-id");
 			if (window.innerWidth < 1024 && dropdownId === "dropdown-grid") {
@@ -57,7 +55,7 @@ const Dropdown = {
 				`[data-sheet-modal][data-dropdown-id="${dropdownId}"]`,
 			);
 			const hasSheetModal = $sheetModal.length > 0;
-			if (this.isMobile && hasSheetModal) {
+			if (Helpers.isMobile && hasSheetModal) {
 				BottomSheetLite.open({
 					event: e,
 					modal: $sheetModal,
@@ -86,7 +84,7 @@ const Dropdown = {
 			);
 			const hasSheetModal = $sheetModal.length > 0;
 
-			if (this.isMobile && hasSheetModal) {
+			if (Helpers.isMobile && hasSheetModal) {
 				const itemId = $item.data("sheet-item-id");
 				if (itemId) {
 					BottomSheet.openSubMenu(itemId);
@@ -124,16 +122,15 @@ const Dropdown = {
 	},
 
 	setTransformOrigin($content) {
+		if (!$content || !$content.length || !$content[0]) {
+			return;
+		}
 		const $wrapper = $content.closest(".dropdown-wrapper");
 		const contentRect = $content[0].getBoundingClientRect();
 		const wrapperRect = $wrapper[0].getBoundingClientRect();
 
 		const relativeTop = contentRect.top - wrapperRect.top;
 		const relativeBottom = wrapperRect.bottom - contentRect.bottom;
-		console.log({
-			relativeTop,
-			relativeBottom,
-		});
 
 		let verticalOrigin = "center";
 		if (relativeTop >= 0) {
@@ -209,12 +206,10 @@ const Dropdown = {
 	},
 
 	handleWindowResize() {
-		this.isMobile = window.innerWidth < 1024;
-
-		if (this.isMobile) {
-			this.closeAllDropdowns();
+		if (Helpers.isMobile) {
+			this.closeAllDropdowns(true);
 		} else {
-			BottomSheet.close();
+			BottomSheetLite.closeAll(true);
 		}
 	},
 
@@ -229,11 +224,6 @@ const Dropdown = {
 		const $activeSubList = $(".js-dropdown-sub-list.active");
 
 		if ($activeDropdown.length > 0) {
-			console.log(
-				"Cleaning up active dropdowns on init:",
-				$activeDropdown.length,
-			);
-
 			$activeDropdown
 				.removeClass("active dropdown-animate-show dropdown-animate-hide")
 				.addClass("hidden");
@@ -244,7 +234,7 @@ const Dropdown = {
 		}
 	},
 
-	closeAllDropdowns() {
+	closeAllDropdowns(immediate = false) {
 		clearTimeout(this.dropdownIdCloseAllTimer);
 		clearTimeout(this.dropdownIdCloseTimer);
 
@@ -253,12 +243,11 @@ const Dropdown = {
 		const $activeWrapper = this.dropdownWrappers.filter(".active");
 		const $activeSubMenu = this.subMenuItems.filter(".active");
 		const $activeSubList = $(".js-dropdown-sub-list.active");
+		this.detachScrollListeners();
 
 		if ($activeDropdown.length === 0) {
 			return;
 		}
-
-		console.log("Closing dropdowns:", $activeDropdown.length, $activeDropdown);
 
 		$activeDropdown.removeClass("active dropdown-animate-show");
 		$activeButton.removeClass("active");
@@ -267,15 +256,16 @@ const Dropdown = {
 		$activeSubList.removeClass("active").addClass("hidden");
 
 		$activeDropdown.addClass("dropdown-animate-hide");
-
-		this.detachScrollListeners();
-
-		this.dropdownIdCloseAllTimer = setTimeout(() => {
-			const $stillClosing = this.dropdownContents.filter(
-				".dropdown-animate-hide",
-			);
-			$stillClosing.removeClass("dropdown-animate-hide").addClass("hidden");
-		}, this.config.animationDelay);
+		if (immediate) {
+			$activeDropdown.removeClass("dropdown-animate-hide").addClass("hidden");
+		} else {
+			this.dropdownIdCloseAllTimer = setTimeout(() => {
+				const $stillClosing = this.dropdownContents.filter(
+					".dropdown-animate-hide",
+				);
+				$stillClosing.removeClass("dropdown-animate-hide").addClass("hidden");
+			}, this.config.animationDelay);
+		}
 	},
 
 	closeDropdown($button, $wrapper, $content) {
@@ -470,8 +460,6 @@ const Dropdown = {
 	},
 
 	initMobileGridDropdown() {
-		console.log("=========", $('[data-id="dropdown-grid"]'));
-
 		$('[data-id="dropdown-grid"]').on("click", (e) => {
 			if (window.innerWidth < 1024) {
 				e.preventDefault();

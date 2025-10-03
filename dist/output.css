@@ -1096,6 +1096,12 @@
   .w-76 {
     width: calc(var(--spacing) * 76);
   }
+  .w-77 {
+    width: calc(var(--spacing) * 77);
+  }
+  .w-78 {
+    width: calc(var(--spacing) * 78);
+  }
   .w-80 {
     width: calc(var(--spacing) * 80);
   }
@@ -1251,6 +1257,9 @@
   }
   .w-px {
     width: 1px;
+  }
+  .w-screen {
+    width: 100vw;
   }
   .max-w-60 {
     max-width: calc(var(--spacing) * 60);
@@ -2829,6 +2838,10 @@
     --tw-duration: 300ms;
     transition-duration: 300ms;
   }
+  .duration-400 {
+    --tw-duration: 400ms;
+    transition-duration: 400ms;
+  }
   .duration-500 {
     --tw-duration: 500ms;
     transition-duration: 500ms;
@@ -2845,6 +2858,9 @@
     --tw-outline-style: none;
     outline-style: none;
   }
+  .ease-initial {
+    --tw-ease: initial;
+  }
   .not-first\:mt-5 {
     &:not(*:first-child) {
       margin-top: calc(var(--spacing) * 5);
@@ -2860,6 +2876,11 @@
     &:not(*:last-of-type) {
       border-bottom-style: var(--tw-border-style);
       border-bottom-width: 1px;
+    }
+  }
+  .not-\[\.active_\&\]\:pointer-events-none {
+    &:not(.active *) {
+      pointer-events: none;
     }
   }
   .not-\[\.list-type_\&\]\:opacity-0 {
@@ -3836,6 +3857,11 @@
   .max-lg\:flex {
     @media (width < 64rem) {
       display: flex;
+    }
+  }
+  .max-lg\:grid {
+    @media (width < 64rem) {
+      display: grid;
     }
   }
   .max-lg\:hidden {
@@ -7922,13 +7948,11 @@
         transition-property: all;
         transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
         transition-duration: var(--tw-duration, var(--default-transition-duration));
-        transition-delay: 1000ms;
-        --tw-duration: 300ms;
-        transition-duration: 300ms;
-        --tw-ease: var(--ease-in);
-        transition-timing-function: var(--ease-in);
+        --tw-duration: 400ms;
+        transition-duration: 400ms;
+        --tw-ease: initial;
       }
-      &.show-sheet > .js-dropdown-overlay {
+      &.anim-sheet > .js-dropdown-overlay {
         opacity: 100%;
       }
       &[data-sheet-modal] {
