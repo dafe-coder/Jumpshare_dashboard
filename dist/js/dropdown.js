@@ -1,6 +1,7 @@
 const Dropdown = {
 	dropdownIdTimer: null,
 	resizeTimer: null,
+	wasMobile: window.innerWidth < 1024,
 	dropdownWrappers: null,
 	dropdownButtons: null,
 	dropdownContents: null,
@@ -55,7 +56,7 @@ const Dropdown = {
 				`[data-sheet-modal][data-dropdown-id="${dropdownId}"]`,
 			);
 			const hasSheetModal = $sheetModal.length > 0;
-			if (Helpers.isMobile && hasSheetModal) {
+			if (Helpers.isMobile() && hasSheetModal) {
 				BottomSheetLite.open({
 					event: e,
 					modal: $sheetModal,
@@ -84,7 +85,7 @@ const Dropdown = {
 			);
 			const hasSheetModal = $sheetModal.length > 0;
 
-			if (Helpers.isMobile && hasSheetModal) {
+			if (Helpers.isMobile() && hasSheetModal) {
 				const itemId = $item.data("sheet-item-id");
 				if (itemId) {
 					BottomSheet.openSubMenu(itemId);
@@ -206,11 +207,15 @@ const Dropdown = {
 	},
 
 	handleWindowResize() {
-		if (Helpers.isMobile) {
+		const isMobile = window.innerWidth < 1024;
+		const wasMobile = this.wasMobile;
+
+		if (isMobile && !wasMobile) {
 			this.closeAllDropdowns(true);
-		} else {
+		} else if (!isMobile && wasMobile) {
 			BottomSheetLite.closeAll(true);
 		}
+		this.wasMobile = isMobile;
 	},
 
 	cleanupActiveDropdowns() {

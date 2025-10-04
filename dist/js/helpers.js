@@ -1,5 +1,7 @@
 const Helpers = {
-	isMobile: window.innerWidth < 1024,
+	isMobile() {
+		return window.innerWidth < 1024;
+	},
 	getScrollbarWidth() {
 		const outer = document.createElement("div");
 		outer.style.visibility = "hidden";

@@ -62,7 +62,7 @@ const BottomSheetLite = {
 		inst.closeBtn.off(`click.bottomSheet-${type}-${inst.id}`);
 	},
 	open(opts) {
-		if (!Helpers.isMobile) {
+		if (!Helpers.isMobile()) {
 			return;
 		}
 		const {
@@ -175,7 +175,6 @@ const BottomSheetLite = {
 			while (stack.length) {
 				const top = stack[stack.length - 1];
 				this.close(type, top.id, immediate);
-				this.detachSheetEvents(type, top);
 			}
 		});
 	},
