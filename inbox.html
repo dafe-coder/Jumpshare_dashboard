@@ -354,7 +354,9 @@
 							</div>
 						</div>
 					</div>
-					<div class="flex flex-col h-full overflow-y-auto px-3 pb-4">
+					<div
+						class="flex flex-col h-full overflow-y-auto px-3 pb-4 scrollbar-hide"
+					>
 						<nav class="flex flex-col mb-5">
 							<ul class="aside-nav">
 								<li>
@@ -1365,16 +1367,16 @@
 										Personal Library
 									</p>
 									<div class="dropdown-wrapper">
-										<button
+										<span
 											type="button"
-											aria-label="Open menu"
 											data-id="dropdown-inbox"
 											class="dropdown-button rounded-full size-6 flex items-center justify-center hover:bg-gray-400 cursor-pointer [&.active]:bg-gray-400"
 										>
 											<svg class="icon icon-md">
 												<use href="#icon-dots-horizontal"></use>
 											</svg>
-										</button>
+											<span class="sr-only">Open menu</span>
+										</span>
 										<div
 											class="js-dropdown hidden w-[12.625rem]"
 											data-dropdown-id="dropdown-inbox"
@@ -1437,16 +1439,16 @@
 										Team Library
 									</p>
 									<div class="dropdown-wrapper">
-										<button
+										<span
 											type="button"
-											aria-label="Open menu"
 											data-id="dropdown-inbox"
 											class="dropdown-button rounded-full size-6 flex items-center justify-center hover:bg-gray-400 cursor-pointer [&.active]:bg-gray-400"
 										>
 											<svg class="icon icon-md">
 												<use href="#icon-dots-horizontal"></use>
 											</svg>
-										</button>
+											<span class="sr-only">Open menu</span>
+										</span>
 										<div
 											class="js-dropdown hidden w-[12.625rem]"
 											data-dropdown-id="dropdown-inbox"
@@ -1509,16 +1511,16 @@
 										Personal Library
 									</p>
 									<div class="dropdown-wrapper">
-										<button
+										<span
 											type="button"
-											aria-label="Open menu"
 											data-id="dropdown-inbox"
 											class="dropdown-button rounded-full size-6 flex items-center justify-center hover:bg-gray-400 cursor-pointer [&.active]:bg-gray-400"
 										>
 											<svg class="icon icon-md">
 												<use href="#icon-dots-horizontal"></use>
 											</svg>
-										</button>
+											<span class="sr-only">Open menu</span>
+										</span>
 										<div
 											class="js-dropdown hidden w-[12.625rem]"
 											data-dropdown-id="dropdown-inbox"
@@ -1582,16 +1584,16 @@
 										Personal Library
 									</p>
 									<div class="dropdown-wrapper">
-										<button
+										<span
 											type="button"
-											aria-label="Open menu"
 											data-id="dropdown-inbox"
 											class="dropdown-button rounded-full size-6 flex items-center justify-center hover:bg-gray-400 cursor-pointer [&.active]:bg-gray-400"
 										>
 											<svg class="icon icon-md">
 												<use href="#icon-dots-horizontal"></use>
 											</svg>
-										</button>
+											<span class="sr-only">Open menu</span>
+										</span>
 										<div
 											class="js-dropdown hidden w-[12.625rem]"
 											data-dropdown-id="dropdown-inbox"
@@ -1652,16 +1654,16 @@
 										Personal Library
 									</p>
 									<div class="dropdown-wrapper">
-										<button
+										<span
 											type="button"
-											aria-label="Open menu"
 											data-id="dropdown-inbox"
 											class="dropdown-button rounded-full size-6 flex items-center justify-center hover:bg-gray-400 cursor-pointer [&.active]:bg-gray-400"
 										>
 											<svg class="icon icon-md">
 												<use href="#icon-dots-horizontal"></use>
 											</svg>
-										</button>
+											<span class="sr-only">Open menu</span>
+										</span>
 										<div
 											class="js-dropdown hidden w-[12.625rem]"
 											data-dropdown-id="dropdown-inbox"
@@ -1738,16 +1740,16 @@
 										Personal Library
 									</p>
 									<div class="dropdown-wrapper">
-										<button
+										<span
 											type="button"
-											aria-label="Open menu"
 											data-id="dropdown-inbox"
 											class="dropdown-button rounded-full size-6 flex items-center justify-center hover:bg-gray-400 cursor-pointer [&.active]:bg-gray-400"
 										>
 											<svg class="icon icon-md">
 												<use href="#icon-dots-horizontal"></use>
 											</svg>
-										</button>
+											<span class="sr-only">Open menu</span>
+										</span>
 										<div
 											class="js-dropdown hidden w-[12.625rem]"
 											data-dropdown-id="dropdown-inbox"
@@ -1808,16 +1810,16 @@
 										Personal Library
 									</p>
 									<div class="dropdown-wrapper">
-										<button
+										<span
 											type="button"
-											aria-label="Open menu"
 											data-id="dropdown-inbox"
 											class="dropdown-button rounded-full size-6 flex items-center justify-center hover:bg-gray-400 cursor-pointer [&.active]:bg-gray-400"
 										>
 											<svg class="icon icon-md">
 												<use href="#icon-dots-horizontal"></use>
 											</svg>
-										</button>
+											<span class="sr-only">Open menu</span>
+										</span>
 										<div
 											class="js-dropdown hidden w-[12.625rem]"
 											data-dropdown-id="dropdown-inbox"
@@ -1865,9 +1867,10 @@
 			integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
 			crossorigin="anonymous"
 		></script>
+		<script src="./dist/js/helpers.js"></script>
 		<script src="./dist/js/sidebar-active-links.js"></script>
 		<script src="./dist/js/mobile-menu.js"></script>
-		<script src="./dist/js/bottom-sheet.js"></script>
+		<script src="./dist/js/bottom-sheet.lite.js"></script>
 		<script src="./dist/js/dialog.js"></script>
 		<script src="./dist/js/menu-tree.js"></script>
 		<script src="./dist/js/dropdown.js"></script>

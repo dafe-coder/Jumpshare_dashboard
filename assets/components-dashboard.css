@@ -1,4 +1,7 @@
 @layer components {
+	html.sidebar-collapsed aside {
+		@apply w-16!;
+	}
 	.btn-white {
 		@apply bg-white;
 	}

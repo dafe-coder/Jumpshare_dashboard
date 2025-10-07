@@ -8,7 +8,7 @@ const Dialog = {
 		console.log("[Dialog] initDialog", { closeBtns: $closeBtn.length });
 
 		$dialog.on("click", (e) => {
-			if (e.target === $dialog[0] && !BottomSheet.isMobile) {
+			if (e.target === $dialog[0] && !Helpers.isMobile()) {
 				$dialog.addClass("hidden");
 				$dialog.find(".modal-dialog").addClass("hidden");
 			}
@@ -16,13 +16,13 @@ const Dialog = {
 
 		$closeBtn.on("click", () => {
 			console.log("[Dialog] closeBtn click (desktop)");
-			if (!BottomSheet.isMobile) {
+			if (!Helpers.isMobile()) {
 				$dialog.addClass("hidden");
 				$dialog.find(".modal-dialog").addClass("hidden");
 			}
 		});
 		$("#lightbox .modal").on("click", function (e) {
-			if (e.target === this && !BottomSheet.isMobile) {
+			if (e.target === this && !Helpers.isMobile()) {
 				$dialog.addClass("hidden");
 				$dialog.find(".modal-dialog").addClass("hidden");
 			}
@@ -32,7 +32,7 @@ const Dialog = {
 			e.stopPropagation();
 			const dialogId = $(this).attr("data-dialog-open-id");
 
-			if (BottomSheet.isMobile) {
+			if (Helpers.isMobile()) {
 				const body = $dialog.find(`.modal-${dialogId}`);
 				const content = body.find(".modal-content");
 				BottomSheetLite.closeAll();
@@ -44,7 +44,6 @@ const Dialog = {
 						body,
 						content,
 						overlayElement: $dialog.find(".modal"),
-						scrollBlockElement: body.find(".modal-body"),
 						closeButtonElement: body.find("[data-dialog-close]"),
 						type: "dialog",
 						maxHeight: 95,
@@ -57,7 +56,6 @@ const Dialog = {
 						body,
 						content,
 						overlayElement: $dialog.find(".modal"),
-						scrollBlockElement: body.find(".modal-body"),
 						closeButtonElement: body.find("[data-dialog-close]"),
 						type: "dialog",
 					});

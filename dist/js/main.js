@@ -52,50 +52,39 @@ $(document).ready(function () {
 	let collapseSidebarId = null;
 	const collapseSidebarTimeout = 500;
 	const sidebar = $("aside");
+	let wasMobileSidebar = window.innerWidth < 1024;
 
 	function initSidebar() {
-		const isCollapsed = localStorage.getItem("sidebar-collapsed");
-
-		if (isCollapsed !== "false" && !BottomSheet.isMobile) {
-			sidebar.removeClass("duration-300");
-			sidebar.addClass("duration-0");
-			$("body").addClass("active-sidebar");
-			collapseSidebarBtn.addClass("active-collapse-sidebar-btn");
-			sidebar.width(64);
-			sidebar.addClass("sidebar-collapsed");
-			setTimeout(() => {
-				sidebar.addClass("duration-300");
-				sidebar.removeClass("duration-0");
-			}, 10);
-		} else {
-			$("body").removeClass("active-sidebar");
-			collapseSidebarBtn.removeClass("active-collapse-sidebar-btn");
-			sidebar.removeClass("sidebar-collapsed");
-			sidebar.removeClass("duration-300");
-			sidebar.removeClass("duration-0");
-		}
+		sidebar.addClass("transition-none");
+		sidebar.removeClass("transition-all");
+		setTimeout(() => {
+			sidebar.removeClass("transition-none");
+			sidebar.addClass("transition-all");
+		}, 100);
 	}
 	initSidebar();
 	$(window).on("resize", function () {
-		initSidebar();
+		const isMobile = window.innerWidth < 1024;
+		if (wasMobileSidebar !== isMobile) {
+			wasMobileSidebar = isMobile;
+			initSidebar();
+		}
 	});
 
 	collapseSidebarBtn.on("click", function (e) {
 		e.preventDefault();
-		$("body").toggleClass("active-sidebar");
-		collapseSidebarBtn.toggleClass("active-collapse-sidebar-btn");
-
+		$("html").toggleClass("active-sidebar");
 		if (sidebar.width() === 240) {
 			localStorage.setItem("sidebar-collapsed", true);
 			sidebar.width(64);
 			collapseSidebarId = setTimeout(() => {
-				sidebar.addClass("sidebar-collapsed");
+				$("html").addClass("sidebar-collapsed");
 				clearTimeout(collapseSidebarId);
 			}, collapseSidebarTimeout);
 		} else {
 			localStorage.setItem("sidebar-collapsed", false);
 			sidebar.width(240);
-			sidebar.removeClass("sidebar-collapsed");
+			$("html").removeClass("sidebar-collapsed");
 			clearTimeout(collapseSidebarId);
 		}
 	});

@@ -33,7 +33,7 @@ const Dropdown = {
 		this.bindDropdownEvents();
 		this.bindSubMenuEvents();
 		this.bindDocumentEvents();
-		this.bindMobileEvents();
+		// this.bindMobileEvents();
 	},
 
 	bindDropdownEvents() {
@@ -88,7 +88,7 @@ const Dropdown = {
 			if (Helpers.isMobile() && hasSheetModal) {
 				const itemId = $item.data("sheet-item-id");
 				if (itemId) {
-					BottomSheet.openSubMenu(itemId);
+					// BottomSheet.openSubMenu(itemId);
 				}
 			} else {
 				this.handleSubMenuItemClick(e);
@@ -98,13 +98,13 @@ const Dropdown = {
 		$(".js-dropdown-sub-list .go-back").on("click", (e) => {
 			e.preventDefault();
 			e.stopImmediatePropagation();
-			BottomSheet.closeSubMenu();
+			// BottomSheet.closeSubMenu();
 		});
 	},
 
 	bindDocumentEvents() {
 		$(document).on("click", (e) => {
-			if (!BottomSheet.isMobile) {
+			if (!Helpers.isMobile()) {
 				this.handleDocumentClick(e);
 			}
 		});
@@ -114,13 +114,13 @@ const Dropdown = {
 		});
 	},
 
-	bindMobileEvents() {
-		if (BottomSheet.isMobile) {
-			$(".js-dropdown-overlay").on("click", () => {
-				BottomSheet.close();
-			});
-		}
-	},
+	// bindMobileEvents() {
+	// 	if (BottomSheet.isMobile) {
+	// 		$(".js-dropdown-overlay").on("click", () => {
+	// 			BottomSheet.close();
+	// 		});
+	// 	}
+	// },
 
 	setTransformOrigin($content) {
 		if (!$content || !$content.length || !$content[0]) {
@@ -301,7 +301,7 @@ const Dropdown = {
 		const needsFixedPosition =
 			hasOverflowVisible && this.isInsideOverflowHidden($element);
 
-		if (needsFixedPosition && !BottomSheet.isMobile) {
+		if (needsFixedPosition && !Helpers.isMobile()) {
 			$element.addClass("dropdown-fixed");
 			this.attachScrollListeners($element);
 			this.calculateFixedPosition($element);

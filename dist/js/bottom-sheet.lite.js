@@ -2,6 +2,7 @@ const BottomSheetLite = {
 	instanceCounter: 0,
 	nextZIndex: 10001,
 	state: { dropdownStack: [], dialogStack: [], activeDrag: null },
+	closeThresholdPercent: 20, // how many percent decrease from top to close
 	config: {
 		defaultHeight: 0,
 		maxHeight: 80,
@@ -75,7 +76,6 @@ const BottomSheetLite = {
 			closeButtonElement = modal.find(
 				this.config.selectors.closeButtonSelector,
 			),
-			scrollBlockElement = null,
 			type = "dropdown",
 			defaultHeight = null,
 			maxHeight = null,
@@ -92,7 +92,7 @@ const BottomSheetLite = {
 			content,
 			overlay: overlayElement,
 			closeBtn: closeButtonElement,
-			scrollBlock: scrollBlockElement ? scrollBlockElement : content,
+			scrollBlock: content,
 			heightTrigger: triggerHeight || 0,
 			defaultHeightOverride: defaultHeight,
 			maxHeight: maxHeight != null ? maxHeight : this.config.maxHeight,
@@ -112,6 +112,7 @@ const BottomSheetLite = {
 		this.calculateContentHeight(modal, content[0]);
 		body.css("height", "0");
 		Helpers.lockPageScroll();
+		$("aside").removeClass("active");
 		setTimeout(() => {
 			modal.addClass("anim-sheet");
 			this.setSheetHeight(
@@ -273,7 +274,17 @@ const BottomSheetLite = {
 		} catch (e) {}
 
 		const y = event.touches ? event.touches[0].pageY : event.pageY;
-		inst.gesture = { startY: y, prevY: y, scrollEl, captured: false };
+		const startHeight =
+			inst.modal.data("height") ||
+			inst.modal.data("default-height") ||
+			this.config.defaultHeight;
+		inst.gesture = {
+			startY: y,
+			prevY: y,
+			scrollEl,
+			captured: false,
+			startHeight,
+		};
 		inst.body.css("transition", "none");
 		inst.body.addClass("not-selectable");
 		$("body").css("cursor", "grabbing");
@@ -371,7 +382,13 @@ const BottomSheetLite = {
 			}
 		} catch (e) {}
 		const current = inst.modal.data("height") || 0;
-		if (current < 45 && inst.isDismissAllowed) {
+
+		const startHeight =
+			g.startHeight != null
+				? g.startHeight
+				: inst.modal.data("default-height") || this.config.defaultHeight;
+		const shouldClose = startHeight - current >= this.closeThresholdPercent; // close if reduced
+		if (shouldClose && inst.isDismissAllowed) {
 			this.close(type, id);
 			inst.gesture = null;
 			this.state.activeDrag = null;

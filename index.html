@@ -130,6 +130,35 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="stylesheet" href="./dist/output.css" />
+		<script>
+			// TODO: Move code during implementation
+			let wasMobile = window.innerWidth < 1024;
+
+			function applySidebarState() {
+				const isCollapsed = localStorage.getItem("sidebar-collapsed");
+				const isMobile = window.innerWidth < 1024;
+				if (isCollapsed !== "false" && !isMobile) {
+					document.documentElement.classList.add(
+						"active-sidebar",
+						"sidebar-collapsed",
+					);
+				} else {
+					document.documentElement.classList.remove(
+						"active-sidebar",
+						"sidebar-collapsed",
+					);
+				}
+			}
+
+			applySidebarState();
+			window.addEventListener("resize", () => {
+				const isMobile = window.innerWidth < 1024;
+				if (isMobile !== wasMobile) {
+					wasMobile = isMobile;
+					applySidebarState();
+				}
+			});
+		</script>
 	</head>
 	<body class="drag-and-drop dashboard">
 		<!-- <a href="#" data-dialog-open-id="email-share-dialog">Open Share Modal</a> -->
@@ -2264,7 +2293,7 @@
 		</div>
 		<div class="w-full min-h-screen">
 			<aside
-				class="w-60 fixed left-0 top-0 bottom-0 flex flex-col h-[calc(100vh-var(--browser-ui-height,0px))] z-101 max-lg:-left-full max-lg:top-0 max-lg:w-full! transition-all duration-500 ease-initial [&.active]:left-0"
+				class="w-60 fixed left-0 top-0 bottom-0 flex flex-col h-[calc(100vh-var(--browser-ui-height,0px))] z-101 max-lg:-left-full max-lg:top-0 max-lg:w-full! transition-none duration-300 ease-initial [&.active]:left-0"
 			>
 				<div
 					class="mobile-menu-overlay fixed top-0 left-0 bg-dark-800/50 z-0 w-screen opacity-0 h-[calc(100vh-var(--browser-ui-height,0px))] lg:hidden [.active_&]:opacity-100 transition-all duration-400 ease-in-out delay-75 not-[.active_&]:pointer-events-none"
@@ -2449,7 +2478,9 @@
 							</div>
 						</div>
 					</div>
-					<div class="flex flex-col h-full overflow-y-auto px-3 pb-4">
+					<div
+						class="flex flex-col h-full overflow-y-auto px-3 pb-4 scrollbar-hide"
+					>
 						<nav class="flex flex-col mb-5">
 							<ul class="aside-nav">
 								<li>
@@ -8085,7 +8116,6 @@
 		<script src="./dist/js/helpers.js"></script>
 		<script src="./dist/js/sidebar-active-links.js"></script>
 		<script src="./dist/js/space.js"></script>
-		<script src="./dist/js/bottom-sheet.js"></script>
 		<script src="./dist/js/bottom-sheet.lite.js"></script>
 		<script src="./dist/js/tooltip.js"></script>
 		<script src="./dist/js/mobile-menu.js"></script>
