@@ -28,14 +28,49 @@ const Helpers = {
 		return scrollHeight > window.innerHeight;
 	},
 	lockPageScroll() {
+		if (document.body.dataset.scrollLocked === "1") return;
+		$("body").addClass("page-lock");
+
 		const hasVScroll = this.pageHasVerticalScrollbar();
-		if (this.getScrollbarWidth() > 0 && hasVScroll) {
-			$("html").css("padding-right", `${this.getScrollbarWidth()}px`);
+		const sw = this.getScrollbarWidth();
+		if (sw > 0 && hasVScroll) {
+			$("body").css("padding-right", `${sw}px`);
 		}
-		$("body").addClass("overflow-hidden");
+
+		const y = window.scrollY || window.pageYOffset || 0;
+		document.body.dataset.scrollLocked = "1";
+		document.body.dataset.scrollY = String(y);
+		document.documentElement.style.overscrollBehavior = "none";
+
+		const b = document.body;
+		b.style.position = "fixed";
+		b.style.top = `-${y}px`;
+		b.style.left = "0";
+		b.style.right = "0";
+		b.style.width = "100%";
+		b.style.overflow = "hidden";
 	},
 	unlockPageScroll() {
-		$("html").css("padding-right", "0");
-		$("body").removeClass("overflow-hidden");
+		if (document.body.dataset.scrollLocked !== "1") return;
+		$("body").removeClass("page-lock");
+
+		$("body").css("padding-right", "0");
+		document.documentElement.style.overscrollBehavior = "";
+
+		const b = document.body;
+		const y =
+			Math.abs(parseInt(b.style.top || "0", 10)) ||
+			Number(document.body.dataset.scrollY) ||
+			0;
+		b.style.position = "";
+		b.style.top = "";
+		b.style.left = "";
+		b.style.right = "";
+		b.style.width = "";
+		b.style.overflow = "";
+
+		delete document.body.dataset.scrollLocked;
+		delete document.body.dataset.scrollY;
+		window.scrollTo(0, y);
 	},
 };

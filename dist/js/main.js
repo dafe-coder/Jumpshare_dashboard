@@ -271,6 +271,7 @@ $(document).ready(function () {
 	let headerHeight = header[0].offsetHeight;
 
 	$(window).scroll(function () {
+		if ($("body").hasClass("page-lock")) return;
 		if (window.innerWidth < 1024) {
 			let currentScroll = $(window).scrollTop();
 			const scrollThreshold = 30;

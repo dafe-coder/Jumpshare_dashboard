@@ -195,7 +195,1105 @@
 			/>
 		</symbol>
 	</svg>
-	<body class="drag-and-drop dashboard team-page">
+	<body class="drag-and-drop dashboard team-page" style="overflow: hidden">
+		<div class="w-full min-h-screen">
+			<div class="max-w-xl mx-auto mt-8 hidden">
+				<strong class="block text-sm font-semibold text-dark-800 mb-4 text-left"
+					>General access</strong
+				>
+				<div class="dropdown-test-wrapper max-w-[492px] relative hidden">
+					<div
+						class="flex justify-start items-center gap-2 px-4 py-2 bg-gray-150 w-full rounded-md cursor-pointer"
+					>
+						<svg class="icon icon-md text-dark-800">
+							<use href="#icon-world" />
+						</svg>
+						<div class="flex flex-col gap-1">
+							<div class="font-medium text-dark-800 text-sm">
+								Anyone with a link
+							</div>
+							<div class="text-xs text-dark-800/70">
+								Anyone with a link can access. Hidden from search engines.
+							</div>
+						</div>
+						<svg class="icon icon-md text-dark-800 ml-auto">
+							<use href="#icon-chevron-down" />
+						</svg>
+					</div>
+					<div
+						class="bg-white rounded-lg p-2 absolute top-[calc(100%+8px)] left-0 w-full shadow-dropdown border border-gray-400"
+					>
+						<div
+							class="flex justify-start gap-3 p-3 items-center hover:bg-gray-150 rounded-md cursor-pointer"
+						>
+							<svg class="icon icon-md text-dark-800">
+								<use href="#icon-world" />
+							</svg>
+							<div>
+								<div class="font-medium text-dark-800 text-sm">
+									Anyone with a link
+								</div>
+								<div class="text-xs text-dark-800/70">
+									Anyone with a link can access. Hidden from search engines.
+								</div>
+							</div>
+						</div>
+						<div
+							class="flex justify-start gap-3 p-3 items-center hover:bg-gray-150 rounded-md cursor-pointer"
+						>
+							<svg class="icon icon-md text-dark-800">
+								<use href="#icon-user" />
+							</svg>
+							<div>
+								<div
+									class="font-medium text-dark-800 text-sm flex items-center"
+								>
+									Restricted<span
+										class="bg-blue-500 text-white text-[10px] font-medium px-1.5 py-[3px] rounded-md ml-1.5"
+										>Plus</span
+									>
+								</div>
+								<div class="text-xs text-dark-800/70">
+									Only people added can access.
+								</div>
+							</div>
+						</div>
+						<div
+							class="flex justify-start gap-3 p-3 items-center hover:bg-gray-150 rounded-md cursor-pointer"
+						>
+							<svg class="icon icon-md text-dark-800">
+								<use href="#icon-team" />
+							</svg>
+							<div>
+								<div
+									class="font-medium text-dark-800 text-sm flex items-center"
+								>
+									Members of Jumpshare Enterprise<span
+										class="bg-violet-600 text-white text-[10px] font-medium px-1.5 py-[3px] rounded-md ml-1.5"
+										>Business</span
+									>
+								</div>
+								<div class="text-xs text-dark-800/70">
+									Only Workspace members can access.
+								</div>
+							</div>
+						</div>
+						<div
+							class="flex justify-start gap-3 p-3 items-center hover:bg-gray-150 rounded-md cursor-pointer"
+						>
+							<svg class="icon icon-md text-dark-800">
+								<use href="#icon-disable-outline" />
+							</svg>
+							<div>
+								<div
+									class="font-medium text-dark-800 text-sm flex items-center"
+								>
+									Only Me<span
+										class="bg-blue-500 text-white text-[10px] font-medium px-1.5 py-[3px] rounded-md ml-1.5"
+										>Plus</span
+									>
+								</div>
+								<div class="text-xs text-dark-800/70">
+									Only you can access this file.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<strong
+					class="block text-sm font-semibold text-dark-800 mb-3 text-left mt-6"
+					>Who can access</strong
+				>
+				<ul class="who-can-access max-w-[492px] relative">
+					<li>
+						<div class="avatar">
+							A
+							<!-- <img src="" alt=""> -->
+						</div>
+						<div class="who-can-access-info">
+							<span class="who-can-access__name">David Robert</span>
+							<span class="who-can-access__email">david@marksman.com</span>
+						</div>
+						<div class="who-can-access-actions">
+							<span class="who-can-access__role">Owner</span>
+						</div>
+					</li>
+					<li>
+						<div class="avatar">
+							B
+							<!-- <img src="" alt=""> -->
+						</div>
+						<div class="who-can-access-info">
+							<span class="who-can-access__name">John Doe</span>
+							<span class="who-can-access__email">johndoe@gmail.com</span>
+						</div>
+						<div class="who-can-access-actions">
+							<button class="btn btn-sm">
+								<span>Viewer</span>
+								<svg class="icon icon-sm">
+									<use href="#icon-chevron-down" />
+								</svg>
+							</button>
+						</div>
+					</li>
+					<li>
+						<div class="avatar">
+							R
+							<!-- <img src="" alt=""> -->
+						</div>
+						<div class="who-can-access-info">
+							<span class="who-can-access__name"
+								>robertpattinson@gmail.com</span
+							>
+							<span class="who-can-access__email"
+								>robertpattinson@gmail.com</span
+							>
+						</div>
+						<div class="who-can-access-actions">
+							<button class="btn btn-sm">
+								<span>Viewer</span>
+								<svg class="icon icon-sm">
+									<use href="#icon-chevron-down" />
+								</svg>
+							</button>
+						</div>
+					</li>
+					<li>
+						<div class="avatar">
+							J
+							<!-- <img src="" alt=""> -->
+						</div>
+						<div class="who-can-access-info">
+							<span class="who-can-access__name">James Patrick</span>
+							<span class="who-can-access__email">patrickjames@gmail.com</span>
+						</div>
+						<div class="who-can-access-actions">
+							<button class="btn btn-sm">
+								<span>Editor</span>
+								<svg class="icon icon-sm">
+									<use href="#icon-chevron-down" />
+								</svg>
+							</button>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="max-w-xl mx-auto mt-8 hidden">
+				<div class="link-settings max-w-[492px]">
+					<div class="link-settings-list">
+						<div class="link-settings-item">
+							<div class="link-settings-item__header">
+								<div class="link-settings-item__info">
+									<strong
+										>Set Expiration<span class="tag-filled tag-sm bg-blue-500"
+											>Plus</span
+										></strong
+									>
+									<p>Disable this link after specific period</p>
+								</div>
+								<label class="custom-controls switcher">
+									<span class="switcher-label">No</span>
+									<input type="checkbox" name="" id="" />
+									<span class="custom-control-indicator"></span>
+								</label>
+							</div>
+						</div>
+						<div class="link-settings-item">
+							<div class="link-settings-item__header">
+								<div class="link-settings-item__info">
+									<strong
+										>Require password<span class="tag-filled tag-sm bg-blue-500"
+											>Plus</span
+										></strong
+									>
+									<p>Set a password to limit access using a password</p>
+								</div>
+								<label class="custom-controls switcher">
+									<span class="switcher-label">No</span>
+									<input type="checkbox" name="" id="" />
+									<span class="custom-control-indicator"></span>
+								</label>
+							</div>
+						</div>
+						<div class="link-settings-item">
+							<div class="link-settings-item__header">
+								<div class="link-settings-item__info">
+									<strong
+										>Disable Downloads<span
+											class="tag-filled tag-sm bg-blue-500"
+											>Plus</span
+										></strong
+									>
+									<p>Disallow people with this link to download the file</p>
+								</div>
+								<label class="custom-controls switcher">
+									<span class="switcher-label">No</span>
+									<input type="checkbox" name="" id="" />
+									<span class="custom-control-indicator"></span>
+								</label>
+							</div>
+						</div>
+						<div class="link-settings-item">
+							<div class="link-settings-item__header">
+								<div class="link-settings-item__info">
+									<strong
+										>Custom Slug<span class="tag-filled tag-sm bg-violet-600"
+											>Business</span
+										></strong
+									>
+									<p>Choose a custom URL slug to personalize it</p>
+								</div>
+								<label class="custom-controls switcher">
+									<span class="switcher-label">No</span>
+									<input type="checkbox" name="" id="" />
+									<span class="custom-control-indicator"></span>
+								</label>
+							</div>
+							<div class="form-controls">
+								<input
+									type="text"
+									name="custom-slug"
+									id="custom-slug"
+									placeholder="Your custom domain"
+								/>
+							</div>
+							<div class="link-settings-item__alert mt-4">
+								<svg class="icon icon-xs">
+									<use href="#alert-filled" />
+								</svg>
+								<p>
+									Set up a custom domain to enable custom slugs.
+									<a href="#">Set up now</a>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="link-settings-footer">
+						<a href="#">Delete Link</a>
+						<div class="flex items-center gap-3">
+							<button class="btn btn-border-default">
+								<svg class="icon icon-sm">
+									<use href="#qr-code" />
+								</svg>
+								<span class="font-normal">QR Code</span>
+							</button>
+							<button class="btn btn-primary">Save Changes</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="max-w-xl mx-auto mt-8">
+				<div class="recent-suggestions shadow-dropdown max-w-[491px]">
+					<div class="recent-suggestions-header">
+						<span>Recent Suggestions</span>
+					</div>
+					<div class="recent-suggestions-list">
+						<div class="recent-suggestions-item group">
+							<div class="avatar avatar-sm">A</div>
+							<div class="recent-suggestions-item__info">
+								<span class="recent-suggestions-item__name">John Doe</span>
+								<span class="recent-suggestions-item__email"
+									>john.doe@example.com</span
+								>
+							</div>
+							<div class="recent-suggestions-item__actions">
+								<button class="btn btn-close">
+									<span class="icn-close"></span>
+								</button>
+							</div>
+						</div>
+						<div class="recent-suggestions-item group">
+							<div class="avatar avatar-sm">A</div>
+							<div class="recent-suggestions-item__info">
+								<span class="recent-suggestions-item__name">John Doe</span>
+								<span class="recent-suggestions-item__email"
+									>john.doe@example.com</span
+								>
+							</div>
+							<div class="recent-suggestions-item__actions">
+								<button class="btn btn-close">
+									<span class="icn-close"></span>
+								</button>
+							</div>
+						</div>
+						<div class="recent-suggestions-item group">
+							<div class="avatar avatar-sm">A</div>
+							<div class="recent-suggestions-item__info">
+								<span class="recent-suggestions-item__name">John Doe</span>
+								<span class="recent-suggestions-item__email"
+									>john.doe@example.com</span
+								>
+							</div>
+							<div class="recent-suggestions-item__actions">
+								<button class="btn btn-close">
+									<span class="icn-close"></span>
+								</button>
+							</div>
+						</div>
+						<div class="recent-suggestions-item group">
+							<div class="avatar avatar-sm">A</div>
+							<div class="recent-suggestions-item__info">
+								<span class="recent-suggestions-item__name">John Doe</span>
+								<span class="recent-suggestions-item__email"
+									>john.doe@example.com</span
+								>
+							</div>
+							<div class="recent-suggestions-item__actions">
+								<button class="btn btn-close">
+									<span class="icn-close"></span>
+								</button>
+							</div>
+						</div>
+						<div class="recent-suggestions-item group">
+							<div class="avatar avatar-sm">A</div>
+							<div class="recent-suggestions-item__info">
+								<span class="recent-suggestions-item__name">John Doe</span>
+								<span class="recent-suggestions-item__email"
+									>john.doe@example.com</span
+								>
+							</div>
+							<div class="recent-suggestions-item__actions">
+								<button class="btn btn-close">
+									<span class="icn-close"></span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="w-full min-h-screen">
+			<div class="max-w-xl mx-auto mt-8 hidden">
+				<strong class="block text-sm font-semibold text-dark-800 mb-4 text-left"
+					>General access</strong
+				>
+				<div class="dropdown-test-wrapper max-w-[492px] relative hidden">
+					<div
+						class="flex justify-start items-center gap-2 px-4 py-2 bg-gray-150 w-full rounded-md cursor-pointer"
+					>
+						<svg class="icon icon-md text-dark-800">
+							<use href="#icon-world" />
+						</svg>
+						<div class="flex flex-col gap-1">
+							<div class="font-medium text-dark-800 text-sm">
+								Anyone with a link
+							</div>
+							<div class="text-xs text-dark-800/70">
+								Anyone with a link can access. Hidden from search engines.
+							</div>
+						</div>
+						<svg class="icon icon-md text-dark-800 ml-auto">
+							<use href="#icon-chevron-down" />
+						</svg>
+					</div>
+					<div
+						class="bg-white rounded-lg p-2 absolute top-[calc(100%+8px)] left-0 w-full shadow-dropdown border border-gray-400"
+					>
+						<div
+							class="flex justify-start gap-3 p-3 items-center hover:bg-gray-150 rounded-md cursor-pointer"
+						>
+							<svg class="icon icon-md text-dark-800">
+								<use href="#icon-world" />
+							</svg>
+							<div>
+								<div class="font-medium text-dark-800 text-sm">
+									Anyone with a link
+								</div>
+								<div class="text-xs text-dark-800/70">
+									Anyone with a link can access. Hidden from search engines.
+								</div>
+							</div>
+						</div>
+						<div
+							class="flex justify-start gap-3 p-3 items-center hover:bg-gray-150 rounded-md cursor-pointer"
+						>
+							<svg class="icon icon-md text-dark-800">
+								<use href="#icon-user" />
+							</svg>
+							<div>
+								<div
+									class="font-medium text-dark-800 text-sm flex items-center"
+								>
+									Restricted<span
+										class="bg-blue-500 text-white text-[10px] font-medium px-1.5 py-[3px] rounded-md ml-1.5"
+										>Plus</span
+									>
+								</div>
+								<div class="text-xs text-dark-800/70">
+									Only people added can access.
+								</div>
+							</div>
+						</div>
+						<div
+							class="flex justify-start gap-3 p-3 items-center hover:bg-gray-150 rounded-md cursor-pointer"
+						>
+							<svg class="icon icon-md text-dark-800">
+								<use href="#icon-team" />
+							</svg>
+							<div>
+								<div
+									class="font-medium text-dark-800 text-sm flex items-center"
+								>
+									Members of Jumpshare Enterprise<span
+										class="bg-violet-600 text-white text-[10px] font-medium px-1.5 py-[3px] rounded-md ml-1.5"
+										>Business</span
+									>
+								</div>
+								<div class="text-xs text-dark-800/70">
+									Only Workspace members can access.
+								</div>
+							</div>
+						</div>
+						<div
+							class="flex justify-start gap-3 p-3 items-center hover:bg-gray-150 rounded-md cursor-pointer"
+						>
+							<svg class="icon icon-md text-dark-800">
+								<use href="#icon-disable-outline" />
+							</svg>
+							<div>
+								<div
+									class="font-medium text-dark-800 text-sm flex items-center"
+								>
+									Only Me<span
+										class="bg-blue-500 text-white text-[10px] font-medium px-1.5 py-[3px] rounded-md ml-1.5"
+										>Plus</span
+									>
+								</div>
+								<div class="text-xs text-dark-800/70">
+									Only you can access this file.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<strong
+					class="block text-sm font-semibold text-dark-800 mb-3 text-left mt-6"
+					>Who can access</strong
+				>
+				<ul class="who-can-access max-w-[492px] relative">
+					<li>
+						<div class="avatar">
+							A
+							<!-- <img src="" alt=""> -->
+						</div>
+						<div class="who-can-access-info">
+							<span class="who-can-access__name">David Robert</span>
+							<span class="who-can-access__email">david@marksman.com</span>
+						</div>
+						<div class="who-can-access-actions">
+							<span class="who-can-access__role">Owner</span>
+						</div>
+					</li>
+					<li>
+						<div class="avatar">
+							B
+							<!-- <img src="" alt=""> -->
+						</div>
+						<div class="who-can-access-info">
+							<span class="who-can-access__name">John Doe</span>
+							<span class="who-can-access__email">johndoe@gmail.com</span>
+						</div>
+						<div class="who-can-access-actions">
+							<button class="btn btn-sm">
+								<span>Viewer</span>
+								<svg class="icon icon-sm">
+									<use href="#icon-chevron-down" />
+								</svg>
+							</button>
+						</div>
+					</li>
+					<li>
+						<div class="avatar">
+							R
+							<!-- <img src="" alt=""> -->
+						</div>
+						<div class="who-can-access-info">
+							<span class="who-can-access__name"
+								>robertpattinson@gmail.com</span
+							>
+							<span class="who-can-access__email"
+								>robertpattinson@gmail.com</span
+							>
+						</div>
+						<div class="who-can-access-actions">
+							<button class="btn btn-sm">
+								<span>Viewer</span>
+								<svg class="icon icon-sm">
+									<use href="#icon-chevron-down" />
+								</svg>
+							</button>
+						</div>
+					</li>
+					<li>
+						<div class="avatar">
+							J
+							<!-- <img src="" alt=""> -->
+						</div>
+						<div class="who-can-access-info">
+							<span class="who-can-access__name">James Patrick</span>
+							<span class="who-can-access__email">patrickjames@gmail.com</span>
+						</div>
+						<div class="who-can-access-actions">
+							<button class="btn btn-sm">
+								<span>Editor</span>
+								<svg class="icon icon-sm">
+									<use href="#icon-chevron-down" />
+								</svg>
+							</button>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="max-w-xl mx-auto mt-8 hidden">
+				<div class="link-settings max-w-[492px]">
+					<div class="link-settings-list">
+						<div class="link-settings-item">
+							<div class="link-settings-item__header">
+								<div class="link-settings-item__info">
+									<strong
+										>Set Expiration<span class="tag-filled tag-sm bg-blue-500"
+											>Plus</span
+										></strong
+									>
+									<p>Disable this link after specific period</p>
+								</div>
+								<label class="custom-controls switcher">
+									<span class="switcher-label">No</span>
+									<input type="checkbox" name="" id="" />
+									<span class="custom-control-indicator"></span>
+								</label>
+							</div>
+						</div>
+						<div class="link-settings-item">
+							<div class="link-settings-item__header">
+								<div class="link-settings-item__info">
+									<strong
+										>Require password<span class="tag-filled tag-sm bg-blue-500"
+											>Plus</span
+										></strong
+									>
+									<p>Set a password to limit access using a password</p>
+								</div>
+								<label class="custom-controls switcher">
+									<span class="switcher-label">No</span>
+									<input type="checkbox" name="" id="" />
+									<span class="custom-control-indicator"></span>
+								</label>
+							</div>
+						</div>
+						<div class="link-settings-item">
+							<div class="link-settings-item__header">
+								<div class="link-settings-item__info">
+									<strong
+										>Disable Downloads<span
+											class="tag-filled tag-sm bg-blue-500"
+											>Plus</span
+										></strong
+									>
+									<p>Disallow people with this link to download the file</p>
+								</div>
+								<label class="custom-controls switcher">
+									<span class="switcher-label">No</span>
+									<input type="checkbox" name="" id="" />
+									<span class="custom-control-indicator"></span>
+								</label>
+							</div>
+						</div>
+						<div class="link-settings-item">
+							<div class="link-settings-item__header">
+								<div class="link-settings-item__info">
+									<strong
+										>Custom Slug<span class="tag-filled tag-sm bg-violet-600"
+											>Business</span
+										></strong
+									>
+									<p>Choose a custom URL slug to personalize it</p>
+								</div>
+								<label class="custom-controls switcher">
+									<span class="switcher-label">No</span>
+									<input type="checkbox" name="" id="" />
+									<span class="custom-control-indicator"></span>
+								</label>
+							</div>
+							<div class="form-controls">
+								<input
+									type="text"
+									name="custom-slug"
+									id="custom-slug"
+									placeholder="Your custom domain"
+								/>
+							</div>
+							<div class="link-settings-item__alert mt-4">
+								<svg class="icon icon-xs">
+									<use href="#alert-filled" />
+								</svg>
+								<p>
+									Set up a custom domain to enable custom slugs.
+									<a href="#">Set up now</a>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="link-settings-footer">
+						<a href="#">Delete Link</a>
+						<div class="flex items-center gap-3">
+							<button class="btn btn-border-default">
+								<svg class="icon icon-sm">
+									<use href="#qr-code" />
+								</svg>
+								<span class="font-normal">QR Code</span>
+							</button>
+							<button class="btn btn-primary">Save Changes</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="max-w-xl mx-auto mt-8">
+				<div class="recent-suggestions shadow-dropdown max-w-[491px]">
+					<div class="recent-suggestions-header">
+						<span>Recent Suggestions</span>
+					</div>
+					<div class="recent-suggestions-list">
+						<div class="recent-suggestions-item group">
+							<div class="avatar avatar-sm">A</div>
+							<div class="recent-suggestions-item__info">
+								<span class="recent-suggestions-item__name">John Doe</span>
+								<span class="recent-suggestions-item__email"
+									>john.doe@example.com</span
+								>
+							</div>
+							<div class="recent-suggestions-item__actions">
+								<button class="btn btn-close">
+									<span class="icn-close"></span>
+								</button>
+							</div>
+						</div>
+						<div class="recent-suggestions-item group">
+							<div class="avatar avatar-sm">A</div>
+							<div class="recent-suggestions-item__info">
+								<span class="recent-suggestions-item__name">John Doe</span>
+								<span class="recent-suggestions-item__email"
+									>john.doe@example.com</span
+								>
+							</div>
+							<div class="recent-suggestions-item__actions">
+								<button class="btn btn-close">
+									<span class="icn-close"></span>
+								</button>
+							</div>
+						</div>
+						<div class="recent-suggestions-item group">
+							<div class="avatar avatar-sm">A</div>
+							<div class="recent-suggestions-item__info">
+								<span class="recent-suggestions-item__name">John Doe</span>
+								<span class="recent-suggestions-item__email"
+									>john.doe@example.com</span
+								>
+							</div>
+							<div class="recent-suggestions-item__actions">
+								<button class="btn btn-close">
+									<span class="icn-close"></span>
+								</button>
+							</div>
+						</div>
+						<div class="recent-suggestions-item group">
+							<div class="avatar avatar-sm">A</div>
+							<div class="recent-suggestions-item__info">
+								<span class="recent-suggestions-item__name">John Doe</span>
+								<span class="recent-suggestions-item__email"
+									>john.doe@example.com</span
+								>
+							</div>
+							<div class="recent-suggestions-item__actions">
+								<button class="btn btn-close">
+									<span class="icn-close"></span>
+								</button>
+							</div>
+						</div>
+						<div class="recent-suggestions-item group">
+							<div class="avatar avatar-sm">A</div>
+							<div class="recent-suggestions-item__info">
+								<span class="recent-suggestions-item__name">John Doe</span>
+								<span class="recent-suggestions-item__email"
+									>john.doe@example.com</span
+								>
+							</div>
+							<div class="recent-suggestions-item__actions">
+								<button class="btn btn-close">
+									<span class="icn-close"></span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="w-full min-h-screen">
+			<div class="max-w-xl mx-auto mt-8 hidden">
+				<strong class="block text-sm font-semibold text-dark-800 mb-4 text-left"
+					>General access</strong
+				>
+				<div class="dropdown-test-wrapper max-w-[492px] relative hidden">
+					<div
+						class="flex justify-start items-center gap-2 px-4 py-2 bg-gray-150 w-full rounded-md cursor-pointer"
+					>
+						<svg class="icon icon-md text-dark-800">
+							<use href="#icon-world" />
+						</svg>
+						<div class="flex flex-col gap-1">
+							<div class="font-medium text-dark-800 text-sm">
+								Anyone with a link
+							</div>
+							<div class="text-xs text-dark-800/70">
+								Anyone with a link can access. Hidden from search engines.
+							</div>
+						</div>
+						<svg class="icon icon-md text-dark-800 ml-auto">
+							<use href="#icon-chevron-down" />
+						</svg>
+					</div>
+					<div
+						class="bg-white rounded-lg p-2 absolute top-[calc(100%+8px)] left-0 w-full shadow-dropdown border border-gray-400"
+					>
+						<div
+							class="flex justify-start gap-3 p-3 items-center hover:bg-gray-150 rounded-md cursor-pointer"
+						>
+							<svg class="icon icon-md text-dark-800">
+								<use href="#icon-world" />
+							</svg>
+							<div>
+								<div class="font-medium text-dark-800 text-sm">
+									Anyone with a link
+								</div>
+								<div class="text-xs text-dark-800/70">
+									Anyone with a link can access. Hidden from search engines.
+								</div>
+							</div>
+						</div>
+						<div
+							class="flex justify-start gap-3 p-3 items-center hover:bg-gray-150 rounded-md cursor-pointer"
+						>
+							<svg class="icon icon-md text-dark-800">
+								<use href="#icon-user" />
+							</svg>
+							<div>
+								<div
+									class="font-medium text-dark-800 text-sm flex items-center"
+								>
+									Restricted<span
+										class="bg-blue-500 text-white text-[10px] font-medium px-1.5 py-[3px] rounded-md ml-1.5"
+										>Plus</span
+									>
+								</div>
+								<div class="text-xs text-dark-800/70">
+									Only people added can access.
+								</div>
+							</div>
+						</div>
+						<div
+							class="flex justify-start gap-3 p-3 items-center hover:bg-gray-150 rounded-md cursor-pointer"
+						>
+							<svg class="icon icon-md text-dark-800">
+								<use href="#icon-team" />
+							</svg>
+							<div>
+								<div
+									class="font-medium text-dark-800 text-sm flex items-center"
+								>
+									Members of Jumpshare Enterprise<span
+										class="bg-violet-600 text-white text-[10px] font-medium px-1.5 py-[3px] rounded-md ml-1.5"
+										>Business</span
+									>
+								</div>
+								<div class="text-xs text-dark-800/70">
+									Only Workspace members can access.
+								</div>
+							</div>
+						</div>
+						<div
+							class="flex justify-start gap-3 p-3 items-center hover:bg-gray-150 rounded-md cursor-pointer"
+						>
+							<svg class="icon icon-md text-dark-800">
+								<use href="#icon-disable-outline" />
+							</svg>
+							<div>
+								<div
+									class="font-medium text-dark-800 text-sm flex items-center"
+								>
+									Only Me<span
+										class="bg-blue-500 text-white text-[10px] font-medium px-1.5 py-[3px] rounded-md ml-1.5"
+										>Plus</span
+									>
+								</div>
+								<div class="text-xs text-dark-800/70">
+									Only you can access this file.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<strong
+					class="block text-sm font-semibold text-dark-800 mb-3 text-left mt-6"
+					>Who can access</strong
+				>
+				<ul class="who-can-access max-w-[492px] relative">
+					<li>
+						<div class="avatar">
+							A
+							<!-- <img src="" alt=""> -->
+						</div>
+						<div class="who-can-access-info">
+							<span class="who-can-access__name">David Robert</span>
+							<span class="who-can-access__email">david@marksman.com</span>
+						</div>
+						<div class="who-can-access-actions">
+							<span class="who-can-access__role">Owner</span>
+						</div>
+					</li>
+					<li>
+						<div class="avatar">
+							B
+							<!-- <img src="" alt=""> -->
+						</div>
+						<div class="who-can-access-info">
+							<span class="who-can-access__name">John Doe</span>
+							<span class="who-can-access__email">johndoe@gmail.com</span>
+						</div>
+						<div class="who-can-access-actions">
+							<button class="btn btn-sm">
+								<span>Viewer</span>
+								<svg class="icon icon-sm">
+									<use href="#icon-chevron-down" />
+								</svg>
+							</button>
+						</div>
+					</li>
+					<li>
+						<div class="avatar">
+							R
+							<!-- <img src="" alt=""> -->
+						</div>
+						<div class="who-can-access-info">
+							<span class="who-can-access__name"
+								>robertpattinson@gmail.com</span
+							>
+							<span class="who-can-access__email"
+								>robertpattinson@gmail.com</span
+							>
+						</div>
+						<div class="who-can-access-actions">
+							<button class="btn btn-sm">
+								<span>Viewer</span>
+								<svg class="icon icon-sm">
+									<use href="#icon-chevron-down" />
+								</svg>
+							</button>
+						</div>
+					</li>
+					<li>
+						<div class="avatar">
+							J
+							<!-- <img src="" alt=""> -->
+						</div>
+						<div class="who-can-access-info">
+							<span class="who-can-access__name">James Patrick</span>
+							<span class="who-can-access__email">patrickjames@gmail.com</span>
+						</div>
+						<div class="who-can-access-actions">
+							<button class="btn btn-sm">
+								<span>Editor</span>
+								<svg class="icon icon-sm">
+									<use href="#icon-chevron-down" />
+								</svg>
+							</button>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="max-w-xl mx-auto mt-8 hidden">
+				<div class="link-settings max-w-[492px]">
+					<div class="link-settings-list">
+						<div class="link-settings-item">
+							<div class="link-settings-item__header">
+								<div class="link-settings-item__info">
+									<strong
+										>Set Expiration<span class="tag-filled tag-sm bg-blue-500"
+											>Plus</span
+										></strong
+									>
+									<p>Disable this link after specific period</p>
+								</div>
+								<label class="custom-controls switcher">
+									<span class="switcher-label">No</span>
+									<input type="checkbox" name="" id="" />
+									<span class="custom-control-indicator"></span>
+								</label>
+							</div>
+						</div>
+						<div class="link-settings-item">
+							<div class="link-settings-item__header">
+								<div class="link-settings-item__info">
+									<strong
+										>Require password<span class="tag-filled tag-sm bg-blue-500"
+											>Plus</span
+										></strong
+									>
+									<p>Set a password to limit access using a password</p>
+								</div>
+								<label class="custom-controls switcher">
+									<span class="switcher-label">No</span>
+									<input type="checkbox" name="" id="" />
+									<span class="custom-control-indicator"></span>
+								</label>
+							</div>
+						</div>
+						<div class="link-settings-item">
+							<div class="link-settings-item__header">
+								<div class="link-settings-item__info">
+									<strong
+										>Disable Downloads<span
+											class="tag-filled tag-sm bg-blue-500"
+											>Plus</span
+										></strong
+									>
+									<p>Disallow people with this link to download the file</p>
+								</div>
+								<label class="custom-controls switcher">
+									<span class="switcher-label">No</span>
+									<input type="checkbox" name="" id="" />
+									<span class="custom-control-indicator"></span>
+								</label>
+							</div>
+						</div>
+						<div class="link-settings-item">
+							<div class="link-settings-item__header">
+								<div class="link-settings-item__info">
+									<strong
+										>Custom Slug<span class="tag-filled tag-sm bg-violet-600"
+											>Business</span
+										></strong
+									>
+									<p>Choose a custom URL slug to personalize it</p>
+								</div>
+								<label class="custom-controls switcher">
+									<span class="switcher-label">No</span>
+									<input type="checkbox" name="" id="" />
+									<span class="custom-control-indicator"></span>
+								</label>
+							</div>
+							<div class="form-controls">
+								<input
+									type="text"
+									name="custom-slug"
+									id="custom-slug"
+									placeholder="Your custom domain"
+								/>
+							</div>
+							<div class="link-settings-item__alert mt-4">
+								<svg class="icon icon-xs">
+									<use href="#alert-filled" />
+								</svg>
+								<p>
+									Set up a custom domain to enable custom slugs.
+									<a href="#">Set up now</a>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="link-settings-footer">
+						<a href="#">Delete Link</a>
+						<div class="flex items-center gap-3">
+							<button class="btn btn-border-default">
+								<svg class="icon icon-sm">
+									<use href="#qr-code" />
+								</svg>
+								<span class="font-normal">QR Code</span>
+							</button>
+							<button class="btn btn-primary">Save Changes</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="max-w-xl mx-auto mt-8">
+				<div class="recent-suggestions shadow-dropdown max-w-[491px]">
+					<div class="recent-suggestions-header">
+						<span>Recent Suggestions</span>
+					</div>
+					<div class="recent-suggestions-list">
+						<div class="recent-suggestions-item group">
+							<div class="avatar avatar-sm">A</div>
+							<div class="recent-suggestions-item__info">
+								<span class="recent-suggestions-item__name">John Doe</span>
+								<span class="recent-suggestions-item__email"
+									>john.doe@example.com</span
+								>
+							</div>
+							<div class="recent-suggestions-item__actions">
+								<button class="btn btn-close">
+									<span class="icn-close"></span>
+								</button>
+							</div>
+						</div>
+						<div class="recent-suggestions-item group">
+							<div class="avatar avatar-sm">A</div>
+							<div class="recent-suggestions-item__info">
+								<span class="recent-suggestions-item__name">John Doe</span>
+								<span class="recent-suggestions-item__email"
+									>john.doe@example.com</span
+								>
+							</div>
+							<div class="recent-suggestions-item__actions">
+								<button class="btn btn-close">
+									<span class="icn-close"></span>
+								</button>
+							</div>
+						</div>
+						<div class="recent-suggestions-item group">
+							<div class="avatar avatar-sm">A</div>
+							<div class="recent-suggestions-item__info">
+								<span class="recent-suggestions-item__name">John Doe</span>
+								<span class="recent-suggestions-item__email"
+									>john.doe@example.com</span
+								>
+							</div>
+							<div class="recent-suggestions-item__actions">
+								<button class="btn btn-close">
+									<span class="icn-close"></span>
+								</button>
+							</div>
+						</div>
+						<div class="recent-suggestions-item group">
+							<div class="avatar avatar-sm">A</div>
+							<div class="recent-suggestions-item__info">
+								<span class="recent-suggestions-item__name">John Doe</span>
+								<span class="recent-suggestions-item__email"
+									>john.doe@example.com</span
+								>
+							</div>
+							<div class="recent-suggestions-item__actions">
+								<button class="btn btn-close">
+									<span class="icn-close"></span>
+								</button>
+							</div>
+						</div>
+						<div class="recent-suggestions-item group">
+							<div class="avatar avatar-sm">A</div>
+							<div class="recent-suggestions-item__info">
+								<span class="recent-suggestions-item__name">John Doe</span>
+								<span class="recent-suggestions-item__email"
+									>john.doe@example.com</span
+								>
+							</div>
+							<div class="recent-suggestions-item__actions">
+								<button class="btn btn-close">
+									<span class="icn-close"></span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="w-full min-h-screen">
 			<div class="max-w-xl mx-auto mt-8 hidden">
 				<strong class="block text-sm font-semibold text-dark-800 mb-4 text-left"

@@ -186,7 +186,7 @@
 			@apply overflow-hidden flex flex-col h-full;
 		}
 		.modal-body {
-			@apply px-6 flex-grow-1 overflow-y-auto static max-xs:py-0;
+			@apply px-6 flex-grow-1  max-xs:py-0;
 		}
 	}
 

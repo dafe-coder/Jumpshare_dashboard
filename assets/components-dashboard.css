@@ -51,7 +51,7 @@
 			@apply absolute top-0.5 right-[5px] ring-1 ring-white scale-100 opacity-100;
 		}
 	}
-	.sidebar-collapsed:hover {
+	.sidebar-collapsed aside:hover {
 		.aside-logo {
 			@apply hidden!;
 		}

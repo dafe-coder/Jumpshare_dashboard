@@ -130,6 +130,35 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="stylesheet" href="./dist/output.css" />
+		<script>
+			// TODO: Move code during implementation
+			let wasMobile = window.innerWidth < 1024;
+
+			function applySidebarState() {
+				const isCollapsed = localStorage.getItem("sidebar-collapsed");
+				const isMobile = window.innerWidth < 1024;
+				if (isCollapsed !== "false" && !isMobile) {
+					document.documentElement.classList.add(
+						"active-sidebar",
+						"sidebar-collapsed",
+					);
+				} else {
+					document.documentElement.classList.remove(
+						"active-sidebar",
+						"sidebar-collapsed",
+					);
+				}
+			}
+
+			applySidebarState();
+			window.addEventListener("resize", () => {
+				const isMobile = window.innerWidth < 1024;
+				if (isMobile !== wasMobile) {
+					wasMobile = isMobile;
+					applySidebarState();
+				}
+			});
+		</script>
 	</head>
 
 	<body class="drag-and-drop dashboard team-page">
@@ -158,7 +187,7 @@
 		</div>
 		<div class="w-full min-h-screen">
 			<aside
-				class="w-60 fixed left-0 top-0 bottom-0 flex flex-col h-[calc(100vh-var(--browser-ui-height,0px))] z-101 max-lg:-left-full max-lg:top-0 max-lg:w-full! transition-all duration-500 ease-in-out [&.active]:left-0"
+				class="w-60 fixed left-0 top-0 bottom-0 flex flex-col h-[calc(100vh-var(--browser-ui-height,0px))] z-101 max-lg:-left-full max-lg:top-0 max-lg:w-full! transition-none duration-300 ease-initial [&.active]:left-0 max-lg:hidden"
 			>
 				<div
 					class="mobile-menu-overlay fixed top-0 left-0 bg-dark-800/50 z-0 w-screen opacity-0 h-[calc(100vh-var(--browser-ui-height,0px))] lg:hidden [.active_&]:opacity-100 transition-all duration-400 ease-in-out delay-75 not-[.active_&]:pointer-events-none"
@@ -167,19 +196,17 @@
 					class="flex flex-col max-lg:w-[318px] max-lg:max-w-[318px] max-xs:w-[85%]! w-full bg-gray-150 max-lg:rounded-r-2xl z-3 h-full"
 				>
 					<div
-						class="flex items-center justify-center px-2.5 pt-6 pb-6 gap-2 overflow-hidden max-lg:justify-start"
+						class="flex items-center justify-between ml-4 mr-2.5 pt-6 pb-6 gap-2 overflow-hidden max-lg:justify-start"
 					>
-						<a href="/" class="aside-logo" aria-label="Home">
-							<svg
-								class="icon h-5.5 w-38 [.active-sidebar_&]:w-8 transition-all duration-300 ease-in-out"
-							>
+						<a href="./index.html" class="aside-logo" aria-label="Home">
+							<svg class="icon h-5.5 w-38">
 								<use href="#icon-logo"></use>
 							</svg>
 						</a>
 						<button
 							type="button"
 							aria-label="Collapse Sidebar"
-							class="aside-collapse-btn"
+							class="aside-collapse-btn ml-1"
 							id="collapse-sidebar-btn"
 						>
 							<svg class="icon icon-md">
@@ -188,24 +215,26 @@
 						</button>
 					</div>
 					<div
-						class="dropdown-wrapper z-4 max-md:border-b border-gray-400 px-2 mb-5 [.active-sidebar_&]:mb-7"
+						class="dropdown-wrapper h-15 w-full flex items-center flex-shrink-0 z-4 px-2 mb-5"
 					>
 						<a
 							href="#"
 							data-id="dropdown-workspaces"
-							class="dropdown-button p-2.5 flex items-center justify-between relative bg-white border border-gray-600 rounded-xl hover:bg-gray-200 [&.active]:bg-gray-200 [.active-sidebar_&]:rounded-lg [.active-sidebar_&]:p-0 [.active-sidebar_&]:border-0 [.active-sidebar_&]:bg-transparent transition-all duration-300 ease-in-out overflow-hidden [.active-sidebar_&]:mt-2"
+							class="dropdown-button p-2.5 flex items-center justify-between relative bg-white border border-gray-600 rounded-xl hover:bg-gray-200 [&.active]:bg-gray-200 [.active-sidebar_&]:rounded-lg [.active-sidebar_&]:p-0 [.active-sidebar_&]:border-0 [.active-sidebar_&]:bg-transparent [.active-sidebar_&]:ml-0.5 transition-all duration-300 ease-in-out overflow-hidden w-full"
 						>
 							<div class="flex items-center justify-between mr-2 flex-shrink-0">
 								<div
-									class="flex items-center justify-center size-8 bg-blue-500/10 rounded-md [.active-sidebar_&]:size-11 transition-all duration-500 ease-in-out"
+									class="flex items-center justify-center size-8 bg-blue-500/10 rounded-md [.active-sidebar_&]:size-11 transition-all duration-300 ease-in-out"
 								>
 									<span class="font-semibold text-base text-blue-500">S</span>
 								</div>
 							</div>
 							<div class="mr-1.5 flex-grow-1 truncate">
-								<h3 class="text-sm font-semibold text-black mb-0.5 truncate">
+								<strong
+									class="text-sm font-semibold text-black mb-0.5 truncate"
+								>
 									Ghaus’s Workspace
-								</h3>
+								</strong>
 								<ul class="list-with-dots">
 									<li class="relative">
 										<span>23</span>
@@ -218,7 +247,7 @@
 							</svg>
 						</a>
 						<div
-							class="js-dropdown hidden w-[18.75rem] top-[calc(100%+10px)] left-3 rounded-2xl"
+							class="js-dropdown w-80 top-[calc(100%+10px)] left-3 rounded-2xl hidden"
 							data-dropdown-id="dropdown-workspaces"
 							data-sheet-modal
 						>
@@ -244,10 +273,11 @@
 											</ul>
 										</div>
 									</div>
-									<div class="flex gap-2 mt-4 mb-1">
+									<div class="flex gap-2 mt-4 mb-1 max-lg:grid grid-cols-2">
 										<button
 											type="button"
 											class="btn btn-border-default h-8 font-normal"
+											onclick='window.open("./settings.html","_self")'
 										>
 											<svg class="icon icon-sm">
 												<use href="#icon-cog-medium"></use>
@@ -256,9 +286,10 @@
 										</button>
 										<button
 											type="button"
-											class="btn btn-border-default h-8 flex-grow-1 font-normal"
+											class="btn btn-border-default h-8 flex-grow-1 font-normal text-nowrap"
+											data-dialog-open-id="invite-members"
 										>
-											<svg class="icon icon-sm">
+											<svg class="icon icon-sm shrink-0">
 												<use href="#icon-members-medium"></use>
 											</svg>
 											<span>Invite members</span>
@@ -268,7 +299,7 @@
 									<p class="text-xs mb-2">Switch Workspace</p>
 									<div class="flex flex-col">
 										<div
-											class="active-workspace flex items-center gap-x-3 cursor-pointer rounded-md hover:bg-gray-150 [&.active-workspace]:bg-gray-150 px-2 py-2.5"
+											class="flex items-center gap-x-3 cursor-pointer rounded-md hover:bg-gray-150 px-2 py-2.5"
 										>
 											<div
 												class="flex items-center justify-center size-9 bg-[#FF4B8B]/20 rounded-md font-semibold text-base text-[#FF4B8B]"
@@ -291,16 +322,9 @@
 													<li class="relative">23 Members</li>
 												</ul>
 											</div>
-											<span
-												class="hidden text-blue-500 shrink-0 ml-auto [.active-workspace_&]:block"
-											>
-												<svg class="icon icon-md">
-													<use href="#icon-check"></use>
-												</svg>
-											</span>
 										</div>
 										<div
-											class="flex items-center gap-x-3 cursor-pointer rounded-md hover:bg-gray-150 [&.active-workspace]:bg-gray-150 px-2 py-2.5"
+											class="flex items-center gap-x-3 cursor-pointer rounded-md hover:bg-gray-150 px-2 py-2.5"
 										>
 											<div
 												class="flex items-center justify-center size-9 bg-blue-500/20 rounded-md font-semibold text-base text-blue-500"
@@ -323,13 +347,6 @@
 													<li class="relative">1 Member</li>
 												</ul>
 											</div>
-											<span
-												class="hidden text-blue-500 shrink-0 ml-auto [.active-workspace_&]:block"
-											>
-												<svg class="icon icon-md">
-													<use href="#icon-check"></use>
-												</svg>
-											</span>
 										</div>
 										<div
 											class="group flex items-center px-2 py-1 rounded-md gap-3 cursor-pointer hover:bg-gray-150"
@@ -369,6 +386,14 @@
 									</a>
 								</li>
 								<li>
+									<a href="./activity-center.html" class="aside-nav-item">
+										<svg class="icon icon-md" stroke-width="6">
+											<use href="#icon-bell"></use>
+										</svg>
+										Notification
+									</a>
+								</li>
+								<li>
 									<a href="./favorites.html" class="aside-nav-item">
 										<svg class="icon icon-md" stroke-width="6">
 											<use href="#icon-star-medium"></use>
@@ -385,7 +410,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="./shared.html" class="aside-nav-item">
+									<a href="./history.html" class="aside-nav-item">
 										<svg class="icon icon-md">
 											<use href="#icon-history"></use>
 										</svg>
@@ -408,20 +433,10 @@
 										Trash
 									</a>
 								</li>
-								<li>
-									<a href="./settings.html" class="aside-nav-item">
-										<svg class="icon icon-md">
-											<use href="#icon-cog-medium"></use>
-										</svg>
-										Settings
-									</a>
-								</li>
 							</ul>
 							<hr class="mt-5 mb-3.5 border-gray-600" />
-							<div
-								class="flex items-center justify-between pl-2 [.active-sidebar_&]:pl-0"
-							>
-								<p class="text-sm font-medium text-dark-800/60 truncate">
+							<div class="flex items-center justify-between">
+								<p class="text-sm font-medium text-dark-800/60 truncate pl-2">
 									Spaces
 								</p>
 								<div
@@ -430,7 +445,7 @@
 									<button
 										type="button"
 										aria-label="Add Space"
-										class="btn p-0 size-6 text-dark-800 rounded-md hover:bg-gray-300 -mr-2 [.active-sidebar_&]:-mr-0 [.active-sidebar_&]:size-full transition-all duration-150"
+										class="btn p-0 size-6 text-dark-800 rounded-md hover:bg-gray-300 -mr-2 [.active-sidebar_&]:mr-0 [.active-sidebar_&]:-ml-4 flex-shrink-0 [.active-sidebar_&]:size-full transition-[margin,size] duration-150"
 										data-dialog-open-id="create-space"
 									>
 										<svg class="icon icon-s">
@@ -810,410 +825,12 @@
 								</a>
 							</div>
 						</nav>
-						<div class="mt-auto">
-							<hr class="mb-6 border-gray-600" />
-							<ul class="flex flex-col gap-y-1">
-								<li class="dropdown-wrapper">
-									<a
-										data-id="dropdown-notifications"
-										class="dropdown-button aside-nav-item cursor-pointer [&.active]:bg-gray-pressed-150 [&.active]:text-dark-800 relative"
-									>
-										<svg class="icon icon-md">
-											<use href="#icon-bell"></use>
-										</svg>
-										Notifications
-										<span class="aside-notification-badge">5</span>
-									</a>
-									<div
-										class="js-dropdown w-[28.125rem] hidden"
-										data-dropdown-id="dropdown-notifications"
-										data-sheet-modal
-										data-overflow-visible
-									>
-										<div class="js-dropdown-overlay"></div>
-										<div class="js-dropdown-body">
-											<div class="js-dropdown-trigger">
-												<span></span>
-											</div>
-											<div
-												class="js-dropdown-content lg:pt-0 lg:max-h-[580px] lg:overflow-y-auto px-0 pb-0 lg:h-[85vh]"
-											>
-												<div
-													class="flex justify-between items-center px-6 sticky top-0 -mt-1 bg-white lg:rounded-t-lg z-1 lg:pt-4 pb-3 border-b border-gray-400"
-												>
-													<p class="text-base font-semibold text-dark-800">
-														Notifications
-													</p>
-													<a
-														href="#"
-														onclick="window.open('./activity-center.html')"
-														class="text-sm text-blue-500 font-medium"
-														>View All →</a
-													>
-												</div>
-												<ul>
-													<li>
-														<a
-															href="#"
-															class="flex gap-3 items-start px-6 py-4 hover:bg-gray-150"
-														>
-															<div
-																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
-															>
-																<img
-																	class="rounded-full object-cover size-full"
-																	src="./assets/images/avatar.png"
-																	alt="Avatar"
-																/>
-															</div>
-															<div>
-																<p class="text-sm">
-																	Someone viewed
-																	<strong>
-																		Speaker Notes Hover Effect.mp4
-																	</strong>
-																	for the first time
-																</p>
-																<div
-																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
-																>
-																	<span>Feb 6, 2025</span>
-																	<span
-																		class="relative after:content-[&quot;&quot;] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5"
-																		>11:41 pm</span
-																	>
-																</div>
-															</div>
-														</a>
-													</li>
-													<li class="unread">
-														<a
-															href="#"
-															class="flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150"
-														>
-															<div
-																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
-															>
-																<img
-																	class="rounded-full object-cover size-full"
-																	src="./assets/images/avatar.png"
-																	alt="Avatar"
-																/>
-															</div>
-															<div>
-																<p class="text-sm">
-																	Team Member moved Feb 3 - Technical
-																	Development Updates and Feature Planning.mp4
-																	and 1 more items from folder Team Meetings to
-																	folder 2025
-																</p>
-																<div
-																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
-																>
-																	<span>Feb 6, 2025</span>
-																	<span
-																		class="relative after:content-[&quot;&quot;] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5"
-																		>11:41 pm</span
-																	>
-																</div>
-															</div>
-														</a>
-													</li>
-													<li>
-														<a
-															href="#"
-															class="flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150"
-														>
-															<div
-																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
-															>
-																<img
-																	class="rounded-full object-cover size-full"
-																	src="./assets/images/avatar.png"
-																	alt="Avatar"
-																/>
-															</div>
-															<div>
-																<p class="text-sm">
-																	You received _+8= +3 -5 +10 (1) HW.pdf in your
-																	Team Inbox test-zapeir-update from qweqw eqw
-																	(eqwe@asd.we)
-																</p>
-																<div
-																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
-																>
-																	<span>Feb 6, 2025</span>
-																</div>
-															</div>
-														</a>
-													</li>
-													<li>
-														<a
-															href="#"
-															class="flex gap-3 items-start px-6 py-4 hover:bg-gray-150"
-														>
-															<div
-																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
-															>
-																<img
-																	class="rounded-full object-cover size-full"
-																	src="./assets/images/avatar.png"
-																	alt="Avatar"
-																/>
-															</div>
-															<div>
-																<p class="text-sm">
-																	Someone viewed
-																	<strong>
-																		Speaker Notes Hover Effect.mp4
-																	</strong>
-																	for the first time
-																</p>
-																<div
-																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
-																>
-																	<span>Feb 6, 2025</span>
-																	<span
-																		class="relative after:content-[&quot;&quot;] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5"
-																		>11:41 pm</span
-																	>
-																</div>
-															</div>
-														</a>
-													</li>
-													<li class="unread">
-														<a
-															href="#"
-															class="flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150"
-														>
-															<div
-																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
-															>
-																<img
-																	class="rounded-full object-cover size-full"
-																	src="./assets/images/avatar.png"
-																	alt="Avatar"
-																/>
-															</div>
-															<div>
-																<p class="text-sm">
-																	Team Member moved Feb 3 - Technical
-																	Development Updates and Feature Planning.mp4
-																	and 1 more items from folder Team Meetings to
-																	folder 2025
-																</p>
-																<div
-																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
-																>
-																	<span>Feb 6, 2025</span>
-																	<span
-																		class="relative after:content-[&quot;&quot;] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-left-2.5"
-																		>11:41 pm</span
-																	>
-																</div>
-															</div>
-														</a>
-													</li>
-													<li>
-														<a
-															href="#"
-															class="flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150"
-														>
-															<div
-																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
-															>
-																<img
-																	class="rounded-full object-cover size-full"
-																	src="./assets/images/avatar.png"
-																	alt="Avatar"
-																/>
-															</div>
-															<div>
-																<p class="text-sm">
-																	You received _+8= +3 -5 +10 (1) HW.pdf in your
-																	Team Inbox test-zapeir-update from qweqw eqw
-																	(eqwe@asd.we)
-																</p>
-																<div
-																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
-																>
-																	<span>Feb 6, 2025</span>
-																</div>
-															</div>
-														</a>
-													</li>
-													<li>
-														<a
-															href="#"
-															class="flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150"
-														>
-															<div
-																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
-															>
-																<img
-																	class="rounded-full object-cover size-full"
-																	src="./assets/images/avatar.png"
-																	alt="Avatar"
-																/>
-															</div>
-															<div>
-																<p class="text-sm">
-																	John Dalton added JumpshareInstaller 3.4.5 -
-																	3.exe to folder 3.4.5
-																</p>
-																<div
-																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
-																>
-																	<span>Jue 6, 2024</span>
-																</div>
-															</div>
-														</a>
-													</li>
-													<li>
-														<a
-															href="#"
-															class="flex gap-3 items-start px-6 pl-7 py-4 hover:bg-gray-150"
-														>
-															<div
-																class="mt-1 size-10 rounded-full flex justify-center items-center flex-shrink-0 bg-gray-200 relative after:content-[&quot;&quot;] after:absolute after:size-1.5 after:bg-blue-500 after:rounded-full after:-left-3.5 after:top-3.5 after:hidden [.unread_&]:after:block"
-															>
-																<img
-																	class="rounded-full object-cover size-full"
-																	src="./assets/images/avatar.png"
-																	alt="Avatar"
-																/>
-															</div>
-															<div>
-																<p class="text-sm">
-																	Someone viewed Screen Recording 2025-01-23 at
-																	10.0... PM.mp4 for the first time
-																</p>
-																<div
-																	class="flex text-xs gap-4 text-dark-800/70 mt-1.5"
-																>
-																	<span
-																		class="relative after:content-[&quot;&quot;] after:absolute after:size-[3px] after:bg-blue-900/70 after:rounded-full after:top-1/2 after:-translate-y-1/2 after:-right-2.5"
-																		>Feb 6</span
-																	>
-																	<span>11:41 pm</span>
-																</div>
-															</div>
-														</a>
-													</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</li>
-								<li class="dropdown-wrapper">
-									<a
-										href="#"
-										class="dropdown-button aside-nav-item [&.active]:text-dark-800 [&.active]:bg-gray-pressed-150"
-										data-id="dropdown-avatar"
-									>
-										<div class="avatar size-6 flex-shrink-0">
-											<img src="./assets/images/avatar.png" alt="Avatar" />
-										</div>
-										<span class="truncate">John Doe</span>
-										<svg class="icon icon-xs ml-auto flex-shrink-0">
-											<use href="#icon-check-bottom"></use>
-										</svg>
-									</a>
-									<div
-										class="js-dropdown w-[15.75rem] left-0 hidden"
-										data-dropdown-id="dropdown-avatar"
-										data-sheet-modal
-										data-overflow-visible
-									>
-										<div class="js-dropdown-overlay"></div>
-										<div class="js-dropdown-body">
-											<div class="js-dropdown-trigger">
-												<span></span>
-											</div>
-											<div class="js-dropdown-content">
-												<ul>
-													<li class="flex items-center gap-3 p-3.5 pt-1">
-														<div
-															class="size-[42px] rounded-full overflow-hidden"
-														>
-															<img
-																class="size-full object-cover"
-																src="./assets/images/avatar.png"
-																alt="Avatar"
-															/>
-														</div>
-														<div>
-															<span
-																class="text-sm font-semibold text-dark-800 mb-1"
-																>John Doe</span
-															>
-															<p class="text-dark-800/50 text-xs">
-																johndoe252@cironex.com
-															</p>
-														</div>
-													</li>
-													<li class="border-b border-gray-500 mt-0 mb-2"></li>
-													<li
-														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
-													>
-														<svg class="icon icon-md">
-															<use href="#icon-workspace"></use>
-														</svg>
-														<span>Workspace Settings</span>
-													</li>
-													<li
-														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
-													>
-														<svg class="icon icon-md">
-															<use href="#icon-user"></use>
-														</svg>
-														<span>Profile Settings</span>
-													</li>
-													<li class="border-b border-gray-500 my-2"></li>
-													<li
-														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
-													>
-														<svg class="icon icon-md">
-															<use href="#icon-download"></use>
-														</svg>
-														<span>Install Jumpshare</span>
-													</li>
-													<li
-														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
-													>
-														<svg class="icon icon-md">
-															<use href="#icon-help"></use>
-														</svg>
-														<span>Help Center</span>
-													</li>
-													<li
-														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
-													>
-														<svg class="icon icon-md">
-															<use href="#icon-message-alert"></use>
-														</svg>
-														<span>Send Feedback</span>
-													</li>
-													<li class="border-b border-gray-500 my-2"></li>
-													<li
-														class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
-													>
-														<svg class="icon icon-md">
-															<use href="#icon-sign-out"></use>
-														</svg>
-														<span>Sign Out</span>
-													</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</div>
 					</div>
 				</div>
 			</aside>
-			<main class="relative max-lg:w-full lg:ml-[240px]">
+			<main
+				class="relative max-lg:w-full lg:ml-60 lg:[.active-sidebar_&]:ml-16 transition-all duration-300"
+			>
 				<header
 					class="pt-4 sticky top-0 z-51 bg-white transition-all duration-300"
 				>

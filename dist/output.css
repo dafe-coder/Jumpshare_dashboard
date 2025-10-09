@@ -1423,9 +1423,6 @@
   .flex-shrink-1 {
     flex-shrink: 1;
   }
-  .shrink {
-    flex-shrink: 1;
-  }
   .shrink-0 {
     flex-shrink: 0;
   }
@@ -2807,10 +2804,6 @@
   }
   .delay-75 {
     transition-delay: 75ms;
-  }
-  .duration-0 {
-    --tw-duration: 0ms;
-    transition-duration: 0ms;
   }
   .duration-75 {
     --tw-duration: 75ms;
@@ -6554,7 +6547,7 @@
       --tw-ring-color: var(--color-white);
     }
   }
-  .sidebar-collapsed:hover {
+  .sidebar-collapsed aside:hover {
     .aside-logo {
       display: none !important;
     }
@@ -9119,9 +9112,7 @@
       overflow: hidden;
     }
     .modal-body {
-      position: static;
       flex-grow: 1;
-      overflow-y: auto;
       padding-inline: calc(var(--spacing) * 6);
       @media (width < 480px) {
         padding-block: calc(var(--spacing) * 0);
