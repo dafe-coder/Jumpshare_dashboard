@@ -3,6 +3,8 @@ const BottomSheetLite = {
 	nextZIndex: 10001,
 	state: { dropdownStack: [], dialogStack: [], activeDrag: null },
 	closeThresholdPercent: 20, // how many percent decrease from top to close
+	portalContainer: null,
+	originalPositions: new Map(),
 	config: {
 		defaultHeight: 0,
 		maxHeight: 80,
@@ -29,6 +31,34 @@ const BottomSheetLite = {
 	},
 	getNextZIndex() {
 		return this.nextZIndex++;
+	},
+	createPortalContainer() {
+		if (!this.portalContainer) {
+			this.portalContainer = $('<div class="bottom-sheet-portal"></div>');
+			$("body").append(this.portalContainer);
+		}
+		return this.portalContainer;
+	},
+	moveToPortal(modal) {
+		const originalParent = modal.parent();
+		const originalNextSibling = modal[0].nextSibling;
+		this.originalPositions.set(modal[0], {
+			parent: originalParent,
+			nextSibling: originalNextSibling,
+		});
+
+		this.createPortalContainer().append(modal);
+	},
+	restoreFromPortal(modal) {
+		const originalPos = this.originalPositions.get(modal[0]);
+		if (originalPos) {
+			if (originalPos.nextSibling) {
+				originalPos.parent[0].insertBefore(modal[0], originalPos.nextSibling);
+			} else {
+				originalPos.parent.append(modal);
+			}
+			this.originalPositions.delete(modal[0]);
+		}
 	},
 	init() {
 		$(window).on("resize.bottomSheetLite", () => {
@@ -101,6 +131,9 @@ const BottomSheetLite = {
 			isDismissAllowed: true,
 		};
 		this.getStack(type).push(inst);
+
+		this.moveToPortal(modal);
+
 		modal
 			.css("z-index", inst.zIndex)
 			.removeClass("hidden")
@@ -163,10 +196,12 @@ const BottomSheetLite = {
 			inst.modal.addClass("hidden");
 			inst.body.removeClass("hidden");
 			inst.body.css("height", "auto");
+			this.restoreFromPortal(inst.modal);
 		} else {
 			setTimeout(() => {
 				inst.modal.addClass("hidden");
 				inst.body.addClass("hidden");
+				this.restoreFromPortal(inst.modal);
 			}, this.config.animationDuration);
 		}
 	},

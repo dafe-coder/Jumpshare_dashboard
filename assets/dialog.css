@@ -17,8 +17,10 @@
 				}
 			}
 		}
+	}
+	.bottom-sheet-portal {
 		.tag-sm {
-			@apply text-white text-xs px-2 h-6 font-normal;
+			@apply text-white! text-xs px-2 h-6 font-normal;
 		}
 	}
 	#modal {
@@ -134,7 +136,7 @@
 
 	@media all and (max-width: 768px) {
 		.modal-body {
-			padding: 20px;
+			padding: 20px 20px 0 20px;
 		}
 	}
 
@@ -186,7 +188,7 @@
 			@apply overflow-hidden flex flex-col h-full;
 		}
 		.modal-body {
-			@apply px-6 flex-grow-1  max-xs:py-0;
+			@apply px-6 flex-grow-1 overflow-auto max-xs:py-0;
 		}
 	}
 

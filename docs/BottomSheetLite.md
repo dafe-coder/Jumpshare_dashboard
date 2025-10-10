@@ -7,6 +7,7 @@ BottomSheetLite is a lightweight, dependency-free bottom sheet for mobile and de
 - Minimal surface area with clear, predictable behavior
 - Native-feeling gestures and scroll inertia
 - Separate stacks for dropdown-like sheets and dialog-like modals
+- **Portal rendering** — automatically moves modals to document body to avoid `position: fixed` issues in scrollable containers
 
 ### Installation
 
@@ -15,6 +16,24 @@ Include after jQuery and your modal/dropdown HTML:
 ```html
 <script src="dist/js/helpers.js"></script>
 <script src="dist/js/bottom-sheet.lite.js"></script>
+```
+
+**CSS Requirements**: The portal container styles are automatically included in `global.css`. If using a custom build, ensure these styles are present:
+
+```css
+.bottom-sheet-portal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 10000;
+}
+
+.bottom-sheet-portal > * {
+	pointer-events: auto;
+}
 ```
 
 ### Markup — Dropdown mode
@@ -163,6 +182,18 @@ $(modal).on("open", function () {
 - Heights are viewport-based percentages; `setSheetHeight` stores current value in `modal.data('height')`
 - Multiple sheets are supported via per-type stacks (dropdown vs dialog)
 
+### Portal Rendering
+
+BottomSheetLite automatically uses portal rendering to solve `position: fixed` issues in scrollable containers:
+
+- **Automatic portal creation**: A `.bottom-sheet-portal` container is created in `document.body` on first use
+- **Element relocation**: Modal elements are temporarily moved to the portal during display
+- **Position restoration**: Elements are returned to their original DOM position after closing
+- **Z-index management**: Portal container has `z-index: 10000` to ensure proper layering
+- **Performance optimized**: Only 2 DOM operations per open/close cycle
+
+This ensures that bottom sheets always render above all content, regardless of parent container overflow settings or scroll positions.
+
 ### Accessibility
 
 - Support `Esc` to close (wired in `init()`)
@@ -173,3 +204,5 @@ $(modal).on("open", function () {
 - Sheet does not close on swipe: ensure inner scroll container reaches `scrollTop === 0`
 - Wrong initial height: verify `content` exists and has measurable height; set `defaultHeight` explicitly if needed
 - Backdrop not clickable: check `overlayElement` points to the actual backdrop element
+- **Position fixed issues**: Portal rendering automatically solves `position: fixed` problems in scrollable containers — no additional configuration needed
+- **Z-index conflicts**: Portal container uses `z-index: 10000`; adjust if conflicting with other high z-index elements

@@ -22,6 +22,7 @@ const MobileMenu = {
 					self.aside.toggleClass("active");
 					self.isMobileMenuActive = !self.isMobileMenuActive;
 				}, 10);
+				Helpers.lockPageScroll();
 			}.bind(this),
 		);
 
@@ -42,6 +43,7 @@ const MobileMenu = {
 		setTimeout(() => {
 			this.aside.addClass("max-lg:hidden");
 		}, 300);
+		Helpers.unlockPageScroll();
 	},
 
 	bootstrap: function () {

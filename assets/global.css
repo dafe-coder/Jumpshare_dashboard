@@ -315,3 +315,42 @@ input:-webkit-autofill:active {
 	z-index: 9999 !important;
 	transform: none !important;
 }
+
+/* Bottom Sheet Portal Container */
+.bottom-sheet-portal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 10000;
+}
+
+.bottom-sheet-portal > * {
+	pointer-events: auto;
+}
+
+/* Fixed viewport height for iPhone to prevent dynamic height changes on iPhone Safari */
+@supports (-webkit-touch-callout: none) {
+	.h-screen {
+		height: 100dvh !important;
+	}
+
+	.min-h-screen {
+		min-height: 100dvh !important;
+	}
+}
+
+/* Additional fix for iPhone Safari */
+@media screen and (max-width: 1024px) {
+	.h-screen {
+		height: 100vh !important;
+		height: 100dvh !important;
+	}
+
+	.min-h-screen {
+		min-height: 100vh !important;
+		min-height: 100dvh !important;
+	}
+}
