@@ -3,32 +3,34 @@ const Helpers = {
 		return window.innerWidth < 1024;
 	},
 	getScrollbarWidth() {
-		const outer = document.createElement("div");
-		outer.style.visibility = "hidden";
-		outer.style.overflow = "scroll";
-		outer.style.msOverflowStyle = "scrollbar";
-		document.body.appendChild(outer);
+		const outer = $("<div>").css({
+			visibility: "hidden",
+			overflow: "scroll",
+			msOverflowStyle: "scrollbar",
+		});
+		$("body").append(outer);
 
-		const inner = document.createElement("div");
-		outer.appendChild(inner);
+		const inner = $("<div>");
+		outer.append(inner);
 
-		const scrollbarWidth = outer.offsetWidth - inner.offsetWidth;
-		outer.parentNode.removeChild(outer);
+		const scrollbarWidth = outer[0].offsetWidth - inner[0].offsetWidth;
+		outer.remove();
 		return scrollbarWidth;
 	},
 	pageHasVerticalScrollbar() {
-		const doc = document.documentElement;
-		const body = document.body;
+		const doc = $("html")[0];
+		const body = $("body")[0];
 		const scrollHeight = Math.max(
 			doc.scrollHeight,
 			doc.offsetHeight,
 			body ? body.scrollHeight : 0,
 			body ? body.offsetHeight : 0,
 		);
-		return scrollHeight > window.innerHeight;
+		return scrollHeight > $(window).height();
 	},
 	lockPageScroll() {
-		if (document.body.dataset.scrollLocked === "1") return;
+		if ($("body").data("scroll-locked") === "1") return;
+
 		$("body").addClass("page-lock");
 
 		const hasVScroll = this.pageHasVerticalScrollbar();
@@ -37,40 +39,43 @@ const Helpers = {
 			$("body").css("padding-right", `${sw}px`);
 		}
 
-		const y = window.scrollY || window.pageYOffset || 0;
-		document.body.dataset.scrollLocked = "1";
-		document.body.dataset.scrollY = String(y);
-		document.documentElement.style.overscrollBehavior = "none";
+		const y = $(window).scrollTop();
+		$("body").data("scroll-locked", "1");
+		$("body").data("scroll-y", y);
+		$("html").css("overscroll-behavior", "none");
 
-		const b = document.body;
-		b.style.position = "fixed";
-		b.style.top = `-${y}px`;
-		b.style.left = "0";
-		b.style.right = "0";
-		b.style.width = "100%";
-		b.style.overflow = "hidden";
+		$("body").css({
+			position: "fixed",
+			top: `-${y}px`,
+			left: "0",
+			right: "0",
+			width: "100%",
+			overflow: "hidden",
+		});
 	},
 	unlockPageScroll() {
-		if (document.body.dataset.scrollLocked !== "1") return;
+		if ($("body").data("scroll-locked") !== "1") return;
 		$("body").removeClass("page-lock");
 
 		$("body").css("padding-right", "0");
-		document.documentElement.style.overscrollBehavior = "";
+		$("html").css("overscroll-behavior", "");
 
-		const b = document.body;
 		const y =
-			Math.abs(parseInt(b.style.top || "0", 10)) ||
-			Number(document.body.dataset.scrollY) ||
+			Math.abs(parseInt($("body").css("top") || "0", 10)) ||
+			$("body").data("scroll-y") ||
 			0;
-		b.style.position = "";
-		b.style.top = "";
-		b.style.left = "";
-		b.style.right = "";
-		b.style.width = "";
-		b.style.overflow = "";
 
-		delete document.body.dataset.scrollLocked;
-		delete document.body.dataset.scrollY;
-		window.scrollTo(0, y);
+		$("body").css({
+			position: "",
+			top: "",
+			left: "",
+			right: "",
+			width: "",
+			overflow: "",
+		});
+
+		$("body").removeData("scroll-locked");
+		$("body").removeData("scroll-y");
+		$(window).scrollTop(y);
 	},
 };

@@ -175,6 +175,7 @@ $(modal).on("open", function () {
 - Native content scroll inertia is preserved; the sheet takes over only at scrollTop = 0
 - Moving the finger back up returns the sheet toward its default height
 - Dismissal threshold: 20% from the top of the sheet body
+- **Minimum height threshold**: Sheet closes automatically if height drops less 20% (threshold) of viewport
 
 ### Key details
 

@@ -14,70 +14,27 @@ const Tooltip = {
 		).matches;
 
 		if (isTouchDevice) {
-			let justHandledTouch = false;
-
-			tooltipBtns.on("touchstart", function (e) {
-				e.preventDefault();
-				e.stopPropagation();
-				justHandledTouch = true;
-				setTimeout(function () {
-					justHandledTouch = false;
-				}, 400);
-
+			tooltipBtns.on("click", function (e) {
 				const $btn = $(this);
 				const $body = $btn.find(".tooltip-body");
 				const isActive = $btn.hasClass("tooltip-open");
 
-				$(".tooltip-btn.tooltip-open").each(function () {
-					$(this)
-						.removeClass("tooltip-open")
-						.find(".tooltip-body")
-						.removeClass("block");
-				});
+				Tooltip.closeAll();
 
 				if (!isActive) {
 					$btn.addClass("tooltip-open");
 					$body.addClass("block");
+
 					Tooltip.positionTooltip($btn, $body);
 					Tooltip.attachScrollListeners($btn, $body);
 				}
 			});
 
-			tooltipBtns.on("click", function (e) {
-				if (justHandledTouch) {
-					e.preventDefault();
+			$(document).on("touchstart click", function (e) {
+				if (e.target.closest(".tooltip-btn")) {
 					return;
 				}
-				e.preventDefault();
-				e.stopPropagation();
-
-				const $btn = $(this);
-				const $body = $btn.find(".tooltip-body");
-				const isActive = $btn.hasClass("tooltip-open");
-
-				$(".tooltip-btn.tooltip-open").each(function () {
-					$(this)
-						.removeClass("tooltip-open")
-						.find(".tooltip-body")
-						.removeClass("block");
-				});
-
-				if (!isActive) {
-					$btn.addClass("tooltip-open");
-					$body.addClass("block");
-					Tooltip.positionTooltip($btn, $body);
-					Tooltip.attachScrollListeners($btn, $body);
-				}
-			});
-
-			$(document).on("touchstart click", function () {
-				$(".tooltip-btn.tooltip-open").each(function () {
-					$(this)
-						.removeClass("tooltip-open")
-						.find(".tooltip-body")
-						.removeClass("block");
-				});
-				Tooltip.detachScrollListeners();
+				Tooltip.closeAll();
 			});
 		} else {
 			tooltipBtns.on("mouseover", function () {
@@ -98,20 +55,12 @@ const Tooltip = {
 		$(window).on("resize", () => {
 			clearTimeout(Tooltip.resizeTimer);
 			Tooltip.resizeTimer = setTimeout(() => {
-				const $activeBtn = $(".tooltip-btn.tooltip-open");
-				if ($activeBtn.length) {
-					const $body = $activeBtn.find(".tooltip-body.block");
-					Tooltip.positionTooltip($activeBtn, $body);
-				}
+				Tooltip.updateActiveTooltip();
 			}, 50);
 		});
 
 		$(window).on("scroll", () => {
-			const $activeBtn = $(".tooltip-btn.tooltip-open");
-			if ($activeBtn.length) {
-				const $body = $activeBtn.find(".tooltip-body.block");
-				Tooltip.positionTooltip($activeBtn, $body);
-			}
+			Tooltip.updateActiveTooltip();
 		});
 	},
 	positionTooltip($btn, $body) {
@@ -195,6 +144,24 @@ const Tooltip = {
 		}
 		Tooltip.scrollableParents = [];
 		Tooltip.scrollHandlers = [];
+	},
+
+	closeAll() {
+		$(".tooltip-btn.tooltip-open").each(function () {
+			$(this)
+				.removeClass("tooltip-open")
+				.find(".tooltip-body")
+				.removeClass("block");
+		});
+		Tooltip.detachScrollListeners();
+	},
+
+	updateActiveTooltip() {
+		const $activeBtn = $(".tooltip-btn.tooltip-open");
+		if ($activeBtn.length) {
+			const $body = $activeBtn.find(".tooltip-body.block");
+			Tooltip.positionTooltip($activeBtn, $body);
+		}
 	},
 };
 

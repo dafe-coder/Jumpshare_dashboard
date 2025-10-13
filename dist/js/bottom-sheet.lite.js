@@ -8,7 +8,7 @@ const BottomSheetLite = {
 	config: {
 		defaultHeight: 0,
 		maxHeight: 80,
-		animationDuration: 300,
+		animationDuration: 500,
 		showDelay: 10,
 		selectors: {
 			body: ".js-dropdown-body",
@@ -144,8 +144,8 @@ const BottomSheetLite = {
 		}
 		this.calculateContentHeight(modal, content[0]);
 		body.css("height", "0");
+		MobileMenu.closeMobileMenu();
 		Helpers.lockPageScroll();
-		$("aside").removeClass("active");
 		setTimeout(() => {
 			modal.addClass("anim-sheet");
 			this.setSheetHeight(
@@ -422,8 +422,11 @@ const BottomSheetLite = {
 			g.startHeight != null
 				? g.startHeight
 				: inst.modal.data("default-height") || this.config.defaultHeight;
+		console.log(startHeight, current, "======= start");
+
 		const shouldClose = startHeight - current >= this.closeThresholdPercent; // close if reduced
-		if (shouldClose && inst.isDismissAllowed) {
+		const isBelowMinHeight = startHeight < this.closeThresholdPercent; // close if modal height is less than close threshold percent
+		if ((shouldClose || isBelowMinHeight) && inst.isDismissAllowed) {
 			this.close(type, id);
 			inst.gesture = null;
 			this.state.activeDrag = null;
