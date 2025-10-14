@@ -242,7 +242,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* Responsive variant for 4xl breakpoint */
-@custom-variant 4xl (@media (min-width: 1800px));
+@custom-variant 4xl (@media (min-width: 2500px));
 
 /* Container utility for very wide layouts */
 @utility container-4xl {
