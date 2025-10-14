@@ -18,7 +18,8 @@
 			}
 		}
 	}
-	.bottom-sheet-portal {
+	.bottom-sheet-portal,
+	#lightbox {
 		.tag-sm {
 			@apply text-white! text-xs px-2 h-6 font-normal;
 		}

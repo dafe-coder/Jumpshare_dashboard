@@ -164,6 +164,7 @@ const BottomSheetLite = {
 		this.bindSheetEvents(type, inst);
 	},
 	close(type = "dropdown", instanceId = null, immediate = false) {
+		this.closeAllSubMenus();
 		const stack = this.getStack(type);
 		if (!stack.length) return;
 		let idx = stack.length - 1;
@@ -191,7 +192,6 @@ const BottomSheetLite = {
 		) {
 			Helpers.unlockPageScroll();
 		}
-
 		if (immediate) {
 			inst.modal.addClass("hidden");
 			inst.body.removeClass("hidden");
@@ -219,6 +219,7 @@ const BottomSheetLite = {
 		const nsDown = `mousedown.touchDrag-${type}-${id} touchstart.touchDrag-${type}-${id}`;
 		const nsMove = `mousemove.touchDrag-${type}-${id} touchmove.touchDrag-${type}-${id}`;
 		const nsUp = `mouseup.touchDrag-${type}-${id} touchend.touchDrag-${type}-${id}`;
+		const nsGoBack = `mousedown.bottomSheetSubMenu-${type}-${id} touchstart.bottomSheetSubMenu-${type}-${id}`;
 		if (inst.overlay && inst.overlay.length) {
 			inst.overlay
 				.off(`click.bottomSheet-${type}-${id}`)
@@ -251,6 +252,33 @@ const BottomSheetLite = {
 			.on(nsMove, (e) => this.gestureMove(e, type, id))
 			.off(nsUp)
 			.on(nsUp, () => this.gestureEnd(type, id));
+
+		$(".js-dropdown-sub-list .go-back").on(nsGoBack, (e) => {
+			e.preventDefault();
+			e.stopPropagation();
+			e.stopImmediatePropagation();
+			this.closeAllSubMenus();
+		});
+	},
+	openSubMenu(itemId) {
+		const inst = this.getTop("dropdown");
+		if (!inst) return;
+
+		const $sheetModal = inst.modal;
+		const $sheetPrimaryBody = $sheetModal.find(".js-dropdown-primary-list");
+		const $subMenu = $sheetModal.find(`[data-dropdown-sub="${itemId}"]`);
+		$subMenu.removeClass("hidden");
+		$sheetPrimaryBody.addClass("hidden");
+	},
+	closeAllSubMenus() {
+		const inst = this.getTop("dropdown");
+		if (!inst) return;
+
+		const $sheetModal = inst.modal;
+		const $sheetPrimaryBody = $sheetModal.find(".js-dropdown-primary-list");
+		const $subMenu = $sheetModal.find(`[data-dropdown-sub]`);
+		$sheetPrimaryBody.removeClass("hidden");
+		$subMenu.addClass("hidden");
 	},
 	setSheetHeight(modal, body, value, heightTrigger = 0) {
 		const h = Math.max(0, value);
