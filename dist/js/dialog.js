@@ -176,15 +176,18 @@ const Lightbox = {
 			if ($(this).hasClass("active")) {
 				qrCodeModal.fadeOut(150);
 				$(this).removeClass("active");
+				$(this).closest(".modal-body").addClass("overflow-hidden");
 			} else {
 				qrCodeModal.fadeIn(150);
 				$(this).addClass("active");
+				$(this).closest(".modal-body").removeClass("overflow-hidden");
 			}
 		});
 
 		$(document).on("click", ".qrcode-modal .icn-close", function () {
 			$(".qrcode-modal").fadeOut(150);
 			$("#qr-code-btn").removeClass("active");
+			$(this).closest(".modal-body").removeClass("overflow-hidden");
 		});
 
 		$(document).on("click", ".qrcode-modal", function (e) {

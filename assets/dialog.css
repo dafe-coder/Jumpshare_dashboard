@@ -8,10 +8,10 @@
 				align-items: flex-end;
 			}
 			.modal-backdrop {
-				transition: all ease-in-out 0.5s;
+				transition: all ease 0.5s;
 				opacity: 0;
 			}
-			&.show-sheet {
+			&.anim-sheet {
 				.modal-backdrop {
 					opacity: 1 !important;
 				}
@@ -35,7 +35,9 @@
 	.modal-dialog {
 		position: relative;
 		width: auto;
-		transition: all ease 0.5s;
+		transition-property: all;
+		transition-duration: 600ms;
+		transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
 		margin: 50px auto 20px;
 		input,
 		textarea {
@@ -455,14 +457,14 @@
 	}
 
 	.qrcode-modal {
-		@apply bg-dark-800/20 absolute top-0 left-0 right-0 bottom-0 w-full h-full z-10;
+		@apply bg-dark-800/20 absolute top-0 left-0 right-0 bottom-0 w-full h-full z-100000;
 
 		.qrcode-modal-close {
 			@apply absolute top-2 right-2;
 		}
 
 		.qrcode-modal-body {
-			@apply w-[420px] bg-white rounded-2xl border border-gray-500 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+			@apply w-[420px] max-lg:max-w-[calc(100%-3rem)] bg-white rounded-2xl border border-gray-500 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
 		}
 
 		.qrcode-modal-header {
@@ -477,7 +479,7 @@
 			@apply flex flex-col items-center justify-center px-6;
 
 			.qrcode-modal-code {
-				@apply border-gray-500 border rounded-xl p-4 bg-white h-[340px] w-full relative overflow-hidden;
+				@apply border-gray-500 border rounded-xl p-4 bg-white h-[340px] max-lg:h-[270px] w-full relative overflow-hidden;
 				img {
 					@apply size-full absolute top-0 left-0 object-cover;
 				}

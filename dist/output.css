@@ -7923,13 +7923,6 @@
         border-style: none;
         background-color: transparent;
         padding: calc(var(--spacing) * 0);
-        transition-property: all;
-        transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-        transition-duration: var(--tw-duration, var(--default-transition-duration));
-        --tw-duration: 100ms;
-        transition-duration: 100ms;
-        --tw-ease: var(--ease-in-out);
-        transition-timing-function: var(--ease-in-out);
         .js-dropdown-list {
           height: auto;
           width: 100%;
@@ -7975,8 +7968,8 @@
           transition-property: all;
           transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
           transition-duration: var(--tw-duration, var(--default-transition-duration));
-          --tw-duration: 400ms;
-          transition-duration: 400ms;
+          --tw-duration: 600ms;
+          transition-duration: 600ms;
           --tw-ease: cubic-bezier(.2,.8,.2,1);
           transition-timing-function: cubic-bezier(.2,.8,.2,1);
           &.not-selectable {
@@ -8881,10 +8874,10 @@
         align-items: flex-end;
       }
       .modal-backdrop {
-        transition: all ease-in-out 0.5s;
+        transition: all ease 0.5s;
         opacity: 0;
       }
-      &.show-sheet {
+      &.anim-sheet {
         .modal-backdrop {
           opacity: 1 !important;
         }
@@ -8913,7 +8906,9 @@
   .modal-dialog {
     position: relative;
     width: auto;
-    transition: all ease 0.5s;
+    transition-property: all;
+    transition-duration: 600ms;
+    transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
     margin: 50px auto 20px;
     input,	textarea {
       font-size: 14px;
@@ -9613,7 +9608,7 @@
     right: calc(var(--spacing) * 0);
     bottom: calc(var(--spacing) * 0);
     left: calc(var(--spacing) * 0);
-    z-index: 10;
+    z-index: 100000;
     height: 100%;
     width: 100%;
     background-color: color-mix(in srgb, #0a0a0b 20%, transparent);
@@ -9639,6 +9634,9 @@
       border-width: 1px;
       border-color: var(--color-gray-500);
       background-color: var(--color-white);
+      @media (width < 64rem) {
+        max-width: calc(100% - 3rem);
+      }
     }
     .qrcode-modal-header {
       margin-bottom: calc(var(--spacing) * 4);
@@ -9670,6 +9668,9 @@
         border-color: var(--color-gray-500);
         background-color: var(--color-white);
         padding: calc(var(--spacing) * 4);
+        @media (width < 64rem) {
+          height: 270px;
+        }
         img {
           position: absolute;
           top: calc(var(--spacing) * 0);

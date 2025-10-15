@@ -134,10 +134,7 @@ const BottomSheetLite = {
 
 		this.moveToPortal(modal);
 
-		modal
-			.css("z-index", inst.zIndex)
-			.removeClass("hidden")
-			.addClass("show-sheet");
+		modal.css("z-index", inst.zIndex).removeClass("hidden");
 		body.removeClass("hidden").css("height", "auto");
 		if (inst.defaultHeightOverride != null) {
 			modal.data("default-height", inst.defaultHeightOverride);
@@ -183,7 +180,6 @@ const BottomSheetLite = {
 		}
 		this.detachSheetEvents(type, inst);
 		this.setSheetHeight(inst.modal, inst.body, 0, inst.heightTrigger);
-		inst.modal.removeClass("show-sheet");
 		inst.modal.removeClass("anim-sheet");
 		stack.splice(idx, 1);
 		if (
