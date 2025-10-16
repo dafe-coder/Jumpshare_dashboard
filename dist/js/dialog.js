@@ -64,7 +64,6 @@ const Dialog = {
 				Dropdown.closeAllDropdowns();
 				$dialog.removeClass("hidden");
 				Dialog.closeDialogs();
-
 				$dialog.find(`.modal-${dialogId}`).removeClass("hidden");
 			}
 		});
