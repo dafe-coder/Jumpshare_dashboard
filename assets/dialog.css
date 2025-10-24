@@ -2,10 +2,16 @@
 	#lightbox {
 		@apply z-998;
 		@media screen and (max-width: 1024px) {
-			.modal {
+			.modal-dialog {
 				display: flex;
 				justify-content: center;
 				align-items: flex-end;
+				position: fixed;
+				bottom: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 100%;
+				max-width: 550px !important;
 			}
 			.modal-backdrop {
 				transition: all ease 0.5s;

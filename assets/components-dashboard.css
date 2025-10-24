@@ -8,7 +8,7 @@
 	.dashboard {
 		@apply tracking-base;
 		.btn {
-			@apply shadow-none duration-0 transition-none;
+			@apply shadow-none duration-0 transition-none rounded-lg;
 		}
 		&.dashboard-settings {
 			.btn {
@@ -63,7 +63,7 @@
 		@apply flex flex-col mt-2;
 	}
 	.aside-nav-item {
-		@apply flex items-center gap-2 text-sm px-2 h-9 rounded-md hover:bg-gray-hovered-150 active:bg-gray-pressed-150 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500 truncate cursor-pointer;
+		@apply flex items-center gap-2 text-sm px-2 h-9 rounded-lg hover:bg-gray-hovered-150 active:bg-gray-pressed-150 font-medium [&.active]:bg-blue-500/15 [&.active]:text-blue-500 truncate cursor-pointer;
 		svg {
 			@apply flex-shrink-0;
 		}
@@ -156,7 +156,7 @@
 			}
 		}
 		.file-item-type {
-			@apply flex items-center [.list-type_&]:static absolute right-3 bottom-4.5 bg-dark-800/5 rounded-md px-2 h-6 w-auto [.list-type_&]:h-auto [.list-type_&]:bg-transparent [.list-type_&]:px-0 [.list-type_&]:py-0 max-md:[.list-type_&]:hidden @max-[13.75rem]/file-item-wrapper:hidden;
+			@apply hidden [.list-type_&]:flex items-center [.list-type_&]:static absolute right-3 bottom-4.5 bg-dark-800/5 rounded-md px-2 h-6 w-auto [.list-type_&]:h-auto [.list-type_&]:bg-transparent [.list-type_&]:px-0 [.list-type_&]:py-0 max-md:[.list-type_&]:hidden @max-[13.75rem]/file-item-wrapper:hidden;
 		}
 	}
 	.card-select-box {

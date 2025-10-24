@@ -132,7 +132,9 @@ const BottomSheetLite = {
 		};
 		this.getStack(type).push(inst);
 
-		this.moveToPortal(modal);
+		if (type === "dropdown") {
+			this.moveToPortal(modal);
+		}
 
 		modal.css("z-index", inst.zIndex).removeClass("hidden");
 		body.removeClass("hidden").css("height", "auto");
@@ -192,12 +194,26 @@ const BottomSheetLite = {
 			inst.modal.addClass("hidden");
 			inst.body.removeClass("hidden");
 			inst.body.css("height", "auto");
-			this.restoreFromPortal(inst.modal);
+			if (type === "dropdown") {
+				this.restoreFromPortal(inst.modal);
+			}
 		} else {
 			setTimeout(() => {
-				inst.modal.addClass("hidden");
+				console.log(this.state.dialogStack, "======= this.state.dialogStack");
+				console.log(
+					this.state.dialogStack.length,
+					"======= this.state.dialogStack.length",
+				);
+
+				if (type !== "dialog") {
+					inst.modal.addClass("hidden");
+				} else if (type === "dialog" && this.state.dialogStack.length <= 0) {
+					inst.modal.addClass("hidden");
+				}
 				inst.body.addClass("hidden");
-				this.restoreFromPortal(inst.modal);
+				if (type === "dropdown") {
+					this.restoreFromPortal(inst.modal);
+				}
 			}, this.config.animationDuration);
 		}
 	},
