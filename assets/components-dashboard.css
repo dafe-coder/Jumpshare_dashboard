@@ -257,7 +257,7 @@
 		}
 	}
 	.js-dropdown-list-item {
-		@apply text-dark-800 text-sm font-normal flex items-center gap-2 p-2 hover:bg-gray-hovered-150 active:bg-gray-150 rounded-md cursor-pointer;
+		@apply text-dark-800 text-sm font-normal flex items-center gap-2 p-2 hover:bg-[#f6f6f6] active:bg-gray-150 rounded-md cursor-pointer;
 	}
 	.js-dropdown-list .js-dropdown-list-item {
 		@apply max-lg:!py-2.5;
