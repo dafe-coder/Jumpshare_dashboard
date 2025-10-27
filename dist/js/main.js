@@ -112,6 +112,7 @@ $(document).ready(function () {
 		e.stopImmediatePropagation();
 		const selectedItems = selectItem.filter(":checked");
 		$(this).closest(".folder-item").toggleClass("active-select");
+		$(this).closest(".file-item").toggleClass("active-select");
 
 		if (selectedItems.length > 0) {
 			selectWrapper.css("display", "flex");
@@ -132,6 +133,7 @@ $(document).ready(function () {
 	$(".close-selected-wrapper").on("click", function (e) {
 		e.preventDefault();
 		$(".dropdown-wrapper").removeClass("active-select");
+		$(".folder-item").removeClass("active-select");
 		selectWrapper.removeClass("active");
 		selectWrapper.css("display", "none");
 		selectWrapper.siblings("div").css("display", "flex");
