@@ -7791,8 +7791,8 @@
           transition-property: all;
           transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
           transition-duration: var(--tw-duration, var(--default-transition-duration));
-          --tw-duration: 500ms;
-          transition-duration: 500ms;
+          --tw-duration: 400ms;
+          transition-duration: 400ms;
           --tw-ease: cubic-bezier(0.4,0,0.2,1);
           transition-timing-function: cubic-bezier(0.4,0,0.2,1);
           &.not-selectable {
