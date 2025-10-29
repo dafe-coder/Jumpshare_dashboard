@@ -8,7 +8,7 @@ const BottomSheetLite = {
 	config: {
 		defaultHeight: 0,
 		maxHeight: 80,
-		animationDuration: 500,
+		animationDuration: 400,
 		showDelay: 10,
 		selectors: {
 			body: ".js-dropdown-body",
@@ -31,6 +31,25 @@ const BottomSheetLite = {
 	},
 	getNextZIndex() {
 		return this.nextZIndex++;
+	},
+	calculateAnimationDuration(heightPercent) {
+		const baseDuration = this.config.animationDuration;
+		const baseHeightPercent = 50;
+
+		const deviation = heightPercent - baseHeightPercent;
+		const adjustmentFactor = 3;
+		const adjustment = deviation * adjustmentFactor;
+		const calculatedDuration = baseDuration + adjustment;
+
+		// Limitations: minimum 350ms, maximum 650ms
+		const minDuration = 300;
+		const maxDuration = 600;
+		const clampedDuration = Math.max(
+			minDuration,
+			Math.min(maxDuration, calculatedDuration),
+		);
+
+		return Math.round(clampedDuration);
 	},
 	createPortalContainer() {
 		if (!this.portalContainer) {
@@ -145,16 +164,18 @@ const BottomSheetLite = {
 		body.css("height", "0");
 		MobileMenu.closeMobileMenu();
 		Helpers.lockPageScroll();
+
+		const targetHeight =
+			inst.defaultHeightOverride != null
+				? inst.defaultHeightOverride
+				: modal.data("default-height") || this.config.defaultHeight;
+		const animationDuration = this.calculateAnimationDuration(targetHeight);
+
+		body.css("transition-duration", `${animationDuration}ms`);
+
 		setTimeout(() => {
 			modal.addClass("anim-sheet");
-			this.setSheetHeight(
-				modal,
-				body,
-				inst.defaultHeightOverride != null
-					? inst.defaultHeightOverride
-					: modal.data("default-height") || this.config.defaultHeight,
-				inst.heightTrigger,
-			);
+			this.setSheetHeight(modal, body, targetHeight, inst.heightTrigger);
 			try {
 				const scEl = inst.scrollBlock && inst.scrollBlock[0];
 				if (scEl) inst.isDismissAllowed = scEl.scrollTop <= 0;
@@ -181,6 +202,15 @@ const BottomSheetLite = {
 			this.state.activeDrag = null;
 		}
 		this.detachSheetEvents(type, inst);
+
+		const currentHeight =
+			inst.modal.data("height") ||
+			inst.modal.data("default-height") ||
+			this.config.defaultHeight;
+		const animationDuration = this.calculateAnimationDuration(currentHeight);
+
+		inst.body.css("transition-duration", `${animationDuration}ms`);
+
 		this.setSheetHeight(inst.modal, inst.body, 0, inst.heightTrigger);
 		inst.modal.removeClass("anim-sheet");
 		stack.splice(idx, 1);
@@ -214,7 +244,7 @@ const BottomSheetLite = {
 				if (type === "dropdown") {
 					this.restoreFromPortal(inst.modal);
 				}
-			}, this.config.animationDuration);
+			}, animationDuration + 100);
 		}
 	},
 	closeAll(immediate) {
@@ -476,6 +506,9 @@ const BottomSheetLite = {
 			inst.defaultHeightOverride ||
 			inst.modal.data("default-height") ||
 			this.config.defaultHeight;
+
+		const animationDuration = this.calculateAnimationDuration(target);
+		inst.body.css("transition-duration", `${animationDuration}ms`);
 
 		this.setSheetHeight(inst.modal, inst.body, target, inst.heightTrigger || 0);
 		inst.gesture = null;
