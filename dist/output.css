@@ -1366,6 +1366,9 @@
   .flex-1 {
     flex: 1;
   }
+  .flex-shrink {
+    flex-shrink: 1;
+  }
   .flex-shrink-0 {
     flex-shrink: 0;
   }
@@ -7793,8 +7796,8 @@
           transition-duration: var(--tw-duration, var(--default-transition-duration));
           --tw-duration: 400ms;
           transition-duration: 400ms;
-          --tw-ease: cubic-bezier(0.4,0,0.2,1);
-          transition-timing-function: cubic-bezier(0.4,0,0.2,1);
+          --tw-ease: cubic-bezier(0.32,0.72,0,1);
+          transition-timing-function: cubic-bezier(0.32,0.72,0,1);
           &.not-selectable {
             transition-property: none !important;
           }
@@ -8737,7 +8740,7 @@
     width: auto;
     transition-property: all;
     transition-duration: 500ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
     margin: 50px auto 20px;
     input,	textarea {
       font-size: 14px;

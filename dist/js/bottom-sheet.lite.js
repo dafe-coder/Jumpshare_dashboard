@@ -2,13 +2,15 @@ const BottomSheetLite = {
 	instanceCounter: 0,
 	nextZIndex: 10001,
 	state: { dropdownStack: [], dialogStack: [], activeDrag: null },
-	closeThresholdPercent: 20, // how many percent decrease from top to close
+	closeThresholdPercent: 25, // how many percent decrease from top to close
+	openTimingFunction: "cubic-bezier(0.32, 0.72, 0, 1)",
+	closeTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
 	portalContainer: null,
 	originalPositions: new Map(),
 	config: {
 		defaultHeight: 0,
 		maxHeight: 80,
-		animationDuration: 400,
+		animationDuration: 300,
 		showDelay: 10,
 		selectors: {
 			body: ".js-dropdown-body",
@@ -42,8 +44,8 @@ const BottomSheetLite = {
 		const calculatedDuration = baseDuration + adjustment;
 
 		// Limitations: minimum 350ms, maximum 650ms
-		const minDuration = 300;
-		const maxDuration = 600;
+		const minDuration = 200;
+		const maxDuration = 400;
 		const clampedDuration = Math.max(
 			minDuration,
 			Math.min(maxDuration, calculatedDuration),
@@ -172,6 +174,7 @@ const BottomSheetLite = {
 		const animationDuration = this.calculateAnimationDuration(targetHeight);
 
 		body.css("transition-duration", `${animationDuration}ms`);
+		body.css("transition-timing-function", this.openTimingFunction);
 
 		setTimeout(() => {
 			modal.addClass("anim-sheet");
@@ -210,6 +213,7 @@ const BottomSheetLite = {
 		const animationDuration = this.calculateAnimationDuration(currentHeight);
 
 		inst.body.css("transition-duration", `${animationDuration}ms`);
+		inst.body.css("transition-timing-function", this.closeTimingFunction);
 
 		this.setSheetHeight(inst.modal, inst.body, 0, inst.heightTrigger);
 		inst.modal.removeClass("anim-sheet");
@@ -228,23 +232,20 @@ const BottomSheetLite = {
 				this.restoreFromPortal(inst.modal);
 			}
 		} else {
-			setTimeout(() => {
-				console.log(this.state.dialogStack, "======= this.state.dialogStack");
-				console.log(
-					this.state.dialogStack.length,
-					"======= this.state.dialogStack.length",
-				);
-
-				if (type !== "dialog") {
-					inst.modal.addClass("hidden");
-				} else if (type === "dialog" && this.state.dialogStack.length <= 0) {
-					inst.modal.addClass("hidden");
-				}
-				inst.body.addClass("hidden");
-				if (type === "dropdown") {
-					this.restoreFromPortal(inst.modal);
-				}
-			}, animationDuration + 100);
+			setTimeout(
+				() => {
+					if (type !== "dialog") {
+						inst.modal.addClass("hidden");
+					} else if (type === "dialog" && this.state.dialogStack.length <= 0) {
+						inst.modal.addClass("hidden");
+					}
+					inst.body.addClass("hidden");
+					if (type === "dropdown") {
+						this.restoreFromPortal(inst.modal);
+					}
+				},
+				Math.max(animationDuration + 100, 500),
+			);
 		}
 	},
 	closeAll(immediate) {
@@ -509,6 +510,7 @@ const BottomSheetLite = {
 
 		const animationDuration = this.calculateAnimationDuration(target);
 		inst.body.css("transition-duration", `${animationDuration}ms`);
+		inst.body.css("transition-timing-function", this.closeTimingFunction);
 
 		this.setSheetHeight(inst.modal, inst.body, target, inst.heightTrigger || 0);
 		inst.gesture = null;

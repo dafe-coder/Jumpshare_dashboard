@@ -1,0 +1,840 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bottom Sheet Examples - Быстрые анимации</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./dist/output.css" />
+		<style>
+			body {
+				font-family: "Inter", sans-serif;
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				min-height: 100vh;
+				padding: 2rem;
+			}
+
+			.container {
+				max-width: 800px;
+				margin: 0 auto;
+			}
+
+			.header {
+				text-align: center;
+				color: white;
+				margin-bottom: 3rem;
+			}
+
+			.header h1 {
+				font-size: 2.5rem;
+				font-weight: 700;
+				margin-bottom: 0.5rem;
+			}
+
+			.header p {
+				font-size: 1.125rem;
+				opacity: 0.9;
+			}
+
+			.examples-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+				gap: 1.5rem;
+				margin-bottom: 3rem;
+			}
+
+			.example-card {
+				background: white;
+				border-radius: 16px;
+				padding: 2rem;
+				box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+				transition:
+					transform 0.2s,
+					box-shadow 0.2s;
+			}
+
+			.example-card:hover {
+				transform: translateY(-4px);
+				box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+			}
+
+			.example-card h3 {
+				font-size: 1.25rem;
+				font-weight: 600;
+				color: #1a1a1a;
+				margin-bottom: 0.5rem;
+			}
+
+			.example-card p {
+				color: #666;
+				font-size: 0.875rem;
+				margin-bottom: 1.5rem;
+				line-height: 1.5;
+			}
+
+			.btn-demo {
+				width: 100%;
+				padding: 0.75rem 1.5rem;
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				color: white;
+				border: none;
+				border-radius: 8px;
+				font-size: 1rem;
+				font-weight: 500;
+				cursor: pointer;
+				transition: opacity 0.2s;
+			}
+
+			.btn-demo:hover {
+				opacity: 0.9;
+			}
+
+			.btn-demo:active {
+				opacity: 0.8;
+			}
+
+			.info-section {
+				background: white;
+				border-radius: 16px;
+				padding: 2rem;
+				box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+			}
+
+			.info-section h2 {
+				font-size: 1.5rem;
+				font-weight: 600;
+				color: #1a1a1a;
+				margin-bottom: 1rem;
+			}
+
+			.info-section ul {
+				list-style: none;
+				padding: 0;
+			}
+
+			.info-section li {
+				padding: 0.5rem 0;
+				color: #666;
+				border-bottom: 1px solid #eee;
+			}
+
+			.info-section li:last-child {
+				border-bottom: none;
+			}
+
+			.info-section strong {
+				color: #1a1a1a;
+			}
+
+			/* Bottom Sheet Styles - Fast & Smooth like Facebook */
+			.js-dropdown-body {
+				transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1) !important;
+			}
+
+			.js-dropdown-overlay {
+				transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1) !important;
+				transition-duration: 250ms !important;
+			}
+
+			/* Menu item styles */
+			.menu-item {
+				display: flex;
+				align-items: center;
+				gap: 1rem;
+				padding: 1rem;
+				border-radius: 8px;
+				cursor: pointer;
+				transition: background-color 0.15s;
+			}
+
+			.menu-item:hover {
+				background-color: #f5f5f5;
+			}
+
+			.menu-item:active {
+				background-color: #e5e5e5;
+			}
+
+			.menu-icon {
+				width: 24px;
+				height: 24px;
+				flex-shrink: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.menu-content {
+				flex: 1;
+			}
+
+			.menu-title {
+				font-weight: 500;
+				color: #1a1a1a;
+				margin-bottom: 0.25rem;
+			}
+
+			.menu-subtitle {
+				font-size: 0.875rem;
+				color: #666;
+			}
+
+			.divider {
+				height: 1px;
+				background: #e5e5e5;
+				margin: 0.5rem 0;
+			}
+
+			.avatar {
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: white;
+				font-weight: 600;
+				flex-shrink: 0;
+			}
+
+			/* Facebook-style menu */
+			.fb-menu-item {
+				padding: 0.75rem 1rem;
+				display: flex;
+				align-items: center;
+				gap: 0.75rem;
+				cursor: pointer;
+				border-radius: 8px;
+				transition: background-color 0.15s;
+			}
+
+			.fb-menu-item:hover {
+				background-color: #f5f5f5;
+			}
+
+			.fb-menu-item.danger {
+				color: #dc2626;
+			}
+
+			.fb-menu-item.danger:hover {
+				background-color: #fee2e2;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<h1>🚀 Bottom Sheet Examples</h1>
+				<p>Быстрые и плавные анимации как в Facebook</p>
+			</div>
+
+			<div class="examples-grid">
+				<div class="example-card">
+					<h3>Меню действий (Facebook)</h3>
+					<p>
+						Классическое меню с действиями, как при нажатии на три точки в посте
+					</p>
+					<button type="button" class="btn-demo" data-open-sheet="fb-menu">
+						Открыть меню
+					</button>
+				</div>
+
+				<div class="example-card">
+					<h3>Компактный список</h3>
+					<p>Небольшое меню с несколькими опциями (~30% высоты)</p>
+					<button type="button" class="btn-demo" data-open-sheet="compact-menu">
+						Открыть меню
+					</button>
+				</div>
+
+				<div class="example-card">
+					<h3>Средний список</h3>
+					<p>Меню со средней высотой (~50% высоты экрана)</p>
+					<button type="button" class="btn-demo" data-open-sheet="medium-menu">
+						Открыть меню
+					</button>
+				</div>
+
+				<div class="example-card">
+					<h3>Большой список</h3>
+					<p>Расширенное меню с множеством опций (~70% высоты)</p>
+					<button type="button" class="btn-demo" data-open-sheet="large-menu">
+						Открыть меню
+					</button>
+				</div>
+
+				<div class="example-card">
+					<h3>С иконками</h3>
+					<p>Меню с иконками и описаниями</p>
+					<button type="button" class="btn-demo" data-open-sheet="icon-menu">
+						Открыть меню
+					</button>
+				</div>
+
+				<div class="example-card">
+					<h3>С аватарами</h3>
+					<p>Список пользователей с аватарами</p>
+					<button type="button" class="btn-demo" data-open-sheet="avatar-menu">
+						Открыть меню
+					</button>
+				</div>
+			</div>
+
+			<div class="info-section">
+				<h2>ℹ️ Настройки анимации</h2>
+				<ul>
+					<li><strong>Базовая длительность:</strong> 350ms (для 50% высоты)</li>
+					<li>
+						<strong>Коэффициент корректировки:</strong> 3ms на каждый процент
+						отклонения
+					</li>
+					<li><strong>Диапазон:</strong> 200ms - 400ms</li>
+					<li>
+						<strong>Easing функция:</strong> cubic-bezier(0.32, 0.72, 0, 1) -
+						как в Facebook
+					</li>
+					<li>
+						<strong>Результат:</strong> Быстрые, плавные анимации с одинаковым
+						визуальным эффектом
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Facebook-style Menu -->
+		<div class="js-dropdown hidden" data-dropdown-id="fb-menu" data-sheet-modal>
+			<div class="js-dropdown-overlay"></div>
+			<div class="js-dropdown-body">
+				<div class="js-dropdown-trigger">
+					<span></span>
+				</div>
+				<div class="js-dropdown-content">
+					<div class="fb-menu-item">
+						<svg
+							class="menu-icon"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
+							/>
+						</svg>
+						<span>Сохранить запись</span>
+					</div>
+					<div class="fb-menu-item">
+						<svg
+							class="menu-icon"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"
+							/>
+						</svg>
+						<span>Поделиться</span>
+					</div>
+					<div class="fb-menu-item">
+						<svg
+							class="menu-icon"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
+							/>
+						</svg>
+						<span>Редактировать</span>
+					</div>
+					<div class="fb-menu-item">
+						<svg
+							class="menu-icon"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3的情境 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"
+							/>
+						</svg>
+						<span>Копировать ссылку</span>
+					</div>
+					<div class="divider"></div>
+					<div class="fb-menu-item danger">
+						<svg
+							class="menu-icon"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+							/>
+						</svg>
+						<span>Удалить</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Compact Menu -->
+		<div
+			class="js-dropdown hidden"
+			data-dropdown-id="compact-menu"
+			data-sheet-modal
+		>
+			<div class="js-dropdown-overlay"></div>
+			<div class="js-dropdown-body">
+				<div class="js-dropdown-trigger">
+					<span></span>
+				</div>
+				<div class="js-dropdown-content">
+					<button
+						type="button"
+						class="menu-item"
+						style="width: 100%; border: none; background: none"
+					>
+						<div class="menu-content">
+							<div class="menu-title">Пункт меню 1</div>
+						</div>
+					</button>
+					<button
+						type="button"
+						class="menu-item"
+						style="width: 100%; border: none; background: none"
+					>
+						<div class="menu-content">
+							<div class="menu-title">Пункт меню 2</div>
+						</div>
+					</button>
+					<button
+						type="button"
+						class="menu-item"
+						style="width: 100%; border: none; background: none"
+					>
+						<div class="menu-content">
+							<div class="menu-title">Пункт меню 3</div>
+						</div>
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Medium Menu -->
+		<div
+			class="js-dropdown hidden"
+			data-dropdown-id="medium-menu"
+			data-sheet-modal
+		>
+			<div class="js-dropdown-overlay"></div>
+			<div class="js-dropdown-body">
+				<div class="js-dropdown-trigger">
+					<span></span>
+				</div>
+				<div class="js-dropdown-content">
+					<button
+						type="button"
+						class="menu-item"
+						style="width: 100%; border: none; background: none"
+					>
+						<div class="menu-content">
+							<div class="menu-title">Действие 1</div>
+							<div class="menu-subtitle">Описание действия</div>
+						</div>
+					</button>
+					<button
+						type="button"
+						class="menu-item"
+						style="width: 100%; border: none; background: none"
+					>
+						<div class="menu-content">
+							<div class="menu-title">Действие 2</div>
+							<div class="menu-subtitle">Описание действия</div>
+						</div>
+					</button>
+					<div class="divider"></div>
+					<button
+						type="button"
+						class="menu-item"
+						style="width: 100%; border: none; background: none"
+					>
+						<div class="menu-content">
+							<div class="menu-title">Действие 3</div>
+							<div class="menu-subtitle">Описание действия</div>
+						</div>
+					</button>
+					<button
+						type="button"
+						class="menu-item"
+						style="width: 100%; border: none; background: none"
+					>
+						<div class="menu-content">
+							<div class="menu-title">Действие 4</div>
+							<div class="menu-subtitle">Описание действия</div>
+						</div>
+					</button>
+					<button
+						type="button"
+						class="menu-item"
+						style="width: 100%; border: none; background: none"
+					>
+						<div class="menu-content">
+							<div class="menu-title">Действие 5</div>
+							<div class="menu-subtitle">Описание действия</div>
+						</div>
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Large Menu -->
+		<div
+			class="js-dropdown hidden"
+			data-dropdown-id="large-menu"
+			data-sheet-modal
+		>
+			<div class="js-dropdown-overlay"></div>
+			<div class="js-dropdown-body">
+				<div class="js-dropdown-trigger">
+					<span></span>
+				</div>
+				<div class="js-dropdown-content">
+					<button
+						type="button"
+						class="menu-item"
+						style="width: 100%; border: none; background: none"
+					>
+						<div class="menu-content">
+							<div class="menu-title">Опция 1</div>
+							<div class="menu-subtitle">Подробное описание опции</div>
+						</div>
+					</button>
+					<button
+						type="button"
+						class="menu-item"
+						style="width: 100%; border: none; background: none"
+					>
+						<div class="menu-content">
+							<div class="menu-title">Опция 2</div>
+							<div class="menu-subtitle">Подробное описание опции</div>
+						</div>
+					</button>
+					<button
+						type="button"
+						class="menu-item"
+						style="width: 100%; border: none; background: none"
+					>
+						<div class="menu-content">
+							<div class="menu-title">Опция 3</div>
+							<div class="menu-subtitle">Подробное описание опции</div>
+						</div>
+					</button>
+					<div class="divider"></div>
+					<button
+						type="button"
+						class="menu-item"
+						style="width: 100%; border: none; background: none"
+					>
+						<div class="menu-content">
+							<div class="menu-title">Опция 4</div>
+							<div class="menu-subtitle">Подробное описание опции</div>
+						</div>
+					</button>
+					<button
+						type="button"
+						class="menu-item"
+						style="width: 100%; border: none; background: none"
+					>
+						<div class="menu-content">
+							<div class="menu-title">Опция 5</div>
+							<div class="menu-subtitle">Подробное описание опции</div>
+						</div>
+					</button>
+					<button
+						type="button"
+						class="menu-item"
+						style="width: 100%; border: none; background: none"
+					>
+						<div class="menu-content">
+							<div class="menu-title">Опция 6</div>
+							<div class="menu-subtitle">Подробное описание опции</div>
+						</div>
+					</button>
+					<button
+						type="button"
+						class="menu-item"
+						style="width: 100%; border: none; background: none"
+					>
+						<div class="menu-content">
+							<div class="menu-title">Опция 7</div>
+							<div class="menu-subtitle">Подробное описание опции</div>
+						</div>
+					</button>
+					<button
+						type="button"
+						class="menu-item"
+						style="width: 100%; border: none; background: none"
+					>
+						<div class="menu-content">
+							<div class="menu-title">Опция 8</div>
+							<div class="menu-subtitle">Подробное описание опции</div>
+						</div>
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Icon Menu -->
+		<div
+			class="js-dropdown hidden"
+			data-dropdown-id="icon-menu"
+			data-sheet-modal
+		>
+			<div class="js-dropdown-overlay"></div>
+			<div class="js-dropdown-body">
+				<div class="js-dropdown-trigger">
+					<span></span>
+				</div>
+				<div class="js-dropdown-content">
+					<button
+						type="button"
+						class="menu-item"
+						style="width: 100%; border: none; background: none"
+					>
+						<div class="menu-icon">
+							<svg
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+								style="width: 24px; height: 24px"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+								/>
+							</svg>
+						</div>
+						<div class="menu-content">
+							<div class="menu-title">Фотографии</div>
+							<div class="menu-subtitle">
+								Просмотр и управление фотографиями
+							</div>
+						</div>
+					</button>
+					<button
+						type="button"
+						class="menu-item"
+						style="width: 100%; border: none; background: none"
+					>
+						<div class="menu-icon">
+							<svg
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+								style="width: 24px; height: 24px"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+								/>
+							</svg>
+						</div>
+						<div class="menu-content">
+							<div class="menu-title">Видео</div>
+							<div class="menu-subtitle">Загрузка и просмотр видео</div>
+						</div>
+					</button>
+					<div class="divider"></div>
+					<button
+						type="button"
+						class="menu-item"
+						style="width: 100%; border: none; background: none"
+					>
+						<div class="menu-icon">
+							<svg
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+								style="width: 24px; height: 24px"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+								/>
+							</svg>
+						</div>
+						<div class="menu-content">
+							<div class="menu-title">Документы</div>
+							<div class="menu-subtitle">Файлы и документы</div>
+						</div>
+					</button>
+					<button
+						type="button"
+						class="menu-item"
+						style="width: 100%; border: none; background: none"
+					>
+						<div class="menu-icon">
+							<svg
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+								style="width: 24px; height: 24px"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+								/>
+							</svg>
+						</div>
+						<div class="menu-content">
+							<div class="menu-title">Создать</div>
+							<div class="menu-subtitle">Новый элемент</div>
+						</div>
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Avatar Menu -->
+		<div
+			class="js-dropdown hidden"
+			data-dropdown-id="avatar-menu"
+			data-sheet-modal
+		>
+			<div class="js-dropdown-overlay"></div>
+			<div class="js-dropdown-body">
+				<div class="js-dropdown-trigger">
+					<span></span>
+				</div>
+				<div class="js-dropdown-content">
+					<button
+						type="button"
+						class="menu-item"
+						style="width: 100%; border: none; background: none"
+					>
+						<div class="avatar">АИ</div>
+						<div class="menu-content">
+							<div class="menu-title">Алексей Иванов</div>
+							<div class="menu-subtitle">В сети</div>
+						</div>
+					</button>
+					<button
+						type="button"
+						class="menu-item"
+						style="width: 100%; border: none; background: none"
+					>
+						<div class="avatar">МП</div>
+						<div class="menu-content">
+							<div class="menu-title">Мария Петрова</div>
+							<div class="menu-subtitle">Была недавно</div>
+						</div>
+					</button>
+					<div class="divider"></div>
+					<button
+						type="button"
+						class="menu-item"
+						style="width: 100%; border: none; background: none"
+					>
+						<div class="avatar">ДС</div>
+						<div class="menu-content">
+							<div class="menu-title">Дмитрий Сидоров</div>
+							<div class="menu-subtitle">Был 2 часа назад</div>
+						</div>
+					</button>
+					<button
+						type="button"
+						class="menu-item"
+						style="width: 100%; border: none; background: none"
+					>
+						<div class="avatar">ЕК</div>
+						<div class="menu-content">
+							<div class="menu-title">Елена Козлова</div>
+							<div class="menu-subtitle">Была вчера</div>
+						</div>
+					</button>
+					<button
+						type="button"
+						class="menu-item"
+						style="width: 100%; border: none; background: none"
+					>
+						<div class="avatar">ВМ</div>
+						<div class="menu-content">
+							<div class="menu-title">Владимир Морозов</div>
+							<div class="menu-subtitle">Был 3 дня назад</div>
+						</div>
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<script
+			src="https://code.jquery.com/jquery-3.7.1.min.js"
+			integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+			crossorigin="anonymous"
+		></script>
+		<script src="./dist/js/helpers.js"></script>
+		<script src="./dist/js/mobile-menu.js"></script>
+		<script src="./dist/js/bottom-sheet.lite.js"></script>
+		<script>
+			$(document).ready(function () {
+				BottomSheetLite.init();
+
+				// Открытие bottom sheets
+				$("[data-open-sheet]").on("click", function (e) {
+					const sheetId = $(this).data("open-sheet");
+					const $modal = $(`[data-dropdown-id="${sheetId}"]`);
+
+					if ($modal.length) {
+						BottomSheetLite.open({
+							event: e,
+							modal: $modal,
+							type: "dropdown",
+							overlayElement: $modal.find(".js-dropdown-overlay"),
+							body: $modal.find(".js-dropdown-body"),
+							content: $modal.find(".js-dropdown-content"),
+							closeButtonElement: $modal.find(".js-sheet-close"),
+						});
+					}
+				});
+
+				// Закрытие по клику на элемент меню
+				$(".menu-item, .fb-menu-item").on("click", function () {
+					setTimeout(() => {
+						BottomSheetLite.close("dropdown");
+					}, 100);
+				});
+			});
+		</script>
+	</body>
+</html>

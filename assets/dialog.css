@@ -43,7 +43,7 @@
 		width: auto;
 		transition-property: all;
 		transition-duration: 500ms;
-		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
 		margin: 50px auto 20px;
 		input,
 		textarea {
