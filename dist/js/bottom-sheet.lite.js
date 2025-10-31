@@ -2,7 +2,7 @@ const BottomSheetLite = {
 	instanceCounter: 0,
 	nextZIndex: 10001,
 	state: { dropdownStack: [], dialogStack: [], activeDrag: null },
-	closeThresholdPercent: 25, // how many percent decrease from top to close
+	closeThresholdPercent: 15, // how many percent decrease from top to close
 	openTimingFunction: "cubic-bezier(0.32, 0.72, 0, 1)",
 	closeTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
 	portalContainer: null,
@@ -496,7 +496,7 @@ const BottomSheetLite = {
 		console.log(startHeight, current, "======= start");
 
 		const shouldClose = startHeight - current >= this.closeThresholdPercent; // close if reduced
-		const isBelowMinHeight = startHeight < this.closeThresholdPercent; // close if modal height is less than close threshold percent
+		const isBelowMinHeight = startHeight < 30; // close if modal height is less than 30%
 		if ((shouldClose || isBelowMinHeight) && inst.isDismissAllowed) {
 			this.close(type, id);
 			inst.gesture = null;
