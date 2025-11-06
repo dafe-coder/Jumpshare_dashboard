@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Jumpshare: File Viewer</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="57x57"
+			href="./assets/favicon/apple-icon-57x57.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="60x60"
+			href="./assets/favicon/apple-icon-60x60.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="72x72"
+			href="./assets/favicon/apple-icon-72x72.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="76x76"
+			href="./assets/favicon/apple-icon-76x76.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="114x114"
+			href="./assets/favicon/apple-icon-114x114.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="120x120"
+			href="./assets/favicon/apple-icon-120x120.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="144x144"
+			href="./assets/favicon/apple-icon-144x144.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="152x152"
+			href="./assets/favicon/apple-icon-152x152.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="./assets/favicon/apple-icon-180x180.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="192x192"
+			href="./assets/favicon/android-icon-192x192.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./assets/favicon/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="96x96"
+			href="./assets/favicon/favicon-96x96.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="./assets/favicon/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="./assets/favicon/manifest.json" />
+		<meta name="msapplication-TileColor" content="#ffffff" />
+		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+		<meta name="theme-color" content="#ffffff" />
+		<link rel="stylesheet" href="./dist/output.css" />
+	</head>
+	<body class="dashboard bg-[#F6F6F6]">
+		<div class="flex flex-col min-h-screen">
+			<header
+				class="py-[23px] px-3 flex items-center justify-between bg-white border-b border-gray-400"
+			>
+				<div class="flex items-center gap-2">
+					<button
+						type="button"
+						aria-label="Previous"
+						class="btn size-10.5 p-0 text-dark-800 flex-shrink-0 hover:bg-gray-200 rounded-md"
+					>
+						<svg class="icon icon-md -ml-0.5">
+							<use href="#icon-chevron-left"></use>
+						</svg>
+					</button>
+					<strong class="text-lg font-semibold font-sans-semi truncate"
+						>Scrum Sep 8 - Web Development Testing &amp; Project Updates</strong
+					>
+				</div>
+				<div class="flex items-center gap-3">
+					<button type="button" class="btn btn-primary h-10">
+						<svg class="icon icon-md">
+							<use href="#icon-link"></use>
+						</svg>
+						<span>Copy Link</span>
+					</button>
+					<button type="button" class="btn btn-border-default h-10">
+						<svg class="icon icon-md">
+							<use href="#icon-share"></use>
+						</svg>
+						<span>Share</span>
+					</button>
+					<button
+						aria-label="Analytics"
+						type="button"
+						class="btn btn-border-default size-10 p-0"
+					>
+						<svg class="icon icon-md">
+							<use href="#icon-chart-bar"></use>
+						</svg>
+					</button>
+					<button
+						aria-label="More options"
+						type="button"
+						class="btn btn-border-default size-10 p-0"
+					>
+						<svg class="icon icon-md">
+							<use href="#icon-dots-horizontal-big"></use>
+						</svg>
+					</button>
+					<div class="dropdown-wrapper">
+						<a
+							href="#"
+							data-id="dropdown-avatar"
+							class="dropdown-button flex gap-1.5 items-center cursor-pointer max-md:pr-3 [&.active]:bg-gray-150 px-2 h-10 rounded-lg"
+						>
+							<div
+								class="size-7.5 rounded-full overflow-hidden bg-gray-200 inset-ring-2 inset-ring-gray-100"
+							>
+								<img src="./assets/images/avatar.png" alt="Avatar" />
+							</div>
+							<svg class="icon icon-xs flex-shrink-0">
+								<use href="#icon-check-bottom"></use>
+							</svg>
+						</a>
+						<div
+							class="js-dropdown w-[15.75rem] right-0 hidden"
+							data-dropdown-id="dropdown-avatar"
+							data-sheet-modal
+							data-overflow-visible
+						>
+							<div class="js-dropdown-overlay"></div>
+							<div class="js-dropdown-body">
+								<div class="js-dropdown-trigger">
+									<span></span>
+								</div>
+								<div class="js-dropdown-content pt-1.5">
+									<ul>
+										<li class="flex items-center gap-3 px-3.5 py-3">
+											<div class="size-8 rounded-full overflow-hidden">
+												<img
+													class="size-full object-cover"
+													src="./assets/images/avatar.png"
+													alt="Avatar"
+												/>
+											</div>
+											<div class="flex flex-col gap-0.5">
+												<span class="text-sm font-semibold text-dark-800"
+													>John Doe</span
+												>
+												<p class="text-dark-800/50 text-xs">
+													johndoe252@cironex.com
+												</p>
+											</div>
+										</li>
+										<li class="border-b border-gray-500 mb-2 mt-1.5"></li>
+										<li
+											class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+											onclick="window.open('./settings.html', '_self')"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-workspace"></use>
+											</svg>
+											<span>Workspace Settings</span>
+										</li>
+										<li
+											class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+											onclick="window.open('./settings-account.html', '_self')"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-user"></use>
+											</svg>
+											<span>Profile Settings</span>
+										</li>
+										<li class="border-b border-gray-500 my-2"></li>
+										<li
+											class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-download"></use>
+											</svg>
+											<span>Install Jumpshare</span>
+										</li>
+										<li
+											class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-help"></use>
+											</svg>
+											<span>Help Center</span>
+										</li>
+										<li
+											class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-message-alert"></use>
+											</svg>
+											<span>Send Feedback</span>
+										</li>
+										<li class="border-b border-gray-500 my-2"></li>
+										<li
+											class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-sign-out"></use>
+											</svg>
+											<span>Sign Out</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div class="grid grid-cols-[1fr_430px] flex-grow-1">
+				<div class="flex-grow-1">
+					<div class="max-w-[940px] px-5 w-full mx-auto">
+						<div
+							class="relative pb-[56%] w-full bg-gray-400 rounded-xl mx-auto mt-6"
+						>
+							<div
+								class="flex gap-4 absolute left-1/2 -translate-x-1/2 top-[calc(100%+1.25rem)] w-max z-10"
+							>
+								<ul
+									class="flex gap-4 bg-white py-[0.8125rem] px-4 rounded-xl border border-gray-400 shadow-[0px_4px_20px_rgba(0,0,0,0.06)] h-13.5"
+								>
+									<li
+										class="cursor-pointer flex items-center justify-center flex-shrink-0"
+									>
+										<img
+											class="size-7"
+											src="./assets/images/smiles/smile-1.png"
+											alt="Smile 1"
+										/>
+									</li>
+									<li
+										class="cursor-pointer flex items-center justify-center flex-shrink-0"
+									>
+										<img
+											class="size-7"
+											src="./assets/images/smiles/smile-2.png"
+											alt="Smile 2"
+										/>
+									</li>
+									<li
+										class="cursor-pointer flex items-center justify-center flex-shrink-0"
+									>
+										<img
+											class="size-7"
+											src="./assets/images/smiles/smile-3.png"
+											alt="Smile 3"
+										/>
+									</li>
+									<li
+										class="cursor-pointer flex items-center justify-center flex-shrink-0"
+									>
+										<img
+											class="size-7"
+											src="./assets/images/smiles/smile-4.png"
+											alt="Smile 4"
+										/>
+									</li>
+									<li
+										class="cursor-pointer flex items-center justify-center flex-shrink-0"
+									>
+										<img
+											class="size-7"
+											src="./assets/images/smiles/smile-5.png"
+											alt="Smile 5"
+										/>
+									</li>
+									<li
+										class="cursor-pointer flex items-center justify-center flex-shrink-0"
+									>
+										<img
+											class="size-7"
+											src="./assets/images/smiles/smile-6.png"
+											alt="Smile 6"
+										/>
+									</li>
+									<li
+										class="cursor-pointer flex items-center justify-center flex-shrink-0"
+									>
+										<svg class="icon size-7">
+											<use href="#icon-add-smile"></use>
+										</svg>
+									</li>
+								</ul>
+								<div
+									class="flex gap-2.5 items-center bg-white rounded-xl px-4 h-13.5 shadow-[0px_4px_20px_rgba(0,0,0,0.06)] cursor-pointer"
+								>
+									<svg class="icon size-7">
+										<use href="#icon-summary"></use>
+									</svg>
+									<span>Summary</span>
+								</div>
+								<div
+									class="flex gap-2.5 items-center bg-white rounded-xl px-4 h-13.5 shadow-[0px_4px_20px_rgba(0,0,0,0.06)] cursor-pointer"
+								>
+									<svg class="icon size-7">
+										<use href="#icon-comment"></use>
+									</svg>
+									<span>Comment</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="bg-white border-l border-gray-400">
+					<ul class="tabs-nav mt-5 px-6">
+						<li data-tab-id="tab-actions" class="active" data-text="Actions">
+							Actions
+						</li>
+						<li data-tab-id="tab-comments" data-text="Comments">Comments</li>
+						<li data-tab-id="tab-transcript" data-text="Transcript">
+							Transcript
+						</li>
+						<li data-tab-id="tab-settings" data-text="Settings">Settings</li>
+					</ul>
+					<div class="px-6 py-5">
+						<div
+							data-tab-content-id="tab-actions"
+							class="active hidden [&.active]:block"
+						>
+							<div class="rounded-xl bg-blue-500/5 relative p-0.5 mb-5">
+								<div
+									class="size-full overflow-hidden rounded-xl absolute inset-0"
+								>
+									<div
+										class="animate-spin-ai absolute z-0 top-1/2 left-1/2 -translate-1/2 w-[130%] h-[300px] bg-[conic-gradient(from_90deg_at_50%_50%,#2F76FF_0%,#2F76FF_0%,#2F76FF23_40%,#2F76FF23_60%,#2F76FFFF_100%,#2F76FF_100%)] scale-[4_0.8]"
+									></div>
+								</div>
+								<div
+									class="bg-white rounded-[10px] size-full p-5 z-1 relative max-sm:p-4"
+								>
+									<span class="text-base/[170%] font-medium text-dark-800">
+										<svg
+											class="icon size-[17px] mb-0.5 mr-2.5 flex-shrink-0 inline-block"
+										>
+											<use href="#icon-star-filled"></use>
+										</svg>
+										Generate with Jumpshare AI
+									</span>
+									<div class="grid grid-cols-3 gap-2 mt-4">
+										<button
+											type="button"
+											class="btn btn-border-default h-10 p-0"
+										>
+											<svg class="icon size-5">
+												<use href="#icon-file"></use>
+											</svg>
+											<span>Docs</span>
+										</button>
+										<button
+											type="button"
+											class="btn btn-border-default h-10 p-0"
+										>
+											<svg class="icon size-5">
+												<use href="#icon-task"></use>
+											</svg>
+											<span>Task</span>
+										</button>
+										<button
+											type="button"
+											class="btn btn-border-default h-10 p-0"
+										>
+											<svg
+												class="icon size-5 flex-shrink-0 [--icon-stroke-width:1.1]"
+											>
+												<use href="#icon-comment"></use>
+											</svg>
+											<span>Message</span>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="flex flex-col gap-4">
+								<div
+									class="flex items-center gap-4 bg-white border border-gray-400 rounded-xl px-5 py-4 w-full cursor-pointer hover:bg-gray-200"
+								>
+									<svg class="icon icon-md flex-shrink-0">
+										<use href="#icon-edit"></use>
+									</svg>
+									<div class="flex flex-col truncate">
+										<strong class="text-sm font-semibold">Edit Video</strong>
+										<p class="text-gray-900 text-sm truncate">
+											Trim, Merge, Remove Filler words
+										</p>
+									</div>
+									<span class="text-gray-900 flex-shrink-0 ml-auto">
+										<svg class="icon icon-md">
+											<use href="#icon-chevron-right"></use>
+										</svg>
+									</span>
+								</div>
+								<div
+									class="flex items-center gap-4 bg-white border border-gray-400 rounded-xl px-5 py-4 w-full cursor-pointer hover:bg-gray-200"
+								>
+									<svg class="icon icon-md flex-shrink-0">
+										<use href="#icon-cursor-click"></use>
+									</svg>
+									<div class="flex flex-col truncate">
+										<strong class="text-sm font-semibold">Add CTA</strong>
+										<p class="text-gray-900 text-sm truncate">
+											Drive action with a custom CTA
+										</p>
+									</div>
+								</div>
+								<div
+									class="flex items-center gap-4 bg-white border border-gray-400 rounded-xl px-5 py-4 w-full cursor-pointer hover:bg-gray-200"
+								>
+									<svg class="icon icon-md flex-shrink-0">
+										<use href="#icon-thumbnail"></use>
+									</svg>
+									<div class="flex flex-col truncate">
+										<strong class="text-sm font-semibold"
+											>Video Thumbnail</strong
+										>
+										<p class="text-gray-900 text-sm truncate">
+											Choose the perfect thumbnail for your video
+										</p>
+									</div>
+								</div>
+								<div
+									class="flex items-center gap-4 bg-white border border-gray-400 rounded-xl px-5 py-4 w-full cursor-pointer hover:bg-gray-200"
+								>
+									<svg class="icon icon-md flex-shrink-0">
+										<use href="#icon-magnet"></use>
+									</svg>
+									<div class="flex flex-col truncate">
+										<strong class="text-sm font-semibold">Lead Capture</strong>
+										<p class="text-gray-900 text-sm truncate">
+											Turn viewers into leads with lead capture
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script
+			src="https://code.jquery.com/jquery-3.7.1.min.js"
+			integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+			crossorigin="anonymous"
+		></script>
+		<script src="./dist/js/helpers.js"></script>
+		<script src="./dist/js/dropdown.js"></script>
+		<script src="./dist/js/bottom-sheet.lite.js"></script>
+		<script src="./dist/js/main.js"></script>
+	</body>
+</html>

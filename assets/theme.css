@@ -190,6 +190,7 @@
 	--animate-fadeScaleIn: fadeScaleIn 0.8s ease-in-out forwards;
 	--animate-rotateUp: rotateUp 0.5s ease forwards;
 	--animate-slideUp: slideUp 0.9s ease forwards;
+	--animate-spin-ai: spinAI 9s cubic-bezier(0.2, 0, 0, 1) 0s forwards;
 
 	@keyframes fadeIn {
 		from {
@@ -235,6 +236,14 @@
 		to {
 			opacity: 1;
 			transform: translateY(0);
+		}
+	}
+	@keyframes spinAI {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(700deg);
 		}
 	}
 }
