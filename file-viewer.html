@@ -87,20 +87,20 @@
 		<link rel="stylesheet" href="./dist/output.css" />
 	</head>
 	<body class="dashboard bg-[#F6F6F6]">
-		<div class="flex flex-col min-h-screen">
+		<div class="flex flex-col min-h-screen" style="--header-height: 83px">
 			<header
-				class="py-[23px] px-3 flex items-center justify-between bg-white border-b border-gray-400"
+				class="h-[var(--header-height)] px-3 flex items-center justify-between bg-white border-b border-gray-400"
 			>
 				<div class="flex items-center gap-2">
-					<button
-						type="button"
-						aria-label="Previous"
+					<a
+						href="./index.html"
+						aria-label="Go Back"
 						class="btn size-10.5 p-0 text-dark-800 flex-shrink-0 hover:bg-gray-200 rounded-md"
 					>
 						<svg class="icon icon-md -ml-0.5">
 							<use href="#icon-chevron-left"></use>
 						</svg>
-					</button>
+					</a>
 					<strong class="text-lg font-semibold font-sans-semi truncate"
 						>Scrum Sep 8 - Web Development Testing &amp; Project Updates</strong
 					>
@@ -241,9 +241,9 @@
 					</div>
 				</div>
 			</header>
-			<div class="grid grid-cols-[1fr_430px] flex-grow-1">
+			<div class="file-viewer-wrapper grid grid-cols-[1fr_430px] flex-grow-1">
 				<div class="flex-grow-1">
-					<div class="max-w-[940px] px-5 w-full mx-auto">
+					<div class="max-w-[80%] px-5 w-full mx-auto">
 						<div
 							class="relative pb-[56%] w-full bg-gray-400 rounded-xl mx-auto mt-6"
 						>
@@ -335,134 +335,534 @@
 						</div>
 					</div>
 				</div>
-				<div class="bg-white border-l border-gray-400">
-					<ul class="tabs-nav mt-5 px-6">
-						<li data-tab-id="tab-actions" class="active" data-text="Actions">
-							Actions
-						</li>
-						<li data-tab-id="tab-comments" data-text="Comments">Comments</li>
-						<li data-tab-id="tab-transcript" data-text="Transcript">
-							Transcript
-						</li>
-						<li data-tab-id="tab-settings" data-text="Settings">Settings</li>
-					</ul>
-					<div class="px-6 py-5">
+				<div
+					id="file-viewer-sidebar"
+					class="bg-white border-l border-gray-400 relative h-[calc(100vh-var(--header-height))]"
+				>
+					<div
+						id="file-viewer-resize-handle-sidebar"
+						class="resize-handle-vertical"
+					></div>
+					<div class="overflow-y-auto h-full">
 						<div
-							data-tab-content-id="tab-actions"
-							class="active hidden [&.active]:block"
+							class="file-viewer-sidebar-main-content"
+							data-tab-inside-content="main-content"
 						>
-							<div class="rounded-xl bg-blue-500/5 relative p-0.5 mb-5">
-								<div
-									class="size-full overflow-hidden rounded-xl absolute inset-0"
+							<ul class="tabs-nav mt-5 px-6">
+								<li
+									data-tab-id="tab-actions"
+									class="active"
+									data-text="Actions"
 								>
-									<div
-										class="animate-spin-ai absolute z-0 top-1/2 left-1/2 -translate-1/2 w-[130%] h-[300px] bg-[conic-gradient(from_90deg_at_50%_50%,#2F76FF_0%,#2F76FF_0%,#2F76FF23_40%,#2F76FF23_60%,#2F76FFFF_100%,#2F76FF_100%)] scale-[4_0.8]"
-									></div>
-								</div>
+									Actions
+								</li>
+								<li data-tab-id="tab-comments" data-text="Comments">
+									Comments
+								</li>
+								<li data-tab-id="tab-transcript" data-text="Transcript">
+									Transcript
+								</li>
+								<li data-tab-id="tab-settings" data-text="Settings">
+									Settings
+								</li>
+							</ul>
+							<div class="px-6 py-5">
 								<div
-									class="bg-white rounded-[10px] size-full p-5 z-1 relative max-sm:p-4"
+									data-tab-content-id="tab-actions"
+									class="active hidden [&.active]:block"
 								>
-									<span class="text-base/[170%] font-medium text-dark-800">
-										<svg
-											class="icon size-[17px] mb-0.5 mr-2.5 flex-shrink-0 inline-block"
+									<div class="rounded-xl bg-blue-500/5 relative p-0.5 mb-5">
+										<div
+											class="size-full overflow-hidden rounded-xl absolute inset-0"
 										>
-											<use href="#icon-star-filled"></use>
-										</svg>
-										Generate with Jumpshare AI
-									</span>
-									<div class="grid grid-cols-3 gap-2 mt-4">
-										<button
-											type="button"
-											class="btn btn-border-default h-10 p-0"
+											<div
+												class="animate-spin-ai absolute z-0 top-1/2 left-1/2 -translate-1/2 w-[130%] h-[300px] bg-[conic-gradient(from_90deg_at_50%_50%,#2F76FF_0%,#2F76FF_0%,#2F76FF23_40%,#2F76FF23_60%,#2F76FFFF_100%,#2F76FF_100%)] scale-[4_0.8]"
+											></div>
+										</div>
+										<div
+											class="bg-white rounded-[10px] size-full p-5 z-1 relative max-sm:p-4"
 										>
-											<svg class="icon size-5">
-												<use href="#icon-file"></use>
-											</svg>
-											<span>Docs</span>
-										</button>
-										<button
-											type="button"
-											class="btn btn-border-default h-10 p-0"
-										>
-											<svg class="icon size-5">
-												<use href="#icon-task"></use>
-											</svg>
-											<span>Task</span>
-										</button>
-										<button
-											type="button"
-											class="btn btn-border-default h-10 p-0"
-										>
-											<svg
-												class="icon size-5 flex-shrink-0 [--icon-stroke-width:1.1]"
+											<span class="text-base/[170%] font-medium text-dark-800">
+												<svg
+													class="icon size-[17px] mb-0.5 mr-2.5 flex-shrink-0 inline-block"
+												>
+													<use href="#icon-star-filled"></use>
+												</svg>
+												Generate with Jumpshare AI
+											</span>
+											<div
+												class="grid grid-cols-3 gap-2 mt-4 [.sidebar-small_&]:grid-cols-1"
 											>
-												<use href="#icon-comment"></use>
+												<button
+													type="button"
+													class="btn btn-border-default h-10 p-0"
+												>
+													<svg class="icon size-5">
+														<use href="#icon-file"></use>
+													</svg>
+													<span>Docs</span>
+												</button>
+												<button
+													type="button"
+													class="btn btn-border-default h-10 p-0"
+												>
+													<svg class="icon size-5">
+														<use href="#icon-task"></use>
+													</svg>
+													<span>Task</span>
+												</button>
+												<button
+													type="button"
+													class="btn btn-border-default h-10 p-0"
+												>
+													<svg
+														class="icon size-5 flex-shrink-0 [--icon-stroke-width:1.1]"
+													>
+														<use href="#icon-comment"></use>
+													</svg>
+													<span>Message</span>
+												</button>
+											</div>
+										</div>
+									</div>
+									<div class="flex flex-col gap-4">
+										<div
+											class="flex items-center gap-4 bg-white border border-gray-400 rounded-xl px-5 py-4 w-full cursor-pointer hover:bg-gray-200"
+										>
+											<svg class="icon icon-md flex-shrink-0">
+												<use href="#icon-edit"></use>
 											</svg>
-											<span>Message</span>
-										</button>
+											<div class="flex flex-col truncate">
+												<strong class="text-sm font-semibold"
+													>Edit Video</strong
+												>
+												<p class="text-gray-900 text-sm truncate">
+													Trim, Merge, Remove Filler words
+												</p>
+											</div>
+											<span class="text-gray-900 flex-shrink-0 ml-auto">
+												<svg class="icon icon-md">
+													<use href="#icon-chevron-right"></use>
+												</svg>
+											</span>
+										</div>
+										<div
+											data-tab-inside="add-cta"
+											class="flex items-center gap-4 bg-white border border-gray-400 rounded-xl px-5 py-4 w-full cursor-pointer hover:bg-gray-200"
+										>
+											<svg class="icon icon-md flex-shrink-0">
+												<use href="#icon-cursor-click"></use>
+											</svg>
+											<div class="flex flex-col truncate">
+												<strong class="text-sm font-semibold">Add CTA</strong>
+												<p class="text-gray-900 text-sm truncate">
+													Drive action with a custom CTA
+												</p>
+											</div>
+										</div>
+										<div
+											class="flex items-center gap-4 bg-white border border-gray-400 rounded-xl px-5 py-4 w-full cursor-pointer hover:bg-gray-200"
+										>
+											<svg class="icon icon-md flex-shrink-0">
+												<use href="#icon-thumbnail"></use>
+											</svg>
+											<div class="flex flex-col truncate">
+												<strong class="text-sm font-semibold"
+													>Video Thumbnail</strong
+												>
+												<p class="text-gray-900 text-sm truncate">
+													Choose the perfect thumbnail for your video
+												</p>
+											</div>
+										</div>
+										<div
+											class="flex items-center gap-4 bg-white border border-gray-400 rounded-xl px-5 py-4 w-full cursor-pointer hover:bg-gray-200"
+										>
+											<svg class="icon icon-md flex-shrink-0">
+												<use href="#icon-magnet"></use>
+											</svg>
+											<div class="flex flex-col truncate">
+												<strong class="text-sm font-semibold"
+													>Lead Capture</strong
+												>
+												<p class="text-gray-900 text-sm truncate">
+													Turn viewers into leads with lead capture
+												</p>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
-							<div class="flex flex-col gap-4">
-								<div
-									class="flex items-center gap-4 bg-white border border-gray-400 rounded-xl px-5 py-4 w-full cursor-pointer hover:bg-gray-200"
+						</div>
+						<div class="add-cta hidden" data-tab-inside-content="add-cta">
+							<div class="px-3 pt-4 mb-8 flex items-center gap-2">
+								<button
+									data-tab-inside-go-back
+									aria-label="Go Back"
+									type="button"
+									class="btn p-0 size-6 rounded-md hover:bg-gray-200"
 								>
-									<svg class="icon icon-md flex-shrink-0">
-										<use href="#icon-edit"></use>
+									<svg class="icon size-5">
+										<use href="#icon-chevron-left"></use>
 									</svg>
-									<div class="flex flex-col truncate">
-										<strong class="text-sm font-semibold">Edit Video</strong>
-										<p class="text-gray-900 text-sm truncate">
-											Trim, Merge, Remove Filler words
-										</p>
+								</button>
+								<strong class="text-base font-semibold font-sans-semi">
+									Add a CTA
+								</strong>
+							</div>
+							<div class="flex flex-col px-5">
+								<div
+									class="grid grid-cols-2 gap-2.5 mb-6 [.sidebar-small_&]:grid-cols-1"
+								>
+									<div class="flex flex-col gap-3">
+										<label class="text-sm font-medium">Button Visiblity</label>
+										<div class="dropdown-wrapper">
+											<button
+												type="button"
+												class="dropdown-button btn btn-border-default w-full justify-between px-4 h-10 font-normal"
+												data-id="dropdown-button-visibility"
+											>
+												<span>Show all times</span>
+												<svg class="icon icon-sm">
+													<use href="#icon-chevron-down"></use>
+												</svg>
+											</button>
+											<div
+												class="js-dropdown hidden w-[15.8125rem] left-0"
+												data-dropdown-id="dropdown-button-visibility"
+											>
+												<div class="js-dropdown-overlay"></div>
+												<div class="js-dropdown-body">
+													<div class="js-dropdown-trigger">
+														<span></span>
+													</div>
+													<div class="js-dropdown-content">
+														<ul
+															class="js-dropdown-list space-y-1 [&>li]:justify-between"
+														>
+															<li class="js-dropdown-list-item">
+																Show all times (on hover)
+																<svg
+																	class="icon icon-md hidden [.active-link_&]:block"
+																>
+																	<use href="#icon-check"></use>
+																</svg>
+															</li>
+															<li class="js-dropdown-list-item active-link">
+																Show all times
+																<svg
+																	class="icon icon-md hidden [.active-link_&]:block"
+																>
+																	<use href="#icon-check"></use>
+																</svg>
+															</li>
+															<li class="js-dropdown-list-item">
+																Show at a specific time
+																<svg
+																	class="icon icon-md hidden [.active-link_&]:block"
+																>
+																	<use href="#icon-check"></use>
+																</svg>
+															</li>
+															<li class="js-dropdown-list-item">
+																Show when the video ends
+																<svg
+																	class="icon icon-md hidden [.active-link_&]:block"
+																>
+																	<use href="#icon-check"></use>
+																</svg>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
 									</div>
-									<span class="text-gray-900 flex-shrink-0 ml-auto">
-										<svg class="icon icon-md">
-											<use href="#icon-chevron-right"></use>
-										</svg>
-									</span>
+									<div class="flex flex-col gap-3">
+										<label class="text-sm font-medium">Button Type</label>
+										<div class="dropdown-wrapper">
+											<button
+												type="button"
+												class="btn btn-border-default w-full justify-between px-4 h-10 font-normal"
+											>
+												<span>Link</span>
+												<svg class="icon icon-sm">
+													<use href="#icon-chevron-down"></use>
+												</svg>
+											</button>
+										</div>
+									</div>
 								</div>
 								<div
-									class="flex items-center gap-4 bg-white border border-gray-400 rounded-xl px-5 py-4 w-full cursor-pointer hover:bg-gray-200"
+									class="grid grid-cols-2 gap-2.5 mb-6 [.sidebar-small_&]:grid-cols-1"
 								>
-									<svg class="icon icon-md flex-shrink-0">
-										<use href="#icon-cursor-click"></use>
-									</svg>
-									<div class="flex flex-col truncate">
-										<strong class="text-sm font-semibold">Add CTA</strong>
-										<p class="text-gray-900 text-sm truncate">
-											Drive action with a custom CTA
-										</p>
+									<div class="flex flex-col gap-3">
+										<label class="text-sm font-medium">Button Location</label>
+										<div class="dropdown-wrapper">
+											<button
+												type="button"
+												class="dropdown-button btn btn-border-default w-full justify-between px-4 h-10 font-normal"
+												data-id="dropdown-button-visibility"
+											>
+												<span>Top left</span>
+												<svg class="icon icon-sm">
+													<use href="#icon-chevron-down"></use>
+												</svg>
+											</button>
+											<div
+												class="js-dropdown hidden w-[15.8125rem] left-0"
+												data-dropdown-id="dropdown-button-visibility"
+											>
+												<div class="js-dropdown-overlay"></div>
+												<div class="js-dropdown-body">
+													<div class="js-dropdown-trigger">
+														<span></span>
+													</div>
+													<div class="js-dropdown-content">
+														<ul
+															class="js-dropdown-list space-y-1 [&>li]:justify-between"
+														>
+															<li class="js-dropdown-list-item active-link">
+																Top left
+																<svg
+																	class="icon icon-md hidden [.active-link_&]:block"
+																>
+																	<use href="#icon-check"></use>
+																</svg>
+															</li>
+															<li class="js-dropdown-list-item">
+																Top Right
+																<svg
+																	class="icon icon-md hidden [.active-link_&]:block"
+																>
+																	<use href="#icon-check"></use>
+																</svg>
+															</li>
+															<li class="js-dropdown-list-item">
+																Bottom left
+																<svg
+																	class="icon icon-md hidden [.active-link_&]:block"
+																>
+																	<use href="#icon-check"></use>
+																</svg>
+															</li>
+															<li class="js-dropdown-list-item">
+																Bottom right
+																<svg
+																	class="icon icon-md hidden [.active-link_&]:block"
+																>
+																	<use href="#icon-check"></use>
+																</svg>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="flex flex-col gap-3">
+										<label class="text-sm font-medium">Button Link</label>
+										<input
+											type="text"
+											class="form-control-settings border-gray-600 w-full"
+											placeholder="Enter link"
+										/>
 									</div>
 								</div>
-								<div
-									class="flex items-center gap-4 bg-white border border-gray-400 rounded-xl px-5 py-4 w-full cursor-pointer hover:bg-gray-200"
-								>
-									<svg class="icon icon-md flex-shrink-0">
-										<use href="#icon-thumbnail"></use>
-									</svg>
-									<div class="flex flex-col truncate">
-										<strong class="text-sm font-semibold"
-											>Video Thumbnail</strong
+								<div class="flex flex-col gap-3 w-full mb-6">
+									<label class="text-sm font-medium">Button Text</label>
+									<div class="dropdown-wrapper">
+										<input
+											type="text"
+											class="form-control-settings border-gray-600 w-full"
+											placeholder="Enter text"
+										/>
+									</div>
+								</div>
+								<div class="flex flex-col">
+									<label class="text-sm font-medium mb-3"
+										>Button Customization</label
+									>
+									<div
+										class="grid grid-cols-2 gap-2.5 mb-4 [.sidebar-small_&]:grid-cols-1"
+									>
+										<div class="dropdown-wrapper">
+											<button
+												type="button"
+												class="dropdown-button btn btn-border-default w-full justify-between pl-4 pr-3 h-10 font-normal"
+												data-id="dropdown-button-visibility"
+											>
+												<span>Button Color</span>
+												<span
+													class="size-6 ring-1 ring-inset ring-gray-500 rounded-md bg-white"
+												></span>
+											</button>
+											<div
+												class="js-dropdown hidden w-[15.8125rem] left-0"
+												data-dropdown-id="dropdown-button-visibility"
+											>
+												<div class="js-dropdown-overlay"></div>
+												<div class="js-dropdown-body">
+													<div class="js-dropdown-trigger">
+														<span></span>
+													</div>
+													<div class="js-dropdown-content">
+														<ul
+															class="js-dropdown-list space-y-1 [&>li]:justify-between"
+														>
+															<li class="js-dropdown-list-item active-link">
+																Top left
+																<svg
+																	class="icon icon-md hidden [.active-link_&]:block"
+																>
+																	<use href="#icon-check"></use>
+																</svg>
+															</li>
+															<li class="js-dropdown-list-item">
+																Top Right
+																<svg
+																	class="icon icon-md hidden [.active-link_&]:block"
+																>
+																	<use href="#icon-check"></use>
+																</svg>
+															</li>
+															<li class="js-dropdown-list-item">
+																Bottom left
+																<svg
+																	class="icon icon-md hidden [.active-link_&]:block"
+																>
+																	<use href="#icon-check"></use>
+																</svg>
+															</li>
+															<li class="js-dropdown-list-item">
+																Bottom right
+																<svg
+																	class="icon icon-md hidden [.active-link_&]:block"
+																>
+																	<use href="#icon-check"></use>
+																</svg>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="dropdown-wrapper">
+											<button
+												type="button"
+												class="dropdown-button btn btn-border-default w-full justify-between pl-4 pr-3 h-10 font-normal"
+												data-id="dropdown-button-visibility"
+											>
+												<span>Text Color</span>
+												<span
+													class="size-6 ring-1 ring-inset ring-[#7F36AF] rounded-md bg-[#7F36AF]"
+												></span>
+											</button>
+											<div
+												class="js-dropdown hidden w-[15.8125rem] left-0"
+												data-dropdown-id="dropdown-button-visibility"
+											>
+												<div class="js-dropdown-overlay"></div>
+												<div class="js-dropdown-body">
+													<div class="js-dropdown-trigger">
+														<span></span>
+													</div>
+													<div class="js-dropdown-content">
+														<ul
+															class="js-dropdown-list space-y-1 [&>li]:justify-between"
+														>
+															<li class="js-dropdown-list-item active-link">
+																Top left
+																<svg
+																	class="icon icon-md hidden [.active-link_&]:block"
+																>
+																	<use href="#icon-check"></use>
+																</svg>
+															</li>
+															<li class="js-dropdown-list-item">
+																Top Right
+																<svg
+																	class="icon icon-md hidden [.active-link_&]:block"
+																>
+																	<use href="#icon-check"></use>
+																</svg>
+															</li>
+															<li class="js-dropdown-list-item">
+																Bottom left
+																<svg
+																	class="icon icon-md hidden [.active-link_&]:block"
+																>
+																	<use href="#icon-check"></use>
+																</svg>
+															</li>
+															<li class="js-dropdown-list-item">
+																Bottom right
+																<svg
+																	class="icon icon-md hidden [.active-link_&]:block"
+																>
+																	<use href="#icon-check"></use>
+																</svg>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="dropdown-wrapper w-full mb-4">
+										<button
+											type="button"
+											class="dropdown-button btn btn-border-default w-full justify-between pl-4 pr-3 h-10 font-normal"
+											data-id="dropdown-button-visibility"
 										>
-										<p class="text-gray-900 text-sm truncate">
-											Choose the perfect thumbnail for your video
-										</p>
+											<span class="flex items-center gap-3">
+												<svg
+													width="16"
+													height="16"
+													viewBox="0 0 16 16"
+													fill="none"
+													xmlns="http://www.w3.org/2000/svg"
+												>
+													<path
+														d="M3.16732 3.16797H8.16732C9.40499 3.16797 10.592 3.65963 11.4671 4.5348C12.3423 5.40997 12.834 6.59696 12.834 7.83464V12.8346"
+														stroke="#0A0A0B"
+														stroke-width="1.5"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+													/>
+												</svg>
+												<span>Button Color</span>
+											</span>
+											<span class="flex items-center gap-1.5">
+												<span>Rounded</span>
+												<svg class="icon icon-sm">
+													<use href="#icon-chevron-down"></use>
+												</svg>
+											</span>
+										</button>
 									</div>
+									<label class="custom-controls checkbox gap-2 w-max">
+										<input
+											type="checkbox"
+											name="show-my-photo"
+											id="show-my-photo"
+											value="1"
+											class=""
+										/>
+										<span class="custom-control-indicator"></span>
+										<span>Show my photo</span>
+									</label>
 								</div>
-								<div
-									class="flex items-center gap-4 bg-white border border-gray-400 rounded-xl px-5 py-4 w-full cursor-pointer hover:bg-gray-200"
+							</div>
+							<div
+								class="px-5 py-4 mt-7.5 sticky bottom-0 bg-white [.sidebar-has-scrollbar_&]:border-t border-gray-400"
+							>
+								<button
+									type="button"
+									class="btn btn-primary w-full h-10 font-semibold"
 								>
-									<svg class="icon icon-md flex-shrink-0">
-										<use href="#icon-magnet"></use>
-									</svg>
-									<div class="flex flex-col truncate">
-										<strong class="text-sm font-semibold">Lead Capture</strong>
-										<p class="text-gray-900 text-sm truncate">
-											Turn viewers into leads with lead capture
-										</p>
-									</div>
-								</div>
+									Save
+								</button>
 							</div>
 						</div>
 					</div>
@@ -477,6 +877,7 @@
 		<script src="./dist/js/helpers.js"></script>
 		<script src="./dist/js/dropdown.js"></script>
 		<script src="./dist/js/bottom-sheet.lite.js"></script>
+		<script src="./dist/js/file.viewer.js"></script>
 		<script src="./dist/js/main.js"></script>
 	</body>
 </html>
