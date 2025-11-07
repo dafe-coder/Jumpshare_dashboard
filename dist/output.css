@@ -4938,6 +4938,12 @@
       border-top-width: 1px;
     }
   }
+  .\[\.sidebar-has-scrollbar_\&\]\:shadow-dropdown {
+    .sidebar-has-scrollbar & {
+      --tw-shadow: 0px 3px 35px var(--tw-shadow-color, rgba(0, 0, 0, 0.04));
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+  }
   .\[\.sidebar-small_\&\]\:grid-cols-1 {
     .sidebar-small & {
       grid-template-columns: repeat(1, minmax(0, 1fr));
