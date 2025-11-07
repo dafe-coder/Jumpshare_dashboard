@@ -45,7 +45,7 @@ const fileViewer = {
 			this.currentTab = tabId;
 		}
 	},
-	goBack: function () {
+	goBackTab: function () {
 		if (this.tabHistory.length > 0) {
 			const previousTab = this.tabHistory.pop();
 			if (previousTab) {
@@ -62,7 +62,7 @@ const fileViewer = {
 
 		goBackBtn.on("click", function (e) {
 			e.preventDefault();
-			self.goBack();
+			self.goBackTab();
 		});
 
 		tabItems.on("click", function (e) {
