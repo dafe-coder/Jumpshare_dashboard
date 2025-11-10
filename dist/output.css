@@ -312,6 +312,9 @@
   .top-2\.5 {
     top: calc(var(--spacing) * 2.5);
   }
+  .top-4 {
+    top: calc(var(--spacing) * 4);
+  }
   .top-\[0\.6875rem\] {
     top: 0.6875rem;
   }
@@ -511,6 +514,9 @@
     margin-inline: auto;
     padding-inline: 2rem;
   }
+  .-mx-5 {
+    margin-inline: calc(var(--spacing) * -5);
+  }
   .-mx-6 {
     margin-inline: calc(var(--spacing) * -6);
   }
@@ -529,11 +535,20 @@
   .my-8 {
     margin-block: calc(var(--spacing) * 8);
   }
+  .my-10 {
+    margin-block: calc(var(--spacing) * 10);
+  }
+  .my-auto {
+    margin-block: auto;
+  }
   .-mt-1 {
     margin-top: calc(var(--spacing) * -1);
   }
   .-mt-6 {
     margin-top: calc(var(--spacing) * -6);
+  }
+  .-mt-8 {
+    margin-top: calc(var(--spacing) * -8);
   }
   .-mt-\[14px\] {
     margin-top: calc(14px * -1);
@@ -990,8 +1005,17 @@
   .max-h-\[444px\] {
     max-height: 444px;
   }
+  .max-h-full {
+    max-height: 100%;
+  }
+  .min-h-0 {
+    min-height: calc(var(--spacing) * 0);
+  }
   .min-h-9 {
     min-height: calc(var(--spacing) * 9);
+  }
+  .min-h-15 {
+    min-height: var(--spacing-15);
   }
   .min-h-24 {
     min-height: calc(var(--spacing) * 24);
@@ -1239,6 +1263,9 @@
   .max-w-60 {
     max-width: calc(var(--spacing) * 60);
   }
+  .max-w-64 {
+    max-width: calc(var(--spacing) * 64);
+  }
   .max-w-\[12\.125rem\] {
     max-width: 12.125rem;
   }
@@ -1338,6 +1365,9 @@
   .max-w-\[80\%\] {
     max-width: 80%;
   }
+  .max-w-\[85\%\] {
+    max-width: 85%;
+  }
   .max-w-\[90\%\] {
     max-width: 90%;
   }
@@ -1346,6 +1376,9 @@
   }
   .max-w-\[210px\] {
     max-width: 210px;
+  }
+  .max-w-\[256px\] {
+    max-width: 256px;
   }
   .max-w-\[347px\] {
     max-width: 347px;
@@ -1404,6 +1437,12 @@
   .min-w-\[6\.5625rem\] {
     min-width: 6.5625rem;
   }
+  .min-w-\[8\.1875rem\] {
+    min-width: 8.1875rem;
+  }
+  .min-w-\[131px\] {
+    min-width: 131px;
+  }
   .min-w-auto {
     min-width: auto;
   }
@@ -1423,6 +1462,9 @@
     flex-grow: 1;
   }
   .grow {
+    flex-grow: 1;
+  }
+  .grow-1 {
     flex-grow: 1;
   }
   .origin-center {
@@ -1662,6 +1704,9 @@
   }
   .gap-5 {
     gap: calc(var(--spacing) * 5);
+  }
+  .gap-5\.5 {
+    gap: var(--spacing-5_5);
   }
   .gap-6 {
     gap: calc(var(--spacing) * 6);
@@ -2442,6 +2487,9 @@
   }
   .font-sans {
     font-family: var(--font-sans);
+  }
+  .font-sans-medium {
+    font-family: var(--font-sans-medium);
   }
   .font-sans-semi {
     font-family: var(--font-sans-semi);

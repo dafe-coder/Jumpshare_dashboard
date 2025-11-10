@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Jumpshare: File Viewer</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="57x57"
+			href="../assets/favicon/apple-icon-57x57.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="60x60"
+			href="../assets/favicon/apple-icon-60x60.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="72x72"
+			href="../assets/favicon/apple-icon-72x72.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="76x76"
+			href="../assets/favicon/apple-icon-76x76.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="114x114"
+			href="../assets/favicon/apple-icon-114x114.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="120x120"
+			href="../assets/favicon/apple-icon-120x120.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="144x144"
+			href="../assets/favicon/apple-icon-144x144.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="152x152"
+			href="../assets/favicon/apple-icon-152x152.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../assets/favicon/apple-icon-180x180.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="192x192"
+			href="../assets/favicon/android-icon-192x192.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../assets/favicon/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="96x96"
+			href="../assets/favicon/favicon-96x96.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../assets/favicon/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="../assets/favicon/manifest.json" />
+		<meta name="msapplication-TileColor" content="#ffffff" />
+		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+		<meta name="theme-color" content="#ffffff" />
+		<link rel="stylesheet" href="../dist/output.css" />
+	</head>
+	<body class="dashboard bg-[#F6F6F6]">
+		<div class="flex flex-col min-h-screen" style="--header-height: 83px">
+			<header
+				class="h-[var(--header-height)] px-3 flex items-center justify-between bg-white border-b border-gray-400"
+			>
+				<div class="flex items-center gap-2">
+					<a
+						href="../index.html"
+						aria-label="Go Back"
+						class="btn size-10.5 p-0 text-dark-800 flex-shrink-0 hover:bg-gray-200 rounded-md"
+					>
+						<svg class="icon icon-md -ml-0.5">
+							<use href="#icon-chevron-left"></use>
+						</svg>
+					</a>
+					<strong class="text-lg font-semibold font-sans-semi truncate"
+						>Scrum Sep 8 - Web Development Testing &amp; Project Updates</strong
+					>
+				</div>
+				<div class="flex items-center gap-3">
+					<button type="button" class="btn btn-primary h-10">
+						<svg class="icon icon-md">
+							<use href="#icon-link"></use>
+						</svg>
+						<span>Copy Link</span>
+					</button>
+					<button type="button" class="btn btn-border-default h-10">
+						<svg class="icon icon-md">
+							<use href="#icon-share"></use>
+						</svg>
+						<span>Share</span>
+					</button>
+					<button
+						aria-label="Analytics"
+						type="button"
+						class="btn btn-border-default size-10 p-0"
+					>
+						<svg class="icon icon-md">
+							<use href="#icon-chart-bar"></use>
+						</svg>
+					</button>
+					<button
+						aria-label="More options"
+						type="button"
+						class="btn btn-border-default size-10 p-0"
+					>
+						<svg class="icon icon-md">
+							<use href="#icon-dots-horizontal-big"></use>
+						</svg>
+					</button>
+					<div class="dropdown-wrapper">
+						<a
+							href="#"
+							data-id="dropdown-avatar"
+							class="dropdown-button flex gap-1.5 items-center cursor-pointer max-md:pr-3 [&.active]:bg-gray-150 px-2 h-10 rounded-lg"
+						>
+							<div
+								class="size-7.5 rounded-full overflow-hidden bg-gray-200 inset-ring-2 inset-ring-gray-100"
+							>
+								<img src="../assets/images/avatar.png" alt="Avatar" />
+							</div>
+							<svg class="icon icon-xs flex-shrink-0">
+								<use href="#icon-check-bottom"></use>
+							</svg>
+						</a>
+						<div
+							class="js-dropdown w-[15.75rem] right-0 hidden"
+							data-dropdown-id="dropdown-avatar"
+							data-sheet-modal
+							data-overflow-visible
+						>
+							<div class="js-dropdown-overlay"></div>
+							<div class="js-dropdown-body">
+								<div class="js-dropdown-trigger">
+									<span></span>
+								</div>
+								<div class="js-dropdown-content pt-1.5">
+									<ul>
+										<li class="flex items-center gap-3 px-3.5 py-3">
+											<div class="size-8 rounded-full overflow-hidden">
+												<img
+													class="size-full object-cover"
+													src="../assets/images/avatar.png"
+													alt="Avatar"
+												/>
+											</div>
+											<div class="flex flex-col gap-0.5">
+												<span class="text-sm font-semibold text-dark-800"
+													>John Doe</span
+												>
+												<p class="text-dark-800/50 text-xs">
+													johndoe252@cironex.com
+												</p>
+											</div>
+										</li>
+										<li class="border-b border-gray-500 mb-2 mt-1.5"></li>
+										<li
+											class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+											onclick="window.open('./settings.html', '_self')"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-workspace"></use>
+											</svg>
+											<span>Workspace Settings</span>
+										</li>
+										<li
+											class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+											onclick="window.open('./settings-account.html', '_self')"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-user"></use>
+											</svg>
+											<span>Profile Settings</span>
+										</li>
+										<li class="border-b border-gray-500 my-2"></li>
+										<li
+											class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-download"></use>
+											</svg>
+											<span>Install Jumpshare</span>
+										</li>
+										<li
+											class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-help"></use>
+											</svg>
+											<span>Help Center</span>
+										</li>
+										<li
+											class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-message-alert"></use>
+											</svg>
+											<span>Send Feedback</span>
+										</li>
+										<li class="border-b border-gray-500 my-2"></li>
+										<li
+											class="flex items-center gap-3 px-3 h-10 cursor-pointer hover:bg-gray-150 active:bg-gray-150 rounded-md text-sm text-dark-800"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-sign-out"></use>
+											</svg>
+											<span>Sign Out</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div class="file-viewer-wrapper grid grid-cols-[1fr_430px] flex-grow-1">
+				<div class="flex-grow-1 relative">
+					<span class="absolute left-4 top-1/2 -translate-y-1/2">
+						<svg class="icon size-10 cursor-pointer">
+							<use href="#icon-chevron-left"></use>
+						</svg>
+					</span>
+					<span class="absolute right-4 top-1/2 -translate-y-1/2">
+						<svg class="icon size-10 cursor-pointer">
+							<use href="#icon-chevron-right"></use>
+						</svg>
+					</span>
+					<div
+						class="max-w-[85%] px-5 w-full mx-auto h-full flex items-center justify-center"
+					>
+						<div
+							class="relative pb-[56%] w-full bg-white border border-gray-400 rounded-xl my-10"
+						>
+							<div
+								class="flex flex-col items-center justify-center gap-5.5 absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"
+							>
+								<svg
+									width="64"
+									height="64"
+									viewBox="0 0 64 64"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M25.9413 8H20C18.4087 8 16.8826 8.63214 15.7574 9.75736C14.6321 10.8826 14 12.4087 14 14V50C14 51.5913 14.6321 53.1174 15.7574 54.2426C16.8826 55.3679 18.4087 56 20 56H44C45.5913 56 47.1174 55.3679 48.2426 54.2426C49.3679 53.1174 50 51.5913 50 50V32M25.9413 8C29.256 8 32 10.6853 32 14V20C32 21.5913 32.6321 23.1174 33.7574 24.2426C34.8826 25.3679 36.4087 26 38 26H44C45.5913 26 47.1174 26.6321 48.2426 27.7574C49.3679 28.8826 50 30.4087 50 32M25.9413 8C35.7813 8 50 22.2933 50 32"
+										stroke="black"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+								</svg>
+								<div class="flex flex-col items-center gap-3">
+									<strong class="text-sm font-medium text-dark-800"
+										>WestsideCommunityChurch.azw3</strong
+									>
+									<p class="text-sm text-gray-900">Aug 15 32 MB</p>
+								</div>
+								<button
+									type="button"
+									class="btn btn-primary h-10 min-w-[8.1875rem]"
+								>
+									Download
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div
+					id="file-viewer-sidebar"
+					class="bg-white border-l border-gray-400 relative h-[calc(100vh-var(--header-height))]"
+				>
+					<div
+						id="file-viewer-resize-handle-sidebar"
+						class="resize-handle-vertical"
+					></div>
+					<div class="overflow-y-auto h-full">
+						<div class="flex flex-col gap-3 px-6 py-5">
+							<strong class="text-sm font-semibold text-dark-800"
+								>Comments</strong
+							>
+							<div
+								class="border border-gray-600 rounded-xl min-h-15 py-3.5 pl-5 pr-3 flex items-center justify-between"
+							>
+								<textarea
+									name="comment"
+									id="comment-textarea"
+									class="min-h-0 resize-none outline-none border-none text-sm text-gray-900 placeholder:text-gray-900 flex-grow-1 mr-2"
+									rows="1"
+									placeholder="Leave a comment"
+								></textarea>
+								<div class="flex items-center">
+									<button
+										type="button"
+										aria-label="choose smile"
+										class="btn btn-white hover:bg-gray-200 p-0 size-8"
+									>
+										<svg class="icon size-4">
+											<use href="#icon-mention"></use>
+										</svg>
+									</button>
+									<button
+										type="button"
+										aria-label="choose smile"
+										class="btn btn-white hover:bg-gray-200 p-0 size-8"
+									>
+										<svg class="icon size-4">
+											<use href="#icon-smile"></use>
+										</svg>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script
+			src="https://code.jquery.com/jquery-3.7.1.min.js"
+			integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+			crossorigin="anonymous"
+		></script>
+		<script src="../dist/js/helpers.js"></script>
+		<script src="../dist/js/dropdown.js"></script>
+		<script src="../dist/js/bottom-sheet.lite.js"></script>
+		<script src="../dist/js/file.viewer.js"></script>
+		<script src="../dist/js/main.js"></script>
+	</body>
+</html>
