@@ -245,7 +245,7 @@
 				<div class="flex-grow-1">
 					<div class="max-w-[80%] px-5 w-full mx-auto">
 						<div
-							class="relative pb-[56%] w-full bg-gray-400 rounded-xl mx-auto mt-6"
+							class="relative aspect-video max-h-[70vh] max-w-full bg-gray-400 rounded-xl mx-auto mt-6"
 						>
 							<div
 								class="flex gap-4 absolute left-1/2 -translate-x-1/2 top-[calc(100%+1.25rem)] w-max z-10"
@@ -348,7 +348,7 @@
 							class="file-viewer-sidebar-main-content"
 							data-tab-inside-content="main-content"
 						>
-							<ul class="tabs-nav mt-5 px-6 gap-5">
+							<ul class="tabs-nav mt-5 px-5 gap-5">
 								<li
 									data-tab-id="tab-actions"
 									class="active"
@@ -370,7 +370,7 @@
 							<div>
 								<div
 									data-tab-content-id="tab-actions"
-									class="active hidden [&.active]:block px-6 py-5"
+									class="active hidden [&.active]:block px-5 py-5"
 								>
 									<div class="rounded-xl bg-blue-500/5 relative p-0.5 mb-5">
 										<div
@@ -495,6 +495,313 @@
 								</div>
 								<div
 									class="hidden [&.active]:block"
+									data-tab-content-id="tab-comments"
+								>
+									<div class="flex flex-col gap-3 px-5 py-6">
+										<div
+											class="border border-gray-600 rounded-xl min-h-15 py-3.5 pl-5 pr-3 flex items-center justify-between"
+										>
+											<textarea
+												name="comment"
+												id="comment-textarea"
+												class="min-h-0 resize-none outline-none border-none text-sm text-gray-900 placeholder:text-gray-900 flex-grow-1 mr-2"
+												rows="1"
+												placeholder="Leave a comment"
+											></textarea>
+											<div class="flex items-center">
+												<button
+													type="button"
+													aria-label="choose smile"
+													class="btn btn-white hover:bg-gray-200 p-0 size-8"
+												>
+													<svg class="icon size-4">
+														<use href="#icon-mention"></use>
+													</svg>
+												</button>
+												<button
+													type="button"
+													aria-label="choose smile"
+													class="btn btn-white hover:bg-gray-200 p-0 size-8"
+												>
+													<svg class="icon size-4">
+														<use href="#icon-smile"></use>
+													</svg>
+												</button>
+												<button
+													type="button"
+													aria-label="choose smile"
+													class="btn btn-white hover:bg-gray-200 p-0 size-8"
+												>
+													<svg class="icon size-4.5">
+														<use href="#icon-pencil"></use>
+													</svg>
+												</button>
+											</div>
+										</div>
+									</div>
+									<ul class="flex flex-col gap-4 px-5 pb-6">
+										<li class="border border-gray-500 rounded-xl p-5">
+											<div
+												class="flex gap-3 relative [.has-replies_&]:after:content-[''] [.has-replies_&]:after:w-4 [.has-replies_&]:after:border-l [.has-replies_&]:after:border-b [.has-replies_&]:after:rounded-bl-2xl [.has-replies_&]:after:border-gray-600 [.has-replies_&]:after:h-[calc(100%-32px+27px+12px)] [.has-replies_&]:after:absolute [.has-replies_&]:after:left-3 [.has-replies_&]:after:top-8.5"
+											>
+												<span class="avatar size-6 text-sm">
+													<img src="../assets/images/avatar.png" alt="Avatar" />
+												</span>
+												<div class="flex flex-col gap-1.5 text-sm">
+													<div class="flex items-center gap-2">
+														<strong class="text-sm font-semibold"
+															>John Doe</strong
+														>
+														<span class="text-gray-900 text-xs"
+															>15 mins ago</span
+														>
+													</div>
+													<p>
+														This actually looked quite good to me, appreciate
+														it.
+													</p>
+												</div>
+											</div>
+										</li>
+										<li class="border border-gray-500 rounded-xl p-5">
+											<div
+												class="flex gap-3 relative [.has-replies_&]:after:content-[''] [.has-replies_&]:after:w-4 [.has-replies_&]:after:border-l [.has-replies_&]:after:border-b [.has-replies_&]:after:rounded-bl-2xl [.has-replies_&]:after:border-gray-600 [.has-replies_&]:after:h-[calc(100%-32px+27px+12px)] [.has-replies_&]:after:absolute [.has-replies_&]:after:left-3 [.has-replies_&]:after:top-8.5"
+											>
+												<span class="avatar size-6 text-sm">
+													<img
+														src="../assets/images/avatar-2.png"
+														alt="Avatar"
+													/>
+												</span>
+												<div class="flex flex-col gap-1.5 text-sm">
+													<div class="flex items-center gap-2">
+														<strong class="text-sm font-semibold"
+															>Oliver Bernett</strong
+														>
+														<span class="text-gray-900 text-xs"
+															>24 mins ago</span
+														>
+													</div>
+													<p>
+														I am sending you some files that you requested,
+														please review and let me know.
+													</p>
+												</div>
+											</div>
+											<div
+												class="border-t border-gray-500 -mx-5 -mb-5 pt-3.5 pl-5 pr-3 pb-3 mt-3.5 flex items-center justify-between gap-4"
+											>
+												<textarea
+													name="reply-comment"
+													id="reply-comment"
+													class="w-full outline-none border-none text-sm text-gray-900 placeholder:text-gray-900 resize-none"
+													rows="1"
+													placeholder="Leave a reply"
+												></textarea>
+												<div class="flex items-center gap-2">
+													<button
+														aria-label="Choose Smile"
+														type="button"
+														class="btn btn-white hover:bg-gray-200 p-0 size-8"
+													>
+														<svg class="icon size-4">
+															<use href="#icon-smile"></use>
+														</svg>
+													</button>
+													<button
+														type="button"
+														class="btn btn-primary h-7.5 px-3.5"
+													>
+														Reply
+													</button>
+												</div>
+											</div>
+										</li>
+										<li class="border border-gray-500 rounded-xl p-5">
+											<div
+												class="flex gap-3 relative [.has-replies_&]:after:content-[''] [.has-replies_&]:after:w-4 [.has-replies_&]:after:border-l [.has-replies_&]:after:border-b [.has-replies_&]:after:rounded-bl-2xl [.has-replies_&]:after:border-gray-600 [.has-replies_&]:after:h-[calc(100%-32px+27px+12px)] [.has-replies_&]:after:absolute [.has-replies_&]:after:left-3 [.has-replies_&]:after:top-8.5"
+											>
+												<span
+													class="avatar size-6 text-sm font-semibold bg-[#FF972F]/15 text-[#bc6005]"
+													>S</span
+												>
+												<div class="flex flex-col gap-1.5 text-sm">
+													<div class="flex items-center gap-2">
+														<strong class="text-sm font-semibold"
+															>Sam Parker</strong
+														>
+														<span class="text-gray-900 text-xs"
+															>32 mins ago</span
+														>
+													</div>
+													<p>
+														Thanks for allowing me to share the video with you,
+														I’ve recorded a full 20 min session on demand so you
+														can check and watch it carefully.
+													</p>
+												</div>
+											</div>
+										</li>
+										<li
+											class="border border-gray-500 rounded-xl p-5 has-replies"
+										>
+											<div
+												class="flex gap-3 relative [.has-replies_&]:after:content-[''] [.has-replies_&]:after:w-4 [.has-replies_&]:after:border-l [.has-replies_&]:after:border-b [.has-replies_&]:after:rounded-bl-2xl [.has-replies_&]:after:border-gray-600 [.has-replies_&]:after:h-[calc(100%-32px+27px+12px)] [.has-replies_&]:after:absolute [.has-replies_&]:after:left-3 [.has-replies_&]:after:top-8.5"
+											>
+												<span class="avatar size-6 text-sm font-semibold">
+													<img
+														src="../assets/images/avatar-3.png"
+														alt="Avatar"
+													/>
+												</span>
+												<div class="flex flex-col gap-1.5 text-sm">
+													<div class="flex items-center gap-2">
+														<strong class="text-sm font-semibold"
+															>John Doe</strong
+														>
+														<span class="text-gray-900 text-xs"
+															>2 days ago</span
+														>
+													</div>
+													<p>
+														This actually looked quite good to me, appreciate
+														it.
+													</p>
+													<button
+														type="button"
+														class="btn btn-transparent w-max font-medium text-gray-900 mt-2 h-7.5 px-2.5 after:content-[''] after:size-4 after:border-l after:border-b after:rounded-bl-2xl after:border-gray-600 after:absolute after:right-full after:top-0 -ml-[9px]"
+													>
+														+12 replies
+													</button>
+												</div>
+											</div>
+											<ul class="pl-9 pt-6.5">
+												<li>
+													<div class="flex gap-3 relative">
+														<span class="avatar size-6 text-sm font-semibold">
+															<img
+																src="../assets/images/avatar-3.png"
+																alt="Avatar"
+															/>
+														</span>
+														<div class="flex flex-col gap-1.5 text-sm">
+															<div class="flex items-center gap-2">
+																<strong class="text-sm font-semibold"
+																	>John Doe</strong
+																>
+																<span class="text-gray-900 text-xs"
+																	>2 days ago</span
+																>
+															</div>
+															<p>
+																<span class="text-blue-500 cursor-pointer"
+																	>@George Cartwright</span
+																>
+																Thanks for allowing me to share the video with
+																you, I’ve recorded a full 20 min session on
+																demand so you can check and watch it carefully.
+															</p>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li
+											class="border border-gray-500 rounded-xl p-5 has-replies"
+										>
+											<div
+												class="flex gap-3 relative [.has-replies_&]:after:content-[''] [.has-replies_&]:after:w-4 [.has-replies_&]:after:border-l [.has-replies_&]:after:border-b [.has-replies_&]:after:rounded-bl-2xl [.has-replies_&]:after:border-gray-600 [.has-replies_&]:after:h-[calc(100%-32px+27px+12px)] [.has-replies_&]:after:absolute [.has-replies_&]:after:left-3 [.has-replies_&]:after:top-8.5"
+											>
+												<span class="avatar size-6 text-sm font-semibold">
+													<img
+														src="../assets/images/avatar-3.png"
+														alt="Avatar"
+													/>
+												</span>
+												<div class="flex flex-col gap-1.5 text-sm">
+													<div class="flex items-center gap-2">
+														<strong class="text-sm font-semibold"
+															>John Doe</strong
+														>
+														<span class="text-gray-900 text-xs"
+															>2 days ago</span
+														>
+													</div>
+													<p>
+														This actually looked quite good to me, appreciate
+														it.
+													</p>
+													<button
+														type="button"
+														class="btn btn-transparent w-max font-medium text-gray-900 mt-2 h-7.5 px-2.5 after:content-[''] after:size-4 after:border-l after:border-b after:rounded-bl-2xl after:border-gray-600 after:absolute after:right-full after:top-0 -ml-[9px]"
+													>
+														+12 replies
+													</button>
+												</div>
+											</div>
+											<ul class="pl-9 pt-6.5">
+												<li>
+													<div class="flex gap-3 relative">
+														<span class="avatar size-6 text-sm font-semibold">
+															<img
+																src="../assets/images/avatar-3.png"
+																alt="Avatar"
+															/>
+														</span>
+														<div class="flex flex-col gap-1.5 text-sm">
+															<div class="flex items-center gap-2">
+																<strong class="text-sm font-semibold"
+																	>John Doe</strong
+																>
+																<span class="text-gray-900 text-xs"
+																	>2 days ago</span
+																>
+															</div>
+															<p>
+																<span class="text-blue-500 cursor-pointer"
+																	>@George Cartwright</span
+																>
+																Thanks for allowing me to share the video with
+																you, I’ve recorded a full 20 min session on
+																demand so you can check and watch it carefully.
+															</p>
+														</div>
+													</div>
+												</li>
+											</ul>
+											<div
+												class="border-t border-gray-500 -mx-5 -mb-5 pt-3.5 pl-5 pr-3 pb-3 mt-3.5 flex items-center justify-between gap-4"
+											>
+												<textarea
+													name="reply-comment"
+													id="reply-comment"
+													class="w-full outline-none border-none text-sm text-gray-900 placeholder:text-gray-900 resize-none"
+													rows="1"
+													placeholder="Leave a reply"
+												></textarea>
+												<div class="flex items-center gap-2">
+													<button
+														aria-label="Choose Smile"
+														type="button"
+														class="btn btn-white hover:bg-gray-200 p-0 size-8"
+													>
+														<svg class="icon size-4">
+															<use href="#icon-smile"></use>
+														</svg>
+													</button>
+													<button
+														type="button"
+														class="btn btn-primary h-7.5 px-3.5"
+													>
+														Reply
+													</button>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div
+									class="hidden [&.active]:block"
 									data-tab-content-id="tab-details"
 								>
 									<div
@@ -507,10 +814,280 @@
 										/>
 									</div>
 									<div class="px-5 py-6 relative">
-										<strong
-											class="text-base font-sans-medium truncate max-w-full"
+										<strong class="text-base font-sans-medium truncate block"
 											>Scrum Sep 8 - Web Development Testing</strong
 										>
+										<ul
+											class="grid grid-cols-[1fr_auto] gap-2 mt-7 gap-y-7.5 max-w-[20rem] w-full"
+										>
+											<li class="flex flex-col gap-1 text-sm">
+												<span class="text-gray-900">Owner:</span>
+												<span class="font-medium">John Adams</span>
+											</li>
+											<li class="flex flex-col gap-1 text-sm">
+												<span class="text-gray-900">File Format:</span>
+												<span class="font-medium">MP4</span>
+											</li>
+											<li class="flex flex-col gap-1 text-sm">
+												<span class="text-gray-900">Upload Date:</span>
+												<span class="font-medium">Nov 23, 2024</span>
+											</li>
+											<li class="flex flex-col gap-1 text-sm">
+												<span class="text-gray-900">File Size:</span>
+												<span class="font-medium">100 MB</span>
+											</li>
+											<li class="flex flex-col gap-1 text-sm">
+												<span class="text-gray-900">File Type:</span>
+												<span class="font-medium">Video</span>
+											</li>
+											<li class="flex flex-col gap-1 text-sm">
+												<span class="text-gray-900">Duration:</span>
+												<span class="font-medium">4:30 min</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div
+									class="hidden [&.active]:block"
+									data-tab-content-id="tab-transcript"
+								>
+									<div class="flex gap-2 px-6 pt-6">
+										<button
+											type="button"
+											class="btn btn-border-default pl-3 pr-4 h-8 font-normal"
+										>
+											<svg class="icon size-5">
+												<use href="#icon-copy"></use>
+											</svg>
+											<span>Copy</span>
+										</button>
+										<button
+											type="button"
+											class="btn btn-border-default pl-3 pr-4 h-8 font-normal"
+										>
+											<svg class="icon size-5">
+												<use href="#icon-pencil"></use>
+											</svg>
+											<span>Edit</span>
+										</button>
+										<button
+											type="button"
+											class="btn btn-border-default pl-3 pr-4 h-8 font-normal"
+										>
+											<svg class="icon size-5">
+												<use href="#icon-download"></use>
+											</svg>
+											<span>Download</span>
+										</button>
+										<button
+											aria-label="More options"
+											type="button"
+											class="btn btn-border-default px-[7px] h-8 font-normal ml-auto"
+										>
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 20 20"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<path
+													d="M6 10C6 8.9 5.1 8 4 8C2.9 8 2 8.9 2 10C2 11.1 2.9 12 4 12C5.1 12 6 11.1 6 10ZM8 10C8 11.1 8.9 12 10 12C11.1 12 12 11.1 12 10C12 8.9 11.1 8 10 8C8.9 8 8 8.9 8 10ZM14 10C14 11.1 14.9 12 16 12C17.1 12 18 11.1 18 10C18 8.9 17.1 8 16 8C14.9 8 14 8.9 14 10Z"
+													fill="#0A0A0B"
+												/>
+											</svg>
+										</button>
+									</div>
+									<ul
+										class="px-3 my-5 [&>li]:px-3 [&>li]:py-4 [&>li]:hover:bg-gray-200 [&>li]:cursor-pointer [&>li>span]:block [&>li>span]:mb-2 [&>li>span]:text-blue-500 [&>li>span]:text-sm [&>li>span]:font-medium"
+									>
+										<li>
+											<span>00:00</span>
+											<p>
+												Hello everyone, welcome to this Microsoft Word tutorial.
+												In this video, we’ll quickly go over how to create and
+												format a simple document.
+											</p>
+										</li>
+										<li>
+											<span>00:08</span>
+											<p>
+												Let’s start by opening Microsoft Word. Once you launch
+												it, you’ll see the start screen where you can choose
+												from templates or select a blank document. For now,
+												we’ll pick “Blank Document.”
+											</p>
+										</li>
+										<li>
+											<span>00:20</span>
+											<p>
+												At the top, you’ll notice the Ribbon. This is where all
+												your tools are organized. For example, under the “Home”
+												tab
+											</p>
+										</li>
+										<li>
+											<span>00:33</span>
+											<p>
+												Now, let’s type a simple sentence: “Microsoft Word makes
+												document creation easy.” Once typed, highlight the text.
+												From here, you can change the font to something like
+												Calibri, increase the size to 14, and click Bold to
+												emphasize it.
+											</p>
+										</li>
+										<li>
+											<span>00:48</span>
+											<p>
+												You can also center the text by clicking the alignment
+												button in the Home tab. And just like that, you’ve
+												formatted your very first sentence in Microsoft Word.
+											</p>
+										</li>
+									</ul>
+								</div>
+								<div
+									class="hidden [&.active]:block px-5 pt-6"
+									data-tab-content-id="tab-settings"
+								>
+									<div
+										class="flex justify-between items-center gap-5 py-6 border-b border-gray-400 cursor-pointer"
+									>
+										<div class="flex flex-col gap-1 text-sm truncate">
+											<strong class="font-semibold truncate"
+												>Customize Video Player</strong
+											>
+											<p class="text-gray-900 truncate">
+												Personalize video player for branding
+											</p>
+										</div>
+										<svg class="icon icon-md shrink-0">
+											<use href="#icon-chevron-right"></use>
+										</svg>
+									</div>
+									<div
+										class="flex justify-between items-center gap-5 py-6 border-b border-gray-400 cursor-pointer"
+									>
+										<div class="flex flex-col gap-1 text-sm truncate">
+											<strong class="font-semibold truncate"
+												>Customize Captions</strong
+											>
+											<p class="text-gray-900 truncate">
+												Easily customize captions for viewers
+											</p>
+										</div>
+										<svg class="icon icon-md shrink-0">
+											<use href="#icon-chevron-right"></use>
+										</svg>
+									</div>
+									<div
+										class="flex justify-between items-center gap-5 py-6 border-b border-gray-400 cursor-pointer"
+									>
+										<div class="flex flex-col gap-1 text-sm truncate">
+											<strong class="font-semibold truncate"
+												>Default Playback Speed</strong
+											>
+											<p class="text-gray-900 truncate">
+												Speed can be adjusted during playback.
+											</p>
+										</div>
+										<button
+											type="button"
+											class="btn btn-border-default shrink-0 px-4 h-10 gap-5"
+										>
+											<span class="font-normal">1x</span>
+											<svg class="icon icon-sm">
+												<use href="#icon-chevron-down"></use>
+											</svg>
+										</button>
+									</div>
+									<div
+										class="flex justify-between items-center gap-5 py-6 border-b border-gray-400 cursor-pointer"
+									>
+										<div class="flex flex-col gap-1 text-sm truncate">
+											<strong class="font-semibold truncate"
+												>Comment Notification</strong
+											>
+											<p class="text-gray-900 truncate">
+												Get an email when someone comments
+											</p>
+										</div>
+										<label class="custom-controls switcher shrink-0">
+											<input type="checkbox" name="" id="id-test" />
+											<span class="custom-control-indicator"></span>
+										</label>
+									</div>
+									<div
+										class="flex justify-between items-center gap-5 py-6 border-b border-gray-400 cursor-pointer"
+									>
+										<div class="flex flex-col gap-1 text-sm truncate">
+											<strong class="font-semibold truncate">Download</strong>
+											<p class="text-gray-900 truncate">
+												Allow viewers to download your video
+											</p>
+										</div>
+										<label class="custom-controls switcher shrink-0">
+											<input type="checkbox" name="" id="download-video" />
+											<span class="custom-control-indicator"></span>
+										</label>
+									</div>
+									<div
+										class="flex justify-between items-center gap-5 py-6 border-b border-gray-400 cursor-pointer"
+									>
+										<div class="flex flex-col gap-1 text-sm truncate">
+											<strong class="font-semibold truncate">Analytics</strong>
+											<p class="text-gray-900 truncate">
+												Allow viewers to see video analytics
+											</p>
+										</div>
+										<label class="custom-controls switcher shrink-0">
+											<input type="checkbox" name="" id="analytics-video" />
+											<span class="custom-control-indicator"></span>
+										</label>
+									</div>
+									<div
+										class="flex justify-between items-center gap-5 py-6 border-b border-gray-400 cursor-pointer"
+									>
+										<div class="flex flex-col gap-1 text-sm truncate">
+											<strong class="font-semibold truncate">Transcript</strong>
+											<p class="text-gray-900 truncate">
+												Allow viewers to access the transcript
+											</p>
+										</div>
+										<label class="custom-controls switcher shrink-0">
+											<input type="checkbox" name="" id="transcript-video" />
+											<span class="custom-control-indicator"></span>
+										</label>
+									</div>
+									<div
+										class="flex justify-between items-center gap-5 py-6 border-b border-gray-400 cursor-pointer"
+									>
+										<div class="flex flex-col gap-1 text-sm truncate">
+											<strong class="font-semibold truncate"
+												>Emoji reactions</strong
+											>
+											<p class="text-gray-900 truncate">
+												Allow viewers to add reactions
+											</p>
+										</div>
+										<label class="custom-controls switcher shrink-0">
+											<input
+												type="checkbox"
+												name=""
+												id="emoji-reactions-video"
+											/>
+											<span class="custom-control-indicator"></span>
+										</label>
+									</div>
+									<div
+										class="grid grid-cols-2 gap-3 sticky bottom-0 bg-white pt-6 pb-4.5 w-full z-10"
+									>
+										<button type="button" class="btn btn-border-default">
+											Set as Defaults
+										</button>
+										<button type="button" class="btn btn-primary font-semibold">
+											Save Settings
+										</button>
 									</div>
 								</div>
 							</div>

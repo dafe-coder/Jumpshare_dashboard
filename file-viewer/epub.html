@@ -242,53 +242,60 @@
 				</div>
 			</header>
 			<div class="file-viewer-wrapper grid grid-cols-[1fr_430px] flex-grow-1">
-				<div class="flex-grow-1 relative flex items-center justify-center">
-					<span class="absolute left-4 top-1/2 -translate-y-1/2">
-						<svg class="icon size-10 cursor-pointer">
-							<use href="#icon-chevron-left"></use>
-						</svg>
-					</span>
-					<span class="absolute right-4 top-1/2 -translate-y-1/2">
-						<svg class="icon size-10 cursor-pointer">
-							<use href="#icon-chevron-right"></use>
-						</svg>
-					</span>
-					<div class="max-w-[85%] px-5 w-full">
-						<div
-							class="relative aspect-video max-h-[70vh] max-w-full bg-white border border-gray-400 rounded-xl m-auto"
-						>
-							<div
-								class="flex flex-col items-center justify-center gap-5.5 absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"
+				<div class="flex-grow-1 relative">
+					<div
+						class="bg-dark-800 h-11.5 roudned-lg px-4 rounded-lg flex items-center absolute left-1/2 -translate-x-1/2 bottom-8.5 z-10"
+					>
+						<ul class="colors-list grid-cols-3 p-0 m-0">
+							<li
+								class="group text-[#F5EFDC] size-5 active [&.active]:bg-blue-500 [.active]:after:border-dark-800 not-[&.active]:hover:after:border-0 after:size-[calc(100%-2.5px)]"
+							></li>
+							<li
+								class="group text-[#ffffff] size-5 [&.active]:bg-blue-500 [.active]:after:border-dark-800 not-[&.active]:hover:after:border-0 after:size-[calc(100%-2.5px)]"
+							></li>
+							<li
+								class="group text-[#000000] size-5 bg-gray-600/35 [&.active]:bg-blue-500 [.active]:after:border-dark-800 not-[&.active]:hover:after:border-0 after:size-[calc(100%-2.5px)]"
+							></li>
+						</ul>
+						<div class="flex items-center gap-2 ml-7.5">
+							<span class="text-[13px] text-white font-medium cursor-pointer"
+								>A</span
 							>
-								<svg
-									width="64"
-									height="64"
-									viewBox="0 0 64 64"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										d="M25.9413 8H20C18.4087 8 16.8826 8.63214 15.7574 9.75736C14.6321 10.8826 14 12.4087 14 14V50C14 51.5913 14.6321 53.1174 15.7574 54.2426C16.8826 55.3679 18.4087 56 20 56H44C45.5913 56 47.1174 55.3679 48.2426 54.2426C49.3679 53.1174 50 51.5913 50 50V32M25.9413 8C29.256 8 32 10.6853 32 14V20C32 21.5913 32.6321 23.1174 33.7574 24.2426C34.8826 25.3679 36.4087 26 38 26H44C45.5913 26 47.1174 26.6321 48.2426 27.7574C49.3679 28.8826 50 30.4087 50 32M25.9413 8C35.7813 8 50 22.2933 50 32"
-										stroke="black"
-										stroke-width="2"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-									/>
-								</svg>
-								<div class="flex flex-col items-center gap-3">
-									<strong class="text-sm font-medium text-dark-800"
-										>WestsideCommunityChurch.azw3</strong
-									>
-									<p class="text-sm text-gray-900">Aug 15 32 MB</p>
-								</div>
-								<button
-									type="button"
-									class="btn btn-primary h-10 min-w-[8.1875rem]"
-								>
-									Download
-								</button>
-							</div>
+							<svg
+								width="98"
+								height="12"
+								viewBox="0 0 98 12"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<rect
+									opacity="0.6"
+									y="4"
+									width="98"
+									height="3"
+									rx="1.5"
+									fill="white"
+								/>
+								<rect y="4" width="64" height="3" rx="1.5" fill="white" />
+								<circle
+									style="cursor: pointer"
+									cx="61"
+									cy="6"
+									r="6"
+									fill="white"
+								/>
+							</svg>
+							<span class="text-base text-white font-medium cursor-pointer"
+								>A</span
+							>
 						</div>
+					</div>
+					<div class="max-w-[100%] px-8 w-full mx-auto">
+						<img
+							class="relative max-h-[85vh] max-w-full bg-gray-400 mx-auto mt-6"
+							src="../assets/images/file-viewer/epub.png"
+							alt="EPUB"
+						/>
 					</div>
 				</div>
 				<div

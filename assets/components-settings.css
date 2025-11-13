@@ -18,7 +18,7 @@
 					@apply border-2;
 				}
 			}
-			&:last-of-type {
+			&.choose-color {
 				@apply flex items-center justify-center border border-gray-700 border-dashed size-6 rounded-lg bg-transparent;
 				&::after {
 					@apply hidden;
