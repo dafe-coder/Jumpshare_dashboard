@@ -1,13 +1,34 @@
 // SVG sprite (TODO: implement insertion before page rendering)
 function getAssetsPath() {
+	const baseTag = document.querySelector("base");
+	if (baseTag && baseTag.href) {
+		try {
+			const baseUrl = new URL(baseTag.href);
+			const basePath = baseUrl.pathname.replace(/\/$/, "") || "/";
+			return basePath + (basePath === "/" ? "" : "/") + "assets/";
+		} catch (e) {
+			console.warn("Failed to parse base tag:", e);
+		}
+	}
+
 	const pathname = window.location.pathname;
+	const knownProjectFolders = [
+		"dist",
+		"file-viewer",
+		"assets",
+		"datepicker",
+		"docs",
+		"index.html",
+	];
 	const pathParts = pathname
 		.split("/")
-		.filter((part) => part && !part.match(/\.(html|htm)$/));
+		.filter((part) => part && part !== "index.html");
 
-	const relativePath =
-		pathParts.length > 0 ? "../".repeat(pathParts.length) : "./";
-	return relativePath + "assets/";
+	if (pathParts.length > 0 && !knownProjectFolders.includes(pathParts[0])) {
+		return "/" + pathParts[0] + "/assets/";
+	}
+
+	return "assets/";
 }
 
 const assetsPath = getAssetsPath();
