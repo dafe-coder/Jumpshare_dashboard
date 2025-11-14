@@ -1,12 +1,21 @@
 // SVG sprite (TODO: implement insertion before page rendering)
-fetch("/assets/icons-sprite.svg")
+function getBasePath() {
+	const path = window.location.pathname;
+	const pathParts = path
+		.split("/")
+		.filter((part) => part && !part.match(/\.(html|htm)$/));
+	return pathParts.length > 0 ? "../".repeat(pathParts.length) : "./";
+}
+
+const basePath = getBasePath();
+fetch(basePath + "assets/icons-sprite.svg")
 	.then((response) => response.text())
 	.then((svg) => {
 		const div = document.createElement("div");
 		div.innerHTML = svg;
 		document.body.insertBefore(div.firstChild, document.body.firstChild);
 	});
-fetch("/assets/menu-icons-sprite.svg")
+fetch(basePath + "assets/menu-icons-sprite.svg")
 	.then((response) => response.text())
 	.then((svg) => {
 		const div = document.createElement("div");
