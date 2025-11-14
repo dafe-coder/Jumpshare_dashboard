@@ -1,4 +1,4 @@
-// SVG sprite
+// SVG sprite (TODO: implement insertion before page rendering)
 fetch("/assets/icons-sprite.svg")
 	.then((response) => response.text())
 	.then((svg) => {
