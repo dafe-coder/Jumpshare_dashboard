@@ -1,26 +1,52 @@
 // SVG sprite (TODO: implement insertion before page rendering)
-function getBasePath() {
-	const path = window.location.pathname;
-	const pathParts = path
+function getAssetsPath() {
+	const pathname = window.location.pathname;
+	const pathParts = pathname
 		.split("/")
 		.filter((part) => part && !part.match(/\.(html|htm)$/));
-	return pathParts.length > 0 ? "../".repeat(pathParts.length) : "./";
+
+	const relativePath =
+		pathParts.length > 0 ? "../".repeat(pathParts.length) : "./";
+	return relativePath + "assets/";
 }
 
-const basePath = getBasePath();
-fetch(basePath + "assets/icons-sprite.svg")
-	.then((response) => response.text())
+const assetsPath = getAssetsPath();
+fetch(assetsPath + "icons-sprite.svg")
+	.then((response) => {
+		if (!response.ok) {
+			console.error("Failed to load icons-sprite.svg:", response.status);
+			return null;
+		}
+		return response.text();
+	})
 	.then((svg) => {
-		const div = document.createElement("div");
-		div.innerHTML = svg;
-		document.body.insertBefore(div.firstChild, document.body.firstChild);
+		if (svg) {
+			const div = document.createElement("div");
+			div.innerHTML = svg;
+			document.body.insertBefore(div.firstChild, document.body.firstChild);
+		}
+	})
+	.catch((error) => {
+		console.error("Error loading icons-sprite.svg:", error);
 	});
-fetch(basePath + "assets/menu-icons-sprite.svg")
-	.then((response) => response.text())
+
+fetch(assetsPath + "menu-icons-sprite.svg")
+	.then((response) => {
+		if (!response.ok) {
+			console.error("Failed to load menu-icons-sprite.svg:", response.status);
+			return null;
+		}
+		return response.text();
+	})
 	.then((svg) => {
-		const div = document.createElement("div");
-		div.innerHTML = svg;
-		document.body.insertBefore(div.firstChild, document.body.firstChild);
+		if (svg) {
+			const div = document.createElement("div");
+			div.innerHTML = svg;
+			document.body.insertBefore(div.firstChild, document.body.firstChild);
+		}
+	})
+	.catch((error) => {
+		console.error("Error loading menu-icons-sprite.svg:", error);
 	});
 
 $(document).ready(function () {
