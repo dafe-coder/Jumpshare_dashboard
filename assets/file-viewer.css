@@ -1,0 +1,23 @@
+@layer components {
+	.list-with-choose-box {
+		@apply grid grid-cols-2 gap-4 mb-5.5;
+		li {
+			@apply relative;
+			label {
+				@apply relative border border-gray-600 rounded-2xl py-7 flex items-center justify-center flex-col gap-3 cursor-pointer hover:bg-gray-200;
+				.list-with-choose-box-span {
+					@apply absolute top-3 right-3 size-5.5 rounded-full border-2 border-gray-600 text-white flex items-center justify-center;
+				}
+			}
+			input {
+				@apply hidden;
+				&:checked + label {
+					@apply border-blue-500 bg-blue-500/5;
+					.list-with-choose-box-span {
+						@apply bg-blue-500 border-blue-500;
+					}
+				}
+			}
+		}
+	}
+}

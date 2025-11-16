@@ -18,14 +18,20 @@ function getAssetsPath() {
 		"assets",
 		"datepicker",
 		"docs",
-		"index.html",
 	];
 	const pathParts = pathname
 		.split("/")
-		.filter((part) => part && part !== "index.html");
+		.filter(
+			(part) => part && part !== "index.html" && !part.match(/\.(html|htm)$/),
+		);
 
 	if (pathParts.length > 0 && !knownProjectFolders.includes(pathParts[0])) {
 		return "/" + pathParts[0] + "/assets/";
+	}
+
+	if (pathParts.length > 0 && knownProjectFolders.includes(pathParts[0])) {
+		const foldersCount = pathParts.length;
+		return "../".repeat(foldersCount) + "assets/";
 	}
 
 	return "assets/";

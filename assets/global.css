@@ -143,6 +143,7 @@
 @import "./components-dashboard.css";
 @import "./components-settings.css";
 @import "./dialog.css";
+@import "./file-viewer.css";
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
