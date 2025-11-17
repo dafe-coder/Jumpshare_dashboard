@@ -1284,6 +1284,47 @@
 						<div
 							class="relative aspect-video max-h-[70vh] max-w-full bg-gray-400 rounded-xl mx-auto mt-6"
 						>
+							<div class="file-viewer-lead-capture hidden">
+								<button
+									type="button"
+									class="btn file-viewer-lead-capture-skip-button hidden"
+								>
+									<span>Skip</span>
+									<svg class="icon icon-md">
+										<use href="#icon-skip"></use>
+									</svg>
+								</button>
+								<div class="file-viewer-lead-capture-title">
+									Enter your email address for full access to the video
+								</div>
+								<div class="file-viewer-lead-capture-description">
+									After entering your email address, you will get exclusive
+									access to the video
+								</div>
+								<form action="#" class="file-viewer-lead-capture-form">
+									<div class="grid grid-cols-2 gap-2.5">
+										<div class="form-control-wrapper">
+											<input type="email" placeholder="First Name" />
+										</div>
+										<div class="form-control-wrapper">
+											<input type="email" placeholder="Last Name" />
+										</div>
+									</div>
+									<div class="form-control-wrapper">
+										<input type="email" placeholder="Email Address" />
+									</div>
+									<div class="form-control-wrapper">
+										<input type="text" placeholder="Phone Number" />
+									</div>
+									<button
+										type="submit"
+										class="btn btn-primary w-full font-semibold h-10 uppercase"
+										id="file-viewer-lead-capture-button-submit"
+									>
+										CONTINUE
+									</button>
+								</form>
+							</div>
 							<div
 								class="flex gap-4 absolute left-1/2 -translate-x-1/2 top-[calc(100%+1.25rem)] w-max z-10"
 							>
@@ -1382,10 +1423,12 @@
 					></div>
 					<div class="overflow-y-auto h-full">
 						<div
-							class="file-viewer-sidebar-main-content"
+							class="file-viewer-tab file-viewer-sidebar-main-content"
 							data-tab-inside-content="main-content"
 						>
-							<ul class="tabs-nav mt-5 px-5 gap-5">
+							<ul
+								class="tabs-nav mt-0 pt-5 px-5 gap-5 sticky top-0 bg-white z-1"
+							>
 								<li
 									data-tab-id="tab-actions"
 									class="active"
@@ -1500,6 +1543,7 @@
 										</div>
 										<div
 											class="flex items-center gap-4 bg-white border border-gray-400 rounded-xl px-5 py-4 w-full cursor-pointer hover:bg-gray-200"
+											data-tab-inside="lead-capture"
 										>
 											<svg class="icon icon-md flex-shrink-0">
 												<use href="#icon-magnet"></use>
@@ -2130,8 +2174,11 @@
 								</div>
 							</div>
 						</div>
-						<div class="add-cta hidden" data-tab-inside-content="add-cta">
-							<div class="px-3 pt-4 mb-8 flex items-center gap-2">
+						<div
+							class="file-viewer-tab add-cta hidden"
+							data-tab-inside-content="add-cta"
+						>
+							<div class="file-viewer-tab-header">
 								<button
 									data-tab-inside-go-back
 									aria-label="Go Back"
@@ -2146,7 +2193,7 @@
 									Add a CTA
 								</strong>
 							</div>
-							<div class="flex flex-col px-5">
+							<div class="file-viewer-tab-content">
 								<div
 									class="grid grid-cols-2 gap-2.5 mb-6 [.sidebar-small_&]:grid-cols-1"
 								>
@@ -2490,22 +2537,20 @@
 									</label>
 								</div>
 							</div>
-							<div
-								class="px-5 py-4 mt-7.5 sticky bottom-0 bg-white [.sidebar-has-scrollbar_&]:border-t [.sidebar-has-scrollbar_&]:shadow-dropdown border-gray-400"
-							>
+							<div class="file-viewer-tab-footer">
 								<button
 									type="button"
-									class="btn btn-primary w-full h-10 font-semibold"
+									class="btn btn-primary w-full font-semibold"
 								>
 									Save
 								</button>
 							</div>
 						</div>
 						<div
-							class="video-thumbnail hidden"
+							class="file-viewer-tab video-thumbnail hidden"
 							data-tab-inside-content="video-thumbnail"
 						>
-							<div class="px-3 pt-4 mb-8 flex items-center gap-2">
+							<div class="file-viewer-tab-header">
 								<button
 									data-tab-inside-go-back
 									aria-label="Go Back"
@@ -2520,7 +2565,7 @@
 									Choose Thumbnail
 								</strong>
 							</div>
-							<div class="px-5">
+							<div class="file-viewer-tab-content">
 								<ul class="list-with-choose-box grid grid-cols-2 gap-4">
 									<li>
 										<input
@@ -2635,12 +2680,228 @@
 									Select any frame from the video to generate a thumbnail
 								</p>
 							</div>
-							<div
-								class="px-5 pt-6 pb-4 sticky bottom-0 bg-white [.sidebar-has-scrollbar_&]:border-t [.sidebar-has-scrollbar_&]:shadow-dropdown border-gray-400"
-							>
+							<div class="file-viewer-tab-footer">
 								<button
 									type="button"
-									class="btn btn-primary w-full h-9 font-semibold"
+									class="btn btn-primary w-full font-semibold"
+								>
+									Save
+								</button>
+							</div>
+						</div>
+						<div
+							class="file-viewer-tab capture-lead hidden"
+							data-tab-inside-content="lead-capture"
+						>
+							<div class="file-viewer-tab-header">
+								<button
+									data-tab-inside-go-back
+									aria-label="Go Back"
+									type="button"
+									class="btn p-0 size-6 rounded-md hover:bg-gray-200"
+								>
+									<svg class="icon size-5">
+										<use href="#icon-chevron-left"></use>
+									</svg>
+								</button>
+								<strong class="text-base font-semibold font-sans-semi">
+									Add Lead Capture Form
+								</strong>
+							</div>
+							<div class="file-viewer-tab-content flex-grow-1">
+								<div class="flex flex-col gap-3 w-full mb-6">
+									<label class="text-sm font-medium">Appearance</label>
+									<div class="dropdown-wrapper">
+										<button
+											type="button"
+											class="btn btn-border-default w-full justify-between pl-4 pr-3 h-10 font-normal"
+										>
+											<span>Show when the video starts</span>
+											<svg class="icon icon-sm">
+												<use href="#icon-chevron-down"></use>
+											</svg>
+										</button>
+									</div>
+								</div>
+								<div class="flex flex-col gap-3 w-full mb-6">
+									<label class="text-sm font-medium">Title</label>
+									<div class="dropdown-wrapper">
+										<input
+											type="text"
+											class="form-control-settings w-full"
+											placeholder="Enter title"
+											id="file-viewer-lead-capture-title-input"
+										/>
+									</div>
+								</div>
+								<div class="flex flex-col gap-3 w-full mb-6">
+									<label class="text-sm font-medium">Description</label>
+									<div class="dropdown-wrapper">
+										<textarea
+											class="form-control-settings w-full h-15 resize-none pt-2.5"
+											placeholder="Enter description"
+											id="file-viewer-lead-capture-description-input"
+										></textarea>
+									</div>
+								</div>
+								<div class="flex flex-col gap-3 w-full mb-6">
+									<label class="text-sm font-medium">Button Text</label>
+									<div class="dropdown-wrapper">
+										<input
+											type="text"
+											class="form-control-settings w-full"
+											placeholder="Enter text"
+											id="file-viewer-lead-capture-button-text-input"
+										/>
+									</div>
+								</div>
+								<div class="flex flex-col">
+									<label class="text-sm font-medium mb-3"
+										>Button Customization</label
+									>
+									<div
+										class="grid grid-cols-2 gap-2.5 mb-4 [.sidebar-small_&]:grid-cols-1"
+									>
+										<div class="dropdown-wrapper">
+											<button
+												type="button"
+												class="dropdown-button btn btn-border-default w-full justify-between pl-4 pr-3 h-10 font-normal"
+												data-id="dropdown-button-visibility"
+											>
+												<span>Button Color</span>
+												<span
+													class="size-6 ring-1 ring-inset ring-gray-500 rounded-md bg-white"
+												></span>
+											</button>
+											<div
+												class="js-dropdown hidden w-[15.8125rem] left-0"
+												data-dropdown-id="dropdown-button-visibility"
+											>
+												<div class="js-dropdown-overlay"></div>
+												<div class="js-dropdown-body">
+													<div class="js-dropdown-trigger">
+														<span></span>
+													</div>
+													<div class="js-dropdown-content">
+														<ul
+															class="js-dropdown-list space-y-1 [&>li]:justify-between"
+														>
+															<li class="js-dropdown-list-item active-link">
+																Top left
+																<svg
+																	class="icon icon-md hidden [.active-link_&]:block"
+																>
+																	<use href="#icon-check"></use>
+																</svg>
+															</li>
+															<li class="js-dropdown-list-item">
+																Top Right
+																<svg
+																	class="icon icon-md hidden [.active-link_&]:block"
+																>
+																	<use href="#icon-check"></use>
+																</svg>
+															</li>
+															<li class="js-dropdown-list-item">
+																Bottom left
+																<svg
+																	class="icon icon-md hidden [.active-link_&]:block"
+																>
+																	<use href="#icon-check"></use>
+																</svg>
+															</li>
+															<li class="js-dropdown-list-item">
+																Bottom right
+																<svg
+																	class="icon icon-md hidden [.active-link_&]:block"
+																>
+																	<use href="#icon-check"></use>
+																</svg>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="dropdown-wrapper">
+											<button
+												type="button"
+												class="dropdown-button btn btn-border-default w-full justify-between pl-4 pr-3 h-10 font-normal"
+												data-id="dropdown-button-visibility"
+											>
+												<span>Text Color</span>
+												<span
+													class="size-6 ring-1 ring-inset ring-[#7F36AF] rounded-md bg-[#7F36AF]"
+												></span>
+											</button>
+											<div
+												class="js-dropdown hidden w-[15.8125rem] left-0"
+												data-dropdown-id="dropdown-button-visibility"
+											>
+												<div class="js-dropdown-overlay"></div>
+												<div class="js-dropdown-body">
+													<div class="js-dropdown-trigger">
+														<span></span>
+													</div>
+													<div class="js-dropdown-content">
+														<ul
+															class="js-dropdown-list space-y-1 [&>li]:justify-between"
+														>
+															<li class="js-dropdown-list-item active-link">
+																Top left
+																<svg
+																	class="icon icon-md hidden [.active-link_&]:block"
+																>
+																	<use href="#icon-check"></use>
+																</svg>
+															</li>
+															<li class="js-dropdown-list-item">
+																Top Right
+																<svg
+																	class="icon icon-md hidden [.active-link_&]:block"
+																>
+																	<use href="#icon-check"></use>
+																</svg>
+															</li>
+															<li class="js-dropdown-list-item">
+																Bottom left
+																<svg
+																	class="icon icon-md hidden [.active-link_&]:block"
+																>
+																	<use href="#icon-check"></use>
+																</svg>
+															</li>
+															<li class="js-dropdown-list-item">
+																Bottom right
+																<svg
+																	class="icon icon-md hidden [.active-link_&]:block"
+																>
+																	<use href="#icon-check"></use>
+																</svg>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<label class="custom-controls checkbox gap-2 w-max">
+										<input
+											type="checkbox"
+											name="allow-viewer-to-skip"
+											id="allow-viewer-to-skip"
+											value="1"
+											class=""
+										/>
+										<span class="custom-control-indicator"></span>
+										<span>Allow viewer to Skip</span>
+									</label>
+								</div>
+							</div>
+							<div class="file-viewer-tab-footer">
+								<button
+									type="button"
+									class="btn btn-primary w-full font-semibold"
 								>
 									Save
 								</button>
@@ -2674,7 +2935,6 @@
 		<script src="../dist/js/bottom-sheet.lite.js"></script>
 		<script src="../dist/js/helpers.js"></script>
 		<script src="../dist/js/dropdown.js"></script>
-		<script src="../dist/js/bottom-sheet.lite.js"></script>
 		<script src="../dist/js/file.viewer.js"></script>
 		<script src="../dist/js/main.js"></script>
 	</body>

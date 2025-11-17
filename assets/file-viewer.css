@@ -20,4 +20,34 @@
 			}
 		}
 	}
+	.file-viewer-tab {
+		@apply min-h-full flex flex-col;
+	}
+	.file-viewer-tab-header {
+		@apply px-3 pt-4 mb-8 flex items-center gap-2;
+	}
+	.file-viewer-tab-content {
+		@apply px-5;
+	}
+	.file-viewer-tab-footer {
+		@apply px-5 py-4 sticky bottom-0 bg-white [.sidebar-has-scrollbar_&]:border-t [.sidebar-has-scrollbar_&]:shadow-dropdown border-gray-400 [.sidebar-has-scrollbar_&]:mt-4;
+	}
+	.file-viewer-lead-capture {
+		@apply size-full absolute top-0 left-0 z-10 rounded-xl flex flex-col bg-dark-800/60 backdrop-blur-2xl items-center justify-center;
+	}
+	.file-viewer-lead-capture-title {
+		@apply max-w-[28.5rem] w-full text-[2rem]/[2.75rem] font-semibold text-white text-center;
+	}
+	.file-viewer-lead-capture-description {
+		@apply max-w-[24rem] w-full text-base/6 text-white text-center mt-3;
+	}
+	.file-viewer-lead-capture-form {
+		@apply flex flex-col gap-2.5 max-w-[394px] mx-auto mt-7.5;
+		input {
+			@apply bg-white h-10 border-white focus-visible:border-blue-500 placeholder:text-gray-900;
+		}
+	}
+	.file-viewer-lead-capture-skip-button {
+		@apply text-white bg-dark-800/70 hover:bg-dark-800 absolute bottom-3 right-3 border-white/10 border gap-1 z-10;
+	}
 }

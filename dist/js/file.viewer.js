@@ -22,6 +22,7 @@ const fileViewer = {
 		this.initScrollObserver();
 		this.checkSidebarScroll();
 		this.initContentTab();
+		this.initLeadCapture();
 	},
 	getCurrentActiveTab: function () {
 		const activeContent = this.sidebar.find(
@@ -50,6 +51,11 @@ const fileViewer = {
 			const previousTab = this.tabHistory.pop();
 			if (previousTab) {
 				this.switchTab(previousTab);
+				if (previousTab === "lead-capture") {
+					$(".file-viewer-lead-capture").removeClass("hidden");
+				} else {
+					$(".file-viewer-lead-capture").addClass("hidden");
+				}
 			}
 		}
 	},
@@ -73,6 +79,12 @@ const fileViewer = {
 			self.saveTabState();
 
 			self.switchTab(tabInside);
+			if (tabInside === "lead-capture") {
+				$(".file-viewer-lead-capture").removeClass("hidden");
+			} else {
+				$(".file-viewer-lead-capture").addClass("hidden");
+			}
+			self.checkSidebarScroll();
 		});
 	},
 	getCurrentSidebarWidth: function () {
@@ -148,6 +160,47 @@ const fileViewer = {
 		const hasScroll = element.scrollHeight > element.clientHeight;
 
 		this.sidebar.toggleClass("sidebar-has-scrollbar", hasScroll);
+	},
+	initLeadCapture: function () {
+		const showSkipButtonInput = $("#allow-viewer-to-skip");
+		showSkipButtonInput.on("change", function () {
+			if (showSkipButtonInput.is(":checked")) {
+				$(".file-viewer-lead-capture-skip-button").removeClass("hidden");
+			} else {
+				$(".file-viewer-lead-capture-skip-button").addClass("hidden");
+			}
+		});
+
+		const formTitle = $(".file-viewer-lead-capture-title");
+		const formTitleInput = $("#file-viewer-lead-capture-title-input");
+		formTitleInput.on("input", function () {
+			const title = formTitleInput.val();
+			if (title) {
+				formTitle.text(title);
+			}
+		});
+
+		const formDescription = $(".file-viewer-lead-capture-description");
+		const formDescriptionInput = $(
+			"#file-viewer-lead-capture-description-input",
+		);
+		formDescriptionInput.on("input", function () {
+			const description = formDescriptionInput.val();
+			if (description) {
+				formDescription.text(description);
+			}
+		});
+
+		const formButtonText = $("#file-viewer-lead-capture-button-submit");
+		const formButtonTextInput = $(
+			"#file-viewer-lead-capture-button-text-input",
+		);
+		formButtonTextInput.on("input", function () {
+			const buttonText = formButtonTextInput.val();
+			if (buttonText) {
+				formButtonText.text(buttonText);
+			}
+		});
 	},
 };
 
