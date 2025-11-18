@@ -87,7 +87,7 @@
 		<link rel="stylesheet" href="../dist/output.css" />
 	</head>
 	<body class="dashboard bg-[#F6F6F6]">
-		<div id="lightbox" class="hidden">
+		<div id="lightbox" class="">
 			<div class="modal" id="modal">
 				<div
 					class="modal-dialog modal-bs modal-analytics max-w-[67.5rem] max-h-[80vh] hidden"
@@ -1120,6 +1120,208 @@
 						</div>
 					</div>
 				</div>
+				<div
+					class="modal-dialog modal-bs modal-analytics max-w-[67.5rem] max-h-[80vh]"
+				>
+					<button
+						type="button"
+						class="close pull-right"
+						data-dismiss="modal"
+						data-dialog-close
+					>
+						<span class="icn-close"></span>
+						<span class="sr-only">Close modal</span>
+					</button>
+					<div class="modal-content h-[80vh] flex flex-col">
+						<div class="py-4 px-6 border-b border-gray-400 flex-shrink-0">
+							<strong>AI Actions</strong>
+						</div>
+						<div
+							class="grid grid-cols-[102px_minmax(200px,280px)_1fr] flex-grow-1 flex-shrink-1 min-h-0"
+						>
+							<ul
+								class="flex flex-col gap-2.5 py-5 ml-3.5 border-r border-gray-400 h-full"
+							>
+								<li
+									class="active flex flex-col text-gray-900 [&.active]:bg-blue-500/10 [&.active]:text-blue-500 rounded-lg py-2.5 w-[4.375rem] items-center justify-center gap-1 hover:bg-gray-200 cursor-pointer"
+								>
+									<svg class="icon icon-sm">
+										<use href="#icon-file"></use>
+									</svg>
+									<span class="text-[13px]/[18px] font-medium">Docs</span>
+								</li>
+								<li
+									class="flex flex-col text-gray-900 [&.active]:bg-blue-500/10 [&.active]:text-blue-500 rounded-lg py-2.5 w-[4.375rem] items-center justify-center gap-1 hover:bg-gray-200 cursor-pointer"
+								>
+									<svg class="icon icon-sm">
+										<use href="#icon-task"></use>
+									</svg>
+									<span class="text-[13px]/[18px] font-medium">Task</span>
+								</li>
+								<li
+									class="flex flex-col text-gray-900 [&.active]:bg-blue-500/10 [&.active]:text-blue-500 rounded-lg py-2.5 w-[4.375rem] items-center justify-center gap-1 hover:bg-gray-200 cursor-pointer"
+								>
+									<svg class="icon icon-sm [--icon-stroke-width:1.2]">
+										<use href="#icon-comment"></use>
+									</svg>
+									<span class="text-[13px]/[18px] font-medium">Message</span>
+								</li>
+							</ul>
+							<div class="pt-4.5 px-3 border-r border-gray-400">
+								<strong>Templates</strong>
+								<ul class="space-y-1 mt-4">
+									<li
+										class="active [&.active]:bg-blue-100 [&.active]:text-blue-500 h-10 rounded-lg flex items-center gap-2 px-3 cursor-pointer hover:bg-gray-200"
+									>
+										<svg class="icon icon-sm">
+											<use href="#icon-file-text"></use>
+										</svg>
+										<span class="[.active_&]:font-medium text-sm">SOP</span>
+									</li>
+									<li
+										class="[&.active]:bg-blue-100 [&.active]:text-blue-500 h-10 rounded-lg flex items-center gap-2 px-3 cursor-pointer hover:bg-gray-200"
+									>
+										<svg class="icon icon-sm">
+											<use href="#icon-list-todo"></use>
+										</svg>
+										<span class="[.active_&]:font-medium text-sm"
+											>Step by Step</span
+										>
+									</li>
+									<li
+										class="[&.active]:bg-blue-100 [&.active]:text-blue-500 h-10 rounded-lg flex items-center gap-2 px-3 cursor-pointer hover:bg-gray-200"
+									>
+										<svg class="icon icon-sm">
+											<use href="#icon-git-compare"></use>
+										</svg>
+										<span class="[.active_&]:font-medium text-sm"
+											>PR Description</span
+										>
+									</li>
+									<li
+										class="[&.active]:bg-blue-100 [&.active]:text-blue-500 h-10 rounded-lg flex items-center gap-2 px-3 cursor-pointer hover:bg-gray-200"
+									>
+										<svg class="icon icon-sm">
+											<use href="#icon-box"></use>
+										</svg>
+										<span class="[.active_&]:font-medium text-sm"
+											>Code Docs</span
+										>
+									</li>
+									<li
+										class="[&.active]:bg-blue-100 [&.active]:text-blue-500 h-10 rounded-lg flex items-center gap-2 px-3 cursor-pointer hover:bg-gray-200"
+									>
+										<svg class="icon icon-m">
+											<use href="#icon-members-medium"></use>
+										</svg>
+										<span class="[.active_&]:font-medium text-sm"
+											>Slack &amp; Teams</span
+										>
+									</li>
+								</ul>
+							</div>
+							<div class="pt-4.5 px-3 border-r border-gray-400 hidden">
+								<strong>Attributes</strong>
+								<div
+									class="grid grid-cols-[auto_1fr] text-[13px] gap-3 items-center pl-3 mt-3 [&_span]:h-8 [&_span]:flex [&_span]:items-center"
+								>
+									<span class="text-gray-900">Space</span>
+									<span class="font-medium">Jumpshare</span>
+
+									<span class="text-gray-900">Project</span>
+									<span class="font-medium">Testing Phase</span>
+
+									<span class="text-gray-900">Type</span>
+									<span class="font-medium">Unauthorized</span>
+
+									<span class="text-gray-900">Priority</span>
+									<span class="font-medium">Highest</span>
+
+									<span class="text-gray-900">Assignee</span>
+									<span class="font-medium">John Doe</span>
+
+									<span class="text-gray-900">Date</span>
+									<span class="font-medium">12/04/2024</span>
+								</div>
+							</div>
+							<div class="ai-actions-content">
+								<h3>Improving Typing Speed for Better Productivity</h3>
+								<p>
+									In this video, the speaker emphasizes the importance of
+									improving typing speed to enhance productivity and job
+									prospects. They highlight the benefits of increased typing
+									speed, such as boosting confidence and efficiency when working
+									on tasks that require typing. The speaker also stresses the
+									significance of practicing consistently and using websites
+									with interfaces that are preferred by the user to enhance
+									typing skills.
+								</p>
+								<strong>Steps Required:</strong>
+								<p>
+									The increased typing speed leads to improved con fidence and
+									efficiency when working on tasks that require typing, such as
+									writing emails, messages, or creating presentations.
+								</p>
+								<strong>Acceptance Criteria:</strong>
+								<ul>
+									<li>
+										Users should understand the importance of typing speed for
+										productivity.
+									</li>
+									<li>
+										Users should be able to identify the benefits of increased
+										typing speed in their daily tasks.
+									</li>
+									<li>
+										Focus on improving typing speed as a valuable side skill.
+									</li>
+								</ul>
+								<strong>Jumpshare Link</strong>
+								<a href="https://yourlink.com/3948faS49g9530gdopmbJA"
+									>https://yourlink.com/3948faS49g9530gdopmbJA</a
+								>
+							</div>
+						</div>
+						<div
+							class="flex justify-end items-center border-t border-gray-400 pt-3 pb-3.5 px-4 flex-shrink-0"
+						>
+							<div class="flex gap-3">
+								<button
+									type="button"
+									class="btn btn-border-default h-10 min-w-38"
+								>
+									<svg class="icon icon-md">
+										<use href="#icon-copy"></use>
+									</svg>
+									<span>Copy Text</span>
+								</button>
+								<button type="button" class="btn btn-primary h-10">
+									<svg
+										width="18"
+										height="18"
+										viewBox="0 0 18 18"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M8.6475 1.5C8.6475 3.3 10.125 4.7625 11.91 4.7625H13.245V6.0375C13.245 7.8375 14.7 9.2925 16.5 9.3V2.13C16.5 1.96291 16.4336 1.80267 16.3155 1.68452C16.1973 1.56637 16.0371 1.5 15.87 1.5H8.6475ZM5.0775 5.1C5.08145 5.96206 5.42565 6.7877 6.03523 7.39727C6.6448 8.00685 7.47044 8.35105 8.3325 8.355H9.6825V9.645C9.68645 10.5071 10.0306 11.3327 10.6402 11.9423C11.2498 12.5519 12.0754 12.8961 12.9375 12.9V5.7225C12.9356 5.55801 12.8693 5.4008 12.753 5.28448C12.6367 5.16816 12.4795 5.10195 12.315 5.1H5.0775ZM1.5 8.7C1.5 10.5 2.9625 11.955 4.7625 11.955H6.0975V13.245C6.105 15.0375 7.56 16.5 9.3525 16.5V9.3225C9.3525 9.15541 9.28613 8.99517 9.16798 8.87702C9.04983 8.75887 8.88959 8.6925 8.7225 8.6925L1.5 8.7Z"
+											fill="white"
+										/>
+									</svg>
+									<span>Connect your App</span>
+									<span class="relative ml-2.5 pl-4">
+										<span
+											class="absolute top-1/2 -translate-y-1/2 left-0 w-px h-full bg-white"
+										></span>
+										<svg class="icon icon-sm">
+											<use href="#icon-check-bottom"></use>
+										</svg>
+									</span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div class="modal-backdrop"></div>
 		</div>
@@ -2034,6 +2236,7 @@
 								>
 									<div
 										class="flex justify-between items-center gap-5 py-6 border-b border-gray-400 cursor-pointer"
+										data-tab-inside="customize-video-player"
 									>
 										<div class="flex flex-col gap-1 text-sm truncate">
 											<strong class="font-semibold truncate"
@@ -2049,6 +2252,7 @@
 									</div>
 									<div
 										class="flex justify-between items-center gap-5 py-6 border-b border-gray-400 cursor-pointer"
+										data-tab-inside="customize-captions"
 									>
 										<div class="flex flex-col gap-1 text-sm truncate">
 											<strong class="font-semibold truncate"
@@ -2905,6 +3109,500 @@
 								>
 									Save
 								</button>
+							</div>
+						</div>
+						<div
+							class="file-viewer-tab customize-captions hidden"
+							data-tab-inside-content="customize-captions"
+						>
+							<div class="file-viewer-tab-header">
+								<button
+									data-tab-inside-go-back
+									aria-label="Go Back"
+									type="button"
+									class="btn p-0 size-6 rounded-md hover:bg-gray-200"
+								>
+									<svg class="icon size-5">
+										<use href="#icon-chevron-left"></use>
+									</svg>
+								</button>
+								<strong class="text-base font-semibold font-sans-semi">
+									Customize Captions
+								</strong>
+							</div>
+							<div class="file-viewer-tab-content">
+								<div>
+									<span class="text-sm font-medium"> Captions Language </span>
+									<p class="text-sm text-gray-900 mt-1">
+										Choose from 50+ languages.
+									</p>
+									<div class="dropdown-wrapper mt-4">
+										<button
+											type="button"
+											class="btn btn-border-default w-full justify-between pl-4 pr-3 h-10 font-normal"
+										>
+											<span>English (US)</span>
+											<svg class="icon icon-sm">
+												<use href="#icon-chevron-down"></use>
+											</svg>
+										</button>
+									</div>
+								</div>
+								<div class="mt-7">
+									<span class="text-sm font-medium"> Caption Design </span>
+									<p class="text-sm text-gray-900 mt-1">
+										Pick a style, size, and color to make it stand out.
+									</p>
+									<div class="flex flex-wrap mt-4 gap-3">
+										<div
+											class="flex items-center gap-1 py-[3px] px-[5px] border border-gray-600 rounded-lg"
+										>
+											<button
+												type="button"
+												class="active btn size-8 [&.active]:bg-gray-400 p-0"
+											>
+												<svg
+													class="flex-shrink-0"
+													width="13"
+													height="16"
+													viewBox="0 0 13 16"
+													fill="none"
+													xmlns="http://www.w3.org/2000/svg"
+												>
+													<path
+														d="M1.29688 8.00156H8.49687C9.34557 8.00156 10.1595 8.3387 10.7596 8.93882C11.3597 9.53894 11.6969 10.3529 11.6969 11.2016C11.6969 12.0503 11.3597 12.8642 10.7596 13.4643C10.1595 14.0644 9.34557 14.4016 8.49687 14.4016H2.09687C1.8847 14.4016 1.68122 14.3173 1.53119 14.1672C1.38116 14.0172 1.29688 13.8137 1.29688 13.6016V2.40156C1.29688 2.18939 1.38116 1.98591 1.53119 1.83588C1.68122 1.68585 1.8847 1.60156 2.09687 1.60156H7.69687C8.54557 1.60156 9.3595 1.9387 9.95962 2.53882C10.5597 3.13894 10.8969 3.95287 10.8969 4.80156C10.8969 5.65026 10.5597 6.46419 9.95962 7.0643C9.3595 7.66442 8.54557 8.00156 7.69687 8.00156"
+														stroke="black"
+														stroke-width="1.3"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+													></path>
+												</svg>
+												<span class="sr-only">Font Normal</span>
+											</button>
+											<button
+												type="button"
+												class="btn size-8 [&.active]:bg-gray-400 p-0"
+											>
+												<svg
+													class="flex-shrink-0"
+													width="14"
+													height="14"
+													viewBox="0 0 14 14"
+													fill="none"
+													xmlns="http://www.w3.org/2000/svg"
+												>
+													<path
+														d="M12.5984 0.601562H5.39844M8.59844 13.4016H1.39844M9.39844 0.601562L4.59844 13.4016"
+														stroke="black"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+													></path>
+												</svg>
+												<span class="sr-only">Font Italic</span>
+											</button>
+										</div>
+										<button
+											type="button"
+											class="btn btn-border-default font-normal px-4 justify-between w-21 h-10"
+										>
+											<span class="font-medium">24px</span>
+											<svg class="icon icon-sm">
+												<use href="#icon-chevron-down"></use>
+											</svg>
+										</button>
+										<button
+											type="button"
+											class="btn btn-border-default font-normal px-4 justify-between flex-grow-1 min-w-1/3 max-xs:w-full h-10"
+										>
+											<span class="font-medium">Style</span>
+											<span class="flex items-center gap-1.5">
+												<span>Highlight</span>
+												<svg class="icon icon-sm">
+													<use href="#icon-chevron-down"></use>
+												</svg>
+											</span>
+										</button>
+										<button
+											type="button"
+											class="btn btn-border-default font-normal pl-4 pr-3 justify-between flex-grow-1 max-xs:w-full h-10"
+										>
+											<span>Text Color</span>
+											<span
+												class="flex-shrink-0 size-[24px] border border-gray-500 rounded-md bg-white"
+											></span>
+										</button>
+										<button
+											type="button"
+											class="btn btn-border-default font-normal pl-4 pr-3 justify-between flex-grow-1 max-xs:w-full h-10"
+										>
+											<span>Text Outline</span>
+											<span
+												class="flex-shrink-0 size-[24px] bg-[#B3F976] rounded-md"
+											></span>
+										</button>
+										<button
+											type="button"
+											class="btn btn-border-default font-normal pl-4 pr-3 justify-between w-full h-10"
+										>
+											<span>Background Color</span>
+											<span
+												class="flex-shrink-0 size-[24px] bg-[#FF4F22] rounded-md"
+											></span>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="file-viewer-tab-footer">
+								<div class="grid grid-cols-2 gap-3">
+									<button type="button" class="btn btn-border-default h-10">
+										Set as Defaults
+									</button>
+									<button
+										type="button"
+										class="btn btn-primary font-semibold h-10"
+									>
+										Save Settings
+									</button>
+								</div>
+							</div>
+						</div>
+						<div
+							class="file-viewer-tab customize-video-player hidden"
+							data-tab-inside-content="customize-video-player"
+						>
+							<div class="file-viewer-tab-header mb-2">
+								<button
+									data-tab-inside-go-back
+									aria-label="Go Back"
+									type="button"
+									class="btn p-0 size-6 rounded-md hover:bg-gray-200"
+								>
+									<svg class="icon size-5">
+										<use href="#icon-chevron-left"></use>
+									</svg>
+								</button>
+								<strong class="text-base font-semibold font-sans-semi">
+									Customize Video Player
+								</strong>
+							</div>
+							<div class="file-viewer-tab-content">
+								<p class="text-sm text-gray-900 mb-">
+									Choose a custom color for your video player to personalize it
+									and match your company’s branding.
+								</p>
+								<svg
+									class="w-full"
+									width="430"
+									height="330"
+									viewBox="0 0 430 330"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+									xmlns:xlink="http://www.w3.org/1999/xlink"
+								>
+									<rect width="430" height="330" fill="white" />
+									<rect
+										x="20"
+										y="16"
+										width="390"
+										height="178"
+										rx="8"
+										fill="url(#paint0_linear_15920_933)"
+									/>
+									<rect
+										x="20"
+										y="16"
+										width="390"
+										height="178"
+										rx="8"
+										fill="url(#paint1_linear_15920_933)"
+									/>
+									<rect
+										x="20"
+										y="210"
+										width="390"
+										height="18"
+										rx="9"
+										fill="url(#paint2_linear_15920_933)"
+									/>
+									<g filter="url(#filter0_d_15920_933)">
+										<circle
+											cx="377"
+											cy="219"
+											r="7.5"
+											stroke="white"
+											stroke-width="3"
+											shape-rendering="crispEdges"
+										/>
+									</g>
+									<rect
+										x="20"
+										y="244"
+										width="390"
+										height="18"
+										rx="9"
+										fill="url(#pattern0_15920_933)"
+										fill-opacity="0.1"
+									/>
+									<rect
+										x="20"
+										y="244"
+										width="390"
+										height="18"
+										rx="9"
+										fill="url(#paint3_linear_15920_933)"
+									/>
+									<g filter="url(#filter1_d_15920_933)">
+										<circle
+											cx="344"
+											cy="253"
+											r="7.5"
+											stroke="white"
+											stroke-width="3"
+											shape-rendering="crispEdges"
+										/>
+									</g>
+									<rect
+										x="19.5"
+										y="277.5"
+										width="81"
+										height="37"
+										rx="8.5"
+										fill="white"
+									/>
+									<rect
+										x="19.5"
+										y="277.5"
+										width="81"
+										height="37"
+										rx="8.5"
+										stroke="#D3D6DC"
+									/>
+									<path
+										d="M33.233 301V290.818H34.4659V295.352H39.8949V290.818H41.1278V301H39.8949V296.446H34.4659V301H33.233ZM46.6388 301.159C45.9031 301.159 45.2683 300.997 44.7347 300.672C44.2044 300.344 43.7951 299.886 43.5067 299.3C43.2217 298.71 43.0792 298.024 43.0792 297.241C43.0792 296.459 43.2217 295.77 43.5067 295.173C43.7951 294.573 44.1961 294.106 44.7099 293.771C45.2269 293.433 45.8301 293.264 46.5195 293.264C46.9173 293.264 47.31 293.33 47.6978 293.463C48.0856 293.596 48.4386 293.811 48.7567 294.109C49.0749 294.404 49.3285 294.795 49.5174 295.283C49.7063 295.77 49.8008 296.37 49.8008 297.082V297.58H43.9144V296.565H48.6076C48.6076 296.134 48.5214 295.75 48.3491 295.412C48.18 295.074 47.9381 294.807 47.6232 294.612C47.3117 294.416 46.9438 294.318 46.5195 294.318C46.0522 294.318 45.6478 294.434 45.3065 294.666C44.9684 294.895 44.7082 295.193 44.5259 295.561C44.3436 295.929 44.2525 296.323 44.2525 296.744V297.42C44.2525 297.997 44.3519 298.486 44.5508 298.887C44.753 299.285 45.033 299.588 45.391 299.797C45.7489 300.002 46.1649 300.105 46.6388 300.105C46.9471 300.105 47.2255 300.062 47.4741 299.976C47.726 299.886 47.9431 299.754 48.1254 299.578C48.3076 299.399 48.4485 299.177 48.5479 298.912L49.6815 299.23C49.5621 299.615 49.3616 299.953 49.0799 300.244C48.7982 300.533 48.4502 300.758 48.0359 300.92C47.6216 301.08 47.1559 301.159 46.6388 301.159ZM52.2555 293.364L54.085 296.486L55.9146 293.364H57.2669L54.801 297.182L57.2669 301H55.9146L54.085 298.037L52.2555 301H50.9032L53.3294 297.182L50.9032 293.364H52.2555Z"
+										fill="#0A0A0B"
+									/>
+									<g clip-path="url(#clip0_15920_933)">
+										<path
+											fill-rule="evenodd"
+											clip-rule="evenodd"
+											d="M79.5322 298.782C79.3916 298.923 79.2008 299.002 79.002 299.002C78.8031 299.002 78.6124 298.923 78.4717 298.782L74.229 294.539C74.1573 294.47 74.1002 294.388 74.0609 294.296C74.0216 294.205 74.0009 294.106 74 294.007C73.9992 293.907 74.0181 293.808 74.0559 293.716C74.0936 293.624 74.1493 293.54 74.2197 293.47C74.2901 293.399 74.3738 293.344 74.466 293.306C74.5582 293.268 74.6569 293.249 74.7565 293.25C74.8561 293.251 74.9545 293.272 75.046 293.311C75.1375 293.35 75.2203 293.407 75.2895 293.479L79.002 297.191L82.7145 293.479C82.8559 293.342 83.0454 293.267 83.242 293.268C83.4387 293.27 83.6268 293.349 83.7658 293.488C83.9049 293.627 83.9838 293.815 83.9855 294.012C83.9872 294.209 83.9116 294.398 83.775 294.539L79.5322 298.782Z"
+											fill="#0A0A0B"
+										/>
+									</g>
+									<rect
+										x="107.5"
+										y="277.5"
+										width="235"
+										height="37"
+										rx="8.5"
+										fill="white"
+									/>
+									<rect
+										x="107.5"
+										y="277.5"
+										width="235"
+										height="37"
+										rx="8.5"
+										stroke="#D3D6DC"
+									/>
+									<path
+										d="M124.872 301L126.543 290.818H127.537L125.866 301H124.872ZM120.239 298.176L120.398 297.182H127.994L127.835 298.176H120.239ZM121.293 301L122.963 290.818H123.957L122.287 301H121.293ZM120.835 294.636L120.994 293.642H128.591L128.432 294.636H120.835Z"
+										fill="#707070"
+									/>
+									<path
+										d="M133.585 298.912V297.898L138.059 290.818H138.795V292.389H138.298L134.917 297.739V297.818H140.943V298.912H133.585ZM138.377 301V298.604V298.131V290.818H139.551V301H138.377ZM142.985 301V290.818H149.09V291.912H144.218V295.352H148.633V296.446H144.218V301H142.985ZM150.784 298.912V297.898L155.259 290.818H155.994V292.389H155.497L152.116 297.739V297.818H158.142V298.912H150.784ZM155.577 301V298.604V298.131V290.818H156.75V301H155.577ZM163.386 301.139C162.968 301.133 162.551 301.053 162.133 300.901C161.715 300.748 161.334 300.491 160.99 300.13C160.645 299.765 160.368 299.273 160.159 298.653C159.95 298.03 159.846 297.248 159.846 296.307C159.846 295.405 159.931 294.607 160.1 293.911C160.269 293.211 160.514 292.623 160.835 292.146C161.157 291.665 161.545 291.3 161.999 291.052C162.456 290.803 162.972 290.679 163.545 290.679C164.115 290.679 164.622 290.793 165.066 291.022C165.514 291.247 165.878 291.562 166.16 291.967C166.442 292.371 166.624 292.837 166.707 293.364H165.494C165.381 292.906 165.162 292.527 164.838 292.225C164.513 291.924 164.082 291.773 163.545 291.773C162.756 291.773 162.135 292.116 161.681 292.802C161.23 293.488 161.003 294.451 160.999 295.69H161.079C161.265 295.409 161.485 295.168 161.74 294.969C161.999 294.767 162.284 294.612 162.595 294.502C162.907 294.393 163.237 294.338 163.585 294.338C164.168 294.338 164.702 294.484 165.186 294.776C165.669 295.064 166.057 295.463 166.349 295.974C166.641 296.481 166.786 297.062 166.786 297.719C166.786 298.348 166.646 298.925 166.364 299.449C166.082 299.969 165.686 300.384 165.176 300.692C164.669 300.997 164.072 301.146 163.386 301.139ZM163.386 300.045C163.803 300.045 164.178 299.941 164.509 299.732C164.844 299.523 165.108 299.243 165.3 298.892C165.495 298.541 165.593 298.15 165.593 297.719C165.593 297.298 165.499 296.915 165.31 296.57C165.124 296.222 164.867 295.946 164.539 295.74C164.214 295.535 163.843 295.432 163.426 295.432C163.111 295.432 162.817 295.495 162.546 295.621C162.274 295.743 162.035 295.912 161.83 296.128C161.628 296.343 161.468 296.59 161.352 296.869C161.236 297.144 161.178 297.434 161.178 297.739C161.178 298.143 161.273 298.521 161.462 298.872C161.654 299.223 161.916 299.507 162.247 299.722C162.582 299.938 162.962 300.045 163.386 300.045ZM168.92 301V290.818H175.065V291.912H170.153V295.352H174.747V296.446H170.153V299.906H175.145V301H168.92ZM180.29 301.139C179.707 301.139 179.182 301.023 178.714 300.791C178.247 300.559 177.873 300.241 177.591 299.837C177.309 299.432 177.155 298.972 177.129 298.455H178.322C178.368 298.915 178.577 299.296 178.948 299.598C179.323 299.896 179.77 300.045 180.29 300.045C180.708 300.045 181.079 299.948 181.404 299.752C181.732 299.557 181.989 299.288 182.175 298.947C182.364 298.602 182.458 298.213 182.458 297.778C182.458 297.334 182.36 296.938 182.165 296.59C181.973 296.239 181.707 295.962 181.369 295.76C181.031 295.558 180.645 295.455 180.211 295.452C179.899 295.448 179.58 295.496 179.251 295.596C178.923 295.692 178.653 295.816 178.441 295.969L177.288 295.83L177.904 290.818H183.194V291.912H178.938L178.58 294.915H178.64C178.849 294.749 179.111 294.612 179.425 294.502C179.74 294.393 180.068 294.338 180.41 294.338C181.033 294.338 181.588 294.487 182.075 294.786C182.566 295.08 182.95 295.485 183.229 295.999C183.51 296.512 183.651 297.099 183.651 297.759C183.651 298.408 183.505 298.988 183.214 299.499C182.925 300.006 182.528 300.407 182.021 300.702C181.513 300.993 180.937 301.139 180.29 301.139Z"
+										fill="#0A0A0B"
+									/>
+									<rect
+										x="349.5"
+										y="277.5"
+										width="61"
+										height="37"
+										rx="8.5"
+										stroke="#D3D6DC"
+									/>
+									<path
+										d="M366.634 290.818V301H365.401V292.111H365.341L362.855 293.761V292.509L365.401 290.818H366.634ZM372.883 301.139C372.134 301.139 371.496 300.935 370.969 300.528C370.442 300.117 370.039 299.522 369.761 298.743C369.482 297.961 369.343 297.016 369.343 295.909C369.343 294.809 369.482 293.869 369.761 293.09C370.042 292.308 370.447 291.711 370.974 291.3C371.504 290.886 372.14 290.679 372.883 290.679C373.625 290.679 374.26 290.886 374.787 291.3C375.317 291.711 375.722 292.308 376 293.09C376.282 293.869 376.423 294.809 376.423 295.909C376.423 297.016 376.283 297.961 376.005 298.743C375.727 299.522 375.324 300.117 374.797 300.528C374.27 300.935 373.632 301.139 372.883 301.139ZM372.883 300.045C373.625 300.045 374.202 299.687 374.613 298.972C375.024 298.256 375.229 297.235 375.229 295.909C375.229 295.027 375.135 294.277 374.946 293.657C374.76 293.037 374.492 292.565 374.141 292.24C373.793 291.915 373.373 291.753 372.883 291.753C372.147 291.753 371.572 292.116 371.158 292.842C370.743 293.564 370.536 294.587 370.536 295.909C370.536 296.791 370.629 297.54 370.815 298.156C371 298.773 371.267 299.242 371.615 299.563C371.966 299.885 372.389 300.045 372.883 300.045ZM381.633 301.139C380.884 301.139 380.246 300.935 379.719 300.528C379.192 300.117 378.789 299.522 378.511 298.743C378.232 297.961 378.093 297.016 378.093 295.909C378.093 294.809 378.232 293.869 378.511 293.09C378.792 292.308 379.197 291.711 379.724 291.3C380.254 290.886 380.89 290.679 381.633 290.679C382.375 290.679 383.01 290.886 383.537 291.3C384.067 291.711 384.472 292.308 384.75 293.09C385.032 293.869 385.173 294.809 385.173 295.909C385.173 297.016 385.033 297.961 384.755 298.743C384.477 299.522 384.074 300.117 383.547 300.528C383.02 300.935 382.382 301.139 381.633 301.139ZM381.633 300.045C382.375 300.045 382.952 299.687 383.363 298.972C383.774 298.256 383.979 297.235 383.979 295.909C383.979 295.027 383.885 294.277 383.696 293.657C383.51 293.037 383.242 292.565 382.891 292.24C382.543 291.915 382.123 291.753 381.633 291.753C380.897 291.753 380.322 292.116 379.908 292.842C379.493 293.564 379.286 294.587 379.286 295.909C379.286 296.791 379.379 297.54 379.565 298.156C379.75 298.773 380.017 299.242 380.365 299.563C380.716 299.885 381.139 300.045 381.633 300.045ZM392.252 299.091V298.554C392.252 298.183 392.328 297.843 392.481 297.535C392.637 297.223 392.862 296.975 393.157 296.789C393.455 296.6 393.817 296.506 394.241 296.506C394.672 296.506 395.033 296.6 395.325 296.789C395.616 296.975 395.837 297.223 395.986 297.535C396.135 297.843 396.21 298.183 396.21 298.554V299.091C396.21 299.462 396.133 299.804 395.981 300.115C395.832 300.423 395.61 300.672 395.315 300.861C395.023 301.046 394.665 301.139 394.241 301.139C393.81 301.139 393.447 301.046 393.152 300.861C392.857 300.672 392.633 300.423 392.481 300.115C392.328 299.804 392.252 299.462 392.252 299.091ZM393.266 298.554V299.091C393.266 299.399 393.339 299.676 393.485 299.921C393.631 300.163 393.883 300.284 394.241 300.284C394.589 300.284 394.834 300.163 394.977 299.921C395.122 299.676 395.195 299.399 395.195 299.091V298.554C395.195 298.246 395.126 297.971 394.987 297.729C394.847 297.483 394.599 297.361 394.241 297.361C393.893 297.361 393.643 297.483 393.49 297.729C393.341 297.971 393.266 298.246 393.266 298.554ZM387.181 293.264V292.727C387.181 292.356 387.257 292.016 387.41 291.708C387.566 291.397 387.791 291.148 388.086 290.962C388.384 290.773 388.746 290.679 389.17 290.679C389.601 290.679 389.962 290.773 390.254 290.962C390.545 291.148 390.766 291.397 390.915 291.708C391.064 292.016 391.138 292.356 391.138 292.727V293.264C391.138 293.635 391.062 293.977 390.91 294.288C390.761 294.597 390.539 294.845 390.244 295.034C389.952 295.22 389.594 295.312 389.17 295.312C388.739 295.312 388.376 295.22 388.081 295.034C387.786 294.845 387.562 294.597 387.41 294.288C387.257 293.977 387.181 293.635 387.181 293.264ZM388.195 292.727V293.264C388.195 293.572 388.268 293.849 388.414 294.094C388.56 294.336 388.812 294.457 389.17 294.457C389.518 294.457 389.763 294.336 389.906 294.094C390.051 293.849 390.124 293.572 390.124 293.264V292.727C390.124 292.419 390.055 292.144 389.915 291.902C389.776 291.657 389.528 291.534 389.17 291.534C388.822 291.534 388.571 291.657 388.419 291.902C388.27 292.144 388.195 292.419 388.195 292.727ZM387.559 301L394.559 290.818H395.692L388.692 301H387.559Z"
+										fill="#0A0A0B"
+									/>
+									<circle
+										cx="340"
+										cy="63"
+										r="9"
+										stroke="white"
+										stroke-width="2"
+									/>
+									<defs>
+										<filter
+											id="filter0_d_15920_933"
+											x="364"
+											y="206"
+											width="26"
+											height="26"
+											filterUnits="userSpaceOnUse"
+											color-interpolation-filters="sRGB"
+										>
+											<feFlood flood-opacity="0" result="BackgroundImageFix" />
+											<feColorMatrix
+												in="SourceAlpha"
+												type="matrix"
+												values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+												result="hardAlpha"
+											/>
+											<feOffset />
+											<feGaussianBlur stdDeviation="2" />
+											<feComposite in2="hardAlpha" operator="out" />
+											<feColorMatrix
+												type="matrix"
+												values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.37 0"
+											/>
+											<feBlend
+												mode="normal"
+												in2="BackgroundImageFix"
+												result="effect1_dropShadow_15920_933"
+											/>
+											<feBlend
+												mode="normal"
+												in="SourceGraphic"
+												in2="effect1_dropShadow_15920_933"
+												result="shape"
+											/>
+										</filter>
+										<pattern
+											id="pattern0_15920_933"
+											patternContentUnits="objectBoundingBox"
+											width="0.0278974"
+											height="0.604444"
+										>
+											<use
+												xlink:href="#image0_15920_933"
+												transform="scale(0.000435897 0.00944444)"
+											/>
+										</pattern>
+										<filter
+											id="filter1_d_15920_933"
+											x="331"
+											y="240"
+											width="26"
+											height="26"
+											filterUnits="userSpaceOnUse"
+											color-interpolation-filters="sRGB"
+										>
+											<feFlood flood-opacity="0" result="BackgroundImageFix" />
+											<feColorMatrix
+												in="SourceAlpha"
+												type="matrix"
+												values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+												result="hardAlpha"
+											/>
+											<feOffset />
+											<feGaussianBlur stdDeviation="2" />
+											<feComposite in2="hardAlpha" operator="out" />
+											<feColorMatrix
+												type="matrix"
+												values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.37 0"
+											/>
+											<feBlend
+												mode="normal"
+												in2="BackgroundImageFix"
+												result="effect1_dropShadow_15920_933"
+											/>
+											<feBlend
+												mode="normal"
+												in="SourceGraphic"
+												in2="effect1_dropShadow_15920_933"
+												result="shape"
+											/>
+										</filter>
+										<linearGradient
+											id="paint0_linear_15920_933"
+											x1="20"
+											y1="194"
+											x2="20"
+											y2="16"
+											gradientUnits="userSpaceOnUse"
+										>
+											<stop />
+											<stop offset="1" stop-color="#C4C4C4" stop-opacity="0" />
+										</linearGradient>
+										<linearGradient
+											id="paint1_linear_15920_933"
+											x1="20"
+											y1="16"
+											x2="410"
+											y2="16"
+											gradientUnits="userSpaceOnUse"
+										>
+											<stop stop-color="#4F46E5" stop-opacity="0" />
+											<stop offset="1" stop-color="#362BF0" />
+										</linearGradient>
+										<linearGradient
+											id="paint2_linear_15920_933"
+											x1="20"
+											y1="219"
+											x2="410"
+											y2="219"
+											gradientUnits="userSpaceOnUse"
+										>
+											<stop offset="0.0521219" stop-color="#FF0000" />
+											<stop offset="0.164776" stop-color="#FF8A00" />
+											<stop offset="0.27743" stop-color="#FFE600" />
+											<stop offset="0.393479" stop-color="#14FF00" />
+											<stop offset="0.493654" stop-color="#00A3FF" />
+											<stop offset="0.611759" stop-color="#0500FF" />
+											<stop offset="0.722596" stop-color="#AD00FF" />
+											<stop offset="0.83525" stop-color="#FF00C7" />
+											<stop offset="0.946088" stop-color="#FF0000" />
+										</linearGradient>
+										<linearGradient
+											id="paint3_linear_15920_933"
+											x1="20"
+											y1="253"
+											x2="410"
+											y2="253"
+											gradientUnits="userSpaceOnUse"
+										>
+											<stop stop-color="#4F46E5" stop-opacity="0" />
+											<stop offset="1" stop-color="#4F46E5" />
+										</linearGradient>
+										<clipPath id="clip0_15920_933">
+											<rect
+												width="18"
+												height="18"
+												fill="white"
+												transform="translate(70 287)"
+											/>
+										</clipPath>
+										<image
+											id="image0_15920_933"
+											width="64"
+											height="64"
+											preserveAspectRatio="none"
+											xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAA40lEQVR4Xu3bQQ6EQAhEUbj/oXsO8Sdh4XOvJAi/qkF3Zt6E6710++xuiD6T40uACtACqYlzD2IACFKBkoHcgmSQDJJBMngKIT6ADygF6DSYfcCLTzg/z0eGrASogDbT0gKxB2MB5pkiBoBgrEEMwIBjLx9fAAiCIAhygmkkRgYjhWMHditsL2AvYC+QIHjdwzk+BmAABmBAWc1kCF0bKRAEQRAEQRAMGaACbaCUz/P5BRiKxhQaiV07uRjfYgQDMKDpGAhGCMUCzD4CBEEw1iAGYIBPZMJh+g8/P8cKpAJfV4EfMee/sLtaEFIAAAAASUVORK5CYII="
+										/>
+									</defs>
+								</svg>
+							</div>
+							<div class="file-viewer-tab-footer">
+								<div class="grid grid-cols-2 gap-3">
+									<button type="button" class="btn btn-border-default h-10">
+										Set as Defaults
+									</button>
+									<button
+										type="button"
+										class="btn btn-primary font-semibold h-10"
+									>
+										Save Settings
+									</button>
+								</div>
+								<div class="mt-6 rounded-lg bg-[#F6F6F6] py-2.5 px-4">
+									<p class="text-sm text-gray-900">
+										<span class="text-dark-800 font-normal">Tip:</span> Use
+										solid colors that are accessible and high visibility,
+										therefore improving the viewing experience for those with
+										visual and/or color impairment.
+									</p>
+								</div>
 							</div>
 						</div>
 					</div>
