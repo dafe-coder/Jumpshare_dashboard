@@ -13,6 +13,7 @@ const fileViewer = {
 	startWidth: 0,
 	tabHistory: [],
 	currentTab: null,
+	isReplyMode: false,
 	init: function () {
 		this.sidebar = $("#file-viewer-sidebar");
 		this.resizeHandle = $("#file-viewer-resize-handle-sidebar");
@@ -23,6 +24,7 @@ const fileViewer = {
 		this.checkSidebarScroll();
 		this.initContentTab();
 		this.initLeadCapture();
+		this.initCommentNavigation();
 	},
 	getCurrentActiveTab: function () {
 		const activeContent = this.sidebar.find(
@@ -200,6 +202,84 @@ const fileViewer = {
 			if (buttonText) {
 				formButtonText.text(buttonText);
 			}
+		});
+	},
+	initCommentNavigation: function () {
+		const commentDrawButton = $("#comment-draw-button");
+		const commentBox = $(".comment-box");
+		const commentTextarea = $("#comment-textarea");
+		const commentCancelButton = $("#comment-cancel-button");
+		const commentReplyBtn = $(".comment-reply-btn");
+		const replyBlock = `<li
+								class="border border-blue-500 rounded-xl flex flex-col gap-4 px-3 pt-4 pb-3.5 mx-3 relative"
+							>
+								<textarea
+									name="reply-comment"
+									id="reply-comment"
+									class="w-full outline-none border-none text-sm text-gray-900 placeholder:text-gray-900 resize-none mx-2"
+									rows="1"
+									placeholder="Leave a reply"
+								></textarea>
+								<div class="flex justify-between gap-2">
+									<button
+										aria-label="Choose Smile"
+										type="button"
+										class="btn btn-white hover:bg-gray-200 p-0 size-8"
+									>
+										<svg class="icon size-4">
+											<use href="#icon-smile"></use>
+										</svg>
+									</button>
+									<div class="flex items-center gap-2">
+										<button
+											type="button"
+											class="btn btn-transparent h-7.5 px-3.5 comment-reply-cancel-btn"
+										>
+											Cancel
+										</button>
+										<button
+											type="button"
+											class="btn btn-primary h-7.5 px-3.5"
+										>
+											Reply
+										</button>
+									</div>
+								</div>
+							</li>`;
+
+		commentDrawButton.on("click", function () {
+			commentDrawButton.toggleClass("active");
+			commentBox.toggleClass("active-comment-draw-tools");
+		});
+
+		commentTextarea.on("input", function () {
+			const textareaValue = commentTextarea.val();
+			if (textareaValue.length > 0) {
+				commentBox.addClass("active-comment-box");
+			} else {
+				commentBox.removeClass("active-comment-box");
+			}
+		});
+
+		commentCancelButton.on("click", function () {
+			commentBox.removeClass("active-comment-box");
+			commentBox.removeClass("active-comment-draw-tools");
+			commentDrawButton.removeClass("active");
+			commentTextarea.val("");
+		});
+
+		commentReplyBtn.on("click", function (e) {
+			$(this).addClass("hidden");
+			const currentComment = $(this).closest("li");
+			currentComment.after(replyBlock);
+		});
+
+		$(document).on("click", ".comment-reply-cancel-btn", function (e) {
+			const replyBlockElement = $(this).closest("li");
+			const currentComment = replyBlockElement.prev("li");
+			const replyBtn = currentComment.find(".comment-reply-btn");
+			replyBtn.removeClass("hidden");
+			replyBlockElement.remove();
 		});
 	},
 };

@@ -87,7 +87,7 @@
 		<link rel="stylesheet" href="../dist/output.css" />
 	</head>
 	<body class="dashboard bg-[#F6F6F6]">
-		<div id="lightbox" class="">
+		<div id="lightbox" class="hidden">
 			<div class="modal" id="modal">
 				<div
 					class="modal-dialog modal-bs modal-analytics max-w-[67.5rem] max-h-[80vh] hidden"
@@ -1121,7 +1121,7 @@
 					</div>
 				</div>
 				<div
-					class="modal-dialog modal-bs modal-analytics max-w-[67.5rem] max-h-[80vh]"
+					class="modal-dialog modal-bs modal-ai-actions max-w-[71.75rem] max-h-[80vh] hidden"
 				>
 					<button
 						type="button"
@@ -1137,12 +1137,14 @@
 							<strong>AI Actions</strong>
 						</div>
 						<div
-							class="grid grid-cols-[102px_minmax(200px,280px)_1fr] flex-grow-1 flex-shrink-1 min-h-0"
+							data-tab-tree-wrapper
+							class="grid grid-cols-[102px_1fr] flex-grow-1 flex-shrink-1 min-h-0"
 						>
 							<ul
 								class="flex flex-col gap-2.5 py-5 ml-3.5 border-r border-gray-400 h-full"
 							>
 								<li
+									data-tab-tree-id="docs"
 									class="active flex flex-col text-gray-900 [&.active]:bg-blue-500/10 [&.active]:text-blue-500 rounded-lg py-2.5 w-[4.375rem] items-center justify-center gap-1 hover:bg-gray-200 cursor-pointer"
 								>
 									<svg class="icon icon-sm">
@@ -1151,6 +1153,7 @@
 									<span class="text-[13px]/[18px] font-medium">Docs</span>
 								</li>
 								<li
+									data-tab-tree-id="task"
 									class="flex flex-col text-gray-900 [&.active]:bg-blue-500/10 [&.active]:text-blue-500 rounded-lg py-2.5 w-[4.375rem] items-center justify-center gap-1 hover:bg-gray-200 cursor-pointer"
 								>
 									<svg class="icon icon-sm">
@@ -1159,6 +1162,7 @@
 									<span class="text-[13px]/[18px] font-medium">Task</span>
 								</li>
 								<li
+									data-tab-tree-id="message"
 									class="flex flex-col text-gray-900 [&.active]:bg-blue-500/10 [&.active]:text-blue-500 rounded-lg py-2.5 w-[4.375rem] items-center justify-center gap-1 hover:bg-gray-200 cursor-pointer"
 								>
 									<svg class="icon icon-sm [--icon-stroke-width:1.2]">
@@ -1167,119 +1171,217 @@
 									<span class="text-[13px]/[18px] font-medium">Message</span>
 								</li>
 							</ul>
-							<div class="pt-4.5 px-3 border-r border-gray-400">
-								<strong>Templates</strong>
-								<ul class="space-y-1 mt-4">
-									<li
-										class="active [&.active]:bg-blue-100 [&.active]:text-blue-500 h-10 rounded-lg flex items-center gap-2 px-3 cursor-pointer hover:bg-gray-200"
-									>
-										<svg class="icon icon-sm">
-											<use href="#icon-file-text"></use>
-										</svg>
-										<span class="[.active_&]:font-medium text-sm">SOP</span>
-									</li>
-									<li
-										class="[&.active]:bg-blue-100 [&.active]:text-blue-500 h-10 rounded-lg flex items-center gap-2 px-3 cursor-pointer hover:bg-gray-200"
-									>
-										<svg class="icon icon-sm">
-											<use href="#icon-list-todo"></use>
-										</svg>
-										<span class="[.active_&]:font-medium text-sm"
-											>Step by Step</span
+							<div
+								class="grid grid-cols-[minmax(200px,280px)_1fr] min-h-0"
+								data-tab-tree-content="docs"
+								data-tab-tree-wrapper
+							>
+								<div class="pt-4.5 px-3 border-r border-gray-400">
+									<strong>Templates</strong>
+									<ul class="space-y-1 mt-4">
+										<li
+											data-tab-tree-id="sop"
+											class="active [&.active]:bg-blue-100 [&.active]:text-blue-500 h-10 rounded-lg flex items-center gap-2 px-3 cursor-pointer hover:bg-gray-200"
 										>
-									</li>
-									<li
-										class="[&.active]:bg-blue-100 [&.active]:text-blue-500 h-10 rounded-lg flex items-center gap-2 px-3 cursor-pointer hover:bg-gray-200"
-									>
-										<svg class="icon icon-sm">
-											<use href="#icon-git-compare"></use>
-										</svg>
-										<span class="[.active_&]:font-medium text-sm"
-											>PR Description</span
+											<svg class="icon icon-sm">
+												<use href="#icon-file-text"></use>
+											</svg>
+											<span class="[.active_&]:font-medium text-sm">SOP</span>
+										</li>
+										<li
+											data-tab-tree-id="step-by-step"
+											class="[&.active]:bg-blue-100 [&.active]:text-blue-500 h-10 rounded-lg flex items-center gap-2 px-3 cursor-pointer hover:bg-gray-200"
 										>
-									</li>
-									<li
-										class="[&.active]:bg-blue-100 [&.active]:text-blue-500 h-10 rounded-lg flex items-center gap-2 px-3 cursor-pointer hover:bg-gray-200"
-									>
-										<svg class="icon icon-sm">
-											<use href="#icon-box"></use>
-										</svg>
-										<span class="[.active_&]:font-medium text-sm"
-											>Code Docs</span
+											<svg class="icon icon-sm">
+												<use href="#icon-list-todo"></use>
+											</svg>
+											<span class="[.active_&]:font-medium text-sm"
+												>Step by Step</span
+											>
+										</li>
+										<li
+											data-tab-tree-id="pr-description"
+											class="[&.active]:bg-blue-100 [&.active]:text-blue-500 h-10 rounded-lg flex items-center gap-2 px-3 cursor-pointer hover:bg-gray-200"
 										>
-									</li>
-									<li
-										class="[&.active]:bg-blue-100 [&.active]:text-blue-500 h-10 rounded-lg flex items-center gap-2 px-3 cursor-pointer hover:bg-gray-200"
-									>
-										<svg class="icon icon-m">
-											<use href="#icon-members-medium"></use>
-										</svg>
-										<span class="[.active_&]:font-medium text-sm"
-											>Slack &amp; Teams</span
+											<svg class="icon icon-sm">
+												<use href="#icon-git-compare"></use>
+											</svg>
+											<span class="[.active_&]:font-medium text-sm"
+												>PR Description</span
+											>
+										</li>
+										<li
+											data-tab-tree-id="code-docs"
+											class="[&.active]:bg-blue-100 [&.active]:text-blue-500 h-10 rounded-lg flex items-center gap-2 px-3 cursor-pointer hover:bg-gray-200"
 										>
-									</li>
-								</ul>
-							</div>
-							<div class="pt-4.5 px-3 border-r border-gray-400 hidden">
-								<strong>Attributes</strong>
+											<svg class="icon icon-sm">
+												<use href="#icon-box"></use>
+											</svg>
+											<span class="[.active_&]:font-medium text-sm"
+												>Code Docs</span
+											>
+										</li>
+										<li
+											data-tab-tree-id="slack-teams"
+											class="[&.active]:bg-blue-100 [&.active]:text-blue-500 h-10 rounded-lg flex items-center gap-2 px-3 cursor-pointer hover:bg-gray-200"
+										>
+											<svg class="icon icon-m">
+												<use href="#icon-members-medium"></use>
+											</svg>
+											<span class="[.active_&]:font-medium text-sm"
+												>Slack &amp; Teams</span
+											>
+										</li>
+									</ul>
+								</div>
+								<div class="ai-actions-content" data-tab-tree-content="sop">
+									<h3>Improving Typing Speed for Better Productivity</h3>
+									<p>
+										In this video, the speaker emphasizes the importance of
+										improving typing speed to enhance productivity and job
+										prospects. They highlight the benefits of increased typing
+										speed, such as boosting confidence and efficiency when
+										working on tasks that require typing. The speaker also
+										stresses the significance of practicing consistently and
+										using websites with interfaces that are preferred by the
+										user to enhance typing skills.
+									</p>
+									<strong>Steps Required:</strong>
+									<p>
+										The increased typing speed leads to improved con fidence and
+										efficiency when working on tasks that require typing, such
+										as writing emails, messages, or creating presentations.
+									</p>
+									<strong>Acceptance Criteria:</strong>
+									<ul>
+										<li>
+											Users should understand the importance of typing speed for
+											productivity.
+										</li>
+										<li>
+											Users should be able to identify the benefits of increased
+											typing speed in their daily tasks.
+										</li>
+										<li>
+											Focus on improving typing speed as a valuable side skill.
+										</li>
+									</ul>
+									<strong>Jumpshare Link</strong>
+									<a href="https://yourlink.com/3948faS49g9530gdopmbJA"
+										>https://yourlink.com/3948faS49g9530gdopmbJA</a
+									>
+								</div>
 								<div
-									class="grid grid-cols-[auto_1fr] text-[13px] gap-3 items-center pl-3 mt-3 [&_span]:h-8 [&_span]:flex [&_span]:items-center"
+									class="ai-actions-content hidden"
+									data-tab-tree-content="step-by-step"
 								>
-									<span class="text-gray-900">Space</span>
-									<span class="font-medium">Jumpshare</span>
+									<h3>Improving Typing Speed for Better Productivity</h3>
+									<p>
+										In this video, the speaker emphasizes the importance of
+										improving typing speed to enhance productivity and job
+										prospects. They highlight the benefits of increased typing
+										speed, such as boosting confidence and efficiency when
+										working on tasks that require typing. The speaker also
+										stresses the significance of practicing consistently and
+										using websites with interfaces that are preferred by the
+										user to enhance typing skills.
+									</p>
+									<strong>Steps Required:</strong>
+								</div>
+								<div
+									class="ai-actions-content hidden"
+									data-tab-tree-content="pr-description"
+								></div>
+							</div>
+							<div
+								class="grid grid-cols-[minmax(200px,280px)_1fr] hidden min-h-0"
+								data-tab-tree-content="task"
+								data-tab-tree-wrapper
+							>
+								<div class="pt-4.5 px-3 border-r border-gray-400">
+									<strong>Attributes</strong>
+									<div
+										class="grid grid-cols-[auto_1fr] text-[13px] gap-3 items-center pl-3 mt-3 [&_span]:h-8 [&_span]:flex [&_span]:items-center"
+									>
+										<span class="text-gray-900">Space</span>
+										<span class="font-medium">Jumpshare</span>
 
-									<span class="text-gray-900">Project</span>
-									<span class="font-medium">Testing Phase</span>
+										<span class="text-gray-900">Project</span>
+										<span class="font-medium">Testing Phase</span>
 
-									<span class="text-gray-900">Type</span>
-									<span class="font-medium">Unauthorized</span>
+										<span class="text-gray-900">Type</span>
+										<span class="font-medium">Unauthorized</span>
 
-									<span class="text-gray-900">Priority</span>
-									<span class="font-medium">Highest</span>
+										<span class="text-gray-900">Priority</span>
+										<span class="font-medium">Highest</span>
 
-									<span class="text-gray-900">Assignee</span>
-									<span class="font-medium">John Doe</span>
+										<span class="text-gray-900">Assignee</span>
+										<span class="font-medium">John Doe</span>
 
-									<span class="text-gray-900">Date</span>
-									<span class="font-medium">12/04/2024</span>
+										<span class="text-gray-900">Date</span>
+										<span class="font-medium">12/04/2024</span>
+									</div>
+								</div>
+								<div class="ai-actions-content">
+									<h3>Task Details</h3>
 								</div>
 							</div>
-							<div class="ai-actions-content">
-								<h3>Improving Typing Speed for Better Productivity</h3>
-								<p>
-									In this video, the speaker emphasizes the importance of
-									improving typing speed to enhance productivity and job
-									prospects. They highlight the benefits of increased typing
-									speed, such as boosting confidence and efficiency when working
-									on tasks that require typing. The speaker also stresses the
-									significance of practicing consistently and using websites
-									with interfaces that are preferred by the user to enhance
-									typing skills.
-								</p>
-								<strong>Steps Required:</strong>
-								<p>
-									The increased typing speed leads to improved con fidence and
-									efficiency when working on tasks that require typing, such as
-									writing emails, messages, or creating presentations.
-								</p>
-								<strong>Acceptance Criteria:</strong>
-								<ul>
-									<li>
-										Users should understand the importance of typing speed for
-										productivity.
-									</li>
-									<li>
-										Users should be able to identify the benefits of increased
-										typing speed in their daily tasks.
-									</li>
-									<li>
-										Focus on improving typing speed as a valuable side skill.
-									</li>
-								</ul>
-								<strong>Jumpshare Link</strong>
-								<a href="https://yourlink.com/3948faS49g9530gdopmbJA"
-									>https://yourlink.com/3948faS49g9530gdopmbJA</a
+							<div
+								class="grid grid-cols-[minmax(200px,280px)_1fr] hidden min-h-0"
+								data-tab-tree-content="message"
+								data-tab-tree-wrapper
+							>
+								<div class="pt-4.5 px-3 border-r border-gray-400">
+									<strong>Templates</strong>
+									<ul class="space-y-1 mt-4">
+										<li
+											data-tab-tree-id="email"
+											class="active [&.active]:bg-blue-100 [&.active]:text-blue-500 h-10 rounded-lg flex items-center gap-2 px-3 cursor-pointer hover:bg-gray-200"
+										>
+											<svg class="icon icon-sm">
+												<use href="#icon-envelope"></use>
+											</svg>
+											<span class="[.active_&]:font-medium text-sm">Email</span>
+										</li>
+										<li
+											data-tab-tree-id="slack-teams"
+											class="[&.active]:bg-blue-100 [&.active]:text-blue-500 h-10 rounded-lg flex items-center gap-2 px-3 cursor-pointer hover:bg-gray-200"
+										>
+											<svg class="icon icon-sm">
+												<use href="#icon-members-medium"></use>
+											</svg>
+											<span class="[.active_&]:font-medium text-sm"
+												>Slack &amp; Teams</span
+											>
+										</li>
+										<li
+											data-tab-tree-id="social-media"
+											class="[&.active]:bg-blue-100 [&.active]:text-blue-500 h-10 rounded-lg flex items-center gap-2 px-3 cursor-pointer hover:bg-gray-200"
+										>
+											<svg class="icon icon-sm">
+												<use href="#icon-git-compare"></use>
+											</svg>
+											<span class="[.active_&]:font-medium text-sm"
+												>Social Media</span
+											>
+										</li>
+									</ul>
+								</div>
+								<div class="ai-actions-content" data-tab-tree-content="email">
+									<h3>Improving Typing Speed for Better Productivity</h3>
+								</div>
+								<div
+									class="ai-actions-content hidden"
+									data-tab-tree-content="slack-teams"
 								>
+									<h3>Slack &amp; Teams</h3>
+								</div>
+								<div
+									class="ai-actions-content hidden"
+									data-tab-tree-content="social-media"
+								>
+									<h3>Social Media</h3>
+								</div>
 							</div>
 						</div>
 						<div
@@ -1629,7 +1731,7 @@
 							data-tab-inside-content="main-content"
 						>
 							<ul
-								class="tabs-nav mt-0 pt-5 px-5 gap-5 sticky top-0 bg-white z-1"
+								class="tabs-nav mt-0 pt-5 px-5 gap-5 sticky top-0 bg-white z-11"
 							>
 								<li
 									data-tab-id="tab-actions"
@@ -1679,6 +1781,7 @@
 												<button
 													type="button"
 													class="btn btn-border-default h-10 p-0"
+													data-dialog-open-id="ai-actions"
 												>
 													<svg class="icon size-5">
 														<use href="#icon-file"></use>
@@ -1783,52 +1886,128 @@
 								>
 									<div class="flex flex-col gap-3 px-5 py-6">
 										<div
-											class="border border-gray-600 rounded-xl min-h-15 py-3.5 pl-5 pr-3 flex items-center justify-between"
+											class="comment-box border border-gray-600 rounded-xl min-h-15"
 										>
-											<textarea
-												name="comment"
-												id="comment-textarea"
-												class="min-h-0 resize-none outline-none border-none text-sm text-gray-900 placeholder:text-gray-900 flex-grow-1 mr-2"
-												rows="1"
-												placeholder="Leave a comment"
-											></textarea>
-											<div class="flex items-center">
-												<button
-													type="button"
-													aria-label="choose smile"
-													class="btn btn-white hover:bg-gray-200 p-0 size-8"
+											<div
+												class="flex items-center justify-between py-3.5 pl-5 pr-3 [.active-comment-box_&]:flex-col"
+											>
+												<textarea
+													name="comment"
+													id="comment-textarea"
+													class="min-h-0 resize-none outline-none border-none text-sm text-gray-900 placeholder:text-gray-900 flex-grow-1 mr-2 [.active-comment-box_&]:w-full [.active-comment-box_&]:mb-3"
+													rows="1"
+													placeholder="Leave a comment"
+												></textarea>
+												<div
+													class="flex items-center [.active-comment-box_&]:w-full [.active-comment-box_&]:justify-between"
 												>
-													<svg class="icon size-4">
-														<use href="#icon-mention"></use>
+													<div class="flex">
+														<button
+															type="button"
+															aria-label="choose smile"
+															class="btn btn-white hover:bg-gray-300 p-0 size-8 [&.active]:bg-gray-300"
+														>
+															<svg class="icon size-4">
+																<use href="#icon-mention"></use>
+															</svg>
+														</button>
+														<button
+															type="button"
+															aria-label="choose smile"
+															class="btn btn-white hover:bg-gray-300 p-0 size-8 [&.active]:bg-gray-300"
+														>
+															<svg class="icon size-4">
+																<use href="#icon-smile"></use>
+															</svg>
+														</button>
+														<button
+															id="comment-draw-button"
+															type="button"
+															aria-label="choose smile"
+															class="btn btn-white hover:bg-gray-300 p-0 size-8 [&.active]:bg-gray-300"
+														>
+															<svg class="icon size-4.5">
+																<use href="#icon-pencil"></use>
+															</svg>
+														</button>
+													</div>
+													<div
+														class="hidden [.active-comment-box_&]:flex gap-1.5"
+													>
+														<button
+															type="button"
+															class="btn btn-transparent h-7.5 px-2.5 font-normal min-w-16.5"
+															id="comment-cancel-button"
+														>
+															Cancel
+														</button>
+														<button
+															type="button"
+															class="btn btn-primary h-7.5 px-2.5 min-w-16.5"
+															id="comment-post-button"
+														>
+															Post
+														</button>
+													</div>
+												</div>
+											</div>
+											<div
+												class="flex items-center justify-end gap-2 bg-[#F7F7F7] rounded-b-xl [.active-comment-draw-tools_&]:py-0.5 pl-2.5 pr-3.5 h-0 overflow-hidden [.active-comment-draw-tools_&]:h-10 transition-all duration-200 ease-in-out"
+											>
+												<button
+													aria-label="Delete comment"
+													type="button"
+													class="btn size-9 hover:bg-dark-800/5 p-0 mr-auto"
+												>
+													<svg class="icon icon-m">
+														<use href="#icon-trash"></use>
 													</svg>
 												</button>
-												<button
-													type="button"
-													aria-label="choose smile"
-													class="btn btn-white hover:bg-gray-200 p-0 size-8"
-												>
-													<svg class="icon size-4">
-														<use href="#icon-smile"></use>
-													</svg>
-												</button>
-												<button
-													type="button"
-													aria-label="choose smile"
-													class="btn btn-white hover:bg-gray-200 p-0 size-8"
-												>
-													<svg class="icon size-4.5">
-														<use href="#icon-pencil"></use>
-													</svg>
-												</button>
+												<div class="flex gap-1">
+													<button
+														aria-label="Draw Arrow"
+														type="button"
+														class="btn size-9 hover:bg-dark-800/5 p-0 text-[#797979]"
+													>
+														<svg class="icon size-9">
+															<use href="#icon-arrow"></use>
+														</svg>
+													</button>
+													<button
+														aria-label="Draw Pencil"
+														type="button"
+														class="btn size-9 hover:bg-dark-800/5 p-0 text-[#797979]"
+													>
+														<svg class="icon size-9">
+															<use href="#icon-pencil-filled"></use>
+														</svg>
+													</button>
+													<button
+														aria-label="Draw Square"
+														type="button"
+														class="btn size-9 hover:bg-dark-800/5 p-0 text-[#797979]"
+													>
+														<svg class="icon size-9">
+															<use href="#icon-square"></use>
+														</svg>
+													</button>
+												</div>
+												<ul class="flex gap-2.5 [&_li]:cursor-pointer">
+													<li class="size-4 rounded-full bg-[#FEED0C]"></li>
+													<li class="size-4 rounded-full bg-[#FF1457]"></li>
+													<li class="size-4 rounded-full bg-[#2F76FF]"></li>
+													<li class="size-4 rounded-full bg-[#FF8227]"></li>
+													<li class="size-4 rounded-full bg-[#0FD45B]"></li>
+												</ul>
 											</div>
 										</div>
 									</div>
-									<ul class="flex flex-col gap-4 px-5 pb-6">
-										<li class="border border-gray-500 rounded-xl p-5">
+									<ul class="flex flex-col px-2 pb-6">
+										<li class="px-3 py-4 rounded-xl hover:bg-gray-150">
 											<div
-												class="flex gap-3 relative [.has-replies_&]:after:content-[''] [.has-replies_&]:after:w-4 [.has-replies_&]:after:border-l [.has-replies_&]:after:border-b [.has-replies_&]:after:rounded-bl-2xl [.has-replies_&]:after:border-gray-600 [.has-replies_&]:after:h-[calc(100%-32px+27px+12px)] [.has-replies_&]:after:absolute [.has-replies_&]:after:left-3 [.has-replies_&]:after:top-8.5"
+												class="flex gap-3 relative [.has-replies_&]:after:block after:hidden after:content-[''] after:w-5 after:border-l after:border-b after:rounded-bl-xl after:border-gray-600 after:h-[calc(100%-32px+27px+12px)] after:absolute after:left-3 after:top-8.5"
 											>
-												<span class="avatar size-6 text-sm">
+												<span class="avatar size-7 text-sm">
 													<img src="../assets/images/avatar.png" alt="Avatar" />
 												</span>
 												<div class="flex flex-col gap-1.5 text-sm">
@@ -1844,14 +2023,20 @@
 														This actually looked quite good to me, appreciate
 														it.
 													</p>
+													<button
+														type="button"
+														class="comment-reply-btn btn font-semibold px-2.5 h-7 self-start -ml-2.5"
+													>
+														Reply
+													</button>
 												</div>
 											</div>
 										</li>
-										<li class="border border-gray-500 rounded-xl p-5">
+										<li class="px-3 py-4 rounded-xl hover:bg-gray-150">
 											<div
-												class="flex gap-3 relative [.has-replies_&]:after:content-[''] [.has-replies_&]:after:w-4 [.has-replies_&]:after:border-l [.has-replies_&]:after:border-b [.has-replies_&]:after:rounded-bl-2xl [.has-replies_&]:after:border-gray-600 [.has-replies_&]:after:h-[calc(100%-32px+27px+12px)] [.has-replies_&]:after:absolute [.has-replies_&]:after:left-3 [.has-replies_&]:after:top-8.5"
+												class="flex gap-3 relative [.has-replies_&]:after:block after:hidden after:content-[''] after:w-5 after:border-l after:border-b after:rounded-bl-xl after:border-gray-600 after:h-[calc(100%-32px+27px+12px)] after:absolute after:left-3 after:top-8.5"
 											>
-												<span class="avatar size-6 text-sm">
+												<span class="avatar size-7 text-sm">
 													<img
 														src="../assets/images/avatar-2.png"
 														alt="Avatar"
@@ -1870,43 +2055,21 @@
 														I am sending you some files that you requested,
 														please review and let me know.
 													</p>
-												</div>
-											</div>
-											<div
-												class="border-t border-gray-500 -mx-5 -mb-5 pt-3.5 pl-5 pr-3 pb-3 mt-3.5 flex items-center justify-between gap-4"
-											>
-												<textarea
-													name="reply-comment"
-													id="reply-comment"
-													class="w-full outline-none border-none text-sm text-gray-900 placeholder:text-gray-900 resize-none"
-													rows="1"
-													placeholder="Leave a reply"
-												></textarea>
-												<div class="flex items-center gap-2">
-													<button
-														aria-label="Choose Smile"
-														type="button"
-														class="btn btn-white hover:bg-gray-200 p-0 size-8"
-													>
-														<svg class="icon size-4">
-															<use href="#icon-smile"></use>
-														</svg>
-													</button>
 													<button
 														type="button"
-														class="btn btn-primary h-7.5 px-3.5"
+														class="comment-reply-btn btn font-semibold px-2.5 h-7 self-start -ml-2.5"
 													>
 														Reply
 													</button>
 												</div>
 											</div>
 										</li>
-										<li class="border border-gray-500 rounded-xl p-5">
+										<li class="px-3 py-4 rounded-xl hover:bg-gray-150">
 											<div
-												class="flex gap-3 relative [.has-replies_&]:after:content-[''] [.has-replies_&]:after:w-4 [.has-replies_&]:after:border-l [.has-replies_&]:after:border-b [.has-replies_&]:after:rounded-bl-2xl [.has-replies_&]:after:border-gray-600 [.has-replies_&]:after:h-[calc(100%-32px+27px+12px)] [.has-replies_&]:after:absolute [.has-replies_&]:after:left-3 [.has-replies_&]:after:top-8.5"
+												class="flex gap-3 relative [.has-replies_&]:after:block after:hidden after:content-[''] after:w-5 after:border-l after:border-b after:rounded-bl-xl after:border-gray-600 after:h-[calc(100%-32px+27px+12px)] after:absolute after:left-3 after:top-8.5"
 											>
 												<span
-													class="avatar size-6 text-sm font-semibold bg-[#FF972F]/15 text-[#bc6005]"
+													class="avatar size-7 text-sm font-semibold bg-[#FF972F]/15 text-[#bc6005]"
 													>S</span
 												>
 												<div class="flex flex-col gap-1.5 text-sm">
@@ -1923,164 +2086,163 @@
 														I’ve recorded a full 20 min session on demand so you
 														can check and watch it carefully.
 													</p>
-												</div>
-											</div>
-										</li>
-										<li
-											class="border border-gray-500 rounded-xl p-5 has-replies"
-										>
-											<div
-												class="flex gap-3 relative [.has-replies_&]:after:content-[''] [.has-replies_&]:after:w-4 [.has-replies_&]:after:border-l [.has-replies_&]:after:border-b [.has-replies_&]:after:rounded-bl-2xl [.has-replies_&]:after:border-gray-600 [.has-replies_&]:after:h-[calc(100%-32px+27px+12px)] [.has-replies_&]:after:absolute [.has-replies_&]:after:left-3 [.has-replies_&]:after:top-8.5"
-											>
-												<span class="avatar size-6 text-sm font-semibold">
-													<img
-														src="../assets/images/avatar-3.png"
-														alt="Avatar"
-													/>
-												</span>
-												<div class="flex flex-col gap-1.5 text-sm">
-													<div class="flex items-center gap-2">
-														<strong class="text-sm font-semibold"
-															>John Doe</strong
-														>
-														<span class="text-gray-900 text-xs"
-															>2 days ago</span
-														>
-													</div>
-													<p>
-														This actually looked quite good to me, appreciate
-														it.
-													</p>
 													<button
 														type="button"
-														class="btn btn-transparent w-max font-medium text-gray-900 mt-2 h-7.5 px-2.5 after:content-[''] after:size-4 after:border-l after:border-b after:rounded-bl-2xl after:border-gray-600 after:absolute after:right-full after:top-0 -ml-[9px]"
-													>
-														+12 replies
-													</button>
-												</div>
-											</div>
-											<ul class="pl-9 pt-6.5">
-												<li>
-													<div class="flex gap-3 relative">
-														<span class="avatar size-6 text-sm font-semibold">
-															<img
-																src="../assets/images/avatar-3.png"
-																alt="Avatar"
-															/>
-														</span>
-														<div class="flex flex-col gap-1.5 text-sm">
-															<div class="flex items-center gap-2">
-																<strong class="text-sm font-semibold"
-																	>John Doe</strong
-																>
-																<span class="text-gray-900 text-xs"
-																	>2 days ago</span
-																>
-															</div>
-															<p>
-																<span class="text-blue-500 cursor-pointer"
-																	>@George Cartwright</span
-																>
-																Thanks for allowing me to share the video with
-																you, I’ve recorded a full 20 min session on
-																demand so you can check and watch it carefully.
-															</p>
-														</div>
-													</div>
-												</li>
-											</ul>
-										</li>
-										<li
-											class="border border-gray-500 rounded-xl p-5 has-replies"
-										>
-											<div
-												class="flex gap-3 relative [.has-replies_&]:after:content-[''] [.has-replies_&]:after:w-4 [.has-replies_&]:after:border-l [.has-replies_&]:after:border-b [.has-replies_&]:after:rounded-bl-2xl [.has-replies_&]:after:border-gray-600 [.has-replies_&]:after:h-[calc(100%-32px+27px+12px)] [.has-replies_&]:after:absolute [.has-replies_&]:after:left-3 [.has-replies_&]:after:top-8.5"
-											>
-												<span class="avatar size-6 text-sm font-semibold">
-													<img
-														src="../assets/images/avatar-3.png"
-														alt="Avatar"
-													/>
-												</span>
-												<div class="flex flex-col gap-1.5 text-sm">
-													<div class="flex items-center gap-2">
-														<strong class="text-sm font-semibold"
-															>John Doe</strong
-														>
-														<span class="text-gray-900 text-xs"
-															>2 days ago</span
-														>
-													</div>
-													<p>
-														This actually looked quite good to me, appreciate
-														it.
-													</p>
-													<button
-														type="button"
-														class="btn btn-transparent w-max font-medium text-gray-900 mt-2 h-7.5 px-2.5 after:content-[''] after:size-4 after:border-l after:border-b after:rounded-bl-2xl after:border-gray-600 after:absolute after:right-full after:top-0 -ml-[9px]"
-													>
-														+12 replies
-													</button>
-												</div>
-											</div>
-											<ul class="pl-9 pt-6.5">
-												<li>
-													<div class="flex gap-3 relative">
-														<span class="avatar size-6 text-sm font-semibold">
-															<img
-																src="../assets/images/avatar-3.png"
-																alt="Avatar"
-															/>
-														</span>
-														<div class="flex flex-col gap-1.5 text-sm">
-															<div class="flex items-center gap-2">
-																<strong class="text-sm font-semibold"
-																	>John Doe</strong
-																>
-																<span class="text-gray-900 text-xs"
-																	>2 days ago</span
-																>
-															</div>
-															<p>
-																<span class="text-blue-500 cursor-pointer"
-																	>@George Cartwright</span
-																>
-																Thanks for allowing me to share the video with
-																you, I’ve recorded a full 20 min session on
-																demand so you can check and watch it carefully.
-															</p>
-														</div>
-													</div>
-												</li>
-											</ul>
-											<div
-												class="border-t border-gray-500 -mx-5 -mb-5 pt-3.5 pl-5 pr-3 pb-3 mt-3.5 flex items-center justify-between gap-4"
-											>
-												<textarea
-													name="reply-comment"
-													id="reply-comment"
-													class="w-full outline-none border-none text-sm text-gray-900 placeholder:text-gray-900 resize-none"
-													rows="1"
-													placeholder="Leave a reply"
-												></textarea>
-												<div class="flex items-center gap-2">
-													<button
-														aria-label="Choose Smile"
-														type="button"
-														class="btn btn-white hover:bg-gray-200 p-0 size-8"
-													>
-														<svg class="icon size-4">
-															<use href="#icon-smile"></use>
-														</svg>
-													</button>
-													<button
-														type="button"
-														class="btn btn-primary h-7.5 px-3.5"
+														class="comment-reply-btn btn font-semibold px-2.5 h-7 self-start -ml-2.5"
 													>
 														Reply
 													</button>
 												</div>
 											</div>
+										</li>
+										<li
+											class="px-3 py-4 rounded-xl hover:bg-gray-150 has-replies"
+										>
+											<div
+												class="flex gap-3 relative [.has-replies_&]:after:block after:hidden after:content-[''] after:w-5 after:border-l after:border-b after:rounded-bl-xl after:border-gray-600 after:h-[calc(100%-32px+27px+12px)] after:absolute after:left-3 after:top-8.5"
+											>
+												<span class="avatar size-7 text-sm font-semibold">
+													<img
+														src="../assets/images/avatar-3.png"
+														alt="Avatar"
+													/>
+												</span>
+												<div class="flex flex-col gap-1.5 text-sm">
+													<div class="flex items-center gap-2">
+														<strong class="text-sm font-semibold"
+															>John Doe</strong
+														>
+														<span class="text-gray-900 text-xs"
+															>2 days ago</span
+														>
+													</div>
+													<p>
+														This actually looked quite good to me, appreciate
+														it.
+													</p>
+													<button
+														type="button"
+														class="btn w-max font-medium text-gray-900 mt-2 h-7.5 px-2.5 after:content-[''] after:h-4 after:w-5 after:border-l after:border-b after:rounded-bl-xl after:border-gray-600 after:absolute after:right-full after:top-0 -ml-[8px]"
+													>
+														+12 replies
+													</button>
+												</div>
+											</div>
+											<ul class="pl-11 pt-6.5 space-y-8 all-replies-active">
+												<li
+													class="relative [&_button]:hidden last-of-type:[&_button]:block last-of-type:[&>div]:after:hidden"
+												>
+													<div
+														class="flex gap-3 relative [.all-replies-active_&]:after:block after:hidden after:content-[''] after:w-px after:border-l after:border-b after:border-gray-600 after:h-[calc(100%-15px)] after:absolute after:left-[13px] after:top-9.5"
+													>
+														<span class="avatar size-7 text-sm font-semibold">
+															<img
+																src="../assets/images/avatar-3.png"
+																alt="Avatar"
+															/>
+														</span>
+														<div class="flex flex-col gap-1.5 text-sm">
+															<div class="flex items-center gap-2">
+																<strong class="text-sm font-semibold"
+																	>John Doe</strong
+																>
+																<span class="text-gray-900 text-xs"
+																	>2 days ago</span
+																>
+															</div>
+															<p>
+																<span class="text-blue-500 cursor-pointer"
+																	>@George Cartwright</span
+																>
+																This actually looked quite good to me,
+																appreciate it.
+															</p>
+															<button
+																type="button"
+																class="comment-reply-btn btn font-semibold px-2.5 h-7 self-start -ml-2.5"
+															>
+																Reply
+															</button>
+														</div>
+													</div>
+												</li>
+												<li
+													class="relative [&_button]:hidden last-of-type:[&_button]:block last-of-type:[&>div]:after:hidden"
+												>
+													<div
+														class="flex gap-3 relative [.all-replies-active_&]:after:block after:hidden after:content-[''] after:w-px after:border-l after:border-b after:border-gray-600 after:h-[calc(100%-15px)] after:absolute after:left-[13px] after:top-9.5"
+													>
+														<span class="avatar size-7 text-sm font-semibold">
+															<img
+																src="../assets/images/avatar-3.png"
+																alt="Avatar"
+															/>
+														</span>
+														<div class="flex flex-col gap-1.5 text-sm">
+															<div class="flex items-center gap-2">
+																<strong class="text-sm font-semibold"
+																	>John Doe</strong
+																>
+																<span class="text-gray-900 text-xs"
+																	>2 days ago</span
+																>
+															</div>
+															<p>
+																<span class="text-blue-500 cursor-pointer"
+																	>@George Cartwright</span
+																>
+																Thanks for allowing me to share the video with
+																you, I’ve recorded a full 20 min session on
+																demand so you can check and watch it carefully.
+															</p>
+															<button
+																type="button"
+																class="btn font-semibold px-2.5 comment-reply-btn h-7 self-start -ml-2.5"
+															>
+																Reply
+															</button>
+														</div>
+													</div>
+												</li>
+												<li
+													class="relative [&_button]:hidden last-of-type:[&_button]:block last-of-type:[&>div]:after:hidden"
+												>
+													<div
+														class="flex gap-3 relative [.all-replies-active_&]:after:block after:hidden after:content-[''] after:w-px after:border-l after:border-b after:border-gray-600 after:h-[calc(100%-15px)] after:absolute after:left-[13px] after:top-9.5"
+													>
+														<span class="avatar size-7 text-sm font-semibold">
+															<img
+																src="../assets/images/avatar-3.png"
+																alt="Avatar"
+															/>
+														</span>
+														<div class="flex flex-col gap-1.5 text-sm">
+															<div class="flex items-center gap-2">
+																<strong class="text-sm font-semibold"
+																	>John Doe</strong
+																>
+																<span class="text-gray-900 text-xs"
+																	>2 days ago</span
+																>
+															</div>
+															<p>
+																<span class="text-blue-500 cursor-pointer"
+																	>@George Cartwright</span
+																>
+																Thanks for allowing me to share the video with
+																you, I’ve recorded a full 20 min session on
+																demand so you can check and watch it carefully.
+															</p>
+															<button
+																type="button"
+																class="btn font-semibold px-2.5 comment-reply-btn h-7 self-start -ml-2.5"
+															>
+																Reply
+															</button>
+														</div>
+													</div>
+												</li>
+											</ul>
 										</li>
 									</ul>
 								</div>
@@ -3630,6 +3792,7 @@
 			});
 		</script>
 		<script src="../dist/js/dialog.js"></script>
+		<script src="../dist/js/tab-tree.js"></script>
 		<script src="../dist/js/bottom-sheet.lite.js"></script>
 		<script src="../dist/js/helpers.js"></script>
 		<script src="../dist/js/dropdown.js"></script>
