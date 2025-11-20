@@ -526,7 +526,7 @@
 	}
 
 	.resize-handle-vertical {
-		@apply opacity-0 hover:opacity-100 w-0.5 absolute z-1 left-px top-0 h-full bg-blue-500 cursor-col-resize after:content-[''] after:absolute after:top-0 after:left-1/2 after:-translate-x-1/2 after:w-1.5 after:h-full after:bg-blue-500/20 after:scale-x-0 after:transition-all after:duration-100 after:ease-initial after:origin-center hover:after:scale-x-100 before:content-[''] before:absolute before:top-0 before:left-1/2 before:-translate-x-1/2 before:w-2 before:h-full before:z-1 [&.active-resize]:opacity-100 [&.active-resize]:after:scale-x-100;
+		@apply opacity-0 hover:opacity-100 w-0.5 absolute z-20 left-px top-0 h-full bg-blue-500 cursor-col-resize after:content-[''] after:absolute after:top-0 after:left-1/2 after:-translate-x-1/2 after:w-1.5 after:h-full after:bg-blue-500/20 after:scale-x-0 after:transition-all after:duration-100 after:ease-initial after:origin-center hover:after:scale-x-100 before:content-[''] before:absolute before:top-0 before:left-1/2 before:-translate-x-1/2 before:w-2 before:h-full before:z-1 [&.active-resize]:opacity-100 [&.active-resize]:after:scale-x-100;
 	}
 }
 

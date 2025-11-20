@@ -30,7 +30,7 @@
 		@apply px-5;
 	}
 	.file-viewer-tab-footer {
-		@apply px-5 py-4 sticky bottom-0 bg-white [.sidebar-has-scrollbar_&]:border-t [.sidebar-has-scrollbar_&]:shadow-dropdown border-gray-400 [.sidebar-has-scrollbar_&]:mt-4;
+		@apply px-5 py-4 sticky bottom-0 bg-white [.sidebar-has-scrollbar_&]:border-t [.sidebar-has-scrollbar_&]:shadow-dropdown border-gray-400 [.sidebar-has-scrollbar_&]:mt-4 z-10;
 	}
 	.file-viewer-lead-capture {
 		@apply size-full absolute top-0 left-0 z-10 rounded-xl flex flex-col bg-dark-800/60 backdrop-blur-2xl items-center justify-center;
