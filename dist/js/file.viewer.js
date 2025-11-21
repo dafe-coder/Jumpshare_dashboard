@@ -63,8 +63,9 @@ const fileViewer = {
 	},
 	initContentTab: function () {
 		const self = this;
-		const tabItems = self.sidebar.find("[data-tab-inside]");
+		const tabItems = $("[data-tab-inside]");
 		const goBackBtn = $("[data-tab-inside-go-back]");
+		console.log(tabItems);
 
 		self.currentTab = self.getCurrentActiveTab();
 
@@ -77,12 +78,15 @@ const fileViewer = {
 			e.preventDefault();
 			const targetTab = e.currentTarget;
 			const tabInside = targetTab.getAttribute("data-tab-inside");
+			console.log(tabInside);
 
 			self.saveTabState();
 
 			self.switchTab(tabInside);
 			if (tabInside === "lead-capture") {
 				$(".file-viewer-lead-capture").removeClass("hidden");
+			} else if (tabInside === "analytics-tab") {
+				Dropdown.closeAllDropdowns();
 			} else {
 				$(".file-viewer-lead-capture").addClass("hidden");
 			}
@@ -216,7 +220,7 @@ const fileViewer = {
 								<textarea
 									name="reply-comment"
 									id="reply-comment"
-									class="w-full outline-none border-none text-sm text-gray-900 placeholder:text-gray-900 resize-none mx-2"
+									class="w-full outline-none border-none text-sm text-dark-800 placeholder:text-gray-900 resize-none mx-2"
 									rows="1"
 									placeholder="Leave a reply"
 								></textarea>

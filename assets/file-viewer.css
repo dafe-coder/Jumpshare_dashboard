@@ -74,4 +74,22 @@
 			@apply text-sm text-blue-500;
 		}
 	}
+	.file-viewer-analytics-card {
+		@apply flex items-center justify-between flex-wrap gap-3 mt-4.5 bg-[#F6F6F6] rounded-xl border border-gray-400 py-4 pl-6 pr-4;
+		.file-viewer-analytics-card__left {
+			@apply flex flex-col gap-3;
+			span {
+				@apply text-sm text-gray-900;
+				&:last-child {
+					@apply text-2xl font-medium text-dark-800;
+				}
+			}
+		}
+		.file-viewer-analytics-card__footer {
+			@apply flex items-center justify-center bg-white border-t border-gray-400 py-2 w-[calc(100%+2.5rem)] rounded-b-xl -ml-6 -mr-4 -mb-4;
+			a {
+				@apply text-sm text-dark-800 flex items-center gap-1;
+			}
+		}
+	}
 }

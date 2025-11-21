@@ -294,6 +294,9 @@
 	<symbol id="icon-arrow-left" viewBox="0 0 24 24" fill="none">
 		<path d="M18 11.25H8.8725L13.065 7.0575L12 6L6 12L12 18L13.0575 16.9425L8.8725 12.75H18V11.25Z" fill="currentColor"/>
 	</symbol>
+	<symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none">
+		<path fill-rule="evenodd" clip-rule="evenodd" d="M13.5456 4.99619L20.4399 11.8905L13.5456 18.7848L12.485 17.7241L17.5687 12.6404L4.53002 12.6414V11.1395L17.5687 11.1406L12.485 6.05685L13.5456 4.99619Z" fill="currentColor"/>
+	</symbol>
 	<symbol id="icon-upload" viewBox="0 0 24 24" fill="none">
 		<path d="M19 14.3333V17.4444C19 17.857 18.8361 18.2527 18.5444 18.5444C18.2527 18.8361 17.857 19 17.4444 19H6.55556C6.143 19 5.74733 18.8361 5.45561 18.5444C5.16389 18.2527 5 17.857 5 17.4444V14.3333M15.8889 8.88889L12 5M12 5L8.11111 8.88889M12 5V14.3333" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
 	</symbol>
