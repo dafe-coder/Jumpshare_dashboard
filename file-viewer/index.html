@@ -411,10 +411,50 @@
 							<strong class="text-xl font-semibold font-sans-semi truncate">
 								Scrum Sep 8 - Web Development Testing
 							</strong>
-							<span
-								class="flex items-center text-sm font-semibold text-dark-800 h-7 px-2 bg-[#F6F6F6] rounded-lg"
-								>V1</span
-							>
+							<div class="dropdown-wrapper">
+								<span
+									data-id="dropdown-version-history"
+									class="dropdown-button flex items-center text-sm font-semibold text-dark-800 h-7 px-3 bg-[#F6F6F6] rounded-lg cursor-pointer"
+									>V1</span
+								>
+								<div
+									data-dropdown-id="dropdown-version-history"
+									class="js-dropdown hidden w-[21.25rem] left-1/2 -translate-x-1/2"
+									data-sheet-modal
+								>
+									<div class="js-dropdown-overlay"></div>
+									<div class="js-dropdown-body">
+										<div class="js-dropdown-trigger">
+											<span></span>
+										</div>
+										<div class="js-dropdown-content p-5">
+											<div class="flex items-center justify-center mb-3.5 pt-1">
+												<img
+													class="w-42.5 max-w-full"
+													src="../assets/images/file-types.svg"
+													alt="file-types"
+												/>
+											</div>
+											<div
+												class="flex flex-col items-center gap-2 max-w-[13.25rem] mx-auto text-center"
+											>
+												<strong class="text-base font-semibold"
+													>Version History</strong
+												>
+												<p class="text-sm">
+													Add a new version and keep the same link
+												</p>
+											</div>
+											<button
+												type="button"
+												class="btn btn-primary w-full h-10 mt-5"
+											>
+												Add new version
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 						<ul class="list-with-dots text-sm text-gray-900">
 							<li class="text-gray-900 flex items-center gap-2">
@@ -584,15 +624,165 @@
 						</svg>
 						<span>Share</span>
 					</button>
-					<button
-						aria-label="More options"
-						type="button"
-						class="btn btn-border-default size-10 p-0"
-					>
-						<svg class="icon icon-md">
-							<use href="#icon-dots-horizontal-big"></use>
-						</svg>
-					</button>
+					<div class="dropdown-wrapper">
+						<button
+							data-id="dropdown-file-settings"
+							aria-label="More options"
+							type="button"
+							class="dropdown-button btn btn-border-default size-10 p-0"
+						>
+							<svg class="icon icon-md">
+								<use href="#icon-dots-horizontal-big"></use>
+							</svg>
+						</button>
+						<div
+							class="js-dropdown right-0 hidden w-56"
+							data-dropdown-id="dropdown-file-settings"
+							data-sheet-modal
+						>
+							<div class="js-dropdown-overlay"></div>
+							<div class="js-dropdown-body">
+								<div class="js-dropdown-trigger">
+									<span></span>
+								</div>
+								<div class="js-dropdown-content">
+									<ul class="js-dropdown-list js-dropdown-primary-list">
+										<li
+											class="js-dropdown-list-item"
+											data-dialog-open-id="lock-file"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-lock"></use>
+											</svg>
+											<span>Lock</span>
+											<span class="text-sm text-blue-500 font-medium"
+												>Plus</span
+											>
+										</li>
+										<li
+											class="js-dropdown-list-item"
+											data-dialog-open-id="self-destruct"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-trash-with-clock"></use>
+											</svg>
+											<span>Self-Destruct</span>
+											<span class="text-sm text-blue-500 font-medium"
+												>Plus</span
+											>
+										</li>
+										<li class="js-dropdown-list-item">
+											<svg class="icon icon-md">
+												<use href="#icon-stats"></use>
+											</svg>
+											<span>View Stats</span>
+											<span class="text-sm text-blue-500 font-medium"
+												>Plus</span
+											>
+										</li>
+										<li class="js-dropdown-list-item">
+											<svg class="icon icon-md">
+												<use href="#icon-pencil"></use>
+											</svg>
+											<span>Rename</span>
+										</li>
+										<li class="js-dropdown-list-item">
+											<svg class="icon icon-md">
+												<use href="#icon-star"></use>
+											</svg>
+											<span>Favorite</span>
+										</li>
+										<li class="js-dropdown-list-item">
+											<svg class="icon icon-md">
+												<use href="#icon-download"></use>
+											</svg>
+											<span>Download</span>
+										</li>
+										<li class="js-dropdown-list-item">
+											<svg class="icon icon-md">
+												<use href="#icon-copy"></use>
+											</svg>
+											<span>Copy / Move</span>
+										</li>
+										<li
+											data-dropdown-sub-id="version-history"
+											class="js-dropdown-list-item relative sub-menu-item"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-history"></use>
+											</svg>
+											<span>Version History</span>
+											<span class="text-sm text-blue-500 font-medium"
+												>Plus</span
+											>
+											<svg
+												class="icon icon-md absolute top-1/2 -translate-y-1/2 right-1"
+											>
+												<use href="#icon-check-right"></use>
+											</svg>
+											<ul class="dropdown-content js-dropdown-sub-list hidden">
+												<li
+													class="sub-menu-item js-dropdown-list-item"
+													data-dialog-open-id="version-history"
+												>
+													<svg class="icon icon-md">
+														<use href="#icon-upload"></use>
+													</svg>
+													<span>Upload New Version</span>
+												</li>
+												<li
+													data-tab-inside="version-history-tab"
+													class="sub-menu-item js-dropdown-list-item"
+												>
+													<svg class="icon icon-md">
+														<use href="#icon-history"></use>
+													</svg>
+													<span>View Version History</span>
+												</li>
+											</ul>
+										</li>
+										<li class="border-b border-gray-500 my-2"></li>
+										<li class="js-dropdown-list-item">
+											<svg class="icon icon-md">
+												<use href="#icon-trash"></use>
+											</svg>
+											<span>Delete</span>
+										</li>
+									</ul>
+									<ul
+										class="js-dropdown-list js-dropdown-sub-list hidden"
+										data-dropdown-sub="version-history"
+									>
+										<li class="go-back js-dropdown-list-item">
+											<svg class="icon icon-md">
+												<use href="#icon-arrow-left"></use>
+											</svg>
+											<span>Version History</span>
+										</li>
+										<li class="border-b border-gray-500 mb-2"></li>
+										<li
+											class="js-dropdown-list-item"
+											data-dialog-open-id="version-history"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-upload"></use>
+											</svg>
+											<span>Upload New Version</span>
+										</li>
+										<li
+											onclick="window.open('./version-history.html', '_self')"
+											class="js-dropdown-list-item"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-history"></use>
+											</svg>
+											<span>View Version History</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
 					<a
 						href="../index.html"
 						aria-label="Go Back"
@@ -1328,55 +1518,90 @@
 									class="hidden [&.active]:block"
 									data-tab-content-id="tab-transcript"
 								>
-									<div class="flex gap-2 px-6 pt-6">
-										<button
-											type="button"
-											class="btn btn-border-default pl-3 pr-4 h-8 font-normal"
-										>
-											<svg class="icon size-5">
-												<use href="#icon-copy"></use>
-											</svg>
-											<span>Copy</span>
-										</button>
-										<button
-											type="button"
-											class="btn btn-border-default pl-3 pr-4 h-8 font-normal"
-										>
-											<svg class="icon size-5">
-												<use href="#icon-pencil"></use>
-											</svg>
-											<span>Edit</span>
-										</button>
-										<button
-											type="button"
-											class="btn btn-border-default pl-3 pr-4 h-8 font-normal"
-										>
-											<svg class="icon size-5">
-												<use href="#icon-download"></use>
-											</svg>
-											<span>Download</span>
-										</button>
-										<button
-											aria-label="More options"
-											type="button"
-											class="btn btn-border-default px-[7px] h-8 font-normal ml-auto"
-										>
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 20 20"
-												fill="none"
-												xmlns="http://www.w3.org/2000/svg"
+									<div
+										class="border-b border-gray-400 flex justify-between items-center pl-6 pr-5 py-4.5 gap-5 sticky top-0 bg-white z-11"
+									>
+										<strong class="text-base font-semibold">
+											Transcript
+										</strong>
+										<div class="flex gap-2">
+											<div class="dropdown-wrapper">
+												<button
+													type="button"
+													aria-label="More options"
+													data-id="dropdown-copy-transcript"
+													class="dropdown-button btn btn-border-default h-9 py-0 pl-2.5 pr-2 gap-0.5"
+												>
+													<svg class="icon icon-m">
+														<use href="#icon-copy"></use>
+													</svg>
+													<svg class="icon icon-s">
+														<use href="#icon-chevron-down"></use>
+													</svg>
+												</button>
+												<div
+													class="js-dropdown hidden w-52 left-0"
+													data-dropdown-id="dropdown-copy-transcript"
+													data-sheet-modal
+												>
+													<div class="js-dropdown-overlay"></div>
+													<div class="js-dropdown-body">
+														<div class="js-dropdown-trigger">
+															<span></span>
+														</div>
+														<div class="js-dropdown-content">
+															<ul class="js-dropdown-list">
+																<li class="js-dropdown-list-item">
+																	<span>Copy with timestamps</span>
+																</li>
+																<li class="js-dropdown-list-item">
+																	<span>Copy without timestamps</span>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+											<button
+												aria-label="More options"
+												type="button"
+												class="btn btn-border-default size-9 p-0"
 											>
-												<path
-													d="M6 10C6 8.9 5.1 8 4 8C2.9 8 2 8.9 2 10C2 11.1 2.9 12 4 12C5.1 12 6 11.1 6 10ZM8 10C8 11.1 8.9 12 10 12C11.1 12 12 11.1 12 10C12 8.9 11.1 8 10 8C8.9 8 8 8.9 8 10ZM14 10C14 11.1 14.9 12 16 12C17.1 12 18 11.1 18 10C18 8.9 17.1 8 16 8C14.9 8 14 8.9 14 10Z"
-													fill="#0A0A0B"
-												/>
-											</svg>
-										</button>
+												<svg class="icon icon-m">
+													<use href="#icon-pencil"></use>
+												</svg>
+											</button>
+											<button
+												aria-label="More options"
+												type="button"
+												class="btn btn-border-default size-9 p-0"
+											>
+												<svg class="icon size-3.5">
+													<use href="#icon-search"></use>
+												</svg>
+											</button>
+											<button
+												aria-label="More options"
+												type="button"
+												class="btn btn-border-default size-9 p-0"
+											>
+												<svg class="icon icon-m">
+													<use href="#icon-download"></use>
+												</svg>
+											</button>
+											<button
+												aria-label="More options"
+												type="button"
+												class="btn btn-border-default size-9 p-0"
+											>
+												<svg class="icon icon-m">
+													<use href="#icon-lang"></use>
+												</svg>
+											</button>
+										</div>
 									</div>
 									<ul
-										class="px-3 my-5 [&>li]:px-3 [&>li]:py-4 [&>li]:hover:bg-gray-200 [&>li]:cursor-pointer [&>li>span]:block [&>li>span]:mb-2 [&>li>span]:text-blue-500 [&>li>span]:text-sm [&>li>span]:font-medium"
+										class="px-3 my-5 [&>li]:px-3 [&>li]:py-4 [&>li]:hover:bg-blue-500/10 [&>li]:cursor-pointer [&>li>span]:block [&>li>span]:mb-2 [&>li>span]:text-blue-500 [&>li>span]:text-sm [&>li]:flex [&>li]:gap-3 [&>li]:rounded-xl [&_p]:text-sm"
 									>
 										<li>
 											<span>00:00</span>
@@ -2959,6 +3184,203 @@
 										<use href="#icon-arrow-right"></use>
 									</svg>
 								</button>
+							</div>
+						</div>
+						<div
+							class="file-viewer-tab hidden"
+							data-tab-inside-content="version-history-tab"
+						>
+							<div class="file-viewer-tab-header mb-2">
+								<button
+									data-tab-inside-go-back
+									aria-label="Go Back"
+									type="button"
+									class="btn p-0 size-6 rounded-md hover:bg-gray-200"
+								>
+									<svg class="icon size-5">
+										<use href="#icon-chevron-left"></use>
+									</svg>
+								</button>
+								<strong class="text-base font-semibold">
+									Version History
+								</strong>
+							</div>
+							<div class="file-viewer-tab-content pt-2">
+								<div
+									class="px-4 py-1.5 rounded-md bg-gray-150 text-sm [&_p]:text-sm/6 mb-6"
+								>
+									<p>
+										Previous versions of the file are only available for 30
+										days. You can restore any version to make it the current
+										file
+										<a href="#" class="text-gray-900 ml-2">
+											<svg class="icon icon-s inline-block align-middle">
+												<use href="#icon-question-in-circle"></use>
+											</svg>
+											Learn more</a
+										>
+									</p>
+								</div>
+								<button
+									type="button"
+									class="btn btn-primary w-full font-semibold"
+								>
+									Upload New Version
+								</button>
+								<ul class="mt-6 space-y-4 mb-4">
+									<li
+										class="current-version-active [&.current-version-active]:bg-blue-500/5 border [&.current-version-active]:border-blue-500 border-gray-600 p-4 min-h-20 rounded-xl flex flex-col justify-center"
+									>
+										<span
+											class="hidden [.current-version-active_&]:flex items-center justify-center rounded-md h-7 bg-blue-500/10 px-2 font-medium text-sm text-blue-500 w-max mb-4"
+										>
+											Current Version
+										</span>
+										<div class="flex items-center gap-3.5 w-full">
+											<span
+												class="tag-filled bg-dark-800/5 text-dark-800 font-medium px-2.5 h-7 flex-shrink-0 text-sm font-sans"
+												>v4</span
+											>
+											<div class="flex items-center gap-2 flex-grow-1">
+												<div class="avatar">
+													<img src="../assets/images/avatar.png" alt="avatar" />
+												</div>
+												<div
+													class="flex flex-col gap-0.5 [&_strong]:font-semibold"
+												>
+													<p class="text-sm">
+														Edited by
+														<strong>John Dalton</strong>
+													</p>
+													<p class="text-xs">Aug 21, 2018 - 10:09 AM</p>
+												</div>
+												<button
+													aria-label="More options"
+													type="button"
+													class="btn p-0 size-6.5 rounded-full hover:bg-[#EAEAEA] ml-auto [.current-version-active_&]:hidden"
+												>
+													<svg class="icon icon-md">
+														<use href="#icon-dots-horizontal"></use>
+													</svg>
+												</button>
+											</div>
+										</div>
+									</li>
+									<li
+										class="[&.current-version-active]:bg-blue-500/5 border [&.current-version-active]:border-blue-500 border-gray-600 p-4 min-h-20 rounded-xl flex flex-col justify-center"
+									>
+										<span
+											class="hidden [.current-version-active_&]:flex items-center justify-center rounded-md h-7 bg-blue-500/10 px-2 font-medium text-sm text-blue-500 w-max mb-4"
+										>
+											Current Version
+										</span>
+										<div class="flex items-center gap-3.5 w-full">
+											<span
+												class="tag-filled bg-dark-800/5 text-dark-800 font-medium px-2.5 h-7 flex-shrink-0 text-sm font-sans"
+												>v3</span
+											>
+											<div class="flex items-center gap-2 flex-grow-1">
+												<div class="avatar">
+													<img src="../assets/images/avatar.png" alt="avatar" />
+												</div>
+												<div
+													class="flex flex-col gap-0.5 [&_strong]:font-semibold"
+												>
+													<p class="text-sm">
+														Uploaded by
+														<strong>John Dalton</strong>
+													</p>
+													<p class="text-xs">Aug 21, 2018 - 10:09 AM</p>
+												</div>
+												<button
+													aria-label="More options"
+													type="button"
+													class="btn p-0 size-6.5 rounded-full hover:bg-[#EAEAEA] ml-auto [.current-version-active_&]:hidden"
+												>
+													<svg class="icon icon-md">
+														<use href="#icon-dots-horizontal"></use>
+													</svg>
+												</button>
+											</div>
+										</div>
+									</li>
+									<li
+										class="[&.current-version-active]:bg-blue-500/5 border [&.current-version-active]:border-blue-500 border-gray-600 p-4 min-h-20 rounded-xl flex flex-col justify-center"
+									>
+										<span
+											class="hidden [.current-version-active_&]:flex items-center justify-center rounded-md h-7 bg-blue-500/10 px-2 font-medium text-sm text-blue-500 w-max mb-4"
+										>
+											Current Version
+										</span>
+										<div class="flex items-center gap-3.5 w-full">
+											<span
+												class="tag-filled bg-dark-800/5 text-dark-800 font-medium px-2.5 h-7 flex-shrink-0 text-sm font-sans"
+												>v2</span
+											>
+											<div class="flex items-center gap-2 flex-grow-1">
+												<div class="avatar">
+													<img src="../assets/images/avatar.png" alt="avatar" />
+												</div>
+												<div
+													class="flex flex-col gap-0.5 [&_strong]:font-semibold"
+												>
+													<p class="text-sm">
+														Edited by
+														<strong>Ilon Mask</strong>
+													</p>
+													<p class="text-xs">Aug 21, 2018 - 10:09 AM</p>
+												</div>
+												<button
+													aria-label="More options"
+													type="button"
+													class="btn p-0 size-6.5 rounded-full hover:bg-[#EAEAEA] ml-auto [.current-version-active_&]:hidden"
+												>
+													<svg class="icon icon-md">
+														<use href="#icon-dots-horizontal"></use>
+													</svg>
+												</button>
+											</div>
+										</div>
+									</li>
+									<li
+										class="[&.current-version-active]:bg-blue-500/5 border [&.current-version-active]:border-blue-500 border-gray-600 p-4 min-h-20 rounded-xl flex flex-col justify-center"
+									>
+										<span
+											class="hidden [.current-version-active_&]:flex items-center justify-center rounded-md h-7 bg-blue-500/10 px-2 font-medium text-sm text-blue-500 w-max mb-4"
+										>
+											Current Version
+										</span>
+										<div class="flex items-center gap-3.5 w-full">
+											<span
+												class="tag-filled bg-dark-800/5 text-dark-800 font-medium px-2.5 h-7 flex-shrink-0 text-sm font-sans"
+												>v1</span
+											>
+											<div class="flex items-center gap-2 flex-grow-1">
+												<div class="avatar">
+													<img src="../assets/images/avatar.png" alt="avatar" />
+												</div>
+												<div
+													class="flex flex-col gap-0.5 [&_strong]:font-semibold"
+												>
+													<p class="text-sm">
+														Uploaded by
+														<strong>John Dalton</strong>
+													</p>
+													<p class="text-xs">Aug 21, 2018 - 10:09 AM</p>
+												</div>
+												<button
+													aria-label="More options"
+													type="button"
+													class="btn p-0 size-6.5 rounded-full hover:bg-[#EAEAEA] ml-auto [.current-version-active_&]:hidden"
+												>
+													<svg class="icon icon-md">
+														<use href="#icon-dots-horizontal"></use>
+													</svg>
+												</button>
+											</div>
+										</div>
+									</li>
+								</ul>
 							</div>
 						</div>
 					</div>
