@@ -1519,96 +1519,196 @@
 									data-tab-content-id="tab-transcript"
 								>
 									<div
-										class="border-b border-gray-400 flex justify-between items-center pl-6 pr-5 py-4.5 gap-5 sticky top-0 bg-white z-11"
+										class="border-b border-gray-400 pl-6 pr-5 py-4.5 gap-5 sticky top-0 bg-white z-11"
 									>
-										<strong class="text-base font-semibold">
-											Transcript
-										</strong>
-										<div class="flex gap-2">
-											<div class="dropdown-wrapper">
-												<button
-													type="button"
-													aria-label="More options"
-													data-id="dropdown-copy-transcript"
-													class="dropdown-button btn btn-border-default h-9 py-0 pl-2.5 pr-2 gap-0.5"
-												>
-													<svg class="icon icon-m">
-														<use href="#icon-copy"></use>
-													</svg>
-													<svg class="icon icon-s">
-														<use href="#icon-chevron-down"></use>
-													</svg>
-												</button>
-												<div
-													class="js-dropdown hidden w-52 left-0"
-													data-dropdown-id="dropdown-copy-transcript"
-													data-sheet-modal
-												>
-													<div class="js-dropdown-overlay"></div>
-													<div class="js-dropdown-body">
-														<div class="js-dropdown-trigger">
-															<span></span>
-														</div>
-														<div class="js-dropdown-content">
-															<ul class="js-dropdown-list">
-																<li class="js-dropdown-list-item">
-																	<span>Copy with timestamps</span>
-																</li>
-																<li class="js-dropdown-list-item">
-																	<span>Copy without timestamps</span>
-																</li>
-															</ul>
+										<div
+											id="transcript-header"
+											class="transcript-header flex justify-between items-center"
+										>
+											<strong
+												class="text-base font-semibold"
+												id="transcript-header-title"
+											>
+												Transcript
+											</strong>
+											<div class="flex gap-2">
+												<div class="dropdown-wrapper">
+													<button
+														type="button"
+														aria-label="More options"
+														data-id="dropdown-copy-transcript"
+														class="dropdown-button btn btn-border-default h-9 py-0 pl-2.5 pr-2 gap-0.5"
+													>
+														<svg class="icon icon-m">
+															<use href="#icon-copy"></use>
+														</svg>
+														<svg class="icon icon-s">
+															<use href="#icon-chevron-down"></use>
+														</svg>
+													</button>
+													<div
+														class="js-dropdown hidden w-52 left-0"
+														data-dropdown-id="dropdown-copy-transcript"
+														data-sheet-modal
+													>
+														<div class="js-dropdown-overlay"></div>
+														<div class="js-dropdown-body">
+															<div class="js-dropdown-trigger">
+																<span></span>
+															</div>
+															<div class="js-dropdown-content">
+																<ul class="js-dropdown-list">
+																	<li class="js-dropdown-list-item">
+																		<span>Copy with timestamps</span>
+																	</li>
+																	<li class="js-dropdown-list-item">
+																		<span>Copy without timestamps</span>
+																	</li>
+																</ul>
+															</div>
 														</div>
 													</div>
 												</div>
+												<button
+													id="transcript-edit-button"
+													aria-label="Transcript edit"
+													type="button"
+													class="btn btn-border-default size-9 p-0"
+												>
+													<svg class="icon icon-m">
+														<use href="#icon-pencil"></use>
+													</svg>
+												</button>
+												<button
+													aria-label="Transcript search"
+													type="button"
+													class="transcript-search-button btn btn-border-default size-9 p-0"
+												>
+													<svg class="icon size-3.5">
+														<use href="#icon-search"></use>
+													</svg>
+												</button>
+												<button
+													aria-label="More options"
+													type="button"
+													class="btn btn-border-default size-9 p-0"
+												>
+													<svg class="icon icon-m">
+														<use href="#icon-download"></use>
+													</svg>
+												</button>
+												<button
+													aria-label="More options"
+													type="button"
+													class="btn btn-border-default size-9 p-0"
+												>
+													<svg class="icon icon-m">
+														<use href="#icon-lang"></use>
+													</svg>
+												</button>
 											</div>
-											<button
-												aria-label="More options"
-												type="button"
-												class="btn btn-border-default size-9 p-0"
+										</div>
+										<div
+											id="transcript-header-search"
+											class="transcript-header relative flex items-center gap-2 hidden"
+										>
+											<span
+												class="absolute left-4 top-1/2 -translate-y-1/2 text-dark-800/60"
 											>
-												<svg class="icon icon-m">
-													<use href="#icon-pencil"></use>
-												</svg>
-											</button>
-											<button
-												aria-label="More options"
-												type="button"
-												class="btn btn-border-default size-9 p-0"
-											>
-												<svg class="icon size-3.5">
+												<svg class="icon icon-xs">
 													<use href="#icon-search"></use>
 												</svg>
-											</button>
-											<button
-												aria-label="More options"
-												type="button"
-												class="btn btn-border-default size-9 p-0"
+											</span>
+											<input
+												type="text"
+												class="form-control-settings h-9 pl-10 flex-grow-1 min-w-0"
+												placeholder="Search"
+											/>
+											<div
+												id="transcript-search-results-nav"
+												class="flex items-center px-0.5 hidden"
 											>
-												<svg class="icon icon-m">
-													<use href="#icon-download"></use>
-												</svg>
-											</button>
+												<span class="mr-2 text-sm">6/12</span>
+												<span
+													class="flex items-center justify-center size-6 rounded-sm hover:bg-gray-150 cursor-pointer"
+												>
+													<svg class="icon icon-xs -scale-100">
+														<use href="#icon-check-bottom"></use>
+													</svg>
+												</span>
+												<span
+													class="flex items-center justify-center size-6 rounded-sm hover:bg-gray-150 cursor-pointer ml-0.5"
+												>
+													<svg class="icon icon-xs">
+														<use href="#icon-check-bottom"></use>
+													</svg>
+												</span>
+											</div>
 											<button
-												aria-label="More options"
+												id="transcript-search-cancel-button"
 												type="button"
-												class="btn btn-border-default size-9 p-0"
+												class="btn btn-border-default shrink-0"
 											>
-												<svg class="icon icon-m">
-													<use href="#icon-lang"></use>
-												</svg>
+												Cancel
 											</button>
 										</div>
+										<div
+											id="transcript-edit-header"
+											class="transcript-header relative flex items-center justify-between gap-2 hidden"
+										>
+											<div class="flex items-center gap-2">
+												<button
+													type="button"
+													aria-label="Go Back"
+													class="btn size-6 p-0 -ml-2"
+												>
+													<svg class="icon icon-sm">
+														<use href="#icon-chevron-left"></use>
+													</svg>
+												</button>
+												<strong class="text-base font-semibold"
+													>Edit Transcript</strong
+												>
+											</div>
+											<div class="flex items-center gap-2">
+												<button
+													aria-label="Transcript edit search"
+													id="transcript-edit-undo-button"
+													type="button"
+													class="btn btn-border-default size-9 p-0"
+												>
+													<svg class="icon icon-m">
+														<use href="#icon-undo"></use>
+													</svg>
+												</button>
+												<button
+													aria-label="Transcript edit search"
+													type="button"
+													class="transcript-search-button btn btn-border-default size-9 p-0"
+												>
+													<svg class="icon icon-s">
+														<use href="#icon-search"></use>
+													</svg>
+												</button>
+												<button
+													id="transcript-edit-done-button"
+													type="button"
+													class="btn btn-border-default"
+												>
+													Done
+												</button>
+											</div>
+										</div>
 									</div>
-									<ul
-										class="px-3 my-5 [&>li]:px-3 [&>li]:py-4 [&>li]:hover:bg-blue-500/10 [&>li]:cursor-pointer [&>li>span]:block [&>li>span]:mb-2 [&>li>span]:text-blue-500 [&>li>span]:text-sm [&>li]:flex [&>li]:gap-3 [&>li]:rounded-xl [&_p]:text-sm"
-									>
+									<ul id="transcript-main-content">
 										<li>
 											<span>00:00</span>
 											<p>
-												Hello everyone, welcome to this Microsoft Word tutorial.
-												In this video, we’ll quickly go over how to create and
-												format a simple document.
+												<span>Hello</span> <span>everyone,</span>
+												<span>welcome</span> <span>to</span> <span>this</span>
+												<span>Microsoft</span> <span>Word</span>
+												<span>tutorial.</span> In this video, we’ll quickly go
+												over how to create and format a simple document.
 											</p>
 										</li>
 										<li>
@@ -1647,6 +1747,90 @@
 											</p>
 										</li>
 									</ul>
+									<div id="transcript-upgrade-plan" class="relative hidden">
+										<ul class="pl-6 py-6 pr-5 w-full space-y-8">
+											<li class="flex flex-col gap-2.5">
+												<span
+													class="bg-[#EDEDED] animate-pulse w-10.5 h-2.5 rounded-sm"
+												></span>
+												<span
+													class="bg-[#F8F8F8] animate-pulse w-full h-2.5 rounded-sm"
+												></span>
+												<span
+													class="bg-[#F8F8F8] animate-pulse w-full max-w-[10.75rem] h-2.5 rounded-sm"
+												></span>
+												<span
+													class="bg-[#F8F8F8] animate-pulse w-full max-w-51 h-2.5 rounded-sm"
+												></span>
+											</li>
+											<li class="flex flex-col gap-2.5">
+												<span
+													class="bg-[#EDEDED] animate-pulse w-10.5 h-2.5 rounded-sm"
+												></span>
+												<span
+													class="bg-[#F8F8F8] animate-pulse w-full max-w-51 h-2.5 rounded-sm"
+												></span>
+												<span
+													class="bg-[#F8F8F8] animate-pulse w-full max-w-[10.75rem] h-2.5 rounded-sm"
+												></span>
+												<span
+													class="bg-[#F8F8F8] animate-pulse w-full max-w-33 h-2.5 rounded-sm"
+												></span>
+											</li>
+											<li class="flex flex-col gap-2.5">
+												<span
+													class="bg-[#EDEDED] animate-pulse w-10.5 h-2.5 rounded-sm"
+												></span>
+												<span
+													class="bg-[#F8F8F8] animate-pulse w-full max-w-51 h-2.5 rounded-sm"
+												></span>
+												<span
+													class="bg-[#F8F8F8] animate-pulse w-full max-w-[10.75rem] h-2.5 rounded-sm"
+												></span>
+												<span
+													class="bg-[#F8F8F8] animate-pulse w-full max-w-33 h-2.5 rounded-sm"
+												></span>
+											</li>
+											<li class="flex flex-col gap-2.5">
+												<span
+													class="bg-[#EDEDED] animate-pulse w-10.5 h-2.5 rounded-sm"
+												></span>
+												<span
+													class="bg-[#F8F8F8] animate-pulse w-full max-w-51 h-2.5 rounded-sm"
+												></span>
+												<span
+													class="bg-[#F8F8F8] animate-pulse w-full max-w-[10.75rem] h-2.5 rounded-sm"
+												></span>
+												<span
+													class="bg-[#F8F8F8] animate-pulse w-full max-w-33 h-2.5 rounded-sm"
+												></span>
+											</li>
+											<li class="flex flex-col gap-2.5">
+												<span
+													class="bg-[#EDEDED] animate-pulse w-10.5 h-2.5 rounded-sm"
+												></span>
+												<span
+													class="bg-[#F8F8F8] animate-pulse w-full h-2.5 rounded-sm"
+												></span>
+												<span
+													class="bg-[#F8F8F8] animate-pulse w-full max-w-[10.75rem] h-2.5 rounded-sm"
+												></span>
+												<span
+													class="bg-[#F8F8F8] animate-pulse w-full max-w-51 h-2.5 rounded-sm"
+												></span>
+											</li>
+										</ul>
+										<div
+											class="flex flex-col justify-center items-center gap-4 bg-white rounded-xl p-6 shadow-[0px_4px_20px_rgba(0,0,0,0.06)] absolute left-1/2 -translate-x-1/2 top-20 w-[calc(100%-4.25rem)] border border-gray-400"
+										>
+											<p class="text-sm max-w-[13.4375rem] w-full text-center">
+												Upgrade your plan to transcribe your videos.
+											</p>
+											<button type="button" class="btn btn-primary w-full">
+												Upgrade Now
+											</button>
+										</div>
+									</div>
 								</div>
 								<div
 									class="hidden [&.active]:block px-5 pt-6"

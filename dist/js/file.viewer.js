@@ -25,6 +25,7 @@ const fileViewer = {
 		this.initContentTab();
 		this.initLeadCapture();
 		this.initCommentNavigation();
+		this.initTranscriptSearch();
 	},
 	getCurrentActiveTab: function () {
 		const activeContent = this.sidebar.find(
@@ -284,6 +285,47 @@ const fileViewer = {
 			const replyBtn = currentComment.find(".comment-reply-btn");
 			replyBtn.removeClass("hidden");
 			replyBlockElement.remove();
+		});
+	},
+	initTranscriptSearch: function () {
+		const transcriptSearchButton = $(".transcript-search-button");
+		const transcriptHeaderSearch = $("#transcript-header-search");
+		const transcriptHeader = $("#transcript-header");
+		const transcriptHeaderAll = $(".transcript-header");
+		const transcriptSearchCancelButton = $("#transcript-search-cancel-button");
+		const transcriptSearchResultsNav = $("#transcript-search-results-nav");
+		const transcriptUpgradePlan = $("#transcript-upgrade-plan");
+		const transcriptHeaderTitle = $("#transcript-header-title");
+		const transcriptEditButton = $("#transcript-edit-button");
+
+		transcriptEditButton.on("click", function () {
+			$(".transcript-header").addClass("hidden");
+			$("#transcript-main-content").addClass("can-edit");
+			$("#transcript-edit-header").removeClass("hidden");
+		});
+
+		transcriptSearchButton.on("click", function () {
+			transcriptHeaderAll.addClass("hidden");
+			transcriptHeaderSearch.removeClass("hidden");
+			transcriptHeaderSearch.find("input").focus();
+		});
+		transcriptSearchCancelButton.on("click", function () {
+			transcriptHeader.removeClass("hidden");
+			transcriptHeaderSearch.addClass("hidden");
+		});
+
+		transcriptHeaderSearch.find("input").on("input", function () {
+			const inputValue = $(this).val();
+			if (inputValue.length > 0) {
+				transcriptSearchResultsNav.removeClass("hidden");
+			} else {
+				transcriptSearchResultsNav.addClass("hidden");
+			}
+		});
+
+		transcriptHeaderTitle.on("click", function () {
+			transcriptUpgradePlan.toggleClass("hidden");
+			$("#transcript-main-content").toggleClass("hidden");
 		});
 	},
 };
