@@ -311,6 +311,9 @@
   .top-1\/2 {
     top: calc(1/2 * 100%);
   }
+  .top-2 {
+    top: calc(var(--spacing) * 2);
+  }
   .top-2\.5 {
     top: calc(var(--spacing) * 2.5);
   }
@@ -1286,6 +1289,9 @@
   .w-\[20\.625rem\] {
     width: 20.625rem;
   }
+  .w-\[20\.6875rem\] {
+    width: 20.6875rem;
+  }
   .w-\[20rem\] {
     width: 20rem;
   }
@@ -1891,6 +1897,13 @@
       --tw-space-y-reverse: 0;
       margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
       margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-2\.5 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 2.5) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 2.5) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
   .space-y-3 {
@@ -2980,6 +2993,10 @@
   }
   .shadow-\[0px_1px_6\.3px_-1px_rgba\(18\,35\,69\,0\.1\)\] {
     --tw-shadow: 0px 1px 6.3px -1px var(--tw-shadow-color, rgba(18,35,69,0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-\[0px_4px_12px_rgba\(0\,0\,0\,0\.1\)\] {
+    --tw-shadow: 0px 4px 12px var(--tw-shadow-color, rgba(0,0,0,0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
   .shadow-\[0px_4px_20px_rgba\(0\,0\,0\,0\.06\)\] {
@@ -4812,6 +4829,11 @@
       line-height: calc(var(--spacing) * 6);
     }
   }
+  .\[\&_p\]\:text-dark-800 {
+    & p {
+      color: var(--color-dark-800);
+    }
+  }
   .\[\&_p\,\&_a\]\:mr-auto {
     & p,& a {
       margin-right: auto;
@@ -4835,6 +4857,11 @@
   .\[\&_span\]\:items-center {
     & span {
       align-items: center;
+    }
+  }
+  .\[\&_span\]\:text-dark-800 {
+    & span {
+      color: var(--color-dark-800);
     }
   }
   .\[\&_strong\]\:font-semibold {
@@ -10975,7 +11002,7 @@ ul.who-can-access {
     p {
       font-size: var(--text-sm);
       line-height: var(--tw-leading, var(--text-sm--line-height));
-      span {
+      & > span {
         position: relative;
         cursor: pointer;
         &::after {
@@ -11000,7 +11027,7 @@ ul.who-can-access {
     }
   }
   #transcript-main-content.can-edit {
-    span {
+    p > span {
       &:hover {
         @media (hover: hover) {
           color: var(--color-blue-500);
@@ -11012,6 +11039,15 @@ ul.who-can-access {
             content: var(--tw-content);
             opacity: 100%;
           }
+        }
+      }
+      &.active {
+        color: var(--color-blue-500);
+      }
+      &.active {
+        &::after {
+          content: var(--tw-content);
+          opacity: 100%;
         }
       }
     }

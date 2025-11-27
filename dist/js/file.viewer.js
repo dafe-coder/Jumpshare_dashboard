@@ -297,11 +297,84 @@ const fileViewer = {
 		const transcriptUpgradePlan = $("#transcript-upgrade-plan");
 		const transcriptHeaderTitle = $("#transcript-header-title");
 		const transcriptEditButton = $("#transcript-edit-button");
+		const transcriptLangHeader = $("#transcript-lang-header");
+		const transcriptLangButton = $("#transcript-lang-button");
+		const transcriptMainContent = $("#transcript-main-content");
+		const transcriptHeaderGoBackButton = $("[data-transcript-header-go-back]");
+
+		transcriptHeaderGoBackButton.on("click", function () {
+			transcriptHeaderAll.addClass("hidden");
+			transcriptHeader.removeClass("hidden");
+			transcriptMainContent.removeClass("can-edit");
+		});
 
 		transcriptEditButton.on("click", function () {
-			$(".transcript-header").addClass("hidden");
-			$("#transcript-main-content").addClass("can-edit");
+			transcriptHeaderAll.addClass("hidden");
+			transcriptMainContent.addClass("can-edit");
 			$("#transcript-edit-header").removeClass("hidden");
+		});
+
+		transcriptMainContent.find("span").on("click", function (e) {
+			if (!transcriptMainContent.hasClass("can-edit")) return;
+			const $this = $(this);
+			$this.addClass("dropdown-button");
+			$this.wrap("<span class='dropdown-wrapper'></span>");
+			$this.attr("data-id", "transcript-lang-dropdown");
+			const $dropdown = `
+			<div class="js-dropdown w-[20.6875rem] left-1/2 -translate-x-1/2 hidden shadow-[0px_4px_12px_rgba(0,0,0,0.1)]"
+				data-dropdown-id="transcript-lang-dropdown"
+				data-sheet-modal
+				data-overflow-visible
+				>
+				<div class="js-dropdown-overlay"></div>
+				<div class="js-dropdown-body">
+					<div class="js-dropdown-trigger">
+						<span></span>
+					</div>
+					<div class="js-dropdown-content [&_p]:text-dark-800 [&_span]:text-dark-800 p-4 pr-5 cursor-default">
+						<p class="text-xs font-medium">Correct</p>
+						<button class="btn absolute top-2 right-2 size-6 text-dark-800 p-0 hover:bg-gray-200 rounded-md" type="button" data-close-dropdown-button>
+							<svg class="icon icon-s">
+								<use href="#icon-close"></use>
+							</svg>
+						</button>
+						<input class="form-control-settings mt-3 w-full h-9 rounded-sm px-3" type="text" placeholder="Type your correction" value="${$this.text()}">
+						<div class="flex items-center mt-4">
+							<button type="button" class="btn px-2 text-dark-800 text-[13px] -ml-2">
+								<svg class="icon icon-sm">
+									<use href="#icon-trash"></use>
+								</svg>
+								<span>Delete word</span>
+							</button>
+							<div class="flex items-center gap-2 ml-auto">
+								<button type="button" class="btn btn-border-default text-dark-800 text-[13px]">Correct All</button>
+								<button type="button" class="btn btn-primary text-[13px]">Correct</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			`;
+			if (!$this.find(".js-dropdown").length) {
+				$this.parent(".dropdown-wrapper").append($dropdown);
+			}
+
+			// setTimeout(() => {
+			Dropdown.closeAllDropdowns(true);
+			Dropdown.handleDropdownClick(e);
+
+			$("[data-close-dropdown-button]").on("click", function () {
+				Dropdown.closeDropdown(
+					$(this),
+					$(this).closest(".dropdown-wrapper"),
+					$(this).closest(".js-dropdown"),
+				);
+			});
+			// }, 1000);
+		});
+
+		transcriptLangButton.on("click", function () {
+			transcriptHeaderAll.addClass("hidden");
+			transcriptLangHeader.removeClass("hidden");
 		});
 
 		transcriptSearchButton.on("click", function () {
@@ -323,6 +396,7 @@ const fileViewer = {
 			}
 		});
 
+		// TODO: Delete this after the transcript feature is implemented (This indicates to activate the plan)
 		transcriptHeaderTitle.on("click", function () {
 			transcriptUpgradePlan.toggleClass("hidden");
 			$("#transcript-main-content").toggleClass("hidden");

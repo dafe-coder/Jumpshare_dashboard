@@ -1515,7 +1515,7 @@
 									</div>
 								</div>
 								<div
-									class="hidden [&.active]:block"
+									class="[&.active]:block"
 									data-tab-content-id="tab-transcript"
 								>
 									<div
@@ -1598,6 +1598,7 @@
 													</svg>
 												</button>
 												<button
+													id="transcript-lang-button"
 													aria-label="More options"
 													type="button"
 													class="btn btn-border-default size-9 p-0"
@@ -1658,11 +1659,12 @@
 										>
 											<div class="flex items-center gap-2">
 												<button
-													type="button"
+													data-transcript-header-go-back
 													aria-label="Go Back"
-													class="btn size-6 p-0 -ml-2"
+													type="button"
+													class="btn p-0 size-6 rounded-md hover:bg-gray-200 -ml-2"
 												>
-													<svg class="icon icon-sm">
+													<svg class="icon size-5">
 														<use href="#icon-chevron-left"></use>
 													</svg>
 												</button>
@@ -1697,6 +1699,55 @@
 												>
 													Done
 												</button>
+											</div>
+										</div>
+										<div
+											id="transcript-lang-header"
+											class="transcript-header hidden"
+										>
+											<div class="flex items-center gap-2">
+												<button
+													data-transcript-header-go-back
+													aria-label="Go Back"
+													type="button"
+													class="btn p-0 size-6 rounded-md hover:bg-gray-200 -ml-2"
+												>
+													<svg class="icon size-5">
+														<use href="#icon-chevron-left"></use>
+													</svg>
+												</button>
+												<strong class="text-base font-semibold"
+													>Change Language</strong
+												>
+												<span class="cursor-pointer">
+													<svg class="icon icon-sm">
+														<use href="#icon-info"></use>
+													</svg>
+												</span>
+											</div>
+											<div class="space-y-2.5 mt-5">
+												<label class="custom-controls switcher text-sm">
+													Select target language
+												</label>
+												<div class="flex items-center gap-2">
+													<div class="dropdown-wrapper flex-grow-1">
+														<button
+															type="button"
+															class="dropdown-button btn btn-border-default w-full justify-between font-normal"
+														>
+															<span>English - Current</span>
+															<svg class="icon icon-sm">
+																<use href="#icon-chevron-down"></use>
+															</svg>
+														</button>
+													</div>
+													<button
+														type="button"
+														class="btn btn-primary flex-shrink-0"
+													>
+														Change
+													</button>
+												</div>
 											</div>
 										</div>
 									</div>
