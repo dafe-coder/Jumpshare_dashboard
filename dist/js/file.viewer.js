@@ -368,6 +368,7 @@ const fileViewer = {
 					$(this).closest(".dropdown-wrapper"),
 					$(this).closest(".js-dropdown"),
 				);
+				$this.removeClass("active");
 			});
 			// }, 1000);
 		});

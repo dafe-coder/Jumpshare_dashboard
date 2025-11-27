@@ -93,10 +93,10 @@
 		}
 	}
 	#transcript-main-content {
-		@apply px-3 my-5 [&>li]:px-3 [&>li]:py-4 [&>li]:hover:bg-blue-500/10 [&>li]:cursor-pointer [&>li>span]:block [&>li>span]:mb-2 [&>li>span]:text-blue-500 [&>li>span]:text-sm [&>li]:flex [&>li]:gap-3 [&>li]:rounded-xl [&_p]:text-sm;
+		@apply px-3 my-5 [&>li]:px-3 [&>li]:py-4  [&>li]:cursor-pointer [&>li>span]:block [&>li>span]:mb-2 [&>li>span]:text-blue-500 [&>li>span]:text-sm [&>li]:flex [&>li]:gap-3 [&>li]:rounded-xl [&_p]:text-sm;
 		p {
 			@apply text-sm;
-			& > span {
+			span.edit-word {
 				@apply cursor-pointer relative;
 				&::after {
 					@apply content-[''] absolute top-1/2 left-1/2 -translate-1/2 w-[calc(100%+4px)] h-5 bg-blue-500/10 rounded-sm opacity-0;
@@ -105,7 +105,7 @@
 		}
 	}
 	#transcript-main-content.can-edit {
-		p > span {
+		span.edit-word {
 			@apply hover:after:opacity-100 hover:text-blue-500 [&.active]:after:opacity-100 [&.active]:text-blue-500;
 		}
 	}
