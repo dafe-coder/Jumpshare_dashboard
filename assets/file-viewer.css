@@ -93,7 +93,7 @@
 		}
 	}
 	#transcript-main-content {
-		@apply px-3 my-5 [&>li]:px-3 [&>li]:py-4  [&>li]:cursor-pointer [&>li>span]:block [&>li>span]:mb-2 [&>li>span]:text-blue-500 [&>li>span]:text-sm [&>li]:flex [&>li]:gap-3 [&>li]:rounded-xl [&_p]:text-sm;
+		@apply px-3 my-5 [&>li]:px-3 [&>li]:py-4 [&>li]:hover:bg-[#F6F6F6] [&>li]:cursor-pointer [&>li>span]:block [&>li>span]:mb-2 [&>li>span]:text-blue-500 [&>li>span]:text-sm [&>li]:flex [&>li]:gap-3 [&>li]:rounded-xl [&_p]:text-sm;
 		p {
 			@apply text-sm;
 			span.edit-word {
@@ -108,5 +108,8 @@
 		span.edit-word {
 			@apply hover:after:opacity-100 hover:text-blue-500 [&.active]:after:opacity-100 [&.active]:text-blue-500;
 		}
+	}
+	#transcript-main-content:not(.can-edit) .current-paragraph-transcript {
+		@apply bg-blue-500/10!;
 	}
 }

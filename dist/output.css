@@ -10976,6 +10976,13 @@ ul.who-can-access {
     &>li {
       padding-block: calc(var(--spacing) * 4);
     }
+    &>li {
+      &:hover {
+        @media (hover: hover) {
+          background-color: #F6F6F6;
+        }
+      }
+    }
     &>li>span {
       margin-bottom: calc(var(--spacing) * 2);
     }
@@ -11040,6 +11047,12 @@ ul.who-can-access {
           opacity: 100%;
         }
       }
+    }
+  }
+  #transcript-main-content:not(.can-edit) .current-paragraph-transcript {
+    background-color: color-mix(in srgb, #2f76ff 10%, transparent) !important;
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-blue-500) 10%, transparent) !important;
     }
   }
 }
