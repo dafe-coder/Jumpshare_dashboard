@@ -786,7 +786,7 @@
 					<a
 						href="../index.html"
 						aria-label="Go Back"
-						class="btn btn-transparent size-10 p-0"
+						class="btn btn-transparent-with-border size-10 p-0"
 					>
 						<svg
 							width="14"
@@ -804,10 +804,12 @@
 				</div>
 			</header>
 			<div class="file-viewer-wrapper grid grid-cols-[1fr_430px] flex-grow-1">
-				<div class="flex-grow-1">
-					<div class="max-w-[80%] px-5 w-full mx-auto">
+				<div
+					class="flex-grow-1 overflow-y-auto h-[calc(100vh-var(--header-height))] scrollbar-hide"
+				>
+					<div class="max-w-[90%] px-5 w-full mx-auto">
 						<div
-							class="relative aspect-video max-h-[70vh] max-w-full bg-gray-400 rounded-xl mx-auto mt-6"
+							class="relative aspect-video max-h-[70vh] max-w-full bg-gray-400 rounded-xl mx-auto mt-6 mb-[6.375rem]"
 						>
 							<div class="file-viewer-lead-capture hidden">
 								<button
@@ -851,7 +853,7 @@
 								</form>
 							</div>
 							<div
-								class="flex gap-4 absolute left-1/2 -translate-x-1/2 top-[calc(100%+1.25rem)] w-max z-10"
+								class="flex gap-4 absolute left-1/2 -translate-x-1/2 top-[calc(100%+1.5rem)] w-max z-10"
 							>
 								<ul
 									class="flex gap-4 bg-white py-[0.8125rem] px-4 rounded-xl border border-gray-400 shadow-[0px_4px_20px_rgba(0,0,0,0.06)] h-13.5"
@@ -917,24 +919,131 @@
 											<use href="#icon-add-smile"></use>
 										</svg>
 									</li>
+									<li class="border-l border-gray-600 h-6.5"></li>
+									<li
+										class="cursor-pointer flex items-center justify-center flex-shrink-0 gap-1.5"
+									>
+										<svg class="icon icon-md">
+											<use href="#icon-comment"></use>
+										</svg>
+										<span>Comment</span>
+									</li>
 								</ul>
 								<div
-									class="flex gap-2.5 items-center bg-white border border-gray-400 rounded-xl px-4 h-13.5 shadow-[0px_4px_20px_rgba(0,0,0,0.06)] cursor-pointer"
+									class="flex gap-1 items-center bg-white border border-gray-400 rounded-xl px-2.5 h-13.5 shadow-[0px_4px_20px_rgba(0,0,0,0.06)] cursor-pointer"
 								>
-									<svg class="icon size-7">
-										<use href="#icon-summary"></use>
-									</svg>
-									<span>Summary</span>
-								</div>
-								<div
-									class="flex gap-2.5 items-center bg-white border border-gray-400 rounded-xl px-4 h-13.5 shadow-[0px_4px_20px_rgba(0,0,0,0.06)] cursor-pointer"
-								>
-									<svg class="icon size-7">
-										<use href="#icon-comment"></use>
-									</svg>
-									<span>Comment</span>
+									<button
+										aria-label="Undo"
+										type="button"
+										class="btn btn-transparent size-9 p-0 text-dark-800/50"
+									>
+										<svg class="icon icon-md">
+											<use href="#icon-undo-arrow"></use>
+										</svg>
+									</button>
+									<button
+										aria-label="Delete"
+										type="button"
+										class="btn btn-transparent size-9 p-0 text-dark-800/50"
+									>
+										<svg class="icon icon-md">
+											<use href="#icon-trash"></use>
+										</svg>
+									</button>
+									<button
+										aria-label="Delete"
+										type="button"
+										class="btn btn-transparent size-9 p-0 text-dark-800/50"
+									>
+										<img
+											class="size-5.5"
+											src="../assets/images/gradient-color-picker.png"
+											alt="gradient color picker"
+										/>
+									</button>
+									<button
+										aria-label="Delete"
+										type="button"
+										class="btn btn-transparent size-9 p-0"
+									>
+										<svg class="icon icon-md">
+											<use href="#icon-line-weight"></use>
+										</svg>
+									</button>
+									<button
+										aria-label="Delete"
+										type="button"
+										class="btn btn-transparent size-9 p-0"
+									>
+										<svg class="icon icon-md">
+											<use href="#icon-send"></use>
+										</svg>
+									</button>
+									<span class="mx-2 border-l border-gray-600 h-6.5"></span>
+									<button
+										aria-label="Delete"
+										type="button"
+										class="btn btn-transparent size-9 p-0"
+									>
+										<svg
+											width="12"
+											height="12"
+											viewBox="0 0 12 12"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg"
+										>
+											<path
+												d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z"
+												fill="#0A0A0B"
+											/>
+										</svg>
+									</button>
 								</div>
 							</div>
+						</div>
+						<div class="w-full bg-white p-6 rounded-xl border border-gray-400">
+							<strong class="text-base font-semibold block mb-2"
+								>Summary</strong
+							>
+							<p class="text-sm">
+								The team has been working hard on various updates and
+								improvements. We have been fine-tuning the real-time server,
+								making crucial security enhancements, and planning for off-site
+								SEO improvements. Additionally, the team is prioritizing
+								programmatic pages, upgrade dialog boxes, and pop-ups for
+								testing. We hope to complete these tasks and move on to jump
+								testing. The main focus is on delivering high-quality, secure,
+								and efficient features for our users.
+							</p>
+						</div>
+						<div
+							class="w-full bg-white p-6 rounded-xl border border-gray-400 my-6"
+						>
+							<strong class="text-base font-semibold block mb-2"
+								>Chapters</strong
+							>
+							<ul class="space-y-1 text-sm">
+								<li>
+									<span class="text-sm text-blue-500 cursor-pointer mr-2.5"
+										>0:00</span
+									><span>Introuction</span>
+								</li>
+								<li>
+									<span class="text-sm text-blue-500 cursor-pointer mr-2.5"
+										>0:23</span
+									><span>Project Kickoff and Goals</span>
+								</li>
+								<li>
+									<span class="text-sm text-blue-500 cursor-pointer mr-2.5"
+										>1:45</span
+									><span>Development Process Overview</span>
+								</li>
+								<li>
+									<span class="text-sm text-blue-500 cursor-pointer mr-2.5"
+										>5:00</span
+									><span>Testing and Quality Assurance</span>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
@@ -1099,6 +1208,38 @@
 												</p>
 											</div>
 										</div>
+										<div
+											class="flex items-center gap-4 bg-white border border-gray-400 rounded-xl px-5 py-4 w-full cursor-pointer hover:bg-gray-200"
+											data-tab-inside="analytics-tab"
+										>
+											<svg class="icon icon-md flex-shrink-0">
+												<use href="#icon-chart-bar"></use>
+											</svg>
+											<div class="flex flex-col truncate">
+												<strong class="text-sm font-semibold"
+													>View Analytics</strong
+												>
+												<p class="text-gray-900 text-sm truncate">
+													View analytics with engagement insights
+												</p>
+											</div>
+										</div>
+										<div
+											class="flex items-center gap-4 bg-white border border-gray-400 rounded-xl px-5 py-4 w-full cursor-pointer hover:bg-gray-200"
+											data-tab-inside="video-thumbnail"
+										>
+											<svg class="icon icon-md flex-shrink-0">
+												<use href="#icon-chat"></use>
+											</svg>
+											<div class="flex flex-col truncate">
+												<strong class="text-sm font-semibold"
+													>Chat with Video</strong
+												>
+												<p class="text-gray-900 text-sm truncate">
+													Ask anything about this video
+												</p>
+											</div>
+										</div>
 									</div>
 								</div>
 								<div
@@ -1128,8 +1269,17 @@
 															aria-label="choose smile"
 															class="btn btn-white hover:bg-gray-300 p-0 size-8 [&.active]:bg-gray-300"
 														>
-															<svg class="icon size-4">
-																<use href="#icon-mention"></use>
+															<svg
+																width="24"
+																height="24"
+																viewBox="0 0 24 24"
+																fill="none"
+																xmlns="http://www.w3.org/2000/svg"
+															>
+																<path
+																	d="M15.2 12H15.85H15.2ZM17.1913 18.9196C17.4783 18.7039 17.5361 18.2964 17.3204 18.0095C17.1047 17.7225 16.6972 17.6647 16.4103 17.8804L16.8008 18.4L17.1913 18.9196ZM15.85 8.8C15.85 8.44101 15.559 8.15 15.2 8.15C14.841 8.15 14.55 8.44102 14.55 8.8H15.2H15.85ZM15.2 12H14.55C14.55 13.4083 13.4083 14.55 12 14.55V15.2V15.85C14.1263 15.85 15.85 14.1263 15.85 12H15.2ZM12 15.2V14.55C10.5917 14.55 9.45 13.4083 9.45 12H8.8H8.15C8.15 14.1263 9.8737 15.85 12 15.85V15.2ZM8.8 12H9.45C9.45 10.5917 10.5917 9.45 12 9.45V8.8V8.15C9.8737 8.15 8.15 9.8737 8.15 12H8.8ZM12 8.8V9.45C13.4083 9.45 14.55 10.5917 14.55 12H15.2H15.85C15.85 9.8737 14.1263 8.15 12 8.15V8.8ZM20 12H20.65C20.65 7.22262 16.7774 3.35 12 3.35V4V4.65C16.0594 4.65 19.35 7.94059 19.35 12H20ZM12 4V3.35C7.22262 3.35 3.35 7.22262 3.35 12H4H4.65C4.65 7.94059 7.94059 4.65 12 4.65V4ZM4 12H3.35C3.35 16.7774 7.22262 20.65 12 20.65V20V19.35C7.94059 19.35 4.65 16.0594 4.65 12H4ZM12 20V20.65C13.9471 20.65 15.7457 20.0062 17.1913 18.9196L16.8008 18.4L16.4103 17.8804C15.1823 18.8034 13.6561 19.35 12 19.35V20ZM15.2 8.8H14.55L14.55 12H15.2H15.85L15.85 8.8H15.2ZM15.2 12H14.55C14.55 12.504 14.6959 13.2456 15.1525 13.8798C15.633 14.5472 16.4282 15.05 17.6 15.05V14.4V13.75C16.8518 13.75 16.447 13.4528 16.2075 13.1202C15.9441 12.7544 15.85 12.296 15.85 12H15.2ZM17.6 14.4V15.05C18.7718 15.05 19.567 14.5472 20.0475 13.8798C20.5041 13.2456 20.65 12.504 20.65 12H20H19.35C19.35 12.296 19.2559 12.7544 18.9925 13.1202C18.753 13.4528 18.3482 13.75 17.6 13.75V14.4Z"
+																	fill="black"
+																/>
 															</svg>
 														</button>
 														<button
@@ -1137,7 +1287,7 @@
 															aria-label="choose smile"
 															class="btn btn-white hover:bg-gray-300 p-0 size-8 [&.active]:bg-gray-300"
 														>
-															<svg class="icon size-4">
+															<svg class="icon icon-sm">
 																<use href="#icon-smile"></use>
 															</svg>
 														</button>
@@ -1147,8 +1297,8 @@
 															aria-label="choose smile"
 															class="btn btn-white hover:bg-gray-300 p-0 size-8 [&.active]:bg-gray-300"
 														>
-															<svg class="icon size-4.5">
-																<use href="#icon-pencil"></use>
+															<svg class="icon size-8">
+																<use href="#icon-pencil-with-plus"></use>
 															</svg>
 														</button>
 													</div>
@@ -1157,7 +1307,7 @@
 													>
 														<button
 															type="button"
-															class="btn btn-transparent h-7.5 px-2.5 font-normal min-w-16.5"
+															class="btn btn-transparent-with-border h-7.5 px-2.5 font-normal min-w-16.5"
 															id="comment-cancel-button"
 														>
 															Cancel
@@ -1223,8 +1373,137 @@
 											</div>
 										</div>
 									</div>
+									<div class="flex justify-between items-center px-5">
+										<strong class="text-base font-semibold">12 Comments</strong>
+										<div class="flex">
+											<div class="dropdown-wrapper">
+												<button
+													data-id="dropdown-comments-sort"
+													aria-label="Add comment"
+													class="dropdown-button btn btn-transparent p-0 size-8"
+													type="button"
+												>
+													<svg class="icon icon-md">
+														<use href="#icon-swap"></use>
+													</svg>
+												</button>
+												<div
+													class="js-dropdown hidden w-52 right-0"
+													data-dropdown-id="dropdown-comments-sort"
+													data-sheet-modal
+												>
+													<div class="js-dropdown-body">
+														<div class="js-dropdown-trigger">
+															<span></span>
+														</div>
+														<div class="js-dropdown-content">
+															<ul
+																class="js-dropdown-list js-dropdown-list-selected"
+															>
+																<li class="js-dropdown-list-item selected">
+																	<svg class="icon icon-md">
+																		<use href="#icon-check"></use>
+																	</svg>
+																	<span>Most recent</span>
+																</li>
+																<li class="js-dropdown-list-item">
+																	<svg class="icon icon-md">
+																		<use href="#icon-check"></use>
+																	</svg>
+																	<span>Oldest</span>
+																</li>
+																<li class="js-dropdown-list-item">
+																	<svg class="icon icon-md">
+																		<use href="#icon-check"></use>
+																	</svg>
+																	<span>Timestamp</span>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="dropdown-wrapper">
+												<button
+													data-id="dropdown-comments-filter"
+													aria-label="Filter comments"
+													class="dropdown-button btn btn-transparent p-0 size-8"
+													type="button"
+												>
+													<svg class="icon icon-md">
+														<use href="#icon-filter"></use>
+													</svg>
+												</button>
+												<div
+													class="js-dropdown hidden w-58.5 right-0"
+													data-dropdown-id="dropdown-comments-filter"
+													data-sheet-modal
+												>
+													<div class="js-dropdown-body">
+														<div class="js-dropdown-trigger">
+															<span></span>
+														</div>
+														<div class="js-dropdown-content">
+															<ul
+																class="js-dropdown-list js-dropdown-list-selected"
+															>
+																<li class="js-dropdown-list-item selected">
+																	<svg class="icon icon-md">
+																		<use href="#icon-check"></use>
+																	</svg>
+																	<span>Unresolved comments</span>
+																</li>
+																<li class="js-dropdown-list-item">
+																	<svg class="icon icon-md">
+																		<use href="#icon-check"></use>
+																	</svg>
+																	<span>All comments</span>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="dropdown-wrapper">
+												<button
+													data-id="dropdown-comments-settings"
+													aria-label="Settings"
+													class="dropdown-button btn btn-transparent p-0 size-8"
+													type="button"
+												>
+													<svg class="icon icon-md">
+														<use href="#icon-dots-horizontal"></use>
+													</svg>
+												</button>
+												<div
+													class="js-dropdown hidden w-52 right-0"
+													data-dropdown-id="dropdown-comments-settings"
+													data-sheet-modal
+												>
+													<div class="js-dropdown-body">
+														<div class="js-dropdown-trigger">
+															<span></span>
+														</div>
+														<div class="js-dropdown-content">
+															<ul class="js-dropdown-list">
+																<li class="js-dropdown-list-item">
+																	Unsubscribe
+																</li>
+																<li class="js-dropdown-list-item">
+																	Disable comments
+																</li>
+																<li class="js-dropdown-list-item">
+																	Download comments
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
 									<ul class="flex flex-col px-2 pb-6">
-										<li class="px-3 py-4 rounded-xl hover:bg-gray-150">
+										<li class="px-3 py-4 rounded-xl hover:bg-gray-150 group">
 											<div
 												class="flex gap-3 relative [.has-replies_&]:after:block after:hidden after:content-[''] after:w-5 after:border-l after:border-b after:rounded-bl-xl after:border-gray-600 after:h-[calc(100%-32px+27px+12px)] after:absolute after:left-3 after:top-8.5"
 											>
@@ -1232,15 +1511,58 @@
 													<img src="../assets/images/avatar.png" alt="Avatar" />
 												</span>
 												<div class="flex flex-col gap-1.5 text-sm">
-													<div class="flex items-center gap-2">
+													<div class="flex items-center gap-2 relative">
 														<strong class="text-sm font-semibold"
 															>John Doe</strong
 														>
 														<span class="text-gray-900 text-xs"
 															>15 mins ago</span
 														>
+														<div
+															class="flex items-center ml-auto absolute right-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
+														>
+															<button
+																aria-label="Mark as resolved"
+																type="button"
+																class="btn btn-transparent p-0 size-8"
+															>
+																<svg class="icon icon-s">
+																	<use href="#icon-check-with-circle"></use>
+																</svg>
+															</button>
+															<button
+																aria-label="Mark as resolved"
+																type="button"
+																class="btn btn-transparent p-0 size-8"
+															>
+																<svg class="icon icon-s">
+																	<use href="#icon-smile"></use>
+																</svg>
+															</button>
+															<button
+																aria-label="Mark as resolved"
+																type="button"
+																class="btn btn-transparent p-0 size-8"
+															>
+																<svg class="icon icon-md">
+																	<use href="#icon-dots-horizontal"></use>
+																</svg>
+															</button>
+														</div>
 													</div>
 													<p>
+														<span class="text-blue-500 cursor-pointer"
+															>01:46</span
+														>
+														<span
+															class="btn bg-gray-300 p-0 size-6 inline-flex -bottom-0.5 relative"
+														>
+															<svg
+																class="icon icon-s [--icon-stroke-width:1.5]"
+															>
+																<use href="#icon-pencil"></use>
+															</svg>
+														</span>
 														This actually looked quite good to me, appreciate
 														it.
 													</p>
@@ -1253,7 +1575,70 @@
 												</div>
 											</div>
 										</li>
-										<li class="px-3 py-4 rounded-xl hover:bg-gray-150">
+										<li class="px-3 py-4 rounded-xl hover:bg-gray-150 group">
+											<div
+												class="flex gap-3 relative [.has-replies_&]:after:block after:hidden after:content-[''] after:w-5 after:border-l after:border-b after:rounded-bl-xl after:border-gray-600 after:h-[calc(100%-32px+27px+12px)] after:absolute after:left-3 after:top-8.5"
+											>
+												<span class="avatar size-7 text-sm">
+													<img src="../assets/images/avatar.png" alt="Avatar" />
+												</span>
+												<div class="flex flex-col gap-1.5 text-sm">
+													<div class="flex items-center gap-2 relative">
+														<strong class="text-sm font-semibold"
+															>John Doe</strong
+														>
+														<span class="text-gray-900 text-xs"
+															>15 mins ago</span
+														>
+														<div
+															class="flex items-center ml-auto absolute right-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
+														>
+															<button
+																aria-label="Mark as resolved"
+																type="button"
+																class="btn btn-transparent p-0 size-8"
+															>
+																<svg class="icon icon-s">
+																	<use href="#icon-check-with-circle"></use>
+																</svg>
+															</button>
+															<button
+																aria-label="Mark as resolved"
+																type="button"
+																class="btn btn-transparent p-0 size-8"
+															>
+																<svg class="icon icon-s">
+																	<use href="#icon-smile"></use>
+																</svg>
+															</button>
+															<button
+																aria-label="Mark as resolved"
+																type="button"
+																class="btn btn-transparent p-0 size-8"
+															>
+																<svg class="icon icon-md">
+																	<use href="#icon-dots-horizontal"></use>
+																</svg>
+															</button>
+														</div>
+													</div>
+													<p>
+														<span class="text-blue-500 cursor-pointer"
+															>00:26</span
+														>
+														This actually looked quite good to me, appreciate
+														it.
+													</p>
+													<button
+														type="button"
+														class="comment-reply-btn btn font-semibold px-2.5 h-7 self-start -ml-2.5"
+													>
+														Reply
+													</button>
+												</div>
+											</div>
+										</li>
+										<li class="px-3 py-4 rounded-xl hover:bg-gray-150 group">
 											<div
 												class="flex gap-3 relative [.has-replies_&]:after:block after:hidden after:content-[''] after:w-5 after:border-l after:border-b after:rounded-bl-xl after:border-gray-600 after:h-[calc(100%-32px+27px+12px)] after:absolute after:left-3 after:top-8.5"
 											>
@@ -1264,13 +1649,44 @@
 													/>
 												</span>
 												<div class="flex flex-col gap-1.5 text-sm">
-													<div class="flex items-center gap-2">
+													<div class="flex items-center gap-2 relative">
 														<strong class="text-sm font-semibold"
 															>Oliver Bernett</strong
 														>
 														<span class="text-gray-900 text-xs"
 															>24 mins ago</span
 														>
+														<div
+															class="flex items-center ml-auto absolute right-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
+														>
+															<button
+																aria-label="Mark as resolved"
+																type="button"
+																class="btn btn-transparent p-0 size-8"
+															>
+																<svg class="icon icon-s">
+																	<use href="#icon-check-with-circle"></use>
+																</svg>
+															</button>
+															<button
+																aria-label="Mark as resolved"
+																type="button"
+																class="btn btn-transparent p-0 size-8"
+															>
+																<svg class="icon icon-s">
+																	<use href="#icon-smile"></use>
+																</svg>
+															</button>
+															<button
+																aria-label="Mark as resolved"
+																type="button"
+																class="btn btn-transparent p-0 size-8"
+															>
+																<svg class="icon icon-md">
+																	<use href="#icon-dots-horizontal"></use>
+																</svg>
+															</button>
+														</div>
 													</div>
 													<p>
 														I am sending you some files that you requested,
@@ -1285,7 +1701,7 @@
 												</div>
 											</div>
 										</li>
-										<li class="px-3 py-4 rounded-xl hover:bg-gray-150">
+										<li class="px-3 py-4 rounded-xl hover:bg-gray-150 group">
 											<div
 												class="flex gap-3 relative [.has-replies_&]:after:block after:hidden after:content-[''] after:w-5 after:border-l after:border-b after:rounded-bl-xl after:border-gray-600 after:h-[calc(100%-32px+27px+12px)] after:absolute after:left-3 after:top-8.5"
 											>
@@ -1294,13 +1710,44 @@
 													>S</span
 												>
 												<div class="flex flex-col gap-1.5 text-sm">
-													<div class="flex items-center gap-2">
+													<div class="flex items-center gap-2 relative">
 														<strong class="text-sm font-semibold"
 															>Sam Parker</strong
 														>
 														<span class="text-gray-900 text-xs"
 															>32 mins ago</span
 														>
+														<div
+															class="flex items-center ml-auto absolute right-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
+														>
+															<button
+																aria-label="Mark as resolved"
+																type="button"
+																class="btn btn-transparent p-0 size-8"
+															>
+																<svg class="icon icon-s">
+																	<use href="#icon-check-with-circle"></use>
+																</svg>
+															</button>
+															<button
+																aria-label="Mark as resolved"
+																type="button"
+																class="btn btn-transparent p-0 size-8"
+															>
+																<svg class="icon icon-s">
+																	<use href="#icon-smile"></use>
+																</svg>
+															</button>
+															<button
+																aria-label="Mark as resolved"
+																type="button"
+																class="btn btn-transparent p-0 size-8"
+															>
+																<svg class="icon icon-md">
+																	<use href="#icon-dots-horizontal"></use>
+																</svg>
+															</button>
+														</div>
 													</div>
 													<p>
 														Thanks for allowing me to share the video with you,
@@ -1317,7 +1764,7 @@
 											</div>
 										</li>
 										<li
-											class="px-3 py-4 rounded-xl hover:bg-gray-150 has-replies"
+											class="px-3 py-4 rounded-xl hover:bg-gray-150 has-replies group"
 										>
 											<div
 												class="flex gap-3 relative [.has-replies_&]:after:block after:hidden after:content-[''] after:w-5 after:border-l after:border-b after:rounded-bl-xl after:border-gray-600 after:h-[calc(100%-32px+27px+12px)] after:absolute after:left-3 after:top-8.5"
@@ -1329,13 +1776,44 @@
 													/>
 												</span>
 												<div class="flex flex-col gap-1.5 text-sm">
-													<div class="flex items-center gap-2">
+													<div class="flex items-center gap-2 relative">
 														<strong class="text-sm font-semibold"
 															>John Doe</strong
 														>
 														<span class="text-gray-900 text-xs"
 															>2 days ago</span
 														>
+														<div
+															class="flex items-center ml-auto absolute right-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
+														>
+															<button
+																aria-label="Mark as resolved"
+																type="button"
+																class="btn btn-transparent p-0 size-8"
+															>
+																<svg class="icon icon-s">
+																	<use href="#icon-check-with-circle"></use>
+																</svg>
+															</button>
+															<button
+																aria-label="Mark as resolved"
+																type="button"
+																class="btn btn-transparent p-0 size-8"
+															>
+																<svg class="icon icon-s">
+																	<use href="#icon-smile"></use>
+																</svg>
+															</button>
+															<button
+																aria-label="Mark as resolved"
+																type="button"
+																class="btn btn-transparent p-0 size-8"
+															>
+																<svg class="icon icon-md">
+																	<use href="#icon-dots-horizontal"></use>
+																</svg>
+															</button>
+														</div>
 													</div>
 													<p>
 														This actually looked quite good to me, appreciate
@@ -1363,7 +1841,7 @@
 															/>
 														</span>
 														<div class="flex flex-col gap-1.5 text-sm">
-															<div class="flex items-center gap-2">
+															<div class="flex items-center gap-2 relative">
 																<strong class="text-sm font-semibold"
 																	>John Doe</strong
 																>
@@ -1400,7 +1878,7 @@
 															/>
 														</span>
 														<div class="flex flex-col gap-1.5 text-sm">
-															<div class="flex items-center gap-2">
+															<div class="flex items-center gap-2 relative">
 																<strong class="text-sm font-semibold"
 																	>John Doe</strong
 																>
@@ -1438,7 +1916,7 @@
 															/>
 														</span>
 														<div class="flex flex-col gap-1.5 text-sm">
-															<div class="flex items-center gap-2">
+															<div class="flex items-center gap-2 relative">
 																<strong class="text-sm font-semibold"
 																	>John Doe</strong
 																>

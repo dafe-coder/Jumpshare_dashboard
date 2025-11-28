@@ -268,6 +268,19 @@
 	.dropdown-animate-hide {
 		animation: dropdownHide 300ms ease forwards !important;
 	}
+	.js-dropdown-list-selected {
+		.js-dropdown-list-item {
+			@apply gap-2;
+			svg {
+				@apply max-h-0;
+			}
+			&.selected {
+				svg {
+					@apply [.selected_&]:max-h-min;
+				}
+			}
+		}
+	}
 	.js-dropdown {
 		@apply bg-white shadow-dropdown border border-gray-400 rounded-lg w-[14rem] absolute top-[calc(100%_+_8px)] right-0 left-auto [&.active]:flex [.list-type_&]:right-full [.list-type_&]:left-auto z-997 lg:opacity-0;
 		.js-dropdown-content {

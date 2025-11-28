@@ -238,7 +238,7 @@ const fileViewer = {
 									<div class="flex items-center gap-2">
 										<button
 											type="button"
-											class="btn btn-transparent h-7.5 px-3.5 comment-reply-cancel-btn"
+											class="btn btn-transparent-with-border h-7.5 px-3.5 comment-reply-cancel-btn"
 										>
 											Cancel
 										</button>
