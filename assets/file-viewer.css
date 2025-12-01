@@ -93,11 +93,27 @@
 		}
 	}
 	#transcript-main-content {
-		@apply px-3 my-5 [&>li]:px-3 [&>li]:py-4 [&>li]:hover:bg-[#F6F6F6] [&>li]:cursor-pointer [&>li>span]:block [&>li>span]:mb-2 [&>li>span]:text-blue-500 [&>li>span]:text-sm [&>li]:flex [&>li]:gap-3 [&>li]:rounded-xl [&_p]:text-sm;
+		@apply px-3 my-5 [&>li]:px-3 [&>li]:py-4  [&>li]:flex [&>li]:gap-3 [&>li]:rounded-xl [&_p]:text-sm;
+		& > li:hover {
+			.transcript-time {
+				button {
+					@apply opacity-100;
+				}
+			}
+		}
+		.transcript-time {
+			@apply flex flex-col justify-center items-center gap-2;
+			span {
+				@apply block text-blue-500 text-sm;
+			}
+			button {
+				@apply opacity-0 group-hover:opacity-100;
+			}
+		}
 		p {
 			@apply text-sm;
 			span.edit-word {
-				@apply cursor-pointer relative;
+				@apply relative;
 				&::after {
 					@apply content-[''] absolute top-1/2 left-1/2 -translate-1/2 w-[calc(100%+4px)] h-5 bg-blue-500/10 rounded-sm opacity-0;
 				}
@@ -105,8 +121,9 @@
 		}
 	}
 	#transcript-main-content.can-edit {
+		@apply [&>li]:hover:bg-[#F6F6F6];
 		span.edit-word {
-			@apply hover:after:opacity-100 hover:text-blue-500 [&.active]:after:opacity-100 [&.active]:text-blue-500;
+			@apply cursor-pointer  hover:after:opacity-100 hover:text-blue-500 [&.active]:after:opacity-100 [&.active]:text-blue-500;
 		}
 	}
 	#transcript-main-content:not(.can-edit) .current-paragraph-transcript {

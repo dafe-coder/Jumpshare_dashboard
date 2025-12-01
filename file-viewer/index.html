@@ -856,6 +856,7 @@
 								class="flex gap-4 absolute left-1/2 -translate-x-1/2 top-[calc(100%+1.5rem)] w-max z-10"
 							>
 								<ul
+									id="file-viewer-smiles-picker"
 									class="flex gap-4 bg-white py-[0.8125rem] px-4 rounded-xl border border-gray-400 shadow-[0px_4px_20px_rgba(0,0,0,0.06)] h-13.5"
 								>
 									<li
@@ -922,6 +923,7 @@
 									<li class="border-l border-gray-600 h-6.5"></li>
 									<li
 										class="cursor-pointer flex items-center justify-center flex-shrink-0 gap-1.5"
+										data-tab-id="tab-comments"
 									>
 										<svg class="icon icon-md">
 											<use href="#icon-comment"></use>
@@ -930,7 +932,8 @@
 									</li>
 								</ul>
 								<div
-									class="flex gap-1 items-center bg-white border border-gray-400 rounded-xl px-2.5 h-13.5 shadow-[0px_4px_20px_rgba(0,0,0,0.06)] cursor-pointer"
+									id="file-viewer-draw-tools"
+									class="flex gap-1 items-center bg-white border border-gray-400 rounded-xl px-2.5 h-13.5 shadow-[0px_4px_20px_rgba(0,0,0,0.06)] cursor-pointer hidden"
 								>
 									<button
 										aria-label="Undo"
@@ -951,7 +954,7 @@
 										</svg>
 									</button>
 									<button
-										aria-label="Delete"
+										aria-label="Choose color"
 										type="button"
 										class="btn btn-transparent size-9 p-0 text-dark-800/50"
 									>
@@ -962,7 +965,7 @@
 										/>
 									</button>
 									<button
-										aria-label="Delete"
+										aria-label="Choose line weight"
 										type="button"
 										class="btn btn-transparent size-9 p-0"
 									>
@@ -971,7 +974,7 @@
 										</svg>
 									</button>
 									<button
-										aria-label="Delete"
+										aria-label="Send"
 										type="button"
 										class="btn btn-transparent size-9 p-0"
 									>
@@ -981,7 +984,8 @@
 									</button>
 									<span class="mx-2 border-l border-gray-600 h-6.5"></span>
 									<button
-										aria-label="Delete"
+										id="file-viewer-draw-tools-cancel-button"
+										aria-label="Cancel"
 										type="button"
 										class="btn btn-transparent size-9 p-0"
 									>
@@ -2231,7 +2235,18 @@
 									</div>
 									<ul id="transcript-main-content">
 										<li>
-											<span>00:00</span>
+											<div class="transcript-time">
+												<span>00:00</span>
+												<button
+													aria-label="Copy Button"
+													type="button"
+													class="btn size-5.5 p-0 bg-[#F6F6F6]"
+												>
+													<svg class="icon icon-s [--icon-stroke-width:1.6]">
+														<use href="#icon-copy"></use>
+													</svg>
+												</button>
+											</div>
 											<p>
 												<span class="edit-word">Hello</span>
 												<span class="edit-word">everyone,</span>
@@ -2246,7 +2261,18 @@
 											</p>
 										</li>
 										<li>
-											<span>00:08</span>
+											<div class="transcript-time">
+												<span>00:20</span>
+												<button
+													aria-label="Copy Button"
+													type="button"
+													class="btn size-5.5 p-0 bg-[#F6F6F6]"
+												>
+													<svg class="icon icon-s [--icon-stroke-width:1.6]">
+														<use href="#icon-copy"></use>
+													</svg>
+												</button>
+											</div>
 											<p>
 												Let’s start by opening Microsoft Word. Once you launch
 												it, you’ll see the start screen where you can choose
@@ -2255,7 +2281,18 @@
 											</p>
 										</li>
 										<li>
-											<span>00:20</span>
+											<div class="transcript-time">
+												<span>00:33</span>
+												<button
+													aria-label="Copy Button"
+													type="button"
+													class="btn size-5.5 p-0 bg-[#F6F6F6]"
+												>
+													<svg class="icon icon-s [--icon-stroke-width:1.6]">
+														<use href="#icon-copy"></use>
+													</svg>
+												</button>
+											</div>
 											<p>
 												At the top, you’ll notice the Ribbon. This is where all
 												your tools are organized. For example, under the “Home”
@@ -2263,7 +2300,18 @@
 											</p>
 										</li>
 										<li class="current-paragraph-transcript">
-											<span>00:33</span>
+											<div class="transcript-time">
+												<span>00:48</span>
+												<button
+													aria-label="Copy Button"
+													type="button"
+													class="btn size-5.5 p-0 bg-[#F6F6F6]"
+												>
+													<svg class="icon icon-s [--icon-stroke-width:1.6]">
+														<use href="#icon-copy"></use>
+													</svg>
+												</button>
+											</div>
 											<p>
 												Now, let’s type a simple sentence: “Microsoft Word makes
 												document creation easy.” Once typed, highlight the text.
@@ -2273,7 +2321,18 @@
 											</p>
 										</li>
 										<li>
-											<span>00:48</span>
+											<div class="transcript-time">
+												<span>1:02</span>
+												<button
+													aria-label="Copy Button"
+													type="button"
+													class="btn size-5.5 p-0 bg-[#F6F6F6]"
+												>
+													<svg class="icon icon-s [--icon-stroke-width:1.6]">
+														<use href="#icon-copy"></use>
+													</svg>
+												</button>
+											</div>
 											<p>
 												You can also center the text by clicking the alignment
 												button in the Home tab. And just like that, you’ve

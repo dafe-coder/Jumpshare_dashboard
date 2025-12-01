@@ -215,6 +215,8 @@ const fileViewer = {
 		const commentTextarea = $("#comment-textarea");
 		const commentCancelButton = $("#comment-cancel-button");
 		const commentReplyBtn = $(".comment-reply-btn");
+		const smilePicker = $("#file-viewer-smiles-picker");
+
 		const replyBlock = `<li
 								class="border border-blue-500 rounded-xl flex flex-col gap-4 px-3 pt-4 pb-3.5 mx-3 relative"
 							>
@@ -253,8 +255,15 @@ const fileViewer = {
 							</li>`;
 
 		commentDrawButton.on("click", function () {
+			smilePicker.toggleClass("hidden");
 			commentDrawButton.toggleClass("active");
-			commentBox.toggleClass("active-comment-draw-tools");
+			$("#file-viewer-draw-tools").toggleClass("hidden");
+		});
+
+		$("#file-viewer-draw-tools-cancel-button").on("click", function () {
+			$("#file-viewer-draw-tools").addClass("hidden");
+			commentDrawButton.removeClass("active");
+			smilePicker.removeClass("hidden");
 		});
 
 		commentTextarea.on("input", function () {
@@ -359,7 +368,7 @@ const fileViewer = {
 			}
 
 			// setTimeout(() => {
-			Dropdown.closeAllDropdowns(true);
+			Dropdown.closeAllDropdowns();
 			Dropdown.handleDropdownClick(e);
 
 			$("[data-close-dropdown-button]").on("click", function () {

@@ -156,8 +156,8 @@ $(document).ready(function () {
 	tabs.on("click", function (e) {
 		e.preventDefault();
 		const tabId = $(this).attr("data-tab-id");
-		$(this).addClass("active");
-		$(this).siblings().removeClass("active");
+		tabs.removeClass("active");
+		tabs.filter(`[data-tab-id="${tabId}"]`).addClass("active");
 		$(`[data-tab-content-id="${tabId}"]`).addClass("active");
 		$(`[data-tab-content-id="${tabId}"]`).siblings().removeClass("active");
 	});
