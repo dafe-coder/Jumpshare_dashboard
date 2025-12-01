@@ -13,7 +13,7 @@ const Dropdown = {
 	},
 
 	init() {
-		this.initElements();
+		this.initSelectors();
 		this.bootstrap();
 		this.adjustElementPositionOnResize();
 		this.initGridDropdown();
@@ -22,7 +22,7 @@ const Dropdown = {
 		this.cleanupActiveDropdowns();
 	},
 
-	initElements() {
+	initSelectors() {
 		this.dropdownWrappers = $(".dropdown-wrapper");
 		this.dropdownButtons = $(".dropdown-button");
 		this.dropdownContents = $(".js-dropdown");
@@ -171,6 +171,11 @@ const Dropdown = {
 		const $item = $(e.currentTarget);
 		const $content = $item.find(".js-dropdown-sub-list");
 
+		this.dropdownWrappers = $(".dropdown-wrapper");
+		this.dropdownButtons = $(".dropdown-button");
+		this.dropdownContents = $(".js-dropdown");
+		this.subMenuItems = $(".sub-menu-item");
+
 		this.subMenuItems.not($item).removeClass("active");
 		this.subMenuItems
 			.not($item)
@@ -232,10 +237,10 @@ const Dropdown = {
 		clearTimeout(this.dropdownIdCloseAllTimer);
 		clearTimeout(this.dropdownIdCloseTimer);
 
-		const $activeDropdown = this.dropdownContents.filter(".active");
-		const $activeButton = this.dropdownButtons.filter(".active");
-		const $activeWrapper = this.dropdownWrappers.filter(".active");
-		const $activeSubMenu = this.subMenuItems.filter(".active");
+		const $activeDropdown = $(".js-dropdown.active");
+		const $activeButton = $(".dropdown-button.active");
+		const $activeWrapper = $(".dropdown-wrapper.active");
+		const $activeSubMenu = $(".sub-menu-item.active");
 		const $activeSubList = $(".js-dropdown-sub-list.active");
 		this.detachScrollListeners();
 
@@ -257,9 +262,7 @@ const Dropdown = {
 			$activeDropdown.removeClass("dropdown-animate-hide").addClass("hidden");
 		} else {
 			this.dropdownIdCloseAllTimer = setTimeout(() => {
-				const $stillClosing = this.dropdownContents.filter(
-					".dropdown-animate-hide",
-				);
+				const $stillClosing = $(".js-dropdown.dropdown-animate-hide");
 				$stillClosing.removeClass("dropdown-animate-hide").addClass("hidden");
 			}, this.config.animationDelay);
 		}
@@ -360,27 +363,79 @@ const Dropdown = {
 			.closest(".dropdown-wrapper")
 			.find(".dropdown-button");
 		const triggerRect = $trigger[0].getBoundingClientRect();
-		const dropdownRect = $element[0].getBoundingClientRect();
 		const viewportHeight = window.innerHeight;
 		const viewportWidth = window.innerWidth;
+		const offset = 10;
+
+		let dropdownHeight = $element[0].offsetHeight || $element[0].scrollHeight;
+		let dropdownWidth = $element[0].offsetWidth || $element[0].scrollWidth;
 
 		let top, left, right;
 
-		if (triggerRect.bottom + 10 + dropdownRect.height > viewportHeight) {
-			top = triggerRect.top - dropdownRect.height - 10;
+		if (triggerRect.bottom + offset + dropdownHeight > viewportHeight) {
+			top = triggerRect.top - dropdownHeight - offset;
 		} else {
-			top = triggerRect.bottom + 10;
+			top = triggerRect.bottom + offset;
 		}
 
 		const hasRightClass = Array.from($element[0].classList).some((cls) =>
 			cls.startsWith("right-"),
 		);
+
 		if (hasRightClass) {
 			left = "auto";
 			right = viewportWidth - triggerRect.right + "px";
 		} else {
 			left = triggerRect.left + "px";
 			right = "auto";
+		}
+
+		$element.css({
+			top: top + "px",
+			left: left,
+			right: right,
+		});
+
+		const dropdownRect = $element[0].getBoundingClientRect();
+
+		const overflowTop = dropdownRect.top < 0 ? Math.abs(dropdownRect.top) : 0;
+		const overflowBottom =
+			dropdownRect.bottom > viewportHeight
+				? dropdownRect.bottom - viewportHeight
+				: 0;
+		const overflowLeft =
+			dropdownRect.left < 0 ? Math.abs(dropdownRect.left) : 0;
+		const overflowRight =
+			dropdownRect.right > viewportWidth
+				? dropdownRect.right - viewportWidth
+				: 0;
+
+		if (overflowTop || overflowBottom || overflowLeft || overflowRight) {
+			$element.css("transform", "none");
+
+			dropdownHeight = $element[0].offsetHeight || $element[0].scrollHeight;
+			dropdownWidth = $element[0].offsetWidth || $element[0].scrollWidth;
+
+			if (overflowTop) {
+				top = offset + overflowTop;
+			} else if (overflowBottom) {
+				top = triggerRect.bottom - offset - overflowBottom;
+			}
+
+			if (hasRightClass) {
+				if (overflowLeft) {
+					right = viewportWidth - dropdownWidth - offset - overflowLeft + "px";
+				} else if (overflowRight) {
+					right =
+						triggerRect.right - viewportWidth + offset + overflowRight + "px";
+				}
+			} else {
+				if (overflowRight) {
+					left = triggerRect.left - offset - overflowRight + "px";
+				} else if (overflowLeft) {
+					left = offset + overflowLeft + "px";
+				}
+			}
 		}
 
 		$element.css({
@@ -508,9 +563,7 @@ const Dropdown = {
 		const self = this;
 		this.scrollableParents.forEach(function (el) {
 			const handler = function () {
-				self.calculateFixedPosition(
-					self.dropdownContents.filter(".active.dropdown-fixed"),
-				);
+				self.calculateFixedPosition($(".js-dropdown.active.dropdown-fixed"));
 			};
 			el.addEventListener("scroll", handler, { passive: true });
 			self.scrollHandlers.push({ el, handler });

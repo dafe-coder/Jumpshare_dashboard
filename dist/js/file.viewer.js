@@ -328,10 +328,10 @@ const fileViewer = {
 			const $this = $(this);
 			$this.addClass("dropdown-button");
 			$this.wrap("<span class='dropdown-wrapper'></span>");
-			$this.attr("data-id", "transcript-lang-dropdown");
+			$this.attr("data-id", "transcript-correct-word-dropdown");
 			const $dropdown = `
 			<div class="js-dropdown w-[20.6875rem] left-1/2 -translate-x-1/2 hidden shadow-[0px_4px_12px_rgba(0,0,0,0.1)]"
-				data-dropdown-id="transcript-lang-dropdown"
+				data-dropdown-id="transcript-correct-word-dropdown"
 				data-sheet-modal
 				data-overflow-visible
 				>
@@ -367,8 +367,6 @@ const fileViewer = {
 				$this.parent(".dropdown-wrapper").append($dropdown);
 			}
 
-			// setTimeout(() => {
-			Dropdown.closeAllDropdowns();
 			Dropdown.handleDropdownClick(e);
 
 			$("[data-close-dropdown-button]").on("click", function () {
@@ -379,7 +377,6 @@ const fileViewer = {
 				);
 				$this.removeClass("active");
 			});
-			// }, 1000);
 		});
 
 		transcriptLangButton.on("click", function () {
