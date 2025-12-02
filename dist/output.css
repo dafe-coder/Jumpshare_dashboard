@@ -8386,7 +8386,7 @@
   .folder-menu-name {
     margin-left: calc(var(--spacing) * 2);
   }
-  .dropdown-wrapper {
+  .dropdown-wrapper,	.dropdown-parent-wrapper {
     position: relative;
   }
   .breadcrumb {
@@ -11028,7 +11028,7 @@ ul.who-can-access {
         }
       }
     }
-    p {
+    .transcript-text {
       font-size: var(--text-sm);
       line-height: var(--tw-leading, var(--text-sm--line-height));
       span.edit-word {

@@ -382,12 +382,36 @@ const Dropdown = {
 			cls.startsWith("right-"),
 		);
 
-		if (hasRightClass) {
-			left = "auto";
-			right = viewportWidth - triggerRect.right + "px";
+		const hasPositionXParent =
+			$element.attr("data-position-x-parent") !== undefined;
+
+		if (hasPositionXParent) {
+			const parentWrapper = $element.closest(".dropdown-parent-wrapper");
+			if (parentWrapper.length) {
+				const parentRect = parentWrapper[0].getBoundingClientRect();
+				const parentCenter =
+					parentRect.left +
+					parentRect.width +
+					(dropdownWidth - parentRect.width) / 2;
+				left = parentCenter - dropdownWidth / 2 + "px";
+				right = "auto";
+			} else {
+				if (hasRightClass) {
+					left = "auto";
+					right = viewportWidth - triggerRect.right + "px";
+				} else {
+					left = triggerRect.left + "px";
+					right = "auto";
+				}
+			}
 		} else {
-			left = triggerRect.left + "px";
-			right = "auto";
+			if (hasRightClass) {
+				left = "auto";
+				right = viewportWidth - triggerRect.right + "px";
+			} else {
+				left = triggerRect.left + "px";
+				right = "auto";
+			}
 		}
 
 		$element.css({
@@ -396,44 +420,47 @@ const Dropdown = {
 			right: right,
 		});
 
-		const dropdownRect = $element[0].getBoundingClientRect();
+		if (!hasPositionXParent) {
+			const dropdownRect = $element[0].getBoundingClientRect();
 
-		const overflowTop = dropdownRect.top < 0 ? Math.abs(dropdownRect.top) : 0;
-		const overflowBottom =
-			dropdownRect.bottom > viewportHeight
-				? dropdownRect.bottom - viewportHeight
-				: 0;
-		const overflowLeft =
-			dropdownRect.left < 0 ? Math.abs(dropdownRect.left) : 0;
-		const overflowRight =
-			dropdownRect.right > viewportWidth
-				? dropdownRect.right - viewportWidth
-				: 0;
+			const overflowTop = dropdownRect.top < 0 ? Math.abs(dropdownRect.top) : 0;
+			const overflowBottom =
+				dropdownRect.bottom > viewportHeight
+					? dropdownRect.bottom - viewportHeight
+					: 0;
+			const overflowLeft =
+				dropdownRect.left < 0 ? Math.abs(dropdownRect.left) : 0;
+			const overflowRight =
+				dropdownRect.right > viewportWidth
+					? dropdownRect.right - viewportWidth
+					: 0;
 
-		if (overflowTop || overflowBottom || overflowLeft || overflowRight) {
-			$element.css("transform", "none");
+			if (overflowTop || overflowBottom || overflowLeft || overflowRight) {
+				$element.css("transform", "none");
 
-			dropdownHeight = $element[0].offsetHeight || $element[0].scrollHeight;
-			dropdownWidth = $element[0].offsetWidth || $element[0].scrollWidth;
+				dropdownHeight = $element[0].offsetHeight || $element[0].scrollHeight;
+				dropdownWidth = $element[0].offsetWidth || $element[0].scrollWidth;
 
-			if (overflowTop) {
-				top = offset + overflowTop;
-			} else if (overflowBottom) {
-				top = triggerRect.bottom - offset - overflowBottom;
-			}
-
-			if (hasRightClass) {
-				if (overflowLeft) {
-					right = viewportWidth - dropdownWidth - offset - overflowLeft + "px";
-				} else if (overflowRight) {
-					right =
-						triggerRect.right - viewportWidth + offset + overflowRight + "px";
+				if (overflowTop) {
+					top = offset + overflowTop;
+				} else if (overflowBottom) {
+					top = triggerRect.bottom - offset - overflowBottom;
 				}
-			} else {
-				if (overflowRight) {
-					left = triggerRect.left - offset - overflowRight + "px";
-				} else if (overflowLeft) {
-					left = offset + overflowLeft + "px";
+
+				if (hasRightClass) {
+					if (overflowLeft) {
+						right =
+							viewportWidth - dropdownWidth - offset - overflowLeft + "px";
+					} else if (overflowRight) {
+						right =
+							triggerRect.right - viewportWidth + offset + overflowRight + "px";
+					}
+				} else {
+					if (overflowRight) {
+						left = triggerRect.left - offset - overflowRight + "px";
+					} else if (overflowLeft) {
+						left = offset + overflowLeft + "px";
+					}
 				}
 			}
 		}

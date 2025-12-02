@@ -334,6 +334,7 @@ const fileViewer = {
 				data-dropdown-id="transcript-correct-word-dropdown"
 				data-sheet-modal
 				data-overflow-visible
+				data-position-x-parent
 				>
 				<div class="js-dropdown-overlay"></div>
 				<div class="js-dropdown-body">

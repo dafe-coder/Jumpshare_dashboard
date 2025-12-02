@@ -110,7 +110,7 @@
 				@apply opacity-0 group-hover:opacity-100;
 			}
 		}
-		p {
+		.transcript-text {
 			@apply text-sm;
 			span.edit-word {
 				@apply relative;
