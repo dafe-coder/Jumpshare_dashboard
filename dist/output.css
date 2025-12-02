@@ -1294,9 +1294,6 @@
   .w-\[20\.625rem\] {
     width: 20.625rem;
   }
-  .w-\[20\.6875rem\] {
-    width: 20.6875rem;
-  }
   .w-\[20rem\] {
     width: 20rem;
   }
@@ -1350,6 +1347,9 @@
   }
   .w-\[246px\] {
     width: 246px;
+  }
+  .w-\[333px\] {
+    width: 333px;
   }
   .w-\[385px\] {
     width: 385px;
@@ -2629,6 +2629,9 @@
   }
   .pr-\[5px\] {
     padding-right: 5px;
+  }
+  .pr-\[19px\] {
+    padding-right: 19px;
   }
   .pb-0 {
     padding-bottom: calc(var(--spacing) * 0);
@@ -10997,7 +11000,7 @@ ul.who-can-access {
     &>li {
       padding-block: calc(var(--spacing) * 4);
     }
-    & > li:hover {
+    &:not(.can-edit) > li:hover {
       .transcript-time {
         button {
           opacity: 100%;

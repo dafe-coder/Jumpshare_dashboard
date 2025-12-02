@@ -330,7 +330,7 @@ const fileViewer = {
 			$this.wrap("<span class='dropdown-wrapper'></span>");
 			$this.attr("data-id", "transcript-correct-word-dropdown");
 			const $dropdown = `
-			<div class="js-dropdown w-[20.6875rem] left-1/2 -translate-x-1/2 hidden shadow-[0px_4px_12px_rgba(0,0,0,0.1)]"
+			<div class="js-dropdown w-[333px] left-1/2 -translate-x-1/2 hidden shadow-[0px_4px_12px_rgba(0,0,0,0.1)] rounded-xl"
 				data-dropdown-id="transcript-correct-word-dropdown"
 				data-sheet-modal
 				data-overflow-visible
@@ -340,7 +340,7 @@ const fileViewer = {
 					<div class="js-dropdown-trigger">
 						<span></span>
 					</div>
-					<div class="js-dropdown-content [&_p]:text-dark-800 [&_span]:text-dark-800 p-4 pr-5 cursor-default">
+					<div class="js-dropdown-content [&_p]:text-dark-800 [&_span]:text-dark-800 p-4 pr-[19px] cursor-default">
 						<p class="text-xs font-medium">Correct</p>
 						<button class="btn absolute top-2 right-2 size-6 text-dark-800 p-0 hover:bg-gray-200 rounded-md" type="button" data-close-dropdown-button>
 							<svg class="icon icon-s">
@@ -355,7 +355,7 @@ const fileViewer = {
 								</svg>
 								<span>Delete word</span>
 							</button>
-							<div class="flex items-center gap-2 ml-auto">
+							<div class="flex items-center gap-1.5 ml-auto">
 								<button type="button" class="btn btn-border-default text-dark-800 text-[13px]">Correct All</button>
 								<button type="button" class="btn btn-primary text-[13px]">Correct</button>
 							</div>

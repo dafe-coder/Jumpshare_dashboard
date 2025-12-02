@@ -94,7 +94,7 @@
 	}
 	#transcript-main-content {
 		@apply px-3 my-5 [&>li]:px-3 [&>li]:py-4  [&>li]:flex [&>li]:gap-3 [&>li]:rounded-xl [&_p]:text-sm;
-		& > li:hover {
+		&:not(.can-edit) > li:hover {
 			.transcript-time {
 				button {
 					@apply opacity-100;
