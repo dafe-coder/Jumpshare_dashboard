@@ -66,8 +66,6 @@ const fileViewer = {
 		const self = this;
 		const tabItems = $("[data-tab-inside]");
 		const goBackBtn = $("[data-tab-inside-go-back]");
-		console.log(tabItems);
-
 		self.currentTab = self.getCurrentActiveTab();
 
 		goBackBtn.on("click", function (e) {
