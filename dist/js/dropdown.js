@@ -6,6 +6,7 @@ const Dropdown = {
 	dropdownButtons: null,
 	dropdownContents: null,
 	subMenuItems: null,
+	defaultDropdownButtonText: "",
 
 	config: {
 		animationDelay: 350,
@@ -142,6 +143,43 @@ const Dropdown = {
 		const $content = $wrapper.find(
 			`.js-dropdown[data-dropdown-id="${dropdownId}"]`,
 		);
+		const isDropdownSelect = $content.is("[data-dropdown-select]");
+		if (!$wrapper.hasClass("dropdown-wrapper-selected") && isDropdownSelect) {
+			this.defaultDropdownButtonText = $button.find("span").text();
+		}
+		console.log(this.defaultDropdownButtonText);
+
+		if (isDropdownSelect) {
+			$wrapper
+				.find(".js-dropdown-list-selected li")
+				.on("click.dropdown-select-item", (e) => {
+					e.preventDefault();
+					e.stopPropagation();
+					e.stopImmediatePropagation();
+					const $item = $(e.currentTarget);
+					const $button = $wrapper.find(".dropdown-button");
+					$wrapper.addClass("dropdown-wrapper-selected");
+					$item.siblings().removeClass("selected");
+					$item.addClass("selected");
+					$button.find("span").text($item.find("span").text());
+					this.closeAllDropdowns();
+				});
+			$wrapper
+				.find(".dropdown-button-select-cancel")
+				.on("click.dropdown-select-cancel", (e) => {
+					e.preventDefault();
+					e.stopPropagation();
+					e.stopImmediatePropagation();
+					$wrapper.removeClass("dropdown-wrapper-selected");
+					$button.find("span").text(this.defaultDropdownButtonText);
+					$wrapper.find(".js-dropdown-list li").removeClass("selected");
+					this.closeAllDropdowns();
+					$wrapper
+						.find(".js-dropdown-list li")
+						.off("click.dropdown-select-item");
+					$(this).off("click.dropdown-select-cancel");
+				});
+		}
 
 		if (!$button.hasClass("active")) {
 			clearTimeout(this.dropdownIdCloseAllTimer);

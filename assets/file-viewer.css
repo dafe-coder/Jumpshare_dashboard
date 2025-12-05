@@ -129,4 +129,22 @@
 	#transcript-main-content:not(.can-edit) .current-paragraph-transcript {
 		@apply bg-blue-500/10!;
 	}
+	.keyboard-shortcuts-list {
+		@apply mt-4 border border-gray-400 rounded-xl p-5 space-y-3 mb-6;
+		& > li {
+			@apply grid grid-cols-[minmax(120px,45%)_1fr] items-center justify-between gap-2.5;
+			span {
+				@apply text-sm;
+			}
+			.shortcuts-wrapper {
+				@apply flex items-center gap-3 justify-end;
+			}
+			.shortcuts-list {
+				@apply flex items-center gap-1;
+				li {
+					@apply text-sm bg-blue-500/10 rounded-lg px-2 py-1 h-8;
+				}
+			}
+		}
+	}
 }

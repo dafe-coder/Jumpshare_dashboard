@@ -3781,6 +3781,7 @@
 									class="js-dropdown hidden w-51 left-0"
 									data-dropdown-id="dropdown-sort-by"
 									data-sheet-modal
+									data-dropdown-select
 								>
 									<div class="js-dropdown-overlay"></div>
 									<div class="js-dropdown-body">
@@ -3793,19 +3794,19 @@
 											>
 											<ul class="js-dropdown-list js-dropdown-list-selected">
 												<li class="js-dropdown-list-item selected">
-													<svg class="icon icon-md">
+													<svg class="icon icon-md arrow-icon">
 														<use href="#icon-check"></use>
 													</svg>
 													<span>Uploaded</span>
 												</li>
 												<li class="js-dropdown-list-item">
-													<svg class="icon icon-md">
+													<svg class="icon icon-md arrow-icon">
 														<use href="#icon-check"></use>
 													</svg>
 													<span>Modified</span>
 												</li>
 												<li class="js-dropdown-list-item">
-													<svg class="icon icon-md">
+													<svg class="icon icon-md arrow-icon">
 														<use href="#icon-check"></use>
 													</svg>
 													<span>Name</span>
@@ -3814,17 +3815,15 @@
 											<strong class="text-[0.8125rem] font-semibold pl-1"
 												>Sort direction</strong
 											>
-											<ul
-												class="js-dropdown-list js-dropdown-list-selected mt-2.5"
-											>
+											<ul class="js-dropdown-list mt-2.5">
 												<li class="js-dropdown-list-item selected">
-													<svg class="icon icon-md">
+													<svg class="icon icon-md arrow-icon">
 														<use href="#icon-check"></use>
 													</svg>
 													<span>New to old</span>
 												</li>
 												<li class="js-dropdown-list-item">
-													<svg class="icon icon-md">
+													<svg class="icon icon-md arrow-icon">
 														<use href="#icon-check"></use>
 													</svg>
 													<span>Old to new</span>
@@ -3838,7 +3837,7 @@
 								<div class="dropdown-wrapper">
 									<button
 										type="button"
-										class="dropdown-button btn btn-border-default gap-1.5"
+										class="dropdown-button btn btn-border-default gap-1.5 dropdown-button-selected"
 										data-id="dropdown-type"
 									>
 										<span>Type</span>
@@ -3846,10 +3845,16 @@
 											<use href="#icon-caret"></use>
 										</svg>
 									</button>
+									<span class="dropdown-button-select-cancel">
+										<svg class="icon icon-xs [--icon-stroke-width:1.4]">
+											<use href="#icon-close"></use>
+										</svg>
+									</span>
 									<div
 										class="js-dropdown hidden w-56 right-0"
 										data-dropdown-id="dropdown-type"
 										data-sheet-modal
+										data-dropdown-select
 									>
 										<div class="js-dropdown-overlay"></div>
 										<div class="js-dropdown-body">
@@ -3857,7 +3862,7 @@
 												<span></span>
 											</div>
 											<div class="js-dropdown-content">
-												<ul class="js-dropdown-list">
+												<ul class="js-dropdown-list js-dropdown-list-selected">
 													<li class="js-dropdown-list-item gap-2">
 														<svg class="icon icon-md">
 															<use href="#icon-folder"></use>
@@ -4110,10 +4115,16 @@
 											<use href="#icon-caret"></use>
 										</svg>
 									</button>
+									<span class="dropdown-button-select-cancel">
+										<svg class="icon icon-xs [--icon-stroke-width:1.4]">
+											<use href="#icon-close"></use>
+										</svg>
+									</span>
 									<div
 										class="js-dropdown hidden w-69.5 right-0"
 										data-dropdown-id="dropdown-upload-date"
 										data-sheet-modal=""
+										data-dropdown-select
 									>
 										<div class="js-dropdown-overlay"></div>
 										<div class="js-dropdown-body">
@@ -4123,25 +4134,25 @@
 											<div class="js-dropdown-content">
 												<ul class="js-dropdown-list js-dropdown-list-selected">
 													<li class="js-dropdown-list-item selected">
-														<svg class="icon icon-md">
+														<svg class="icon icon-md arrow-icon">
 															<use href="#icon-check"></use>
 														</svg>
 														<span>Today</span>
 													</li>
 													<li class="js-dropdown-list-item">
-														<svg class="icon icon-md">
+														<svg class="icon icon-md arrow-icon">
 															<use href="#icon-check"></use>
 														</svg>
 														<span>This month</span>
 													</li>
 													<li class="js-dropdown-list-item">
-														<svg class="icon icon-md">
+														<svg class="icon icon-md arrow-icon">
 															<use href="#icon-check"></use>
 														</svg>
 														<span>This year</span>
 													</li>
 													<li class="js-dropdown-list-item">
-														<svg class="icon icon-md">
+														<svg class="icon icon-md arrow-icon">
 															<use href="#icon-check"></use>
 														</svg>
 														<span>Custom</span>

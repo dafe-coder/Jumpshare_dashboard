@@ -167,6 +167,20 @@
 		}
 	}
 
+	.dropdown-button-select-cancel {
+		@apply bg-blue-500/10 text-blue-500 border-none h-9 w-8 rounded-r-lg flex items-center justify-center cursor-pointer hidden;
+	}
+
+	.dropdown-wrapper-selected {
+		gap: 1px;
+		.btn-border-default {
+			@apply bg-blue-500/10 text-blue-500 border-none rounded-r-none!;
+		}
+		.dropdown-button-select-cancel {
+			@apply flex;
+		}
+	}
+
 	.btn-violet {
 		box-shadow:
 			0 1px 2px 0 rgba(18, 35, 69, 0.08),

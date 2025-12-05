@@ -401,9 +401,14 @@
 				class="h-[var(--header-height)] px-3 flex items-center justify-between bg-white border-b border-gray-400"
 			>
 				<div class="flex items-center gap-4.5">
-					<a href="../index.html" aria-label="Go Back">
+					<!-- <a href="../index.html" aria-label="Go Back">
 						<svg class="icon size-11">
 							<use href="#icon-logo-square"></use>
+						</svg>
+					</a> -->
+					<a href="../index.html" aria-label="Go Back">
+						<svg class="icon icon-lg">
+							<use href="#icon-chevron-left"></use>
 						</svg>
 					</a>
 					<div class="flex flex-col gap-1.5">
@@ -783,24 +788,27 @@
 							</div>
 						</div>
 					</div>
-					<a
-						href="../index.html"
-						aria-label="Go Back"
-						class="btn btn-transparent-with-border size-10 p-0"
-					>
-						<svg
-							width="14"
-							height="14"
-							viewBox="0 0 14 14"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
+					<div class="flex items-center gap-1 ml-1.5">
+						<button
+							type="button"
+							aria-label="Keyboard Shortcuts"
+							class="btn btn-transparent size-8 p-0"
+							data-tab-inside="keyboard-shortcuts-tab"
 						>
-							<path
-								d="M1.35 13.5L0 12.15L5.4 6.75L0 1.35L1.35 0L6.75 5.4L12.15 0L13.5 1.35L8.1 6.75L13.5 12.15L12.15 13.5L6.75 8.1L1.35 13.5Z"
-								fill="#0A0A0B"
-							/>
-						</svg>
-					</a>
+							<svg class="icon size-8">
+								<use href="#icon-keyboard"></use>
+							</svg>
+						</button>
+						<button
+							type="button"
+							aria-label="Keyboard Shortcuts"
+							class="btn btn-transparent size-8 p-0"
+						>
+							<svg class="icon icon-s">
+								<use href="#icon-question-in-circle"></use>
+							</svg>
+						</button>
+					</div>
 				</div>
 			</header>
 			<div class="file-viewer-wrapper grid grid-cols-[1fr_430px] flex-grow-1">
@@ -4161,6 +4169,171 @@
 								</ul>
 							</div>
 						</div>
+						<div
+							class="file-viewer-tab hidden"
+							data-tab-inside-content="keyboard-shortcuts-tab"
+						>
+							<div class="file-viewer-tab-header mb-2">
+								<button
+									data-tab-inside-go-back
+									aria-label="Go Back"
+									type="button"
+									class="btn p-0 size-6 rounded-md hover:bg-gray-200"
+								>
+									<svg class="icon size-5">
+										<use href="#icon-chevron-left"></use>
+									</svg>
+								</button>
+								<strong class="text-base font-semibold">
+									Keyboard Shortcuts
+								</strong>
+							</div>
+							<div class="file-viewer-tab-content pt-5">
+								<strong class="text-sm font-semibold">Viewing</strong>
+								<ul class="keyboard-shortcuts-list">
+									<li>
+										<span>Play / Pause</span>
+										<div class="shortcuts-wrapper">
+											<ul class="shortcuts-list">
+												<li>Space or K</li>
+											</ul>
+										</div>
+									</li>
+									<li>
+										<span>Mute</span>
+										<div class="shortcuts-wrapper">
+											<ul class="shortcuts-list">
+												<li>M</li>
+											</ul>
+										</div>
+									</li>
+									<li>
+										<span>Toggle fullscreen</span>
+										<div class="shortcuts-wrapper">
+											<ul class="shortcuts-list">
+												<li>F</li>
+											</ul>
+										</div>
+									</li>
+									<li>
+										<span>Backward 1 screen</span>
+										<div class="shortcuts-wrapper">
+											<ul class="shortcuts-list">
+												<li>←</li>
+											</ul>
+											or
+											<ul class="shortcuts-list">
+												<li>.</li>
+											</ul>
+										</div>
+									</li>
+									<li>
+										<span>Forward 1 frame</span>
+										<div class="shortcuts-wrapper">
+											<ul class="shortcuts-list">
+												<li>→</li>
+											</ul>
+										</div>
+									</li>
+									<li>
+										<span>Play / Pause</span>
+										<div class="shortcuts-wrapper">
+											<ul class="shortcuts-list">
+												<li>Shift</li>
+												+
+												<li>←</li>
+											</ul>
+											or
+											<ul class="shortcuts-list">
+												<li>&gt;</li>
+											</ul>
+										</div>
+									</li>
+									<li>
+										<span>Backward 10 frames</span>
+										<div class="shortcuts-wrapper">
+											<ul class="shortcuts-list">
+												<li>J</li>
+											</ul>
+										</div>
+									</li>
+									<li>
+										<span>Forward 10 frames</span>
+										<div class="shortcuts-wrapper">
+											<ul class="shortcuts-list">
+												<li>l</li>
+											</ul>
+										</div>
+									</li>
+									<li>
+										<span>Forward 5 seconds</span>
+										<div class="shortcuts-wrapper">
+											<ul class="shortcuts-list">
+												<li>L</li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+								<strong class="text-sm font-semibold"
+									>Commenting &amp; Annotating</strong
+								>
+								<ul class="keyboard-shortcuts-list">
+									<li>
+										<span>Add a comment</span>
+										<div class="shortcuts-wrapper">
+											<ul class="shortcuts-list">
+												<li>C</li>
+											</ul>
+										</div>
+									</li>
+									<li>
+										<span>Post comment</span>
+										<div class="shortcuts-wrapper">
+											<ul class="shortcuts-list">
+												<li>Ctrl</li>
+												+
+												<li>↵</li>
+											</ul>
+										</div>
+									</li>
+									<li>
+										<span>Undo drawing</span>
+										<div class="shortcuts-wrapper">
+											<ul class="shortcuts-list">
+												<li>Ctrl</li>
+												+
+												<li>z</li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+								<strong>Application</strong>
+								<ul class="keyboard-shortcuts-list">
+									<li>
+										<span>Toggle project navigation sidebar</span>
+										<div class="shortcuts-wrapper">
+											<ul class="shortcuts-list">
+												<li>Ctrl</li>
+												+
+												<li>Shift</li>
+												+
+												<li>p</li>
+											</ul>
+										</div>
+									</li>
+									<li>
+										<span>Toggle project navigation sidebar</span>
+										<div class="shortcuts-wrapper">
+											<ul class="shortcuts-list">
+												<li>Ctrl</li>
+												+
+												<li>↵</li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -4175,6 +4348,22 @@
 			src="https://cdn.skypack.dev/vanilla-colorful"
 		></script>
 		<script>
+								<ul class="keyboard-shortcuts-list">
+									<li>
+										<span>Draw Arrow</span>
+										<div class="shortcuts-wrapper">
+											<ul class="shortcuts-list">
+												<li>A</li>
+											</ul>
+								</ul>
+								<ul class="keyboard-shortcuts-list">
+									<li>
+										<span>Draw Arrow</span>
+										<div class="shortcuts-wrapper">
+											<ul class="shortcuts-list">
+												<li>A</li>
+											</ul>
+								</ul>
 			// TODO: rewrite the logic
 			$("document").ready(function () {
 				$("input[name='thumbnail']").on("change", function () {
