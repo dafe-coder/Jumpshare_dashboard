@@ -26,6 +26,7 @@ const fileViewer = {
 		this.initLeadCapture();
 		this.initCommentNavigation();
 		this.initTranscriptSearch();
+		this.initChatWithVideo();
 	},
 	getCurrentActiveTab: function () {
 		const activeContent = this.sidebar.find(
@@ -391,6 +392,8 @@ const fileViewer = {
 		transcriptSearchCancelButton.on("click", function () {
 			transcriptHeader.removeClass("hidden");
 			transcriptHeaderSearch.addClass("hidden");
+			transcriptSearchHighlightInput.val("");
+			removeHighlights();
 		});
 
 		transcriptHeaderSearch.find("input").on("input", function () {
@@ -406,6 +409,145 @@ const fileViewer = {
 		transcriptHeaderTitle.on("click", function () {
 			transcriptUpgradePlan.toggleClass("hidden");
 			$("#transcript-main-content").toggleClass("hidden");
+		});
+
+		const transcriptSearchHighlightInput = $(
+			"#transcript-search-highlight-input",
+		);
+
+		// TODO: Implement the transcript search feature
+		function removeHighlights() {
+			$(".transcript-text").each(function () {
+				const $container = $(this);
+				$container.find("mark.transcript-search-highlight").each(function () {
+					const $mark = $(this);
+					$mark.replaceWith($mark.text());
+				});
+			});
+		}
+
+		function highlightText(searchTerm) {
+			if (!searchTerm || searchTerm.length === 0) {
+				removeHighlights();
+				return;
+			}
+
+			removeHighlights();
+
+			const escapedTerm = searchTerm.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+			$(".transcript-text").each(function () {
+				const $container = $(this);
+				highlightTextInElement($container[0], escapedTerm);
+			});
+		}
+
+		function highlightTextInElement(element, escapedTerm) {
+			const regex = new RegExp(escapedTerm, "gi");
+
+			const walker = document.createTreeWalker(
+				element,
+				NodeFilter.SHOW_TEXT,
+				{
+					acceptNode: function (node) {
+						if (
+							node.parentElement &&
+							node.parentElement.closest("mark.transcript-search-highlight")
+						) {
+							return NodeFilter.FILTER_REJECT;
+						}
+						return NodeFilter.FILTER_ACCEPT;
+					},
+				},
+				false,
+			);
+
+			const textNodes = [];
+			let node;
+			while ((node = walker.nextNode())) {
+				textNodes.push(node);
+			}
+
+			for (let i = textNodes.length - 1; i >= 0; i--) {
+				const textNode = textNodes[i];
+				const text = textNode.textContent;
+
+				const nodeRegex = new RegExp(escapedTerm, "gi");
+				const matches = Array.from(text.matchAll(nodeRegex));
+
+				if (matches.length > 0) {
+					const parent = textNode.parentNode;
+					const parts = [];
+					let lastIndex = 0;
+
+					matches.forEach((match) => {
+						const matchStart = match.index;
+						const matchEnd = matchStart + match[0].length;
+
+						if (matchStart > lastIndex) {
+							parts.push({
+								type: "text",
+								content: text.substring(lastIndex, matchStart),
+							});
+						}
+
+						parts.push({
+							type: "highlight",
+							content: match[0],
+						});
+
+						lastIndex = matchEnd;
+					});
+
+					if (lastIndex < text.length) {
+						parts.push({
+							type: "text",
+							content: text.substring(lastIndex),
+						});
+					}
+
+					const fragment = document.createDocumentFragment();
+					parts.forEach((part) => {
+						if (part.type === "text") {
+							fragment.appendChild(document.createTextNode(part.content));
+						} else {
+							const mark = document.createElement("mark");
+							mark.className = "transcript-search-highlight";
+							mark.textContent = part.content;
+							fragment.appendChild(mark);
+						}
+					});
+
+					parent.replaceChild(fragment, textNode);
+				}
+			}
+		}
+
+		transcriptSearchHighlightInput.on("input", function () {
+			const inputValue = $(this).val().trim();
+			highlightText(inputValue);
+		});
+
+		transcriptSearchHighlightInput.on("blur", function () {
+			if ($(this).val().trim().length === 0) {
+				removeHighlights();
+			}
+		});
+	},
+	initChatWithVideo: function () {
+		const chatWithVideoInputMessage = $("#chat-with-video-input-message");
+
+		chatWithVideoInputMessage.on("focus", function () {
+			$(".file-viewer-tab-content").addClass("file-viewer-tab-content-focus");
+		});
+
+		chatWithVideoInputMessage.on("blur", function (e) {
+			if (e.target && e.target.value.length > 0) {
+				return;
+			}
+			$(".file-viewer-tab-content").removeClass(
+				"file-viewer-tab-content-focus",
+			);
 		});
 	},
 };

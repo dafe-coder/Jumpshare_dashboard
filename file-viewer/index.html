@@ -1110,11 +1110,13 @@
 											class="bg-white rounded-[10px] size-full p-5 z-1 relative max-sm:p-4"
 										>
 											<span class="text-base/[170%] font-medium text-dark-800">
-												<svg
-													class="icon size-[17px] mb-0.5 mr-2.5 flex-shrink-0 inline-block"
-												>
-													<use href="#icon-star-filled"></use>
-												</svg>
+												<span class="text-blue-500">
+													<svg
+														class="icon size-[17px] mb-0.5 mr-2.5 flex-shrink-0 inline-block"
+													>
+														<use href="#icon-star-filled"></use>
+													</svg>
+												</span>
 												Generate with Jumpshare AI
 											</span>
 											<div
@@ -1238,7 +1240,7 @@
 										</div>
 										<div
 											class="flex items-center gap-4 bg-white border border-gray-400 rounded-xl px-5 py-4 w-full cursor-pointer hover:bg-gray-200"
-											data-tab-inside="video-thumbnail"
+											data-tab-inside="chat-with-video-tab"
 										>
 											<svg class="icon icon-md flex-shrink-0">
 												<use href="#icon-chat"></use>
@@ -1484,7 +1486,7 @@
 													type="button"
 												>
 													<svg class="icon icon-md">
-														<use href="#icon-dots-horizontal"></use>
+														<use href="#icon-settings"></use>
 													</svg>
 												</button>
 												<div
@@ -2114,6 +2116,7 @@
 												type="text"
 												class="form-control-settings h-9 pl-10 flex-grow-1 min-w-0"
 												placeholder="Search"
+												id="transcript-search-highlight-input"
 											/>
 											<div
 												id="transcript-search-results-nav"
@@ -4334,6 +4337,106 @@
 								</ul>
 							</div>
 						</div>
+						<div
+							class="file-viewer-tab chat-with-video-tab overflow-hidden hidden"
+							data-tab-inside-content="chat-with-video-tab"
+						>
+							<div
+								class="absolute -right-[306px] -top-[86px] size-[30.9375rem] bg-[#DED8FF]/40 blur-3xl -z-0"
+							></div>
+							<div
+								class="absolute -left-[128px] -top-[105px] size-[24.3125rem] bg-[#D8E3FF]/46 blur-3xl -z-0"
+							></div>
+							<div class="file-viewer-tab-header mb-2">
+								<button
+									data-tab-inside-go-back
+									aria-label="Go Back"
+									type="button"
+									class="btn p-0 size-6 rounded-md hover:bg-gray-200"
+								>
+									<svg class="icon size-5">
+										<use href="#icon-chevron-left"></use>
+									</svg>
+								</button>
+								<strong class="text-base font-semibold">
+									Chat with Video
+								</strong>
+							</div>
+							<div
+								class="file-viewer-tab-content flex flex-col flex-grow-1 pt-[20vh] [&.file-viewer-tab-content-focus]:justify-between pb-4 px-4"
+							>
+								<div
+									class="flex flex-col gap-1.5 max-w-[18.75rem] w-full mx-auto text-center mb-4"
+								>
+									<strong class="text-xl font-sans-semi"
+										>Hi, how may I help you?</strong
+									>
+									<p class="text-sm/5">
+										Hello! Curious about what you’re watching? I’m here to help.
+									</p>
+								</div>
+								<div class="flex flex-col gap-5">
+									<ul
+										class="[.file-viewer-tab-content-focus_&]:flex flex-col items-end justify-end gap-2 hidden"
+									>
+										<li
+											class="text-purple-400 flex gap-2 p-2 border border-gray-400 text-sm bg-white rounded-lg cursor-pointer"
+										>
+											<svg class="icon icon-sm">
+												<use href="#icon-star-filled"></use>
+											</svg>
+											<span class="text-dark-800">Summarize this video</span>
+										</li>
+										<li
+											class="text-purple-400 flex gap-2 p-2 border border-gray-400 text-sm bg-white rounded-lg cursor-pointer"
+										>
+											<svg class="icon icon-sm">
+												<use href="#icon-star-filled"></use>
+											</svg>
+											<span class="text-dark-800"
+												>Generate key points of this video</span
+											>
+										</li>
+										<li
+											class="text-purple-400 flex gap-2 p-2 border border-gray-400 text-sm bg-white rounded-lg cursor-pointer"
+										>
+											<svg class="icon icon-sm">
+												<use href="#icon-star-filled"></use>
+											</svg>
+											<span class="text-dark-800"
+												>Turn this video into bullet points</span
+											>
+										</li>
+									</ul>
+									<div class="relative p-0.5">
+										<div class="chat-with-video-input-wrapper">
+											<div
+												class="animate-spin-ai absolute z-0 top-1/2 left-1/2 -translate-1/2 w-[130%] h-[250%] bg-[conic-gradient(from_-68deg_at_50%_50%,#9452FF_0%,#9452FF_0%,#9452FF00_30%,#9452FF00_70%,#9452FF_100%,#9452FF_100%)] scale-[4_0.8]"
+											></div>
+										</div>
+										<div class="chat-with-video-input">
+											<input
+												type="text"
+												class="w-full min-w-0 text-sm outline-none text-gray-900 placeholder:text-gray-900"
+												placeholder="Ask a question..."
+												rows="1"
+												id="chat-with-video-input-message"
+												autocomplete="off"
+											/>
+											<button
+												aria-label="Send message"
+												type="button"
+												class="btn btn-violet flex-shrink-0 size-9 p-0"
+											>
+												<svg class="icon icon-sm -ml-0.5">
+													<use href="#icon-send"></use>
+												</svg>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -4348,22 +4451,6 @@
 			src="https://cdn.skypack.dev/vanilla-colorful"
 		></script>
 		<script>
-								<ul class="keyboard-shortcuts-list">
-									<li>
-										<span>Draw Arrow</span>
-										<div class="shortcuts-wrapper">
-											<ul class="shortcuts-list">
-												<li>A</li>
-											</ul>
-								</ul>
-								<ul class="keyboard-shortcuts-list">
-									<li>
-										<span>Draw Arrow</span>
-										<div class="shortcuts-wrapper">
-											<ul class="shortcuts-list">
-												<li>A</li>
-											</ul>
-								</ul>
 			// TODO: rewrite the logic
 			$("document").ready(function () {
 				$("input[name='thumbnail']").on("change", function () {
