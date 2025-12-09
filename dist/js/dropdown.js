@@ -147,7 +147,6 @@ const Dropdown = {
 		if (!$wrapper.hasClass("dropdown-wrapper-selected") && isDropdownSelect) {
 			this.defaultDropdownButtonText = $button.find("span").text();
 		}
-		console.log(this.defaultDropdownButtonText);
 
 		if (isDropdownSelect) {
 			$wrapper
@@ -185,7 +184,20 @@ const Dropdown = {
 			clearTimeout(this.dropdownIdCloseAllTimer);
 			clearTimeout(this.dropdownIdCloseTimer);
 
-			this.closeAllDropdowns();
+			if (!$content.is("[data-dropdown-sub]")) {
+				this.closeAllDropdowns();
+			} else {
+				const $wrapperOutside = $wrapper.closest(".js-dropdown");
+				const $buttonSub = $wrapperOutside.find(".dropdown-button");
+				console.log($wrapperOutside, $buttonSub);
+
+				$buttonSub.each((index, btn) => {
+					const $btn = $(btn);
+					const $wrapperSub = $btn.closest(".dropdown-wrapper");
+					const $contentSub = $wrapperSub.find(".js-dropdown");
+					this.closeDropdown($btn, $wrapperSub, $contentSub);
+				});
+			}
 
 			$button.addClass("active");
 			$wrapper.addClass("active");
