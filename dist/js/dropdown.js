@@ -145,7 +145,7 @@ const Dropdown = {
 		);
 		const isDropdownSelect = $content.is("[data-dropdown-select]");
 		if (!$wrapper.hasClass("dropdown-wrapper-selected") && isDropdownSelect) {
-			this.defaultDropdownButtonText = $button.find("span").text();
+			this.defaultDropdownButtonText = $button.text();
 		}
 
 		if (isDropdownSelect) {
@@ -157,10 +157,10 @@ const Dropdown = {
 					e.stopImmediatePropagation();
 					const $item = $(e.currentTarget);
 					const $button = $wrapper.find(".dropdown-button");
-					$wrapper.addClass("dropdown-wrapper-selected");
+					$wrapper.toggleClass("dropdown-wrapper-selected");
 					$item.siblings().removeClass("selected");
 					$item.addClass("selected");
-					$button.find("span").text($item.find("span").text());
+					$button.find("span").text($item.text());
 					this.closeAllDropdowns();
 				});
 			$wrapper
@@ -189,7 +189,6 @@ const Dropdown = {
 			} else {
 				const $wrapperOutside = $wrapper.closest(".js-dropdown");
 				const $buttonSub = $wrapperOutside.find(".dropdown-button");
-				console.log($wrapperOutside, $buttonSub);
 
 				$buttonSub.each((index, btn) => {
 					const $btn = $(btn);

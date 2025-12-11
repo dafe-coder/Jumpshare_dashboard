@@ -782,19 +782,19 @@
 								id="popup_email_form"
 								autocomplete="off"
 							>
-								<ul
-									class="modal-email-wrapper clearfix acjs-holder relative pr-25"
+								<div
+									class="recent-suggestions-select modal-email-wrapper relative pr-25"
 								>
-									<li
+									<div
 										id="share-select-role"
 										class="hidden absolute top-[5px] right-[5px] dropdown-wrapper"
 									>
 										<button
 											type="button"
-											class="dropdown-button h-8 px-2 text-sm flex items-center gap-1.5 cursor-pointer hover:bg-gray-400 rounded-md"
+											class="dropdown-button dropdown-button-selected h-8 px-2 text-sm flex items-center gap-1.5 cursor-pointer hover:bg-gray-400 rounded-md"
 											data-id="who-can-access-menu"
 										>
-											<span>Viewers</span>
+											<span>Can view</span>
 											<svg class="icon icon-sm">
 												<use href="#icon-chevron-down"></use>
 											</svg>
@@ -804,38 +804,132 @@
 											data-dropdown-id="who-can-access-menu"
 											data-sheet-modal
 											data-overflow-visible
-											data-dropdown-position="right"
-											style="top: 383.75px; left: auto; right: 621.5625px"
+											data-dropdown-select
 										>
 											<div class="js-dropdown-overlay"></div>
 											<div class="js-dropdown-body">
 												<div class="js-dropdown-trigger"><span></span></div>
 												<div class="js-dropdown-content">
-													<ul class="js-dropdown-list lnk-privacy-menu">
-														<li class="js-dropdown-list-item">
-															<a href="#"> Editor </a>
-														</li>
-														<li class="js-dropdown-list-item">
-															<a href="#"> Viewers </a>
-														</li>
+													<ul
+														class="js-dropdown-list lnk-privacy-menu js-dropdown-list-selected"
+													>
+														<li class="js-dropdown-list-item">Can edit</li>
+														<li class="js-dropdown-list-item">Can view</li>
 													</ul>
 												</div>
 											</div>
 										</div>
-									</li>
-									<li class="open">
-										<input
-											type="email"
-											name="email_to"
-											id="email_to"
-											placeholder="Type name or email address"
-											class="form-control input-slim pull-left acjs-input ac_input"
-											onclick="$('.info-tip').addClass('hide');"
-											style="width: 270px"
-											autocomplete="off"
-										/>
-									</li>
-								</ul>
+									</div>
+									<ul class="recent-suggestions-select-list">
+										<li class="recent-suggestions-select-search">
+											<input
+												type="email"
+												name="email_to"
+												id="email_to"
+												placeholder="Type name or email address"
+												autocomplete="off"
+												class="truncate"
+											/>
+										</li>
+									</ul>
+									<div class="recent-suggestions shadow-dropdown hidden">
+										<div class="recent-suggestions-header">
+											<span>Recent Suggestions</span>
+										</div>
+										<div class="recent-suggestions-list">
+											<div class="recent-suggestions-item">
+												<div class="avatar avatar-sm">
+													<img
+														src="./assets/images/avatar-2.png"
+														alt="Avatar"
+													/>
+												</div>
+												<div class="recent-suggestions-item__info">
+													<span class="recent-suggestions-item__name"
+														>John Doe</span
+													>
+													<span class="recent-suggestions-item__email"
+														>john.doe@example.com</span
+													>
+												</div>
+												<div class="recent-suggestions-item__actions">
+													<button type="button" class="btn btn-close">
+														<span class="icn-close"></span>
+														<span class="sr-only">Remove suggestion item</span>
+													</button>
+												</div>
+											</div>
+											<div class="recent-suggestions-item">
+												<div class="avatar avatar-sm">A</div>
+												<div class="recent-suggestions-item__info">
+													<span class="recent-suggestions-item__name"
+														>stevenson.james@example.com</span
+													>
+													<span class="recent-suggestions-item__email"
+														>stevenson.james@example.com</span
+													>
+												</div>
+												<div class="recent-suggestions-item__actions">
+													<button type="button" class="btn btn-close">
+														<span class="icn-close"></span>
+														<span class="sr-only">Remove suggestion item</span>
+													</button>
+												</div>
+											</div>
+											<div class="recent-suggestions-item">
+												<div class="avatar avatar-sm">A</div>
+												<div class="recent-suggestions-item__info">
+													<span class="recent-suggestions-item__name"
+														>David Robert</span
+													>
+													<span class="recent-suggestions-item__email"
+														>david.robert@example.com</span
+													>
+												</div>
+												<div class="recent-suggestions-item__actions">
+													<button type="button" class="btn btn-close">
+														<span class="icn-close"></span>
+														<span class="sr-only">Remove suggestion item</span>
+													</button>
+												</div>
+											</div>
+											<div class="recent-suggestions-item">
+												<div class="avatar avatar-sm">A</div>
+												<div class="recent-suggestions-item__info">
+													<span class="recent-suggestions-item__name"
+														>Robert Pattinson</span
+													>
+													<span class="recent-suggestions-item__email"
+														>robert.pattinson@example.com</span
+													>
+												</div>
+												<div class="recent-suggestions-item__actions">
+													<button type="button" class="btn btn-close">
+														<span class="icn-close"></span>
+														<span class="sr-only">Remove suggestion item</span>
+													</button>
+												</div>
+											</div>
+											<div class="recent-suggestions-item">
+												<div class="avatar avatar-sm">A</div>
+												<div class="recent-suggestions-item__info">
+													<span class="recent-suggestions-item__name"
+														>James Patrick</span
+													>
+													<span class="recent-suggestions-item__email"
+														>james.patrick@example.com</span
+													>
+												</div>
+												<div class="recent-suggestions-item__actions">
+													<button type="button" class="btn btn-close">
+														<span class="icn-close"></span>
+														<span class="sr-only">Remove suggestion item</span>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 								<textarea
 									tabindex="3"
 									class="form-control input-slim hidden"
@@ -843,365 +937,256 @@
 									id="email_message"
 									placeholder="Add a message (optional)"
 								></textarea>
-								<div class="recent-suggestions shadow-dropdown hidden">
-									<div class="recent-suggestions-header">
-										<span>Recent Suggestions</span>
-									</div>
-									<div class="recent-suggestions-list">
-										<div class="recent-suggestions-item">
-											<div class="avatar avatar-sm">A</div>
-											<div class="recent-suggestions-item__info">
-												<span class="recent-suggestions-item__name"
-													>John Doe</span
-												>
-												<span class="recent-suggestions-item__email"
-													>john.doe@example.com</span
+								<div id="who-can-access-wrapper" class="mt-6">
+									<h4
+										class="block text-sm font-semibold text-dark-800 mb-3 text-left"
+									>
+										Who can access
+									</h4>
+									<ul class="who-can-access">
+										<li>
+											<div class="avatar">
+												A
+												<!-- <img src="" alt=""> -->
+											</div>
+											<div class="who-can-access-info">
+												<span class="who-can-access__name">David Robert</span>
+												<span class="who-can-access__email"
+													>david@marksman.com</span
 												>
 											</div>
-											<div class="recent-suggestions-item__actions">
-												<button type="button" class="btn btn-close">
-													<span class="icn-close"></span>
-													<span class="sr-only">Remove suggestion item</span>
+											<div class="who-can-access-actions">
+												<span class="who-can-access__role">Owner</span>
+											</div>
+										</li>
+										<li>
+											<div class="avatar">
+												B
+												<!-- <img src="" alt=""> -->
+											</div>
+											<div class="who-can-access-info">
+												<span class="who-can-access__name">John Doe</span>
+												<span class="who-can-access__email"
+													>johndoe@gmail.com</span
+												>
+											</div>
+											<div class="who-can-access-actions dropdown-wrapper">
+												<button
+													type="button"
+													class="btn btn-sm dropdown-button max-lg:-mr-3"
+													data-id="who-can-access-menu"
+												>
+													<span>Viewer</span>
+													<svg class="icon icon-sm">
+														<use href="#icon-chevron-down"></use>
+													</svg>
 												</button>
-											</div>
-										</div>
-										<div class="recent-suggestions-item">
-											<div class="avatar avatar-sm">A</div>
-											<div class="recent-suggestions-item__info">
-												<span class="recent-suggestions-item__name"
-													>John Doe</span
+												<div
+													class="js-dropdown hidden w-[8.75rem] right-0"
+													data-dropdown-id="who-can-access-menu"
+													data-sheet-modal
+													data-overflow-visible
+													data-dropdown-position="right"
 												>
-												<span class="recent-suggestions-item__email"
-													>john.doe@example.com</span
+													<div class="js-dropdown-overlay"></div>
+													<div class="js-dropdown-body">
+														<div class="js-dropdown-trigger"><span></span></div>
+														<div class="js-dropdown-content">
+															<ul class="js-dropdown-list lnk-privacy-menu">
+																<li class="js-dropdown-list-item">
+																	<a href="#"> Editor </a>
+																</li>
+																<li class="js-dropdown-list-item">
+																	<a href="#"> Viewers </a>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="avatar">
+												R
+												<!-- <img src="" alt=""> -->
+											</div>
+											<div class="who-can-access-info">
+												<span class="who-can-access__name"
+													>robertpattinson@gmail.com</span
+												>
+												<span class="who-can-access__email"
+													>robertpattinson@gmail.com</span
 												>
 											</div>
-											<div class="recent-suggestions-item__actions">
-												<button type="button" class="btn btn-close">
-													<span class="icn-close"></span>
-													<span class="sr-only">Remove suggestion item</span>
+											<div class="who-can-access-actions dropdown-wrapper">
+												<button
+													type="button"
+													class="btn btn-sm dropdown-button max-lg:-mr-3"
+													data-id="who-can-access-menu"
+												>
+													<span>Viewer</span>
+													<svg class="icon icon-sm">
+														<use href="#icon-chevron-down"></use>
+													</svg>
 												</button>
-											</div>
-										</div>
-										<div class="recent-suggestions-item">
-											<div class="avatar avatar-sm">A</div>
-											<div class="recent-suggestions-item__info">
-												<span class="recent-suggestions-item__name"
-													>John Doe</span
+												<div
+													class="js-dropdown hidden w-[8.75rem] right-0"
+													data-dropdown-id="who-can-access-menu"
+													data-sheet-modal
+													data-overflow-visible
+													data-dropdown-position="right"
 												>
-												<span class="recent-suggestions-item__email"
-													>john.doe@example.com</span
+													<div class="js-dropdown-overlay"></div>
+													<div class="js-dropdown-body">
+														<div class="js-dropdown-trigger"><span></span></div>
+														<div class="js-dropdown-content">
+															<ul class="js-dropdown-list lnk-privacy-menu">
+																<li class="js-dropdown-list-item">
+																	<a href="#"> Editor </a>
+																</li>
+																<li class="js-dropdown-list-item">
+																	<a href="#"> Viewers </a>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="avatar">
+												J
+												<!-- <img src="" alt=""> -->
+											</div>
+											<div class="who-can-access-info">
+												<span class="who-can-access__name">James Patrick</span>
+												<span class="who-can-access__email"
+													>patrickjames@gmail.com</span
 												>
 											</div>
-											<div class="recent-suggestions-item__actions">
-												<button type="button" class="btn btn-close">
-													<span class="icn-close"></span>
-													<span class="sr-only">Remove suggestion item</span>
+											<div class="who-can-access-actions dropdown-wrapper">
+												<button
+													type="button"
+													class="btn btn-sm dropdown-button max-lg:-mr-3"
+													data-id="who-can-access-menu"
+												>
+													<span>Editor</span>
+													<svg class="icon icon-sm">
+														<use href="#icon-chevron-down"></use>
+													</svg>
 												</button>
-											</div>
-										</div>
-										<div class="recent-suggestions-item">
-											<div class="avatar avatar-sm">A</div>
-											<div class="recent-suggestions-item__info">
-												<span class="recent-suggestions-item__name"
-													>John Doe</span
+												<div
+													class="js-dropdown hidden w-[8.75rem] right-0"
+													data-dropdown-id="who-can-access-menu"
+													data-sheet-modal
+													data-overflow-visible
+													data-dropdown-position="right"
 												>
-												<span class="recent-suggestions-item__email"
-													>john.doe@example.com</span
-												>
+													<div class="js-dropdown-overlay"></div>
+													<div class="js-dropdown-body">
+														<div class="js-dropdown-trigger"><span></span></div>
+														<div class="js-dropdown-content">
+															<ul class="js-dropdown-list lnk-privacy-menu">
+																<li class="js-dropdown-list-item">
+																	<a href="#"> Editor </a>
+																</li>
+																<li class="js-dropdown-list-item">
+																	<a href="#"> Viewers </a>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
 											</div>
-											<div class="recent-suggestions-item__actions">
-												<button type="button" class="btn btn-close">
-													<span class="icn-close"></span>
-													<span class="sr-only">Remove suggestion item</span>
-												</button>
-											</div>
-										</div>
-										<div class="recent-suggestions-item">
-											<div class="avatar avatar-sm">A</div>
-											<div class="recent-suggestions-item__info">
-												<span class="recent-suggestions-item__name"
-													>John Doe</span
-												>
-												<span class="recent-suggestions-item__email"
-													>john.doe@example.com</span
-												>
-											</div>
-											<div class="recent-suggestions-item__actions">
-												<button type="button" class="btn btn-close">
-													<span class="icn-close"></span>
-													<span class="sr-only">Remove suggestion item</span>
-												</button>
-											</div>
-										</div>
-									</div>
+										</li>
+									</ul>
 								</div>
-								<h4
-									class="block text-sm font-semibold text-dark-800 mb-3 text-left mt-6"
-								>
-									Who can access
-								</h4>
-								<ul class="who-can-access">
-									<li>
-										<div class="avatar">
-											A
-											<!-- <img src="" alt=""> -->
-										</div>
-										<div class="who-can-access-info">
-											<span class="who-can-access__name">David Robert</span>
-											<span class="who-can-access__email"
-												>david@marksman.com</span
-											>
-										</div>
-										<div class="who-can-access-actions">
-											<span class="who-can-access__role">Owner</span>
-										</div>
-									</li>
-									<li>
-										<div class="avatar">
-											B
-											<!-- <img src="" alt=""> -->
-										</div>
-										<div class="who-can-access-info">
-											<span class="who-can-access__name">John Doe</span>
-											<span class="who-can-access__email"
-												>johndoe@gmail.com</span
-											>
-										</div>
-										<div class="who-can-access-actions dropdown-wrapper">
-											<button
-												type="button"
-												class="btn btn-sm dropdown-button max-lg:-mr-3"
-												data-id="who-can-access-menu"
-											>
-												<span>Viewer</span>
-												<svg class="icon icon-sm">
-													<use href="#icon-chevron-down"></use>
-												</svg>
-											</button>
-											<div
-												class="js-dropdown hidden w-[8.75rem] right-0"
-												data-dropdown-id="who-can-access-menu"
-												data-sheet-modal
-												data-overflow-visible
-												data-dropdown-position="right"
-											>
-												<div class="js-dropdown-overlay"></div>
-												<div class="js-dropdown-body">
-													<div class="js-dropdown-trigger"><span></span></div>
-													<div class="js-dropdown-content">
-														<ul class="js-dropdown-list lnk-privacy-menu">
-															<li class="js-dropdown-list-item">
-																<a href="#"> Editor </a>
-															</li>
-															<li class="js-dropdown-list-item">
-																<a href="#"> Viewers </a>
-															</li>
-														</ul>
-													</div>
-												</div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="avatar">
-											R
-											<!-- <img src="" alt=""> -->
-										</div>
-										<div class="who-can-access-info">
-											<span class="who-can-access__name"
-												>robertpattinson@gmail.com</span
-											>
-											<span class="who-can-access__email"
-												>robertpattinson@gmail.com</span
-											>
-										</div>
-										<div class="who-can-access-actions dropdown-wrapper">
-											<button
-												type="button"
-												class="btn btn-sm dropdown-button max-lg:-mr-3"
-												data-id="who-can-access-menu"
-											>
-												<span>Viewer</span>
-												<svg class="icon icon-sm">
-													<use href="#icon-chevron-down"></use>
-												</svg>
-											</button>
-											<div
-												class="js-dropdown hidden w-[8.75rem] right-0"
-												data-dropdown-id="who-can-access-menu"
-												data-sheet-modal
-												data-overflow-visible
-												data-dropdown-position="right"
-											>
-												<div class="js-dropdown-overlay"></div>
-												<div class="js-dropdown-body">
-													<div class="js-dropdown-trigger"><span></span></div>
-													<div class="js-dropdown-content">
-														<ul class="js-dropdown-list lnk-privacy-menu">
-															<li class="js-dropdown-list-item">
-																<a href="#"> Editor </a>
-															</li>
-															<li class="js-dropdown-list-item">
-																<a href="#"> Viewers </a>
-															</li>
-														</ul>
-													</div>
-												</div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="avatar">
-											J
-											<!-- <img src="" alt=""> -->
-										</div>
-										<div class="who-can-access-info">
-											<span class="who-can-access__name">James Patrick</span>
-											<span class="who-can-access__email"
-												>patrickjames@gmail.com</span
-											>
-										</div>
-										<div class="who-can-access-actions dropdown-wrapper">
-											<button
-												type="button"
-												class="btn btn-sm dropdown-button max-lg:-mr-3"
-												data-id="who-can-access-menu"
-											>
-												<span>Editor</span>
-												<svg class="icon icon-sm">
-													<use href="#icon-chevron-down"></use>
-												</svg>
-											</button>
-											<div
-												class="js-dropdown hidden w-[8.75rem] right-0"
-												data-dropdown-id="who-can-access-menu"
-												data-sheet-modal
-												data-overflow-visible
-												data-dropdown-position="right"
-											>
-												<div class="js-dropdown-overlay"></div>
-												<div class="js-dropdown-body">
-													<div class="js-dropdown-trigger"><span></span></div>
-													<div class="js-dropdown-content">
-														<ul class="js-dropdown-list lnk-privacy-menu">
-															<li class="js-dropdown-list-item">
-																<a href="#"> Editor </a>
-															</li>
-															<li class="js-dropdown-list-item">
-																<a href="#"> Viewers </a>
-															</li>
-														</ul>
-													</div>
-												</div>
-											</div>
-										</div>
-									</li>
-								</ul>
-								<h4
-									class="block mt-4 text-sm font-semibold text-dark-800 mb-4 text-left"
-								>
-									General access
-								</h4>
-								<div class="privacy-settings-wrapper dropdown-wrapper">
-									<div
-										data-id="privacy-settings-menu"
-										class="privacy-settings-item dropdown-button"
+								<div id="privacy-settings-wrapper" class="mt-4">
+									<h4
+										class="block text-sm font-semibold text-dark-800 mb-4 text-left"
 									>
-										<svg class="icon icon-md">
-											<use href="#icon-world"></use>
-										</svg>
-										<div class="privacy-settings-item__info">
-											<div class="privacy-settings-item__title">
-												Anyone with a link
+										Access level
+									</h4>
+									<div class="privacy-settings-wrapper dropdown-wrapper">
+										<div
+											data-id="privacy-settings-menu"
+											class="privacy-settings-item dropdown-button"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-world"></use>
+											</svg>
+											<div class="privacy-settings-item__info">
+												<div class="privacy-settings-item__title">
+													Anyone with a link
+												</div>
+												<div class="privacy-settings-item__description">
+													Anyone with a link can access. Hidden from search
+													engines.
+												</div>
 											</div>
-											<div class="privacy-settings-item__description">
-												Anyone with a link can access. Hidden from search
-												engines.
-											</div>
+											<svg class="icon icon-md ml-auto">
+												<use href="#icon-chevron-down"></use>
+											</svg>
 										</div>
-										<svg class="icon icon-md ml-auto">
-											<use href="#icon-chevron-down"></use>
-										</svg>
-									</div>
-									<div
-										class="js-dropdown hidden w-[490px]"
-										data-dropdown-id="privacy-settings-menu"
-										data-sheet-modal
-										data-overflow-visible
-									>
-										<div class="js-dropdown-overlay"></div>
-										<div class="js-dropdown-body">
-											<div class="js-dropdown-trigger"><span></span></div>
-											<div class="js-dropdown-content">
-												<div class="privacy-settings-menu__item">
-													<svg class="icon icon-md">
-														<use href="#icon-world"></use>
-													</svg>
-													<div>
-														<div
-															class="font-medium text-dark-800 text-sm flex items-center gap-2 mb-1"
-														>
-															Anyone with a link
-														</div>
-														<div class="text-xs text-dark-800/70">
-															Anyone with a link can access. Hidden from search
-															engines.
-														</div>
-													</div>
-												</div>
-												<div class="privacy-settings-menu__item">
-													<svg class="icon icon-md">
-														<use href="#icon-user"></use>
-													</svg>
-													<div>
-														<div
-															class="font-medium text-dark-800 text-sm flex items-center gap-2 mb-1"
-														>
-															Restricted
-															<span class="tag-filled tag-sm bg-blue-500 gap-1">
-																<span>Plus</span>
-															</span>
-														</div>
-														<div class="text-xs text-dark-800/70">
-															Only people added can access.
-														</div>
-													</div>
-												</div>
-												<div class="privacy-settings-menu__item">
-													<svg class="icon icon-md">
-														<use href="#icon-team"></use>
-													</svg>
-													<div>
-														<div
-															class="font-medium text-dark-800 text-sm flex items-center gap-2 mb-1"
-														>
-															Members of Jumpshare Enterprise
-															<span
-																class="tag-filled tag-sm bg-violet-600 gap-1"
+										<div
+											class="js-dropdown hidden w-[490px]"
+											data-dropdown-id="privacy-settings-menu"
+											data-sheet-modal
+											data-overflow-visible
+										>
+											<div class="js-dropdown-overlay"></div>
+											<div class="js-dropdown-body">
+												<div class="js-dropdown-trigger"><span></span></div>
+												<div class="js-dropdown-content">
+													<div class="privacy-settings-menu__item">
+														<svg class="icon icon-md">
+															<use href="#icon-world"></use>
+														</svg>
+														<div>
+															<div
+																class="font-medium text-dark-800 text-sm flex items-center gap-2 mb-1"
 															>
-																<span>Business</span>
-															</span>
-														</div>
-														<div class="text-xs text-dark-800/70">
-															Only Workspace members can access.
+																Anyone with a link
+															</div>
+															<div class="text-xs text-dark-800/70">
+																Anyone with a link can access. Hidden from
+																search engines.
+															</div>
 														</div>
 													</div>
-												</div>
-												<div class="privacy-settings-menu__item">
-													<svg class="icon icon-md">
-														<use href="#icon-disable-outline"></use>
-													</svg>
-													<div>
-														<div
-															class="font-medium text-dark-800 text-sm flex items-center gap-2 mb-1"
-														>
-															Only Me
-															<span class="tag-filled tag-sm bg-blue-500 gap-1">
-																<span>Plus</span>
-															</span>
+													<div class="privacy-settings-menu__item">
+														<svg class="icon icon-md">
+															<use href="#icon-user"></use>
+														</svg>
+														<div>
+															<div
+																class="font-medium text-dark-800 text-sm flex items-center gap-2 mb-1"
+															>
+																Restricted to spaces and people
+															</div>
+															<div class="text-xs text-dark-800/70">
+																Only spaces and people added can access.
+															</div>
 														</div>
-														<div class="text-xs text-dark-800/70">
-															Only you can access this file.
+													</div>
+													<div class="privacy-settings-menu__item">
+														<svg class="icon icon-md">
+															<use href="#icon-team"></use>
+														</svg>
+														<div>
+															<div
+																class="font-medium text-dark-800 text-sm flex items-center gap-2 mb-1"
+															>
+																Members of Jumpshare Enterprise
+																<span
+																	class="tag-filled tag-sm bg-violet-600 gap-1"
+																>
+																	<span>Business</span>
+																</span>
+															</div>
+															<div class="text-xs text-dark-800/70">
+																Only your Workspace members can access.
+															</div>
 														</div>
 													</div>
 												</div>

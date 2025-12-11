@@ -79,6 +79,8 @@ const Dialog = {
 
 const Lightbox = {
 	tabsInit: function () {
+		this.recentSuggestionsInit();
+
 		$("#share_modal_tab").on("click", function (e) {
 			e.preventDefault();
 			$(".modal-email-share-dialog").removeClass(
@@ -127,12 +129,16 @@ const Lightbox = {
 		// WIP - Rework this code, only for the test
 		$(document).on("focus", "#email_to", function () {
 			$(this).closest(".modal-email-wrapper").addClass("!border-blue-500");
-			$(".recent-suggestions").removeClass("hidden");
 		});
 
 		$(document).on("blur", "#email_to", function () {
-			console.log("blur");
 			$(this).closest(".modal-email-wrapper").removeClass("!border-blue-500");
+		});
+
+		$(document).on("click", ".modal-content", function (e) {
+			if ($(e.target).closest(".recent-suggestions-select").length) {
+				return;
+			}
 			$(".recent-suggestions").addClass("hidden");
 		});
 
@@ -207,10 +213,10 @@ const Lightbox = {
 		$("#email_to").on("input", (e) => {
 			if (e.target.value.length > 0) {
 				$("#email_message").removeClass("hidden");
-				$("#share-select-role").removeClass("hidden");
+				$(".recent-suggestions").removeClass("hidden");
 			} else {
 				$("#email_message").addClass("hidden");
-				$("#share-select-role").addClass("hidden");
+				$(".recent-suggestions").addClass("hidden");
 			}
 		});
 		$("#hide_video_title").on("change", (e) => {
@@ -222,6 +228,52 @@ const Lightbox = {
 				$("#preview-window-info").removeClass("hidden");
 			}
 		});
+	},
+	recentSuggestionsInit: function () {
+		const $recentSuggestions = $(".recent-suggestions-item");
+
+		$recentSuggestions.on("click", function (e) {
+			e.preventDefault();
+			e.stopPropagation();
+
+			$(".recent-suggestions").addClass("hidden");
+			let avatar = "";
+			const avatarSrc = $(this).find(".avatar img").attr("src");
+			if (avatarSrc) {
+				avatar = `<div class="avatar size-5.5 mr-1"><img src="${avatarSrc}" alt="Avatar"></div>`;
+			}
+			const name = $(this).find(".recent-suggestions-item__name").text();
+			const $item = `
+				<li class="recent-suggestions-select-item">
+					${avatarSrc ? avatar : ""}
+					<span>${name}</span>
+					<span class="icn-close"></span>
+				</li>
+				`;
+			$(".recent-suggestions-select-search").before($item);
+			$("#share-select-role").removeClass("hidden");
+			$("#email_to").val("");
+			// $("#who-can-access-wrapper").addClass("hidden");
+			// $("#privacy-settings-wrapper").addClass("hidden");
+		});
+		$(document).on(
+			"click",
+			".recent-suggestions-select-item .icn-close",
+			function () {
+				const $item = $(this).closest(".recent-suggestions-select-item");
+				$item.remove();
+				$(".recent-suggestions").addClass("hidden");
+				if (checkRecentSuggestionsLength()) {
+					$("#share-select-role").addClass("hidden");
+					// $("#who-can-access-wrapper").removeClass("hidden");
+					// $("#privacy-settings-wrapper").removeClass("hidden");
+				}
+			},
+		);
+
+		const checkRecentSuggestionsLength = () => {
+			return $(".recent-suggestions-select-item").length <= 0;
+		};
 	},
 };
 
