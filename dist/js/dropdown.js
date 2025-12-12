@@ -348,7 +348,10 @@ const Dropdown = {
 		if (needsFixedPosition && !Helpers.isMobile()) {
 			$element.addClass("dropdown-fixed");
 			this.attachScrollListeners($element);
-			this.calculateFixedPosition($element);
+			this.calculateFixedPosition(
+				$element,
+				$element.closest(".dropdown-wrapper"),
+			);
 			return;
 		} else {
 			$element.removeClass("dropdown-fixed");
@@ -407,11 +410,8 @@ const Dropdown = {
 		return false;
 	},
 
-	calculateFixedPosition($element) {
-		const $trigger = $element
-			.closest(".dropdown-wrapper")
-			.find(".dropdown-button");
-		const triggerRect = $trigger[0].getBoundingClientRect();
+	calculateFixedPosition($element, $wrapper) {
+		const triggerRect = $wrapper[0].getBoundingClientRect();
 		const viewportHeight = window.innerHeight;
 		const viewportWidth = window.innerWidth;
 		const offset = 10;
@@ -528,7 +528,10 @@ const Dropdown = {
 				const $activeDropdown = this.dropdownContents.filter(".active");
 				if ($activeDropdown.length) {
 					if ($activeDropdown.hasClass("dropdown-fixed")) {
-						this.calculateFixedPosition($activeDropdown);
+						this.calculateFixedPosition(
+							$activeDropdown,
+							$activeDropdown.closest(".dropdown-wrapper"),
+						);
 					} else {
 						this.adjustElementPosition($activeDropdown);
 					}
@@ -541,7 +544,10 @@ const Dropdown = {
 				".active.dropdown-fixed",
 			);
 			if ($activeDropdown.length) {
-				this.calculateFixedPosition($activeDropdown);
+				this.calculateFixedPosition(
+					$activeDropdown,
+					$activeDropdown.closest(".dropdown-wrapper"),
+				);
 			}
 		});
 	},
@@ -639,7 +645,10 @@ const Dropdown = {
 		const self = this;
 		this.scrollableParents.forEach(function (el) {
 			const handler = function () {
-				self.calculateFixedPosition($(".js-dropdown.active.dropdown-fixed"));
+				self.calculateFixedPosition(
+					$(".js-dropdown.active.dropdown-fixed"),
+					$(".js-dropdown.active.dropdown-fixed").closest(".dropdown-wrapper"),
+				);
 			};
 			el.addEventListener("scroll", handler, { passive: true });
 			self.scrollHandlers.push({ el, handler });

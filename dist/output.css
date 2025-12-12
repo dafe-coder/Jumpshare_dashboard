@@ -1600,6 +1600,9 @@
   .min-w-27\.5 {
     min-width: calc(var(--spacing) * 27.5);
   }
+  .min-w-30 {
+    min-width: var(--spacing-30);
+  }
   .min-w-38 {
     min-width: calc(var(--spacing) * 38);
   }
@@ -4721,6 +4724,11 @@
       margin-left: auto;
     }
   }
+  .lg\:-ml-5 {
+    @media (width >= 64rem) {
+      margin-left: calc(var(--spacing) * -5);
+    }
+  }
   .lg\:ml-60 {
     @media (width >= 64rem) {
       margin-left: calc(var(--spacing) * 60);
@@ -5645,6 +5653,31 @@
       .list-type & {
         display: none;
       }
+    }
+  }
+  .\[\.modal-email-selected_\&\]\:block {
+    .modal-email-selected & {
+      display: block;
+    }
+  }
+  .\[\.modal-email-selected_\&\]\:flex {
+    .modal-email-selected & {
+      display: flex;
+    }
+  }
+  .\[\.modal-email-selected_\&\]\:hidden {
+    .modal-email-selected & {
+      display: none;
+    }
+  }
+  .\[\.modal-email-selected-team_\&\]\:hidden {
+    .modal-email-selected-team & {
+      display: none;
+    }
+  }
+  .\[\.modal-team-selected_\&\]\:hidden {
+    .modal-team-selected & {
+      display: none;
     }
   }
   .\[\.sidebar-has-scrollbar_\&\]\:border-t {
@@ -10454,11 +10487,9 @@
     position: relative;
   }
   .recent-suggestions {
-    position: absolute;
-    top: calc(100% + 10px);
+    position: fixed;
     left: calc(var(--spacing) * 0);
-    z-index: 1;
-    width: 100%;
+    z-index: 10;
     overflow: clip;
     border-radius: var(--radius-lg);
     border-style: var(--tw-border-style);

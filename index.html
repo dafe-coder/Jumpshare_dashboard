@@ -783,11 +783,11 @@
 								autocomplete="off"
 							>
 								<div
-									class="recent-suggestions-select modal-email-wrapper relative pr-25"
+									class="recent-suggestions-select modal-email-wrapper relative pr-25 dropdown-wrapper"
 								>
 									<div
 										id="share-select-role"
-										class="hidden absolute top-[5px] right-[5px] dropdown-wrapper"
+										class="hidden absolute top-[5px] right-[5px] dropdown-wrapper [.modal-email-selected_&]:block"
 									>
 										<button
 											type="button"
@@ -832,7 +832,9 @@
 											/>
 										</li>
 									</ul>
-									<div class="recent-suggestions shadow-dropdown hidden">
+									<div
+										class="recent-suggestions w-[490px] shadow-dropdown hidden"
+									>
 										<div class="recent-suggestions-header">
 											<span>Recent Suggestions</span>
 										</div>
@@ -867,6 +869,31 @@
 													>
 													<span class="recent-suggestions-item__email"
 														>stevenson.james@example.com</span
+													>
+												</div>
+												<div class="recent-suggestions-item__actions">
+													<button type="button" class="btn btn-close">
+														<span class="icn-close"></span>
+														<span class="sr-only">Remove suggestion item</span>
+													</button>
+												</div>
+											</div>
+											<div
+												class="recent-suggestions-item recent-suggestions-item-team"
+											>
+												<div
+													class="avatar size-8 rounded-lg bg-blue-500 text-white flex items-center justify-center"
+												>
+													<svg class="icon icon-xs">
+														<use href="#icon-members-semibold-2"></use>
+													</svg>
+												</div>
+												<div class="recent-suggestions-item__info">
+													<span class="recent-suggestions-item__name"
+														>Team Space</span
+													>
+													<span class="recent-suggestions-item__email"
+														>13 members</span
 													>
 												</div>
 												<div class="recent-suggestions-item__actions">
@@ -932,14 +959,17 @@
 								</div>
 								<textarea
 									tabindex="3"
-									class="form-control input-slim hidden"
+									class="form-control hidden [.modal-email-selected_&]:block [.modal-team-selected_&]:hidden"
 									name="email_message"
 									id="email_message"
 									placeholder="Add a message (optional)"
 								></textarea>
-								<div id="who-can-access-wrapper" class="mt-6">
+								<div
+									id="who-can-access-wrapper"
+									class="mt-6 [.modal-email-selected_&]:hidden"
+								>
 									<h4
-										class="block text-sm font-semibold text-dark-800 mb-3 text-left"
+										class="hidden text-sm font-semibold text-dark-800 mb-3 text-left"
 									>
 										Who can access
 									</h4>
@@ -1101,7 +1131,10 @@
 										</li>
 									</ul>
 								</div>
-								<div id="privacy-settings-wrapper" class="mt-4">
+								<div
+									id="privacy-settings-wrapper"
+									class="mt-4 [.modal-email-selected_&]:hidden"
+								>
 									<h4
 										class="block text-sm font-semibold text-dark-800 mb-4 text-left"
 									>
@@ -1198,7 +1231,8 @@
 									class="share-footer flex items-center justify-between mt-3 pt-3 bg-white sticky bottom-0 z-1 pb-6"
 								>
 									<div
-										class="flex items-center gap-3.5 max-sm:flex-wrap w-full max-sm:gap-y-5"
+										id="share-footer-actions"
+										class="flex items-center gap-3.5 max-sm:flex-wrap w-full max-sm:gap-y-5 [.modal-email-selected_&]:hidden"
 									>
 										<button
 											id="copy_advLink"
@@ -1227,6 +1261,40 @@
 										>
 											Done
 										</button>
+									</div>
+									<div
+										class="flex items-center gap-3.5 max-sm:flex-wrap w-full max-sm:gap-y-5 hidden [.modal-email-selected_&]:flex"
+									>
+										<button
+											data-type="file"
+											data-link="http://jmp.jsa.de/v/y40vjOQeoW3ykjafsfCH"
+											type="button"
+											class="btn h-9 gap-1.5 px-5 font-normal max-sm:order-2 max-xs:flex-grow-1 lg:-ml-5 [.modal-team-selected_&]:hidden"
+										>
+											<svg class="icon icon-sm">
+												<use href="#icon-calendar"></use>
+											</svg>
+											<span class="text-sm text-dark-800">Schedule</span>
+											<svg class="icon icon-sm">
+												<use href="#icon-chevron-down"></use>
+											</svg>
+										</button>
+										<div
+											class="flex items-center gap-3 max-sm:order-1 sm:ml-auto max-xs:flex-grow-1"
+										>
+											<button
+												type="submit"
+												class="btn btn-border-default h-9 px-6"
+											>
+												Cancel
+											</button>
+											<button
+												type="submit"
+												class="btn btn-primary h-9 min-w-30 font-semibold"
+											>
+												Share
+											</button>
+										</div>
 									</div>
 								</div>
 							</form>

@@ -418,7 +418,7 @@
 	}
 
 	.recent-suggestions {
-		@apply border border-gray-400 rounded-lg absolute top-[calc(100%+10px)] left-0 w-full bg-white z-1 overflow-clip;
+		@apply border border-gray-400 rounded-lg fixed bg-white z-10 overflow-clip left-0;
 
 		.recent-suggestions-header {
 			@apply px-6 pt-4 pb-3;

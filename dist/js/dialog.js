@@ -212,10 +212,12 @@ const Lightbox = {
 
 		$("#email_to").on("input", (e) => {
 			if (e.target.value.length > 0) {
-				$("#email_message").removeClass("hidden");
 				$(".recent-suggestions").removeClass("hidden");
+				Dropdown.calculateFixedPosition(
+					$(".recent-suggestions"),
+					$(".recent-suggestions-select").closest(".dropdown-wrapper"),
+				);
 			} else {
-				$("#email_message").addClass("hidden");
 				$(".recent-suggestions").addClass("hidden");
 			}
 		});
@@ -239,34 +241,47 @@ const Lightbox = {
 			$(".recent-suggestions").addClass("hidden");
 			let avatar = "";
 			const avatarSrc = $(this).find(".avatar img").attr("src");
+			const isTeam = $(this).hasClass("recent-suggestions-item-team");
+
 			if (avatarSrc) {
 				avatar = `<div class="avatar size-5.5 mr-1"><img src="${avatarSrc}" alt="Avatar"></div>`;
+			} else if (isTeam) {
+				avatar = `<div class="avatar size-5.5 mr-1 rounded-md bg-blue-500 text-white flex items-center justify-center">
+					<svg class="icon icon-xs">
+						<use href="#icon-members-semibold-2"></use>
+					</svg>
+				</div>`;
 			}
+
 			const name = $(this).find(".recent-suggestions-item__name").text();
 			const $item = `
-				<li class="recent-suggestions-select-item">
-					${avatarSrc ? avatar : ""}
+				<li class="recent-suggestions-select-item${isTeam ? " recent-suggestions-select-item-team" : ""}">
+					${avatarSrc || isTeam ? avatar : ""}
 					<span>${name}</span>
 					<span class="icn-close"></span>
 				</li>
 				`;
 			$(".recent-suggestions-select-search").before($item);
-			$("#share-select-role").removeClass("hidden");
 			$("#email_to").val("");
-			// $("#who-can-access-wrapper").addClass("hidden");
-			// $("#privacy-settings-wrapper").addClass("hidden");
+			$(".modal-email").addClass(
+				isTeam
+					? "modal-email-selected modal-team-selected"
+					: "modal-email-selected",
+			);
 		});
 		$(document).on(
 			"click",
 			".recent-suggestions-select-item .icn-close",
 			function () {
 				const $item = $(this).closest(".recent-suggestions-select-item");
+				const isTeam = $item.hasClass("recent-suggestions-select-item-team");
 				$item.remove();
 				$(".recent-suggestions").addClass("hidden");
+				if (isTeam) {
+					$(".modal-email").removeClass("modal-team-selected");
+				}
 				if (checkRecentSuggestionsLength()) {
-					$("#share-select-role").addClass("hidden");
-					// $("#who-can-access-wrapper").removeClass("hidden");
-					// $("#privacy-settings-wrapper").removeClass("hidden");
+					$(".modal-email").removeClass("modal-email-selected");
 				}
 			},
 		);
