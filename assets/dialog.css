@@ -459,7 +459,7 @@
 				@apply p-0 size-6;
 			}
 			.icn-close {
-				@apply size-6 bg-gray-400  cursor-pointer p-0 rounded-md block;
+				@apply size-6 hover:bg-gray-400  cursor-pointer p-0 rounded-md block;
 			}
 			.icn-close:before,
 			.icn-close:after {

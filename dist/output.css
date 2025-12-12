@@ -5670,11 +5670,6 @@
       display: none;
     }
   }
-  .\[\.modal-email-selected-team_\&\]\:hidden {
-    .modal-email-selected-team & {
-      display: none;
-    }
-  }
   .\[\.modal-team-selected_\&\]\:hidden {
     .modal-team-selected & {
       display: none;
@@ -10568,8 +10563,12 @@
         height: calc(var(--spacing) * 6);
         cursor: pointer;
         border-radius: var(--radius-md);
-        background-color: var(--color-gray-400);
         padding: calc(var(--spacing) * 0);
+        &:hover {
+          @media (hover: hover) {
+            background-color: var(--color-gray-400);
+          }
+        }
       }
       .icn-close:before,	.icn-close:after {
         height: 12px;
