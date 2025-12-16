@@ -1,4 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none; color: black;">
+	<symbol id="icon-flag" viewBox="0 0 24 24" fill="none">
+		<path d="M5 20V15.2775M5 15.2775C10.0907 11.2331 13.9093 19.3218 19 15.2775V5.1675C13.9093 9.21184 10.0907 1.12316 5 5.1675V15.2775Z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+	</symbol>
 	<symbol id="icon-settings" viewBox="0 0 24 24" fill="none">
 		<path d="M19 16.5747H10H4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
 		<path d="M5 8.58545H14H20" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>

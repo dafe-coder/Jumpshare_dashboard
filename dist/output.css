@@ -994,6 +994,9 @@
   .h-10 {
     height: calc(var(--spacing) * 10);
   }
+  .h-10\.5 {
+    height: calc(var(--spacing) * 10.5);
+  }
   .h-11 {
     height: calc(var(--spacing) * 11);
   }
@@ -1194,6 +1197,9 @@
   }
   .w-30 {
     width: var(--spacing-30);
+  }
+  .w-37 {
+    width: calc(var(--spacing) * 37);
   }
   .w-38 {
     width: calc(var(--spacing) * 38);
@@ -2338,6 +2344,9 @@
   }
   .bg-gray-400 {
     background-color: var(--color-gray-400);
+  }
+  .bg-gray-500 {
+    background-color: var(--color-gray-500);
   }
   .bg-gray-600 {
     background-color: var(--color-gray-600);
