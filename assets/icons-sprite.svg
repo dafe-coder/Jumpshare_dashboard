@@ -401,8 +401,8 @@
 	<symbol id="icon-screen" viewBox="0 0 24 24" fill="none">
 		<path d="M5 9.375V6.75C5 6.28587 5.18437 5.84075 5.51256 5.51256C5.84075 5.18437 6.28587 5 6.75 5H9.375M19 14.625V17.25C19 17.7141 18.8156 18.1592 18.4874 18.4874C18.1592 18.8156 17.7141 19 17.25 19H14.625M14.625 5H17.25C17.7141 5 18.1592 5.18437 18.4874 5.51256C18.8156 5.84075 19 6.28587 19 6.75V9.375M9.375 19H6.75C6.28587 19 5.84075 18.8156 5.51256 18.4874C5.18437 18.1592 5 17.7141 5 17.25V14.625" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 	</symbol>
-	<symbol id="icon-close" viewBox="0 0 14 14" fill="none">
-		<path d="M3 3L11 11M3 11L11 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width: var(--icon-stroke-width, 1.5)"/>
+	<symbol id="icon-close" viewBox="0 0 12 12" fill="none">
+		<path d="M1.75781 10.2438L10.2438 1.75781M10.2438 10.2438L1.75781 1.75781" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-linejoin="round" style="stroke-width: var(--icon-stroke-width, 1.5)"/>
 	</symbol>
 	<symbol id="icon-ip" viewBox="0 0 24 24" fill="none">
 		<path d="M17.5455 7C18.0977 7 18.5455 7.44772 18.5455 8V16C18.5455 16.5523 18.0977 17 17.5455 17H6.45455C5.90226 17 5.45455 16.5523 5.45455 16V8C5.45455 7.44772 5.90226 7 6.45455 7H17.5455ZM18.5455 5H5.45455C5.06878 5 4.69881 5.24583 4.42603 5.68342C4.15325 6.121 4 6.71449 4 7.33333V16.6667C4 17.2855 4.15325 17.879 4.42603 18.3166C4.69881 18.7542 5.06878 19 5.45455 19H18.5455C18.9312 19 19.3012 18.7542 19.574 18.3166C19.8468 17.879 20 17.2855 20 16.6667V7.33333C20 6.71449 19.8468 6.121 19.574 5.68342C19.3012 5.24583 18.9312 5 18.5455 5Z" fill="currentColor"/>
