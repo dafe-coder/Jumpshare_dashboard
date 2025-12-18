@@ -268,7 +268,7 @@
 	}
 	.dropdown-animate-show {
 		/* animation: dropdownShow 300ms ease forwards !important; */
-		animation: slide-top 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+		animation: slide-top 0s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
 	}
 
 	@keyframes slide-top {
@@ -285,7 +285,8 @@
 	}
 
 	.dropdown-animate-hide {
-		animation: dropdownHide 300ms ease forwards !important;
+		/* animation: dropdownHide 300ms ease forwards !important; */
+		animation: dropdownHide 0s ease forwards !important;
 	}
 	[data-dropdown-select] .js-dropdown-list {
 		.js-dropdown-list-item {

@@ -396,31 +396,404 @@
 			</div>
 			<div class="modal-backdrop"></div>
 		</div>
-		<div class="flex flex-col min-h-screen" style="--header-height: 64px">
+		<div class="flex flex-col min-h-screen">
 			<header
-				class="h-[var(--header-height)] pl-3 pr-5 flex items-center justify-between bg-white border-b border-gray-400"
+				style="--header-height: 86px"
+				class="h-[var(--header-height)] px-3 flex items-center justify-between bg-white border-b border-gray-400"
 			>
-				<div class="flex items-center gap-4">
+				<div class="flex items-center gap-4.5">
+					<!-- <a href="../index.html" aria-label="Go Back">
+						<svg class="icon size-11">
+							<use href="#icon-logo-square"></use>
+						</svg>
+					</a> -->
 					<a href="../index.html" aria-label="Go Back">
-						<svg class="icon w-37 h-10.5">
-							<use href="#icon-logo"></use>
+						<svg class="icon icon-lg">
+							<use href="#icon-chevron-left"></use>
 						</svg>
 					</a>
-					<hr class="w-px h-6.5 bg-gray-500" />
 					<div class="flex flex-col gap-1.5">
 						<div class="flex items-center gap-2">
-							<strong class="text-lg font-semibold font-sans-semi truncate">
+							<strong class="text-xl font-semibold font-sans-semi truncate">
 								Scrum Sep 8 - Web Development Testing
 							</strong>
+							<div class="dropdown-wrapper">
+								<span
+									data-id="dropdown-version-history"
+									class="dropdown-button flex items-center text-sm font-semibold text-dark-800 h-7 px-3 bg-[#F6F6F6] rounded-lg cursor-pointer"
+									>V1</span
+								>
+								<div
+									data-dropdown-id="dropdown-version-history"
+									class="js-dropdown hidden w-[21.25rem] left-1/2 -translate-x-1/2"
+									data-sheet-modal
+								>
+									<div class="js-dropdown-overlay"></div>
+									<div class="js-dropdown-body">
+										<div class="js-dropdown-trigger">
+											<span></span>
+										</div>
+										<div class="js-dropdown-content p-5">
+											<div class="flex items-center justify-center mb-3.5 pt-1">
+												<img
+													class="w-42.5 max-w-full"
+													src="../assets/images/file-types.svg"
+													alt="file-types"
+												/>
+											</div>
+											<div
+												class="flex flex-col items-center gap-2 max-w-[13.25rem] mx-auto text-center"
+											>
+												<strong class="text-base font-semibold"
+													>Version History</strong
+												>
+												<p class="text-sm">
+													Add a new version and keep the same link
+												</p>
+											</div>
+											<button
+												type="button"
+												class="btn btn-primary w-full h-10 mt-5"
+											>
+												Add new version
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
+						<ul class="list-with-dots text-sm text-gray-900">
+							<li class="text-gray-900 flex items-center gap-2">
+								<svg class="icon icon-sm">
+									<use href="#icon-folder"></use>
+								</svg>
+								<span>Jumpshare Meetings 2025</span>
+							</li>
+							<li>John Adams</li>
+							<li>7 months ago</li>
+						</ul>
 					</div>
 				</div>
 				<div class="flex items-center gap-2.5">
+					<div class="dropdown-wrapper">
+						<button
+							type="button"
+							data-id="dropdown-analytics"
+							class="dropdown-button btn hover:bg-[#F6F6F6] h-10"
+						>
+							<svg class="icon icon-m">
+								<use href="#icon-eye-stroke"></use>
+							</svg>
+							<span class="font-semibold">13 views</span>
+						</button>
+						<div
+							class="js-dropdown hidden right-0 w-[26.875rem]"
+							data-dropdown-id="dropdown-analytics"
+							data-sheet-modal
+						>
+							<div class="js-dropdown-overlay"></div>
+							<div class="js-dropdown-body">
+								<div class="js-dropdown-trigger">
+									<span></span>
+								</div>
+								<div class="js-dropdown-content p-6">
+									<strong class="text-base font-semibold"
+										>13 views total, 7 unique views</strong
+									>
+									<div
+										class="flex items-center justify-between gap-3 mt-4.5 bg-[#F6F6F6] rounded-xl border border-gray-400 py-4 pl-6 pr-4"
+									>
+										<div class="flex flex-col gap-3">
+											<span class="text-sm text-gray-900">Views</span>
+											<span class="text-2xl font-medium">13</span>
+										</div>
+										<svg
+											width="256"
+											height="43"
+											viewBox="0 0 256 43"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg"
+										>
+											<path
+												d="M0.841797 14.3245L13.5918 34.2116L26.3418 12.1676L39.0918 7.40231L51.8418 6.67744L64.5918 13.8612L77.3418 12.1254L90.0918 1.61426L102.842 30.7912L115.592 16.8129L128.342 29.7494L141.092 16.6012L153.842 14.0026L166.592 37.6872L179.342 23.1647L192.092 21.303L204.842 41.6143L217.592 36.7342L230.342 27.5947L243.092 35.2715L255.842 34.9081"
+												stroke="#57B7E8"
+												stroke-width="2"
+											/>
+										</svg>
+									</div>
+									<strong class="text-base font-semibold mt-8 block"
+										>All Activity</strong
+									>
+									<ul
+										class="space-y-4 [&_li]:flex [&_li]:items-center [&_li]:gap-2.5 mt-4.5"
+									>
+										<li>
+											<div class="flex items-center gap-2.5">
+												<span class="avatar size-8"> D </span>
+											</div>
+											<div class="space-y-1 truncate">
+												<span class="text-sm truncate block"
+													>Anonymous - Viewed</span
+												>
+												<ul class="list-with-dots">
+													<li>Feb 6</li>
+													<li>11:41 pm</li>
+												</ul>
+											</div>
+											<div class="dropdown-wrapper ml-auto">
+												<button
+													type="button"
+													class="dropdown-button btn px-1.5 h-7 gap-1 text-dark-800/70 flex-shrink-0 hover:bg-[#F6F6F6] rounded-md -mr-1.5 [&.active]:bg-[#f6f6f6]"
+													data-id="dropdown-view-details"
+												>
+													<svg class="icon icon-sm">
+														<use href="#icon-info"></use>
+													</svg>
+													<span class="text-xs font-normal">Details</span>
+												</button>
+												<div
+													class="js-dropdown left-[calc(100%+14px)] w-50 -translate-y-1/2 hidden"
+													data-dropdown-id="dropdown-view-details"
+													data-sheet-modal
+													data-overflow-visible
+													data-dropdown-sub
+												>
+													<div class="js-dropdown-overlay"></div>
+													<div class="js-dropdown-body">
+														<div class="js-dropdown-trigger">
+															<span></span>
+														</div>
+														<div class="js-dropdown-content">
+															<ul
+																class="space-y-1 [&>li]:px-3 [&>li]:py-2.5 [&>li]:flex [&>li]:gap-3 [&_span]:text-sm"
+															>
+																<li>
+																	<img
+																		class="size-6 object-contain"
+																		src="../assets/images/pakistan.png"
+																		alt="pakistan"
+																	/>
+																	<span>Pakistan</span>
+																</li>
+																<li>
+																	<svg class="icon icon-md">
+																		<use href="#icon-world"></use>
+																	</svg>
+																	<span>Chrome</span>
+																</li>
+																<li>
+																	<svg class="icon icon-md">
+																		<use href="#icon-screen"></use>
+																	</svg>
+																	<span>1920x720</span>
+																</li>
+																<li>
+																	<svg class="icon icon-md">
+																		<use href="#icon-laptop"></use>
+																	</svg>
+																	<span>Windows 10</span>
+																</li>
+																<li>
+																	<svg class="icon icon-md">
+																		<use href="#icon-ip"></use>
+																	</svg>
+																	<span>133.345.654.2</span>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="flex items-center gap-2.5">
+												<span class="avatar size-8">
+													<img
+														src="../assets/images/avatar-2.png"
+														alt="avatar-2"
+													/>
+												</span>
+											</div>
+											<div class="space-y-1 truncate">
+												<span class="text-sm truncate block"
+													>Mirza Bilal Ahmed Baig - Downloaded</span
+												>
+												<ul class="list-with-dots">
+													<li>Feb 6</li>
+													<li>11:41 pm</li>
+												</ul>
+											</div>
+											<div class="dropdown-wrapper ml-auto">
+												<button
+													type="button"
+													class="dropdown-button btn px-1.5 h-7 gap-1 text-dark-800/70 flex-shrink-0 hover:bg-[#F6F6F6] rounded-md -mr-1.5 [&.active]:bg-[#f6f6f6]"
+													data-id="dropdown-view-details"
+												>
+													<svg class="icon icon-sm">
+														<use href="#icon-info"></use>
+													</svg>
+													<span class="text-xs font-normal">Details</span>
+												</button>
+												<div
+													class="js-dropdown left-[calc(100%+14px)] w-50 -translate-y-1/2 hidden"
+													data-dropdown-id="dropdown-view-details"
+													data-sheet-modal
+													data-overflow-visible
+													data-dropdown-sub
+												>
+													<div class="js-dropdown-overlay"></div>
+													<div class="js-dropdown-body">
+														<div class="js-dropdown-trigger">
+															<span></span>
+														</div>
+														<div class="js-dropdown-content">
+															<ul
+																class="space-y-1 [&>li]:px-3 [&>li]:py-2.5 [&>li]:flex [&>li]:gap-3 [&_span]:text-sm"
+															>
+																<li>
+																	<img
+																		class="size-6 object-contain"
+																		src="../assets/images/brazil.png"
+																		alt="brazil"
+																	/>
+																	<span>Brazil</span>
+																</li>
+																<li>
+																	<svg class="icon icon-md">
+																		<use href="#icon-world"></use>
+																	</svg>
+																	<span>Chrome</span>
+																</li>
+																<li>
+																	<svg class="icon icon-md">
+																		<use href="#icon-screen"></use>
+																	</svg>
+																	<span>1920x720</span>
+																</li>
+																<li>
+																	<svg class="icon icon-md">
+																		<use href="#icon-laptop"></use>
+																	</svg>
+																	<span>Windows 10</span>
+																</li>
+																<li>
+																	<svg class="icon icon-md">
+																		<use href="#icon-ip"></use>
+																	</svg>
+																	<span>133.345.654.2</span>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="flex items-center gap-2.5">
+												<span class="avatar size-8">
+													<img
+														src="../assets/images/avatar-3.png"
+														alt="avatar-3"
+													/>
+												</span>
+											</div>
+											<div class="space-y-1 truncate">
+												<span class="text-sm truncate block"
+													>Mirza Bilal Ahmed Baig - Viewed</span
+												>
+												<ul class="list-with-dots">
+													<li>Feb 6</li>
+													<li>11:41 pm</li>
+												</ul>
+											</div>
+											<div class="dropdown-wrapper ml-auto">
+												<button
+													type="button"
+													class="dropdown-button btn px-1.5 h-7 gap-1 text-dark-800/70 flex-shrink-0 hover:bg-[#F6F6F6] rounded-md -mr-1.5 [&.active]:bg-[#f6f6f6]"
+													data-id="dropdown-view-details"
+												>
+													<svg class="icon icon-sm">
+														<use href="#icon-info"></use>
+													</svg>
+													<span class="text-xs font-normal">Details</span>
+												</button>
+												<div
+													class="js-dropdown left-[calc(100%+14px)] w-50 -translate-y-1/2 hidden"
+													data-dropdown-id="dropdown-view-details"
+													data-sheet-modal
+													data-overflow-visible
+													data-dropdown-sub
+												>
+													<div class="js-dropdown-overlay"></div>
+													<div class="js-dropdown-body">
+														<div class="js-dropdown-trigger">
+															<span></span>
+														</div>
+														<div class="js-dropdown-content">
+															<ul
+																class="space-y-1 [&>li]:px-3 [&>li]:py-2.5 [&>li]:flex [&>li]:gap-3 [&_span]:text-sm"
+															>
+																<li>
+																	<img
+																		class="size-6 object-contain"
+																		src="../assets/images/usa.png"
+																		alt="usa"
+																	/>
+																	<span>USA</span>
+																</li>
+																<li>
+																	<svg class="icon icon-md">
+																		<use href="#icon-world"></use>
+																	</svg>
+																	<span>Safari</span>
+																</li>
+																<li>
+																	<svg class="icon icon-md">
+																		<use href="#icon-screen"></use>
+																	</svg>
+																	<span>1920x1080</span>
+																</li>
+																<li>
+																	<svg class="icon icon-md">
+																		<use href="#icon-laptop"></use>
+																	</svg>
+																	<span>Mac OS</span>
+																</li>
+																<li>
+																	<svg class="icon icon-md">
+																		<use href="#icon-ip"></use>
+																	</svg>
+																	<span>144.532.222.2</span>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+									<button
+										type="button"
+										class="btn btn-primary w-full h-10 mt-6"
+										data-tab-inside="analytics-tab"
+									>
+										View All Insights
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button type="button" class="btn btn-primary h-10 px-5">
+						<svg class="icon icon-md">
+							<use href="#icon-link"></use>
+						</svg>
+						<span>Copy Link</span>
+					</button>
 					<button type="button" class="btn btn-border-default h-10 pl-3 pr-4">
 						<svg class="icon icon-md">
-							<use href="#icon-download"></use>
+							<use href="#icon-share"></use>
 						</svg>
-						<span>Download</span>
+						<span>Share</span>
 					</button>
 					<div class="dropdown-wrapper">
 						<button
@@ -450,23 +823,157 @@
 											data-dialog-open-id="lock-file"
 										>
 											<svg class="icon icon-md">
-												<use href="#icon-copy"></use>
+												<use href="#icon-lock"></use>
 											</svg>
-											<span>Copy to Jumpshare</span>
+											<span>Lock</span>
+											<span class="text-sm text-blue-500 font-medium"
+												>Plus</span
+											>
 										</li>
 										<li
 											class="js-dropdown-list-item"
 											data-dialog-open-id="self-destruct"
 										>
 											<svg class="icon icon-md">
-												<use href="#icon-flag"></use>
+												<use href="#icon-trash-with-clock"></use>
 											</svg>
-											<span>Report Abuse</span>
+											<span>Self-Destruct</span>
+											<span class="text-sm text-blue-500 font-medium"
+												>Plus</span
+											>
+										</li>
+										<li class="js-dropdown-list-item">
+											<svg class="icon icon-md">
+												<use href="#icon-stats"></use>
+											</svg>
+											<span>View Stats</span>
+											<span class="text-sm text-blue-500 font-medium"
+												>Plus</span
+											>
+										</li>
+										<li class="js-dropdown-list-item">
+											<svg class="icon icon-md">
+												<use href="#icon-pencil"></use>
+											</svg>
+											<span>Rename</span>
+										</li>
+										<li class="js-dropdown-list-item">
+											<svg class="icon icon-md">
+												<use href="#icon-star"></use>
+											</svg>
+											<span>Favorite</span>
+										</li>
+										<li class="js-dropdown-list-item">
+											<svg class="icon icon-md">
+												<use href="#icon-download"></use>
+											</svg>
+											<span>Download</span>
+										</li>
+										<li class="js-dropdown-list-item">
+											<svg class="icon icon-md">
+												<use href="#icon-copy"></use>
+											</svg>
+											<span>Copy / Move</span>
+										</li>
+										<li
+											data-dropdown-sub-id="version-history"
+											class="js-dropdown-list-item relative sub-menu-item"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-history"></use>
+											</svg>
+											<span>Version History</span>
+											<span class="text-sm text-blue-500 font-medium"
+												>Plus</span
+											>
+											<svg
+												class="icon icon-md absolute top-1/2 -translate-y-1/2 right-1"
+											>
+												<use href="#icon-check-right"></use>
+											</svg>
+											<ul class="dropdown-content js-dropdown-sub-list hidden">
+												<li
+													class="sub-menu-item js-dropdown-list-item"
+													data-dialog-open-id="version-history"
+												>
+													<svg class="icon icon-md">
+														<use href="#icon-upload"></use>
+													</svg>
+													<span>Upload New Version</span>
+												</li>
+												<li
+													data-tab-inside="version-history-tab"
+													class="sub-menu-item js-dropdown-list-item"
+												>
+													<svg class="icon icon-md">
+														<use href="#icon-history"></use>
+													</svg>
+													<span>View Version History</span>
+												</li>
+											</ul>
+										</li>
+										<li class="border-b border-gray-500 my-2"></li>
+										<li class="js-dropdown-list-item">
+											<svg class="icon icon-md">
+												<use href="#icon-trash"></use>
+											</svg>
+											<span>Delete</span>
+										</li>
+									</ul>
+									<ul
+										class="js-dropdown-list js-dropdown-sub-list hidden"
+										data-dropdown-sub="version-history"
+									>
+										<li class="go-back js-dropdown-list-item">
+											<svg class="icon icon-md">
+												<use href="#icon-arrow-left"></use>
+											</svg>
+											<span>Version History</span>
+										</li>
+										<li class="border-b border-gray-500 mb-2"></li>
+										<li
+											class="js-dropdown-list-item"
+											data-dialog-open-id="version-history"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-upload"></use>
+											</svg>
+											<span>Upload New Version</span>
+										</li>
+										<li
+											onclick="window.open('./version-history.html', '_self')"
+											class="js-dropdown-list-item"
+										>
+											<svg class="icon icon-md">
+												<use href="#icon-history"></use>
+											</svg>
+											<span>View Version History</span>
 										</li>
 									</ul>
 								</div>
 							</div>
 						</div>
+					</div>
+					<div class="flex items-center gap-1 ml-1.5">
+						<button
+							type="button"
+							aria-label="Keyboard Shortcuts"
+							class="btn btn-transparent size-8 p-0"
+							data-tab-inside="keyboard-shortcuts-tab"
+						>
+							<svg class="icon size-8">
+								<use href="#icon-keyboard"></use>
+							</svg>
+						</button>
+						<button
+							type="button"
+							aria-label="Keyboard Shortcuts"
+							class="btn btn-transparent size-8 p-0"
+						>
+							<svg class="icon icon-s">
+								<use href="#icon-question-in-circle"></use>
+							</svg>
+						</button>
 					</div>
 				</div>
 			</header>
