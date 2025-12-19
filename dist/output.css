@@ -65,6 +65,7 @@
     --spacing-22: 5.625rem;
     --spacing-25: 105px;
     --spacing-30: 7.5625rem;
+    --tracking-0_22: -0.22px;
     --tracking-base: normal;
     --color-white: #ffffff;
     --color-black: #101010;
@@ -721,6 +722,9 @@
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
   }
+  .mb-4\.5 {
+    margin-bottom: var(--spacing-4_5);
+  }
   .mb-5 {
     margin-bottom: calc(var(--spacing) * 5);
   }
@@ -1066,6 +1070,9 @@
   }
   .h-\[28px\] {
     height: 28px;
+  }
+  .h-\[57px\] {
+    height: 57px;
   }
   .h-\[80vh\] {
     height: 80vh;
@@ -1764,11 +1771,17 @@
   .grid-cols-\[1fr_7rem_9rem_7\.94rem\] {
     grid-template-columns: 1fr 7rem 9rem 7.94rem;
   }
+  .grid-cols-\[1fr_80px\] {
+    grid-template-columns: 1fr 80px;
+  }
   .grid-cols-\[1fr_162px_211px\] {
     grid-template-columns: 1fr 162px 211px;
   }
   .grid-cols-\[1fr_430px\] {
     grid-template-columns: 1fr 430px;
+  }
+  .grid-cols-\[1fr_800px\] {
+    grid-template-columns: 1fr 800px;
   }
   .grid-cols-\[1fr_auto\] {
     grid-template-columns: 1fr auto;
@@ -1963,6 +1976,13 @@
       --tw-space-y-reverse: 0;
       margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
       margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-6 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 6) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
   .space-y-8 {
@@ -2667,6 +2687,9 @@
   .pr-5 {
     padding-right: calc(var(--spacing) * 5);
   }
+  .pr-7\.5 {
+    padding-right: var(--spacing-7_5);
+  }
   .pr-10 {
     padding-right: calc(var(--spacing) * 10);
   }
@@ -2775,6 +2798,9 @@
   .pl-11 {
     padding-left: calc(var(--spacing) * 11);
   }
+  .pl-px {
+    padding-left: 1px;
+  }
   .text-center {
     text-align: center;
   }
@@ -2881,6 +2907,14 @@
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
+  }
+  .tracking-0\.22 {
+    --tw-tracking: var(--tracking-0_22);
+    letter-spacing: var(--tracking-0_22);
+  }
+  .tracking-\[-2\%\] {
+    --tw-tracking: -2%;
+    letter-spacing: -2%;
   }
   .tracking-\[0\] {
     --tw-tracking: 0;
@@ -3045,6 +3079,9 @@
   }
   .uppercase {
     text-transform: uppercase;
+  }
+  .line-through {
+    text-decoration-line: line-through;
   }
   .underline {
     text-decoration-line: underline;

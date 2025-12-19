@@ -1,0 +1,813 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Jumpshare: File Viewer</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="57x57"
+			href="../assets/favicon/apple-icon-57x57.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="60x60"
+			href="../assets/favicon/apple-icon-60x60.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="72x72"
+			href="../assets/favicon/apple-icon-72x72.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="76x76"
+			href="../assets/favicon/apple-icon-76x76.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="114x114"
+			href="../assets/favicon/apple-icon-114x114.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="120x120"
+			href="../assets/favicon/apple-icon-120x120.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="144x144"
+			href="../assets/favicon/apple-icon-144x144.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="152x152"
+			href="../assets/favicon/apple-icon-152x152.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../assets/favicon/apple-icon-180x180.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="192x192"
+			href="../assets/favicon/android-icon-192x192.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../assets/favicon/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="96x96"
+			href="../assets/favicon/favicon-96x96.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../assets/favicon/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="../assets/favicon/manifest.json" />
+		<meta name="msapplication-TileColor" content="#ffffff" />
+		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+		<meta name="theme-color" content="#ffffff" />
+		<link rel="stylesheet" href="../dist/output.css" />
+	</head>
+	<body class="dashboard bg-[#F6F6F6]">
+		<div id="lightbox" class="hidden">
+			<div class="modal" id="modal">
+				<div
+					class="modal-dialog modal-bs modal-ai-actions max-w-[71.75rem] max-h-[80vh] hidden"
+				>
+					<button
+						type="button"
+						class="close pull-right"
+						data-dismiss="modal"
+						data-dialog-close
+					>
+						<span class="icn-close"></span>
+						<span class="sr-only">Close modal</span>
+					</button>
+					<div class="modal-content h-[80vh] flex flex-col">
+						<div class="py-4 px-6 border-b border-gray-400 flex-shrink-0">
+							<strong>AI Actions</strong>
+						</div>
+						<div
+							data-tab-tree-wrapper
+							class="grid grid-cols-[102px_1fr] flex-grow-1 flex-shrink-1 min-h-0"
+						>
+							<ul
+								class="flex flex-col gap-2.5 py-5 ml-3.5 border-r border-gray-400 h-full"
+							>
+								<li
+									data-tab-tree-id="docs"
+									class="active flex flex-col text-gray-900 [&.active]:bg-blue-500/10 [&.active]:text-blue-500 rounded-lg py-2.5 w-[4.375rem] items-center justify-center gap-1 hover:bg-gray-200 cursor-pointer"
+								>
+									<svg class="icon icon-sm">
+										<use href="#icon-file"></use>
+									</svg>
+									<span class="text-[13px]/[18px] font-medium">Docs</span>
+								</li>
+								<li
+									data-tab-tree-id="task"
+									class="flex flex-col text-gray-900 [&.active]:bg-blue-500/10 [&.active]:text-blue-500 rounded-lg py-2.5 w-[4.375rem] items-center justify-center gap-1 hover:bg-gray-200 cursor-pointer"
+								>
+									<svg class="icon icon-sm">
+										<use href="#icon-task"></use>
+									</svg>
+									<span class="text-[13px]/[18px] font-medium">Task</span>
+								</li>
+								<li
+									data-tab-tree-id="message"
+									class="flex flex-col text-gray-900 [&.active]:bg-blue-500/10 [&.active]:text-blue-500 rounded-lg py-2.5 w-[4.375rem] items-center justify-center gap-1 hover:bg-gray-200 cursor-pointer"
+								>
+									<svg class="icon icon-sm [--icon-stroke-width:1.2]">
+										<use href="#icon-comment"></use>
+									</svg>
+									<span class="text-[13px]/[18px] font-medium">Message</span>
+								</li>
+							</ul>
+							<div
+								class="grid grid-cols-[minmax(200px,280px)_1fr] min-h-0"
+								data-tab-tree-content="docs"
+								data-tab-tree-wrapper
+							>
+								<div class="pt-4.5 px-3 border-r border-gray-400">
+									<strong>Templates</strong>
+									<ul class="space-y-1 mt-4">
+										<li
+											data-tab-tree-id="sop"
+											class="active [&.active]:bg-blue-100 [&.active]:text-blue-500 h-10 rounded-lg flex items-center gap-2 px-3 cursor-pointer hover:bg-gray-200"
+										>
+											<svg class="icon icon-sm">
+												<use href="#icon-file-text"></use>
+											</svg>
+											<span class="[.active_&]:font-medium text-sm">SOP</span>
+										</li>
+										<li
+											data-tab-tree-id="step-by-step"
+											class="[&.active]:bg-blue-100 [&.active]:text-blue-500 h-10 rounded-lg flex items-center gap-2 px-3 cursor-pointer hover:bg-gray-200"
+										>
+											<svg class="icon icon-sm">
+												<use href="#icon-list-todo"></use>
+											</svg>
+											<span class="[.active_&]:font-medium text-sm"
+												>Step by Step</span
+											>
+										</li>
+										<li
+											data-tab-tree-id="pr-description"
+											class="[&.active]:bg-blue-100 [&.active]:text-blue-500 h-10 rounded-lg flex items-center gap-2 px-3 cursor-pointer hover:bg-gray-200"
+										>
+											<svg class="icon icon-sm">
+												<use href="#icon-git-compare"></use>
+											</svg>
+											<span class="[.active_&]:font-medium text-sm"
+												>PR Description</span
+											>
+										</li>
+										<li
+											data-tab-tree-id="code-docs"
+											class="[&.active]:bg-blue-100 [&.active]:text-blue-500 h-10 rounded-lg flex items-center gap-2 px-3 cursor-pointer hover:bg-gray-200"
+										>
+											<svg class="icon icon-sm">
+												<use href="#icon-box"></use>
+											</svg>
+											<span class="[.active_&]:font-medium text-sm"
+												>Code Docs</span
+											>
+										</li>
+										<li
+											data-tab-tree-id="slack-teams"
+											class="[&.active]:bg-blue-100 [&.active]:text-blue-500 h-10 rounded-lg flex items-center gap-2 px-3 cursor-pointer hover:bg-gray-200"
+										>
+											<svg class="icon icon-m">
+												<use href="#icon-members-medium"></use>
+											</svg>
+											<span class="[.active_&]:font-medium text-sm"
+												>Slack &amp; Teams</span
+											>
+										</li>
+									</ul>
+								</div>
+								<div class="ai-actions-content" data-tab-tree-content="sop">
+									<h3>Improving Typing Speed for Better Productivity</h3>
+									<p>
+										In this video, the speaker emphasizes the importance of
+										improving typing speed to enhance productivity and job
+										prospects. They highlight the benefits of increased typing
+										speed, such as boosting confidence and efficiency when
+										working on tasks that require typing. The speaker also
+										stresses the significance of practicing consistently and
+										using websites with interfaces that are preferred by the
+										user to enhance typing skills.
+									</p>
+									<strong>Steps Required:</strong>
+									<p>
+										The increased typing speed leads to improved con fidence and
+										efficiency when working on tasks that require typing, such
+										as writing emails, messages, or creating presentations.
+									</p>
+									<strong>Acceptance Criteria:</strong>
+									<ul>
+										<li>
+											Users should understand the importance of typing speed for
+											productivity.
+										</li>
+										<li>
+											Users should be able to identify the benefits of increased
+											typing speed in their daily tasks.
+										</li>
+										<li>
+											Focus on improving typing speed as a valuable side skill.
+										</li>
+									</ul>
+									<strong>Jumpshare Link</strong>
+									<a href="https://yourlink.com/3948faS49g9530gdopmbJA"
+										>https://yourlink.com/3948faS49g9530gdopmbJA</a
+									>
+								</div>
+								<div
+									class="ai-actions-content hidden"
+									data-tab-tree-content="step-by-step"
+								>
+									<h3>Improving Typing Speed for Better Productivity</h3>
+									<p>
+										In this video, the speaker emphasizes the importance of
+										improving typing speed to enhance productivity and job
+										prospects. They highlight the benefits of increased typing
+										speed, such as boosting confidence and efficiency when
+										working on tasks that require typing. The speaker also
+										stresses the significance of practicing consistently and
+										using websites with interfaces that are preferred by the
+										user to enhance typing skills.
+									</p>
+									<strong>Steps Required:</strong>
+								</div>
+								<div
+									class="ai-actions-content hidden"
+									data-tab-tree-content="pr-description"
+								></div>
+							</div>
+							<div
+								class="grid grid-cols-[minmax(200px,280px)_1fr] hidden min-h-0"
+								data-tab-tree-content="task"
+								data-tab-tree-wrapper
+							>
+								<div class="pt-4.5 px-3 border-r border-gray-400">
+									<strong>Attributes</strong>
+									<div
+										class="grid grid-cols-[auto_1fr] text-[13px] gap-3 items-center pl-3 mt-3 [&_span]:h-8 [&_span]:flex [&_span]:items-center"
+									>
+										<span class="text-gray-900">Space</span>
+										<span class="font-medium">Jumpshare</span>
+
+										<span class="text-gray-900">Project</span>
+										<span class="font-medium">Testing Phase</span>
+
+										<span class="text-gray-900">Type</span>
+										<span class="font-medium">Unauthorized</span>
+
+										<span class="text-gray-900">Priority</span>
+										<span class="font-medium">Highest</span>
+
+										<span class="text-gray-900">Assignee</span>
+										<span class="font-medium">John Doe</span>
+
+										<span class="text-gray-900">Date</span>
+										<span class="font-medium">12/04/2024</span>
+									</div>
+								</div>
+								<div class="ai-actions-content">
+									<h3>Task Details</h3>
+								</div>
+							</div>
+							<div
+								class="grid grid-cols-[minmax(200px,280px)_1fr] hidden min-h-0"
+								data-tab-tree-content="message"
+								data-tab-tree-wrapper
+							>
+								<div class="pt-4.5 px-3 border-r border-gray-400">
+									<strong>Templates</strong>
+									<ul class="space-y-1 mt-4">
+										<li
+											data-tab-tree-id="email"
+											class="active [&.active]:bg-blue-100 [&.active]:text-blue-500 h-10 rounded-lg flex items-center gap-2 px-3 cursor-pointer hover:bg-gray-200"
+										>
+											<svg class="icon icon-sm">
+												<use href="#icon-envelope"></use>
+											</svg>
+											<span class="[.active_&]:font-medium text-sm">Email</span>
+										</li>
+										<li
+											data-tab-tree-id="slack-teams"
+											class="[&.active]:bg-blue-100 [&.active]:text-blue-500 h-10 rounded-lg flex items-center gap-2 px-3 cursor-pointer hover:bg-gray-200"
+										>
+											<svg class="icon icon-sm">
+												<use href="#icon-members-medium"></use>
+											</svg>
+											<span class="[.active_&]:font-medium text-sm"
+												>Slack &amp; Teams</span
+											>
+										</li>
+										<li
+											data-tab-tree-id="social-media"
+											class="[&.active]:bg-blue-100 [&.active]:text-blue-500 h-10 rounded-lg flex items-center gap-2 px-3 cursor-pointer hover:bg-gray-200"
+										>
+											<svg class="icon icon-sm">
+												<use href="#icon-git-compare"></use>
+											</svg>
+											<span class="[.active_&]:font-medium text-sm"
+												>Social Media</span
+											>
+										</li>
+									</ul>
+								</div>
+								<div class="ai-actions-content" data-tab-tree-content="email">
+									<h3>Improving Typing Speed for Better Productivity</h3>
+								</div>
+								<div
+									class="ai-actions-content hidden"
+									data-tab-tree-content="slack-teams"
+								>
+									<h3>Slack &amp; Teams</h3>
+								</div>
+								<div
+									class="ai-actions-content hidden"
+									data-tab-tree-content="social-media"
+								>
+									<h3>Social Media</h3>
+								</div>
+							</div>
+						</div>
+						<div
+							class="flex justify-end items-center border-t border-gray-400 pt-3 pb-3.5 px-4 flex-shrink-0"
+						>
+							<div class="flex gap-3">
+								<button
+									type="button"
+									class="btn btn-border-default h-10 min-w-38"
+								>
+									<svg class="icon icon-md">
+										<use href="#icon-copy"></use>
+									</svg>
+									<span>Copy Text</span>
+								</button>
+								<button type="button" class="btn btn-primary h-10">
+									<svg
+										width="18"
+										height="18"
+										viewBox="0 0 18 18"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M8.6475 1.5C8.6475 3.3 10.125 4.7625 11.91 4.7625H13.245V6.0375C13.245 7.8375 14.7 9.2925 16.5 9.3V2.13C16.5 1.96291 16.4336 1.80267 16.3155 1.68452C16.1973 1.56637 16.0371 1.5 15.87 1.5H8.6475ZM5.0775 5.1C5.08145 5.96206 5.42565 6.7877 6.03523 7.39727C6.6448 8.00685 7.47044 8.35105 8.3325 8.355H9.6825V9.645C9.68645 10.5071 10.0306 11.3327 10.6402 11.9423C11.2498 12.5519 12.0754 12.8961 12.9375 12.9V5.7225C12.9356 5.55801 12.8693 5.4008 12.753 5.28448C12.6367 5.16816 12.4795 5.10195 12.315 5.1H5.0775ZM1.5 8.7C1.5 10.5 2.9625 11.955 4.7625 11.955H6.0975V13.245C6.105 15.0375 7.56 16.5 9.3525 16.5V9.3225C9.3525 9.15541 9.28613 8.99517 9.16798 8.87702C9.04983 8.75887 8.88959 8.6925 8.7225 8.6925L1.5 8.7Z"
+											fill="white"
+										/>
+									</svg>
+									<span>Connect your App</span>
+									<span class="relative ml-2.5 pl-4">
+										<span
+											class="absolute top-1/2 -translate-y-1/2 left-0 w-px h-full bg-white"
+										></span>
+										<svg class="icon icon-sm">
+											<use href="#icon-check-bottom"></use>
+										</svg>
+									</span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-backdrop"></div>
+		</div>
+		<div class="flex flex-col min-h-screen">
+			<header
+				style="--header-height: 64px"
+				class="h-[var(--header-height)] pl-3 pr-5 flex items-center justify-between bg-white border-b border-gray-400"
+			>
+				<div class="flex items-center gap-4">
+					<a href="../index.html" aria-label="Go Back">
+						<svg class="icon icon-lg">
+							<use href="#icon-chevron-left"></use>
+						</svg>
+					</a>
+					<div class="flex flex-col gap-1.5">
+						<div class="flex items-center gap-2">
+							<strong class="text-lg font-semibold font-sans-semi truncate">
+								Scrum Sep 8 - Web Development Testing
+							</strong>
+						</div>
+					</div>
+				</div>
+				<div class="flex items-center gap-2.5">
+					<button type="button" class="btn btn-transparent h-10 px-3">
+						<svg class="icon icon-md">
+							<use href="#icon-history"></use>
+						</svg>
+						<span>Reset</span>
+					</button>
+					<button type="button" class="btn btn-primary h-10 px-5">
+						Save Changes
+					</button>
+				</div>
+			</header>
+			<div class="file-viewer-wrapper grid grid-cols-[1fr_80px] flex-grow-1">
+				<div
+					class="flex-grow-1 overflow-y-auto h-[calc(100vh-var(--header-height))] scrollbar-hide"
+				>
+					<div class="max-w-[90%] px-5 w-full mx-auto">
+						<div
+							class="relative aspect-video max-h-[70vh] bg-gray-400 rounded-xl mx-auto mt-6 mb-[6.375rem]"
+						>
+							<div
+								class="flex gap-4 absolute left-1/2 -translate-x-1/2 top-[calc(100%+1.5rem)] w-max z-10"
+							>
+								<div
+									id="file-viewer-draw-tools"
+									class="flex gap-1 items-center bg-white border border-gray-400 rounded-xl px-2.5 h-13.5 shadow-[0px_4px_20px_rgba(0,0,0,0.06)] cursor-pointer hidden"
+								>
+									<button
+										aria-label="Undo"
+										type="button"
+										class="btn btn-transparent size-9 p-0 text-dark-800/50"
+									>
+										<svg class="icon icon-md">
+											<use href="#icon-undo-arrow"></use>
+										</svg>
+									</button>
+									<button
+										aria-label="Delete"
+										type="button"
+										class="btn btn-transparent size-9 p-0 text-dark-800/50"
+									>
+										<svg class="icon icon-md">
+											<use href="#icon-trash"></use>
+										</svg>
+									</button>
+									<button
+										aria-label="Choose color"
+										type="button"
+										class="btn btn-transparent size-9 p-0 text-dark-800/50"
+									>
+										<img
+											class="size-5.5"
+											src="../assets/images/gradient-color-picker.png"
+											alt="gradient color picker"
+										/>
+									</button>
+									<button
+										aria-label="Choose line weight"
+										type="button"
+										class="btn btn-transparent size-9 p-0"
+									>
+										<svg class="icon icon-md">
+											<use href="#icon-line-weight"></use>
+										</svg>
+									</button>
+									<button
+										aria-label="Send"
+										type="button"
+										class="btn btn-transparent size-9 p-0"
+									>
+										<svg class="icon icon-md">
+											<use href="#icon-send"></use>
+										</svg>
+									</button>
+									<span class="mx-2 border-l border-gray-600 h-6.5"></span>
+									<button
+										id="file-viewer-draw-tools-cancel-button"
+										aria-label="Cancel"
+										type="button"
+										class="btn btn-transparent size-9 p-0"
+									>
+										<svg
+											width="12"
+											height="12"
+											viewBox="0 0 12 12"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg"
+										>
+											<path
+												d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z"
+												fill="#0A0A0B"
+											/>
+										</svg>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div
+					id="file-viewer-sidebar"
+					class="bg-white border-l border-gray-400 relative h-[calc(100vh-var(--header-height))]"
+				>
+					<div class="overflow-y-auto h-full">
+						<ul class="py-4 space-y-6 px-1.5">
+							<li class="flex items-center gap-1.5 justify-center flex-col">
+								<span class="btn size-10 btn-border-default rounded-xl p-0">
+									<svg
+										width="19"
+										height="19"
+										viewBox="0 0 19 19"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M17.2961 4.91988C18.3756 5.98823 18.3846 7.72941 17.3163 8.80892L10.767 15.4266C10.2506 15.9484 9.54704 16.2419 8.81287 16.2419L4.63578 16.2422C4.1251 16.2422 3.63409 16.0409 3.27112 15.6817L1.56638 13.9945C0.486961 12.9263 0.478089 11.185 1.54618 10.1055L9.99757 1.56585C11.0659 0.486343 12.8071 0.477297 13.8866 1.54565L17.2961 4.91988Z"
+											stroke="#0A0A0B"
+											stroke-width="1.5"
+										/>
+										<rect
+											x="4.68247"
+											y="8.26632"
+											width="0.7"
+											height="8.48632"
+											transform="rotate(-44.9199 4.68247 8.26632)"
+											stroke="#0A0A0B"
+											stroke-width="0.7"
+										/>
+										<rect
+											x="0.40625"
+											y="15.4922"
+											width="18"
+											height="1.5"
+											rx="0.75"
+											fill="#0A0A0B"
+										/>
+									</svg>
+								</span>
+								<span class="text-xs text-center font-medium"
+									>Remove Silences</span
+								>
+							</li>
+							<li class="flex items-center gap-1.5 justify-center flex-col">
+								<span class="btn size-10 btn-border-default rounded-xl p-0">
+									<span class="text-xs font-semibold line-through tracking-0.22"
+										>umm</span
+									>
+								</span>
+								<span class="text-xs text-center font-medium"
+									>Remove Fillers</span
+								>
+							</li>
+							<li class="flex items-center gap-1.5 justify-center flex-col">
+								<span class="btn size-10 btn-border-default rounded-xl p-0">
+									<svg
+										width="20"
+										height="20"
+										viewBox="0 0 20 20"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M18.75 18.75L14.4 14.4M8.75 5.75V11.75M5.75 8.75H11.75M16.75 8.75C16.75 13.1683 13.1683 16.75 8.75 16.75C4.33172 16.75 0.75 13.1683 0.75 8.75C0.75 4.33172 4.33172 0.75 8.75 0.75C13.1683 0.75 16.75 4.33172 16.75 8.75Z"
+											stroke="#0A0A0B"
+											stroke-width="1.5"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</svg>
+								</span>
+								<span class="text-xs text-center font-medium">Video Zoom</span>
+							</li>
+							<li class="flex items-center gap-1.5 justify-center flex-col">
+								<span class="btn size-10 btn-border-default rounded-xl p-0">
+									<svg
+										width="20"
+										height="16"
+										viewBox="0 0 20 16"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M4.75 10.75H8.75M12.75 10.75H14.75M4.75 6.75H6.75M10.75 6.75H14.75M2.75 0.75H16.75C17.8546 0.75 18.75 1.64543 18.75 2.75V12.75C18.75 13.8546 17.8546 14.75 16.75 14.75H2.75C1.64543 14.75 0.75 13.8546 0.75 12.75V2.75C0.75 1.64543 1.64543 0.75 2.75 0.75Z"
+											stroke="#0A0A0B"
+											stroke-width="1.5"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</svg>
+								</span>
+								<span class="text-xs text-center font-medium"
+									>Edit by Transcript</span
+								>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="border-t border-gray-400 bg-white">
+					<div class="flex items-center justify-between h-[57px] pl-3 pr-2">
+						<div class="flex items-center gap-3">
+							<button type="button" class="btn btn-transparent h-8 px-2.5">
+								<svg class="icon size-5.5">
+									<use href="#icon-trash"></use>
+								</svg>
+								Delete Selection
+							</button>
+							<button type="button" class="btn btn-transparent h-8 px-2.5">
+								<svg class="icon size-5.5">
+									<use href="#icon-scissors"></use>
+								</svg>
+								Split Clip
+							</button>
+							<hr class="h-7 border-l border-gray-500" />
+							<button type="button" class="btn btn-transparent h-8 px-2.5">
+								<svg class="icon size-5.5">
+									<use href="#icon-undo-arrow"></use>
+								</svg>
+								Undo
+							</button>
+							<button type="button" class="btn btn-transparent h-8 px-2.5">
+								<svg class="icon size-5.5">
+									<use href="#icon-redo-arrow"></use>
+								</svg>
+								Redo
+							</button>
+						</div>
+						<div class="flex items-center gap-3">
+							<button
+								type="button"
+								class="btn btn-transparent h-8 px-2.5 font-normal"
+							>
+								Fit
+							</button>
+							<div>
+								<svg
+									width="239"
+									height="24"
+									viewBox="0 0 239 24"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<g opacity="0.9">
+										<path
+											d="M8.4 12H15.6M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+											stroke="#0A0A0B"
+											stroke-width="1.35"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</g>
+									<rect
+										x="36"
+										y="10"
+										width="167"
+										height="4"
+										rx="2"
+										fill="#E8E9ED"
+									/>
+									<rect
+										opacity="0.7"
+										x="36"
+										y="10"
+										width="72.9766"
+										height="4"
+										rx="2"
+										fill="#2F76FF"
+									/>
+									<circle
+										cx="107.977"
+										cy="12"
+										r="9"
+										fill="white"
+										stroke="#2F76FF"
+										stroke-width="2"
+									/>
+									<g opacity="0.9">
+										<path
+											d="M223.4 12H230.6M227 8.4V15.6M236 12C236 16.9706 231.971 21 227 21C222.029 21 218 16.9706 218 12C218 7.02944 222.029 3 227 3C231.971 3 236 7.02944 236 12Z"
+											stroke="#0A0A0B"
+											stroke-width="1.35"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</g>
+								</svg>
+							</div>
+							<button
+								type="button"
+								class="btn btn-transparent h-8 px-2.5 text-blue-500"
+							>
+								<svg class="icon size-3.5">
+									<use href="#icon-plus"></use>
+								</svg>
+								Add Clip
+							</button>
+						</div>
+					</div>
+					<ul class="flex items-center gap-1 pl-px pr-7.5 mt-1.5 mb-4.5">
+						<li
+							class="flex items-center gap-3 bg-gray-300 rounded-md px-2.5 h-7.5 text-blue-500 flex-grow-1"
+						>
+							<svg class="icon size-4 flex-shrink-0">
+								<use href="#icon-video"></use>
+							</svg>
+							<span class="text-xs text-dark-800 truncate block"
+								>Microsoft Office- Complete Tutotrial.mp4</span
+							>
+						</li>
+						<li
+							class="flex items-center gap-3 bg-gray-300 rounded-md px-2.5 h-7.5 text-blue-500 flex-grow-1"
+						>
+							<svg class="icon size-4 flex-shrink-0">
+								<use href="#icon-video"></use>
+							</svg>
+							<span class="text-xs text-dark-800 truncate block"
+								>Microsoft Office- Complete Tutotrial.mp4</span
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script
+			src="https://code.jquery.com/jquery-3.7.1.min.js"
+			integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+			crossorigin="anonymous"
+		></script>
+		<script
+			type="module"
+			src="https://cdn.skypack.dev/vanilla-colorful"
+		></script>
+		<script>
+			// TODO: rewrite the logic
+			$("document").ready(function () {
+				$("input[name='thumbnail']").on("change", function () {
+					if (
+						$(this).is(":checked") &&
+						$(this).get(0).id === "select-from-video"
+					) {
+						$("#select-frame-message").show();
+					} else {
+						$("#select-frame-message").hide();
+					}
+				});
+
+				// Color picker
+				const picker = $("hex-color-picker");
+				const colorPickerInputs = $("input.color-picker-output");
+
+				colorPickerInputs.on("input", function () {
+					let value = $(this).val();
+
+					if (value && !value.startsWith("#")) {
+						value = "#" + value;
+					}
+
+					const colorPickerWrapper = $(this).closest(".color-picker-wrapper");
+
+					const hexPicker = colorPickerWrapper.find("hex-color-picker");
+					if (hexPicker.length && value) {
+						hexPicker.attr("color", value);
+					}
+
+					const spanElement = colorPickerWrapper.find(
+						"span.color-picker-output",
+					);
+
+					if (spanElement.length && value) {
+						spanElement.css("background-color", value);
+					}
+				});
+
+				picker.on("color-changed", function (event) {
+					const newColor = event.detail.value;
+					const colorPickerWrapper = $(this).closest(".color-picker-wrapper");
+					console.log(colorPickerWrapper);
+					console.log(colorPickerWrapper.find(".color-picker-output"));
+
+					colorPickerWrapper
+						.find("input.color-picker-output")
+						.val(newColor.slice(1));
+					colorPickerWrapper
+						.find("span.color-picker-output")
+						.css("background-color", newColor);
+				});
+			});
+		</script>
+		<script src="../dist/js/dialog.js"></script>
+		<script src="../dist/js/tab-tree.js"></script>
+		<script src="../dist/js/bottom-sheet.lite.js"></script>
+		<script src="../dist/js/helpers.js"></script>
+		<script src="../dist/js/dropdown.js"></script>
+		<script src="../dist/js/file.viewer.js"></script>
+		<script src="../dist/js/main.js"></script>
+	</body>
+</html>
