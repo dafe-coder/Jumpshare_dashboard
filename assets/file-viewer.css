@@ -159,4 +159,34 @@
 			-2px -1px 18.6px rgba(148, 82, 255, 0.13),
 			0px 5px 4.5px -1px rgba(18, 35, 69, 0.04);
 	}
+
+	#timeline-container {
+		@apply flex items-center gap-[8.5rem] pl-2 h-6;
+		li {
+			@apply text-[10px] text-dark-800 last-of-type:mr-5 relative;
+
+			.timeline-dots {
+				@apply flex items-center gap-6 absolute top-1/2 -translate-y-1/2 left-[calc(100%+1.5rem)] hidden;
+				span {
+					&::after,
+					&::before {
+						@apply content-[''] absolute top-1/2 -translate-y-1/2 size-1 bg-gray-400 rounded-full;
+					}
+					@apply w-8 h-1 relative;
+					&::after {
+						@apply right-0;
+					}
+					&::before {
+						@apply left-0;
+					}
+				}
+			}
+
+			&:not(:last-of-type) {
+				.timeline-dots {
+					@apply flex;
+				}
+			}
+		}
+	}
 }
