@@ -86,7 +86,7 @@
 		<meta name="theme-color" content="#ffffff" />
 		<link rel="stylesheet" href="../dist/output.css" />
 	</head>
-	<body class="dashboard bg-[#F6F6F6]">
+	<body class="dashboard bg-[#F6F6F6]" style="--header-height: 64px">
 		<div id="lightbox" class="hidden">
 			<div class="modal" id="modal">
 				<div
@@ -398,7 +398,6 @@
 		</div>
 		<div class="flex flex-col min-h-screen">
 			<header
-				style="--header-height: 64px"
 				class="h-[var(--header-height)] pl-3 pr-5 flex items-center justify-between bg-white border-b border-gray-400 flex-shrink-0"
 			>
 				<div class="flex items-center gap-4">
@@ -428,10 +427,10 @@
 				</div>
 			</header>
 			<div
-				class="file-viewer-wrapper flex flex-col flex-grow-1 h-[calc(100vh-var(--header-height))]"
+				class="file-viewer-wrapper flex flex-col min-h-0 h-[calc(100vh-var(--header-height))] overflow-clip"
 			>
 				<div
-					class="grid grid-cols-[1fr_80px] min-h-0 flex-grow-1 flex-shrink-1"
+					class="video-zoom grid grid-cols-[1fr_80px] min-h-0 flex-grow-1 flex-shrink-1 [&.video-zoom]:grid-cols-[1fr_452px_80px]"
 				>
 					<div class="flex-grow-1 flex-shrink-1 overflow-y-auto scrollbar-hide">
 						<div class="max-w-[90%] px-5 w-full mx-auto flex flex-col h-full">
@@ -515,6 +514,63 @@
 									</div>
 								</div>
 							</div>
+						</div>
+					</div>
+					<div
+						id="video-zoom-sidebar"
+						class="bg-white h-full px-6 relative scrollbar-hide overflow-y-auto"
+					>
+						<div class="sticky top-0 bg-white z-10 pt-4 pb-3">
+							<span class="icn-close absolute top-2.5 -right-2 size-6"></span>
+							<strong class="font-sans-semi text-base">Video Zoom</strong>
+							<div
+								class="w-full h-10 bg-[#F7FAFF] rounded-lg mt-3.5 grid grid-cols-2 p-1 relative"
+							>
+								<div
+									class="settings-tab-slider w-1/2 h-[calc(100%-0.5rem)] top-1 left-1 bg-white rounded-sm absolute z-0"
+								></div>
+								<span
+									class="flex items-center justify-center cursor-pointer relative z-1 text-sm font-medium text-blue-900/56 [&.font-medium]:text-dark-800"
+									data-settings-tab-id="tab-manual"
+								>
+									Manual
+								</span>
+								<span
+									class="flex items-center justify-center cursor-pointer relative z-1 text-sm text-blue-900/56 [&.font-medium]:text-dark-800"
+									data-settings-tab-id="tab-ai-zoom"
+								>
+									AI Zoom
+								</span>
+							</div>
+						</div>
+						<div
+							class="flex flex-col items-center justify-center pt-[15%] text-center pb-10"
+						>
+							<div
+								class="flex items-center justify-center size-24.5 bg-blue-100 text-[#58637D] rounded-full mb-5"
+							>
+								<svg class="icon size-12">
+									<use href="#icon-search-with-plus"></use>
+								</svg>
+							</div>
+							<div class="max-w-[17.75rem] w-full mx-auto">
+								<strong class="font-semibold text-[#0F172A]">
+									Select Video Zoom
+								</strong>
+								<p class="text-[#0F172A]/50 texd-sm/[120%] mt-2">
+									Please select any clip from the timeline to be able to
+									generate zoom
+								</p>
+							</div>
+							<button
+								type="button"
+								class="btn btn-border-default w-full max-w-[13.9375rem] mt-6 rounded-lg"
+							>
+								<svg class="icon icon-s">
+									<use href="#icon-plus"></use>
+								</svg>
+								<span>Add Zoom</span>
+							</button>
 						</div>
 					</div>
 					<div
@@ -619,7 +675,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="border-t border-gray-400 bg-white">
+				<div class="flex-shrink-0 border-t border-gray-400 bg-white">
 					<div
 						class="flex items-center justify-between h-[57px] pl-3 pr-2 border-b border-gray-400"
 					>
@@ -1013,6 +1069,38 @@
 									fill="#D3D6DC"
 								/>
 							</svg>
+						</div>
+						<div class="bg-[#5852FF]/10 h-8 w-[1985px] relative my-1">
+							<div
+								style="left: 154px"
+								class="absolute top-0 border border-[#ADA8FF] rounded-lg w-37.5 h-full text-[#0E00FE] flex items-center justify-center text-xs font-medium"
+							>
+								<svg class="icon size-[17px] mr-1">
+									<use href="#icon-search-with-plus"></use>
+								</svg>
+								<span>Zoom</span>
+								<span class="ml-2.5">95%</span>
+							</div>
+							<div
+								style="left: 694px"
+								class="absolute top-0 border border-[#ADA8FF] rounded-lg w-37.5 h-full text-[#0E00FE] flex items-center justify-center text-xs font-medium"
+							>
+								<svg class="icon size-[17px] mr-1">
+									<use href="#icon-search-with-plus"></use>
+								</svg>
+								<span>Zoom</span>
+								<span class="ml-2.5">95%</span>
+							</div>
+							<div
+								style="left: 1204px"
+								class="absolute top-0 border border-[#ADA8FF] rounded-lg w-37.5 h-full text-[#0E00FE] flex items-center justify-center text-xs font-medium"
+							>
+								<svg class="icon size-[17px] mr-1">
+									<use href="#icon-search-with-plus"></use>
+								</svg>
+								<span>Zoom</span>
+								<span class="ml-2.5">45%</span>
+							</div>
 						</div>
 					</div>
 					<ul class="flex items-center gap-1 pl-px pr-7.5 mt-1.5 mb-4.5">
