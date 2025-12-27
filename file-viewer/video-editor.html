@@ -430,7 +430,7 @@
 				class="file-viewer-wrapper flex flex-col min-h-0 h-[calc(100vh-var(--header-height))] overflow-clip"
 			>
 				<div
-					class="video-zoom grid grid-cols-[1fr_80px] min-h-0 flex-grow-1 flex-shrink-1 [&.video-zoom]:grid-cols-[1fr_452px_80px]"
+					class="video-comments grid grid-cols-[1fr_80px] min-h-0 flex-grow-1 flex-shrink-1 [&.video-zoom]:grid-cols-[1fr_452px_80px] [&.video-comments]:grid-cols-[1fr_557px_80px]"
 				>
 					<div class="flex-grow-1 flex-shrink-1 overflow-y-auto scrollbar-hide">
 						<div class="max-w-[90%] px-5 w-full mx-auto flex flex-col h-full">
@@ -518,7 +518,7 @@
 					</div>
 					<div
 						id="video-zoom-sidebar"
-						class="bg-white h-full px-6 relative scrollbar-hide overflow-y-auto"
+						class="bg-white h-full px-6 relative scrollbar-hide overflow-y-auto hidden"
 					>
 						<div class="sticky top-0 bg-white z-10 pt-4 pb-3">
 							<span class="icn-close absolute top-2.5 -right-2 size-6"></span>
@@ -571,6 +571,115 @@
 								</svg>
 								<span>Add Zoom</span>
 							</button>
+						</div>
+					</div>
+					<div
+						id="video-comment-sidebar"
+						class="bg-white h-full px-6 relative scrollbar-hide overflow-y-auto"
+					>
+						<div class="sticky top-0 bg-white z-10 pt-4 pb-3">
+							<div
+								class="w-full h-6.5 rounded-sm bg-gray-400/20 px-4 flex items-center gap-2"
+							>
+								<svg class="icon icon-sm"><use href="#icon-video"></use></svg>
+								<span class="text-sm truncate block"
+									>Microsoft Office-Complete Tutorial.mp4</span
+								>
+							</div>
+						</div>
+						<div class="pt-3.5">
+							<ul class="space-y-5 mb-5">
+								<li class="flex gap-5">
+									<span
+										class="flex-shrink-0 text-xs text-blue-500 mt-1 cursor-pointer"
+										>00:00</span
+									>
+									<div class="flex-grow-1 flex-shrink-1 text-[15px]">
+										<span class="line-through line-dark-800/45 text-dark-800/45"
+											>Welcome back to the channel! In today’s video, we’re
+											diving into five simple tips to boost your productivity.
+											Let’s get started.</span
+										>
+									</div>
+								</li>
+								<li class="flex gap-5">
+									<span
+										class="flex-shrink-0 text-xs text-blue-500 mt-1 cursor-pointer"
+										>00:10</span
+									>
+									<div class="flex-grow-1 flex-shrink-1 text-[15px]">
+										<span class="line-through line-dark-800/45 text-dark-800/45"
+											>First up, plan your day</span
+										>
+										the night before. This might sound basic,
+										<span class="bg-blue-100"
+											>but taking just 10 minutes to write down your priorities
+											can save you so much time and mental energy in the
+											morning.</span
+										>
+									</div>
+								</li>
+								<li class="flex gap-5">
+									<span
+										class="flex-shrink-0 text-xs text-blue-500 mt-1 cursor-pointer"
+										>00:22</span
+									>
+									<div class="flex-grow-1 flex-shrink-1 text-[15px]">
+										It also gives you a clear roadmap to follow.
+									</div>
+								</li>
+								<li class="flex gap-5">
+									<span
+										class="flex-shrink-0 text-xs text-blue-500 mt-1 cursor-pointer"
+										>00:25</span
+									>
+									<div class="flex-grow-1 flex-shrink-1 text-[15px]">
+										<span class="bg-blue-500 text-white rounded-sm">
+											Next, eliminate distractions. </span
+										>We all know how easy it is to get sidetracked by
+										notifications or social media.
+									</div>
+								</li>
+								<li class="flex gap-5">
+									<span
+										class="flex-shrink-0 text-xs text-blue-500 mt-1 cursor-pointer"
+										>00:34</span
+									>
+									<div class="flex-grow-1 flex-shrink-1 text-[15px]">
+										Try setting specific times to check
+										<span class="bg-blue-500/40 text-white rounded-sm"
+											>your phone or email, and use tools like</span
+										>
+										app blockers if you need to stay focused.
+									</div>
+								</li>
+								<li class="flex gap-5">
+									<span
+										class="flex-shrink-0 text-xs text-blue-500 mt-1 cursor-pointer"
+										>00:44</span
+									>
+									<div class="flex-grow-1 flex-shrink-1 text-[15px]">
+										Third, break tasks into
+										<span
+											class="text-dark-800/60 relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-blue-500 after:rounded-sm after:bottom-0 after:left-0"
+											>mhmm</span
+										>
+										smaller steps. Sometimes, big projects can feel
+										overwhelming.
+									</div>
+								</li>
+								<li class="flex gap-5">
+									<span
+										class="flex-shrink-0 text-xs text-blue-500 mt-1 cursor-pointer"
+										>00:50</span
+									>
+									<div class="flex-grow-1 flex-shrink-1 text-[15px]">
+										By breaking them into smaller, manageable pieces, you’ll
+										feel a sense of progress and stay motivated to keep going.
+										The fourth tip is to use the Pomodoro Technique.
+									</div>
+								</li>
+							</ul>
 						</div>
 					</div>
 					<div
@@ -649,8 +758,12 @@
 										>Video Zoom</span
 									>
 								</li>
-								<li class="flex items-center gap-1.5 justify-center flex-col">
-									<span class="btn size-10 btn-border-default rounded-xl p-0">
+								<li
+									class="active flex items-center gap-1.5 justify-center flex-col"
+								>
+									<span
+										class="btn size-10 btn-border-default rounded-xl p-0 [.active_&]:text-blue-500 [.active_&]:bg-blue-100 [.active_&]:border-none"
+									>
 										<svg
 											width="20"
 											height="16"
@@ -660,7 +773,7 @@
 										>
 											<path
 												d="M4.75 10.75H8.75M12.75 10.75H14.75M4.75 6.75H6.75M10.75 6.75H14.75M2.75 0.75H16.75C17.8546 0.75 18.75 1.64543 18.75 2.75V12.75C18.75 13.8546 17.8546 14.75 16.75 14.75H2.75C1.64543 14.75 0.75 13.8546 0.75 12.75V2.75C0.75 1.64543 1.64543 0.75 2.75 0.75Z"
-												stroke="#0A0A0B"
+												stroke="currentColor"
 												stroke-width="1.5"
 												stroke-linecap="round"
 												stroke-linejoin="round"
