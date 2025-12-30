@@ -433,9 +433,11 @@
 					class="video-comments grid grid-cols-[1fr_80px] min-h-0 flex-grow-1 flex-shrink-1 [&.video-zoom]:grid-cols-[1fr_452px_80px] [&.video-comments]:grid-cols-[1fr_557px_80px]"
 				>
 					<div class="flex-grow-1 flex-shrink-1 overflow-y-auto scrollbar-hide">
-						<div class="max-w-[90%] px-5 w-full mx-auto flex flex-col h-full">
+						<div
+							class="max-w-[90%] px-5 w-full mx-auto flex flex-col h-full pt-10 pb-12"
+						>
 							<div
-								class="relative aspect-video flex-shrink-1 flex-grow-1 bg-gray-400 rounded-xl mx-auto mt-10 mb-12"
+								class="relative aspect-video flex-shrink-1 flex-grow-1 bg-gray-400 rounded-xl m-auto max-h-[100%] w-full"
 							>
 								<div
 									class="flex gap-4 absolute left-1/2 -translate-x-1/2 top-[calc(100%+1.5rem)] w-max z-10"
@@ -647,7 +649,7 @@
 									>
 									<div class="flex-grow-1 flex-shrink-1 text-[15px]">
 										Try setting specific times to check
-										<span class="bg-blue-500/40 text-white rounded-sm"
+										<span class="bg-blue-500/40 rounded-sm"
 											>your phone or email, and use tools like</span
 										>
 										app blockers if you need to stay focused.
@@ -684,108 +686,103 @@
 					</div>
 					<div
 						id="file-viewer-sidebar"
-						class="bg-white border-l border-gray-400 relative flex-shrink-0 flex-grow-1"
+						class="bg-white border-l border-gray-400 relative flex-shrink-1 flex-grow-1 h-full overflow-y-auto scrollbar-hide"
 					>
-						<div class="overflow-y-auto h-full">
-							<ul class="py-4 space-y-6 px-1.5">
-								<li class="flex items-center gap-1.5 justify-center flex-col">
-									<span class="btn size-10 btn-border-default rounded-xl p-0">
-										<svg
-											width="19"
-											height="19"
-											viewBox="0 0 19 19"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M17.2961 4.91988C18.3756 5.98823 18.3846 7.72941 17.3163 8.80892L10.767 15.4266C10.2506 15.9484 9.54704 16.2419 8.81287 16.2419L4.63578 16.2422C4.1251 16.2422 3.63409 16.0409 3.27112 15.6817L1.56638 13.9945C0.486961 12.9263 0.478089 11.185 1.54618 10.1055L9.99757 1.56585C11.0659 0.486343 12.8071 0.477297 13.8866 1.54565L17.2961 4.91988Z"
-												stroke="#0A0A0B"
-												stroke-width="1.5"
-											/>
-											<rect
-												x="4.68247"
-												y="8.26632"
-												width="0.7"
-												height="8.48632"
-												transform="rotate(-44.9199 4.68247 8.26632)"
-												stroke="#0A0A0B"
-												stroke-width="0.7"
-											/>
-											<rect
-												x="0.40625"
-												y="15.4922"
-												width="18"
-												height="1.5"
-												rx="0.75"
-												fill="#0A0A0B"
-											/>
-										</svg>
-									</span>
-									<span class="text-xs text-center font-medium"
-										>Remove Silences</span
+						<ul class="py-4 space-y-6 px-1.5">
+							<li class="flex items-center gap-1.5 justify-center flex-col">
+								<span class="btn size-10 btn-border-default rounded-xl p-0">
+									<svg
+										width="19"
+										height="19"
+										viewBox="0 0 19 19"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
 									>
-								</li>
-								<li class="flex items-center gap-1.5 justify-center flex-col">
-									<span class="btn size-10 btn-border-default rounded-xl p-0">
-										<span
-											class="text-xs font-semibold line-through tracking-0.22"
-											>umm</span
-										>
-									</span>
-									<span class="text-xs text-center font-medium"
-										>Remove Fillers</span
-									>
-								</li>
-								<li class="flex items-center gap-1.5 justify-center flex-col">
-									<span class="btn size-10 btn-border-default rounded-xl p-0">
-										<svg
-											width="20"
-											height="20"
-											viewBox="0 0 20 20"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M18.75 18.75L14.4 14.4M8.75 5.75V11.75M5.75 8.75H11.75M16.75 8.75C16.75 13.1683 13.1683 16.75 8.75 16.75C4.33172 16.75 0.75 13.1683 0.75 8.75C0.75 4.33172 4.33172 0.75 8.75 0.75C13.1683 0.75 16.75 4.33172 16.75 8.75Z"
-												stroke="#0A0A0B"
-												stroke-width="1.5"
-												stroke-linecap="round"
-												stroke-linejoin="round"
-											/>
-										</svg>
-									</span>
-									<span class="text-xs text-center font-medium"
-										>Video Zoom</span
-									>
-								</li>
-								<li
-									class="active flex items-center gap-1.5 justify-center flex-col"
+										<path
+											d="M17.2961 4.91988C18.3756 5.98823 18.3846 7.72941 17.3163 8.80892L10.767 15.4266C10.2506 15.9484 9.54704 16.2419 8.81287 16.2419L4.63578 16.2422C4.1251 16.2422 3.63409 16.0409 3.27112 15.6817L1.56638 13.9945C0.486961 12.9263 0.478089 11.185 1.54618 10.1055L9.99757 1.56585C11.0659 0.486343 12.8071 0.477297 13.8866 1.54565L17.2961 4.91988Z"
+											stroke="#0A0A0B"
+											stroke-width="1.5"
+										/>
+										<rect
+											x="4.68247"
+											y="8.26632"
+											width="0.7"
+											height="8.48632"
+											transform="rotate(-44.9199 4.68247 8.26632)"
+											stroke="#0A0A0B"
+											stroke-width="0.7"
+										/>
+										<rect
+											x="0.40625"
+											y="15.4922"
+											width="18"
+											height="1.5"
+											rx="0.75"
+											fill="#0A0A0B"
+										/>
+									</svg>
+								</span>
+								<span class="text-xs text-center font-medium"
+									>Remove Silences</span
 								>
-									<span
-										class="btn size-10 btn-border-default rounded-xl p-0 [.active_&]:text-blue-500 [.active_&]:bg-blue-100 [.active_&]:border-none"
+							</li>
+							<li class="flex items-center gap-1.5 justify-center flex-col">
+								<span class="btn size-10 btn-border-default rounded-xl p-0">
+									<span class="text-xs font-semibold line-through tracking-0.22"
+										>umm</span
 									>
-										<svg
-											width="20"
-											height="16"
-											viewBox="0 0 20 16"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M4.75 10.75H8.75M12.75 10.75H14.75M4.75 6.75H6.75M10.75 6.75H14.75M2.75 0.75H16.75C17.8546 0.75 18.75 1.64543 18.75 2.75V12.75C18.75 13.8546 17.8546 14.75 16.75 14.75H2.75C1.64543 14.75 0.75 13.8546 0.75 12.75V2.75C0.75 1.64543 1.64543 0.75 2.75 0.75Z"
-												stroke="currentColor"
-												stroke-width="1.5"
-												stroke-linecap="round"
-												stroke-linejoin="round"
-											/>
-										</svg>
-									</span>
-									<span class="text-xs text-center font-medium"
-										>Edit by Transcript</span
+								</span>
+								<span class="text-xs text-center font-medium"
+									>Remove Fillers</span
+								>
+							</li>
+							<li class="flex items-center gap-1.5 justify-center flex-col">
+								<span class="btn size-10 btn-border-default rounded-xl p-0">
+									<svg
+										width="20"
+										height="20"
+										viewBox="0 0 20 20"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
 									>
-								</li>
-							</ul>
-						</div>
+										<path
+											d="M18.75 18.75L14.4 14.4M8.75 5.75V11.75M5.75 8.75H11.75M16.75 8.75C16.75 13.1683 13.1683 16.75 8.75 16.75C4.33172 16.75 0.75 13.1683 0.75 8.75C0.75 4.33172 4.33172 0.75 8.75 0.75C13.1683 0.75 16.75 4.33172 16.75 8.75Z"
+											stroke="#0A0A0B"
+											stroke-width="1.5"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</svg>
+								</span>
+								<span class="text-xs text-center font-medium">Video Zoom</span>
+							</li>
+							<li
+								class="active flex items-center gap-1.5 justify-center flex-col"
+							>
+								<span
+									class="btn size-10 btn-border-default rounded-xl p-0 [.active_&]:text-blue-500 [.active_&]:bg-blue-100 [.active_&]:border-none"
+								>
+									<svg
+										width="20"
+										height="16"
+										viewBox="0 0 20 16"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M4.75 10.75H8.75M12.75 10.75H14.75M4.75 6.75H6.75M10.75 6.75H14.75M2.75 0.75H16.75C17.8546 0.75 18.75 1.64543 18.75 2.75V12.75C18.75 13.8546 17.8546 14.75 16.75 14.75H2.75C1.64543 14.75 0.75 13.8546 0.75 12.75V2.75C0.75 1.64543 1.64543 0.75 2.75 0.75Z"
+											stroke="currentColor"
+											stroke-width="1.5"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</svg>
+								</span>
+								<span class="text-xs text-center font-medium"
+									>Edit by Transcript</span
+								>
+							</li>
+						</ul>
 					</div>
 				</div>
 				<div class="flex-shrink-0 border-t border-gray-400 bg-white">
