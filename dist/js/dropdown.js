@@ -1,3 +1,5 @@
+// TODO: Portal for dropdowns fixed position issue
+
 const Dropdown = {
 	dropdownIdTimer: null,
 	resizeTimer: null,
