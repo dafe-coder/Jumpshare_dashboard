@@ -3371,34 +3371,739 @@
 							>
 								<form
 									action="#"
-									class="h-9.5 w-full border border-gray-600 rounded-lg relative max-md:h-12 max-md:border-none"
+									class="h-9.5 w-full border border-gray-600 rounded-lg relative max-md:h-12 max-md:border-none dropdown-wrapper [&.active]:border-[#444444]/40 [&.active]:border-b-[#E3E3E3] [&.active]:rounded-b-none [&.active]:shadow-[0px_4px_12px_rgba(0,0,0,0.1)]"
 								>
-									<button
-										aria-label="Toggle navigation"
-										class="hamburger hamburger--squeeze flex lg:hidden! absolute left-0 top-1/2 -translate-y-1/2"
-										type="button"
+									<div
+										class="dropdown-button flex items-center gap-2 [.active_&]:bg-white relative z-10 size-full rounded-lg"
+										data-id="dropdown-search"
 									>
-										<span class="hamburger-box">
-											<span class="hamburger-inner"></span>
-										</span>
-									</button>
-									<button
-										aria-label="Search"
-										type="submit"
-										class="hidden lg:block absolute left-3.5 top-1/2 -translate-y-1/2 cursor-pointer transition-transform transform-gpu hover:scale-105 origin-center text-dark-800"
+										<button
+											aria-label="Toggle navigation"
+											class="hamburger hamburger--squeeze flex lg:hidden! absolute left-0 top-1/2 -translate-y-1/2"
+											type="button"
+										>
+											<span class="hamburger-box">
+												<span class="hamburger-inner"></span>
+											</span>
+										</button>
+										<button
+											aria-label="Search"
+											type="submit"
+											class="hidden lg:block absolute left-3.5 top-1/2 -translate-y-1/2 cursor-pointer transition-transform transform-gpu hover:scale-105 origin-center text-dark-800"
+										>
+											<svg class="icon icon-xs">
+												<use href="#icon-search"></use>
+											</svg>
+										</button>
+										<input
+											aria-label="Search"
+											required
+											type="text"
+											class="size-full rounded-lg pl-10 pr-4 text-sm max-lg:pl-13 placeholder:text-dark-800/60 outline-0 outline-offset-0"
+											data-mobile-placeholder="Search for files..."
+											placeholder="Search for people, Files, folder & spaces"
+										/>
+									</div>
+									<div
+										class="js-dropdown w-[calc(100%+2px)] -left-px border top-full border-[#444444]/40 rounded-b-lg border-t-0 rounded-t-none shadow-[0px_4px_12px_rgba(0,0,0,0.1)] z-1! hidden"
+										data-dropdown-id="dropdown-search"
+										data-sheet-modal
+										data-overflow-visible
 									>
-										<svg class="icon icon-xs">
-											<use href="#icon-search"></use>
-										</svg>
-									</button>
-									<input
-										aria-label="Search"
-										required
-										type="text"
-										class="size-full rounded-lg pl-10 pr-4 text-sm max-lg:pl-13 placeholder:text-dark-800/60 outline-0 outline-offset-0"
-										data-mobile-placeholder="Search for files..."
-										placeholder="Search for people, Files, folder & spaces"
-									/>
+										<div class="js-dropdown-overlay"></div>
+										<div class="js-dropdown-body">
+											<div class="js-dropdown-trigger">
+												<span></span>
+											</div>
+											<div
+												class="js-dropdown-content p-0 border-t-[#E3E3E3] border-t"
+											>
+												<div
+													class="p-2 max-h-[16.625rem] overflow-y-auto flex flex-col gap-1.5"
+												>
+													<div class="flex gap-2 px-1.5 pt-2">
+														<div class="dropdown-wrapper">
+															<button
+																type="button"
+																class="dropdown-button btn btn-border-default gap-1.5 h-[1.9375rem] px-3.5 dropdown-button-selected"
+																data-id="dropdown-type"
+															>
+																<span>Type</span>
+																<svg class="icon icon-xs">
+																	<use href="#icon-caret"></use>
+																</svg>
+															</button>
+															<span class="dropdown-button-select-cancel">
+																<svg
+																	class="icon size-3 [--icon-stroke-width:1.4]"
+																>
+																	<use href="#icon-close"></use>
+																</svg>
+															</span>
+															<div
+																class="js-dropdown w-56 left-0 hidden"
+																data-dropdown-id="dropdown-type"
+																data-sheet-modal
+																data-dropdown-select
+																data-overflow-visible
+															>
+																<div class="js-dropdown-overlay"></div>
+																<div class="js-dropdown-body">
+																	<div class="js-dropdown-trigger">
+																		<span></span>
+																	</div>
+																	<div class="js-dropdown-content">
+																		<ul
+																			class="js-dropdown-list js-dropdown-list-selected"
+																		>
+																			<li class="js-dropdown-list-item gap-2">
+																				<svg class="icon icon-md">
+																					<use href="#icon-folder"></use>
+																				</svg>
+																				<span>Folder</span>
+																			</li>
+																			<li
+																				class="border-b border-gray-400 my-2"
+																			></li>
+																			<li class="js-dropdown-list-item gap-2">
+																				<svg class="icon icon-md">
+																					<use href="#icon-record-video"></use>
+																				</svg>
+																				<span>Screen recordings</span>
+																			</li>
+																			<li class="js-dropdown-list-item gap-2">
+																				<svg class="icon icon-md">
+																					<use
+																						href="#icon-capture-screenshot"
+																					></use>
+																				</svg>
+																				<span>Screenshots</span>
+																			</li>
+																			<li class="js-dropdown-list-item gap-2">
+																				<svg class="icon icon-md">
+																					<use href="#icon-gif"></use>
+																				</svg>
+																				<span>GIFs</span>
+																			</li>
+																			<li
+																				class="border-b border-gray-400 my-2"
+																			></li>
+																			<li class="js-dropdown-list-item gap-2">
+																				<img
+																					src="./assets/images/file-types/video.png"
+																					alt="video"
+																					class="size-6"
+																				/>
+																				<span>Videos</span>
+																			</li>
+																			<li class="js-dropdown-list-item gap-2">
+																				<img
+																					src="./assets/images/file-types/image.png"
+																					alt="image"
+																					class="size-6"
+																				/>
+																				<span>Images</span>
+																			</li>
+																			<li class="js-dropdown-list-item gap-2">
+																				<img
+																					src="./assets/images/file-types/audio.png"
+																					alt="audio"
+																					class="size-6"
+																				/>
+																				<span>Audio</span>
+																			</li>
+																			<li class="js-dropdown-list-item gap-2">
+																				<img
+																					src="./assets/images/file-types/document.png"
+																					alt="document"
+																					class="size-6"
+																				/>
+																				<span>Documents</span>
+																			</li>
+																			<li class="js-dropdown-list-item gap-2">
+																				<img
+																					src="./assets/images/file-types/excel.png"
+																					alt="excel"
+																					class="size-6"
+																				/>
+																				<span>Excel</span>
+																			</li>
+																			<li class="js-dropdown-list-item gap-2">
+																				<img
+																					src="./assets/images/file-types/presentation.png"
+																					alt="presentation"
+																					class="size-6"
+																				/>
+																				<span>Presentations</span>
+																			</li>
+																			<li class="js-dropdown-list-item gap-2">
+																				<img
+																					src="./assets/images/file-types/zip.png"
+																					alt="zip"
+																					class="size-6"
+																				/>
+																				<span>Zip</span>
+																			</li>
+																			<li class="js-dropdown-list-item gap-2">
+																				<img
+																					src="./assets/images/file-types/code.png"
+																					alt="code"
+																					class="size-6"
+																				/>
+																				<span>Code</span>
+																			</li>
+																		</ul>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="dropdown-wrapper">
+															<button
+																type="button"
+																class="dropdown-button btn btn-border-default gap-1.5 h-[1.9375rem] px-3.5"
+																data-id="dropdown-shared-with"
+															>
+																<span>Shared with</span>
+																<svg class="icon icon-xs">
+																	<use href="#icon-caret"></use>
+																</svg>
+															</button>
+															<div
+																class="js-dropdown w-80 right-0 hidden"
+																data-dropdown-id="dropdown-shared-with"
+																data-sheet-modal
+																data-overflow-visible
+															>
+																<div class="js-dropdown-overlay"></div>
+																<div class="js-dropdown-body">
+																	<div class="js-dropdown-trigger">
+																		<span></span>
+																	</div>
+																	<div class="js-dropdown-content px-0">
+																		<div class="px-6 py-2.5">
+																			<div class="relative">
+																				<input
+																					type="text"
+																					class="form-control-settings w-full pl-10"
+																					placeholder="Search for people and spaces"
+																				/>
+																				<svg
+																					class="icon icon-s absolute left-3.5 top-1/2 -translate-y-1/2"
+																				>
+																					<use href="#icon-search"></use>
+																				</svg>
+																			</div>
+																		</div>
+																		<div
+																			class="px-6 py-2.5 flex items-center gap-3 cursor-pointer hover:bg-gray-200"
+																		>
+																			<span
+																				class="avatar size-6 text-white font-medium text-sm"
+																			>
+																				<img
+																					src="./assets/images/avatar-3.png"
+																					alt="avatar"
+																				/>
+																			</span>
+																			<div class="flex flex-col gap-0.5">
+																				<strong class="text-sm font-medium"
+																					>David Robert</strong
+																				>
+																				<span class="text-xs text-gray-900">
+																					johndoe252@cironex.com
+																				</span>
+																			</div>
+																		</div>
+																		<div
+																			class="px-6 py-2.5 flex items-center gap-3 cursor-pointer hover:bg-gray-200"
+																		>
+																			<span
+																				class="size-6 rounded-md bg-blue-500 text-white flex items-center justify-center"
+																			>
+																				<svg class="icon icon-s">
+																					<use
+																						href="#icon-members-semibold-2"
+																					></use>
+																				</svg>
+																			</span>
+																			<div class="flex flex-col gap-0.5">
+																				<strong class="text-sm font-medium"
+																					>Team Space</strong
+																				>
+																				<span class="text-xs text-gray-900">
+																					13 members
+																				</span>
+																			</div>
+																		</div>
+																		<div
+																			class="px-6 py-2.5 flex items-center gap-3 cursor-pointer hover:bg-gray-200"
+																		>
+																			<span
+																				class="avatar size-6 bg-[#06758E] text-white font-medium text-sm"
+																			>
+																				R
+																			</span>
+																			<div class="flex flex-col gap-0.5">
+																				<strong class="text-sm font-medium"
+																					>robertpattinson@gmail.com</strong
+																				>
+																				<span class="text-xs text-gray-900">
+																					robertpattinson@gmail.com
+																				</span>
+																			</div>
+																		</div>
+																		<div
+																			class="px-6 py-2.5 flex items-center gap-3 cursor-pointer hover:bg-gray-200"
+																		>
+																			<span
+																				class="avatar size-6 bg-[#E017AE] text-white font-medium text-sm"
+																			>
+																				D
+																			</span>
+																			<div class="flex flex-col gap-0.5">
+																				<strong class="text-sm font-medium"
+																					>David Pattinson</strong
+																				>
+																				<span class="text-xs text-gray-900">
+																					davpat@hotmail.com
+																				</span>
+																			</div>
+																		</div>
+																		<hr class="border-gray-500 my-2" />
+																		<div class="px-2">
+																			<div
+																				class="px-4 py-2.5 flex items-center gap-3 cursor-pointer hover:bg-gray-200 rounded-md"
+																			>
+																				<svg class="icon icon-md">
+																					<use href="#icon-browser"></use>
+																				</svg>
+																				<span class="text-sm font-medium"
+																					>Anyone with a link</span
+																				>
+																			</div>
+																			<div
+																				class="px-4 py-2.5 flex items-center gap-3 cursor-pointer hover:bg-gray-200 rounded-md"
+																			>
+																				<svg class="icon icon-md">
+																					<use href="#icon-user"></use>
+																				</svg>
+																				<span class="text-sm font-medium"
+																					>Restricted to spaces and people</span
+																				>
+																			</div>
+																			<div
+																				class="px-4 py-2.5 flex items-center gap-3 cursor-pointer hover:bg-gray-200 rounded-md"
+																			>
+																				<svg class="icon icon-md">
+																					<use href="#icon-team"></use>
+																				</svg>
+																				<span class="text-sm font-medium"
+																					>Members of Jumpshare Enterprise</span
+																				>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="dropdown-wrapper">
+															<button
+																type="button"
+																class="dropdown-button btn btn-border-default gap-1.5 h-[1.9375rem] px-3.5"
+																data-id="dropdown-upload-date"
+															>
+																<span>Upload date</span>
+																<svg class="icon icon-xs">
+																	<use href="#icon-caret"></use>
+																</svg>
+															</button>
+															<span class="dropdown-button-select-cancel">
+																<svg
+																	class="icon size-3 [--icon-stroke-width:1.4]"
+																>
+																	<use href="#icon-close"></use>
+																</svg>
+															</span>
+															<div
+																class="js-dropdown hidden w-69.5 right-0"
+																data-dropdown-id="dropdown-upload-date"
+																data-sheet-modal
+																data-overflow-visible
+															>
+																<div class="js-dropdown-overlay"></div>
+																<div class="js-dropdown-body">
+																	<div class="js-dropdown-trigger">
+																		<span></span>
+																	</div>
+																	<div class="js-dropdown-content">
+																		<ul
+																			class="js-dropdown-list js-dropdown-list-selected"
+																		>
+																			<li
+																				class="js-dropdown-list-item selected"
+																			>
+																				<svg class="icon icon-md arrow-icon">
+																					<use href="#icon-check"></use>
+																				</svg>
+																				<span>Today</span>
+																			</li>
+																			<li class="js-dropdown-list-item">
+																				<svg class="icon icon-md arrow-icon">
+																					<use href="#icon-check"></use>
+																				</svg>
+																				<span>This month</span>
+																			</li>
+																			<li class="js-dropdown-list-item">
+																				<svg class="icon icon-md arrow-icon">
+																					<use href="#icon-check"></use>
+																				</svg>
+																				<span>This year</span>
+																			</li>
+																			<li class="js-dropdown-list-item">
+																				<svg class="icon icon-md arrow-icon">
+																					<use href="#icon-check"></use>
+																				</svg>
+																				<span>Custom</span>
+																			</li>
+																		</ul>
+																		<div
+																			class="flex justify-between items-center py-1 pl-4 pr-3"
+																		>
+																			<span class="text-sm">From</span>
+																			<div class="dropdown-wrapper">
+																				<button
+																					type="button"
+																					class="btn btn-border-default px-4"
+																				>
+																					<span class="uppercase font-normal"
+																						>MM / DD / YYYY</span
+																					>
+																					<svg class="icon icon-m">
+																						<use href="#icon-calendar"></use>
+																					</svg>
+																				</button>
+																			</div>
+																		</div>
+																		<div
+																			class="flex justify-between items-center py-1 pl-4 pr-3"
+																		>
+																			<span class="text-sm">To</span>
+																			<div class="dropdown-wrapper">
+																				<button
+																					type="button"
+																					class="btn btn-border-default px-4"
+																				>
+																					<span class="uppercase font-normal"
+																						>MM / DD / YYYY</span
+																					>
+																					<svg class="icon icon-m">
+																						<use href="#icon-calendar"></use>
+																					</svg>
+																				</button>
+																			</div>
+																		</div>
+																		<hr class="border-gray-500 my-2" />
+																		<div
+																			class="flex justify-between items-center pb-1"
+																		>
+																			<button type="button" class="btn">
+																				Clear
+																			</button>
+																			<div class="flex gap-2">
+																				<button
+																					type="button"
+																					class="btn btn-border-default px-4"
+																				>
+																					Cancel
+																				</button>
+																				<button
+																					type="button"
+																					class="btn btn-primary px-4"
+																				>
+																					Apply
+																				</button>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<ul class="w-full hidden">
+														<li
+															class="flex items-center gap-2 w-full px-2 py-2.5"
+														>
+															<span
+																class="bg-[#F6F6F6] size-6 rounded-md animate-pulse"
+															></span>
+															<div class="flex flex-col gap-1 w-full">
+																<span
+																	class="bg-[#F6F6F6] size-4 rounded-xl animate-pulse w-[9.4375rem] h-3"
+																></span>
+																<span
+																	class="bg-[#F6F6F6] size-4 rounded-xl animate-pulse w-14 h-3"
+																></span>
+															</div>
+														</li>
+														<li
+															class="flex items-center gap-2 w-full px-2 py-2.5"
+														>
+															<span
+																class="bg-[#F6F6F6] size-6 rounded-md animate-pulse"
+															></span>
+															<div class="flex flex-col gap-1 w-full">
+																<span
+																	class="bg-[#F6F6F6] size-4 rounded-xl animate-pulse w-[9.4375rem] h-3"
+																></span>
+																<span
+																	class="bg-[#F6F6F6] size-4 rounded-xl animate-pulse w-14 h-3"
+																></span>
+															</div>
+														</li>
+														<li
+															class="flex items-center gap-2 w-full px-2 py-2.5"
+														>
+															<span
+																class="bg-[#F6F6F6] size-6 rounded-md animate-pulse"
+															></span>
+															<div class="flex flex-col gap-1 w-full">
+																<span
+																	class="bg-[#F6F6F6] size-4 rounded-xl animate-pulse w-[9.4375rem] h-3"
+																></span>
+																<span
+																	class="bg-[#F6F6F6] size-4 rounded-xl animate-pulse w-14 h-3"
+																></span>
+															</div>
+														</li>
+														<li
+															class="flex items-center gap-2 w-full px-2 py-2.5"
+														>
+															<span
+																class="bg-[#F6F6F6] size-6 rounded-md animate-pulse"
+															></span>
+															<div class="flex flex-col gap-1 w-full">
+																<span
+																	class="bg-[#F6F6F6] size-4 rounded-xl animate-pulse w-[9.4375rem] h-3"
+																></span>
+																<span
+																	class="bg-[#F6F6F6] size-4 rounded-xl animate-pulse w-14 h-3"
+																></span>
+															</div>
+														</li>
+														<li
+															class="flex items-center gap-2 w-full px-2 py-2.5"
+														>
+															<span
+																class="bg-[#F6F6F6] size-6 rounded-md animate-pulse"
+															></span>
+															<div class="flex flex-col gap-1 w-full">
+																<span
+																	class="bg-[#F6F6F6] size-4 rounded-xl animate-pulse w-[9.4375rem] h-3"
+																></span>
+																<span
+																	class="bg-[#F6F6F6] size-4 rounded-xl animate-pulse w-14 h-3"
+																></span>
+															</div>
+														</li>
+													</ul>
+													<ul>
+														<li class="px-2 h-7.5 flex items-center">
+															<span class="text-sm truncate text-gray-900"
+																>Recent</span
+															>
+														</li>
+														<li
+															class="hover:bg-[#F6F6F6] px-2 py-1.5 rounded-lg grid grid-cols-[1.5rem_1fr_auto] gap-2 items-center cursor-pointer group h-11"
+														>
+															<div class="flex items-center justify-center h-6">
+																<svg class="icon icon-m">
+																	<use href="#icon-history"></use>
+																</svg>
+															</div>
+															<span class="text-sm font-medium truncate"
+																>Figma animation discrepancies</span
+															>
+															<button
+																aria-label="Delete from recent"
+																type="button"
+																class="btn size-8 p-0 rounded-md hover:bg-gray-200 opacity-0 group-hover:opacity-100"
+															>
+																<svg class="icon icon-xs">
+																	<use href="#icon-close"></use>
+																</svg>
+															</button>
+														</li>
+														<li
+															class="hover:bg-[#F6F6F6] px-2 py-1.5 rounded-lg grid grid-cols-[1.5rem_1fr_auto] gap-2 items-center cursor-pointer group h-11"
+														>
+															<div class="flex items-center justify-center h-6">
+																<svg class="icon icon-m">
+																	<use href="#icon-history"></use>
+																</svg>
+															</div>
+															<span class="text-sm font-medium truncate"
+																>Figma Comparison</span
+															>
+															<button
+																aria-label="Delete from recent"
+																type="button"
+																class="btn size-8 p-0 rounded-md hover:bg-gray-200 opacity-0 group-hover:opacity-100"
+															>
+																<svg class="icon icon-xs">
+																	<use href="#icon-close"></use>
+																</svg>
+															</button>
+														</li>
+														<li
+															class="hover:bg-[#F6F6F6] px-2 py-1.5 rounded-lg grid grid-cols-[1.5rem_1fr_auto] gap-2 items-center cursor-pointer group h-11"
+														>
+															<div class="flex items-center justify-center h-6">
+																<svg class="icon icon-m">
+																	<use href="#icon-history"></use>
+																</svg>
+															</div>
+															<span class="text-sm font-medium truncate"
+																>Team meeting 2026-01-15</span
+															>
+															<button
+																aria-label="Delete from recent"
+																type="button"
+																class="btn size-8 p-0 rounded-md hover:bg-gray-200 opacity-0 group-hover:opacity-100"
+															>
+																<svg class="icon icon-xs">
+																	<use href="#icon-close"></use>
+																</svg>
+															</button>
+														</li>
+													</ul>
+													<ul>
+														<li class="px-2 h-7.5 flex items-center">
+															<span class="text-sm truncate text-gray-900"
+																>Relevant Searches</span
+															>
+														</li>
+														<li
+															class="hover:bg-[#F6F6F6] px-2 py-1.5 rounded-lg grid grid-cols-[1.5rem_1fr_auto] gap-2 items-center cursor-pointer group h-11"
+														>
+															<div class="flex items-center justify-center h-6">
+																<svg class="icon icon-xs">
+																	<use href="#icon-search"></use>
+																</svg>
+															</div>
+															<span class="text-sm font-medium truncate"
+																>Figma animation discrepancies</span
+															>
+														</li>
+														<li
+															class="hover:bg-[#F6F6F6] px-2 py-1.5 rounded-lg grid grid-cols-[1.5rem_1fr_auto] gap-2 items-center cursor-pointer group h-11"
+														>
+															<div class="flex items-center justify-center h-6">
+																<img
+																	src="./assets/images/file-types/video.png"
+																	alt="video"
+																	class="size-6"
+																/>
+															</div>
+															<span class="text-sm font-medium truncate"
+																>User experience feedback loops</span
+															>
+														</li>
+														<li
+															class="hover:bg-[#F6F6F6] px-2 py-1.5 rounded-lg grid grid-cols-[1.5rem_1fr_auto] gap-2 items-center cursor-pointer group h-11"
+														>
+															<div class="flex items-center justify-center h-6">
+																<img
+																	src="./assets/images/file-types/image.png"
+																	alt="video"
+																	class="size-6"
+																/>
+															</div>
+															<span class="text-sm font-medium truncate"
+																>Design system inconsistencies Design system
+																inconsistencies Design system inconsistencies
+																Design system inconsistencies</span
+															>
+														</li>
+														<li
+															class="hover:bg-[#F6F6F6] px-2 py-1.5 rounded-lg grid grid-cols-[1.5rem_1fr_auto] gap-2 items-center cursor-pointer group h-11"
+														>
+															<div class="flex items-center justify-center h-6">
+																<img
+																	src="./assets/images/file-types/document.png"
+																	alt="video"
+																	class="size-6"
+																/>
+															</div>
+															<span class="text-sm font-medium truncate"
+																>Interactive prototype testing</span
+															>
+														</li>
+														<li
+															class="hover:bg-[#F6F6F6] px-2 py-1.5 rounded-lg grid grid-cols-[1.5rem_1fr_auto] gap-2 items-center cursor-pointer group h-11"
+														>
+															<div class="flex items-center justify-center h-6">
+																<img
+																	src="./assets/images/file-types/excel.png"
+																	alt="video"
+																	class="size-6"
+																/>
+															</div>
+															<span class="text-sm font-medium truncate"
+																>Interactive prototype testing</span
+															>
+														</li>
+													</ul>
+												</div>
+												<div
+													class="sticky bottom-0 bg-white border-t border-[#E3E3E3] px-3 py-3 rounded-b-lg"
+												>
+													<div class="flex items-center gap-8.5">
+														<div class="flex gap-1.5 items-center">
+															<button
+																aria-label="Go Down"
+																type="button"
+																class="btn btn-border-default size-6.5 p-0"
+															>
+																<span class="text-sm font-medium -rotate-90"
+																	>←</span
+																>
+															</button>
+															<button
+																aria-label="Go Up"
+																type="button"
+																class="btn btn-border-default size-6.5 p-0"
+															>
+																<span class="text-sm font-medium rotate-90"
+																	>←</span
+																>
+															</button>
+															<span class="text-sm block ml-0.5">Navigate</span>
+														</div>
+														<div class="flex gap-1.5 items-center">
+															<button
+																aria-label="Escape"
+																type="button"
+																class="btn btn-border-default h-6.5 px-2"
+															>
+																<span class="text-xs font-medium">Esc</span>
+															</button>
+															<span class="text-sm block ml-0.5">Cancel</span>
+														</div>
+														<div class="flex gap-1.5 items-center">
+															<button
+																aria-label="Enter"
+																type="button"
+																class="btn btn-border-default h-6.5 px-2"
+															>
+																<span class="text-sm font-medium">↵</span>
+															</button>
+															<span class="text-sm block ml-0.5">Enter</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
 								</form>
 								<div class="flex items-center gap-3">
 									<button
@@ -3818,14 +4523,16 @@
 				</div>
 				<div class="dashboard-container pb-5 4xl:container-4xl">
 					<div>
-						<div class="flex justify-between items-center mb-5.5">
+						<div
+							class="flex justify-between items-center mb-5.5 max-md:flex-wrap max-md:gap-2"
+						>
 							<div class="dropdown-wrapper">
 								<button
 									type="button"
 									class="dropdown-button btn gap-1 -ml-3"
 									data-id="dropdown-sort-by"
 								>
-									<span>Uploaded</span>
+									<span class="text-nowrap">Uploaded</span>
 									<svg class="icon icon-m">
 										<use href="#icon-arrow-bottom"></use>
 									</svg>
@@ -3886,14 +4593,16 @@
 									</div>
 								</div>
 							</div>
-							<div class="flex gap-2.5">
+							<div
+								class="flex gap-2 max-sm:overflow-x-auto max-sm:scrollbar-hide max-sm:overflow-y-hidden"
+							>
 								<div class="dropdown-wrapper">
 									<button
 										type="button"
 										class="dropdown-button btn btn-border-default gap-1.5 dropdown-button-selected"
 										data-id="dropdown-type"
 									>
-										<span>Type</span>
+										<span class="text-nowrap">Type</span>
 										<svg class="icon icon-xs">
 											<use href="#icon-caret"></use>
 										</svg>
@@ -4017,7 +4726,7 @@
 										class="dropdown-button btn btn-border-default gap-1.5"
 										data-id="dropdown-shared-with"
 									>
-										<span>Shared with</span>
+										<span class="text-nowrap">Shared with</span>
 										<svg class="icon icon-xs">
 											<use href="#icon-caret"></use>
 										</svg>
@@ -4163,7 +4872,7 @@
 										class="dropdown-button btn btn-border-default gap-1.5"
 										data-id="dropdown-upload-date"
 									>
-										<span>Upload date</span>
+										<span class="text-nowrap">Upload date</span>
 										<svg class="icon icon-xs">
 											<use href="#icon-caret"></use>
 										</svg>
